@@ -1,27 +1,13 @@
 (function () {
-  const sidebar = document.getElementById("category-list");
   const header = document.getElementById("category-header");
   const content = document.getElementById("recipes-content");
-  const searchInput = document.getElementById("search");
   const progressEl = document.getElementById("progress");
-  const sidebarNav = document.getElementById("sidebar");
-  const menuToggle = document.getElementById("menu-toggle");
-  const sidebarBackdrop = document.getElementById("sidebar-backdrop");
+  const homeBtn = document.getElementById("home-btn");
 
-  function openMobileMenu() {
-    sidebarNav.classList.add("open");
-    sidebarBackdrop.classList.add("open");
-  }
-  function closeMobileMenu() {
-    sidebarNav.classList.remove("open");
-    sidebarBackdrop.classList.remove("open");
-  }
-  menuToggle.addEventListener("click", openMobileMenu);
-  sidebarBackdrop.addEventListener("click", closeMobileMenu);
+  homeBtn.addEventListener("click", () => Router.toHome());
 
   const firstReady = window.CATEGORIES.find((c) => c.ready) || window.CATEGORIES[0];
-  let activeCat = null; // null quando estamos na home ou em modo de busca global
-  let activeView = null; // "favoritos" | "quero-fazer" | "historico" | null
+  let activeCat = null; // null quando estamos na home, busca global ou telas de lista
   let homeSearchInput = null; // input de busca da tela home (recriado a cada render)
 
   const QUICK_LINKS = [
@@ -35,71 +21,16 @@
     return Storage.getAllMade().length;
   }
 
-  // ---------- Sidebar ----------
-  function renderSidebar() {
-    sidebar.innerHTML = "";
-
-    const quickWrap = document.createElement("div");
-    quickWrap.className = "quick-links";
-    QUICK_LINKS.forEach((ql) => {
-      const btn = document.createElement("button");
-      btn.className = "quick-link" + (activeView === ql.view ? " active" : "");
-      const count = quickLinkCount(ql.view);
-      btn.innerHTML =
-        '<span class="quick-link__icon">' + ql.icon + "</span><span>" + ql.label + "</span>" +
-        (count ? '<span class="count">' + count + "</span>" : "");
-      btn.addEventListener("click", () => {
-        closeMobileMenu();
-        ql.go();
-      });
-      quickWrap.appendChild(btn);
-    });
-    sidebar.appendChild(quickWrap);
-
-    const groups = {};
-    window.CATEGORIES.forEach((c) => {
-      if (!groups[c.group]) groups[c.group] = [];
-      groups[c.group].push(c);
-    });
-
-    Object.keys(groups).forEach((groupName) => {
-      const groupTitle = document.createElement("div");
-      groupTitle.className = "group-title";
-      groupTitle.textContent = groupName;
-      sidebar.appendChild(groupTitle);
-
-      groups[groupName].forEach((cat) => {
-        const recipes = window.RECIPES[cat.id] || [];
-        const btn = document.createElement("button");
-        btn.className = "cat-item" + (cat.ready ? " ready" : "") + (cat.id === activeCat ? " active" : "");
-        btn.innerHTML =
-          '<span class="dot"></span><span>' +
-          cat.label +
-          "</span>" +
-          (recipes.length ? '<span class="count">' + recipes.length + "</span>" : "");
-        btn.addEventListener("click", () => {
-          closeMobileMenu();
-          Router.toCategoria(cat.id);
-        });
-        sidebar.appendChild(btn);
-      });
-    });
-  }
-
-  // ---------- Busca (compartilhada entre sidebar e home) ----------
+  // ---------- Busca (usada na tela home) ----------
   let searchDebounce = null;
   function wireSearchInput(el) {
     el.addEventListener("input", () => {
       const value = el.value;
-      [searchInput, homeSearchInput].forEach((other) => {
-        if (other && other !== el) other.value = value;
-      });
       clearTimeout(searchDebounce);
       searchDebounce = setTimeout(() => {
         if (value.trim()) {
           activeCat = null;
           Router.replaceBusca(value);
-          renderSidebar();
           renderSearchResults(value);
         } else {
           Router.replace("");
@@ -108,14 +39,10 @@
       }, 200);
     });
   }
-  wireSearchInput(searchInput);
 
   // ---------- Home ----------
   function renderHome() {
     activeCat = null;
-    activeView = null;
-    searchInput.value = "";
-    renderSidebar();
 
     header.innerHTML = "";
     content.innerHTML = "";
@@ -203,9 +130,6 @@
   function showCategoria(catId) {
     const cat = window.CATEGORIES.find((c) => c.id === catId) || firstReady;
     activeCat = cat.id;
-    activeView = null;
-    searchInput.value = "";
-    renderSidebar();
     renderCategory(cat);
   }
 
@@ -273,9 +197,6 @@
   function renderListView(view) {
     const cfg = LIST_VIEWS[view];
     activeCat = null;
-    activeView = view;
-    searchInput.value = "";
-    renderSidebar();
 
     header.innerHTML = "<h2>" + cfg.title + "</h2>";
     content.innerHTML = "";
@@ -409,9 +330,6 @@
     }
 
     activeCat = catId;
-    activeView = null;
-    searchInput.value = "";
-    renderSidebar();
 
     header.innerHTML = "";
     content.innerHTML = "";
@@ -579,9 +497,6 @@
     }
 
     activeCat = catId;
-    activeView = null;
-    searchInput.value = "";
-    renderSidebar();
 
     header.innerHTML = "";
     content.innerHTML = "";
@@ -837,9 +752,6 @@
   function handleRoute(route) {
     if (route.name === "busca" && route.query) {
       activeCat = null;
-      activeView = null;
-      searchInput.value = route.query;
-      renderSidebar();
       renderSearchResults(route.query);
     } else if (route.name === "categoria") {
       showCategoria(route.catId);

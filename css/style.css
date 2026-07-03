@@ -20,164 +20,46 @@ body {
   font-family: 'Georgia', 'Iowan Old Style', 'Palatino Linotype', serif;
   background: var(--bg);
   color: var(--ink);
-  display: flex;
   min-height: 100vh;
 }
 
-/* ---------- Topbar (mobile only) ---------- */
+/* ---------- Topbar ---------- */
 #topbar {
-  display: none;
+  display: flex;
   position: sticky;
   top: 0;
   z-index: 1100;
   align-items: center;
-  gap: 12px;
   background: var(--bg-panel);
   border-bottom: 1px solid var(--line);
-  padding: 12px 16px;
+  padding: 12px 20px;
   box-shadow: var(--shadow);
 }
-#menu-toggle {
-  background: var(--gold-soft);
+
+.home-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 22px;
   border: none;
-  border-radius: 8px;
-  width: 40px;
-  height: 40px;
-  font-size: 1.1rem;
-  line-height: 1;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-#topbar-title {
+  border-radius: 999px;
+  background: var(--gold);
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1rem;
   font-weight: bold;
-  color: var(--gold);
-  font-size: 1.05rem;
-}
-
-#sidebar-backdrop {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(20, 15, 5, 0.45);
-  z-index: 1200;
-}
-#sidebar-backdrop.open { display: block; }
-
-/* ---------- Sidebar ---------- */
-#sidebar {
-  width: 300px;
-  flex-shrink: 0;
-  background: var(--bg-panel);
-  border-right: 1px solid var(--line);
-  padding: 24px 16px 40px;
-  overflow-y: auto;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-
-#sidebar h1 {
-  font-size: 1.35rem;
-  margin: 0 0 4px;
-  letter-spacing: 0.03em;
-  color: var(--gold);
-}
-
-#sidebar .subtitle {
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  margin-bottom: 18px;
-  font-style: italic;
-}
-
-#search {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.9rem;
-  background: var(--bg);
-  margin-bottom: 18px;
-}
-#search:focus { outline: 2px solid var(--gold-soft); }
-
-.quick-links {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 18px;
-}
-.quick-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  text-align: left;
-  padding: 8px 10px;
-  border: none;
-  background: none;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.92rem;
-  color: var(--ink);
   cursor: pointer;
-  min-height: 40px;
+  box-shadow: var(--shadow);
 }
-.quick-link:hover { background: #f1e8d3; }
-.quick-link.active { background: var(--gold-soft); color: #2b241b; font-weight: bold; }
-.quick-link__icon { width: 18px; text-align: center; flex-shrink: 0; }
-.quick-link .count {
-  margin-left: auto;
-  font-size: 0.75rem;
-  color: var(--ink-soft);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-.quick-link.active .count { color: #2b241b; }
-
-.group-title {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
-  margin: 18px 0 6px 4px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-.cat-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  text-align: left;
-  padding: 8px 10px;
-  border: none;
-  background: none;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.92rem;
-  color: var(--ink);
-  cursor: pointer;
-}
-.cat-item:hover { background: #f1e8d3; }
-.cat-item.active { background: var(--gold-soft); color: #2b241b; font-weight: bold; }
-.cat-item .dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: #cfc4a8; flex-shrink: 0;
-}
-.cat-item.ready .dot { background: var(--green); }
-.cat-item .count {
-  margin-left: auto;
-  font-size: 0.75rem;
-  color: var(--ink-soft);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+.home-btn:hover { background: #8f6624; }
+.home-btn__icon { font-size: 1.25rem; line-height: 1; }
 
 /* ---------- Main ---------- */
 #main {
-  flex: 1;
   padding: 40px 48px 80px;
   max-width: 980px;
+  margin: 0 auto;
 }
 
 #category-header h2 {
@@ -327,23 +209,6 @@ body {
 }
 
 @media (max-width: 700px) {
-  body { flex-direction: column; }
-  #topbar { display: flex; width: 100%; }
-
-  #sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 85%;
-    max-width: 320px;
-    height: 100vh;
-    z-index: 1300;
-    transform: translateX(-100%);
-    transition: transform 0.25s ease;
-    box-shadow: 4px 0 20px rgba(0,0,0,0.2);
-  }
-  #sidebar.open { transform: translateX(0); }
-
   #main { padding: 20px; }
 
   .recipe-thumb { width: 44px; height: 44px; font-size: 1.3rem; border-radius: 8px; }
