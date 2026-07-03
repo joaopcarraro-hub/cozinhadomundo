@@ -200,7 +200,7 @@ body {
 .recipe-header:hover { background: #f8f2e2; }
 
 .recipe-header .made-toggle {
-  width: 24px; height: 24px;
+  width: 36px; height: 36px;
   border-radius: 50%;
   border: 2px solid var(--gold-soft);
   background: transparent;
@@ -208,13 +208,27 @@ body {
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   color: transparent;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .recipe-header .made-toggle.made {
   background: var(--green);
   border-color: var(--green);
   color: white;
 }
+
+.recipe-header .favorite-toggle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--line);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.recipe-header .favorite-toggle.favorite { color: var(--gold); }
 
 .recipe-thumb {
   width: 56px;
@@ -234,6 +248,18 @@ body {
 .recipe-title { flex: 1; }
 .recipe-title h3 { margin: 0; font-size: 1.15rem; }
 .recipe-title .origin { font-size: 0.8rem; color: var(--ink-soft); font-style: italic; }
+.recipe-title .cat-chip {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  background: var(--gold-soft);
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-top: 4px;
+}
 .recipe-title .desc-line { font-size: 0.86rem; color: var(--ink); margin-top: 3px; line-height: 1.35; }
 
 .recipe-meta {

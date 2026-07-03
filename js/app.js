@@ -19,20 +19,11 @@
   menuToggle.addEventListener("click", openMobileMenu);
   sidebarBackdrop.addEventListener("click", closeMobileMenu);
 
-  const STORAGE_KEY = "cardapio-feitos-v1";
-  const madeSet = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
+  const firstReady = window.CATEGORIES.find((c) => c.ready) || window.CATEGORIES[0];
+  let activeCat = null; // null quando estamos em modo de busca global
 
-  function saveMade() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...madeSet]));
-  }
-
-  function recipeKey(catId, name) {
-    return catId + "::" + name;
-  }
-
-  let activeCat = null;
-
-  function renderSidebar(filterText) {
+  // ---------- Sidebar ----------
+  function renderSidebar() {
     sidebar.innerHTML = "";
     const groups = {};
     window.CATEGORIES.forEach((c) => {
@@ -40,25 +31,14 @@
       groups[c.group].push(c);
     });
 
-    const q = (filterText || "").trim().toLowerCase();
-
     Object.keys(groups).forEach((groupName) => {
-      const cats = groups[groupName];
       const groupTitle = document.createElement("div");
       groupTitle.className = "group-title";
       groupTitle.textContent = groupName;
       sidebar.appendChild(groupTitle);
 
-      cats.forEach((cat) => {
+      groups[groupName].forEach((cat) => {
         const recipes = window.RECIPES[cat.id] || [];
-        let matches = true;
-        if (q) {
-          matches =
-            cat.label.toLowerCase().includes(q) ||
-            recipes.some((r) => r.name.toLowerCase().includes(q));
-        }
-        if (!matches) return;
-
         const btn = document.createElement("button");
         btn.className = "cat-item" + (cat.ready ? " ready" : "") + (cat.id === activeCat ? " active" : "");
         btn.innerHTML =
@@ -67,18 +47,16 @@
           "</span>" +
           (recipes.length ? '<span class="count">' + recipes.length + "</span>" : "");
         btn.addEventListener("click", () => {
-          activeCat = cat.id;
-          renderSidebar(searchInput.value);
-          renderCategory(cat, q);
           closeMobileMenu();
-          content.scrollIntoView({ behavior: "instant", block: "start" });
+          Router.toCategoria(cat.id);
         });
         sidebar.appendChild(btn);
       });
     });
   }
 
-  function renderCategory(cat, filterText) {
+  // ---------- Categoria ----------
+  function renderCategory(cat) {
     header.innerHTML =
       "<h2>" + cat.label + "</h2>" + (cat.desc ? '<div class="desc">' + cat.desc + "</div>" : "");
     content.innerHTML = "";
@@ -92,16 +70,8 @@
       return;
     }
 
-    const q = (filterText || "").trim().toLowerCase();
-    const filtered = q ? recipes.filter((r) => r.name.toLowerCase().includes(q)) : recipes;
-
-    if (!filtered.length) {
-      content.innerHTML = '<div class="empty-state">Nenhuma receita encontrada para "' + filterText + '".</div>';
-      return;
-    }
-
     let lastSubgroup = null;
-    filtered.forEach((recipe) => {
+    recipes.forEach((recipe) => {
       if (recipe.subgroup && recipe.subgroup !== lastSubgroup) {
         const st = document.createElement("div");
         st.className = "subgroup-title";
@@ -116,20 +86,42 @@
   }
 
   function updateProgress(cat, recipes) {
-    const doneCount = recipes.filter((r) => madeSet.has(recipeKey(cat.id, r.name))).length;
+    const doneCount = Storage.countMade(cat.id, recipes);
     progressEl.textContent = doneCount + " de " + recipes.length + " já feitas nessa categoria ✓";
   }
 
-  function renderRecipeCard(catId, recipe) {
+  // ---------- Busca global ----------
+  function renderSearchResults(query) {
+    header.innerHTML =
+      "<h2>Busca: “" + query + "”</h2>" +
+      '<div class="desc">Procurando em nome, categoria, origem, ingredientes, dificuldade e descrição.</div>';
+    content.innerHTML = "";
+    progressEl.textContent = "";
+
+    const results = Search.searchRecipes(query);
+
+    if (!results.length) {
+      content.innerHTML = '<div class="empty-state">Nenhum prato encontrado para "' + query + '".</div>';
+      return;
+    }
+
+    results.forEach((res) => {
+      content.appendChild(renderRecipeCard(res.catId, res.recipe, { catLabel: res.catLabel }));
+    });
+  }
+
+  // ---------- Card de receita ----------
+  function renderRecipeCard(catId, recipe, opts) {
+    opts = opts || {};
     const card = document.createElement("div");
     card.className = "recipe-card";
+    card.dataset.recipeName = recipe.name;
 
-    const key = recipeKey(catId, recipe.name);
-    const isMade = madeSet.has(key);
+    const isMade = Storage.isMade(catId, recipe.name);
     if (isMade) card.classList.add("made-card");
 
-    const header = document.createElement("div");
-    header.className = "recipe-header";
+    const cardHeader = document.createElement("div");
+    cardHeader.className = "recipe-header";
 
     const thumb = document.createElement("div");
     thumb.className = "recipe-thumb placeholder";
@@ -142,22 +134,31 @@
     toggle.textContent = "✓";
     toggle.addEventListener("click", (e) => {
       e.stopPropagation();
-      if (madeSet.has(key)) {
-        madeSet.delete(key);
-        toggle.classList.remove("made");
-      } else {
-        madeSet.add(key);
-        toggle.classList.add("made");
+      const nowMade = Storage.toggleMade(catId, recipe.name);
+      toggle.classList.toggle("made", nowMade);
+      card.classList.toggle("made-card", nowMade);
+      if (activeCat) {
+        const cat = window.CATEGORIES.find((c) => c.id === activeCat);
+        updateProgress(cat, window.RECIPES[activeCat]);
       }
-      saveMade();
-      const cat = window.CATEGORIES.find((c) => c.id === catId);
-      updateProgress(cat, window.RECIPES[catId]);
+    });
+
+    const favToggle = document.createElement("button");
+    const isFav = Storage.isFavorite(catId, recipe.name);
+    favToggle.className = "favorite-toggle" + (isFav ? " favorite" : "");
+    favToggle.title = "Marcar como favorito";
+    favToggle.textContent = "★";
+    favToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const nowFav = Storage.toggleFavorite(catId, recipe.name);
+      favToggle.classList.toggle("favorite", nowFav);
     });
 
     const title = document.createElement("div");
     title.className = "recipe-title";
     title.innerHTML =
       "<h3>" + recipe.name + "</h3>" +
+      (opts.catLabel ? '<div class="cat-chip">' + opts.catLabel + "</div>" : "") +
       (recipe.origin ? '<div class="origin">' + recipe.origin + "</div>" : "") +
       (recipe.desc ? '<div class="desc-line">' + recipe.desc + "</div>" : "");
 
@@ -173,13 +174,14 @@
     chevron.className = "chevron";
     chevron.textContent = "▶";
 
-    header.appendChild(toggle);
-    header.appendChild(thumb);
-    header.appendChild(title);
-    header.appendChild(meta);
-    header.appendChild(chevron);
+    cardHeader.appendChild(toggle);
+    cardHeader.appendChild(favToggle);
+    cardHeader.appendChild(thumb);
+    cardHeader.appendChild(title);
+    cardHeader.appendChild(meta);
+    cardHeader.appendChild(chevron);
 
-    header.addEventListener("click", () => {
+    cardHeader.addEventListener("click", () => {
       card.classList.toggle("open");
     });
 
@@ -187,9 +189,17 @@
     body.className = "recipe-body";
     body.innerHTML = renderRecipeBody(recipe);
 
-    card.appendChild(header);
+    card.appendChild(cardHeader);
     card.appendChild(body);
     return card;
+  }
+
+  function openRecipeCard(catId, name) {
+    const cardEl = content.querySelector('[data-recipe-name="' + CSS.escape(name) + '"]');
+    if (cardEl) {
+      cardEl.classList.add("open");
+      cardEl.scrollIntoView({ behavior: "instant", block: "start" });
+    }
   }
 
   // ---------- Fotos (Wikipedia, com cache local) ----------
@@ -342,18 +352,52 @@
     );
   }
 
-  searchInput.addEventListener("input", () => {
-    renderSidebar(searchInput.value);
-    if (activeCat) {
-      const cat = window.CATEGORIES.find((c) => c.id === activeCat);
-      renderCategory(cat, searchInput.value);
+  // ---------- Roteamento ----------
+  function showCategoria(catId) {
+    const cat = window.CATEGORIES.find((c) => c.id === catId) || firstReady;
+    activeCat = cat.id;
+    searchInput.value = "";
+    renderSidebar();
+    renderCategory(cat);
+  }
+
+  function handleRoute(route) {
+    if (route.name === "busca" && route.query) {
+      activeCat = null;
+      searchInput.value = route.query;
+      renderSidebar();
+      renderSearchResults(route.query);
+    } else if (route.name === "categoria") {
+      showCategoria(route.catId);
+    } else if (route.name === "receita") {
+      showCategoria(route.catId);
+      openRecipeCard(route.catId, route.recipeName);
+    } else {
+      showCategoria(firstReady.id);
     }
+  }
+
+  Router.onChange(handleRoute);
+
+  // ---------- Busca (input) ----------
+  let searchDebounce = null;
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value;
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(() => {
+      if (value.trim()) {
+        activeCat = null;
+        Router.replaceBusca(value);
+        renderSidebar();
+        renderSearchResults(value);
+      } else {
+        const cat = window.CATEGORIES.find((c) => c.id === activeCat) || firstReady;
+        Router.replace("categoria/" + encodeURIComponent(cat.id));
+        showCategoria(cat.id);
+      }
+    }, 200);
   });
 
-  // Inicialização: abre a primeira categoria pronta
-  renderSidebar("");
-  const firstReady = window.CATEGORIES.find((c) => c.ready) || window.CATEGORIES[0];
-  activeCat = firstReady.id;
-  renderSidebar("");
-  renderCategory(firstReady, "");
+  // ---------- Inicialização ----------
+  handleRoute(Router.current());
 })();
