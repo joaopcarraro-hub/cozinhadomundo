@@ -225,12 +225,19 @@ body {
   .home-quicklink {
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
-    padding: 10px 6px;
+    gap: 6px;
+    padding: 14px 4px 12px;
     text-align: center;
-    min-height: 74px;
+    min-height: 78px;
   }
-  .home-quicklink__label { text-align: center; font-size: 0.72rem; line-height: 1.2; }
+  .home-quicklink__icon { width: 28px; height: 28px; font-size: 1.25rem; }
+  .home-quicklink__label {
+    text-align: center;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    flex: none;
+  }
   .home-quicklink__count { font-size: 0.8rem; }
 }
 
@@ -346,8 +353,17 @@ body {
   font-family: inherit;
 }
 .home-quicklink:hover { border-color: var(--gold-soft); }
-.home-quicklink__icon { font-size: 1.3rem; }
-.home-quicklink__label { flex: 1; text-align: left; font-size: 0.88rem; color: var(--ink); }
+.home-quicklink__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.home-quicklink__label { flex: 1; text-align: left; font-size: 0.88rem; color: var(--ink); white-space: nowrap; }
 .home-quicklink__count {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.85rem;
