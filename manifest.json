@@ -1,0 +1,25 @@
+{
+  "name": "Nosso Cardápio Gastronômico",
+  "short_name": "Cardápio",
+  "description": "Receitas completas de cozinha do mundo, com modo de preparo passo a passo.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#faf6ee",
+  "theme_color": "#a3762c",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
