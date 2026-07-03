@@ -11,6 +11,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "30 min + 8h molho", cook: "3h", total: "≈12h" },
     yield: "8-10 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "protein:boi", "ingredient:feijao"],
     ingredients: [
       "500 g de feijão preto",
       "300 g de carne seca, dessalgada (24h de molho, trocando a água)",
@@ -49,6 +50,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "4-6 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:feijao", "ingredient:mandioca"],
     ingredients: [
       "500 g de feijão carioca ou preto, já cozido e com bastante caldo",
       "100 g de bacon em cubos",
@@ -79,6 +81,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min + pré-cozimento longo", cook: "2h", total: "≈3h30" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "protein:suino", "ingredient:feijao", "ingredient:tomate"],
     ingredients: [
       "1,2 kg de dobradinha (bucho bovino), bem limpa",
       "300 g de feijão branco (de molho por 8h)",
@@ -114,6 +117,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "2h30", total: "2h50" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:tomate", "ingredient:batata"],
     ingredients: [
       "1,5 kg de rabo bovino, em pedaços",
       "3 colheres (sopa) de óleo",
@@ -150,6 +154,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "2h", total: "2h20" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:mandioca", "ingredient:tomate"],
     ingredients: [
       "1,5 kg de costela bovina, em pedaços",
       "3 colheres (sopa) de óleo",
@@ -185,6 +190,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min + 30 min marinada", cook: "25 min", total: "1h15" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "protein:frutos-do-mar", "ingredient:coco", "ingredient:tomate", "ingredient:limao", "ingredient:pimentao"],
     ingredients: [
       "800 g de peixe branco firme (robalo, badejo ou cação), em postas",
       "Suco de 2 limões",
@@ -220,6 +226,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "35 min", total: "55 min" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:mandioca", "ingredient:coco", "ingredient:tomate"],
     ingredients: [
       "600 g de camarão médio, limpo (cascas reservadas)",
       "1 kg de mandioca, descascada e em pedaços",
@@ -257,6 +264,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "40 min", total: "1h" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:coco", "ingredient:castanha", "ingredient:amendoim", "ingredient:gengibre"],
     ingredients: [
       "400 g de camarão seco",
       "400 g de camarão fresco, limpo",
@@ -293,6 +301,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min + 12h de molho do feijão", cook: "20 min", total: "≈13h" },
     yield: "12 unidades",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:feijao"],
     ingredients: [
       "500 g de feijão-fradinho, deixado de molho por 12h",
       "1 cebola picada",
@@ -327,6 +336,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "25 min", cook: "35 min", total: "1h" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:mandioca", "ingredient:queijo", "ingredient:tomate"],
     ingredients: [
       "1 kg de mandioca (ou batata), descascada e em pedaços",
       "100 ml de leite",
@@ -362,6 +372,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "protein:ovo", "ingredient:feijao", "ingredient:ovo"],
     ingredients: [
       "4 bifes de lombo suíno (ou costeleta)",
       "1 receita de Tutu de Feijão (ver receita)",
@@ -397,6 +408,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "40 min", total: "1h" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango", "ingredient:arroz", "ingredient:ervilha", "ingredient:tomate"],
     ingredients: [
       "1 frango caipira, em pedaços",
       "3 colheres (sopa) de óleo ou banha",
@@ -433,6 +445,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "30 min", cook: "6-8h", total: "≈7-8h30" },
     yield: "8 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "protein:suino"],
     ingredients: [
       "2 kg de carne bovina para cozimento longo (músculo, acém), em pedaços grandes",
       "300 g de bacon em fatias",
@@ -466,6 +479,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "15 min + 8h molho do feijão", cook: "40 min", total: "≈9h" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:feijao", "ingredient:arroz", "ingredient:queijo"],
     ingredients: [
       "300 g de feijão-de-corda (feijão fradinho), de molho por 8h",
       "200 g de carne seca dessalgada e desfiada",
@@ -500,6 +514,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "15 min + dessalgar a carne", cook: "40 min", total: "≈1h" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:arroz", "ingredient:tomate", "ingredient:pimentao"],
     ingredients: [
       "400 g de charque ou carne seca, dessalgada e desfiada",
       "3 colheres (sopa) de óleo ou banha",
@@ -536,6 +551,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "20 min", total: "40 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar"],
     ingredients: [
       "1 L de tucupi (líquido extraído da mandioca brava, já cozido e pronto para consumo — encontrado congelado ou fresco em mercados do Norte)",
       "150 g de goma de tapioca (goma de mandioca fresca)",

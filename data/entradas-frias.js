@@ -11,6 +11,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "20 min", cook: "0 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:boi"],
     ingredients: [
       "300 g de filé mignon bem fresco (peça inteira, sem gordura ou nervos)",
       "1 échalote picada bem fina",
@@ -46,6 +47,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "20 min + 30 min congelador", cook: "0 min", total: "50 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:queijo"],
     ingredients: [
       "250 g de filé mignon bem fresco, em peça",
       "Azeite de oliva extra virgem de boa qualidade",
@@ -77,6 +79,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "20 min + 15 min marinada", cook: "0 min", total: "35 min" },
     yield: "2-3 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "ingredient:limao"],
     ingredients: [
       "400 g de peixe branco bem fresco (robalo, tilápia ou linguado), em cubos",
       "150 ml de suco de limão-tahiti espremido na hora (ou uma mistura com limão-siciliano)",
@@ -109,6 +112,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "15 min", cook: "0 min", total: "15 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe"],
     ingredients: [
       "250 g de peixe branco muito fresco, tipo sashimi (robalo, linguado ou atum)",
       "Azeite de oliva extra virgem de altíssima qualidade",
@@ -139,6 +143,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "20 min", cook: "0 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "ingredient:gengibre", "ingredient:molho-de-soja"],
     ingredients: [
       "300 g de salmão fresco, sem pele e sem espinhas, tipo sashimi",
       "1 colher (sopa) de cebolinha picada",
@@ -174,6 +179,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "30 min + resfriar", cook: "1h", total: "1h30 + 3h geladeira" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "protein:peixe"],
     ingredients: [
       "800 g de lagarto ou coxão mole de vitela (ou boi magro), em peça",
       "1 cenoura, 1 talo de salsão, 1 cebola — em pedaços",
@@ -210,6 +216,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "40 min + 24h descanso", cook: "1h30", total: "2h10 + 24h" },
     yield: "8-10 porções",
     difficulty: "Alta",
+    tags: ["protein:frango", "protein:suino"],
     ingredients: [
       "400 g de fígado de frango limpo",
       "300 g de carne de porco moída (pernil ou paleta)",
@@ -246,6 +253,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "1h", cook: "1h30", total: "2h30 + resfriar" },
     yield: "6-8 porções",
     difficulty: "Alta",
+    tags: ["protein:frango", "protein:suino", "ingredient:castanha"],
     ingredients: [
       "1 frango inteiro, desossado (pele inteira, mantida aberta)",
       "300 g de carne de porco moída",

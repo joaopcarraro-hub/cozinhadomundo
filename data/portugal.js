@@ -13,6 +13,7 @@ window.RECIPES["portugal"] = [
     time: { prep: "30 min (+ dessalgar)", cook: "40 min", total: "1h10" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:peixe", "ingredient:batata", "ingredient:queijo"],
     ingredients: [
       "600 g de bacalhau dessalgado, desfiado em lascas",
       "1 kg de batata, descascada e em palitos finos (batata palha ou batata frita em cubos pequenos)",
@@ -49,6 +50,7 @@ window.RECIPES["portugal"] = [
     time: { prep: "40 min (+ dessalgar)", cook: "15 min", total: "55 min" },
     yield: "≈20 unidades",
     difficulty: "Média",
+    tags: ["protein:peixe", "ingredient:batata", "ingredient:ovo"],
     ingredients: [
       "500 g de bacalhau dessalgado",
       "500 g de batata, descascada",
@@ -85,6 +87,7 @@ window.RECIPES["portugal"] = [
     time: { prep: "25 min", cook: "25 min", total: "50 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "protein:peixe", "protein:suino", "ingredient:tomate"],
     ingredients: [
       "300 g de camarão médio, limpo",
       "500 g de amêijoas (ou vôngole), limpas",
@@ -122,6 +125,7 @@ window.RECIPES["portugal"] = [
     time: { prep: "15 min", cook: "1h", total: "1h15" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:batata"],
     ingredients: [
       "1 polvo (1,2-1,5 kg), limpo",
       "1 cebola, cortada ao meio",
@@ -156,6 +160,7 @@ window.RECIPES["portugal"] = [
     time: { prep: "40 min", cook: "20 min", total: "1h" },
     yield: "12 unidades",
     difficulty: "Média-alta",
+    tags: ["protein:vegetariana", "ingredient:ovo"],
     ingredients: [
       "1 disco de massa folhada (ou massa folhada caseira enrolada em cilindro, técnica tradicional)",
       "500 ml de leite integral",

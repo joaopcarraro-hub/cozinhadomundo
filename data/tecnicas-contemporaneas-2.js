@@ -12,6 +12,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "15 min", cook: "0 min", total: "15 min" },
     yield: "≈300 ml",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "ingredient:limao"],
     ingredients: [
       "150 ml de suco de limão-tahiti espremido na hora",
       "100 g de aparas de peixe branco fresco (do mesmo peixe usado no ceviche)",
@@ -44,6 +45,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "15 min + 48-72h cura", cook: "0 min", total: "2-3 dias" },
     yield: "≈600 g",
     difficulty: "Fácil (exige tempo)",
+    tags: ["protein:peixe"],
     ingredients: [
       "600 g de salmão fresco, em posta com pele, sem espinhas",
       "100 g de sal grosso",
@@ -77,6 +79,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min + 1-24h cura (varia)", cook: "0 min", total: "1-24h" },
     yield: "Conforme a peça",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "protein:ave"],
     ingredients: [
       "1 peça de peixe (robalo, salmão) ou carne (lombo, peito de pato), fresca e de procedência confiável",
       "Sal grosso e açúcar, em partes iguais (proporção base: 1:1)",
@@ -106,6 +109,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "1-24h (varia por corte)", total: "Varia" },
     yield: "Conforme a peça",
     difficulty: "Média (exige equipamento)",
+    tags: [],
     ingredients: [
       "1 peça de carne, peixe ou vegetal",
       "Sal, pimenta e ervas/aromáticos a gosto",
@@ -135,6 +139,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "14-45 dias de maturação", total: "Semanas" },
     yield: "Conforme a peça",
     difficulty: "Alta (exige equipamento e controle)",
+    tags: ["protein:boi"],
     ingredients: [
       "1 peça grande de carne bovina com osso (contrafilé/costela, em peça, não porcionada)",
       "Câmara ou geladeira dedicada com controle de temperatura (1-3°C) e umidade (75-85%)",
@@ -162,6 +167,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "15 min", cook: "20 min a várias horas (varia)", total: "Varia" },
     yield: "Conforme a peça",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "1 peça de carne, peixe ou queijo para defumar",
       "Lascas ou serragem de madeira própria para defumação (hickory, macieira, cerejeira)",
@@ -192,6 +198,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "20 min", cook: "10 min", total: "30 min" },
     yield: "≈30 esferas pequenas",
     difficulty: "Alta (exige ingredientes específicos)",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "250 ml de purê ou suco de fruta (morango, manga, maracujá), coado",
       "2,5 g de alginato de sódio",
@@ -220,6 +227,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "0 min", total: "10 min" },
     yield: "Cobertura para 4 pratos",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "300 ml de líquido bem saboroso e fino (suco de fruta, caldo claro coado, ou água aromatizada)",
       "2 g de lecitina de soja em pó",
@@ -249,6 +257,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "20 min", cook: "3-4h", total: "≈4h" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:vinho"],
     ingredients: [
       "1,5 kg de corte de carne para braseado (paleta, acém, ossobuco, bochecha)",
       "2 colheres (sopa) de óleo ou banha",
@@ -283,6 +292,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "1h-1h30", total: "≈1h30" },
     yield: "≈300 g",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "2 cabeças de alho, dentes separados e descascados (ou 4 tomates, ou 3 cebolas em pétalas — escolha um)",
       "300-400 ml de azeite de oliva, o suficiente para cobrir",
@@ -313,6 +323,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "2-3h desidratando", total: "≈3h" },
     yield: "≈50 g de pó",
     difficulty: "Fácil (exige tempo)",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "300 g de casca ou aparas de vegetal (casca de beterraba, folhas de cenoura, casca de cebola), bem lavadas",
       "Sal (opcional)"
@@ -339,6 +350,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "2-3h desidratando", total: "≈3h" },
     yield: "≈40 g de pó",
     difficulty: "Fácil (exige tempo)",
+    tags: ["protein:vegetariana", "ingredient:azeitona"],
     ingredients: [
       "200 g de azeitonas pretas sem caroço",
       "1 colher (sopa) de açúcar (opcional, ajuda a desidratar mais rápido)"
@@ -365,6 +377,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min + secagem 4h ou durante a noite", cook: "3 min", total: "≈4h15" },
     yield: "≈15 unidades",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "ingredient:arroz"],
     ingredients: [
       "200 g de arroz branco cozido (de preferência do dia anterior, mais seco)",
       "300 ml de água",
@@ -394,6 +407,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "3 min (tostar)", total: "13 min" },
     yield: "Para cobrir 1 peça de carne média",
     difficulty: "Fácil",
+    tags: ["protein:boi"],
     ingredients: [
       "2 colheres (sopa) de grãos de coentro",
       "1 colher (sopa) de grãos de cominho",
@@ -425,6 +439,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min + 1h geladeira", cook: "0 min", total: "1h10" },
     yield: "≈200 g",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "200 g de manteiga sem sal, em temperatura ambiente",
       "2 colheres (sopa) de ervas frescas picadas (salsinha, estragão, cebolinha) ou 2 dentes de alho assado, ou raspas e suco de limão — escolha uma direção de sabor",
@@ -452,6 +467,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "≈400 ml",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "500 ml de caldo bem encorpado (frango, peixe ou vegetal, feito em casa)",
       "1 échalote picada",
@@ -482,6 +498,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "5 min", cook: "0 min (usa molho já pronto)", total: "5 min" },
     yield: "Para 1 prato",
     difficulty: "Fácil (exige prática)",
+    tags: [],
     ingredients: [
       "100 ml de um molho encorpado e bem coado (redução de vinho, molho de tomate liso, purê fino)",
       "Prato bem limpo e seco"
@@ -507,6 +524,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "5 min", cook: "2-3h (redução)", total: "≈3h" },
     yield: "≈150 ml (bem concentrado)",
     difficulty: "Média",
+    tags: ["protein:boi"],
     ingredients: [
       "2 L de fundo escuro de carne, bem feito e já coado (ver receita Caldos e Fundos)"
     ],
@@ -534,6 +552,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     time: { prep: "20 min", cook: "0 min", total: "3-14 dias fermentando" },
     yield: "≈1 pote grande",
     difficulty: "Fácil (exige tempo e paciência)",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "500 g de vegetal firme (repolho, cenoura, pepino, rabanete), fatiado ou ralado",
       "10 g de sal não iodado (2% do peso do vegetal)",

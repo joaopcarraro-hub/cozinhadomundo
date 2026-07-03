@@ -11,6 +11,7 @@ window.RECIPES["arrozes"] = [
     time: { prep: "10 min", cook: "25 min", total: "35 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:arroz", "ingredient:ovo"],
     ingredients: [
       "2 xícaras de arroz branco",
       "3 colheres (sopa) de manteiga (dividida)",
@@ -45,6 +46,7 @@ window.RECIPES["arrozes"] = [
     time: { prep: "20 min", cook: "1h40", total: "2h" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:ave", "protein:suino", "ingredient:arroz"],
     ingredients: [
       "1 pato inteiro (1,8-2 kg), em pedaços",
       "200 g de chouriço/linguiça calabresa fatiado",
@@ -86,6 +88,7 @@ window.RECIPES["arrozes"] = [
     time: { prep: "20 min", cook: "30 min", total: "50 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:arroz", "ingredient:tomate"],
     ingredients: [
       "300 g de arroz tipo bomba (ou arbóreo)",
       "300 g de camarão médio, limpo (cascas reservadas)",
@@ -125,6 +128,7 @@ window.RECIPES["arrozes"] = [
     time: { prep: "20 min", cook: "1h", total: "1h20" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:arroz", "ingredient:tomate"],
     ingredients: [
       "1 polvo (1,2-1,5 kg), limpo e pré-cozido (ver receita Polvo Grelhado para o cozimento inicial, sem grelhar)",
       "3 colheres (sopa) de azeite de oliva",
@@ -162,6 +166,7 @@ window.RECIPES["arrozes"] = [
     time: { prep: "25 min", cook: "30 min", total: "55 min" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:arroz", "ingredient:tomate"],
     ingredients: [
       "300 g de camarão médio, limpo (cascas reservadas)",
       "500 g de mexilhões limpos",

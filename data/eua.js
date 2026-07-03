@@ -13,6 +13,7 @@ window.RECIPES["eua"] = [
     time: { prep: "20 min", cook: "10 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frutos-do-mar", "ingredient:limao"],
     ingredients: [
       "500 g de carne de lagosta cozida, em pedaços grandes (cauda e pinças)",
       "3 colheres (sopa) de maionese",
@@ -46,6 +47,7 @@ window.RECIPES["eua"] = [
     time: { prep: "20 min + 4h marinada", cook: "20 min", total: "≈4h40" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frango"],
     ingredients: [
       "8 pedaços de frango com osso e pele (coxa e sobrecoxa)",
       "500 ml de leitelho (buttermilk, ou leite com 1 colher de sopa de vinagre, descansado 10 min)",
@@ -79,6 +81,7 @@ window.RECIPES["eua"] = [
     time: { prep: "10 min", cook: "25 min", total: "35 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango"],
     ingredients: [
       "1 kg de asas de frango, separadas em drumette e flat",
       "Óleo, para fritar (ou 2 colheres de sopa, para assar)",
@@ -110,6 +113,7 @@ window.RECIPES["eua"] = [
     time: { prep: "20 min", cook: "30 min", total: "50 min" },
     yield: "4-6 porções",
     difficulty: "Fácil",
+    tags: ["protein:frutos-do-mar", "protein:suino", "ingredient:batata"],
     ingredients: [
       "500 g de amêijoas (ou vôngole), limpas (ou 2 latas de amêijoa em conserva, com o líquido)",
       "150 g de bacon em cubos",
@@ -147,6 +151,7 @@ window.RECIPES["eua"] = [
     time: { prep: "15 min", cook: "30 min", total: "45 min" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:queijo"],
     ingredients: [
       "400 g de macarrão tipo cotovelo (elbow) ou penne",
       "60 g de manteiga",
@@ -182,6 +187,7 @@ window.RECIPES["eua"] = [
     time: { prep: "20 min + 8h defumação/forno", cook: "8h", total: "≈8h30" },
     yield: "8-10 porções",
     difficulty: "Alta",
+    tags: ["protein:boi"],
     ingredients: [
       "3 kg de peito bovino (brisket), com a camada de gordura",
       "3 colheres (sopa) de sal grosso",
@@ -215,6 +221,7 @@ window.RECIPES["eua"] = [
     time: { prep: "40 min + 1h geladeira", cook: "50 min", total: "2h30" },
     yield: "8 porções",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "ingredient:ovo"],
     ingredients: [
       "Para a massa: 350 g de farinha de trigo, 250 g de manteiga gelada em cubos, 1 pitada de sal, 1 colher (sopa) de açúcar, 100 ml de água gelada",
       "Para o recheio: 1 kg de maçã (mistura de tipos ácidos e doces), descascada e fatiada",

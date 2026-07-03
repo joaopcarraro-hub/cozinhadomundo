@@ -11,6 +11,7 @@ window.RECIPES["japao"] = [
     time: { prep: "20 min", cook: "20 min", total: "40 min" },
     yield: "≈20 nigiris",
     difficulty: "Média",
+    tags: ["protein:peixe", "ingredient:arroz", "ingredient:molho-de-soja"],
     ingredients: [
       "2 xícaras de arroz japonês (koshihikari ou similar)",
       "2 xícaras de água",
@@ -44,6 +45,7 @@ window.RECIPES["japao"] = [
     time: { prep: "15 min", cook: "0 min", total: "15 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:peixe", "ingredient:molho-de-soja"],
     ingredients: [
       "300 g de peixe fresco tipo sashimi (salmão, atum ou robalo), em bloco",
       "Daikon (rabanete japonês) ralado em fios finos, para decorar",
@@ -72,6 +74,7 @@ window.RECIPES["japao"] = [
     time: { prep: "20 min", cook: "0 min", total: "20 min" },
     yield: "8 unidades",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "ingredient:arroz"],
     ingredients: [
       "1 receita de arroz de sushi pronto (ver receita)",
       "8 folhas de nori (alga)",
@@ -104,6 +107,7 @@ window.RECIPES["japao"] = [
     time: { prep: "25 min", cook: "0 min", total: "25 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "protein:frutos-do-mar", "ingredient:arroz", "ingredient:ovo"],
     ingredients: [
       "1 receita de arroz de sushi pronto (ver receita)",
       "300 g de sashimi variado (salmão, atum, camarão cozido), fatiado",
@@ -134,6 +138,7 @@ window.RECIPES["japao"] = [
     time: { prep: "15 min", cook: "5 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:peixe", "ingredient:molho-de-soja"],
     ingredients: [
       "300 g de peixe fresco tipo sashimi (salmão ou atum, em bloco)",
       "Sal a gosto",
@@ -165,6 +170,7 @@ window.RECIPES["japao"] = [
     time: { prep: "15 min", cook: "12 min", total: "27 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:arroz"],
     ingredients: [
       "4 filés de lombo de porco, cerca de 2 cm de espessura",
       "Sal e pimenta a gosto",
@@ -196,6 +202,7 @@ window.RECIPES["japao"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:arroz", "ingredient:ovo", "ingredient:molho-de-soja"],
     ingredients: [
       "2 porções de Tonkatsu já fritas (ver receita), fatiadas",
       "2 xícaras de arroz japonês cozido",
@@ -231,6 +238,7 @@ window.RECIPES["japao"] = [
     time: { prep: "20 min + 30 min marinada", cook: "15 min", total: "1h05" },
     yield: "4 porções (12 espetos)",
     difficulty: "Fácil",
+    tags: ["protein:frango", "ingredient:molho-de-soja"],
     ingredients: [
       "600 g de coxa de frango, em cubos",
       "2 talos de cebolinha grossa (negi ou alho-poró), em pedaços",
@@ -258,6 +266,7 @@ window.RECIPES["japao"] = [
     time: { prep: "25 min", cook: "20 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:cogumelo", "ingredient:ovo", "ingredient:molho-de-soja"],
     ingredients: [
       "600 g de carne bovina fatiada bem fina (tipo para yakiniku)",
       "200 g de tofu firme, em cubos",
@@ -292,6 +301,7 @@ window.RECIPES["japao"] = [
     time: { prep: "25 min", cook: "20 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:cogumelo", "ingredient:molho-de-soja"],
     ingredients: [
       "600 g de carne bovina fatiada extremamente fina (tipo para shabu-shabu)",
       "1 L de dashi (caldo japonês) ou caldo kombu (alga)",
@@ -323,6 +333,7 @@ window.RECIPES["japao"] = [
     time: { prep: "20 min", cook: "15 min", total: "35 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:molho-de-soja"],
     ingredients: [
       "12 camarões grandes, limpos (com a cauda)",
       "Vegetais variados (abobrinha, batata-doce, berinjela, pimentão), fatiados",
@@ -355,6 +366,7 @@ window.RECIPES["japao"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:ovo", "protein:frutos-do-mar", "ingredient:ovo", "ingredient:cogumelo", "ingredient:espinafre", "ingredient:molho-de-soja"],
     ingredients: [
       "3 ovos",
       "500 ml de dashi (caldo japonês), frio ou em temperatura ambiente",
@@ -392,6 +404,7 @@ window.RECIPES["japao"] = [
     time: { prep: "30 min", cook: "3h (caldo) + 20 min (montagem)", total: "≈3h30" },
     yield: "4 porções",
     difficulty: "Alta",
+    tags: ["protein:suino", "ingredient:ovo", "ingredient:molho-de-soja", "ingredient:gengibre"],
     ingredients: [
       "1,5 kg de ossos de porco (ou frango) para o caldo",
       "2 L de água",
@@ -426,6 +439,7 @@ window.RECIPES["japao"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "protein:frutos-do-mar", "ingredient:molho-de-soja"],
     ingredients: [
       "600 g de macarrão udon fresco (ou seco, cozido conforme a embalagem)",
       "1 L de dashi",
@@ -458,6 +472,7 @@ window.RECIPES["japao"] = [
     time: { prep: "10 min", cook: "10 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:molho-de-soja"],
     ingredients: [
       "200 g de macarrão soba (trigo sarraceno)",
       "Para o molho tsuyu (para soba fria): 200 ml de dashi, 60 ml de shoyu, 60 ml de mirin, 1 colher (sopa) de açúcar",

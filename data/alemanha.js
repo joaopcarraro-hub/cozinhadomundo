@@ -11,6 +11,7 @@ window.RECIPES["alemanha"] = [
     time: { prep: "30 min + 3 dias marinada", cook: "2h30", total: "≈3 dias" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:gengibre"],
     ingredients: [
       "1,5 kg de acém ou coxão duro bovino, em peça",
       "500 ml de vinagre de vinho tinto",
@@ -47,6 +48,7 @@ window.RECIPES["alemanha"] = [
     time: { prep: "20 min", cook: "2h30", total: "2h50" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino"],
     ingredients: [
       "2 joelhos de porco (eisbein), com pele",
       "2 L de água",
@@ -78,6 +80,7 @@ window.RECIPES["alemanha"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:batata"],
     ingredients: [
       "1 kg de batata, com casca",
       "150 g de bacon em cubos",

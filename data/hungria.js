@@ -11,6 +11,7 @@ window.RECIPES["hungria"] = [
     time: { prep: "15 min", cook: "40 min", total: "55 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango", "ingredient:pimentao", "ingredient:tomate"],
     ingredients: [
       "1 frango, em pedaços (ou 6-8 sobrecoxas)",
       "3 colheres (sopa) de banha ou óleo",
@@ -47,6 +48,7 @@ window.RECIPES["hungria"] = [
     time: { prep: "20 min + 1h fermentação", cook: "15 min", total: "1h35" },
     yield: "6 unidades",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:queijo"],
     ingredients: [
       "500 g de farinha de trigo",
       "7 g de fermento biológico seco",

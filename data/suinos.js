@@ -11,6 +11,7 @@ window.RECIPES["suinos"] = [
     time: { prep: "40 min + 12h geladeira", cook: "2h30", total: "≈15h" },
     yield: "8-10 porções",
     difficulty: "Alta",
+    tags: [],
     ingredients: [
       "1 barriga de porco inteira, com pele, aberta em manta (2,5-3 kg)",
       "1 lombo de porco (1 kg), para o recheio central",
@@ -49,6 +50,7 @@ window.RECIPES["suinos"] = [
     time: { prep: "20 min + 12h marinada", cook: "3h30", total: "≈16h" },
     yield: "10-12 porções",
     difficulty: "Média",
+    tags: ["ingredient:vinho"],
     ingredients: [
       "1 pernil de porco com pele e osso (3,5-4 kg)",
       "8 dentes de alho amassados",
@@ -84,6 +86,7 @@ window.RECIPES["suinos"] = [
     time: { prep: "30 min", cook: "50 min", total: "1h20" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["ingredient:queijo", "ingredient:espinafre", "ingredient:castanha"],
     ingredients: [
       "1 lombo de porco inteiro (1,2-1,5 kg)",
       "100 g de damasco seco picado (ou ameixa seca)",
@@ -122,6 +125,7 @@ window.RECIPES["suinos"] = [
     time: { prep: "15 min", cook: "35 min", total: "50 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "4 postas de lombo de porco defumado e curado (kassler), cerca de 200 g cada",
       "2 colheres (sopa) de manteiga",
@@ -155,6 +159,7 @@ window.RECIPES["suinos"] = [
     time: { prep: "20 min + 2h marinada", cook: "3h", total: "≈5h20" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "1,5 kg de costelinha suína (ripa ou costela)",
       "Para o rub seco: 2 colheres (sopa) de páprica defumada, 1 colher (sopa) de açúcar mascavo, 1 colher (chá) de alho em pó, 1 colher (chá) de cebola em pó, 1 colher (chá) de cominho, sal e pimenta a gosto",
@@ -185,6 +190,7 @@ window.RECIPES["suinos"] = [
     time: { prep: "15 min", cook: "15 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "4 bifes de lombo ou alcatra suína, cortados finos",
       "Sal e pimenta a gosto",

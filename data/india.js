@@ -11,6 +11,7 @@ window.RECIPES["india"] = [
     time: { prep: "20 min + 6h marinada", cook: "35 min", total: "≈7h" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango", "ingredient:iogurte", "ingredient:gengibre"],
     ingredients: [
       "1 frango inteiro, em pedaços (ou 8 sobrecoxas), com pequenos cortes na carne",
       "200 g de iogurte natural integral",
@@ -47,6 +48,7 @@ window.RECIPES["india"] = [
     time: { prep: "20 min + 2h marinada", cook: "35 min", total: "≈3h" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frango", "ingredient:tomate", "ingredient:iogurte"],
     ingredients: [
       "600 g de peito ou coxa de frango, em cubos",
       "150 g de iogurte natural",
@@ -86,6 +88,7 @@ window.RECIPES["india"] = [
     time: { prep: "20 min + 2h marinada", cook: "35 min", total: "≈3h" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frango", "ingredient:tomate", "ingredient:iogurte"],
     ingredients: [
       "600 g de peito de frango, em cubos",
       "150 g de iogurte natural",
@@ -127,6 +130,7 @@ window.RECIPES["india"] = [
     time: { prep: "20 min", cook: "1h40", total: "2h" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:cordeiro", "ingredient:iogurte"],
     ingredients: [
       "1 kg de cordeiro (paleta ou pernil), em cubos",
       "4 colheres (sopa) de óleo ou ghee (manteiga clarificada)",
@@ -164,6 +168,7 @@ window.RECIPES["india"] = [
     time: { prep: "30 min + 1h marinada", cook: "1h", total: "2h30" },
     yield: "6 porções",
     difficulty: "Alta",
+    tags: ["protein:frango", "protein:cordeiro", "ingredient:arroz", "ingredient:iogurte"],
     ingredients: [
       "800 g de frango ou cordeiro, em pedaços",
       "200 g de iogurte natural",
@@ -204,6 +209,7 @@ window.RECIPES["india"] = [
     time: { prep: "15 min + 8h molho", cook: "1h30", total: "≈10h" },
     yield: "4-6 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:feijao", "ingredient:tomate", "ingredient:lentilha"],
     ingredients: [
       "200 g de feijão preto pequeno (urad dal inteiro), de molho por 8h",
       "50 g de feijão vermelho (rajma), de molho junto",
@@ -239,6 +245,7 @@ window.RECIPES["india"] = [
     time: { prep: "45 min", cook: "20 min", total: "1h05" },
     yield: "16 unidades",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "ingredient:batata", "ingredient:ervilha"],
     ingredients: [
       "Para a massa: 300 g de farinha de trigo, 60 ml de óleo, 1 pitada de sal, água morna o suficiente para formar a massa",
       "Para o recheio: 3 batatas médias, cozidas e amassadas grosseiramente",
@@ -275,6 +282,7 @@ window.RECIPES["india"] = [
     time: { prep: "20 min + 1h fermentação", cook: "10 min", total: "1h30" },
     yield: "8 unidades",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:iogurte"],
     ingredients: [
       "500 g de farinha de trigo",
       "7 g de fermento biológico seco",

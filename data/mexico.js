@@ -12,6 +12,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "30 min + 1h marinada", cook: "3h", total: "≈4h30" },
     yield: "6-8 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:milho"],
     ingredients: [
       "2 kg de paleta ou costela bovina, em pedaços grandes",
       "6 pimentas guajillo secas, sem sementes",
@@ -48,6 +49,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "40 min", cook: "1h30", total: "2h10" },
     yield: "6-8 porções",
     difficulty: "Alta",
+    tags: ["protein:frango", "protein:ave", "ingredient:chocolate", "ingredient:castanha", "ingredient:milho", "ingredient:tomate"],
     ingredients: [
       "1 frango inteiro, em pedaços (ou peru)",
       "4 pimentas ancho secas, 3 pimentas mulato secas, 2 pimentas pasilla secas, sem sementes",
@@ -88,6 +90,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "25 min", cook: "2h30", total: "2h55" },
     yield: "6-8 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:milho", "ingredient:limao"],
     ingredients: [
       "1 kg de paleta de porco, em pedaços grandes",
       "800 g de milho para pozole (hominy), pré-cozido ou em lata, escorrido",
@@ -124,6 +127,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "25 min + 4h marinada", cook: "20 min", total: "≈4h45" },
     yield: "4 porções (≈16 tacos)",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:milho"],
     ingredients: [
       "800 g de lombo de porco, fatiado fino",
       "3 pimentas guajillo secas, sem sementes, hidratadas",
@@ -159,6 +163,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "25 min", cook: "30 min", total: "55 min" },
     yield: "4 porções (12 unidades)",
     difficulty: "Fácil",
+    tags: ["protein:frango", "ingredient:milho", "ingredient:queijo"],
     ingredients: [
       "12 tortillas de milho",
       "400 g de frango cozido e desfiado",
@@ -194,6 +199,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "10 min", cook: "10 min", total: "20 min" },
     yield: "4 unidades",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:queijo", "ingredient:cogumelo"],
     ingredients: [
       "4 tortillas de trigo ou milho grandes",
       "300 g de queijo tipo mussarela ou queijo Oaxaca, ralado",
@@ -222,6 +228,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "30 min", cook: "20 min", total: "50 min" },
     yield: "6 unidades",
     difficulty: "Média-alta",
+    tags: ["protein:vegetariana", "protein:ovo", "ingredient:queijo", "ingredient:pimentao", "ingredient:tomate"],
     ingredients: [
       "6 pimentões poblano (ou pimentão verde grande, na falta do poblano)",
       "300 g de queijo tipo Oaxaca ou muçarela, em tiras",
@@ -257,6 +264,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "1h + hidratar folhas", cook: "1h30", total: "2h30" },
     yield: "16 unidades",
     difficulty: "Alta",
+    tags: ["protein:frango", "protein:suino", "ingredient:milho"],
     ingredients: [
       "20 folhas de milho secas (para tamales), hidratadas em água morna por 30 minutos",
       "500 g de massa de milho (masa harina, hidratada com caldo conforme instrução da embalagem)",
@@ -292,6 +300,7 @@ window.RECIPES["mexico"] = [
     time: { prep: "15 min", cook: "0 min", total: "15 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:tomate", "ingredient:limao"],
     ingredients: [
       "3 abacates maduros",
       "1/2 cebola roxa picada bem fina",

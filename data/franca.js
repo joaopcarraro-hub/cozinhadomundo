@@ -14,6 +14,7 @@ window.RECIPES["franca"] = [
     time: { prep: "15 min", cook: "5 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:ave"],
     ingredients: [
       "2 fatias de foie gras fresco, cerca de 2 cm de espessura",
       "Sal e pimenta a gosto",
@@ -44,6 +45,7 @@ window.RECIPES["franca"] = [
     time: { prep: "25 min", cook: "15 min", total: "40 min" },
     yield: "2-4 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "ingredient:tomate", "ingredient:azeitona", "ingredient:ovo"],
     ingredients: [
       "200 g de atum fresco (ou em conserva de boa qualidade, em azeite)",
       "200 g de vagem, cozida al dente",
@@ -79,6 +81,7 @@ window.RECIPES["franca"] = [
     time: { prep: "30 min + 8h molho do feijão", cook: "3h", total: "≈12h" },
     yield: "6-8 porções",
     difficulty: "Alta",
+    tags: ["protein:ave", "protein:suino", "ingredient:feijao"],
     ingredients: [
       "500 g de feijão branco, de molho por 8h",
       "4 coxas de confit de pato (ver receita, categoria Aves)",
@@ -117,6 +120,7 @@ window.RECIPES["franca"] = [
     time: { prep: "25 min", cook: "1h30", total: "1h55" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:cogumelo"],
     ingredients: [
       "1,2 kg de vitela (paleta ou peito), em cubos",
       "1 cebola espetada com 1 cravo",
@@ -158,6 +162,7 @@ window.RECIPES["franca"] = [
     time: { prep: "25 min", cook: "1h30", total: "1h55" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:cordeiro", "ingredient:batata", "ingredient:ervilha"],
     ingredients: [
       "1,2 kg de paleta ou pescoço de cordeiro, em cubos",
       "2 colheres (sopa) de óleo",

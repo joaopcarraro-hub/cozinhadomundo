@@ -11,6 +11,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "20 min + 2h marinada", cook: "10 min", total: "2h30" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi"],
     ingredients: [
       "600 g de contrafilé ou alcatra, fatiado bem fino",
       "1 pera asiática (ou pera comum), ralada",
@@ -44,6 +45,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "20 min + 4h marinada", cook: "10 min", total: "4h30" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi"],
     ingredients: [
       "1 kg de costela bovina cortada estilo 'flanken' (fatias finas cruzando o osso)",
       "1 pera asiática ralada",
@@ -79,6 +81,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "35 min", cook: "20 min", total: "55 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "protein:ovo", "ingredient:arroz"],
     ingredients: [
       "4 xícaras de arroz cozido, quente",
       "200 g de carne bovina em tiras finas (temperada como bulgogi simplificado: shoyu, açúcar, alho, óleo de gergelim)",
@@ -115,6 +118,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "25 min", cook: "15 min", total: "40 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:cogumelo"],
     ingredients: [
       "250 g de macarrão de batata-doce (glass noodles / dangmyeon)",
       "150 g de carne bovina em tiras finas",
@@ -151,6 +155,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "3-4 porções",
     difficulty: "Fácil",
+    tags: ["protein:ovo", "ingredient:arroz"],
     ingredients: [
       "500 g de tteok (bolinhos de arroz cilíndricos coreanos), frescos ou descongelados",
       "500 ml de caldo de anchova ou caldo de peixe (dashi funciona como substituto)",
@@ -184,6 +189,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "protein:ovo", "ingredient:arroz"],
     ingredients: [
       "2 xícaras de arroz cozido, de preferência do dia anterior (mais seco)",
       "200 g de kimchi bem fermentado, picado (ver receita)",
@@ -219,6 +225,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "40 min + 2h salga", cook: "0 min", total: "≈3h + fermentação" },
     yield: "≈1,5 kg",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "ingredient:gengibre"],
     ingredients: [
       "1 repolho napa grande, cortado em quartos ou tiras grandes",
       "100 g de sal grosso",
@@ -250,6 +257,7 @@ window.RECIPES["coreia"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "protein:boi", "protein:ovo"],
     ingredients: [
       "400 g de tofu macio (silken tofu), não escorrido",
       "100 g de carne suína ou bovina em tiras finas (ou camarão)",

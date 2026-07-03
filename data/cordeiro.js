@@ -11,6 +11,7 @@ window.RECIPES["cordeiro"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "2-3 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "1 carré de cordeiro (costelinha francesa, ossos limpos), cerca de 8 costelas",
       "2 dentes de alho picados",
@@ -45,6 +46,7 @@ window.RECIPES["cordeiro"] = [
     time: { prep: "25 min", cook: "3h30", total: "3h55" },
     yield: "6-8 porções",
     difficulty: "Média",
+    tags: ["ingredient:vinho"],
     ingredients: [
       "1 pernil de cordeiro inteiro (2-2,5 kg), com osso",
       "5 dentes de alho, alguns inteiros e outros fatiados (para fincar na carne)",
@@ -80,6 +82,7 @@ window.RECIPES["cordeiro"] = [
     time: { prep: "20 min", cook: "2h30", total: "2h50" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["ingredient:vinho"],
     ingredients: [
       "4 shanks de cordeiro (jarrete/canela, com osso)",
       "Farinha de trigo, para empanar levemente",
@@ -117,6 +120,7 @@ window.RECIPES["cordeiro"] = [
     time: { prep: "20 min", cook: "2h30", total: "2h50" },
     yield: "4-6 porções (para massa)",
     difficulty: "Média",
+    tags: ["ingredient:vinho", "ingredient:tomate"],
     ingredients: [
       "800 g de pernil ou paleta de cordeiro, em cubos ou moído grosseiramente",
       "3 colheres (sopa) de azeite",

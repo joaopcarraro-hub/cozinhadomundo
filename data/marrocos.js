@@ -10,6 +10,7 @@ window.RECIPES["marrocos"] = [
     time: { prep: "25 min", cook: "1h45", total: "2h10" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:cordeiro", "ingredient:mel", "ingredient:castanha"],
     ingredients: [
       "1 kg de paleta de cordeiro, em cubos grandes",
       "3 colheres (sopa) de azeite",
@@ -48,6 +49,7 @@ window.RECIPES["marrocos"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:castanha"],
     ingredients: [
       "400 g de cuscuz (sêmola pré-cozida)",
       "450 ml de água ou caldo de legumes, fervendo",
@@ -80,6 +82,7 @@ window.RECIPES["marrocos"] = [
     time: { prep: "50 min", cook: "45 min", total: "1h35" },
     yield: "6-8 porções",
     difficulty: "Alta",
+    tags: ["protein:frango", "protein:ovo", "ingredient:ovo", "ingredient:castanha"],
     ingredients: [
       "1 frango inteiro, em pedaços (ou 6 sobrecoxas)",
       "2 cebolas picadas",
@@ -119,6 +122,7 @@ window.RECIPES["marrocos"] = [
     time: { prep: "20 min", cook: "1h", total: "1h20" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "protein:cordeiro", "ingredient:tomate", "ingredient:lentilha", "ingredient:grao-de-bico", "ingredient:limao"],
     ingredients: [
       "200 g de carne bovina ou cordeiro, em cubos pequenos",
       "3 colheres (sopa) de azeite",

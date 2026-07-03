@@ -11,6 +11,7 @@ window.RECIPES["peixes"] = [
     time: { prep: "10 min", cook: "10 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["ingredient:limao"],
     ingredients: [
       "2 filés de linguado (ou sole), com pele se possível",
       "Farinha de trigo, para empanar levemente",
@@ -44,6 +45,7 @@ window.RECIPES["peixes"] = [
     time: { prep: "20 min", cook: "20 min", total: "40 min" },
     yield: "2 porções",
     difficulty: "Média-alta",
+    tags: ["protein:frutos-do-mar", "ingredient:tomate", "ingredient:cogumelo", "ingredient:limao"],
     ingredients: [
       "2 filés de linguado",
       "8 camarões médios, limpos",
@@ -81,6 +83,7 @@ window.RECIPES["peixes"] = [
     time: { prep: "20 min", cook: "18 min", total: "38 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["ingredient:tomate", "ingredient:limao"],
     ingredients: [
       "2 filés de peixe branco (robalo, badejo ou linguado), cerca de 180 g cada",
       "1 abobrinha pequena, em fatias finas",
@@ -117,6 +120,7 @@ window.RECIPES["peixes"] = [
     time: { prep: "15 min (+ 48-72h de cura prévia)", cook: "0 min", total: "15 min" },
     yield: "4-6 porções (entrada)",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "1 receita de Gravlax já curado (ver receita, categoria Técnicas Contemporâneas Avançadas)",
       "Para o molho hovmästarsås (mostarda e endro): 3 colheres (sopa) de mostarda Dijon, 1 colher (sopa) de mostarda em grãos, 2 colheres (sopa) de açúcar, 2 colheres (sopa) de vinagre branco, 100 ml de óleo neutro, endro fresco picado",
@@ -148,6 +152,7 @@ window.RECIPES["peixes"] = [
     time: { prep: "40 min (+ dessalgar o bacalhau)", cook: "20 min", total: "1h" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["ingredient:batata", "ingredient:ovo", "ingredient:azeitona"],
     ingredients: [
       "500 g de bacalhau dessalgado e desfiado (deixe de molho na geladeira por 24-48h, trocando a água algumas vezes)",
       "800 g de batata palha fina (pode ser comprada pronta ou feita em casa, fina como fósforos)",
@@ -183,6 +188,7 @@ window.RECIPES["peixes"] = [
     time: { prep: "30 min (+ dessalgar)", cook: "45 min", total: "1h15" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["ingredient:batata", "ingredient:ovo", "ingredient:azeitona"],
     ingredients: [
       "600 g de bacalhau dessalgado, em postas",
       "800 g de batata, descascada e em rodelas",

@@ -11,6 +11,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "15 min + 4h geladeira", cook: "40 min", total: "≈5h" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "500 ml de creme de leite fresco",
       "1 fava de baunilha (ou 1 colher (chá) de extrato)",
@@ -43,6 +44,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "20 min + 4h geladeira", cook: "50 min", total: "≈5h" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "Para o caramelo: 150 g de açúcar + 50 ml de água",
       "Para o creme: 500 ml de leite integral",
@@ -75,6 +77,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "15 min + 4h geladeira", cook: "10 min", total: "≈4h30" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "500 ml de creme de leite fresco",
       "100 ml de leite integral",
@@ -108,6 +111,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "40 min", cook: "35 min", total: "1h15" },
     yield: "12 unidades",
     difficulty: "Média-alta",
+    tags: ["ingredient:chocolate", "ingredient:ovo"],
     ingredients: [
       "Para a massa choux: 125 ml de água, 125 ml de leite, 110 g de manteiga, 1 pitada de sal, 1 colher (chá) de açúcar, 140 g de farinha de trigo, 4-5 ovos",
       "Para o recheio: 500 ml de crème pâtissière (creme de confeiteiro) de baunilha ou chocolate",
@@ -137,6 +141,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "40 min", cook: "30 min", total: "1h10" },
     yield: "20 unidades pequenas",
     difficulty: "Média",
+    tags: ["ingredient:chocolate", "ingredient:castanha"],
     ingredients: [
       "1 receita de massa choux (ver receita Éclair)",
       "500 ml de sorvete de creme ou baunilha",
@@ -167,6 +172,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "50 min", cook: "35 min", total: "1h25" },
     yield: "1 torta grande (6-8 porções)",
     difficulty: "Alta",
+    tags: ["ingredient:castanha"],
     ingredients: [
       "1 receita de massa choux (ver receita Éclair)",
       "Amêndoas laminadas, para decorar a massa antes de assar",
@@ -196,6 +202,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "1h", cook: "40 min", total: "1h40" },
     yield: "1 torta grande (6-8 porções)",
     difficulty: "Alta",
+    tags: [],
     ingredients: [
       "1 disco de massa folhada (25 cm de diâmetro)",
       "1 receita de massa choux (ver receita Éclair), suficiente para o anel e para 12-15 bolinhas pequenas",
@@ -227,6 +234,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "25 min", cook: "45 min", total: "1h10" },
     yield: "6-8 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "6-8 maçãs (tipo gala ou fuji), descascadas, sem o miolo, cortadas ao meio",
       "150 g de açúcar",
@@ -258,6 +266,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "30 min + 1h geladeira", cook: "35 min", total: "≈2h05" },
     yield: "8 porções",
     difficulty: "Média",
+    tags: ["ingredient:limao", "ingredient:ovo"],
     ingredients: [
       "Para a massa (pâte sucrée): 250 g de farinha, 120 g de manteiga gelada em cubos, 100 g de açúcar de confeiteiro, 1 ovo, 1 pitada de sal",
       "Para o recheio (lemon curd): 4 ovos inteiros + 2 gemas, 200 g de açúcar, 150 ml de suco de limão-siciliano (ou tahiti) fresco, raspas de 2 limões, 150 g de manteiga gelada em cubos",
@@ -288,6 +297,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "20 min + 6h geladeira", cook: "1h", total: "≈7h20" },
     yield: "8-10 porções",
     difficulty: "Média",
+    tags: ["ingredient:queijo", "ingredient:limao"],
     ingredients: [
       "Para a base: 200 g de biscoito tipo maisena ou graham, triturado, 80 g de manteiga derretida",
       "Para o recheio: 700 g de cream cheese em temperatura ambiente, 200 g de açúcar, 3 ovos + 1 gema, 200 ml de creme de leite fresco (ou azedo), 1 colher (sopa) de amido de milho, raspas de 1 limão, 1 colher (chá) de extrato de baunilha"
@@ -317,6 +327,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "40 min", cook: "45 min", total: "1h25 + resfriar" },
     yield: "8-10 porções",
     difficulty: "Alta",
+    tags: ["ingredient:chocolate", "ingredient:mel"],
     ingredients: [
       "Para o bolo: 150 g de chocolate meio amargo, 150 g de manteiga, 150 g de açúcar (dividido), 6 ovos (claras e gemas separadas), 150 g de farinha de trigo, 1 pitada de sal",
       "Para o recheio: 200 g de geleia de damasco (peneirada, sem pedaços)",
@@ -347,6 +358,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "1h30", cook: "20 min", total: "1h50 + resfriar" },
     yield: "10-12 porções",
     difficulty: "Alta",
+    tags: ["ingredient:chocolate", "ingredient:cafe", "ingredient:castanha"],
     ingredients: [
       "Para o biscuit Joconde: 150 g de farinha de amêndoas, 150 g de açúcar de confeiteiro, 4 ovos, 40 g de farinha de trigo, 30 g de manteiga derretida, 4 claras, 20 g de açúcar",
       "Para a calda de café: 150 ml de café forte, 50 g de açúcar",
@@ -380,6 +392,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "40 min", cook: "30 min", total: "1h10 + resfriar" },
     yield: "6-8 porções",
     difficulty: "Alta",
+    tags: ["ingredient:chocolate"],
     ingredients: [
       "1 receita de massa folhada (ou 2 discos prontos de boa qualidade)",
       "Açúcar de confeiteiro para polvilhar durante o cozimento",
@@ -412,6 +425,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "30 min + 4h geladeira", cook: "0 min", total: "≈4h30" },
     yield: "8 porções",
     difficulty: "Fácil",
+    tags: ["ingredient:cafe", "ingredient:queijo", "ingredient:chocolate"],
     ingredients: [
       "500 g de mascarpone em temperatura ambiente",
       "5 ovos (gemas e claras separadas)",
@@ -448,6 +462,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "40 min + 30 min geladeira", cook: "15 min", total: "1h25" },
     yield: "16 unidades",
     difficulty: "Média-alta",
+    tags: ["ingredient:queijo", "ingredient:chocolate", "ingredient:vinho", "ingredient:castanha"],
     ingredients: [
       "Para a massa: 300 g de farinha de trigo, 30 g de açúcar, 1 pitada de sal, 30 g de manteiga gelada, 1 ovo, 100 ml de vinho branco (Marsala ou vinho seco), 1 colher (chá) de vinagre",
       "Óleo para fritar",
@@ -480,6 +495,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "20 min", cook: "1h15 + esfriar no forno", total: "≈2h30" },
     yield: "8 porções",
     difficulty: "Média",
+    tags: ["ingredient:ovo"],
     ingredients: [
       "6 claras em temperatura ambiente",
       "350 g de açúcar",
@@ -511,6 +527,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "30 min + 1h30 fermentação", cook: "20 min", total: "≈2h30" },
     yield: "8 unidades",
     difficulty: "Média-alta",
+    tags: ["ingredient:ovo"],
     ingredients: [
       "Para a massa: 250 g de farinha de trigo, 7 g de fermento biológico seco, 30 g de açúcar, 4 ovos, 80 ml de leite morno, 80 g de manteiga derretida, 1 pitada de sal",
       "Para a calda: 500 ml de água, 200 g de açúcar, raspas de 1 laranja, 100 ml de rum",
@@ -541,6 +558,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "15 min", cook: "25 min", total: "40 min" },
     yield: "16 pedaços",
     difficulty: "Fácil",
+    tags: ["ingredient:chocolate", "ingredient:castanha"],
     ingredients: [
       "200 g de chocolate meio amargo, picado",
       "180 g de manteiga",
@@ -576,6 +594,7 @@ window.RECIPES["sobremesas-classicas"] = [
     time: { prep: "15 min", cook: "10 min", total: "25 min" },
     yield: "4 unidades",
     difficulty: "Média",
+    tags: ["ingredient:chocolate"],
     ingredients: [
       "150 g de chocolate meio amargo",
       "150 g de manteiga (+ extra para untar)",

@@ -14,6 +14,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "30 min + 2h marinada", cook: "1h30", total: "≈4h" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:ave", "ingredient:mandioca"],
     ingredients: [
       "1 pato inteiro, em pedaços",
       "4 dentes de alho amassados",
@@ -48,6 +49,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "20 min", cook: "5-7 dias (folha) + 3h (montagem final)", total: "Vários dias" },
     yield: "10 porções",
     difficulty: "Alta (exige tempo)",
+    tags: ["protein:suino", "protein:boi", "ingredient:mandioca"],
     ingredients: [
       "2 kg de folha de mandioca brava, moída (maniva/maniçoba, encontrada já moída em mercados paraenses ou congelada)",
       "300 g de carne seca dessalgada",
@@ -82,6 +84,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "30 min", cook: "45 min", total: "1h15" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:peixe", "ingredient:mandioca", "ingredient:azeitona"],
     ingredients: [
       "800 g de pirarucu salgado (ou fresco, dessalgado se necessário)",
       "1 kg de banana-da-terra madura",
@@ -119,6 +122,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "30 min", cook: "1h30", total: "2h" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:suino"],
     ingredients: [
       "1 kg de miúdos de porco variados (fígado, coração, rim, bucho), limpos e em cubos",
       "300 ml de sangue de porco (opcional, tradicional, pode omitir)",
@@ -155,6 +159,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "15 min + dessalgar", cook: "30 min", total: "≈1h" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:mandioca"],
     ingredients: [
       "600 g de carne de sol, dessalgada (de molho em água ou leite por 4-8h, trocando o líquido)",
       "1 kg de macaxeira (mandioca), descascada",
@@ -189,6 +194,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "15 min", cook: "30 min", total: "45 min" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["ingredient:arroz"],
     ingredients: [
       "8-10 pequis inteiros (frescos ou em conserva)",
       "3 colheres (sopa) de óleo",
@@ -219,6 +225,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "20 min + 1h marinada", cook: "25 min", total: "1h45" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe"],
     ingredients: [
       "4 postas de peixe pintado (ou surubim), cerca de 250 g cada",
       "Suco de 2 limões",
@@ -249,6 +256,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "20 min", cook: "30 min", total: "50 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "ingredient:mandioca"],
     ingredients: [
       "800 g de posta de peixe de água doce (pintado, pacu ou dourado)",
       "3 colheres (sopa) de óleo",
@@ -286,6 +294,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "20 min", cook: "40 min", total: "1h" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango"],
     ingredients: [
       "1 frango caipira, em pedaços",
       "500 g de quiabo, em rodelas",
@@ -319,6 +328,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "15 min", cook: "35 min", total: "50 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:ovo"],
     ingredients: [
       "600 g de coxão mole ou patinho, em cubos pequenos",
       "3 colheres (sopa) de óleo",
@@ -357,6 +367,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "protein:suino", "protein:frango", "ingredient:ovo"],
     ingredients: [
       "300 g de carne bovina grelhada (sobras de churrasco ou carne fresca), em cubos ou tiras",
       "200 g de linguiça, em rodelas",
@@ -391,6 +402,7 @@ window.RECIPES["brasil-regional"] = [
     time: { prep: "20 min + 2h marinada", cook: "40 min", total: "3h" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frango", "ingredient:vinho"],
     ingredients: [
       "2 galetos (frangos jovens, pequenos), abertos em borboleta",
       "100 ml de vinho branco seco",

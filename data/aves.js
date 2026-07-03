@@ -11,6 +11,7 @@ window.RECIPES["aves"] = [
     time: { prep: "25 min", cook: "1h30", total: "1h55" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:vinho", "ingredient:cogumelo"],
     ingredients: [
       "1 frango caipira, cortado em 8 pedaços (ou 6-8 sobrecoxas com pele)",
       "150 g de bacon em cubos",
@@ -49,6 +50,7 @@ window.RECIPES["aves"] = [
     time: { prep: "25 min", cook: "20 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:queijo"],
     ingredients: [
       "4 filés de peito de frango grandes",
       "4 fatias de presunto",
@@ -80,6 +82,7 @@ window.RECIPES["aves"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "4 suprêmes de frango (peito com o osso da asa, pele mantida)",
       "2 colheres (sopa) de manteiga",
@@ -110,6 +113,7 @@ window.RECIPES["aves"] = [
     time: { prep: "30 min", cook: "1h20", total: "1h50" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:castanha"],
     ingredients: [
       "1 frango inteiro (1,8-2 kg)",
       "200 g de farofa ou farinha de rosca temperada",
@@ -147,6 +151,7 @@ window.RECIPES["aves"] = [
     time: { prep: "20 min + 12-24h salga", cook: "2h30", total: "≈15-27h" },
     yield: "4 porções (coxas)",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "4 coxas de pato com sobrecoxa",
       "40 g de sal grosso",
@@ -178,6 +183,7 @@ window.RECIPES["aves"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "1 peito de pato (magret), com a pele",
       "Sal e pimenta-do-reino a gosto",

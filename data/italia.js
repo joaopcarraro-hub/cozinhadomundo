@@ -16,6 +16,7 @@ window.RECIPES["italia"] = [
     time: { prep: "20 min", cook: "30 min", total: "50 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:berinjela", "ingredient:tomate", "ingredient:queijo"],
     ingredients: [
       "350 g de rigatoni ou penne",
       "1 berinjela grande, em cubos",
@@ -51,6 +52,7 @@ window.RECIPES["italia"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:queijo"],
     ingredients: [
       "200 g de rigatoni ou spaghetti",
       "150 g de guanciale, em tiras",
@@ -80,6 +82,7 @@ window.RECIPES["italia"] = [
     time: { prep: "20 min", cook: "3h", total: "3h20" },
     yield: "6 porções (para massa)",
     difficulty: "Média",
+    tags: ["protein:boi", "protein:suino", "ingredient:tomate", "ingredient:vinho"],
     ingredients: [
       "500 g de carne bovina moída (patinho ou acém)",
       "150 g de pancetta ou bacon, em cubos pequenos",
@@ -119,6 +122,7 @@ window.RECIPES["italia"] = [
     time: { prep: "15 min", cook: "10 min", total: "25 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "protein:suino", "ingredient:vinho"],
     ingredients: [
       "8 filés finos de vitela (ou frango/porco, alternativas comuns)",
       "8 fatias de presunto de Parma",
@@ -155,6 +159,7 @@ window.RECIPES["italia"] = [
     time: { prep: "5 min", cook: "10 min", total: "15 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo", "ingredient:vinho"],
     ingredients: [
       "4 gemas",
       "60 g de açúcar",
@@ -182,6 +187,7 @@ window.RECIPES["italia"] = [
     time: { prep: "30 min + 6h congelador", cook: "5 min", total: "≈6h30" },
     yield: "6-8 porções",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "ingredient:ovo"],
     ingredients: [
       "4 gemas",
       "100 g de açúcar (dividido)",
@@ -215,6 +221,7 @@ window.RECIPES["italia"] = [
     time: { prep: "5 min", cook: "0 min", total: "5 min" },
     yield: "1 porção",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:cafe"],
     ingredients: [
       "2 bolas de sorvete de creme (ou baunilha) de boa qualidade",
       "1 dose de café espresso, bem quente e recém-tirado",

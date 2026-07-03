@@ -11,6 +11,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "1 min", cook: "4 a 10 min", total: "5 a 11 min" },
     yield: "por ovo",
     difficulty: "Fácil",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "Ovos em temperatura ambiente (saem da geladeira 20-30 min antes)",
       "Água suficiente para cobrir os ovos",
@@ -37,6 +38,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "2 min", cook: "3 min", total: "5 min" },
     yield: "por ovo",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "1 ovo bem fresco por porção",
       "1 L de água",
@@ -66,6 +68,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "1 min", cook: "6 min", total: "7 min" },
     yield: "por ovo",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "Ovos em temperatura ambiente",
       "Água suficiente para cobrir"
@@ -91,6 +94,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "2 min", cook: "45-60 min", total: "≈1h" },
     yield: "por ovo",
     difficulty: "Média (precisa de termômetro)",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "Ovos com casca, em temperatura ambiente",
       "Água suficiente para um banho controlado",
@@ -119,6 +123,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "1 min", cook: "3 min", total: "4 min" },
     yield: "por ovo",
     difficulty: "Fácil",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "1 ovo",
       "1 colher (chá) de manteiga ou óleo neutro",
@@ -145,6 +150,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "2 min", cook: "8 min", total: "10 min" },
     yield: "por ovo",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "1 ovo por porção",
       "200 ml de azeite de oliva (ou óleo neutro), o suficiente para submergir parcialmente o ovo",
@@ -174,6 +180,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "5 min", cook: "12 min", total: "17 min" },
     yield: "por porção",
     difficulty: "Fácil",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "1-2 ovos por ramequim",
       "1 colher (sopa) de creme de leite fresco por ramequim",
@@ -204,6 +211,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "3 min", cook: "10 min", total: "13 min" },
     yield: "por porção",
     difficulty: "Fácil",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "1-2 ovos por ramequim",
       "1 colher (chá) de manteiga",
@@ -233,6 +241,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "2 min", cook: "6 min", total: "8 min" },
     yield: "1 porção (3 ovos)",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "3 ovos",
       "20 g de manteiga gelada, em cubos (dividida)",
@@ -263,6 +272,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "2 min", cook: "4 min", total: "6 min" },
     yield: "1 porção (3 ovos)",
     difficulty: "Fácil",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "3 ovos",
       "2 colheres (sopa) de leite ou creme de leite",
@@ -291,6 +301,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "2 min", cook: "3 min", total: "5 min" },
     yield: "1 porção (3 ovos)",
     difficulty: "Média-alta",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "3 ovos",
       "1 colher (sopa) de água ou leite (opcional)",
@@ -321,6 +332,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo", "ingredient:batata"],
     ingredients: [
       "6 ovos grandes",
       "500 g de batata, descascada e fatiada fina",
@@ -352,6 +364,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:ovo", "protein:suino", "ingredient:ovo", "ingredient:queijo"],
     ingredients: [
       "8 ovos",
       "80 ml de leite ou creme de leite",
@@ -386,6 +399,7 @@ window.RECIPES["ovos-basicos"] = [
     time: { prep: "10 min", cook: "10 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo", "ingredient:molho-de-soja"],
     ingredients: [
       "4 ovos",
       "2 colheres (sopa) de dashi (caldo japonês) ou água",

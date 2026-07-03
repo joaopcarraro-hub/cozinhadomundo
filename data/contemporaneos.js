@@ -12,6 +12,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "15 min + 12h coando", cook: "0 min", total: "≈12h15" },
     yield: "≈500 ml",
     difficulty: "Fácil (exige paciência)",
+    tags: ["ingredient:tomate"],
     ingredients: [
       "1,5 kg de tomate bem maduro, picado grosseiramente",
       "1 pitada de sal",
@@ -38,6 +39,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min + 3h geladeira", cook: "10 min", total: "≈3h20" },
     yield: "4 porções pequenas",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "500 ml de consommé clarificado (ver receita Consommé, em Sopas) ou água de tomate",
       "4 g de folhas de gelatina (ou 2 g de ágar-ágar para versão que segura em temperatura ambiente)",
@@ -67,6 +69,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "15 min + 2h gelando", cook: "5 min", total: "≈2h20" },
     yield: "≈500 ml de espuma",
     difficulty: "Média (exige sifão)",
+    tags: [],
     ingredients: [
       "400 ml de base líquida saborizada (purê de legume coado, caldo encorpado, ou creme)",
       "2 folhas de gelatina (4 g) hidratadas, ou 4 g de lecitina de soja (para versões sem gelatina)",
@@ -96,6 +99,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "15 min", cook: "5 min", total: "20 min" },
     yield: "≈300 ml de espuma",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "300 ml de base líquida saborizada (caldo, purê coado ou suco de fruta)",
       "3 g de lecitina de soja em pó",
@@ -124,6 +128,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "≈400 ml",
     difficulty: "Média",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "500 g do vegetal escolhido (batata, couve-flor, ervilha, cenoura, aipo-rábano), descascado e picado",
       "100 ml de creme de leite fresco (ou caldo, para versão mais leve)",
@@ -155,6 +160,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "5 min", total: "15 min + gelar" },
     yield: "≈200 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:limao"],
     ingredients: [
       "200 ml de suco cítrico fresco (limão, laranja ou uma mistura)",
       "40 g de açúcar (ajustar conforme a acidez da fruta)",
@@ -181,6 +187,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min + gelar" },
     yield: "≈200 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:vinho"],
     ingredients: [
       "300 ml de vinho tinto (ou branco) encorpado",
       "30 g de açúcar",
@@ -208,6 +215,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "15 min", cook: "5 min", total: "20 min + gelar" },
     yield: "≈150 ml",
     difficulty: "Média",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "100 g de folhas de ervas frescas (manjericão, salsinha, coentro ou uma mistura), sem talos grossos",
       "150 ml de água",
@@ -238,6 +246,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "8 min", total: "18 min" },
     yield: "≈15 unidades",
     difficulty: "Média",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "50 g de manteiga derretida",
       "50 g de açúcar de confeiteiro (para versão doce) ou queijo parmesão ralado (para versão salgada)",
@@ -266,6 +275,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "15 min", cook: "15 min", total: "30 min" },
     yield: "1 porção generosa",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "1 vegetal de sua escolha (beterraba, cenoura, batata-doce, aipim), fatiado bem fino numa mandolina",
       "Azeite de oliva ou óleo neutro",
@@ -293,6 +303,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "0 min (crua) ou 10 min (tostada)", total: "10-20 min" },
     yield: "Para cobrir 1 peça de carne média",
     difficulty: "Fácil",
+    tags: ["protein:cordeiro", "protein:peixe"],
     ingredients: [
       "100 g de farinha de rosca (ou pão amanhecido processado)",
       "30 g de manteiga em temperatura ambiente",
@@ -322,6 +333,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "12 min", total: "22 min" },
     yield: "≈200 g",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:castanha", "ingredient:mandioca"],
     ingredients: [
       "150 g de farinha de mandioca crua",
       "80 g de castanha-do-pará (ou castanha de caju, amêndoas), picada grosseiramente",
@@ -351,6 +363,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min + 30 min geladeira", cook: "15 min", total: "≈55 min" },
     yield: "≈200 g",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:queijo"],
     ingredients: [
       "100 g de farinha de trigo",
       "80 g de manteiga gelada, em cubos",
@@ -382,6 +395,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "5 min", cook: "5 min", total: "10 min + descansar" },
     yield: "≈150 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "150 ml de azeite de oliva (ou óleo neutro, conforme o uso)",
       "30 g de ervas frescas (manjericão, salsinha, coentro) ou especiarias (páprica, açafrão)",
@@ -408,6 +422,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "0 min", total: "10 min" },
     yield: "≈200 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "3 partes de azeite de oliva extra virgem",
       "1 parte de ácido (vinagre balsâmico, vinagre de xerez ou suco cítrico)",
@@ -437,6 +452,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "0 min", total: "10 min" },
     yield: "≈250 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "100 ml de leite integral, em temperatura ambiente",
       "300 ml de óleo neutro (girassol ou canola)",
@@ -465,6 +481,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "0 min", total: "10 min" },
     yield: "≈200 ml",
     difficulty: "Média",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "4-5 dentes de alho",
       "1 pitada de sal grosso",
@@ -494,6 +511,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "0 min", total: "10 min" },
     yield: "≈150 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:limao"],
     ingredients: [
       "100 ml de suco cítrico fresco (laranja, limão ou uma mistura)",
       "1 gema (ou 1 colher (sopa) de lecitina de soja, para versão vegana)",
@@ -521,6 +539,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "2 min", cook: "8 min", total: "10 min" },
     yield: "≈250 ml",
     difficulty: "Média",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "250 g de manteiga gelada, em cubos",
       "2 colheres (sopa) de água"
@@ -548,6 +567,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "5 min", cook: "20 min", total: "25 min" },
     yield: "4 unidades",
     difficulty: "Média",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "4 gemas bem frescas",
       "300 ml de azeite de oliva (ou óleo neutro)",
@@ -574,6 +594,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min + 24-48h geladeira", cook: "0 min", total: "24-48h" },
     yield: "4-6 unidades",
     difficulty: "Fácil (exige tempo)",
+    tags: ["protein:ovo", "ingredient:ovo"],
     ingredients: [
       "6 gemas bem frescas",
       "300 g de sal grosso",
@@ -605,6 +626,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "5 min", total: "15 min + 1h descanso" },
     yield: "≈300 g",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "300 g de vegetal à sua escolha (pepino, cebola roxa, cenoura, rabanete), fatiado fino",
       "200 ml de vinagre (branco, de arroz ou de maçã)",
@@ -635,6 +657,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "400 g de legumes (cenoura, nabo ou cebola pérola), descascados e cortados uniformemente",
       "40 g de manteiga",
@@ -663,6 +686,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "25 min", cook: "0 min (técnica de corte)", total: "25 min" },
     yield: "Conforme a quantidade de legumes",
     difficulty: "Alta (técnica de faca)",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "Legumes firmes (cenoura, batata, nabo, abobrinha)",
       "Uma faca pequena e bem afiada (faca de torneamento/pitanga, se tiver)"
@@ -688,6 +712,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "20 min", cook: "40 min", total: "1h" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:vegetariana"],
     ingredients: [
       "1 vegetal principal (ex: cenoura, beterraba ou abóbora), em quantidade generosa",
       "Azeite de oliva",
@@ -718,6 +743,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "≈300 g",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:cogumelo"],
     ingredients: [
       "500 g de cogumelos (paris ou uma mistura), picados bem fino",
       "1 échalote picada bem fina",
@@ -747,6 +773,7 @@ window.RECIPES["contemporaneos"] = [
     time: { prep: "20 min", cook: "3-6h", total: "≈4-7h" },
     yield: "≈2 L",
     difficulty: "Média",
+    tags: ["protein:frango", "protein:boi"],
     ingredients: [
       "2 kg de ossos (frango/vitela para fundo claro; boi/vitela para fundo escuro)",
       "1 cebola, 2 cenouras, 2 talos de salsão — em pedaços grandes (mirepoix)",

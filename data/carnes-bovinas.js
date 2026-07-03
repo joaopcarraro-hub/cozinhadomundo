@@ -11,6 +11,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "1h + 1h geladeira", cook: "35 min", total: "≈2h45" },
     yield: "4-6 porções",
     difficulty: "Alta",
+    tags: ["protein:suino", "ingredient:cogumelo"],
     ingredients: [
       "800 g de filé mignon em peça central (parte mais uniforme)",
       "1 receita de duxelles (ver receita, categoria Clássicos Contemporâneos)",
@@ -46,6 +47,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "10 min", cook: "25 min", total: "35 min" },
     yield: "2-3 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "600-700 g de filé mignon, na parte central mais grossa, em peça única",
       "2 colheres (sopa) de óleo neutro",
@@ -78,6 +80,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "2 filés mignon grossos (ou contrafilé), cerca de 200 g cada",
       "3 colheres (sopa) de grãos de pimenta-do-reino preta, levemente amassados",
@@ -112,6 +115,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "10 min", cook: "15 min", total: "25 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["ingredient:cogumelo"],
     ingredients: [
       "2 filés mignon (ou contrafilé fino), cerca de 180 g cada, levemente achatados",
       "1 colher (sopa) de óleo",
@@ -149,6 +153,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "2 porções",
     difficulty: "Alta",
+    tags: ["protein:ave", "ingredient:vinho"],
     ingredients: [
       "2 medalhões de filé mignon (tournedos), cerca de 4-5 cm de altura",
       "2 fatias de pão brioche ou pão de forma, do tamanho dos medalhões",
@@ -186,6 +191,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "30 min", cook: "3h", total: "3h30" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:vinho", "ingredient:cogumelo"],
     ingredients: [
       "1,5 kg de acém ou músculo bovino, em cubos grandes",
       "200 g de bacon em cubos",
@@ -227,6 +233,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "20 min", cook: "2h", total: "2h20" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["ingredient:vinho", "ingredient:tomate", "ingredient:limao"],
     ingredients: [
       "4 postas de ossobuco (canela bovina ou de vitela com o osso e o tutano), cerca de 4 cm de espessura",
       "Farinha de trigo, para empanar levemente",
@@ -265,6 +272,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "20 min", cook: "2h", total: "2h20" },
     yield: "6 porções",
     difficulty: "Fácil",
+    tags: ["ingredient:tomate", "ingredient:pimentao"],
     ingredients: [
       "1,2 kg de acém bovino, em cubos grandes",
       "3 colheres (sopa) de banha ou óleo",
@@ -304,6 +312,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["ingredient:tomate", "ingredient:queijo"],
     ingredients: [
       "4 bifes de contrafilé ou patinho, finos",
       "Sal e pimenta a gosto",
@@ -337,6 +346,7 @@ window.RECIPES["carnes-bovinas"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "2-4 porções",
     difficulty: "Fácil",
+    tags: ["ingredient:vinho", "ingredient:cogumelo"],
     ingredients: [
       "4 medalhões de filé mignon, cerca de 150-180 g cada",
       "1 colher (sopa) de óleo",

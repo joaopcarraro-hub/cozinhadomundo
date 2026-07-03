@@ -11,6 +11,7 @@ window.RECIPES["libano"] = [
     time: { prep: "15 min", cook: "0 min", total: "15 min" },
     yield: "≈500 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:grao-de-bico", "ingredient:limao"],
     ingredients: [
       "400 g de grão-de-bico cozido (ou 2 latas, escorridas, reservando o líquido)",
       "80 g de tahine (pasta de gergelim)",
@@ -44,6 +45,7 @@ window.RECIPES["libano"] = [
     time: { prep: "15 min", cook: "35 min", total: "50 min" },
     yield: "≈400 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:berinjela", "ingredient:limao"],
     ingredients: [
       "2 berinjelas grandes",
       "60 g de tahine",
@@ -77,6 +79,7 @@ window.RECIPES["libano"] = [
     time: { prep: "30 min", cook: "0 min", total: "30 min" },
     yield: "4 porções (entrada)",
     difficulty: "Média",
+    tags: ["protein:boi"],
     ingredients: [
       "300 g de carne bovina moída (patinho ou coxão mole), bem fresca e magra",
       "100 g de trigo para quibe (bulgur fino), hidratado",
@@ -108,6 +111,7 @@ window.RECIPES["libano"] = [
     time: { prep: "45 min", cook: "15 min", total: "1h" },
     yield: "20 unidades",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:castanha"],
     ingredients: [
       "Para a casca: 300 g de carne bovina moída, 150 g de trigo para quibe (bulgur fino), hidratado e escorrido, 1/2 cebola ralada, sal e pimenta síria a gosto",
       "Para o recheio: 200 g de carne bovina moída, 1 cebola picada bem fina, 2 colheres (sopa) de azeite, 30 g de pinoli (ou castanha de caju picada), pimenta síria",
@@ -138,6 +142,7 @@ window.RECIPES["libano"] = [
     time: { prep: "20 min + 30 min gelando", cook: "15 min", total: "1h05" },
     yield: "4 porções (8 espetos)",
     difficulty: "Fácil",
+    tags: ["protein:boi", "protein:cordeiro"],
     ingredients: [
       "600 g de carne bovina moída (ou cordeiro, ou uma mistura)",
       "1 cebola ralada e bem escorrida",
@@ -171,6 +176,7 @@ window.RECIPES["libano"] = [
     time: { prep: "25 min", cook: "0 min", total: "25 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:tomate", "ingredient:limao"],
     ingredients: [
       "60 g de trigo para quibe (bulgur fino), hidratado em água fria por 15 minutos e bem escorrido",
       "2 maços grandes de salsinha, picada bem fina",
@@ -204,6 +210,7 @@ window.RECIPES["libano"] = [
     time: { prep: "20 min", cook: "10 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:tomate", "ingredient:limao"],
     ingredients: [
       "2 pães pita, cortados em pedaços e tostados/fritos até crocantes",
       "2 tomates, em cubos",
@@ -237,6 +244,7 @@ window.RECIPES["libano"] = [
     time: { prep: "40 min + 1h fermentação", cook: "15 min", total: "1h55" },
     yield: "20 unidades",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:tomate", "ingredient:limao"],
     ingredients: [
       "Para a massa: 500 g de farinha de trigo, 7 g de fermento biológico seco, 1 colher (sopa) de açúcar, 1 colher (chá) de sal, 280 ml de água morna, 3 colheres (sopa) de azeite",
       "Para o recheio: 400 g de carne bovina moída, 2 tomates picados bem fino, 1 cebola picada bem fina, suco de 1 limão, 2 colheres (sopa) de azeite, hortelã picada, pimenta síria, sal a gosto"

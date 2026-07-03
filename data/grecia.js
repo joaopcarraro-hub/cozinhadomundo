@@ -11,6 +11,7 @@ window.RECIPES["grecia"] = [
     time: { prep: "40 min", cook: "1h", total: "1h40" },
     yield: "6-8 porções",
     difficulty: "Média",
+    tags: ["protein:cordeiro", "protein:boi", "ingredient:berinjela", "ingredient:queijo", "ingredient:tomate"],
     ingredients: [
       "2 berinjelas grandes, em fatias longitudinais",
       "Sal grosso, para salgar as berinjelas",
@@ -48,6 +49,7 @@ window.RECIPES["grecia"] = [
     time: { prep: "20 min + 2h marinada", cook: "10 min", total: "2h30" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango", "protein:suino", "ingredient:limao", "ingredient:iogurte"],
     ingredients: [
       "600 g de peito de frango ou pernil de porco, em cubos",
       "80 ml de azeite de oliva",
@@ -80,6 +82,7 @@ window.RECIPES["grecia"] = [
     time: { prep: "20 min + 4h marinada", cook: "15 min", total: "≈4h35" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "protein:frango", "ingredient:tomate", "ingredient:batata", "ingredient:iogurte"],
     ingredients: [
       "600 g de pernil de porco (ou frango), fatiado bem fino",
       "80 ml de azeite de oliva",
@@ -115,6 +118,7 @@ window.RECIPES["grecia"] = [
     time: { prep: "35 min", cook: "35 min", total: "1h10" },
     yield: "8 porções",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "protein:ovo", "ingredient:espinafre", "ingredient:queijo"],
     ingredients: [
       "500 g de espinafre fresco, picado",
       "1 cebola picada, 3 talos de cebolinha picados",
@@ -152,6 +156,7 @@ window.RECIPES["grecia"] = [
     time: { prep: "45 min", cook: "45 min", total: "1h30" },
     yield: "≈30 unidades",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "ingredient:arroz", "ingredient:limao", "ingredient:iogurte"],
     ingredients: [
       "40 folhas de parreira (uva) em conserva, enxaguadas",
       "1 xícara de arroz",
@@ -188,6 +193,7 @@ window.RECIPES["grecia"] = [
     time: { prep: "15 min", cook: "0 min", total: "15 min" },
     yield: "≈400 ml",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:iogurte"],
     ingredients: [
       "1 pepino grande, ralado",
       "500 g de iogurte grego bem espesso",

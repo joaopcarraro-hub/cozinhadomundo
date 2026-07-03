@@ -11,6 +11,7 @@ window.RECIPES["frutos-do-mar"] = [
     time: { prep: "25 min", cook: "35 min", total: "1h" },
     yield: "4-6 porções",
     difficulty: "Média-alta",
+    tags: ["protein:frango", "ingredient:arroz", "ingredient:tomate", "ingredient:ervilha", "ingredient:pimentao"],
     ingredients: [
       "400 g de arroz tipo bomba (ou arbóreo, na falta do original)",
       "300 g de camarão médio, limpo (cascas reservadas)",
@@ -56,6 +57,7 @@ window.RECIPES["frutos-do-mar"] = [
     time: { prep: "15 min", cook: "10 min", total: "25 min" },
     yield: "2-3 porções",
     difficulty: "Fácil",
+    tags: ["ingredient:vinho"],
     ingredients: [
       "1,5 kg de mexilhões frescos, limpos e escovados",
       "30 g de manteiga",
@@ -90,6 +92,7 @@ window.RECIPES["frutos-do-mar"] = [
     time: { prep: "10 min", cook: "1h10", total: "1h20" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "1 polvo inteiro (1,5-2 kg), limpo",
       "1 cebola, cortada ao meio",
@@ -124,6 +127,7 @@ window.RECIPES["frutos-do-mar"] = [
     time: { prep: "30 min", cook: "35 min", total: "1h05" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["ingredient:queijo", "ingredient:tomate", "ingredient:ovo"],
     ingredients: [
       "8 lulas médias inteiras, limpas (com os tentáculos separados e reservados)",
       "3 colheres (sopa) de azeite (dividido)",
@@ -164,6 +168,7 @@ window.RECIPES["frutos-do-mar"] = [
     time: { prep: "25 min", cook: "25 min", total: "50 min" },
     yield: "2 porções",
     difficulty: "Alta",
+    tags: ["ingredient:queijo", "ingredient:cogumelo", "ingredient:vinho"],
     ingredients: [
       "2 lagostas inteiras (600-700 g cada), vivas ou já cozidas",
       "40 g de manteiga",
@@ -203,6 +208,7 @@ window.RECIPES["frutos-do-mar"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "2-3 porções",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "500 g de camarão médio, limpo (cascas reservadas)",
       "1 receita de Bisque pronta (ver receita, categoria Sopas), ou 500 ml se já tiver pronta",
@@ -236,6 +242,7 @@ window.RECIPES["frutos-do-mar"] = [
     time: { prep: "10 min", cook: "10 min", total: "20 min" },
     yield: "3-4 porções (prato principal)",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "1 receita completa de Camarão à Provençal (ver receita, categoria Entradas Quentes) — dobre as quantidades para servir como prato principal",
       "Arroz branco, para acompanhar"

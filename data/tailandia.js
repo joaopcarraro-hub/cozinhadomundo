@@ -11,6 +11,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frango", "ingredient:coco", "ingredient:berinjela", "ingredient:curry"],
     ingredients: [
       "500 g de peito de frango, em tiras",
       "3 colheres (sopa) de pasta de curry verde (pronta ou caseira: pimenta verde, capim-limão, galanga, alho, échalote, coentro, camarão seco batidos)",
@@ -48,6 +49,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "protein:frango", "ingredient:coco", "ingredient:pimentao", "ingredient:curry"],
     ingredients: [
       "500 g de carne bovina ou frango, em tiras (ou camarão)",
       "3 colheres (sopa) de pasta de curry vermelho",
@@ -83,6 +85,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "1h30", total: "1h50" },
     yield: "4-6 porções",
     difficulty: "Média",
+    tags: ["protein:boi", "ingredient:batata", "ingredient:amendoim", "ingredient:coco", "ingredient:curry"],
     ingredients: [
       "800 g de paleta ou acém bovino, em cubos grandes",
       "3 colheres (sopa) de pasta de curry massaman (pronta ou caseira, com canela, cardamomo, cominho, cravo, pimentas)",
@@ -121,6 +124,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frutos-do-mar", "ingredient:cogumelo", "ingredient:limao"],
     ingredients: [
       "400 g de camarão médio, limpo (cascas reservadas)",
       "1 L de água ou caldo de galinha",
@@ -155,6 +159,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "15 min", cook: "20 min", total: "35 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango", "ingredient:coco", "ingredient:cogumelo"],
     ingredients: [
       "500 g de peito ou coxa de frango, em tiras",
       "800 ml de leite de coco",
@@ -192,6 +197,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "25 min", cook: "12 min", total: "37 min" },
     yield: "3-4 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "protein:ovo", "ingredient:amendoim"],
     ingredients: [
       "250 g de macarrão de arroz plano (tipo pad thai)",
       "250 g de camarão médio, limpo (ou tofu firme, em cubos)",
@@ -228,6 +234,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "10 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "protein:frango", "ingredient:limao"],
     ingredients: [
       "500 g de carne suína ou frango moído",
       "3 colheres (sopa) de arroz cru (para tostar e moer)",
@@ -262,6 +269,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "0 min", total: "20 min" },
     yield: "2-4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frutos-do-mar", "ingredient:tomate", "ingredient:limao", "ingredient:amendoim"],
     ingredients: [
       "400 g de mamão verde, ralado em tiras finas (num ralador especial ou faca)",
       "2-4 pimentas tailandesas (a gosto)",

@@ -12,6 +12,7 @@ window.RECIPES["peru"] = [
     time: { prep: "20 min", cook: "0 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:peixe", "ingredient:limao", "ingredient:gengibre"],
     ingredients: [
       "300 g de peixe branco bem fresco (robalo ou linguado), em fatias finas (estilo sashimi)",
       "100 ml de suco de limão-tahiti, espremido na hora",
@@ -46,6 +47,7 @@ window.RECIPES["peru"] = [
     time: { prep: "20 min", cook: "40 min", total: "1h" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frango", "protein:ovo", "ingredient:queijo", "ingredient:castanha", "ingredient:arroz", "ingredient:azeitona"],
     ingredients: [
       "500 g de peito de frango cozido e desfiado (reserve o caldo do cozimento)",
       "4 fatias de pão de forma, sem casca",
@@ -82,6 +84,7 @@ window.RECIPES["peru"] = [
     time: { prep: "40 min", cook: "20 min", total: "1h" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:frango", "protein:peixe", "protein:ovo", "ingredient:batata", "ingredient:limao", "ingredient:azeitona"],
     ingredients: [
       "1 kg de batata amarela (ou batata comum), cozida",
       "3 colheres (sopa) de pasta de ají amarillo",
@@ -120,6 +123,7 @@ window.RECIPES["peru"] = [
     time: { prep: "20 min", cook: "12 min", total: "32 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:tomate", "ingredient:batata"],
     ingredients: [
       "600 g de contrafilé ou alcatra, em tiras",
       "3 colheres (sopa) de óleo neutro (dividido)",
@@ -157,6 +161,7 @@ window.RECIPES["peru"] = [
     time: { prep: "15 min", cook: "15 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:frango", "protein:boi", "protein:frutos-do-mar", "protein:ovo", "ingredient:arroz", "ingredient:gengibre"],
     ingredients: [
       "4 xícaras de arroz cozido, de preferência do dia anterior (mais seco)",
       "200 g de frango ou carne bovina, em tiras finas",
@@ -194,6 +199,7 @@ window.RECIPES["peru"] = [
     time: { prep: "20 min + 4h marinada", cook: "10 min", total: "≈4h30" },
     yield: "4 porções (12 espetos)",
     difficulty: "Fácil",
+    tags: ["protein:boi", "ingredient:batata", "ingredient:milho"],
     ingredients: [
       "800 g de coração de boi (ou alcatra/contrafilé, alternativa mais acessível), em cubos",
       "4 colheres (sopa) de pasta de ají panca (pimenta vermelha peruana) ou páprica + pimenta calabresa",

@@ -11,6 +11,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções individuais",
     difficulty: "Alta",
+    tags: ["protein:ovo", "ingredient:queijo"],
     ingredients: [
       "30 g de manteiga (+ extra para untar)",
       "30 g de farinha de trigo",
@@ -46,6 +47,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "15 min", cook: "15 min", total: "30 min" },
     yield: "2 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:queijo"],
     ingredients: [
       "4 fatias de pão de forma (tipo brioche ou pão de fôrma grosso)",
       "4 fatias de presunto de boa qualidade",
@@ -79,6 +81,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "30 min + 2h geladeira", cook: "15 min", total: "45 min + 2h" },
     yield: "≈ 20 croquetas",
     difficulty: "Média",
+    tags: ["protein:suino"],
     ingredients: [
       "50 g de manteiga",
       "60 g de farinha de trigo",
@@ -114,6 +117,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "30 min + resfriar risoto", cook: "15 min", total: "45 min + tempo do risoto" },
     yield: "≈ 12 unidades",
     difficulty: "Média",
+    tags: ["protein:vegetariana", "ingredient:arroz", "ingredient:queijo"],
     ingredients: [
       "500 g de risoto pronto e frio (idealmente à milanese ou simples, com parmesão)",
       "100 g de queijo muçarela em cubos pequenos",
@@ -146,6 +150,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "10 min", cook: "10 min", total: "20 min" },
     yield: "2-3 porções",
     difficulty: "Fácil",
+    tags: ["protein:frutos-do-mar"],
     ingredients: [
       "500 g de camarão médio, limpo (com ou sem cauda)",
       "4 dentes de alho picados",
@@ -179,6 +184,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "20 min", cook: "20 min", total: "40 min" },
     yield: "≈ 16 unidades",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:cogumelo", "ingredient:queijo"],
     ingredients: [
       "16 cogumelos Paris grandes, limpos, com os talos separados",
       "2 colheres (sopa) de azeite",
@@ -212,6 +218,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "20 min", cook: "10 min", total: "30 min" },
     yield: "2 porções (12 unidades)",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "12 escargots em conserva, escorridos (+ 12 conchas, se for usar conchas de verdade)",
       "120 g de manteiga em temperatura ambiente",
@@ -243,6 +250,7 @@ window.RECIPES["entradas-quentes"] = [
     time: { prep: "15 min", cook: "12 min", total: "27 min" },
     yield: "2 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:queijo"],
     ingredients: [
       "8 vieiras frescas, limpas",
       "200 ml de Mornay ou Béchamel (ver receita)",

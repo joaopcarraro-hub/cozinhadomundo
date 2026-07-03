@@ -13,6 +13,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "20 min", cook: "35 min", total: "55 min" },
     yield: "4 porções",
     difficulty: "Média-alta",
+    tags: ["protein:frutos-do-mar", "ingredient:arroz"],
     ingredients: [
       "350 g de arroz tipo bomba (ou arbóreo)",
       "300 g de lula, em anéis (limpe e reserve as bolsas de tinta, se disponíveis, ou compre tinta de lula em sachê)",
@@ -51,6 +52,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar"],
     ingredients: [
       "350 g de massa fideuà (ou vermicelli/cabelo-de-anjo, quebrados em pedaços de 3-4 cm)",
       "300 g de camarão médio, limpo (cascas reservadas)",
@@ -91,6 +93,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "10 min", cook: "8 min", total: "18 min" },
     yield: "2-3 porções (tapa)",
     difficulty: "Fácil",
+    tags: ["protein:frutos-do-mar"],
     ingredients: [
       "400 g de camarão médio, limpo",
       "6 dentes de alho fatiados finos",
@@ -123,6 +126,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "10 min", cook: "50 min", total: "1h" },
     yield: "4 porções (tapa)",
     difficulty: "Média",
+    tags: ["protein:frutos-do-mar", "ingredient:batata"],
     ingredients: [
       "1 polvo (1,2-1,5 kg), limpo",
       "1 cebola, cortada ao meio",
@@ -155,6 +159,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "15 min", cook: "30 min", total: "45 min" },
     yield: "4 porções (tapa)",
     difficulty: "Fácil",
+    tags: ["protein:vegetariana", "ingredient:batata"],
     ingredients: [
       "800 g de batata, descascada e em cubos grandes",
       "Óleo, o suficiente para fritar",
@@ -184,6 +189,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "10 min", cook: "0 min", total: "10 min" },
     yield: "Para petiscar",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:tomate"],
     ingredients: [
       "1 peça (ou fatias já cortadas) de jamón ibérico de bellota, de boa procedência",
       "Pão rústico ou torradas finas",
@@ -213,6 +219,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "15 min", cook: "0 min", total: "15 min + gelar" },
     yield: "4 porções",
     difficulty: "Fácil",
+    tags: ["protein:suino", "ingredient:tomate", "ingredient:ovo"],
     ingredients: [
       "1 kg de tomate bem maduro, picado",
       "150 g de pão amanhecido, sem casca, picado",
@@ -247,6 +254,7 @@ window.RECIPES["espanha"] = [
     time: { prep: "20 min + 8h molho", cook: "2h30", total: "≈11h" },
     yield: "6 porções",
     difficulty: "Média",
+    tags: ["protein:suino", "ingredient:feijao"],
     ingredients: [
       "500 g de feijão branco grande (tipo fabada, ou cannellini), de molho por 8h",
       "200 g de chouriço espanhol (chorizo), inteiro ou em pedaços grandes",

@@ -11,6 +11,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "5 min", cook: "15 min", total: "20 min" },
     yield: "≈ 500 ml",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "50 g de manteiga sem sal",
       "50 g de farinha de trigo",
@@ -44,6 +45,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "5 min", cook: "25 min", total: "30 min" },
     yield: "≈ 500 ml",
     difficulty: "Fácil",
+    tags: [],
     ingredients: [
       "50 g de manteiga sem sal",
       "50 g de farinha de trigo",
@@ -75,6 +77,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "20 min", cook: "1h40", total: "2h" },
     yield: "≈ 700 ml",
     difficulty: "Média",
+    tags: ["protein:boi"],
     ingredients: [
       "40 g de manteiga ou óleo",
       "40 g de farinha de trigo",
@@ -113,6 +116,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "10 min", cook: "45 min", total: "55 min" },
     yield: "≈ 600 ml",
     difficulty: "Fácil",
+    tags: ["ingredient:tomate"],
     ingredients: [
       "2 colheres (sopa) de azeite ou manteiga",
       "60 g de bacon ou toucinho em cubos pequenos (tradicional, opcional)",
@@ -151,6 +155,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "5 min", cook: "15 min", total: "20 min" },
     yield: "≈ 300 ml",
     difficulty: "Média (exige atenção)",
+    tags: ["protein:ovo"],
     ingredients: [
       "3 gemas",
       "1 colher (sopa) de água fria",
@@ -183,6 +188,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "5 min", cook: "12 min", total: "17 min" },
     yield: "≈ 500 ml",
     difficulty: "Fácil",
+    tags: ["ingredient:queijo"],
     ingredients: [
       "500 ml de Béchamel quente (ver receita)",
       "60 g de queijo gruyère ralado",
@@ -212,6 +218,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "20 min", cook: "30 min", total: "50 min" },
     yield: "≈ 500 ml",
     difficulty: "Alta",
+    tags: ["protein:frutos-do-mar"],
     ingredients: [
       "300 g de cascas e cabeças de camarão ou lagostim (para a manteiga de crustáceos)",
       "100 g de manteiga",
@@ -246,6 +253,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "5 min", cook: "20 min", total: "25 min" },
     yield: "≈ 400 ml",
     difficulty: "Média",
+    tags: ["protein:frango"],
     ingredients: [
       "400 ml de Velouté de frango (ver receita, feito com caldo de frango)",
       "100 ml de creme de leite fresco",
@@ -275,6 +283,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "5 min", cook: "20 min", total: "25 min" },
     yield: "≈ 400 ml",
     difficulty: "Média",
+    tags: ["protein:peixe"],
     ingredients: [
       "300 ml de Velouté de peixe (ver receita, feito com fumet de peixe)",
       "150 ml de vinho branco seco",
@@ -308,6 +317,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "10 min", cook: "1h30", total: "1h40" },
     yield: "≈ 500 ml",
     difficulty: "Média-alta",
+    tags: ["protein:boi"],
     ingredients: [
       "1 L de Espagnole (ver receita)",
       "1 L de fundo escuro de carne adicional",
@@ -337,6 +347,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "10 min", cook: "30 min", total: "40 min" },
     yield: "≈ 350 ml",
     difficulty: "Média",
+    tags: ["protein:boi"],
     ingredients: [
       "2 échalotes (ou 1 cebola pequena) picadas finas",
       "300 ml de vinho tinto encorpado (idealmente Bordeaux)",
@@ -370,6 +381,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "10 min", cook: "25 min", total: "35 min" },
     yield: "≈ 350 ml",
     difficulty: "Média",
+    tags: ["protein:boi", "protein:suino"],
     ingredients: [
       "1 cebola média picada bem fina",
       "20 g de manteiga",
@@ -402,6 +414,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "≈ 300 ml",
     difficulty: "Média-alta",
+    tags: ["protein:ovo"],
     ingredients: [
       "2 échalotes picadas finas",
       "100 ml de vinagre de vinho branco",
@@ -437,6 +450,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "10 min", cook: "20 min", total: "30 min" },
     yield: "≈ 300 ml",
     difficulty: "Média-alta",
+    tags: ["protein:ovo", "ingredient:tomate"],
     ingredients: [
       "1 receita de Béarnaise pronta (ver receita), sem o estragão de finalização",
       "3 colheres (sopa) de purê de tomate bem concentrado (tomate sem pele, sem semente, cozido até secar)",
@@ -464,6 +478,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "5 min", cook: "15 min", total: "20 min" },
     yield: "≈ 250 ml",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "2 échalotes picadas finas",
       "100 ml de vinho branco seco",
@@ -498,6 +513,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "10 min", cook: "40 min", total: "50 min" },
     yield: "≈ 300 ml",
     difficulty: "Média",
+    tags: ["protein:boi"],
     ingredients: [
       "Aparas e ossos da carne que está sendo preparada (ou ossos de boi/vitela)",
       "1 cebola pequena, 1 cenoura pequena, 1 talo de salsão — em cubos (mirepoix)",
@@ -531,6 +547,7 @@ window.RECIPES["molhos"] = [
     time: { prep: "2 min", cook: "10 min", total: "12 min" },
     yield: "≈ 150 ml (para usar como base em outro molho)",
     difficulty: "Fácil (exige atenção ao caramelo)",
+    tags: [],
     ingredients: [
       "100 g de açúcar",
       "80 ml de vinagre (vinho tinto, vinho branco ou balsâmico, conforme o prato)",

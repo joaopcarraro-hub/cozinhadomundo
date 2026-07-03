@@ -11,6 +11,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "30 min + 3h fermentação", cook: "25 min", total: "≈4h" },
     yield: "3 baguetes",
     difficulty: "Média-alta",
+    tags: [],
     ingredients: [
       "500 g de farinha de trigo (idealmente tipo 55 francesa, ou farinha comum de boa qualidade)",
       "350 ml de água fria",
@@ -42,6 +43,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "30 min + 12h fermentação na geladeira", cook: "30 min", total: "≈13h" },
     yield: "1 pão grande (forma de bolo inglês)",
     difficulty: "Alta",
+    tags: ["ingredient:ovo"],
     ingredients: [
       "500 g de farinha de trigo",
       "10 g de sal",
@@ -76,6 +78,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "1h + 12h entre dobras e descanso", cook: "20 min", total: "≈14h" },
     yield: "12 croissants",
     difficulty: "Alta",
+    tags: [],
     ingredients: [
       "500 g de farinha de trigo",
       "10 g de sal",
@@ -113,6 +116,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "30 min + 4h fermentação", cook: "45 min", total: "≈5h30" },
     yield: "1 pão grande",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "400 g de farinha de trigo branca",
       "100 g de farinha de trigo integral (ou centeio)",
@@ -147,6 +151,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "20 min + 3h fermentação", cook: "25 min", total: "≈3h45" },
     yield: "1 assadeira grande",
     difficulty: "Fácil",
+    tags: ["ingredient:tomate"],
     ingredients: [
       "500 g de farinha de trigo",
       "350 ml de água morna",
@@ -181,6 +186,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "20 min + 4h fermentação (+ poolish 12h)", cook: "25 min", total: "≈16h" },
     yield: "4 pães pequenos",
     difficulty: "Alta",
+    tags: [],
     ingredients: [
       "Para o poolish (fermento prévio): 150 g de farinha, 150 ml de água, 1 g de fermento biológico seco",
       "Para a massa final: 350 g de farinha de trigo, 250 ml de água morna, 8 g de sal, 4 g de fermento biológico seco",
@@ -212,6 +218,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "40 min + 4-6h fermentação + 12h geladeira", cook: "45 min", total: "≈18-20h" },
     yield: "1 pão grande",
     difficulty: "Alta",
+    tags: [],
     ingredients: [
       "500 g de farinha de trigo (pode misturar com um pouco de integral)",
       "350 ml de água morna",
@@ -247,6 +254,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "20 min + 2h fermentação", cook: "20 min", total: "≈2h40" },
     yield: "12 pãezinhos",
     difficulty: "Fácil",
+    tags: ["ingredient:ovo"],
     ingredients: [
       "500 g de farinha de trigo",
       "250 ml de leite morno",
@@ -282,6 +290,7 @@ window.RECIPES["padaria"] = [
     time: { prep: "20 min + 1h fermentação", cook: "15 min", total: "≈1h35" },
     yield: "8 pretzels",
     difficulty: "Média",
+    tags: [],
     ingredients: [
       "500 g de farinha de trigo",
       "300 ml de água morna",
