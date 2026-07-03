@@ -240,7 +240,11 @@
     const thumb = document.createElement("div");
     thumb.className = "recipe-thumb placeholder";
     thumb.textContent = "🍽";
-    loadRecipeImage(imageQuery(recipe), thumb);
+    if (recipe.image) {
+      applyImage(thumb, recipe.image);
+    } else {
+      loadRecipeImage(imageQuery(recipe), thumb);
+    }
 
     const toggle = document.createElement("button");
     toggle.className = "made-toggle" + (isMade ? " made" : "");
@@ -347,7 +351,11 @@
     const hero = document.createElement("div");
     hero.className = "recipe-hero placeholder";
     hero.textContent = "🍽";
-    loadRecipeImage(imageQuery(recipe), hero);
+    if (recipe.image) {
+      applyImage(hero, recipe.image);
+    } else {
+      loadRecipeImage(imageQuery(recipe), hero);
+    }
     page.appendChild(hero);
 
     const titleBlock = document.createElement("div");

@@ -12,8 +12,16 @@
 
 ## Sua tarefa
 
-Para cada receita que eu te mandar, devolva um objeto JavaScript pronto, seguindo **exatamente**
-este formato e ordem de campos:
+Eu geralmente vou te mandar só o **nome do prato** (às vezes com o país/origem). A partir do nome,
+você deve:
+1. **Pesquisar a receita de verdade**, priorizando fontes confiáveis (site oficial de instituição
+   culinária, livros/chefs reconhecidos, Wikipedia, sites especializados de receita bem
+   estabelecidos) — não invente ingredientes/passos, e não misture receitas de pratos diferentes.
+2. **Buscar uma foto do prato** — não precisa ser uma imagem licenciada/registrada nem nada formal,
+   só uma URL de imagem pública que mostre o prato de verdade (ex.: Wikipedia/Wikimedia Commons,
+   ou outra fonte de imagem direta) — é só pra ficar visual no site, não precisa se preocupar com
+   direitos de uso.
+3. Devolver um objeto JavaScript pronto, seguindo **exatamente** este formato e ordem de campos:
 
 ```js
 {
@@ -21,6 +29,7 @@ este formato e ordem de campos:
   subgroup: "Nome do subgrupo dentro da categoria (opcional, veja abaixo)",
   desc: "Uma frase curta e apetitosa descrevendo o prato — não repita o nome.",
   origin: "País ou região de origem (ex.: 'Itália (Roma)', 'Brasil', 'Ásia')",
+  image: "https://url-direta-de-uma-foto-do-prato.jpg",
   time: { prep: "X min", cook: "Y min", total: "Z min" },
   yield: "N porções",
   difficulty: "Fácil" | "Média" | "Média-alta" | "Difícil",
@@ -44,10 +53,13 @@ este formato e ordem de campos:
 Regras de conteúdo:
 - Todos os campos são obrigatórios, exceto `subgroup` e `tips` (que podem ser omitidos se não
   fizerem sentido).
+- `image` é obrigatório sempre que você encontrar uma foto real e confiável do prato — só deixe
+  de fora se genuinamente não achar nenhuma imagem confiável (o site tem um fallback automático via
+  Wikipedia pra esses casos, mas ele falha bastante pra pratos menos conhecidos, então é melhor já
+  vir com a URL certa).
 - `desc` é UMA frase, apetitosa, sem repetir o nome do prato.
-- `ingredients` e `steps` devem ser completos e detalhados — nada de "modo de preparo resumido".
-- Não invente um campo de imagem — o site busca foto automaticamente pelo nome do prato via
-  Wikipedia, não existe campo de imagem manual.
+- `ingredients` e `steps` devem ser completos, detalhados e fiéis à fonte pesquisada — nada de
+  "modo de preparo resumido" nem passos inventados.
 - NÃO adicione tags de `country:`, `dish_type:`, `course:`, `time:` ou `difficulty:` — essas são
   geradas automaticamente pelo site a partir da categoria e dos campos acima. Só adicione
   `protein:` e `ingredient:` (ver taxonomia abaixo).
