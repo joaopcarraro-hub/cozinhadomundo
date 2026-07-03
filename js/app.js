@@ -21,11 +21,41 @@
 
   const firstReady = window.CATEGORIES.find((c) => c.ready) || window.CATEGORIES[0];
   let activeCat = null; // null quando estamos na home ou em modo de busca global
+  let activeView = null; // "favoritos" | "quero-fazer" | "historico" | null
   let homeSearchInput = null; // input de busca da tela home (recriado a cada render)
+
+  const QUICK_LINKS = [
+    { view: "favoritos", icon: "★", label: "Favoritos", go: () => Router.toFavoritos() },
+    { view: "quero-fazer", icon: "🔖", label: "Quero fazer", go: () => Router.toQueroFazer() },
+    { view: "historico", icon: "🕘", label: "Histórico", go: () => Router.toHistorico() },
+  ];
+  function quickLinkCount(view) {
+    if (view === "favoritos") return Storage.getAllFavorites().length;
+    if (view === "quero-fazer") return Storage.getAllWantToCook().length;
+    return Storage.getAllMade().length;
+  }
 
   // ---------- Sidebar ----------
   function renderSidebar() {
     sidebar.innerHTML = "";
+
+    const quickWrap = document.createElement("div");
+    quickWrap.className = "quick-links";
+    QUICK_LINKS.forEach((ql) => {
+      const btn = document.createElement("button");
+      btn.className = "quick-link" + (activeView === ql.view ? " active" : "");
+      const count = quickLinkCount(ql.view);
+      btn.innerHTML =
+        '<span class="quick-link__icon">' + ql.icon + "</span><span>" + ql.label + "</span>" +
+        (count ? '<span class="count">' + count + "</span>" : "");
+      btn.addEventListener("click", () => {
+        closeMobileMenu();
+        ql.go();
+      });
+      quickWrap.appendChild(btn);
+    });
+    sidebar.appendChild(quickWrap);
+
     const groups = {};
     window.CATEGORIES.forEach((c) => {
       if (!groups[c.group]) groups[c.group] = [];
@@ -83,6 +113,7 @@
   // ---------- Home ----------
   function renderHome() {
     activeCat = null;
+    activeView = null;
     searchInput.value = "";
     renderSidebar();
 
@@ -111,6 +142,21 @@
     prog.textContent = totalMade + " de " + totalRecipes + " receitas já feitas 🎉";
     wrap.appendChild(prog);
 
+    const quickGrid = document.createElement("div");
+    quickGrid.className = "home-quicklinks";
+    QUICK_LINKS.forEach((ql) => {
+      const card = document.createElement("button");
+      card.className = "home-quicklink";
+      const count = quickLinkCount(ql.view);
+      card.innerHTML =
+        '<span class="home-quicklink__icon">' + ql.icon + "</span>" +
+        '<span class="home-quicklink__label">' + ql.label + "</span>" +
+        '<span class="home-quicklink__count">' + count + "</span>";
+      card.addEventListener("click", ql.go);
+      quickGrid.appendChild(card);
+    });
+    wrap.appendChild(quickGrid);
+
     const groups = {};
     window.CATEGORIES.forEach((c) => {
       if (!groups[c.group]) groups[c.group] = [];
@@ -127,12 +173,23 @@
       grid.className = "category-grid";
       groups[groupName].forEach((cat) => {
         const recipes = window.RECIPES[cat.id] || [];
+        const doneCount = Storage.countMade(cat.id, recipes);
+        const pct = recipes.length ? Math.round((doneCount / recipes.length) * 100) : 0;
         const card = document.createElement("button");
         card.className = "category-card";
         card.innerHTML =
           '<span class="category-card__icon">' + (cat.icon || "🍽") + "</span>" +
           '<span class="category-card__title">' + cat.label + "</span>" +
-          '<span class="category-card__count">' + recipes.length + " receitas</span>";
+          '<span class="category-card__count">' + recipes.length + " receitas</span>" +
+          (recipes.length
+            ? '<span class="category-card__progress"><span class="category-card__progress-bar" style="width:' +
+              pct +
+              '%"></span></span><span class="category-card__progress-label">' +
+              doneCount +
+              "/" +
+              recipes.length +
+              " feitas</span>"
+            : "");
         card.addEventListener("click", () => Router.toCategoria(cat.id));
         grid.appendChild(card);
       });
@@ -146,6 +203,7 @@
   function showCategoria(catId) {
     const cat = window.CATEGORIES.find((c) => c.id === catId) || firstReady;
     activeCat = cat.id;
+    activeView = null;
     searchInput.value = "";
     renderSidebar();
     renderCategory(cat);
@@ -205,6 +263,46 @@
     });
   }
 
+  // ---------- Telas de lista (Favoritos / Quero fazer / Histórico) ----------
+  const LIST_VIEWS = {
+    favoritos: { title: "★ Favoritos", empty: "Você ainda não marcou nenhum prato como favorito.", getIds: () => Storage.getAllFavorites() },
+    "quero-fazer": { title: "🔖 Quero fazer", empty: "Você ainda não adicionou nenhum prato à lista de \"quero fazer\".", getIds: () => Storage.getAllWantToCook() },
+    historico: { title: "🕘 Histórico de receitas feitas", empty: "Você ainda não marcou nenhum prato como feito.", getIds: () => Storage.getAllMade() },
+  };
+
+  function renderListView(view) {
+    const cfg = LIST_VIEWS[view];
+    activeCat = null;
+    activeView = view;
+    searchInput.value = "";
+    renderSidebar();
+
+    header.innerHTML = "<h2>" + cfg.title + "</h2>";
+    content.innerHTML = "";
+    progressEl.textContent = "";
+
+    const ids = cfg.getIds();
+    const items = ids
+      .map((id) => {
+        const sep = id.indexOf("::");
+        const catId = id.slice(0, sep);
+        const name = id.slice(sep + 2);
+        const cat = window.CATEGORIES.find((c) => c.id === catId);
+        const recipe = cat && findRecipe(catId, name);
+        return recipe ? { catId, catLabel: cat.label, recipe } : null;
+      })
+      .filter(Boolean);
+
+    if (!items.length) {
+      content.innerHTML = '<div class="empty-state">' + cfg.empty + "</div>";
+      return;
+    }
+
+    items.forEach((item) => {
+      content.appendChild(renderRecipeCard(item.catId, item.recipe, { catLabel: item.catLabel }));
+    });
+  }
+
   // ---------- Card de receita (usado na lista de categoria e na busca) ----------
   function renderRecipeCard(catId, recipe, opts) {
     opts = opts || {};
@@ -249,6 +347,17 @@
       favToggle.classList.toggle("favorite", nowFav);
     });
 
+    const wantToggle = document.createElement("button");
+    const isWant = Storage.isWantToCook(catId, recipe.name);
+    wantToggle.className = "wanttocook-toggle" + (isWant ? " active" : "");
+    wantToggle.title = "Quero fazer";
+    wantToggle.textContent = "🔖";
+    wantToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const now = Storage.toggleWantToCook(catId, recipe.name);
+      wantToggle.classList.toggle("active", now);
+    });
+
     const title = document.createElement("div");
     title.className = "recipe-title";
     title.innerHTML =
@@ -271,6 +380,7 @@
 
     cardHeader.appendChild(toggle);
     cardHeader.appendChild(favToggle);
+    cardHeader.appendChild(wantToggle);
     cardHeader.appendChild(thumb);
     cardHeader.appendChild(title);
     cardHeader.appendChild(meta);
@@ -299,6 +409,7 @@
     }
 
     activeCat = catId;
+    activeView = null;
     searchInput.value = "";
     renderSidebar();
 
@@ -363,8 +474,19 @@
       favBtn.textContent = now ? "★ Favorito" : "☆ Favoritar";
     });
 
+    const isWant = Storage.isWantToCook(catId, recipe.name);
+    const wantBtn = document.createElement("button");
+    wantBtn.className = "action-btn" + (isWant ? " active" : "");
+    wantBtn.textContent = isWant ? "🔖 Na lista" : "🔖 Quero fazer";
+    wantBtn.addEventListener("click", () => {
+      const now = Storage.toggleWantToCook(catId, recipe.name);
+      wantBtn.classList.toggle("active", now);
+      wantBtn.textContent = now ? "🔖 Na lista" : "🔖 Quero fazer";
+    });
+
     actions.appendChild(madeBtn);
     actions.appendChild(favBtn);
+    actions.appendChild(wantBtn);
     page.appendChild(actions);
 
     if (recipe.steps && recipe.steps.length) {
@@ -457,6 +579,7 @@
     }
 
     activeCat = catId;
+    activeView = null;
     searchInput.value = "";
     renderSidebar();
 
@@ -714,6 +837,7 @@
   function handleRoute(route) {
     if (route.name === "busca" && route.query) {
       activeCat = null;
+      activeView = null;
       searchInput.value = route.query;
       renderSidebar();
       renderSearchResults(route.query);
@@ -723,6 +847,8 @@
       renderReceita(route.catId, route.recipeName);
     } else if (route.name === "cozinhar") {
       renderCookMode(route.catId, route.recipeName);
+    } else if (route.name === "favoritos" || route.name === "quero-fazer" || route.name === "historico") {
+      renderListView(route.name);
     } else {
       renderHome();
     }

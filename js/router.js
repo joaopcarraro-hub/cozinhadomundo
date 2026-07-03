@@ -1,5 +1,6 @@
 // router.js — navegação baseada em hash (#/...), sem depender de servidor.
-// Rotas: home | categoria/:id | busca/:query | receita/:catId/:nome
+// Rotas: home | categoria/:id | busca/:query | receita/:catId/:nome | cozinhar/:catId/:nome
+//        favoritos | quero-fazer | historico
 (function () {
   const listeners = [];
 
@@ -26,6 +27,15 @@
     }
     if (parts[0] === "cozinhar" && parts[1] && parts[2]) {
       return { name: "cozinhar", catId: parts[1], recipeName: parts[2] };
+    }
+    if (parts[0] === "favoritos") {
+      return { name: "favoritos" };
+    }
+    if (parts[0] === "quero-fazer") {
+      return { name: "quero-fazer" };
+    }
+    if (parts[0] === "historico") {
+      return { name: "historico" };
     }
     return { name: "home" };
   }
@@ -73,6 +83,15 @@
     },
     toCozinhar: function (catId, name) {
       navigate("cozinhar/" + encodeURIComponent(catId) + "/" + encodeURIComponent(name));
+    },
+    toFavoritos: function () {
+      navigate("favoritos");
+    },
+    toQueroFazer: function () {
+      navigate("quero-fazer");
+    },
+    toHistorico: function () {
+      navigate("historico");
     },
   };
 })();
