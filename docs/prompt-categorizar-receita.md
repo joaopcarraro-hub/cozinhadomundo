@@ -62,7 +62,7 @@ Regras de conteúdo:
   "modo de preparo resumido" nem passos inventados.
 - NÃO adicione tags de `country:`, `dish_type:`, `course:`, `time:` ou `difficulty:` — essas são
   geradas automaticamente pelo site a partir da categoria e dos campos acima. Só adicione
-  `protein:` e `ingredient:` (ver taxonomia abaixo).
+  `protein:`, `contains:` e `ingredient:` (ver taxonomia abaixo).
 
 ## Em qual categoria colocar
 
@@ -90,19 +90,37 @@ Me diga também em qual arquivo/categoria a receita deve entrar, escolhendo dest
 Se a receita não se encaixar em nenhuma categoria existente, me avise — pode ser hora de criar
 uma nova (isso exige uma etapa extra de código, então sinalize em vez de forçar um encaixe ruim).
 
-## Taxonomia de tags (só protein: e ingredient:)
+## Taxonomia de tags (protein:, contains: e ingredient:)
 
-**protein:** — todo prato pode ter zero, uma ou várias (só as que forem realmente centrais ao prato):
+**protein:** — a proteína **protagonista** do prato, não qualquer proteína presente. Regra
+importante (fonte de um bug já corrigido no site): se a carne/proteína é só um componente
+secundário/de sabor — não o que define o prato — ela NÃO entra aqui, entra em `contains:` (abaixo).
+Todo prato pode ter zero, uma ou várias tags `protein:`, mas só as que forem realmente centrais:
 - `protein:frango` — frango especificamente (galinha, peito, coxa, sobrecoxa)
 - `protein:ave` — outra ave que não frango (pato, peru)
 - `protein:boi` — carne bovina
-- `protein:suino` — porco em qualquer forma (bacon, pancetta, guanciale, linguiça, presunto, lombo)
+- `protein:suino` — porco **quando é o protagonista do prato** (ex.: Tonkatsu, Feijoada, Char Siu,
+  Costelinha, Pernil assado) — NÃO use só porque tem bacon/pancetta/guanciale/presunto/linguiça
+  como tempero ou componente secundário (isso é `contains:suino`, veja abaixo)
 - `protein:cordeiro` — cordeiro/borrego/carneiro
 - `protein:peixe` — peixe
 - `protein:frutos-do-mar` — camarão, lula, polvo, mexilhão, marisco
 - `protein:ovo` — só quando o ovo é o protagonista do prato (omelete, quiche) — NÃO use só porque
-  tem ovo na massa/receio de um bolo/pão
+  tem ovo na massa/recheio de um bolo/pão
 - `protein:vegetariana` — sem nenhuma carne, ave, peixe ou fruto do mar (pode ter ovo/laticínio)
+
+**contains:** — presença secundária de um ingrediente que NÃO é o protagonista, mas ainda é útil
+pra busca (por enquanto só existe para suíno, já que é o caso mais comum: bacon, pancetta,
+guanciale, presunto, linguiça, toucinho aparecendo como tempero/complemento em pratos de outra
+identidade):
+- `contains:suino` — ex.: Carbonara (guanciale é tempero da massa), Beef Wellington (presunto de
+  Parma envolve o filé, mas o prato é de carne bovina), Boeuf Bourguignon (bacon é só um dos
+  aromáticos do ensopado de carne bovina). Nesses três exemplos NÃO use `protein:suino`.
+
+Teste rápido pra decidir entre `protein:suino` e `contains:suino`: se você tirasse o item de porco
+da receita, o prato ainda seria reconhecível com o mesmo nome? Se sim (Carbonara sem guanciale
+ainda é "uma carbonara", só que pior), é `contains:`. Se não (Tonkatsu sem porco deixa de ser
+Tonkatsu), é `protein:`.
 
 **ingredient:** — só quando o ingrediente é decisivo pra identidade do prato (não marque sal, água,
 óleo, alho, cebola genéricos, a menos que sejam o protagonista):
@@ -114,8 +132,7 @@ uma nova (isso exige uma etapa extra de código, então sinalize em vez de forç
 `ingredient:ervilha` `ingredient:lentilha` `ingredient:grao-de-bico` `ingredient:amendoim`
 `ingredient:gengibre` `ingredient:curry` `ingredient:molho-de-soja`
 
-Não invente tags novas fora dessas duas listas. Se nenhuma tag decisiva se aplicar, devolva
-`tags: []`.
+Não invente tags novas fora dessas listas. Se nenhuma tag decisiva se aplicar, devolva `tags: []`.
 
 ## Formato de saída
 
