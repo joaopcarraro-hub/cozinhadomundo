@@ -1140,6 +1140,9 @@
     } else {
       renderHome();
     }
+    // toda troca de rota é uma "página nova" — sempre volta pro topo (renderReceita/renderCookMode
+    // já faziam isso individualmente; agora fica centralizado aqui pra cobrir home/categoria/busca/listas também).
+    window.scrollTo({ top: 0, behavior: "instant" });
   }
 
   Router.onChange(handleRoute);
