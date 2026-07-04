@@ -95,24 +95,33 @@ body {
 .subgroup-title:first-child { margin-top: 0; }
 
 /* ---------- Recipe card ---------- */
+/* Card vertical: cabeçalho (thumb + título + ações) e, abaixo, largura cheia pra
+   descrição/tags/meta/CTA — evita o problema de espremer o texto numa coluna estreita
+   ao lado de vários elementos de largura fixa (bug relatado no mobile). */
 .recipe-card {
   background: var(--bg-panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   margin-bottom: 18px;
-  overflow: hidden;
-}
-
-.recipe-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 22px;
+  padding: 16px 18px;
   cursor: pointer;
   user-select: none;
 }
-.recipe-header:hover { background: #f8f2e2; }
+.recipe-card:hover { border-color: var(--gold-soft); }
+
+.recipe-header {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.recipe-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
 .recipe-header .made-toggle {
   width: 36px; height: 36px;
@@ -161,8 +170,8 @@ body {
 .recipe-header .wanttocook-toggle.active { opacity: 1; filter: none; }
 
 .recipe-thumb {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
@@ -170,14 +179,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .recipe-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .recipe-thumb.placeholder { color: var(--gold-soft); }
 
-.recipe-title { flex: 1; }
-.recipe-title h3 { margin: 0; font-size: 1.15rem; }
-.recipe-title .origin { font-size: 0.8rem; color: var(--ink-soft); font-style: italic; }
+.recipe-title { min-width: 0; }
+.recipe-title h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.recipe-title .origin {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .recipe-title .cat-chip {
   display: inline-block;
   font-size: 0.7rem;
@@ -190,36 +216,64 @@ body {
   border-radius: 20px;
   margin-top: 4px;
 }
-.recipe-title .desc-line { font-size: 0.86rem; color: var(--ink); margin-top: 3px; line-height: 1.35; }
+
+.recipe-card-desc {
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recipe-card-context {
+  border: 1px dashed var(--ink-soft);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
 
 .recipe-meta {
   display: flex;
-  gap: 14px;
-  font-size: 0.78rem;
-  color: var(--ink-soft);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  gap: 8px;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  margin-top: 12px;
 }
-.recipe-meta span { white-space: nowrap; }
+.recipe-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  white-space: nowrap;
+}
 
-.chevron {
+.recipe-card-cta {
+  margin-top: 14px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 999px;
+  border: 1px solid var(--gold-soft);
+  background: rgba(163, 118, 44, 0.08);
   color: var(--gold);
-  flex-shrink: 0;
+  padding: 0 16px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 @media (max-width: 700px) {
   #main { padding: 20px; }
-
-  .recipe-thumb { width: 44px; height: 44px; font-size: 1.3rem; border-radius: 8px; }
-  .recipe-header { padding: 14px 16px; gap: 10px; flex-wrap: wrap; }
-  .recipe-meta {
-    flex-basis: 100%;
-    justify-content: flex-start;
-    gap: 12px;
-    margin-top: 2px;
-    padding-left: 58px; /* alinha embaixo do nome, depois dos botões+foto */
-  }
 
   .home-quicklinks { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .home-quicklink {

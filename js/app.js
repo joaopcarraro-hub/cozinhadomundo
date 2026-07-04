@@ -79,7 +79,7 @@
 
   // ---------- Chips de tags clicáveis (cards e página da receita) ----------
   // time:/difficulty: ficam de fora — já aparecem como texto simples no meta row, mostrar de novo seria redundante.
-  const TAG_CHIP_PRIORITY = ["country:", "protein:", "dish_type:", "ingredient:", "course:"];
+  const TAG_CHIP_PRIORITY = ["country:", "dish_type:", "protein:", "course:", "ingredient:"];
   function priorityTagIds(tags, maxCount) {
     const ordered = [];
     TAG_CHIP_PRIORITY.forEach((prefix) => {
@@ -316,7 +316,10 @@
           st.className = "subgroup-title";
           st.textContent = "Relacionadas";
           listEl.appendChild(st);
-          relatedItems.forEach((item) => listEl.appendChild(renderRecipeCard(item, { fromCollectionId: collection.id })));
+          relatedItems.forEach((item) => {
+            const contextTagId = (collection.relatedFilterTags || []).find((t) => item.tags.indexOf(t) !== -1);
+            listEl.appendChild(renderRecipeCard(item, { fromCollectionId: collection.id, contextTagId: contextTagId }));
+          });
         }
       } else if (sortKey === "category-az") {
         let lastLabel = null;
@@ -566,6 +569,11 @@
     const isMade = Storage.isMade(item.id);
     if (isMade) card.classList.add("made-card");
 
+    card.addEventListener("click", () => {
+      Router.toReceita(item.id, opts.fromCollectionId);
+    });
+
+    // ---------- header: thumb | título+origem | ações ----------
     const cardHeader = document.createElement("div");
     cardHeader.className = "recipe-header";
 
@@ -577,6 +585,16 @@
     } else {
       loadRecipeImage(imageQuery(recipe), thumb);
     }
+
+    const titleBlock = document.createElement("div");
+    titleBlock.className = "recipe-title";
+    titleBlock.innerHTML =
+      "<h3>" + recipe.name + "</h3>" +
+      (opts.catLabel ? '<div class="cat-chip">' + opts.catLabel + "</div>" : "") +
+      (recipe.origin ? '<div class="origin">' + recipe.origin + "</div>" : "");
+
+    const actions = document.createElement("div");
+    actions.className = "recipe-card-actions";
 
     const toggle = document.createElement("button");
     toggle.className = "made-toggle" + (isMade ? " made" : "");
@@ -612,43 +630,55 @@
       wantToggle.classList.toggle("active", now);
     });
 
-    const title = document.createElement("div");
-    title.className = "recipe-title";
-    title.innerHTML =
-      "<h3>" + recipe.name + "</h3>" +
-      (opts.catLabel ? '<div class="cat-chip">' + opts.catLabel + "</div>" : "") +
-      (recipe.origin ? '<div class="origin">' + recipe.origin + "</div>" : "") +
-      (recipe.desc ? '<div class="desc-line">' + recipe.desc + "</div>" : "");
-    const cardTagIds = priorityTagIds(item.tags || [], 3);
-    if (cardTagIds.length) {
-      title.appendChild(buildTagChipsEl(cardTagIds, "recipe-card-tags"));
+    actions.appendChild(toggle);
+    actions.appendChild(favToggle);
+    actions.appendChild(wantToggle);
+
+    cardHeader.appendChild(thumb);
+    cardHeader.appendChild(titleBlock);
+    cardHeader.appendChild(actions);
+    card.appendChild(cardHeader);
+
+    // ---------- descrição (resumo, 2 linhas) ----------
+    if (recipe.desc) {
+      const desc = document.createElement("div");
+      desc.className = "recipe-card-desc";
+      desc.textContent = recipe.desc;
+      card.appendChild(desc);
     }
 
+    // ---------- tags (prioritárias + contexto de "relacionada", se houver) ----------
+    const cardTagIds = priorityTagIds(item.tags || [], 3);
+    if (cardTagIds.length || opts.contextTagId) {
+      const tagsWrap = buildTagChipsEl(cardTagIds, "recipe-card-tags");
+      if (opts.contextTagId) {
+        const contextTag = TagModel.getTagById(opts.contextTagId);
+        if (contextTag) {
+          const badge = document.createElement("span");
+          badge.className = "recipe-card-context";
+          badge.textContent = contextTag.label;
+          tagsWrap.appendChild(badge);
+        }
+      }
+      card.appendChild(tagsWrap);
+    }
+
+    // ---------- meta (tempo, rendimento, dificuldade) em chips ----------
     const meta = document.createElement("div");
     meta.className = "recipe-meta";
     let metaHtml = "";
-    if (recipe.time && recipe.time.total) metaHtml += "<span>⏱ " + recipe.time.total + "</span>";
-    if (recipe.yield) metaHtml += "<span>🍽 " + recipe.yield + "</span>";
-    if (recipe.difficulty) metaHtml += "<span>📊 " + recipe.difficulty + "</span>";
+    if (recipe.time && recipe.time.total) metaHtml += '<span class="recipe-meta-chip">⏱ ' + recipe.time.total + "</span>";
+    if (recipe.yield) metaHtml += '<span class="recipe-meta-chip">🍽 ' + recipe.yield + "</span>";
+    if (recipe.difficulty) metaHtml += '<span class="recipe-meta-chip">📊 ' + recipe.difficulty + "</span>";
     meta.innerHTML = metaHtml;
+    card.appendChild(meta);
 
-    const chevron = document.createElement("div");
-    chevron.className = "chevron";
-    chevron.textContent = "▶";
+    // ---------- CTA ----------
+    const cta = document.createElement("div");
+    cta.className = "recipe-card-cta";
+    cta.innerHTML = "<span>Ver receita</span><span aria-hidden=\"true\">▶</span>";
+    card.appendChild(cta);
 
-    cardHeader.appendChild(toggle);
-    cardHeader.appendChild(favToggle);
-    cardHeader.appendChild(wantToggle);
-    cardHeader.appendChild(thumb);
-    cardHeader.appendChild(title);
-    cardHeader.appendChild(meta);
-    cardHeader.appendChild(chevron);
-
-    cardHeader.addEventListener("click", () => {
-      Router.toReceita(item.id, opts.fromCollectionId);
-    });
-
-    card.appendChild(cardHeader);
     return card;
   }
 
