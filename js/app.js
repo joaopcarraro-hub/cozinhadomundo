@@ -77,6 +77,38 @@
     if (id) Router.toReceita(id);
   }
 
+  // ---------- Chips de tags clicáveis (cards e página da receita) ----------
+  // time:/difficulty: ficam de fora — já aparecem como texto simples no meta row, mostrar de novo seria redundante.
+  const TAG_CHIP_PRIORITY = ["country:", "protein:", "dish_type:", "ingredient:", "course:"];
+  function priorityTagIds(tags, maxCount) {
+    const ordered = [];
+    TAG_CHIP_PRIORITY.forEach((prefix) => {
+      tags.forEach((t) => {
+        if (t.indexOf(prefix) === 0 && ordered.indexOf(t) === -1) ordered.push(t);
+      });
+    });
+    return ordered.slice(0, maxCount);
+  }
+
+  function buildTagChipsEl(tagIds, className) {
+    const wrap = document.createElement("div");
+    wrap.className = className;
+    tagIds.forEach((tagId) => {
+      const tag = TagModel.getTagById(tagId);
+      if (!tag) return;
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "tag-chip-link";
+      chip.textContent = tag.label;
+      chip.addEventListener("click", (e) => {
+        e.stopPropagation();
+        Router.toBusca([tagId]);
+      });
+      wrap.appendChild(chip);
+    });
+    return wrap;
+  }
+
   // ---------- Home ----------
   function renderHome() {
     activeCat = null;
@@ -452,6 +484,10 @@
       (opts.catLabel ? '<div class="cat-chip">' + opts.catLabel + "</div>" : "") +
       (recipe.origin ? '<div class="origin">' + recipe.origin + "</div>" : "") +
       (recipe.desc ? '<div class="desc-line">' + recipe.desc + "</div>" : "");
+    const cardTagIds = priorityTagIds(item.tags || [], 3);
+    if (cardTagIds.length) {
+      title.appendChild(buildTagChipsEl(cardTagIds, "recipe-card-tags"));
+    }
 
     const meta = document.createElement("div");
     meta.className = "recipe-meta";
@@ -535,6 +571,11 @@
     if (recipe.difficulty) metaHtml += "<span>📊 " + recipe.difficulty + "</span>";
     metaRow.innerHTML = metaHtml;
     page.appendChild(metaRow);
+
+    const pageTagIds = priorityTagIds(item.tags || [], 8);
+    if (pageTagIds.length) {
+      page.appendChild(buildTagChipsEl(pageTagIds, "recipe-page-tags"));
+    }
 
     const actions = document.createElement("div");
     actions.className = "recipe-page-actions";
