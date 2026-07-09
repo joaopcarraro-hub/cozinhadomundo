@@ -11,7 +11,7 @@ window.RECIPES["china"] = [
     time: { prep: "30 min + 24h secagem", cook: "1h30", total: "≈26h" },
     yield: "4-6 porções",
     difficulty: "Alta",
-    tags: ["protein:ave", "ingredient:mel", "ingredient:molho-de-soja", "ingredient:gengibre"],
+    tags: ["protein:ave", "ingredient:mel", "ingredient:molho-de-soja"],
     ingredients: [
       "1 pato inteiro (2-2,5 kg)",
       "2 L de água fervente (para escaldar)",
@@ -80,7 +80,7 @@ window.RECIPES["china"] = [
     time: { prep: "20 min", cook: "10 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
-    tags: ["protein:frango", "ingredient:amendoim", "ingredient:molho-de-soja", "ingredient:gengibre", "ingredient:ovo"],
+    tags: ["protein:frango", "ingredient:amendoim", "ingredient:molho-de-soja", "ingredient:ovo"],
     ingredients: [
       "500 g de peito de frango, em cubos",
       "1 clara de ovo",
@@ -119,7 +119,7 @@ window.RECIPES["china"] = [
     time: { prep: "15 min", cook: "15 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
-    tags: ["contains:suino", "ingredient:feijao", "ingredient:molho-de-soja", "ingredient:gengibre"],
+    tags: ["contains:suino", "ingredient:feijao", "ingredient:molho-de-soja"],
     ingredients: [
       "400 g de tofu macio (silken ou firme), em cubos",
       "150 g de carne suína ou bovina moída",
@@ -156,7 +156,7 @@ window.RECIPES["china"] = [
     time: { prep: "20 min", cook: "12 min", total: "32 min" },
     yield: "4 porções",
     difficulty: "Fácil",
-    tags: ["contains:frango", "contains:frutos-do-mar", "ingredient:ovo", "ingredient:molho-de-soja", "ingredient:gengibre"],
+    tags: ["contains:frango", "contains:frutos-do-mar", "ingredient:ovo", "ingredient:molho-de-soja"],
     ingredients: [
       "400 g de macarrão chow mein (ou macarrão de ovo chinês)",
       "200 g de peito de frango (ou carne/camarão), em tiras finas",
@@ -192,7 +192,7 @@ window.RECIPES["china"] = [
     time: { prep: "1h + 4h gelatina", cook: "10 min", total: "≈5h30" },
     yield: "20 unidades",
     difficulty: "Alta",
-    tags: ["contains:suino", "ingredient:gengibre", "ingredient:molho-de-soja"],
+    tags: ["contains:suino", "ingredient:molho-de-soja"],
     ingredients: [
       "Para a gelatina de caldo: 500 ml de caldo de porco/frango bem encorpado, 10 g de gelatina em folha (ou pele de porco cozida, técnica tradicional)",
       "300 g de carne suína moída",
@@ -226,7 +226,7 @@ window.RECIPES["china"] = [
     time: { prep: "50 min", cook: "10 min", total: "1h" },
     yield: "30 unidades",
     difficulty: "Média",
-    tags: ["contains:suino", "ingredient:gengibre", "ingredient:molho-de-soja"],
+    tags: ["contains:suino", "ingredient:molho-de-soja"],
     ingredients: [
       "300 g de carne suína moída",
       "200 g de repolho picado bem fino, salgado e espremido (para remover água)",
@@ -293,7 +293,7 @@ window.RECIPES["china"] = [
     time: { prep: "40 min", cook: "15 min", total: "55 min" },
     yield: "4 porções",
     difficulty: "Média",
-    tags: ["contains:frutos-do-mar", "contains:suino", "contains:ave", "ingredient:gengibre", "ingredient:molho-de-soja", "ingredient:espinafre"],
+    tags: ["contains:frutos-do-mar", "contains:suino", "contains:ave", "ingredient:molho-de-soja", "ingredient:espinafre"],
     ingredients: [
       "200 g de camarão picado bem fino",
       "150 g de carne suína moída",

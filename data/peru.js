@@ -12,7 +12,7 @@ window.RECIPES["peru"] = [
     time: { prep: "20 min", cook: "0 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Fácil",
-    tags: ["protein:peixe", "ingredient:limao", "ingredient:gengibre"],
+    tags: ["protein:peixe", "ingredient:limao"],
     ingredients: [
       "300 g de peixe branco bem fresco (robalo ou linguado), em fatias finas (estilo sashimi)",
       "100 ml de suco de limão-tahiti, espremido na hora",
@@ -161,7 +161,7 @@ window.RECIPES["peru"] = [
     time: { prep: "15 min", cook: "15 min", total: "30 min" },
     yield: "4 porções",
     difficulty: "Fácil",
-    tags: ["contains:frango", "contains:boi", "contains:frutos-do-mar", "contains:ovo", "ingredient:arroz", "ingredient:gengibre"],
+    tags: ["contains:frango", "contains:boi", "contains:frutos-do-mar", "contains:ovo", "ingredient:arroz"],
     ingredients: [
       "4 xícaras de arroz cozido, de preferência do dia anterior (mais seco)",
       "200 g de frango ou carne bovina, em tiras finas",

@@ -30,6 +30,39 @@
       clearTimeout(tagSearchDebounce);
       tagSearchDebounce = setTimeout(() => renderTagSuggestions(q, suggestionsEl, handlers), 220);
     });
+    // Enter escolhe a melhor sugestão sem precisar tocar na lista — útil pra tecla
+    // "Ir"/"Buscar" do teclado virtual no mobile. Ordem: tag formal (só se já tiver
+    // receita de verdade, nunca uma tag "morta") > filtro de texto combinável > receita direta.
+    inputEl.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter") return;
+      e.preventDefault();
+      const q = inputEl.value.trim();
+      if (!q) return;
+      const excludeTagIds = (handlers && handlers.excludeTagIds) || [];
+
+      const tagCandidates = Search.searchTags(q).filter((t) => excludeTagIds.indexOf(t.id) === -1);
+      const liveTag = tagCandidates.find((t) => TagModel.getRecipesByTags(excludeTagIds.concat([t.id])).length > 0);
+      if (liveTag) {
+        inputEl.value = "";
+        suggestionsEl.innerHTML = "";
+        handlers.onSelectTag(liveTag.id);
+        return;
+      }
+
+      if (handlers.onSelectText && Search.countByIngredientText(q) > 0) {
+        inputEl.value = "";
+        suggestionsEl.innerHTML = "";
+        handlers.onSelectText(q);
+        return;
+      }
+
+      const recipeResults = Search.searchRecipes(q, { limit: 1 });
+      if (recipeResults.length) {
+        inputEl.value = "";
+        suggestionsEl.innerHTML = "";
+        handlers.onSelectRecipe(recipeResults[0].catId, recipeResults[0].recipe.name);
+      }
+    });
   }
 
   function renderTagSuggestions(query, suggestionsEl, handlers) {
@@ -139,6 +172,30 @@
     return (s || "").toString().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   }
 
+  // Mapa catId -> grupo, derivado de window.COLLECTIONS (fonte atual, a mesma usada pelo botão
+  // voltar via "collection.group === grupo.collectionGroup") — NUNCA de window.CATEGORIES,
+  // cujo campo .group ficou desatualizado (ex: ainda marca "arrozes" como Proteínas e mantém
+  // "Brasil" como grupo próprio, quando collections.js já moveu isso pra Fundamentos/Cozinhas
+  // do Mundo). Só as coleções de "paridade de categoria" (id === id da categoria) entram aqui;
+  // coleções sintéticas cruzadas (col-ovo, col-vegetariana, col-rapidas etc.) não representam
+  // o "lar" de nenhuma receita, então ficam de fora de propósito.
+  let catIdToGroupCache = null;
+  function getCatIdToGroup() {
+    if (catIdToGroupCache) return catIdToGroupCache;
+    const map = {};
+    window.COLLECTIONS.forEach((c) => {
+      if (window.CATEGORIES.some((cat) => cat.id === c.id)) map[c.id] = c.group;
+    });
+    // brasileiros/brasil-regional foram fundidos na coleção "brasil" (sem coleção própria mais)
+    const brasilCollection = window.COLLECTIONS.find((c) => c.id === "brasil");
+    if (brasilCollection) {
+      map["brasileiros"] = brasilCollection.group;
+      map["brasil-regional"] = brasilCollection.group;
+    }
+    catIdToGroupCache = map;
+    return map;
+  }
+
   function renderCollectionCard(collection) {
     const { primaryRecipes, allRecipes } = TagModel.getRecipesByCollection(collection.id);
     const doneCount = Storage.countMade(allRecipes.map((i) => i.id));
@@ -208,11 +265,26 @@
     searchWrap.appendChild(search);
     wrap.appendChild(searchWrap);
 
+    const categoriesLabel = document.createElement("div");
+    categoriesLabel.className = "subgroup-title";
+    wrap.appendChild(categoriesLabel);
+
     const grid = document.createElement("div");
     grid.className = "category-grid";
     wrap.appendChild(grid);
 
+    const recipeResultsEl = document.createElement("div");
+    recipeResultsEl.className = "grupo-recipe-results";
+    wrap.appendChild(recipeResultsEl);
+
     const collections = window.COLLECTIONS.filter((c) => c.group === grupo.collectionGroup);
+
+    // Receitas cuja CATEGORIA (catId) pertence a este grupo — não um filtro por tag/coleção
+    // (isso deixava vazar receita de fora: ex. um bolo de chocolate com ovo na massa tem
+    // ingredient:ovo e "vazava" pra dentro da coleção Ovos via relatedFilterTags, mesmo sendo
+    // uma receita de Sobremesas). Categoria é a fonte de verdade de escopo aqui.
+    const catIdToGroup = getCatIdToGroup();
+    const groupRecipes = TagModel.getAllRecipesFlat().filter((item) => catIdToGroup[item.catId] === grupo.collectionGroup);
 
     function matchesQuery(collection, q) {
       if (!q) return true;
@@ -236,7 +308,37 @@
       filtered.forEach((collection) => grid.appendChild(renderCollectionCard(collection)));
     }
 
-    search.addEventListener("input", () => renderGrid(search.value.trim()));
+    // Além de filtrar as coleções exibidas, se o termo bater numa tag ingredient:/contains:
+    // presente em alguma receita deste grupo (reaproveita Search.searchTags — mesmo índice de
+    // tags derivadas pelo motor de dicionário canônico em tagmodel.js, sem duplicar matching de
+    // texto), mostra essas receitas numa seção própria, separada da lista de coleções.
+    function renderRecipeMatches(query) {
+      recipeResultsEl.innerHTML = "";
+      const q = (query || "").trim();
+      if (q.length < 2) return false;
+      const matchedTags = Search.searchTags(q).filter((t) => t.id.indexOf("ingredient:") === 0 || t.id.indexOf("contains:") === 0 || t.id.indexOf("seasoning:") === 0);
+      if (!matchedTags.length) return false;
+      const matchedIds = new Set(matchedTags.map((t) => t.id));
+      const items = groupRecipes.filter((item) => item.tags.some((t) => matchedIds.has(t)));
+      if (!items.length) return false;
+
+      const title = document.createElement("div");
+      title.className = "subgroup-title";
+      title.textContent = 'Receitas com "' + q + '"';
+      recipeResultsEl.appendChild(title);
+      items.forEach((item) => {
+        const cat = window.CATEGORIES.find((c) => c.id === item.catId);
+        recipeResultsEl.appendChild(renderRecipeCard(item, { catLabel: cat ? cat.label : item.catId }));
+      });
+      return true;
+    }
+
+    search.addEventListener("input", () => {
+      const q = search.value.trim();
+      renderGrid(q);
+      const hasRecipeResults = renderRecipeMatches(q);
+      categoriesLabel.textContent = hasRecipeResults ? "Categorias" : "";
+    });
     renderGrid("");
 
     content.appendChild(wrap);
@@ -312,31 +414,254 @@
     content.appendChild(wrap);
   }
 
+  // ---------- Barra de facetas (dropdowns) — compartilhada por renderCategory e renderBusca ----------
+  // Substitui o refino em funil (chips sequenciais). Cada dropdown lista só os valores
+  // presentes no universo ATUAL já filtrado pelas OUTRAS facetas ativas (não pela própria,
+  // senão o dropdown nunca mostraria alternativa à opção já escolhida), com contagem.
+  // Nada vem pré-selecionado (default = Todos/Tanto faz). Ingrediente é multi-seleção (OR
+  // entre os ingredientes escolhidos); os demais continuam de seleção única.
+  const GENERIC_FACET_DEFS = [
+    { key: "country", label: "País", prefix: "country:" },
+    { key: "difficulty", label: "Complexidade", prefix: "difficulty:" },
+    { key: "time", label: "Tempo", prefix: "time:" },
+    { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true },
+  ];
+
+  // Regra geral de combinação: tags do MESMO prefixo (ex: dois ingredient:*) casam em OR
+  // entre si; prefixos DIFERENTES combinam em AND. Pra facetas de seleção única isso se
+  // comporta exatamente como um AND simples (só há uma tag por grupo).
+  // ingredientMode: "and" (default) exige TODOS os ingredientes selecionados (é um filtro de
+  // "quais ingredientes eu tenho em casa", não "qualquer um destes me serve") — "or" é usado
+  // só pela rede de segurança quando o AND dá zero resultado (ver renderList/renderResults).
+  function matchesGroupedTags(itemTags, tagIds, ingredientMode) {
+    if (!tagIds.length) return true;
+    const groups = {};
+    tagIds.forEach((id) => {
+      const prefix = id.slice(0, id.indexOf(":") + 1);
+      (groups[prefix] = groups[prefix] || []).push(id);
+    });
+    return Object.keys(groups).every((prefix) => {
+      if ((prefix === "ingredient:" || prefix === "seasoning:") && ingredientMode !== "or") {
+        return groups[prefix].every((id) => itemTags.indexOf(id) !== -1);
+      }
+      return groups[prefix].some((id) => itemTags.indexOf(id) !== -1);
+    });
+  }
+
+  // A rede de segurança OR só ajuda quando 2+ tags do MESMO grupo (ingredient: OU seasoning:)
+  // estão selecionadas — combinar 1 ingredient: + 1 seasoning: é sempre AND entre grupos
+  // diferentes (ver matchesGroupedTags), então relaxar pra "or" nesse caso não muda nada e só
+  // deixaria o botão de fallback como um beco sem saída.
+  function hasIngredientLikeMultiSelect(tagIds) {
+    const ingCount = tagIds.filter((t) => t.indexOf("ingredient:") === 0).length;
+    const seaCount = tagIds.filter((t) => t.indexOf("seasoning:") === 0).length;
+    return ingCount >= 2 || seaCount >= 2;
+  }
+
+  // Lê o estado dos dropdowns a partir de um array plano de tag ids (selectedFacetTags ou
+  // tagIds) — facetas multi viram array, as demais pegam o primeiro tag do seu prefixo.
+  function readFacetStateFromTags(tagIds, defs) {
+    const state = {};
+    defs.forEach((def) => {
+      if (def.multi) {
+        state[def.key] = tagIds.filter((t) => t.indexOf(def.prefix) === 0);
+      } else {
+        state[def.key] = tagIds.find((t) => t.indexOf(def.prefix) === 0) || null;
+      }
+    });
+    return state;
+  }
+
+  // Caminho inverso — usado pra reconstruir o array plano depois que o usuário troca uma faceta.
+  function facetStateToTagIds(facetState, defs) {
+    const out = [];
+    defs.forEach((def) => {
+      if (def.multi) out.push.apply(out, facetState[def.key] || []);
+      else if (facetState[def.key]) out.push(facetState[def.key]);
+    });
+    return out;
+  }
+
+  function facetOptionsFromPrefix(items, prefix) {
+    const counts = {};
+    items.forEach((item) => {
+      item.tags.forEach((tagId) => {
+        if (tagId.indexOf(prefix) !== 0) return;
+        const tag = TagModel.getTagById(tagId);
+        // alho/cebola (lowPriority): fora do dropdown em destaque, continuam buscáveis por texto.
+        if (!tag || tag.lowPriority) return;
+        counts[tagId] = (counts[tagId] || 0) + 1;
+      });
+    });
+    return Object.keys(counts)
+      .map((tagId) => ({ tagId: tagId, tag: TagModel.getTagById(tagId), count: counts[tagId] }))
+      .sort((a, b) => b.count - a.count);
+  }
+
+  function facetOptionsFromStatic(items, staticOptions) {
+    return staticOptions
+      .map((opt) => {
+        const count = items.filter((item) => item.tags.indexOf(opt.tagId) !== -1).length;
+        return { tagId: opt.tagId, tag: { label: opt.label }, count: count };
+      })
+      .filter((o) => o.count > 0);
+  }
+
+  // universeItems: itens ANTES de qualquer faceta ser aplicada (ex: já filtrado por
+  // aba/coleção base, mas não pelas facetas do dropdown).
+  // facetState: objeto { [key]: tagId|null, ou tagId[] pras facetas multi } — mutado in-place.
+  // onChange(): recalcula resultado + re-renderiza (chamado depois do estado mudar).
+  function renderFacetBar(barEl, universeItems, facetState, defs, onChange) {
+    barEl.innerHTML = "";
+    let hasAnyOptions = false;
+    defs.forEach((def) => {
+      const otherTagIds = [];
+      defs.forEach((d) => {
+        if (d.key === def.key) return;
+        if (d.multi) otherTagIds.push.apply(otherTagIds, facetState[d.key] || []);
+        else if (facetState[d.key]) otherTagIds.push(facetState[d.key]);
+      });
+      const restricted = universeItems.filter((item) => matchesGroupedTags(item.tags, otherTagIds));
+      const options = def.prefix ? facetOptionsFromPrefix(restricted, def.prefix) : facetOptionsFromStatic(restricted, def.staticOptions);
+
+      const wrap = document.createElement("div");
+      wrap.className = "facet-control";
+
+      if (def.multi) {
+        const selectedIds = facetState[def.key] || [];
+        const addableOptions = options.filter((o) => selectedIds.indexOf(o.tagId) === -1);
+        if (!addableOptions.length && !selectedIds.length) return; // nada pra mostrar nesse dropdown
+        hasAnyOptions = true;
+        const chipsHtml = selectedIds
+          .map((tagId) => {
+            const tag = TagModel.getTagById(tagId);
+            return (
+              '<button type="button" class="tag-chip tag-chip--selected" data-remove="' +
+              tagId +
+              '">' +
+              (tag ? tag.label : tagId) +
+              ' <span aria-hidden="true">×</span></button>'
+            );
+          })
+          .join("");
+        wrap.innerHTML =
+          "<span>" +
+          def.label +
+          "</span>" +
+          (chipsHtml ? '<div class="facet-multi-chips">' + chipsHtml + "</div>" : "") +
+          '<select><option value="">+ Adicionar ' +
+          def.label.toLowerCase() +
+          "</option>" +
+          addableOptions.map((o) => '<option value="' + o.tagId + '">' + o.tag.label + " (" + o.count + ")</option>").join("") +
+          "</select>";
+        wrap.querySelectorAll("[data-remove]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            facetState[def.key] = selectedIds.filter((id) => id !== btn.dataset.remove);
+            onChange();
+          });
+        });
+        const select = wrap.querySelector("select");
+        select.addEventListener("change", () => {
+          if (!select.value) return;
+          facetState[def.key] = selectedIds.concat([select.value]);
+          onChange();
+        });
+      } else {
+        if (!options.length && !facetState[def.key]) return; // nada pra mostrar nesse dropdown
+        hasAnyOptions = true;
+        const currentVal = facetState[def.key] || "";
+        wrap.innerHTML =
+          "<span>" +
+          def.label +
+          '</span><select><option value="">' +
+          (def.allLabel || "Todos") +
+          "</option>" +
+          options
+            .map((o) => '<option value="' + o.tagId + '"' + (o.tagId === currentVal ? " selected" : "") + ">" + o.tag.label + " (" + o.count + ")</option>")
+            .join("") +
+          "</select>";
+        const select = wrap.querySelector("select");
+        select.value = currentVal;
+        select.addEventListener("change", () => {
+          facetState[def.key] = select.value || null;
+          onChange();
+        });
+      }
+      barEl.appendChild(wrap);
+    });
+    if (!hasAnyOptions) barEl.innerHTML = "";
+  }
+
   // ---------- Categoria (coleção) ----------
   let refreshActiveCounts = null; // atualiza contadores/toolbar sem re-renderizar os cards (chamado ao marcar feito/favorito)
 
-  function showCategoria(collectionId) {
+  function showCategoria(collectionId, initialFacetTags, initialRole) {
     const collection = window.COLLECTIONS.find((c) => c.id === collectionId) || firstCollection;
     activeCat = collection.id;
-    renderCategory(collection);
+    renderCategory(collection, initialFacetTags || [], initialRole || null);
   }
 
-  function renderCategory(collection) {
+  function renderCategory(collection, initialFacetTags, initialRole) {
     refreshActiveCounts = null;
     header.innerHTML =
-      "<h2>" + collection.label + "</h2>" + (collection.desc ? '<div class="desc">' + collection.desc + "</div>" : "");
+      '<button type="button" class="back-button">← Voltar</button><h2>' +
+      collection.label +
+      "</h2>" +
+      (collection.desc ? '<div class="desc">' + collection.desc + "</div>" : "");
+    const grupo = GRUPOS.find((g) => g.collectionGroup === collection.group);
+    header.querySelector(".back-button").addEventListener("click", () => {
+      if (grupo) Router.toGrupo(grupo.id);
+      else Router.toHome();
+    });
     content.innerHTML = "";
     progressEl.textContent = "";
 
-    const { primaryRecipes, relatedRecipes, allRecipes } = TagModel.getRecipesByCollection(collection.id);
+    const { primaryRecipes: basePrimary, relatedRecipes: baseRelated, allRecipes: baseAll } = TagModel.getRecipesByCollection(collection.id);
 
-    if (!allRecipes.length) {
+    if (!baseAll.length) {
       content.innerHTML = '<div class="empty-state">Essa coleção ainda não tem receitas — em breve. 🍳</div>';
       return;
     }
 
-    const hasRelated = relatedRecipes.length > 0;
-    let activeTab = hasRelated && collection.defaultView === "all" ? "all" : hasRelated ? "primary" : "all";
+    // Facetas extras selecionadas dentro da coleção (refino in-context, nunca navega pra
+    // #/busca) — persistidas na própria URL via Router.replaceCategoriaFacets.
+    let selectedFacetTags = (initialFacetTags || []).slice();
+    let primaryRecipes = basePrimary;
+    let relatedRecipes = baseRelated;
+    let allRecipes = baseAll;
+    // Rede de segurança: quando 2+ ingredientes selecionados dão zero receita (AND vazio), o
+    // usuário pode pedir "ver com qualquer um" — troca só a LISTAGEM pra OR, sem afetar as
+    // contagens dos dropdowns (que continuam refletindo o AND, o comportamento padrão).
+    let ingredientOrFallback = false;
+
+    function applyFacets() {
+      const matchesFacets = (item) => matchesGroupedTags(item.tags, selectedFacetTags);
+      primaryRecipes = selectedFacetTags.length ? basePrimary.filter(matchesFacets) : basePrimary;
+      relatedRecipes = selectedFacetTags.length ? baseRelated.filter(matchesFacets) : baseRelated;
+      allRecipes = selectedFacetTags.length ? baseAll.filter(matchesFacets) : baseAll;
+    }
+    applyFacets();
+
+    function itemsWithMode(mode) {
+      const matches = (item) => matchesGroupedTags(item.tags, selectedFacetTags, mode);
+      const primary = selectedFacetTags.length ? basePrimary.filter(matches) : basePrimary;
+      const related = selectedFacetTags.length ? baseRelated.filter(matches) : baseRelated;
+      const all = selectedFacetTags.length ? baseAll.filter(matches) : baseAll;
+      if (proteinRole === "focus") return primary;
+      if (proteinRole === "secondary") return related;
+      return all;
+    }
+
+    // Papel da proteína (Principal/Secundário/Tanto faz) substitui as antigas abas
+    // "Foco da receita/Todas" — só existe pra coleções de proteína que realmente têm
+    // receitas "também leva" (senão não há o que escolher).
+    const isProteinRole = collection.collectionType === "protein" && baseRelated.length > 0;
+    let proteinRole = isProteinRole && (initialRole === "focus" || initialRole === "secondary") ? initialRole : null;
+
+    function syncUrl() {
+      Router.replaceCategoriaFacets(collection.id, selectedFacetTags, proteinRole);
+    }
+
     let sortKey = TagModel.getCollectionSort(collection.id) || "relevance";
 
     const toolbar = document.createElement("div");
@@ -345,15 +670,6 @@
     const countEl = document.createElement("div");
     countEl.className = "collection-count";
     toolbar.appendChild(countEl);
-
-    let tabsEl = null;
-    if (hasRelated) {
-      tabsEl = document.createElement("div");
-      tabsEl.className = "collection-tabs";
-      tabsEl.innerHTML =
-        '<button type="button" data-tab="primary">Foco da receita</button><button type="button" data-tab="all">Todas</button>';
-      toolbar.appendChild(tabsEl);
-    }
 
     const sortWrap = document.createElement("label");
     sortWrap.className = "sort-control";
@@ -366,49 +682,111 @@
     sortSelect.value = sortKey;
     content.appendChild(toolbar);
 
-    const refineEl = document.createElement("div");
-    refineEl.className = "collection-refine";
-    content.appendChild(refineEl);
+    const facetBarEl = document.createElement("div");
+    facetBarEl.className = "facet-bar";
+    content.appendChild(facetBarEl);
 
     const listEl = document.createElement("div");
     content.appendChild(listEl);
 
     function currentItems() {
-      return activeTab === "primary" ? primaryRecipes : allRecipes;
+      if (proteinRole === "focus") return primaryRecipes;
+      if (proteinRole === "secondary") return relatedRecipes;
+      return allRecipes;
     }
 
     function renderToolbarState() {
-      countEl.innerHTML = hasRelated
-        ? "<strong>" + primaryRecipes.length + " de foco</strong><span>" + allRecipes.length + " no total</span>"
-        : "<strong>" + allRecipes.length + " receita" + (allRecipes.length === 1 ? "" : "s") + "</strong>";
-      if (tabsEl) {
-        tabsEl.querySelectorAll("button").forEach((btn) => btn.classList.toggle("active", btn.dataset.tab === activeTab));
-      }
+      countEl.innerHTML = "<strong>" + currentItems().length + " receita" + (currentItems().length === 1 ? "" : "s") + "</strong>";
       const doneCount = Storage.countMade(currentItems().map((i) => i.id));
       progressEl.textContent = doneCount + " de " + currentItems().length + " já feitas ✓";
     }
 
-    function renderRefine() {
-      const related = TagModel.getGuidedRelatedTags(collection.primaryFilterTags, collection.collectionType).slice(0, 8);
-      if (!related.length) {
-        refineEl.innerHTML = "";
-        return;
-      }
-      refineEl.innerHTML =
-        '<div class="tagsearch-group-label">Refinar</div><div class="tagsearch-taglist">' +
-        related.map((r) => '<button type="button" class="tag-suggestion" data-tag="' + r.tag.id + '">' + r.tag.label + " (" + r.count + ")</button>").join("") +
-        "</div>";
-      refineEl.querySelectorAll(".tag-suggestion").forEach((btn) => {
-        btn.addEventListener("click", () => Router.toBusca(collection.primaryFilterTags.concat([btn.dataset.tag])));
+    function renderProteinRoleControl() {
+      if (!isProteinRole) return;
+      const matchesGeneric = (item) => matchesGroupedTags(item.tags, selectedFacetTags);
+      const focusCount = basePrimary.filter(matchesGeneric).length;
+      const secondaryCount = baseRelated.filter(matchesGeneric).length;
+
+      const wrap = document.createElement("label");
+      wrap.className = "facet-control";
+      wrap.innerHTML =
+        "<span>Papel da proteína</span><select>" +
+        '<option value="">Tanto faz</option>' +
+        '<option value="focus">Principal (' +
+        focusCount +
+        ')</option><option value="secondary">Secundário (' +
+        secondaryCount +
+        ")</option></select>";
+      const select = wrap.querySelector("select");
+      select.value = proteinRole || "";
+      select.addEventListener("change", () => {
+        proteinRole = select.value || null;
+        ingredientOrFallback = false;
+        syncUrl();
+        renderToolbarState();
+        renderFacets();
+        renderList();
       });
+      facetBarEl.appendChild(wrap);
+    }
+
+    function renderFacets() {
+      const facetState = readFacetStateFromTags(selectedFacetTags, GENERIC_FACET_DEFS);
+      const facetUniverse = proteinRole === "focus" ? basePrimary : proteinRole === "secondary" ? baseRelated : baseAll;
+      renderFacetBar(facetBarEl, facetUniverse, facetState, GENERIC_FACET_DEFS, () => {
+        selectedFacetTags = facetStateToTagIds(facetState, GENERIC_FACET_DEFS);
+        ingredientOrFallback = false;
+        applyFacets();
+        syncUrl();
+        renderFacets();
+        renderToolbarState();
+        renderList();
+      });
+      renderProteinRoleControl();
     }
 
     function renderList() {
       listEl.innerHTML = "";
-      const sortedItems = TagModel.sortRecipeItems(currentItems(), sortKey, collection);
+      let items = currentItems();
+      let usingOrFallback = false;
+
+      if (!items.length) {
+        const canFallbackToOr = hasIngredientLikeMultiSelect(selectedFacetTags);
+        if (canFallbackToOr && !ingredientOrFallback) {
+          listEl.innerHTML =
+            '<div class="empty-state">Nenhuma receita tem todos estes ingredientes juntos.<br>' +
+            '<button type="button" class="btn-or-fallback">Ver receitas com qualquer um destes ingredientes</button></div>';
+          listEl.querySelector(".btn-or-fallback").addEventListener("click", () => {
+            ingredientOrFallback = true;
+            renderList();
+          });
+          return;
+        }
+        if (canFallbackToOr && ingredientOrFallback) {
+          items = itemsWithMode("or");
+          usingOrFallback = items.length > 0;
+        }
+        if (!items.length) {
+          listEl.innerHTML = '<div class="empty-state">Nenhuma receita com esses filtros.<br>Remova um filtro pra ampliar os resultados.</div>';
+          return;
+        }
+      }
+
+      if (usingOrFallback) {
+        const notice = document.createElement("div");
+        notice.className = "or-fallback-notice";
+        notice.textContent = "Mostrando receitas com qualquer um dos ingredientes selecionados (não todos ao mesmo tempo).";
+        listEl.appendChild(notice);
+        // o contador do topo reflete o AND por padrão — nesse modo especial, atualiza pra
+        // não mostrar "0 receitas" enquanto a lista abaixo tem itens de verdade.
+        countEl.innerHTML = "<strong>" + items.length + " receita" + (items.length === 1 ? "" : "s") + " (qualquer ingrediente)</strong>";
+        progressEl.textContent = Storage.countMade(items.map((i) => i.id)) + " de " + items.length + " já feitas ✓";
+      }
+
+      const sortedItems = TagModel.sortRecipeItems(items, sortKey, collection);
       const primaryIds = new Set(primaryRecipes.map((i) => i.id));
 
-      if (sortKey === "relevance" && activeTab === "all" && hasRelated) {
+      if (sortKey === "relevance" && proteinRole === null && isProteinRole && !usingOrFallback) {
         const primaryItems = sortedItems.filter((i) => primaryIds.has(i.id));
         const relatedItems = sortedItems.filter((i) => !primaryIds.has(i.id));
         if (primaryItems.length) {
@@ -446,15 +824,6 @@
       }
     }
 
-    if (tabsEl) {
-      tabsEl.querySelectorAll("button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          activeTab = btn.dataset.tab;
-          renderToolbarState();
-          renderList();
-        });
-      });
-    }
     sortSelect.addEventListener("change", () => {
       sortKey = sortSelect.value;
       TagModel.setCollectionSort(collection.id, sortKey);
@@ -464,7 +833,7 @@
     refreshActiveCounts = renderToolbarState;
 
     renderToolbarState();
-    renderRefine();
+    renderFacets();
     renderList();
   }
 
@@ -480,7 +849,11 @@
     textFilters = textFilters || [];
     activeCat = null;
     refreshActiveCounts = null;
-    header.innerHTML = "<h2>🔎 Buscar por tags</h2>";
+    header.innerHTML = '<button type="button" class="back-button">← Voltar</button><h2>🔎 Buscar por tags</h2>';
+    header.querySelector(".back-button").addEventListener("click", () => {
+      if (history.length > 1) history.back();
+      else Router.toHome();
+    });
     content.innerHTML = "";
     progressEl.textContent = "";
 
@@ -505,9 +878,9 @@
     textChipsEl.className = "tagsearch-chips";
     wrap.appendChild(textChipsEl);
 
-    const relatedEl = document.createElement("div");
-    relatedEl.className = "tagsearch-related";
-    wrap.appendChild(relatedEl);
+    const facetBarEl = document.createElement("div");
+    facetBarEl.className = "facet-bar";
+    wrap.appendChild(facetBarEl);
 
     const countRow = document.createElement("div");
     countRow.className = "tagsearch-count-row";
@@ -524,6 +897,9 @@
     const sortSelect = sortWrap.querySelector("select");
     let sortKey = "recipe-az";
     sortSelect.value = sortKey;
+    // Rede de segurança: 2+ ingredientes selecionados dando zero receita (AND vazio) oferece
+    // "ver com qualquer um" — troca só a LISTAGEM pra OR, sem afetar as contagens dos dropdowns.
+    let ingredientOrFallback = false;
     wrap.appendChild(countRow);
 
     content.appendChild(wrap);
@@ -584,22 +960,29 @@
       });
     }
 
-    function renderRelated() {
-      if (!tagIds.length) {
-        relatedEl.innerHTML = "";
-        return;
+    // tags controladas pelos dropdowns genéricos (país/complexidade/tempo/ingrediente) —
+    // qualquer OUTRA tag em tagIds (de um chip manual/busca por texto) fica de fora e é
+    // preservada ao trocar uma faceta.
+    function nonFacetTagIds() {
+      return tagIds.filter((id) => !GENERIC_FACET_DEFS.some((def) => id.indexOf(def.prefix) === 0));
+    }
+
+    function facetUniverse(base, mode) {
+      let items = base.length ? TagModel.getAllRecipesFlat().filter((item) => matchesGroupedTags(item.tags, base, mode)) : TagModel.getAllRecipesFlat();
+      if (textFilters.length) {
+        items = items.filter((item) => {
+          const ingredientsText = normText((item.recipe.ingredients || []).join(" "));
+          return textFilters.every((t) => ingredientsText.indexOf(normText(t)) !== -1);
+        });
       }
-      const related = TagModel.getGuidedRelatedTags(tagIds, TagModel.inferCollectionTypeFromTags(tagIds)).slice(0, 10);
-      if (!related.length) {
-        relatedEl.innerHTML = "";
-        return;
-      }
-      relatedEl.innerHTML =
-        '<div class="tagsearch-group-label">Refinar</div><div class="tagsearch-taglist">' +
-        related.map((r) => '<button type="button" class="tag-suggestion" data-tag="' + r.tag.id + '">' + r.tag.label + " (" + r.count + ")</button>").join("") +
-        "</div>";
-      relatedEl.querySelectorAll(".tag-suggestion").forEach((btn) => {
-        btn.addEventListener("click", () => goToTags(tagIds.concat([btn.dataset.tag])));
+      return items;
+    }
+
+    function renderFacets() {
+      const facetState = readFacetStateFromTags(tagIds, GENERIC_FACET_DEFS);
+      const base = nonFacetTagIds();
+      renderFacetBar(facetBarEl, facetUniverse(base), facetState, GENERIC_FACET_DEFS, () => {
+        goToTags(base.concat(facetStateToTagIds(facetState, GENERIC_FACET_DEFS)));
       });
     }
 
@@ -630,18 +1013,37 @@
         renderPopularTags();
         return;
       }
-      let items = tagIds.length ? TagModel.getRecipesByTags(tagIds) : TagModel.getAllRecipesFlat();
-      if (textFilters.length) {
-        items = items.filter((item) => {
-          const ingredientsText = normText((item.recipe.ingredients || []).join(" "));
-          return textFilters.every((t) => ingredientsText.indexOf(normText(t)) !== -1);
-        });
-      }
+      let items = facetUniverse(tagIds);
+      let usingOrFallback = false;
       if (!items.length) {
-        countEl.textContent = "";
-        resultsEl.innerHTML =
-          '<div class="empty-state">Nenhuma receita encontrada com esses filtros.<br>Remova um filtro pra ampliar os resultados.</div>';
-        return;
+        const canFallbackToOr = hasIngredientLikeMultiSelect(tagIds);
+        if (canFallbackToOr && !ingredientOrFallback) {
+          countEl.textContent = "";
+          resultsEl.innerHTML =
+            '<div class="empty-state">Nenhuma receita tem todos estes ingredientes juntos.<br>' +
+            '<button type="button" class="btn-or-fallback">Ver receitas com qualquer um destes ingredientes</button></div>';
+          resultsEl.querySelector(".btn-or-fallback").addEventListener("click", () => {
+            ingredientOrFallback = true;
+            renderResults();
+          });
+          return;
+        }
+        if (canFallbackToOr && ingredientOrFallback) {
+          items = facetUniverse(tagIds, "or");
+          usingOrFallback = items.length > 0;
+        }
+        if (!items.length) {
+          countEl.textContent = "";
+          resultsEl.innerHTML =
+            '<div class="empty-state">Nenhuma receita encontrada com esses filtros.<br>Remova um filtro pra ampliar os resultados.</div>';
+          return;
+        }
+      }
+      if (usingOrFallback) {
+        const notice = document.createElement("div");
+        notice.className = "or-fallback-notice";
+        notice.textContent = "Mostrando receitas com qualquer um dos ingredientes selecionados (não todos ao mesmo tempo).";
+        resultsEl.appendChild(notice);
       }
       countEl.textContent = items.length + (items.length === 1 ? " receita encontrada" : " receitas encontradas");
       const sortedItems = TagModel.sortRecipeItems(items, sortKey, null);
@@ -673,7 +1075,7 @@
 
     renderChips();
     renderTextChips();
-    renderRelated();
+    renderFacets();
     renderResults();
   }
 
@@ -689,7 +1091,11 @@
     activeCat = null;
     refreshActiveCounts = null;
 
-    header.innerHTML = "<h2>" + cfg.title + "</h2>";
+    header.innerHTML = '<button type="button" class="back-button">← Voltar</button><h2>' + cfg.title + "</h2>";
+    header.querySelector(".back-button").addEventListener("click", () => {
+      if (history.length > 1) history.back();
+      else Router.toHome();
+    });
     content.innerHTML = "";
     progressEl.textContent = "";
 
@@ -1281,7 +1687,7 @@
     } else if (route.name === "grupo") {
       renderGrupo(route.grupoId);
     } else if (route.name === "categoria") {
-      showCategoria(route.catId);
+      showCategoria(route.catId, route.tags || [], route.role || null);
     } else if (route.name === "receita") {
       renderReceita(route.id, route.from);
     } else if (route.name === "cozinhar") {

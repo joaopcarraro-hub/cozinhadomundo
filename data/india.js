@@ -11,7 +11,7 @@ window.RECIPES["india"] = [
     time: { prep: "20 min + 6h marinada", cook: "35 min", total: "≈7h" },
     yield: "4 porções",
     difficulty: "Fácil",
-    tags: ["protein:frango", "ingredient:iogurte", "ingredient:gengibre"],
+    tags: ["protein:frango", "ingredient:iogurte"],
     ingredients: [
       "1 frango inteiro, em pedaços (ou 8 sobrecoxas), com pequenos cortes na carne",
       "200 g de iogurte natural integral",

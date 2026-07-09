@@ -133,6 +133,106 @@
     return null;
   }
 
+  // ---------- ingredient:/seasoning:/water:/cuisine:/region: via dicionário canônico ----------
+  // Fonte única: data/derivation-dict.js (window.DerivationDict), carregado antes deste arquivo
+  // no index.html — NÃO duplica o dicionário aqui. Nunca deriva protein:/contains: — isso
+  // continua exigindo julgamento humano sobre o foco real do prato (skill
+  // cooking-taxonomy-architect). Substitui por completo o motor antigo (que vivia só de
+  // js/tags.js + uma blocklist ad-hoc): validado via scripts/derive-tags-dry-run.js antes de
+  // ligar aqui — rode esse script de novo sempre que o dicionário mudar.
+  function normalizeText(s) {
+    return window.DerivationDict.norm((s || "").toString());
+  }
+
+  function escapeRegex(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  // needle -> entrada do DICT, pré-compilado uma vez (nunca por receita/keystroke).
+  let dictNeedleCache = null;
+  function getDictNeedles() {
+    if (dictNeedleCache) return dictNeedleCache;
+    const needles = [];
+    (window.DerivationDict.DICT || []).forEach((entry) => {
+      if (entry.tier === "block") return; // reservado, nenhuma entrada usa hoje
+      const prefix = entry.ns === "ingredient" ? "ingredient:" : "seasoning:";
+      const tagId = prefix + entry.id;
+      (entry.syn || []).forEach((syn) => {
+        const needle = normalizeText(syn).trim();
+        if (!needle) return;
+        needles.push({ tagId: tagId, entry: entry, regex: new RegExp("\\b" + escapeRegex(needle) + "\\b") });
+      });
+    });
+    dictNeedleCache = needles;
+    return needles;
+  }
+
+  // Falsos-amigos por entrada (campo `ff` do DICT): o termo é MASCARADO da linha antes do
+  // teste (não a linha inteira é descartada) — assim "1 alho-poró fatiado, 2 dentes de alho"
+  // ainda acha o "alho" de verdade que sobra na mesma linha.
+  function maskFalseFriends(entry, normalizedLine) {
+    if (!entry.ff) return normalizedLine;
+    let masked = normalizedLine;
+    entry.ff.forEach((phrase) => {
+      masked = masked.split(normalizeText(phrase)).join(" ");
+    });
+    return masked;
+  }
+
+  function deriveTagsFromIngredients(recipe) {
+    const lines = (recipe.ingredients || []).map(normalizeText);
+    if (!lines.length) return [];
+    const needles = getDictNeedles();
+    const tagIds = new Set();
+    const matchedEntryIds = new Set();
+    lines.forEach((line) => {
+      needles.forEach(({ tagId, entry, regex }) => {
+        if (matchedEntryIds.has(entry.id)) return;
+        if (regex.test(maskFalseFriends(entry, line))) {
+          matchedEntryIds.add(entry.id);
+          tagIds.add(tagId);
+          if (entry.water) tagIds.add("water:" + entry.water);
+        }
+      });
+    });
+    return Array.from(tagIds);
+  }
+
+  // Parênteses que não são região geográfica mesmo dentro de um país válido (ex: "Brasil
+  // (adaptação)") — mascarado com a mesma mecânica do `ff`, antes de virar region:.
+  const REGION_BLOCKLIST = ["adaptacao", "adaptado", "estilo", "moderna", "tradicional", "versao", "receita"];
+
+  // cuisine:/region: só derivam quando o país do `origin` bate em ORIGIN_COUNTRY_MATCHERS
+  // (mesma lista de deriveCountryTagsFromOrigin, reaproveitada — nunca duplicada). Fora disso
+  // não deriva nada, o que é correto pra Fundamentos/Técnicas Contemporâneas, cujo `origin`
+  // não é geográfico (ex: "Gastronomia Contemporânea").
+  function deriveTagsFromOrigin(origin) {
+    if (!origin) return [];
+    const m = origin.match(/^(.*?)\s*\(([^)]+)\)\s*$/);
+    const parenPart = m ? m[2] : null;
+
+    const tags = [];
+    const matchedSlugs = [];
+    ORIGIN_COUNTRY_MATCHERS.forEach(([name, countryTagId]) => {
+      const slug = countryTagId.slice("country:".length);
+      if (origin.indexOf(name) !== -1 && matchedSlugs.indexOf(slug) === -1) {
+        matchedSlugs.push(slug);
+        tags.push("cuisine:" + slug);
+      }
+    });
+
+    if (parenPart && matchedSlugs.length) {
+      let masked = normalizeText(parenPart);
+      REGION_BLOCKLIST.forEach((word) => {
+        masked = masked.replace(new RegExp("\\b" + word + "\\b", "g"), " ");
+      });
+      const slug = masked.trim().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      if (slug) tags.push("region:" + slug);
+    }
+
+    return tags;
+  }
+
   // ---------- tags completas de uma receita (automáticas + manuais) ----------
   function getRecipeTags(catId, recipe) {
     const auto = (CATEGORY_BASE_TAGS[catId] || []).slice();
@@ -148,7 +248,38 @@
     manual.forEach((t) => {
       if (auto.indexOf(t) === -1) auto.push(t);
     });
+    deriveTagsFromIngredients(recipe).forEach((t) => {
+      if (auto.indexOf(t) === -1) auto.push(t);
+    });
+    deriveTagsFromOrigin(recipe.origin).forEach((t) => {
+      if (auto.indexOf(t) === -1) auto.push(t);
+    });
     return auto;
+  }
+
+  // ---------- validação manual (console) — nunca roda em produção ----------
+  // Pra cada ingredient:/seasoning:/cuisine:/region: que a derivação achou, imprime até 5
+  // receitas de exemplo. Rode TagModel.validateDerivedTags() no console pra conferir
+  // falso-positivo rápido; pra um relatório completo (médias, amostra, auditoria de risco),
+  // rode `node scripts/derive-tags-dry-run.js` no repositório.
+  function validateDerivedTags() {
+    const all = getAllRecipesFlat();
+    const byTag = {};
+    all.forEach((item) => {
+      deriveTagsFromIngredients(item.recipe)
+        .concat(deriveTagsFromOrigin(item.recipe.origin))
+        .forEach((tagId) => {
+          if (!byTag[tagId]) byTag[tagId] = [];
+          if (byTag[tagId].length < 5) byTag[tagId].push(item.recipe.name + " (" + item.catId + ")");
+        });
+    });
+    Object.keys(byTag)
+      .sort()
+      .forEach((tagId) => {
+        console.log(tagId + ":");
+        byTag[tagId].forEach((name) => console.log("  - " + name));
+      });
+    return byTag;
   }
 
   // ---------- id único por receita (slug do nome, com desempate por categoria) ----------
@@ -448,6 +579,9 @@
     parseMinutes,
     validateRecipeTags,
     findDuplicateIds,
+    deriveTagsFromIngredients,
+    deriveTagsFromOrigin,
+    validateDerivedTags,
     getCollectionRelevanceScore,
     sortRecipeItems,
     SORT_OPTIONS,

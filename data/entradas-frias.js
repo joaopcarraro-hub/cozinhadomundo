@@ -143,7 +143,7 @@ window.RECIPES["entradas-frias"] = [
     time: { prep: "20 min", cook: "0 min", total: "20 min" },
     yield: "2 porções",
     difficulty: "Fácil",
-    tags: ["protein:peixe", "ingredient:gengibre", "ingredient:molho-de-soja"],
+    tags: ["protein:peixe", "ingredient:molho-de-soja"],
     ingredients: [
       "300 g de salmão fresco, sem pele e sem espinhas, tipo sashimi",
       "1 colher (sopa) de cebolinha picada",

@@ -11,7 +11,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Média",
-    tags: ["protein:frango", "ingredient:coco", "ingredient:berinjela", "ingredient:curry"],
+    tags: ["protein:frango", "ingredient:coco", "ingredient:berinjela"],
     ingredients: [
       "500 g de peito de frango, em tiras",
       "3 colheres (sopa) de pasta de curry verde (pronta ou caseira: pimenta verde, capim-limão, galanga, alho, échalote, coentro, camarão seco batidos)",
@@ -49,7 +49,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "25 min", total: "45 min" },
     yield: "4 porções",
     difficulty: "Média",
-    tags: ["protein:boi", "protein:frango", "ingredient:coco", "ingredient:pimentao", "ingredient:curry"],
+    tags: ["protein:boi", "protein:frango", "ingredient:coco", "ingredient:pimentao"],
     ingredients: [
       "500 g de carne bovina ou frango, em tiras (ou camarão)",
       "3 colheres (sopa) de pasta de curry vermelho",
@@ -85,7 +85,7 @@ window.RECIPES["tailandia"] = [
     time: { prep: "20 min", cook: "1h30", total: "1h50" },
     yield: "4-6 porções",
     difficulty: "Média",
-    tags: ["protein:boi", "ingredient:batata", "ingredient:amendoim", "ingredient:coco", "ingredient:curry"],
+    tags: ["protein:boi", "ingredient:batata", "ingredient:amendoim", "ingredient:coco"],
     ingredients: [
       "800 g de paleta ou acém bovino, em cubos grandes",
       "3 colheres (sopa) de pasta de curry massaman (pronta ou caseira, com canela, cardamomo, cominho, cravo, pimentas)",

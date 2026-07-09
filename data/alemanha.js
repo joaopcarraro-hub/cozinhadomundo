@@ -11,7 +11,7 @@ window.RECIPES["alemanha"] = [
     time: { prep: "30 min + 3 dias marinada", cook: "2h30", total: "≈3 dias" },
     yield: "6 porções",
     difficulty: "Média",
-    tags: ["protein:boi", "ingredient:gengibre"],
+    tags: ["protein:boi"],
     ingredients: [
       "1,5 kg de acém ou coxão duro bovino, em peça",
       "500 ml de vinagre de vinho tinto",

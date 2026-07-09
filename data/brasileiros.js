@@ -264,7 +264,7 @@ window.RECIPES["brasileiros"] = [
     time: { prep: "20 min", cook: "40 min", total: "1h" },
     yield: "6 porções",
     difficulty: "Média",
-    tags: ["protein:frutos-do-mar", "ingredient:coco", "ingredient:castanha", "ingredient:amendoim", "ingredient:gengibre"],
+    tags: ["protein:frutos-do-mar", "ingredient:coco", "ingredient:castanha", "ingredient:amendoim"],
     ingredients: [
       "400 g de camarão seco",
       "400 g de camarão fresco, limpo",

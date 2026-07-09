@@ -404,7 +404,7 @@ window.RECIPES["japao"] = [
     time: { prep: "30 min", cook: "3h (caldo) + 20 min (montagem)", total: "≈3h30" },
     yield: "4 porções",
     difficulty: "Alta",
-    tags: ["protein:suino", "ingredient:ovo", "ingredient:molho-de-soja", "ingredient:gengibre"],
+    tags: ["protein:suino", "ingredient:ovo", "ingredient:molho-de-soja"],
     ingredients: [
       "1,5 kg de ossos de porco (ou frango) para o caldo",
       "2 L de água",

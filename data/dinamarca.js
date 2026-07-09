@@ -591,7 +591,7 @@ window.RECIPES["dinamarca"] = [
     time: { prep: "20 min + 24h conserva", cook: "10 min", total: "≈24h30" },
     yield: "≈500 g",
     difficulty: "Fácil",
-    tags: ["protein:peixe", "ingredient:curry", "ingredient:tomate"],
+    tags: ["protein:peixe", "ingredient:tomate"],
     ingredients: [
       "6 filés de arenque salgado, dessalgados (de molho em água por 12-24h, trocando a água)",
       "200 ml de vinagre branco",
@@ -885,7 +885,7 @@ window.RECIPES["dinamarca"] = [
     time: { prep: "10 min", cook: "0 min", total: "10 min" },
     yield: "≈300 ml",
     difficulty: "Fácil",
-    tags: ["diet:vegetariana", "ingredient:ovo", "ingredient:limao", "ingredient:curry"],
+    tags: ["diet:vegetariana", "ingredient:ovo", "ingredient:limao"],
     ingredients: [
       "250 g de maionese",
       "80 g de picles (pepino em conserva), picado bem fino",
