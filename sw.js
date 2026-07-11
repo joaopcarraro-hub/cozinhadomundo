@@ -1,6 +1,6 @@
 // sw.js — cache do app inteiro para uso offline.
 // Ao mudar arquivos existentes, suba a versão do CACHE_NAME para forçar atualização.
-const CACHE_NAME = "cardapio-v13";
+const CACHE_NAME = "cardapio-v14";
 
 const APP_SHELL = [
   "./",
