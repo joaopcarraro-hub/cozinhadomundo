@@ -785,29 +785,12 @@
       }
 
       const sortedItems = TagModel.sortRecipeItems(items, sortKey, collection);
-      const primaryIds = new Set(primaryRecipes.map((i) => i.id));
 
-      if (sortKey === "relevance" && proteinRole === null && isProteinRole && !usingOrFallback) {
-        const primaryItems = sortedItems.filter((i) => primaryIds.has(i.id));
-        const relatedItems = sortedItems.filter((i) => !primaryIds.has(i.id));
-        if (primaryItems.length) {
-          const st = document.createElement("div");
-          st.className = "subgroup-title";
-          st.textContent = "Foco da receita";
-          listEl.appendChild(st);
-          primaryItems.forEach((item) => listEl.appendChild(renderRecipeCard(item, { fromCollectionId: collection.id })));
-        }
-        if (relatedItems.length) {
-          const st = document.createElement("div");
-          st.className = "subgroup-title";
-          st.textContent = "Também leva";
-          listEl.appendChild(st);
-          relatedItems.forEach((item) => {
-            const contextTagId = (collection.relatedFilterTags || []).find((t) => item.tags.indexOf(t) !== -1);
-            listEl.appendChild(renderRecipeCard(item, { fromCollectionId: collection.id, contextTagId: contextTagId }));
-          });
-        }
-      } else if (sortKey === "category-az") {
+      // "Papel da proteína" (dropdown) já é a única fonte pra distinguir Principal/Secundário —
+      // não duplicar essa distinção aqui com cabeçalhos automáticos. sortKey "relevance" já
+      // ordena principal-primeiro via getCollectionRelevanceScore, então "Tanto faz" (default)
+      // renderiza uma lista só, na ordem certa, sem seção "Foco da receita"/"Também leva".
+      if (sortKey === "category-az") {
         let lastLabel = null;
         sortedItems.forEach((item) => {
           const label = TagModel.getCategoryLabel(item);
