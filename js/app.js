@@ -424,6 +424,7 @@
     { key: "country", label: "País", prefix: "country:" },
     { key: "difficulty", label: "Complexidade", prefix: "difficulty:" },
     { key: "time", label: "Tempo", prefix: "time:" },
+    { key: "equipment", label: "Equipamento", prefix: "equipment:" },
     { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true },
   ];
 

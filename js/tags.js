@@ -1,6 +1,6 @@
 // tags.js — taxonomia central de tags. Toda tag usada em receitas/coleções precisa existir aqui.
 // Prefixos: country:, dish_type:, course:, format:, technique:, protein:, contains:, ingredient:,
-// seasoning:, water:, cuisine:, region:, diet:, time:, difficulty:
+// seasoning:, water:, cuisine:, region:, diet:, time:, difficulty:, equipment:
 //
 // ingredient:/seasoning:/water:/cuisine: são derivados em runtime a partir do dicionário canônico
 // (data/derivation-dict.js) via js/tagmodel.js — nunca tagueados à mão em data/*.js. Precisam
@@ -210,6 +210,17 @@
     { id: "cuisine:libano", label: "Líbano", group: "País / Cozinha", synonyms: ["libanesa", "libanês"] },
     { id: "cuisine:eua", label: "Estados Unidos", group: "País / Cozinha", synonyms: ["americana", "americano", "eua"] },
     { id: "cuisine:dinamarca", label: "Dinamarca", group: "País / Cozinha", synonyms: ["dinamarquesa", "dinamarquês"] },
+
+    // ---------- equipment (derivado de steps — Fase 3. Faceta single-select, dado multi-valorado) ----------
+    { id: "equipment:forno", label: "Forno", group: "Equipamento", synonyms: [] },
+    { id: "equipment:air-fryer", label: "Air Fryer", group: "Equipamento", synonyms: ["fritadeira elétrica", "fritadeira sem óleo"] },
+    { id: "equipment:panela-de-pressao", label: "Panela de Pressão", group: "Equipamento", synonyms: [] },
+    { id: "equipment:liquidificador", label: "Liquidificador", group: "Equipamento", synonyms: [] },
+    { id: "equipment:processador", label: "Processador de Alimentos", group: "Equipamento", synonyms: ["processador"] },
+    { id: "equipment:churrasqueira", label: "Churrasqueira", group: "Equipamento", synonyms: ["churrasco"] },
+    { id: "equipment:batedeira", label: "Batedeira", group: "Equipamento", synonyms: [] },
+    { id: "equipment:sous-vide", label: "Sous Vide", group: "Equipamento", synonyms: [] },
+    { id: "equipment:microondas", label: "Micro-ondas", group: "Equipamento", synonyms: [] },
 
     // ---------- time (tempo total, derivado automaticamente) ----------
     { id: "time:ate-15-min", label: "Até 15 min", group: "Tempo", synonyms: ["rápida", "rápido"] },

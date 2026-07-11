@@ -113,5 +113,37 @@
     {id:"cru",cls:"duration",syn:["cru ","crua","sem cozimento","marinado no limao"]},
   ];
 
-  return {DICT,BLOCK,TECH,norm};
+  // EQUIPAMENTO (Fase 3, reusa equipment:) — deriva de steps, não de ingredients. Casamento por
+  // palavra inteira, sem substring, mesma disciplina do DICT. Dado multi-valorado (uma receita
+  // pode ter vários equipment: simultaneamente); a faceta na UI é seleção única (existência de
+  // UM valor no resultado, não exclusividade).
+  //
+  // equipment:forno sempre deriva de substantivo (forno/refratario/assadeira) OU dos verbos de
+  // assar (ROAST_VERBS). equipment:air-fryer deriva do termo direto (air fryer/airfryer) SEMPRE,
+  // e também dos MESMOS verbos de assar — mas só quando o yield da receita indica porção pequena
+  // (cesta de air fryer doméstica: 2-6L, não cabe prato de grupo). "Porção pequena" exige: (1) o
+  // MAIOR número do texto de yield <= AIRFRYER_MAX_YIELD (cobre "4-6 porções" como grande) E (2)
+  // pelo menos um sinal positivo de AIRFRYER_YIELD_POSITIVE presente E (3) nenhum sinal negativo
+  // de AIRFRYER_YIELD_NEGATIVE presente. O sinal positivo existe porque um número baixo sozinho
+  // não basta — "1 pão grande"/"3 baguetes"/"≈2 L" têm número baixo mas descrevem item grande ou
+  // unidade de medida, não porção pequena; "grande"/"grandes" no texto sempre bloqueia, mesmo com
+  // sinal positivo presente.
+  const ROAST_VERBS = ["assar","asse","assado","assada","assados","assadas"];
+  const AIRFRYER_MAX_YIELD = 4;
+  const AIRFRYER_YIELD_POSITIVE = ["porc","unidade","individual","pequen"];
+  const AIRFRYER_YIELD_NEGATIVE = ["grande"];
+
+  const EQUIPMENT = [
+    {id:"forno",syn:["forno","refratario","assadeira"].concat(ROAST_VERBS)},
+    {id:"air-fryer",syn:["air fryer","airfryer"]},
+    {id:"panela-de-pressao",syn:["panela de pressao"]},
+    {id:"liquidificador",syn:["liquidificador"]},
+    {id:"processador",syn:["processador"]},
+    {id:"churrasqueira",syn:["churrasqueira","churrasco"],ff:["sobras de churrasco","sobra de churrasco"]},
+    {id:"batedeira",syn:["batedeira"]},
+    {id:"sous-vide",syn:["sous vide"]},
+    {id:"microondas",syn:["microondas","micro ondas"]},
+  ];
+
+  return {DICT,BLOCK,TECH,EQUIPMENT,ROAST_VERBS,AIRFRYER_MAX_YIELD,AIRFRYER_YIELD_POSITIVE,AIRFRYER_YIELD_NEGATIVE,norm};
 });

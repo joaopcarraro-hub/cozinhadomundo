@@ -233,6 +233,86 @@
     return tags;
   }
 
+  // ---------- equipment: (Fase 3) — deriva de steps, não de ingredients ----------
+  let equipmentNeedleCache = null;
+  function getEquipmentNeedles() {
+    if (equipmentNeedleCache) return equipmentNeedleCache;
+    const needles = [];
+    (window.DerivationDict.EQUIPMENT || []).forEach((entry) => {
+      const tagId = "equipment:" + entry.id;
+      (entry.syn || []).forEach((syn) => {
+        const needle = normalizeText(syn).trim();
+        if (!needle) return;
+        needles.push({ tagId: tagId, entry: entry, regex: new RegExp("\\b" + escapeRegex(needle) + "\\b") });
+      });
+    });
+    equipmentNeedleCache = needles;
+    return needles;
+  }
+
+  // Maior número no texto de yield ("4-6 porções" -> 6, "1 pão grande" -> 1) — usado só pro
+  // corte condicional de equipment:air-fryer abaixo.
+  function maxYieldNumber(yieldStr) {
+    if (!yieldStr) return null;
+    const nums = (String(yieldStr).match(/\d+/g) || []).map(Number);
+    return nums.length ? Math.max.apply(null, nums) : null;
+  }
+
+  // "Porção pequena" pra air-fryer exige as 3 condições (ver data/derivation-dict.js pro
+  // racional completo, validado via scripts/derive-equipment-dry-run.js): maior número do yield
+  // <= AIRFRYER_MAX_YIELD, pelo menos um sinal positivo (porç/unidade/individual/pequen) e
+  // nenhum sinal negativo (grande/grandes) — um número baixo sozinho não basta, porque "1 pão
+  // grande"/"3 baguetes"/"≈2 L" têm número baixo mas descrevem item grande ou unidade de medida.
+  function isSmallYieldForAirFryer(yieldStr) {
+    if (!yieldStr) return false;
+    const dict = window.DerivationDict;
+    const max = maxYieldNumber(yieldStr);
+    if (max === null || max > dict.AIRFRYER_MAX_YIELD) return false;
+    const normalized = normalizeText(String(yieldStr));
+    if (dict.AIRFRYER_YIELD_NEGATIVE.some((w) => normalized.indexOf(w) !== -1)) return false;
+    return dict.AIRFRYER_YIELD_POSITIVE.some((w) => normalized.indexOf(w) !== -1);
+  }
+
+  let roastVerbRegexCache = null;
+  function getRoastVerbRegexes() {
+    if (roastVerbRegexCache) return roastVerbRegexCache;
+    roastVerbRegexCache = (window.DerivationDict.ROAST_VERBS || []).map(
+      (v) => new RegExp("\\b" + escapeRegex(normalizeText(v)) + "\\b")
+    );
+    return roastVerbRegexCache;
+  }
+
+  // equipment:forno sempre deriva de substantivo (forno/refratario/assadeira) OU dos verbos de
+  // assar (já inclusos no syn de equipment:forno, ver DICT). equipment:air-fryer deriva do termo
+  // direto (air fryer/airfryer) SEMPRE, e também dos MESMOS verbos de assar — mas só quando
+  // isSmallYieldForAirFryer(recipe.yield) for true. Dado multi-valorado (uma receita pode ter
+  // vários equipment: simultaneamente); a faceta na UI é seleção única.
+  function deriveTagsFromSteps(recipe) {
+    const lines = (recipe.steps || []).map(normalizeText);
+    if (!lines.length) return [];
+    const needles = getEquipmentNeedles();
+    const tagIds = new Set();
+    const matchedEntryIds = new Set();
+    lines.forEach((line) => {
+      needles.forEach(({ tagId, entry, regex }) => {
+        if (matchedEntryIds.has(entry.id)) return;
+        if (regex.test(maskFalseFriends(entry, line))) {
+          matchedEntryIds.add(entry.id);
+          tagIds.add(tagId);
+        }
+      });
+    });
+
+    if (!tagIds.has("equipment:air-fryer") && isSmallYieldForAirFryer(recipe.yield)) {
+      const roastRegexes = getRoastVerbRegexes();
+      if (lines.some((line) => roastRegexes.some((re) => re.test(line)))) {
+        tagIds.add("equipment:air-fryer");
+      }
+    }
+
+    return Array.from(tagIds);
+  }
+
   // ---------- tags completas de uma receita (automáticas + manuais) ----------
   function getRecipeTags(catId, recipe) {
     const auto = (CATEGORY_BASE_TAGS[catId] || []).slice();
@@ -254,6 +334,9 @@
     deriveTagsFromOrigin(recipe.origin).forEach((t) => {
       if (auto.indexOf(t) === -1) auto.push(t);
     });
+    deriveTagsFromSteps(recipe).forEach((t) => {
+      if (auto.indexOf(t) === -1) auto.push(t);
+    });
     return auto;
   }
 
@@ -268,6 +351,7 @@
     all.forEach((item) => {
       deriveTagsFromIngredients(item.recipe)
         .concat(deriveTagsFromOrigin(item.recipe.origin))
+        .concat(deriveTagsFromSteps(item.recipe))
         .forEach((tagId) => {
           if (!byTag[tagId]) byTag[tagId] = [];
           if (byTag[tagId].length < 5) byTag[tagId].push(item.recipe.name + " (" + item.catId + ")");
@@ -581,6 +665,7 @@
     findDuplicateIds,
     deriveTagsFromIngredients,
     deriveTagsFromOrigin,
+    deriveTagsFromSteps,
     validateDerivedTags,
     getCollectionRelevanceScore,
     sortRecipeItems,
