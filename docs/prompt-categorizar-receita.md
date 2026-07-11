@@ -62,7 +62,7 @@ Regras de conteúdo:
   "modo de preparo resumido" nem passos inventados.
 - NÃO adicione tags de `country:`, `dish_type:`, `course:`, `time:` ou `difficulty:` — essas são
   geradas automaticamente pelo site a partir da categoria e dos campos acima. Só adicione
-  `protein:`, `contains:` e `ingredient:` (ver taxonomia abaixo).
+  `protein:`, `contains:`, `ingredient:` e `diet:` (ver taxonomia abaixo).
 
 ## Em qual categoria colocar
 
@@ -90,7 +90,7 @@ Me diga também em qual arquivo/categoria a receita deve entrar, escolhendo dest
 Se a receita não se encaixar em nenhuma categoria existente, me avise — pode ser hora de criar
 uma nova (isso exige uma etapa extra de código, então sinalize em vez de forçar um encaixe ruim).
 
-## Taxonomia de tags (protein:, contains: e ingredient:)
+## Taxonomia de tags (protein:, contains:, ingredient: e diet:)
 
 **protein:** — a proteína **protagonista** do prato, não qualquer proteína presente. Regra
 importante (fonte de um bug já corrigido no site): se a carne/proteína é só um componente
@@ -107,30 +107,45 @@ Todo prato pode ter zero, uma ou várias tags `protein:`, mas só as que forem r
 - `protein:frutos-do-mar` — camarão, lula, polvo, mexilhão, marisco
 - `protein:ovo` — só quando o ovo é o protagonista do prato (omelete, quiche) — NÃO use só porque
   tem ovo na massa/recheio de um bolo/pão
-- `protein:vegetariana` — sem nenhuma carne, ave, peixe ou fruto do mar (pode ter ovo/laticínio)
+- `protein:leguminosa` / `protein:laticinio` — uso raro, só quando uma leguminosa (feijão, lentilha,
+  grão-de-bico) ou um laticínio (queijo, iogurte) é claramente o foco proteico do prato (ex.: um
+  prato de lentilhas como principal) — não use em todo prato vegetariano, só quando fizer sentido
+  como "proteína protagonista"
 
-**contains:** — presença secundária de um ingrediente que NÃO é o protagonista, mas ainda é útil
-pra busca (por enquanto só existe para suíno, já que é o caso mais comum: bacon, pancetta,
-guanciale, presunto, linguiça, toucinho aparecendo como tempero/complemento em pratos de outra
-identidade):
-- `contains:suino` — ex.: Carbonara (guanciale é tempero da massa), Beef Wellington (presunto de
-  Parma envolve o filé, mas o prato é de carne bovina), Boeuf Bourguignon (bacon é só um dos
-  aromáticos do ensopado de carne bovina). Nesses três exemplos NÃO use `protein:suino`.
+Vegetarianos/veganos NÃO usam `protein:`, usam **dieta** (ver abaixo).
 
-Teste rápido pra decidir entre `protein:suino` e `contains:suino`: se você tirasse o item de porco
-da receita, o prato ainda seria reconhecível com o mesmo nome? Se sim (Carbonara sem guanciale
-ainda é "uma carbonara", só que pior), é `contains:`. Se não (Tonkatsu sem porco deixa de ser
-Tonkatsu), é `protein:`.
+**diet:** — dieta/restrição, não é proteína:
+- `diet:vegetariana` — sem nenhuma carne, ave, peixe ou fruto do mar (pode ter ovo/laticínio)
+- `diet:vegana` — sem nenhum produto animal (nem ovo, nem laticínio, nem mel)
 
-**ingredient:** — só quando o ingrediente é decisivo pra identidade do prato (não marque sal, água,
-óleo, alho, cebola genéricos, a menos que sejam o protagonista):
+**contains:** — presença secundária de uma proteína que NÃO é o protagonista, mas ainda é útil
+pra busca. Existe pra suíno, carne bovina, aves/frango, peixe, frutos do mar, cordeiro e ovo:
+`contains:suino` `contains:boi` `contains:ave` `contains:frango` `contains:peixe`
+`contains:frutos-do-mar` `contains:cordeiro` `contains:ovo`
+- ex.: Carbonara → `contains:ovo` (o ovo é o molho, não o protagonista — o prato é de massa), Beef
+  Wellington → `contains:suino` (presunto de Parma envolve o filé, mas o prato é de carne bovina),
+  Boeuf Bourguignon → `contains:suino` (bacon é só um dos aromáticos do ensopado de carne bovina).
+  Nesses três exemplos NÃO use `protein:suino`/`protein:ovo`.
+
+Teste rápido pra decidir entre `protein:X` e `contains:X`: se você tirasse esse ingrediente da
+receita, o prato ainda seria reconhecível com o mesmo nome? Se sim (Carbonara sem ovo ainda é
+"uma carbonara", só que pior), é `contains:`. Se não (Tonkatsu sem porco deixa de ser Tonkatsu),
+é `protein:`.
+
+**ingredient:** — só quando o ingrediente é decisivo pra identidade do prato (não marque sal, água
+ou óleo genéricos, a menos que sejam o protagonista):
 `ingredient:ovo` `ingredient:tomate` `ingredient:queijo` `ingredient:arroz` `ingredient:batata`
 `ingredient:mandioca` `ingredient:milho` `ingredient:feijao` `ingredient:berinjela`
 `ingredient:cogumelo` `ingredient:abobora` `ingredient:pimentao` `ingredient:azeitona`
 `ingredient:limao` `ingredient:coco` `ingredient:castanha` `ingredient:chocolate` `ingredient:cafe`
 `ingredient:vinho` `ingredient:cerveja` `ingredient:mel` `ingredient:iogurte` `ingredient:espinafre`
 `ingredient:ervilha` `ingredient:lentilha` `ingredient:grao-de-bico` `ingredient:amendoim`
-`ingredient:gengibre` `ingredient:curry` `ingredient:molho-de-soja`
+`ingredient:molho-de-soja` `ingredient:brocolis`
+
+NÃO marque `seasoning:alho`, `seasoning:cebola`, `seasoning:gengibre` nem `seasoning:curry` —
+essas quatro tags existem, mas o site já deriva elas automaticamente a partir do texto de
+`ingredients` (procurando "alho"/"cebola"/"gengibre"/"curry" como palavra inteira na lista de
+ingredientes). Taguear à mão é redundante e não muda nada.
 
 Não invente tags novas fora dessas listas. Se nenhuma tag decisiva se aplicar, devolva `tags: []`.
 
