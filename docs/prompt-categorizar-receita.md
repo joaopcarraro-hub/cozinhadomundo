@@ -71,14 +71,22 @@ Me diga também em qual arquivo/categoria a receita deve entrar, escolhendo dest
 
 **Fundamentos**
 `molhos` — Molhos Clássicos · `sopas` — Sopas · `entradas-frias` — Entradas Frias ·
-`entradas-quentes` — Entradas Quentes · `massas` — Massas · `risotos` — Risotos ·
+`entradas-quentes` — Entradas Quentes · `massas` — Massas · `risotos` — Risotos/Arroz (risoto) ·
 `ovos-basicos` — Ovos Básicos · `ovos-classicos` — Preparações Clássicas com Ovos ·
 `padaria` — Padaria · `sobremesas-classicas` — Sobremesas Clássicas ·
-`contemporaneos` — Clássicos Contemporâneos · `tecnicas-contemporaneas-2` — Técnicas Contemporâneas Avançadas
+`contemporaneos` — Técnicas (prato clássico contemporâneo) ·
+`tecnicas-contemporaneas-2` — Técnicas (técnica/componente avançado)
+
+`contemporaneos` e `tecnicas-contemporaneas-2` aparecem juntos como uma única coleção "Técnicas"
+no site — mas continuam sendo arquivos/catIds separados. Use `contemporaneos` pra um prato
+pronto de cozinha contemporânea; `tecnicas-contemporaneas-2` pra uma técnica/componente/base
+mais avançada e isolada (ex: esferificação, espuma, sous-vide). Mesma lógica pra `risotos`
+(risoto de verdade) vs `arrozes` (outros pratos de arroz) — ambos aparecem juntos como
+"Risotos/Arroz".
 
 **Proteínas**
 `aves` — Aves · `carnes-bovinas` — Carnes Bovinas · `cordeiro` — Cordeiro · `suinos` — Suínos ·
-`peixes` — Peixes · `frutos-do-mar` — Frutos do Mar · `arrozes` — Arrozes
+`peixes` — Peixes · `frutos-do-mar` — Frutos do Mar · `arrozes` — Risotos/Arroz (arroz, não-risoto)
 
 **Brasil**
 `brasileiros` — Brasileiros Obrigatórios · `brasil-regional` — Brasil por Região

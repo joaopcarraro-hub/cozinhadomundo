@@ -192,6 +192,18 @@
       map["brasileiros"] = brasilCollection.group;
       map["brasil-regional"] = brasilCollection.group;
     }
+    // contemporaneos/tecnicas-contemporaneas-2 foram fundidos na coleção "tecnicas"
+    const tecnicasCollection = window.COLLECTIONS.find((c) => c.id === "tecnicas");
+    if (tecnicasCollection) {
+      map["contemporaneos"] = tecnicasCollection.group;
+      map["tecnicas-contemporaneas-2"] = tecnicasCollection.group;
+    }
+    // risotos/arrozes foram fundidos na coleção "risotos-arroz"
+    const risotosArrozCollection = window.COLLECTIONS.find((c) => c.id === "risotos-arroz");
+    if (risotosArrozCollection) {
+      map["risotos"] = risotosArrozCollection.group;
+      map["arrozes"] = risotosArrozCollection.group;
+    }
     catIdToGroupCache = map;
     return map;
   }

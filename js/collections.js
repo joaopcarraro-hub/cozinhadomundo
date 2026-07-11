@@ -19,14 +19,18 @@
     { id: "entradas-frias", group: "Fundamentos", collectionType: "dishType", label: "Entradas Frias", icon: "🥗", primaryFilterTags: ["dish_type:entrada-fria"] },
     { id: "entradas-quentes", group: "Fundamentos", collectionType: "dishType", label: "Entradas Quentes", icon: "🧀", primaryFilterTags: ["dish_type:entrada-quente"] },
     { id: "massas", group: "Fundamentos", collectionType: "dishType", label: "Massas", icon: "🍝", primaryFilterTags: ["dish_type:massa"] },
-    { id: "risotos", group: "Fundamentos", collectionType: "dishType", label: "Risotos", icon: "🍚", primaryFilterTags: ["dish_type:risoto"] },
-    { id: "arrozes", group: "Fundamentos", collectionType: "dishType", label: "Arrozes", icon: "🍚", primaryFilterTags: ["dish_type:arroz"] },
+    // Risotos + Arrozes fundidos em "Risotos/Arroz" — junção de EXIBIÇÃO só (dish_type:risoto e
+    // dish_type:arroz continuam distintos nos dados; primaryFilterTags em OR é o que une as duas
+    // fontes físicas, data/risotos.js e data/arrozes.js, sem mover nenhuma receita de arquivo).
+    { id: "risotos-arroz", group: "Fundamentos", collectionType: "dishType", label: "Risotos/Arroz", icon: "🍚", primaryFilterTags: ["dish_type:risoto", "dish_type:arroz"] },
     { id: "ovos-basicos", group: "Fundamentos", collectionType: "dishType", label: "Ovos Básicos", icon: "🍳", primaryFilterTags: ["dish_type:ovo"] },
     { id: "ovos-classicos", group: "Fundamentos", collectionType: "dishType", label: "Preparações Clássicas com Ovos", icon: "🥚", primaryFilterTags: ["dish_type:ovo"] },
     { id: "padaria", group: "Fundamentos", collectionType: "dishType", label: "Padaria", icon: "🍞", primaryFilterTags: ["dish_type:pao"] },
     { id: "sobremesas-classicas", group: "Fundamentos", collectionType: "dishType", label: "Sobremesas Clássicas", icon: "🍰", primaryFilterTags: ["dish_type:sobremesa"] },
-    { id: "contemporaneos", group: "Fundamentos", collectionType: "technique", label: "Clássicos Contemporâneos", icon: "✨", primaryFilterTags: ["dish_type:contemporaneo"] },
-    { id: "tecnicas-contemporaneas-2", group: "Fundamentos", collectionType: "technique", label: "Técnicas Contemporâneas Avançadas", icon: "🧪", primaryFilterTags: ["dish_type:tecnica-avancada"] },
+    // Clássicos Contemporâneos + Técnicas Contemporâneas Avançadas fundidos em "Técnicas" — mesma
+    // lógica: dish_type:contemporaneo e dish_type:tecnica-avancada continuam distintos nos dados
+    // (data/contemporaneos.js e data/tecnicas-contemporaneas-2.js), só a coleção exibida é uma.
+    { id: "tecnicas", group: "Fundamentos", collectionType: "technique", label: "Técnicas", icon: "🧪", primaryFilterTags: ["dish_type:contemporaneo", "dish_type:tecnica-avancada"] },
 
     // ---------- Proteínas (grupo macro único — funde a antiga "Por proteína") ----------
     { id: "aves", group: "Proteínas", collectionType: "protein", label: "Aves", icon: "🍗", desc: "Receitas com frango ou outras aves como foco.", primaryFilterTags: ["protein:ave", "protein:frango"], relatedFilterTags: ["contains:ave", "contains:frango"], defaultView: "primary" },
