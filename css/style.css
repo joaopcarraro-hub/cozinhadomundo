@@ -81,6 +81,27 @@ body {
   color: var(--ink-soft);
   font-style: italic;
 }
+.btn-or-fallback {
+  margin-top: 14px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  background: var(--bg-panel);
+  color: var(--gold);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  cursor: pointer;
+}
+.btn-or-fallback:hover { background: var(--gold-soft); color: #2b241b; }
+.or-fallback-notice {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
 
 .subgroup-title {
   font-size: 1rem;
@@ -426,6 +447,38 @@ body {
 }
 .collection-refine { margin-bottom: 18px; }
 .collection-refine:empty { margin-bottom: 0; }
+
+/* ---------- Barra de facetas (dropdowns lado a lado, quebram linha em telas estreitas) ---------- */
+.facet-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.facet-bar:empty { margin-bottom: 0; }
+.facet-control {
+  display: grid;
+  gap: 6px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+.facet-control select {
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  padding: 0 10px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--ink);
+  width: 100%;
+}
+.facet-multi-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
 
 .tagsearch-count-row {
   display: flex;

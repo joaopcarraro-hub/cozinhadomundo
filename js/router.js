@@ -22,7 +22,20 @@
       return { name: "grupo", grupoId: parts[1] };
     }
     if (parts[0] === "categoria" && parts[1]) {
-      return { name: "categoria", catId: parts[1] };
+      let catTags = [];
+      let role = null;
+      if (queryPart) {
+        queryPart.split("&").forEach(function (pair) {
+          const [k, v] = pair.split("=");
+          if (k === "tags" && v) {
+            catTags = v.split(",").map(decodeURIComponent).filter(Boolean);
+          }
+          if (k === "role" && v) {
+            role = v;
+          }
+        });
+      }
+      return { name: "categoria", catId: parts[1], tags: catTags, role: role };
     }
     if (parts[0] === "busca") {
       let tags = [];
@@ -105,6 +118,16 @@
     },
     toCategoria: function (catId) {
       navigate("categoria/" + encodeURIComponent(catId));
+    },
+    // Atualiza as facetas extras (e o papel da proteína, se houver) de uma categoria na URL sem
+    // navegar (sem empilhar histórico e sem re-disparar handleRoute) — usado pelo refino
+    // in-context de renderCategory.
+    replaceCategoriaFacets: function (catId, tagIds, role) {
+      const q = (tagIds || []).map(encodeURIComponent).join(",");
+      const params = [];
+      if (q) params.push("tags=" + q);
+      if (role) params.push("role=" + encodeURIComponent(role));
+      replace("categoria/" + encodeURIComponent(catId) + (params.length ? "?" + params.join("&") : ""));
     },
     toBusca: function (tagIds, textFilters) {
       const q = (tagIds || []).map(encodeURIComponent).join(",");
