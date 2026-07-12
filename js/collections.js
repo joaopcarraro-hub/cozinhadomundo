@@ -20,7 +20,10 @@
     // e dish_type:entrada-quente continuam distintos nos dados (data/entradas-frias.js e
     // data/entradas-quentes.js), só a coleção exibida é uma.
     { id: "entradas", group: "Fundamentos", collectionType: "dishType", label: "Entradas", icon: "🥗", primaryFilterTags: ["dish_type:entrada-fria", "dish_type:entrada-quente"] },
-    { id: "massas", group: "Fundamentos", collectionType: "dishType", label: "Massas", icon: "🍝", primaryFilterTags: ["dish_type:massa"] },
+    // hideFromGrupoGrid (Bloco 2): some do grid "Mais categorias" do hub Fundamentos — NÃO muda
+    // .group (continua "Fundamentos" pra getCatIdToGroup()/busca escopada por hub), só deixa de
+    // aparecer como tile na grade, já que agora só é alcançável via tile grande da home.
+    { id: "massas", group: "Fundamentos", collectionType: "dishType", label: "Massas", icon: "🍝", primaryFilterTags: ["dish_type:massa"], hideFromGrupoGrid: true },
     // Risotos + Arrozes fundidos em "Risotos/Arroz" — junção de EXIBIÇÃO só (dish_type:risoto e
     // dish_type:arroz continuam distintos nos dados; primaryFilterTags em OR é o que une as duas
     // fontes físicas, data/risotos.js e data/arrozes.js, sem mover nenhuma receita de arquivo).
@@ -30,7 +33,7 @@
     // (confirmado 25/25), então já aparecem em "Ovos" (col-ovo, Proteínas) sem precisar de
     // nenhuma tag nova. Ver getCatIdToGroup() em app.js pro fallback de escopo de busca do hub.
     { id: "padaria", group: "Fundamentos", collectionType: "dishType", label: "Padaria", icon: "🍞", primaryFilterTags: ["dish_type:pao"] },
-    { id: "sobremesas-classicas", group: "Fundamentos", collectionType: "dishType", label: "Sobremesas Clássicas", icon: "🍰", primaryFilterTags: ["dish_type:sobremesa"] },
+    { id: "sobremesas-classicas", group: "Fundamentos", collectionType: "dishType", label: "Sobremesas Clássicas", icon: "🍰", primaryFilterTags: ["dish_type:sobremesa"], hideFromGrupoGrid: true },
     // Clássicos Contemporâneos + Técnicas Contemporâneas Avançadas fundidos em "Técnicas" — mesma
     // lógica: dish_type:contemporaneo e dish_type:tecnica-avancada continuam distintos nos dados
     // (data/contemporaneos.js e data/tecnicas-contemporaneas-2.js), só a coleção exibida é uma.

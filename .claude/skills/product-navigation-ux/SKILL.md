@@ -33,20 +33,38 @@ Página de coleção:
 Página da receita:
 - execução
 
-## Nova home
+## Nova home (Bloco 2, Fase 2.2)
 
-A home deve ter:
-1. Fundamentos
-2. Proteínas
-3. Cozinhas do mundo
-4. Por tempo
-5. Por dificuldade
+A home não mostra mais os 5 grupos macro diretamente. Mostra:
+1. Um contador de progresso (X de Y receitas já feitas).
+2. "Mais categorias" — entrada pequena, num canto, acima dos tiles — leva pro hub Fundamentos
+   (#/grupo/fundamentos).
+3. 4 tiles grandes: Massas, Proteínas, Navegar por Países, Sobremesas — cada um leva direto pra
+   sua categoria/hub (Massas -> #/categoria/massas, Sobremesas -> #/categoria/sobremesas-classicas,
+   Proteínas -> #/grupo/proteinas, Navegar por Países -> #/grupo/cozinhas).
 
-Não mostrar subcategorias diretamente na home.
+Busca livre e os atalhos de Favoritos/Quero fazer/Histórico saíram da home — migram pra dentro
+de "Minhas Receitas" (aba da barra inferior) num bloco futuro; a busca livre virou a aba
+"Pesquisar" da barra inferior (reaproveita a rota #/busca já existente).
+
+Tempo e Dificuldade continuam existindo como grupos/rotas próprios (#/grupo/tempo,
+#/grupo/dificuldade) mas, neste bloco, sem link direto na home — só alcançáveis por URL direta
+por ora.
+
+Massas e Sobremesas Clássicas saíram da grade do hub Fundamentos (ficam só acessíveis via tile
+da home) — a taxonomia/grupo delas pra efeito de busca escopada continua "Fundamentos", só a
+exibição na grade que muda.
+
+## Barra de navegação inferior
+
+Fixa, 5 abas: Home, Pesquisar, Minhas Receitas, Preparos, Lista de Compras. Substitui o antigo
+botão "Início" do topo (removido). Minhas Receitas/Preparos/Lista de Compras são
+telas-placeholder por ora — só a navegação e o visual existem, conteúdo real vem em blocos
+futuros.
 
 ## Páginas intermediárias
 
-Cada bloco da home abre uma página do grupo.
+Cada grupo tem sua própria página (independente de estar linkada na home ou não).
 
 Exemplos:
 #/grupo/fundamentos

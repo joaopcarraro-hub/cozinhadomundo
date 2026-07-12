@@ -114,18 +114,24 @@ Usar:
 Não usar protein:vegetariana.
 Usar diet:vegetariana ou diet:vegana.
 
-## Home nova
+## Home nova (Bloco 2, Fase 2.2)
 
-A home deve ter apenas blocos macro:
-1. Fundamentos
-2. Proteínas
-3. Cozinhas do mundo
-4. Por tempo
-5. Por dificuldade
+A home não mostra mais os 5 grupos macro diretamente. Mostra 4 tiles grandes (Massas,
+Proteínas, Navegar por Países, Sobremesas) + uma entrada pequena "Mais categorias" (leva pro
+hub Fundamentos). Tempo e Dificuldade continuam existindo como grupos/rotas, só sem link
+direto na home por ora.
 
-A home não deve exibir países, proteínas, dificuldades ou tempos diretamente.
+Cada grupo continua tendo sua própria página intermediária (#/grupo/:id), independente de
+estar linkada na home ou não — a página de grupo em si não mudou.
 
-Cada bloco deve levar para uma página intermediária do grupo.
+### hideFromGrupoGrid (esconder coleção da grade sem mudar taxonomia)
+
+Pra tirar uma coleção da grade de um hub sem afetar sua taxonomia (grupo, tags, escopo de
+busca), adicione `hideFromGrupoGrid: true` na entrada de `js/collections.js` — NUNCA mude o
+campo `.group` pra isso. `.group` continua sendo a fonte de verdade pra `getCatIdToGroup()`
+(escopo da busca contextual do hub); `hideFromGrupoGrid` só afeta o que aparece no grid
+visual (`renderGrupo` em app.js). Usado em massas/sobremesas-classicas (Bloco 2) pra tirá-las
+da grade de Fundamentos, já que agora só são alcançáveis via tile da home.
 
 ## Busca
 

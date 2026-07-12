@@ -2,22 +2,69 @@
   const header = document.getElementById("category-header");
   const content = document.getElementById("recipes-content");
   const progressEl = document.getElementById("progress");
-  const homeBtn = document.getElementById("home-btn");
-
-  homeBtn.addEventListener("click", () => Router.toHome());
 
   const firstCollection = window.COLLECTIONS[0];
   let activeCat = null; // id da coleção atual; null quando estamos na home, busca global ou telas de lista
 
-  const QUICK_LINKS = [
-    { view: "favoritos", icon: "★", label: "Favoritos", go: () => Router.toFavoritos() },
-    { view: "quero-fazer", icon: "🔖", label: "Quero fazer", go: () => Router.toQueroFazer() },
-    { view: "historico", icon: "🕘", label: "Histórico", go: () => Router.toHistorico() },
+  // ---------- Ícones outline (Bloco 2 — barra inferior + tiles novos da home) ----------
+  // Único monocromático: stroke=currentColor, cor real vem do CSS (--color-accent /
+  // --color-text-disabled / --color-text-primary), nunca fixa no path.
+  const ICON_SVG_ATTRS = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+  const ICONS = {
+    home: '<path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h3v-6h4v6h3a1 1 0 0 0 1-1v-9"/>',
+    search: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.5-4.5"/>',
+    bookmark: '<path d="M7 4h10a1 1 0 0 1 1 1v15l-6-4-6 4V5a1 1 0 0 1 1-1Z"/>',
+    pan: '<circle cx="10" cy="13" r="7"/><path d="M17 12h5"/>',
+    cart: '<path d="M4 6h2l2 11h10l2-8H7"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="16.5" cy="20" r="1.3"/>',
+    bowl: '<path d="M4 12a8 8 0 0 0 16 0"/><path d="M4 12h16"/><path d="M8 8c1 1 1 2 0 3"/><path d="M12 7c1 1 1 2 0 3"/><path d="M16 8c1 1 1 2 0 3"/>',
+    flame: '<path d="M12 3c2 3 4 5 4 8a4 4 0 1 1-8 0c0-1 .3-2 1-3 .2 1.5 1 2 1.8 2A2 2 0 0 0 13 8c0-2-2-3-1-5Z"/>',
+    globe: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4c2.5 2.5 2.5 13 0 16"/><path d="M12 4c-2.5 2.5-2.5 13 0 16"/>',
+    cupcake: '<path d="M7 11h10l-1.2 7.5A2 2 0 0 1 13.8 20h-3.6a2 2 0 0 1-2-1.5L7 11Z"/><path d="M6 11a6 4 0 0 1 12 0Z"/><path d="M12 3v2.2"/>',
+    dots: '<circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/>',
+  };
+  function iconSvg(key, className) {
+    return '<svg class="' + className + '" ' + ICON_SVG_ATTRS + ">" + ICONS[key] + "</svg>";
+  }
+
+  // ---------- Barra de navegação inferior (fixa, 5 abas) ----------
+  const BOTTOM_NAV_TABS = [
+    { id: "home", label: "Home", icon: "home", go: () => Router.toHome() },
+    { id: "pesquisar", label: "Pesquisar", icon: "search", go: () => Router.toBusca([], []) },
+    { id: "minhas-receitas", label: "Minhas Receitas", icon: "bookmark", go: () => Router.toMinhasReceitas() },
+    { id: "preparos", label: "Preparos", icon: "pan", go: () => Router.toPreparos() },
+    { id: "lista-compras", label: "Lista de Compras", icon: "cart", go: () => Router.toListaCompras() },
   ];
-  function quickLinkCount(view) {
-    if (view === "favoritos") return Storage.getAllFavorites().length;
-    if (view === "quero-fazer") return Storage.getAllWantToCook().length;
-    return Storage.getAllMade().length;
+  const bottomNavEl = document.getElementById("bottom-nav");
+  function renderBottomNav() {
+    if (!bottomNavEl) return;
+    bottomNavEl.innerHTML = BOTTOM_NAV_TABS.map(
+      (tab) =>
+        '<button type="button" class="bottom-nav__tab" data-route="' +
+        tab.id +
+        '" aria-label="' +
+        tab.label +
+        '">' +
+        iconSvg(tab.icon, "bottom-nav__icon") +
+        '<span class="bottom-nav__label">' + tab.label + "</span></button>"
+    ).join("");
+    Array.prototype.forEach.call(bottomNavEl.querySelectorAll(".bottom-nav__tab"), (btn, i) => {
+      btn.addEventListener("click", () => BOTTOM_NAV_TABS[i].go());
+    });
+  }
+  // route.name -> id da aba correspondente (rotas sem aba própria, ex. categoria/receita, não ativam nenhuma).
+  const ROUTE_TO_BOTTOM_NAV_TAB = {
+    home: "home",
+    busca: "pesquisar",
+    "minhas-receitas": "minhas-receitas",
+    preparos: "preparos",
+    "lista-compras": "lista-compras",
+  };
+  function updateBottomNav(route) {
+    if (!bottomNavEl) return;
+    const activeTab = ROUTE_TO_BOTTOM_NAV_TAB[route.name] || null;
+    Array.prototype.forEach.call(bottomNavEl.querySelectorAll(".bottom-nav__tab"), (btn) => {
+      btn.classList.toggle("is-active", btn.dataset.route === activeTab);
+    });
   }
 
   // ---------- Busca facetada: sugestões (tags + receitas por nome) ----------
@@ -304,7 +351,9 @@
     recipeResultsEl.className = "grupo-recipe-results";
     wrap.appendChild(recipeResultsEl);
 
-    const collections = window.COLLECTIONS.filter((c) => c.group === grupo.collectionGroup);
+    // hideFromGrupoGrid (Bloco 2): massas/sobremesas-classicas saem do grid de Fundamentos —
+    // ficam só acessíveis via tile grande da home — sem afetar .group (busca escopada intacta).
+    const collections = window.COLLECTIONS.filter((c) => c.group === grupo.collectionGroup && !c.hideFromGrupoGrid);
 
     // Receitas cuja CATEGORIA (catId) pertence a este grupo — não um filtro por tag/coleção
     // (isso deixava vazar receita de fora: ex. um bolo de chocolate com ovo na massa tem
@@ -372,6 +421,16 @@
   }
 
   // ---------- Home ----------
+  // Tiles grandes da home (Bloco 2, Fase 2.2) — cada um leva direto pra sua categoria/hub já
+  // existente. Busca livre e atalhos de favoritos/quero-fazer/histórico saem daqui e migram pra
+  // dentro de "Minhas Receitas" num bloco futuro (conteúdo ainda não implementado).
+  const HOME_MAIN_TILES = [
+    { id: "massas", label: "Massas", icon: "bowl", go: () => Router.toCategoria("massas") },
+    { id: "proteinas", label: "Proteínas", icon: "flame", go: () => Router.toGrupo("proteinas") },
+    { id: "cozinhas", label: "Navegar por Países", icon: "globe", go: () => Router.toGrupo("cozinhas") },
+    { id: "sobremesas", label: "Sobremesas", icon: "cupcake", go: () => Router.toCategoria("sobremesas-classicas") },
+  ];
+
   function renderHome() {
     activeCat = null;
     refreshActiveCounts = null;
@@ -383,23 +442,6 @@
     const wrap = document.createElement("div");
     wrap.className = "home-view";
 
-    const searchWrap = document.createElement("div");
-    searchWrap.className = "home-search-wrap";
-    const homeSearch = document.createElement("input");
-    homeSearch.type = "text";
-    homeSearch.className = "home-search";
-    homeSearch.placeholder = "Buscar por ingrediente, país, proteína ou nome do prato...";
-    searchWrap.appendChild(homeSearch);
-    const homeSuggestions = document.createElement("div");
-    homeSuggestions.className = "tagsearch-suggestions";
-    searchWrap.appendChild(homeSuggestions);
-    wrap.appendChild(searchWrap);
-    wireTagSearchInput(homeSearch, homeSuggestions, {
-      onSelectTag: (tagId) => Router.toBusca([tagId]),
-      onSelectRecipe: goToRecipeByCatAndName,
-      onSelectText: (text) => Router.toBusca([], [text]),
-    });
-
     const totalRecipes = TagModel.getAllRecipesFlat().length;
     const totalMade = Storage.getAllMade().length;
     const prog = document.createElement("div");
@@ -407,36 +449,24 @@
     prog.textContent = totalMade + " de " + totalRecipes + " receitas já feitas 🎉";
     wrap.appendChild(prog);
 
-    const quickGrid = document.createElement("div");
-    quickGrid.className = "home-quicklinks";
-    QUICK_LINKS.forEach((ql) => {
-      const card = document.createElement("button");
-      card.className = "home-quicklink";
-      const count = quickLinkCount(ql.view);
-      card.innerHTML =
-        '<span class="home-quicklink__icon">' + ql.icon + "</span>" +
-        '<span class="home-quicklink__label">' + ql.label + "</span>" +
-        '<span class="home-quicklink__count">' + count + "</span>";
-      card.addEventListener("click", ql.go);
-      quickGrid.appendChild(card);
-    });
-    wrap.appendChild(quickGrid);
+    const moreCategorias = document.createElement("button");
+    moreCategorias.type = "button";
+    moreCategorias.className = "home-more-categories";
+    moreCategorias.innerHTML = iconSvg("dots", "home-more-categories__icon") + "<span>Mais categorias</span>";
+    moreCategorias.addEventListener("click", () => Router.toGrupo("fundamentos"));
+    wrap.appendChild(moreCategorias);
 
-    const grupoGrid = document.createElement("div");
-    grupoGrid.className = "home-grupo-grid";
-    GRUPOS.forEach((grupo) => {
+    const tilesGrid = document.createElement("div");
+    tilesGrid.className = "home-tiles";
+    HOME_MAIN_TILES.forEach((tile) => {
       const card = document.createElement("button");
-      card.className = "home-grupo-card";
-      card.innerHTML =
-        '<span class="home-grupo-card__icon">' + grupo.icon + "</span>" +
-        '<span class="home-grupo-card__text">' +
-        '<span class="home-grupo-card__title">' + grupo.label + "</span>" +
-        '<span class="home-grupo-card__desc">' + grupo.desc + "</span>" +
-        "</span>";
-      card.addEventListener("click", () => Router.toGrupo(grupo.id));
-      grupoGrid.appendChild(card);
+      card.type = "button";
+      card.className = "home-tile";
+      card.innerHTML = iconSvg(tile.icon, "home-tile__icon") + '<span class="home-tile__label">' + tile.label + "</span>";
+      card.addEventListener("click", tile.go);
+      tilesGrid.appendChild(card);
     });
-    wrap.appendChild(grupoGrid);
+    wrap.appendChild(tilesGrid);
 
     content.appendChild(wrap);
   }
@@ -1121,6 +1151,20 @@
     renderResults();
   }
 
+  // ---------- Telas-placeholder da barra inferior (Minhas Receitas / Preparos / Lista de Compras) ----------
+  // Só navegação + visual por ora — conteúdo real chega em blocos futuros (ver Bloco 2, Fase 2.1).
+  function renderPlaceholder(title, desc) {
+    activeCat = null;
+    refreshActiveCounts = null;
+    header.innerHTML = "<h2>" + title + "</h2>";
+    content.innerHTML = "";
+    progressEl.textContent = "";
+    const empty = document.createElement("div");
+    empty.className = "empty-state";
+    empty.textContent = desc;
+    content.appendChild(empty);
+  }
+
   // ---------- Telas de lista (Favoritos / Quero fazer / Histórico) ----------
   const LIST_VIEWS = {
     favoritos: { title: "★ Favoritos", empty: "Você ainda não marcou nenhum prato como favorito.", getIds: () => Storage.getAllFavorites() },
@@ -1736,9 +1780,16 @@
       renderCookMode(route.id, route.from);
     } else if (route.name === "favoritos" || route.name === "quero-fazer" || route.name === "historico") {
       renderListView(route.name);
+    } else if (route.name === "minhas-receitas") {
+      renderPlaceholder("📖 Minhas Receitas", "Em breve: favoritos, quero fazer e histórico, tudo aqui.");
+    } else if (route.name === "preparos") {
+      renderPlaceholder("🍳 Preparos", "Em breve: acompanhe suas sessões de preparo.");
+    } else if (route.name === "lista-compras") {
+      renderPlaceholder("🛒 Lista de Compras", "Em breve: monte sua lista de compras a partir das receitas.");
     } else {
       renderHome();
     }
+    updateBottomNav(route);
     // toda troca de rota é uma "página nova" — sempre volta pro topo (renderReceita/renderCookMode
     // já faziam isso individualmente; agora fica centralizado aqui pra cobrir home/categoria/busca/listas também).
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -1747,6 +1798,7 @@
   Router.onChange(handleRoute);
 
   // ---------- Inicialização ----------
+  renderBottomNav();
   handleRoute(Router.current());
 
   // ---------- PWA: service worker (uso offline) ----------

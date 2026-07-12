@@ -1,6 +1,7 @@
 // router.js — navegação baseada em hash (#/...), sem depender de servidor.
 // Rotas: home | grupo/:id (grupo macro) | categoria/:id (id de coleção) | busca?tags=a,b,c
 //        receita/:id | cozinhar/:id | favoritos | quero-fazer | historico
+//        minhas-receitas | preparos | lista-compras (telas-placeholder da barra inferior)
 // :id de receita/cozinhar é o id único global da receita (TagModel), não mais catId+nome.
 (function () {
   const listeners = [];
@@ -81,6 +82,15 @@
     if (parts[0] === "historico") {
       return { name: "historico" };
     }
+    if (parts[0] === "minhas-receitas") {
+      return { name: "minhas-receitas" };
+    }
+    if (parts[0] === "preparos") {
+      return { name: "preparos" };
+    }
+    if (parts[0] === "lista-compras") {
+      return { name: "lista-compras" };
+    }
     return { name: "home" };
   }
 
@@ -151,6 +161,15 @@
     },
     toHistorico: function () {
       navigate("historico");
+    },
+    toMinhasReceitas: function () {
+      navigate("minhas-receitas");
+    },
+    toPreparos: function () {
+      navigate("preparos");
+    },
+    toListaCompras: function () {
+      navigate("lista-compras");
     },
   };
 })();

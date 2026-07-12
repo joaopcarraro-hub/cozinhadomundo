@@ -13,25 +13,34 @@ A interface deve ajudar o usuário a decidir rápido o que cozinhar.
 
 Mobile primeiro. Desktop depois.
 
-## Home
+## Home (Bloco 2, Fase 2.2)
 
 A home deve ser simples e guiada.
 
-Mostrar apenas blocos macro:
-- Fundamentos
-- Proteínas
-- Cozinhas do mundo
-- Por tempo
-- Por dificuldade
+Mostrar só:
+- Contador de progresso.
+- "Mais categorias" — entrada pequena, num canto, acima dos tiles, texto em
+  `--color-text-secondary` (nunca `--color-accent` em texto pequeno — falha WCAG AA).
+- 4 tiles grandes: Massas, Proteínas, Navegar por Países, Sobremesas.
 
-Não mostrar todas as subcategorias na home.
+Sem busca livre e sem atalhos de Favoritos/Quero fazer/Histórico na home — isso migrou pra
+barra de navegação inferior (aba Pesquisar e, no futuro, aba Minhas Receitas).
 
-Cada bloco deve ser um card/banner retangular com:
-- título
-- descrição curta
-- área de toque grande
-- visual limpo
-- sem excesso de chips ou contadores
+Cada tile grande deve ter:
+- ícone outline monocromático (`--color-text-primary`) + label
+- área de toque grande (mín. 120px de altura)
+- cartão `--color-surface`, raio 20px, borda `--color-border`
+- visual limpo, sem excesso de chips ou contadores
+
+Tiles/entrada "Mais categorias"/barra inferior usam os tokens novos (docs/DESIGN-TOKENS.md).
+O resto do app (página de categoria, dropdowns, cards de receita) mantém a paleta clara antiga
+até seus próprios blocos de redesign — inconsistência visual esperada nesta fase de transição.
+
+## Barra de navegação inferior
+
+Fixa, 5 abas (Home / Pesquisar / Minhas Receitas / Preparos / Lista de Compras), fundo
+`--color-bg-secondary`, ícones outline monocromáticos. Aba ativa: ícone + label em
+`--color-accent`. Inativas: `--color-text-disabled`. Sem FAB — não é um padrão deste app.
 
 ## Página de grupo
 
