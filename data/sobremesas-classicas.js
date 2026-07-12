@@ -300,12 +300,12 @@ window.RECIPES["sobremesas-classicas"] = [
     tags: ["ingredient:queijo", "ingredient:limao"],
     ingredients: [
       "Para a base: 200 g de biscoito tipo maisena ou graham, triturado, 80 g de manteiga derretida",
-      "Para o recheio: 700 g de cream cheese em temperatura ambiente, 200 g de açúcar, 3 ovos + 1 gema, 200 ml de creme de leite fresco (ou azedo), 1 colher (sopa) de amido de milho, raspas de 1 limão, 1 colher (chá) de extrato de baunilha"
+      "Para o recheio: 700 g de queijo cremoso em temperatura ambiente, 200 g de açúcar, 3 ovos + 1 gema, 200 ml de creme de leite fresco (ou azedo), 1 colher (sopa) de amido de milho, raspas de 1 limão, 1 colher (chá) de extrato de baunilha"
     ],
     steps: [
       "Pré-aqueça o forno a 160°C. Misture o biscoito triturado com a manteiga derretida e pressione firmemente no fundo de uma forma de fundo removível (22-24 cm).",
       "Asse a base por 10 minutos, retire e deixe esfriar enquanto prepara o recheio. Embrulhe a parte de fora da forma com papel-alumínio (se for usar banho-maria, para evitar que entre água).",
-      "Bata o cream cheese com o açúcar em velocidade baixa até ficar liso, sem incorporar muito ar (bater demais causa rachaduras).",
+      "Bata o queijo cremoso com o açúcar em velocidade baixa até ficar liso, sem incorporar muito ar (bater demais causa rachaduras).",
       "Adicione os ovos um a um, batendo pouco entre cada adição, só até incorporar.",
       "Junte o creme de leite, o amido de milho, as raspas de limão e a baunilha, misturando em velocidade baixa até homogêneo.",
       "Despeje sobre a base já fria. Bata levemente a forma na bancada para remover bolhas de ar.",
