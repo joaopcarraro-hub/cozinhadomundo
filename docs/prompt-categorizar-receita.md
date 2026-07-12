@@ -72,7 +72,6 @@ Me diga também em qual arquivo/categoria a receita deve entrar, escolhendo dest
 **Fundamentos**
 `molhos` — Molhos Clássicos · `sopas` — Sopas · `entradas-frias` — Entradas (fria) ·
 `entradas-quentes` — Entradas (quente) · `massas` — Massas · `risotos` — Risotos/Arroz (risoto) ·
-`ovos-basicos` — Ovos Básicos · `ovos-classicos` — Preparações Clássicas com Ovos ·
 `padaria` — Padaria · `sobremesas-classicas` — Sobremesas Clássicas ·
 `contemporaneos` — Técnicas (prato clássico contemporâneo) ·
 `tecnicas-contemporaneas-2` — Técnicas (técnica/componente avançado)
@@ -87,7 +86,13 @@ que aparecem juntas como "Entradas".
 
 **Proteínas**
 `aves` — Aves · `carnes-bovinas` — Carnes Bovinas · `cordeiro` — Cordeiro · `suinos` — Suínos ·
-`peixes` — Peixes · `frutos-do-mar` — Frutos do Mar · `arrozes` — Risotos/Arroz (arroz, não-risoto)
+`peixes` — Peixes · `frutos-do-mar` — Frutos do Mar · `arrozes` — Risotos/Arroz (arroz, não-risoto) ·
+`ovos-basicos` — Ovos (técnica básica) · `ovos-classicos` — Ovos (preparação clássica)
+
+`ovos-basicos` e `ovos-classicos` não têm mais coleção própria em Fundamentos — toda receita de
+ovo já leva `protein:ovo`, então aparece em "Ovos" (Proteínas) automaticamente. Use
+`ovos-basicos` pra técnica/preparo fundamental (poché, mexido, omelete simples);
+`ovos-classicos` pra preparação clássica mais elaborada (soufflé, Benedict, quiche).
 
 **Brasil**
 `brasileiros` — Brasileiros Obrigatórios · `brasil-regional` — Brasil por Região

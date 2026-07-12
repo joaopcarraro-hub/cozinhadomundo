@@ -210,6 +210,15 @@
       map["entradas-frias"] = entradasCollection.group;
       map["entradas-quentes"] = entradasCollection.group;
     }
+    // ovos-basicos/ovos-classicos não têm mais coleção própria em Fundamentos — já satisfazem
+    // protein:ovo e vivem em "Ovos" (col-ovo, Proteínas); sem este fallback a busca do hub
+    // escoparia essas receitas como Fundamentos (por catId) enquanto a navegação já as trata
+    // como Proteínas (por tag), os dois mecanismos discordando.
+    const ovoCollection = window.COLLECTIONS.find((c) => c.id === "col-ovo");
+    if (ovoCollection) {
+      map["ovos-basicos"] = ovoCollection.group;
+      map["ovos-classicos"] = ovoCollection.group;
+    }
     catIdToGroupCache = map;
     return map;
   }

@@ -25,8 +25,10 @@
     // dish_type:arroz continuam distintos nos dados; primaryFilterTags em OR é o que une as duas
     // fontes físicas, data/risotos.js e data/arrozes.js, sem mover nenhuma receita de arquivo).
     { id: "risotos-arroz", group: "Fundamentos", collectionType: "dishType", label: "Risotos/Arroz", icon: "🍚", primaryFilterTags: ["dish_type:risoto", "dish_type:arroz"] },
-    { id: "ovos-basicos", group: "Fundamentos", collectionType: "dishType", label: "Ovos Básicos", icon: "🍳", primaryFilterTags: ["dish_type:ovo"] },
-    { id: "ovos-classicos", group: "Fundamentos", collectionType: "dishType", label: "Preparações Clássicas com Ovos", icon: "🥚", primaryFilterTags: ["dish_type:ovo"] },
+    // Ovos Básicos + Preparações Clássicas com Ovos deixam de existir como coleção própria em
+    // Fundamentos — as receitas (catIds ovos-basicos/ovos-classicos) já satisfazem protein:ovo
+    // (confirmado 25/25), então já aparecem em "Ovos" (col-ovo, Proteínas) sem precisar de
+    // nenhuma tag nova. Ver getCatIdToGroup() em app.js pro fallback de escopo de busca do hub.
     { id: "padaria", group: "Fundamentos", collectionType: "dishType", label: "Padaria", icon: "🍞", primaryFilterTags: ["dish_type:pao"] },
     { id: "sobremesas-classicas", group: "Fundamentos", collectionType: "dishType", label: "Sobremesas Clássicas", icon: "🍰", primaryFilterTags: ["dish_type:sobremesa"] },
     // Clássicos Contemporâneos + Técnicas Contemporâneas Avançadas fundidos em "Técnicas" — mesma
