@@ -18,10 +18,12 @@ Mobile primeiro. Desktop depois.
 A home deve ser simples e guiada.
 
 Mostrar só:
-- Contador de progresso.
 - "Mais categorias" — entrada pequena, num canto, acima dos tiles, texto em
   `--color-text-secondary` (nunca `--color-accent` em texto pequeno — falha WCAG AA).
 - 4 tiles grandes: Massas, Proteínas, Navegar por Países, Sobremesas.
+
+Sem contador de progresso ("X de Y receitas já feitas") — removido, era resíduo do sistema
+antigo de tracking, redundante nesta tela.
 
 Sem busca livre e sem atalhos de Favoritos/Quero fazer/Histórico na home — isso migrou pra
 barra de navegação inferior (aba Pesquisar e, no futuro, aba Minhas Receitas).
@@ -58,6 +60,12 @@ Exemplo de Proteínas:
 - Peixes
 - Frutos do mar
 - Ovos
+
+Cada card de opção mostra só UM número total ("N receitas") — sem split "X de foco · Y no
+total" (resíduo do antigo sistema de Foco/Também leva, redundante com o dropdown "Papel da
+proteína" já disponível um clique depois) e sem "X/Y feitas" (contador de progresso removido).
+Card compartilhado por todos os hubs (renderCollectionCard em app.js) — mudar aqui muda em
+todos de uma vez.
 
 A busca nessa página filtra as opções (categorias/coleções) exibidas por nome — e também
 mostra receitas que batem em tags de ingrediente (ingredient:/contains:), escopadas às

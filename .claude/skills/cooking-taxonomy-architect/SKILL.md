@@ -124,6 +124,11 @@ direto na home por ora.
 Cada grupo continua tendo sua própria página intermediária (#/grupo/:id), independente de
 estar linkada na home ou não — a página de grupo em si não mudou.
 
+Card de opção da grade (renderCollectionCard em app.js, compartilhado por todos os hubs) mostra
+só "N receitas" — sem split "X de foco · Y no total" e sem "X/Y feitas". O split de foco/total
+era resíduo do antigo sistema de Foco/Também leva; hoje esse refino vive só no dropdown "Papel
+da proteína", um clique depois, dentro da categoria.
+
 ### hideFromGrupoGrid (esconder coleção da grade sem mudar taxonomia)
 
 Pra tirar uma coleção da grade de um hub sem afetar sua taxonomia (grupo, tags, escopo de

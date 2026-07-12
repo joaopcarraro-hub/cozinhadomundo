@@ -270,29 +270,18 @@
     return map;
   }
 
+  // Card compartilhado por TODOS os hubs (Fundamentos/Proteínas/Cozinhas do Mundo/Tempo/
+  // Dificuldade) via renderGrupo — sem split "X de foco · Y no total" (resíduo do antigo
+  // sistema de Foco/Também leva, redundante com o dropdown "Papel da proteína" já disponível
+  // um clique depois, dentro da própria categoria) e sem "X/Y feitas" (Bloco 2, item 1+5).
   function renderCollectionCard(collection) {
-    const { primaryRecipes, allRecipes } = TagModel.getRecipesByCollection(collection.id);
-    const doneCount = Storage.countMade(allRecipes.map((i) => i.id));
-    const pct = allRecipes.length ? Math.round((doneCount / allRecipes.length) * 100) : 0;
-    const countLabel =
-      allRecipes.length !== primaryRecipes.length
-        ? primaryRecipes.length + " de foco · " + allRecipes.length + " no total"
-        : allRecipes.length + " receitas";
+    const { allRecipes } = TagModel.getRecipesByCollection(collection.id);
     const card = document.createElement("button");
     card.className = "category-card";
     card.innerHTML =
       '<span class="category-card__icon">' + (collection.icon || "🍽") + "</span>" +
       '<span class="category-card__title">' + collection.label + "</span>" +
-      '<span class="category-card__count">' + countLabel + "</span>" +
-      (allRecipes.length
-        ? '<span class="category-card__progress"><span class="category-card__progress-bar" style="width:' +
-          pct +
-          '%"></span></span><span class="category-card__progress-label">' +
-          doneCount +
-          "/" +
-          allRecipes.length +
-          " feitas</span>"
-        : "");
+      '<span class="category-card__count">' + allRecipes.length + " receitas</span>";
     card.addEventListener("click", () => Router.toCategoria(collection.id));
     return card;
   }
@@ -441,13 +430,6 @@
 
     const wrap = document.createElement("div");
     wrap.className = "home-view";
-
-    const totalRecipes = TagModel.getAllRecipesFlat().length;
-    const totalMade = Storage.getAllMade().length;
-    const prog = document.createElement("div");
-    prog.className = "home-progress";
-    prog.textContent = totalMade + " de " + totalRecipes + " receitas já feitas 🎉";
-    wrap.appendChild(prog);
 
     const moreCategorias = document.createElement("button");
     moreCategorias.type = "button";
@@ -668,7 +650,10 @@
       (collection.desc ? '<div class="desc">' + collection.desc + "</div>" : "");
     const grupo = GRUPOS.find((g) => g.collectionGroup === collection.group);
     header.querySelector(".back-button").addEventListener("click", () => {
-      if (grupo) Router.toGrupo(grupo.id);
+      // hideFromGrupoGrid (Bloco 2, item 2): a coleção não aparece mais na grade do grupo, então
+      // "voltar pro grupo" seria um beco sem saída visual — volta pra Home (única entrada real).
+      if (collection.hideFromGrupoGrid) Router.toHome();
+      else if (grupo) Router.toGrupo(grupo.id);
       else Router.toHome();
     });
     content.innerHTML = "";

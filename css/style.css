@@ -628,17 +628,6 @@ body {
 }
 .recipe-page-tags .tag-chip-link { min-height: 30px; font-size: 0.8rem; padding: 0 14px; }
 
-.home-progress {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-  background: var(--bg-panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 12px 18px;
-  margin-bottom: 8px;
-}
-
 /* ---------- Home: tiles principais + "Mais categorias" (Bloco 2 — design tokens v3) ---------- */
 .home-more-categories {
   display: flex;
@@ -708,24 +697,6 @@ body {
   font-size: 0.75rem;
   color: var(--ink-soft);
   margin-top: auto;
-}
-.category-card__progress {
-  display: block;
-  height: 5px;
-  border-radius: 999px;
-  background: var(--line);
-  overflow: hidden;
-}
-.category-card__progress-bar {
-  display: block;
-  height: 100%;
-  background: var(--green);
-  border-radius: 999px;
-}
-.category-card__progress-label {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.68rem;
-  color: var(--ink-soft);
 }
 
 /* ---------- Página de grupo ---------- */
