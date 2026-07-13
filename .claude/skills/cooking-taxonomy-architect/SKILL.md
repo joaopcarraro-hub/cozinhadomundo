@@ -60,22 +60,33 @@ filtros em acordeão (substituiu a antiga barra de dropdowns sempre-visível —
 `.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual), refinando in-place (sem navegar
 de rota, sem camadas sequenciais/funil, mudanças em rascunho até "Ver resultados"):
 
-- País, Complexidade, Tempo, Equipamento: OR PURO entre os valores da MESMA faceta (união —
-  País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca precisa de fallback
-  aqui, porque OR nunca zera ao adicionar mais um valor. Equipamento é multi-valorado por trás
-  (uma receita pode ter vários equipment: simultaneamente, ex: forno E air-fryer) — a faceta já
-  reflete isso naturalmente, sem tratamento especial. Derivado de `steps` (não de
+- País, Complexidade, Tempo, Equipamento, Proteína: OR PURO entre os valores da MESMA faceta
+  (união — País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca precisa de
+  fallback aqui, porque OR nunca zera ao adicionar mais um valor. Equipamento é multi-valorado
+  por trás (uma receita pode ter vários equipment: simultaneamente, ex: forno E air-fryer) — a
+  faceta já reflete isso naturalmente, sem tratamento especial. Derivado de `steps` (não de
   `ingredients`) via data/derivation-dict.js (EQUIPMENT). País/Complexidade/Tempo usam
   checkbox em lista, com "Todos" como item especial que limpa a faceta (não soma com os
-  demais); Equipamento é PILOTO DE REDESENHO VISUAL — grade de tiles (ícone/label/contagem) em
-  vez de lista, mesma lógica de estado, sem tile "Todos" (nenhum tile marcado = nenhum filtro
-  ativo). Ver `.claude/skills/mobile-recipe-ui/SKILL.md`.
+  demais); Equipamento e Proteína são grade de tiles (ícone/label/contagem, Proteína só
+  label+contagem por ora — ícone é rodada futura), mesma lógica de estado, sem tile "Todos"
+  (nenhum tile marcado = nenhum filtro ativo). Ver `.claude/skills/mobile-recipe-ui/SKILL.md`.
 - Ingrediente é a única faceta com combineMode "and" — os valores selecionados combinam em AND
   entre si (a receita precisa conter todos). Se a combinação atual resultar em zero receitas,
   a UI oferece um fallback pontual para OR (qualquer um dos selecionados), mantendo as demais
-  facetas ativas (País, Complexidade, Tempo, Equipamento, Papel da proteína) aplicadas
-  normalmente — o fallback nunca ignora os outros filtros.
-- Papel da proteína (só aparece em coleções de proteína)
+  facetas ativas (País, Complexidade, Tempo, Equipamento, Proteína, Papel da proteína)
+  aplicadas normalmente — o fallback nunca ignora os outros filtros.
+- Proteína (protein:, NOVA — não confundir com Papel da proteína abaixo): filtra QUAL proteína
+  (Frango, Boi, Suíno, Ave, Cordeiro, Peixe, Frutos do Mar, Ovo), disponível em QUALQUER
+  coleção/busca, não só dentro de um hub de proteína — eixo completamente independente de
+  Papel da proteína (que decide FOCO/SECUNDÁRIO dentro de um hub já escolhido). As duas
+  coexistem sem conflito: Proteína filtra por tag `protein:*` via matchesGroupedTags (igual
+  qualquer outra faceta); Papel da proteína filtra por qual POOL de receitas
+  (basePrimary/baseRelated) está em uso dentro do hub atual — são eixos ortogonais que se
+  combinam em AND normalmente (ex.: dentro de Suínos, Proteína=Suíno + Papel=Principal é só
+  redundante, não quebra nada; Proteína=Frango + Papel=Principal dentro de Suínos tende a zerar,
+  comportamento esperado de AND cruzado).
+- Papel da proteína (só aparece em coleções de proteína) — ver seção própria abaixo,
+  inalterada por Proteína.
 
 ENTRE facetas diferentes sempre é AND, mesmo quando a faceta individual é OR por dentro — ex.:
 País=Itália+Alemanha E Equipamento=Forno é a interseção do OR de país com o equipamento, nunca
@@ -90,7 +101,7 @@ outras facetas do rascunho), com contagem. Nada vem pré-selecionado — o defau
 
 Um botão "Limpar filtros" aparece dentro do modal só quando pelo menos 1 faceta está ativa
 (nunca no estado default) e reseta todas de uma vez — País, Complexidade, Tempo, Equipamento,
-Ingrediente e Papel da proteína. Zera só o RASCUNHO (não aplica, não fecha o modal) — o rodapé
+Proteína, Ingrediente e Papel da proteína. Zera só o RASCUNHO (não aplica, não fecha o modal) — o rodapé
 "Ver resultados (N)" recalcula pra contagem sem filtro nenhum, e o usuário ainda precisa tocar
 "Ver resultados" (ou "Cancelar" pra desistir de tudo, inclusive da limpeza).
 

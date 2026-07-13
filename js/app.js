@@ -487,6 +487,13 @@
     { key: "difficulty", label: "Complexidade", prefix: "difficulty:", multi: true, combineMode: "or" },
     { key: "time", label: "Tempo", prefix: "time:", multi: true, combineMode: "or" },
     { key: "equipment", label: "Equipamento", prefix: "equipment:", multi: true, combineMode: "or", layout: "tiles", tileIcon: equipmentTileIconHtml },
+    // "Proteína" (protein:) — NÃO confundir com "Papel da proteína" (renderProteinRoleSection,
+    // seleção única Principal/Secundário/Tanto faz, só em coleções de proteína). Esta é NOVA:
+    // pergunta QUAL proteína (Frango, Boi, Peixe...), disponível em QUALQUER coleção/busca, OR
+    // puro entre valores — mesma família de País/Equipamento. 8 valores, grade de tiles, mas
+    // SEM ícone nesta rodada (noIconTileIcon sempre devolve "" — só label+contagem, mesmo
+    // tratamento que Processador/Sous Vide tinham antes de ganhar ícone real).
+    { key: "protein", label: "Proteína", prefix: "protein:", multi: true, combineMode: "or", layout: "tiles", tileIcon: noIconTileIcon },
     // layout: "ingredient-tiles" — piloto próprio (não reaproveita renderTileSectionBody): grade
     // MAIS DENSA que País/Equipamento (mais colunas, tiles menores) pra caber ~30-40 valores em
     // 360-430px, e SÓ substitui o <select> de "+ adicionar" — os chips removíveis dos já
@@ -494,6 +501,12 @@
     // intocado) continua sendo a única lógica diferente de todas as outras facetas.
     { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true, combineMode: "and", layout: "ingredient-tiles" },
   ];
+
+  // Proteína: sem ícone nesta rodada (rodada futura, mesmo tratamento que Processador/Sous
+  // Vide tiveram antes de ganhar ícone real) — só label+contagem no tile.
+  function noIconTileIcon() {
+    return "";
+  }
 
   // Emoji de bandeira pro piloto de tiles de País — caractere Unicode padrão (sem arquivo, sem
   // licença). Não recolore por estado: emoji não herda currentColor, e a borda do tile já

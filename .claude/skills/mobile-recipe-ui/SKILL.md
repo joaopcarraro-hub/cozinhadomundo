@@ -118,21 +118,27 @@ filtros ativos) no lugar de onde a antiga barra de dropdowns sempre-visível fic
 botão, abre um modal cheio de tela (`--color-bg`) com "Cancelar" / título "Filtros" à esquerda/
 centro, e "Ver resultados (N)" fixo no rodapé (pill `--color-accent`, N = contagem ao vivo).
 
-Dentro, 6 seções em acordeão — País, Complexidade, Tempo, Equipamento, Ingrediente, Papel da
-proteína (só em coleções de proteína) — cada uma com contagem de opções no cabeçalho e um
-resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexistem:
+Dentro, 7 seções em acordeão — País, Complexidade, Tempo, Equipamento, Proteína, Ingrediente,
+Papel da proteína (só em coleções de proteína) — cada uma com contagem de opções no cabeçalho
+e um resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexistem:
 - Complexidade, Tempo: lista de CHECKBOX (`accent-color: --color-accent`), com "Todos" como
   item especial no topo que, ao marcar, limpa a seleção daquela faceta — não soma com os
   demais valores. Os outros valores combinam em OR puro entre si (união).
-- País, Equipamento: PILOTO DE REDESENHO — grade de tiles (3 colunas, 2 em telas ≤380px) em
+- País, Equipamento, Proteína: grade de tiles (3 colunas, 2 em telas ≤380px) em
   vez de lista de checkbox (`renderTileSectionBody` em app.js, `def.layout === "tiles"`,
-  reaproveitado pelas duas facetas — só o ícone difere via `def.tileIcon(tagId)`, plugável por
-  faceta). Cada tile: ícone em cima, label no meio, contagem embaixo em
+  reaproveitado pelas três facetas — só o ícone difere via `def.tileIcon(tagId)`, plugável por
+  faceta). Cada tile: ícone em cima (se houver), label no meio, contagem embaixo em
   `--color-text-disabled` (mesmo token que as outras seções já usavam pra contagem —
   `--color-text-muted` não existe em DESIGN-TOKENS.md). Tile marcado ganha borda 2px
   `--color-accent`. Sem tile "Todos" — nenhum tile marcado = nenhum filtro ativo (equivalente
   ao "Todos" marcado da versão em lista). Mesma lógica de OR-união dos demais checkbox — só
   muda a apresentação.
+  - Proteína (protein:, NOVA — não confundir com "Papel da proteína" abaixo, que já existia e
+    continua igual): 8 valores (Frango, Carne Bovina, Suíno, Aves, Cordeiro, Peixe, Frutos do
+    Mar, Ovo), disponível em QUALQUER coleção/busca (renderCategory e renderBusca), não só
+    dentro de um hub de proteína. `tileIcon: noIconTileIcon` — sempre devolve `""`, sem ícone
+    nesta rodada (label+contagem só, mesmo tratamento que Processador/Sous Vide tiveram antes
+    do ícone real; ícone fica pra rodada futura).
   - País: ícone = EMOJI DE BANDEIRA (`COUNTRY_FLAG_EMOJI` em app.js, `country:*` -> caractere
     Unicode padrão, sem arquivo, sem licença). NÃO recolore por estado (emoji não herda
     `currentColor`) — a borda do tile já indica seleção sozinha, mesmo tratamento dos PNG de

@@ -95,8 +95,8 @@ Não mostrar todas as possibilidades ao mesmo tempo.
 Dentro de uma coleção (país, proteína, tempo, dificuldade, fundamentos), o refino é um MODAL
 de filtros em acordeão (Bloco 3) — não mais uma barra sempre-visível. Um botão "Filtros" (com
 badge de contagem de filtros ativos) fica no lugar de onde a barra ficava; abre um modal cheio
-de tela com 6 seções em acordeão: País, Complexidade, Tempo, Equipamento, Ingrediente, Papel
-da proteína (só em coleções de proteína). Cada seção mostra a contagem de opções no cabeçalho
+de tela com 7 seções em acordeão: País, Complexidade, Tempo, Equipamento, Proteína,
+Ingrediente, Papel da proteína (só em coleções de proteína). Cada seção mostra a contagem de opções no cabeçalho
 e, se já tiver algo selecionado, um resumo (ex.: "Brasil", "2 selecionados"). Mudanças dentro
 do modal ficam em RASCUNHO — só se aplicam de fato ao tocar "Ver resultados (N)" (N = contagem
 ao vivo do resultado combinado); "Cancelar" fecha sem aplicar nada. "Limpar filtros" continua
@@ -108,13 +108,16 @@ rodapé recalcula pra contagem sem filtro) e mantém o modal aberto; o usuário 
 Cada seção só lista os valores presentes no resultado atual, com contagem, e nada vem
 pré-selecionado (default = item "Todos" marcado). Duas famílias de multi-seleção coexistem, e
 nenhuma vaza pra outra:
-- País, Complexidade, Tempo, Equipamento: OR PURO entre os valores da MESMA faceta (união —
-  ex.: País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca zera ao
-  adicionar mais um valor, então não tem fallback nenhum aqui. País/Complexidade/Tempo são
+- País, Complexidade, Tempo, Equipamento, Proteína: OR PURO entre os valores da MESMA faceta
+  (união — ex.: País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca zera
+  ao adicionar mais um valor, então não tem fallback nenhum aqui. País/Complexidade/Tempo são
   checkboxes com "Todos" no topo (item especial que limpa a faceta, não soma com os demais).
-  Equipamento é PILOTO DE REDESENHO — mesma lógica, mas em grade de tiles (ícone+label+
-  contagem, sem tile "Todos"; nenhum tile marcado = nenhum filtro ativo). Ver
-  `.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual.
+  Equipamento e Proteína são grade de tiles (ícone+label+contagem, Proteína sem ícone por ora;
+  sem tile "Todos"; nenhum tile marcado = nenhum filtro ativo). Proteína (protein:) é NOVA e
+  não deve ser confundida com "Papel da proteína" (existente, seleção única Principal/
+  Secundário/Tanto faz, só dentro de um hub de proteína) — Proteína pergunta QUAL proteína e
+  fica disponível em qualquer coleção/busca; as duas são eixos independentes que se combinam
+  em AND normalmente. Ver `.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual.
 - Ingrediente: chips removíveis + campo de adicionar, com AND entre os selecionados (a receita
   precisa conter todos). Se a combinação zerar, a tela de RESULTADOS (não o modal) oferece um
   fallback pontual para OR — o modal não duplica essa UI, só deixa "Ver resultados" aplicável
