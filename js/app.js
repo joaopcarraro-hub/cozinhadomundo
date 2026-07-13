@@ -479,7 +479,12 @@
     { key: "difficulty", label: "Complexidade", prefix: "difficulty:", multi: true, combineMode: "or" },
     { key: "time", label: "Tempo", prefix: "time:", multi: true, combineMode: "or" },
     { key: "equipment", label: "Equipamento", prefix: "equipment:", multi: true, combineMode: "or", layout: "tiles", tileIcon: equipmentTileIconHtml },
-    { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true, combineMode: "and" },
+    // layout: "ingredient-tiles" — piloto próprio (não reaproveita renderTileSectionBody): grade
+    // MAIS DENSA que País/Equipamento (mais colunas, tiles menores) pra caber ~30-40 valores em
+    // 360-430px, e SÓ substitui o <select> de "+ adicionar" — os chips removíveis dos já
+    // selecionados continuam exatamente iguais. combineMode "and" (+ fallback OR ao zerar,
+    // intocado) continua sendo a única lógica diferente de todas as outras facetas.
+    { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true, combineMode: "and", layout: "ingredient-tiles" },
   ];
 
   // Emoji de bandeira pro piloto de tiles de País — caractere Unicode padrão (sem arquivo, sem
@@ -511,6 +516,65 @@
     const flag = COUNTRY_FLAG_EMOJI[tagId];
     if (!flag) return "";
     return '<span class="filter-tile__icon filter-tile__icon--emoji" aria-hidden="true">' + flag + "</span>";
+  }
+
+  // Emoji por ingrediente pro piloto de tiles de Ingrediente — mesmo raciocínio de País (sem
+  // arquivo, sem licença, sem recolor por estado). Peixes com espécie própria mas sem emoji
+  // dedicado no Unicode (salmão, robalo, atum, linguado, dourado, anchova, bacalhau, badejo,
+  // tilápia) usam 🐟 genérico — aceitável repetir, o label ao lado já diferencia. IDs que
+  // existem só como seasoning: (gengibre, curry — ver js/tags.js) NÃO entram aqui: a faceta
+  // Ingrediente só lê prefix "ingredient:", então essas duas tags nunca aparecem como opção
+  // desta seção, com ou sem emoji. "abobrinha" existe como ingredient: mas não veio na lista
+  // original — tratada como SEM ÍCONE, mesmo fallback seguro do Processador/Sous Vide.
+  const INGREDIENT_EMOJI = {
+    "ingredient:ovo": "🥚",
+    "ingredient:tomate": "🍅",
+    "ingredient:queijo": "🧀",
+    "ingredient:arroz": "🍚",
+    "ingredient:batata": "🥔",
+    "ingredient:milho": "🌽",
+    "ingredient:feijao": "🫘",
+    "ingredient:berinjela": "🍆",
+    "ingredient:cogumelo": "🍄",
+    "ingredient:abobora": "🎃",
+    "ingredient:pimentao": "🫑",
+    "ingredient:azeitona": "🫒",
+    "ingredient:limao": "🍋",
+    "ingredient:coco": "🥥",
+    "ingredient:castanha": "🌰",
+    "ingredient:chocolate": "🍫",
+    "ingredient:cafe": "☕",
+    "ingredient:vinho": "🍷",
+    "ingredient:cerveja": "🍺",
+    "ingredient:mel": "🍯",
+    "ingredient:espinafre": "🥬",
+    "ingredient:ervilha": "🫛",
+    "ingredient:amendoim": "🥜",
+    "ingredient:brocolis": "🥦",
+    "ingredient:cenoura": "🥕",
+    "ingredient:pao": "🍞",
+    "ingredient:pepino": "🥒",
+    "ingredient:camarao": "🦐",
+    "ingredient:lula": "🦑",
+    "ingredient:polvo": "🐙",
+    "ingredient:mexilhao": "🦪",
+    "ingredient:lagosta": "🦞",
+    "ingredient:ostra": "🦪",
+    "ingredient:caranguejo": "🦀",
+    "ingredient:salmao": "🐟",
+    "ingredient:robalo": "🐟",
+    "ingredient:atum": "🐟",
+    "ingredient:linguado": "🐟",
+    "ingredient:dourado": "🐟",
+    "ingredient:anchova": "🐟",
+    "ingredient:bacalhau": "🐟",
+    "ingredient:badejo": "🐟",
+    "ingredient:tilapia": "🐟",
+  };
+  function ingredientTileIconHtml(tagId) {
+    const emoji = INGREDIENT_EMOJI[tagId];
+    if (!emoji) return "";
+    return '<span class="filter-tile__icon filter-tile__icon--emoji" aria-hidden="true">' + emoji + "</span>";
   }
 
   // Ícones reais pro piloto de tiles de Equipamento — substituem os emoji provisórios. Arquivos
@@ -856,6 +920,63 @@
         }
       }
 
+      // Piloto de redesenho visual — só Ingrediente (def.layout === "ingredient-tiles").
+      // Chips removíveis dos selecionados continuam IDÊNTICOS a renderMultiSectionBody; só o
+      // <select> de "+ adicionar" vira uma grade de tiles mais densa (mais colunas, tiles
+      // menores que País/Equipamento — classe filter-tile-grid--dense/filter-tile--dense) pra
+      // caber ~30-40 valores confortavelmente em 360-430px. Clicar num tile addable adiciona à
+      // seleção (equivalente a escolher no <select> antigo); não existe estado "is-selected"
+      // aqui, porque um valor selecionado sai da grade e vira chip — nunca aparece nos dois
+      // lugares ao mesmo tempo. Nenhuma mudança na lógica AND+fallback OR de Ingrediente.
+      function renderIngredientTileSectionBody(sectionBody, def, options) {
+        const selectedIds = draftFacetState[def.key] || [];
+        const addableOptions = options.filter((o) => selectedIds.indexOf(o.tagId) === -1);
+        const chipsHtml = selectedIds
+          .map((tagId) => {
+            const tag = TagModel.getTagById(tagId);
+            return (
+              '<button type="button" class="tag-chip tag-chip--selected" data-remove="' +
+              tagId +
+              '">' +
+              (tag ? tag.label : tagId) +
+              ' <span aria-hidden="true">×</span></button>'
+            );
+          })
+          .join("");
+        sectionBody.innerHTML =
+          (chipsHtml ? '<div class="facet-multi-chips">' + chipsHtml + "</div>" : "") +
+          (addableOptions.length
+            ? '<div class="filter-tile-grid filter-tile-grid--dense">' +
+              addableOptions
+                .map(
+                  (o) =>
+                    '<button type="button" class="filter-tile filter-tile--dense" data-value="' +
+                    o.tagId +
+                    '">' +
+                    ingredientTileIconHtml(o.tagId) +
+                    '<span class="filter-tile__label">' +
+                    o.tag.label +
+                    '</span><span class="filter-tile__count">' +
+                    o.count +
+                    "</span></button>"
+                )
+                .join("") +
+              "</div>"
+            : "");
+        sectionBody.querySelectorAll("[data-remove]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            draftFacetState[def.key] = selectedIds.filter((id) => id !== btn.dataset.remove);
+            renderBody();
+          });
+        });
+        sectionBody.querySelectorAll(".filter-tile--dense").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            draftFacetState[def.key] = selectedIds.concat([btn.dataset.value]);
+            renderBody();
+          });
+        });
+      }
+
       // País/Complexidade/Tempo/Equipamento (combineMode "or"): checkboxes, valores da MESMA
       // faceta se somam em união — nunca zera ao adicionar mais um, então não precisa de
       // nenhum fallback (diferente de Ingrediente). "Todos" é um item especial que limpa a
@@ -956,6 +1077,7 @@
         section.querySelector(".filter-section__header").addEventListener("click", () => toggleSection(def.key));
         const sectionBody = section.querySelector(".filter-section__body");
         if (def.multi && def.combineMode === "or" && def.layout === "tiles") renderTileSectionBody(sectionBody, def, options);
+        else if (def.layout === "ingredient-tiles") renderIngredientTileSectionBody(sectionBody, def, options);
         else if (def.multi && def.combineMode === "or") renderCheckboxSectionBody(sectionBody, def, options);
         else if (def.multi) renderMultiSectionBody(sectionBody, def, options);
         else renderSingleSectionBody(sectionBody, def, options);

@@ -669,9 +669,33 @@ body.filter-modal-open { overflow: hidden; }
    escuro. NÃO recolore no estado selecionado (limitação de raster) — a borda do tile já indica
    seleção sozinha. */
 .filter-tile__icon--png { object-fit: contain; filter: invert(1); }
-/* Emoji (bandeira de País) — caractere Unicode, não recolore por estado (emoji não herda
-   currentColor); a borda do tile já indica seleção sozinha, mesmo tratamento do PNG acima. */
+/* Emoji (bandeira de País, ingrediente) — caractere Unicode, não recolore por estado (emoji não
+   herda currentColor); a borda do tile já indica seleção sozinha, mesmo tratamento do PNG acima. */
 .filter-tile__icon--emoji { font-size: 1.5rem; line-height: 1; }
+
+/* Piloto de redesenho — Ingrediente (def.layout "ingredient-tiles"). Grade mais densa que
+   País/Equipamento (mais colunas, tiles menores) pra caber ~30-40 valores confortavelmente em
+   360-430px sem exigir scroll excessivo. Só troca o <select> de "+ adicionar" por tiles — os
+   chips removíveis dos já selecionados (.facet-multi-chips) não mudam nada aqui. */
+.filter-tile-grid.filter-tile-grid--dense {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.filter-tile--dense {
+  min-height: 58px;
+  padding: 6px 2px;
+  border-radius: 10px;
+  gap: 2px;
+}
+.filter-tile--dense .filter-tile__icon--emoji { font-size: 1.15rem; }
+.filter-tile--dense .filter-tile__label { font-size: 0.62rem; }
+.filter-tile--dense .filter-tile__count { font-size: 0.56rem; }
+@media (max-width: 380px) {
+  /* Especificidade dobrada (.filter-tile-grid.filter-tile-grid--dense) de propósito: sem
+     isso, a regra ≤380px de .filter-tile-grid (repeat(2,1fr), pra Equipamento/País) vence por
+     ordem de declaração já que as duas têm a mesma especificidade de outra forma. */
+  .filter-tile-grid.filter-tile-grid--dense { grid-template-columns: repeat(3, 1fr); }
+}
 .filter-tile__label {
   font-size: 0.76rem;
   color: var(--color-text-primary);

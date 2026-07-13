@@ -145,9 +145,24 @@ resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexist
     Icons8) + recomendado (SVG Repo), link de texto pra icons8.com e svgrepo.com, mais uma
     linha genérica pros 2 SVG de fonte não identificada (processador, sous vide) — tratados
     como exigindo atribuição por segurança até a origem ser confirmada.
-- Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) + select de
-  "+ adicionar", combinando em AND entre si — única faceta com essa lógica (e com fallback OR
-  na tela de resultados quando zera).
+- Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) continuam
+  iguais acima da grade; o antigo `<select>` de "+ adicionar" virou PILOTO DE REDESENHO — grade
+  de tiles MAIS DENSA que País/Equipamento (`renderIngredientTileSectionBody` em app.js,
+  `def.layout === "ingredient-tiles"`, função própria — não reaproveita `renderTileSectionBody`
+  porque coexiste com os chips e não tem estado "selecionado" no próprio tile: um valor
+  escolhido sai da grade e vira chip, nunca aparece nos dois lugares). Classes
+  `.filter-tile-grid--dense`/`.filter-tile--dense` (4 colunas ≥380px, 3 em ≤380px — especificidade
+  dobrada de propósito, ver comentário no CSS, senão a regra ≤380px de 2 colunas do
+  `.filter-tile-grid` base vencia por ordem de declaração). Ícone = emoji por ingrediente
+  (`INGREDIENT_EMOJI` em app.js), mesmo tratamento sem recolor de País — peixes sem emoji
+  Unicode próprio (salmão, robalo, atum, linguado, dourado, anchova, bacalhau, badejo, tilápia)
+  usam 🐟 genérico. 8 de 51 valores ficam SEM ícone (mandioca, iogurte, lentilha, grão-de-bico,
+  molho de soja, repolho, damasco, abobrinha — label+contagem apenas, mesmo fallback seguro do
+  Processador/Sous Vide em Equipamento). Continua combinando em AND entre si — única faceta com
+  essa lógica (e com fallback OR na tela de resultados quando zera). Gengibre e curry NÃO
+  aparecem nesta seção: existem só como `seasoning:*` (ver js/tags.js), não `ingredient:*` — a
+  faceta só lê o prefixo `ingredient:`, então essas duas tags nunca foram opções aqui, com ou
+  sem emoji.
 
 A contagem de cada opção não-selecionada é sempre "quantos eu teria se também adicionasse
 este" — universo restrito pelas OUTRAS facetas, nunca pela própria (mesma lógica que já existia
