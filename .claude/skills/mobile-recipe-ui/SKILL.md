@@ -34,9 +34,12 @@ Cada tile grande deve ter:
 - cartão `--color-surface`, raio 20px, borda `--color-border`
 - visual limpo, sem excesso de chips ou contadores
 
-Tiles/entrada "Mais categorias"/barra inferior usam os tokens novos (docs/DESIGN-TOKENS.md).
-O resto do app (página de categoria, dropdowns, cards de receita) mantém a paleta clara antiga
-até seus próprios blocos de redesign — inconsistência visual esperada nesta fase de transição.
+Tiles/entrada "Mais categorias"/barra inferior usam os tokens novos (docs/DESIGN-TOKENS.md)
+diretamente (`--color-*`). Desde o Bloco 4, o resto do app (página de categoria, dropdowns,
+cards de receita) também é tema escuro — só que via os tokens ANTIGOS redefinidos no `:root`
+de `css/style.css` (`--bg`/`--ink`/`--gold`/etc. com os NOMES mantidos, mas valores apontando
+pros mesmos hex do tema escuro). Não há mais inconsistência visual entre blocos — o app é
+100% escuro. Ver "Reskin escuro (Bloco 4)" abaixo pro detalhamento.
 
 ## Barra de navegação inferior
 
@@ -179,8 +182,57 @@ pequeno, falha WCAG AA) aparece dentro do modal só quando pelo menos 1 filtro e
 aplica nem fecha o modal — zera só o rascunho (seções voltam a "Todos", rodapé recalcula) e
 mantém o modal aberto; ainda precisa de "Ver resultados" (ou "Cancelar" pra desistir).
 
-O resto da tela de categoria/busca (cards, dropdown de ordenação, toolbar) continua na paleta
-clara antiga — só o botão "Filtros" e o modal usam os tokens novos.
+O resto da tela de categoria/busca (cards, dropdown de ordenação, toolbar) também é tema
+escuro desde o Bloco 4 (via os tokens antigos redefinidos, ver seção abaixo) — o botão
+"Filtros" e o modal continuam sendo os únicos a usar os tokens `--color-*` novos diretamente,
+mas os valores finais renderizados são os mesmos em ambos os casos.
+
+## Reskin escuro (Bloco 4)
+
+O app inteiro é tema escuro agora — nenhuma tela remanescente na paleta clara. Caminho usado:
+redefinir os VALORES dos 10 tokens antigos no `:root` de `css/style.css`, mantendo os NOMES
+(`--bg`, `--bg-panel`, `--ink`, `--ink-soft`, `--gold`, `--line`, `--green`, `--red`,
+`--radius`), sem tocar nos tokens `--color-*` novos. Isso re-temizou quase toda a tela antiga
+de uma vez, já que ela consistentemente usava `var(--token)` em vez de cor hardcoded (só ~16
+exceções pontuais, resolvidas uma a uma).
+
+Equivalência 1:1 aplicada: `--bg`=`--color-bg`, `--bg-panel`=`--color-surface`,
+`--ink`=`--color-text-primary`, `--ink-soft`=`--color-text-secondary`, `--gold`=`--color-accent`,
+`--line`=`--color-border`, `--green`=`--color-success`, `--red`=`--color-error`. `--radius`
+ficou em 14px (não forçado pra 20px — decisão em aberto, separada).
+
+`--gold-soft` e `--shadow` foram REMOVIDOS do `:root` (não tinham 1 equivalente novo único):
+- `--gold-soft` (19 usos) tinha 3 papéis, cada um resolvido pro token certo: borda
+  padrão/estática -> `--color-border`; borda de hover/outline de foco -> `--color-accent-hover`
+  (hover) ou `--color-accent` (foco, regra "Inputs:... foco --color-accent" do
+  DESIGN-TOKENS.md); ícone de placeholder/vazio -> `--color-text-disabled`; fundo tingido
+  suave (badge, marcador decorativo, aba ativa, hover de chip, CTA do card, pill de fallback)
+  -> `rgba(214, 59, 32, 0.08)` (tom de `--color-accent` em baixa opacidade — decisão confirmada
+  com o usuário, não existe token pronto pra isso).
+- `--shadow` (5 usos de `box-shadow`) foi removido sem substituto: nenhum componente do Bloco
+  2/3 tinha precedente de elevação em dark mode, e `--line`/`--color-border` já separa camadas
+  sozinho (sombra escura sobre fundo escuro ficaria invisível de qualquer forma).
+
+Achado importante durante a resolução: várias regras usavam `color: var(--gold)` em texto
+PEQUENO (<18px) — `.icon-credits a`, `.btn-or-fallback`, `.subgroup-title`, `.recipe-title
+.cat-chip`, `.recipe-card-cta`, `.tag-chip-link`, `.back-button`, `.recipe-page-section h4`,
+`.cook-step-label`. Mapear direto pra `--gold`=`--color-accent` faria essas 9 regras virarem
+ghost-text que falha WCAG AA no tamanho (a mesma regra já documentada pra "Mais categorias" na
+home). Todas foram desviadas pra `--color-text-secondary` (ou `--color-text-primary` no caso
+do `.recipe-card-cta`, que é uma CTA de ação real) em vez do mapeamento automático — bordas,
+ícones e preenchimentos sólidos com texto claro em cima (`--ink`, ex.: número do passo,
+chip selecionado, botão primário) não têm esse problema e usam `--gold`/`--color-accent`
+normalmente.
+
+~16 valores hardcoded fora do `:root` também resolvidos individualmente: 5×`#fff` + 1×`white`
+(texto sobre preenchimento sólido) -> `--color-text-primary`; `rgba(163,118,44,0.08)` (gold
+cru) -> mesmo tom de `--color-accent` tingido acima; `#f1e8d3`×2 (fundo de placeholder) ->
+`--color-surface-elevated`; `#f6efdd`×2 (tips-box e hover de sugestão) ->
+`--color-surface-elevated`; `#8f6624`×2 (hover mais escuro de dourado) -> `--color-accent-hover`.
+
+Card de receita (`renderRecipeCard`) e card de coleção (`renderCollectionCard`) são funções
+únicas reaproveitadas por toda tela que lista receitas/coleções — o reskin vale pra todas de
+uma vez, sem duplicação.
 
 ## Critérios de aceite
 

@@ -1,24 +1,32 @@
 :root {
-  --bg: #faf6ee;
-  --bg-panel: #fffdf8;
-  --ink: #2b241b;
-  --ink-soft: #6b5f4f;
-  --gold: #a3762c;
-  --gold-soft: #d9b877;
-  --line: #e7dcc4;
-  --green: #4c7a4a;
-  --red: #b3452f;
-  --shadow: 0 4px 18px rgba(43, 36, 27, 0.08);
+  /* ---- Bloco 4: reskin — valores redefinidos pro tema escuro (docs/DESIGN-TOKENS.md),
+     NOMES mantidos de propósito (evita rename em todo o app). Equivalência 1:1 com os
+     tokens novos abaixo: --bg=--color-bg, --bg-panel=--color-surface, --ink=--color-text-
+     primary, --ink-soft=--color-text-secondary, --gold=--color-accent, --line=--color-border,
+     --green=--color-success, --red=--color-error. --gold-soft e --shadow foram REMOVIDOS
+     (não têm 1 equivalente novo único — cada uso foi resolvido individualmente pro token
+     certo pro papel real: --color-border, --color-accent-hover, --color-accent ou um tom de
+     --color-accent em baixa opacidade; --shadow não tinha nenhum precedente de elevação em
+     dark mode nos componentes do Bloco 2/3, então os 5 usos de box-shadow foram removidos —
+     --color-border já faz o trabalho de separar camadas). Ver .claude/skills/mobile-recipe-ui
+     pro detalhamento de cada decisão. */
+  --bg: #0f0f0e;
+  --bg-panel: #232321;
+  --ink: #f5f1ea;
+  --ink-soft: #c5bfb5;
+  --gold: #d63b20;
+  --line: #3b3935;
+  --green: #76945b;
+  --red: #e63950;
   --radius: 14px;
   font-size: 16px;
 
   /* ---- Design tokens v3 (docs/DESIGN-TOKENS.md) ----
      Usados SÓ pela barra de navegação inferior, pelos elementos novos da home (tiles
      principais + "Mais categorias") e, a partir do Bloco 3, pelo modal de filtros em
-     acordeão (botão "Filtros" + tudo dentro do modal). Nada do resto do app usa estes tokens
-     ainda — é esperado o app ficar visualmente inconsistente entre esses componentes novos e
-     o restante (paleta clara antiga) até os próximos blocos de redesign. Nomes idênticos aos
-     do DESIGN-TOKENS.md de propósito, pra não exigir rename quando o resto do app migrar. */
+     acordeão (botão "Filtros" + tudo dentro do modal). A partir do Bloco 4, TODO o resto do
+     app também usa o tema escuro — só que via --bg/--ink/--gold/etc. redefinidos acima, não
+     estes tokens --color-* diretamente (nomes duplicados de propósito, mesmos valores). */
   --color-bg: #0f0f0e;
   --color-bg-secondary: #181816;
   --color-surface: #232321;
@@ -107,7 +115,12 @@ body {
   font-size: 0.8rem;
   color: var(--ink-soft);
 }
-.icon-credits a { color: var(--gold); }
+/* .icon-credits a e .btn-or-fallback: texto pequeno (<18px) — NÃO usar --gold (=--color-accent)
+   direto aqui, vira ghost-text que falha WCAG AA no tamanho (regra do próprio
+   DESIGN-TOKENS.md: "Ghost: texto --color-accent... só usar em texto grande/semibold 18px+").
+   --ink-soft (=--color-text-secondary) no lugar — link/rótulo continua legível e distinto do
+   texto de corpo, só não colorido no acento. */
+.icon-credits a { color: var(--ink-soft); }
 .btn-or-fallback {
   margin-top: 14px;
   min-height: 44px;
@@ -115,13 +128,18 @@ body {
   border-radius: 999px;
   border: 1px solid var(--gold);
   background: var(--bg-panel);
-  color: var(--gold);
+  color: var(--ink-soft);
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.85rem;
   font-style: normal;
   cursor: pointer;
 }
-.btn-or-fallback:hover { background: var(--gold-soft); color: #2b241b; }
+/* Hover: fundo vira tom de --gold (=--color-accent) em baixa opacidade — não existe token
+   pronto pra "acento tingido", decisão registrada no Bloco 4 (mesma opacidade do rgba(gold)
+   antigo, só trocando a cor-base). Texto sobe pra --ink (=--color-text-primary): o fundo
+   tingido continua essencialmente escuro, texto escuro (#2b241b, do design claro original)
+   ficaria ilegível aqui. */
+.btn-or-fallback:hover { background: rgba(214, 59, 32, 0.08); color: var(--ink); }
 .or-fallback-notice {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.82rem;
@@ -134,7 +152,7 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: var(--ink-soft); /* era --gold: 16px fica abaixo do limiar de 18px+ pra ghost-text */
   font-family: 'Helvetica Neue', Arial, sans-serif;
   margin: 34px 0 14px;
   padding-bottom: 6px;
@@ -150,13 +168,17 @@ body {
   background: var(--bg-panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   margin-bottom: 18px;
   padding: 16px 18px;
   cursor: pointer;
   user-select: none;
 }
-.recipe-card:hover { border-color: var(--gold-soft); }
+/* Hover: --color-accent-hover (não --color-border, que é o estado PARADO/--line já usado na
+   borda default do card) — sinaliza claramente "isso está sendo hover", diferente do repouso.
+   box-shadow removido (era var(--shadow), calibrado pro fundo claro antigo — sem precedente
+   de elevação em dark mode nos componentes do Bloco 2/3; --line/--color-border já separa
+   camadas sozinho). */
+.recipe-card:hover { border-color: var(--color-accent-hover); }
 
 .recipe-header {
   display: grid;
@@ -174,7 +196,7 @@ body {
 .recipe-header .made-toggle {
   width: 36px; height: 36px;
   border-radius: 50%;
-  border: 2px solid var(--gold-soft);
+  border: 2px solid var(--color-border); /* era --gold-soft: borda padrão/estática */
   background: transparent;
   flex-shrink: 0;
   cursor: pointer;
@@ -185,7 +207,7 @@ body {
 .recipe-header .made-toggle.made {
   background: var(--green);
   border-color: var(--green);
-  color: white;
+  color: var(--ink); /* era white (palavra-chave): preenchimento sólido, mesmo padrão */
 }
 
 .recipe-header .favorite-toggle {
@@ -223,14 +245,18 @@ body {
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
-  background: #f1e8d3;
+  /* era #f1e8d3 (creme claro, hardcoded): container de placeholder vira --color-surface-
+     elevated, um degrau acima do fundo, igual papel de qualquer painel "elevado" no tema novo. */
+  background: var(--color-surface-elevated);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
 }
 .recipe-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.recipe-thumb.placeholder { color: var(--gold-soft); }
+/* era --gold-soft: ícone de placeholder/vazio usa --color-text-disabled (mesma regra do
+   DESIGN-TOKENS.md pra ícones inativos). */
+.recipe-thumb.placeholder { color: var(--color-text-disabled); }
 
 .recipe-title { min-width: 0; }
 .recipe-title h3 {
@@ -258,8 +284,12 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--gold);
-  background: var(--gold-soft);
+  /* era --gold (=--color-accent): 11.2px falha o limiar 18px+ de ghost-text da regra do
+     DESIGN-TOKENS.md. --ink-soft (=--color-text-secondary) no lugar. */
+  color: var(--ink-soft);
+  /* era --gold-soft: fundo vira tom de --gold em baixa opacidade — decisão registrada no
+     Bloco 4 (mesma opacidade do rgba(gold) antigo, só trocando a cor-base). */
+  background: rgba(214, 59, 32, 0.08);
   padding: 2px 8px;
   border-radius: 20px;
   margin-top: 4px;
@@ -311,9 +341,14 @@ body {
   align-items: center;
   justify-content: space-between;
   border-radius: 999px;
-  border: 1px solid var(--gold-soft);
-  background: rgba(163, 118, 44, 0.08);
-  color: var(--gold);
+  /* borda cheia --color-accent (era --gold-soft): 1px hairline, contraste de borda passa
+     fácil (regra é 3:1 pra componente de UI, não a regra de texto). Fundo: mesmo tom de
+     acento em baixa opacidade da rgba(gold,0.08) original, só trocando a cor-base. Texto:
+     era --gold — 14.4px bold ainda fica abaixo do limiar 18px+ de ghost-text, então
+     --color-text-primary no lugar (CTA de ação real, texto precisa ler claro). */
+  border: 1px solid var(--color-accent);
+  background: rgba(214, 59, 32, 0.08);
+  color: var(--color-text-primary);
   padding: 0 16px;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.9rem;
@@ -340,7 +375,10 @@ body {
   position: absolute;
   left: 2px; top: 12px;
   width: 6px; height: 6px;
-  background: var(--gold-soft);
+  /* era --gold-soft: marcador decorativo, mesmo tom de acento em baixa opacidade dos outros
+     fundos tingidos — fica discreto de propósito, igual o --gold-soft original já era
+     discreto sobre o fundo claro (não é pra chamar atenção, só pontuar a lista). */
+  background: rgba(214, 59, 32, 0.08);
   border-radius: 1px;
   transform: rotate(45deg);
 }
@@ -364,7 +402,7 @@ body {
   left: 0; top: 0;
   width: 26px; height: 26px;
   background: var(--gold);
-  color: #fff;
+  color: var(--ink); /* era #fff: preenchimento sólido, mesmo padrão do botão primário novo */
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.8rem;
@@ -373,7 +411,9 @@ body {
 
 .tips-box {
   margin-top: 18px;
-  background: #f6efdd;
+  /* era #f6efdd (creme claro, hardcoded): --color-surface-elevated, painel elevado neutro
+     (borda esquerda já carrega o sinal de cor, fundo não precisa tingir também). */
+  background: var(--color-surface-elevated);
   border-left: 3px solid var(--gold);
   border-radius: 0 8px 8px 0;
   padding: 14px 18px;
@@ -401,9 +441,11 @@ body {
   font-family: inherit;
   font-size: 1rem;
   background: var(--bg-panel);
-  box-shadow: var(--shadow);
 }
-.home-search:focus { outline: 2px solid var(--gold-soft); }
+/* era --gold-soft: foco vira --gold (=--color-accent) cheio — regra do DESIGN-TOKENS.md,
+   "Inputs:... foco --color-accent". box-shadow removido (sem precedente de elevação em dark
+   mode; --line/--color-border já separa a barra do fundo). */
+.home-search:focus { outline: 2px solid var(--gold); }
 
 /* ---------- Toolbar da coleção (abas + ordenador + contagem) ---------- */
 .collection-toolbar {
@@ -435,7 +477,9 @@ body {
   color: var(--ink);
   cursor: pointer;
 }
-.collection-tabs button.active { border-color: var(--gold); border-width: 2px; font-weight: bold; background: var(--gold-soft); }
+/* fundo era --gold-soft: tom de --gold (=--color-accent) em baixa opacidade, mesma decisão
+   registrada no Bloco 4 pra todo fundo tingido suave. */
+.collection-tabs button.active { border-color: var(--gold); border-width: 2px; font-weight: bold; background: rgba(214, 59, 32, 0.08); }
 .sort-control {
   display: grid;
   gap: 6px;
@@ -759,9 +803,10 @@ body.filter-modal-open { overflow: hidden; }
   font-family: inherit;
   font-size: 1rem;
   background: var(--bg-panel);
-  box-shadow: var(--shadow);
 }
-.tagsearch-input:focus { outline: 2px solid var(--gold-soft); }
+/* era --gold-soft: foco vira --gold cheio (regra "foco --color-accent"); box-shadow removido
+   (mesma justificativa do .home-search acima). */
+.tagsearch-input:focus { outline: 2px solid var(--gold); }
 
 .tagsearch-suggestions { margin-top: 10px; }
 .tagsearch-empty {
@@ -784,14 +829,15 @@ body.filter-modal-open { overflow: hidden; }
   min-height: 38px;
   padding: 0 16px;
   border-radius: 999px;
-  border: 1px solid var(--gold-soft);
+  border: 1px solid var(--color-border); /* era --gold-soft: borda padrão/estática */
   background: var(--bg-panel);
   color: var(--ink);
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.85rem;
   cursor: pointer;
 }
-.tag-suggestion:hover { background: #f6efdd; }
+/* era #f6efdd (hardcoded): --color-surface-elevated, mesmo papel de "hover eleva um degrau". */
+.tag-suggestion:hover { background: var(--color-surface-elevated); }
 
 .recipe-suggestion {
   min-height: 38px;
@@ -805,7 +851,8 @@ body.filter-modal-open { overflow: hidden; }
   font-size: 0.9rem;
   cursor: pointer;
 }
-.recipe-suggestion:hover { border-color: var(--gold-soft); }
+/* era --gold-soft: hover vira --color-accent-hover (estado parado já usa --line/--color-border). */
+.recipe-suggestion:hover { border-color: var(--color-accent-hover); }
 
 .tagsearch-chips {
   display: flex;
@@ -819,7 +866,7 @@ body.filter-modal-open { overflow: hidden; }
   border-radius: 999px;
   border: none;
   background: var(--gold);
-  color: #fff;
+  color: var(--ink); /* era #fff: preenchimento sólido, padrão do botão primário */
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.85rem;
   font-weight: bold;
@@ -829,7 +876,7 @@ body.filter-modal-open { overflow: hidden; }
   gap: 6px;
 }
 .tag-chip--selected span { font-size: 1.1rem; line-height: 1; opacity: 0.85; }
-.tag-chip--selected:hover { background: #8f6624; }
+.tag-chip--selected:hover { background: var(--color-accent-hover); } /* era #8f6624 hardcoded */
 
 .tagsearch-related { margin-top: 4px; }
 
@@ -843,16 +890,19 @@ body.filter-modal-open { overflow: hidden; }
 
 /* ---------- Tags clicáveis (cards e página da receita) ---------- */
 .tag-chip-link {
-  border: 1px solid var(--gold-soft);
+  border: 1px solid var(--color-border); /* era --gold-soft: borda padrão/estática */
   background: transparent;
-  color: var(--gold);
+  /* era --gold: 11.52px falha o limiar 18px+ de ghost-text. --ink-soft no lugar. */
+  color: var(--ink-soft);
   border-radius: 999px;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.72rem;
   padding: 3px 10px;
   cursor: pointer;
 }
-.tag-chip-link:hover { background: var(--gold-soft); color: #2b241b; }
+/* fundo era --gold-soft (tom tingido, decisão do Bloco 4); texto era #2b241b (escuro, pensado
+   pro fundo claro) — fica ilegível aqui, sobe pra --ink (=--color-text-primary). */
+.tag-chip-link:hover { background: rgba(214, 59, 32, 0.08); color: var(--ink); }
 
 .recipe-card-tags {
   display: flex;
@@ -923,14 +973,15 @@ body.filter-modal-open { overflow: hidden; }
   background: var(--bg-panel);
   padding: 16px;
   text-align: left;
-  box-shadow: var(--shadow);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 6px;
   font-family: inherit;
 }
-.category-card:hover { border-color: var(--gold-soft); }
+/* era --gold-soft: hover vira --color-accent-hover. box-shadow removido (sem precedente de
+   elevação em dark mode; --line/--color-border já separa o card do fundo). */
+.category-card:hover { border-color: var(--color-accent-hover); }
 .category-card__icon { font-size: 1.8rem; }
 .category-card__title { font-weight: bold; color: var(--ink); font-size: 0.98rem; line-height: 1.25; }
 .category-card__count {
@@ -949,7 +1000,8 @@ body.filter-modal-open { overflow: hidden; }
 .back-button {
   background: none;
   border: none;
-  color: var(--gold);
+  /* era --gold: ghost-text puro (sem fundo/borda), 14.4px falha o limiar 18px+. --ink-soft. */
+  color: var(--ink-soft);
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.9rem;
   cursor: pointer;
@@ -962,10 +1014,10 @@ body.filter-modal-open { overflow: hidden; }
   height: 220px;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #f1e8d3;
+  background: var(--color-surface-elevated); /* era #f1e8d3, mesmo papel do .recipe-thumb */
   display: flex; align-items: center; justify-content: center;
   font-size: 3.5rem;
-  color: var(--gold-soft);
+  color: var(--color-text-disabled); /* era --gold-soft, ícone de placeholder/vazio */
   margin-bottom: 18px;
 }
 .recipe-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -992,21 +1044,21 @@ body.filter-modal-open { overflow: hidden; }
   min-height: 44px;
   padding: 0 18px;
   border-radius: 999px;
-  border: 2px solid var(--gold-soft);
+  border: 2px solid var(--color-border); /* era --gold-soft: borda padrão/estática */
   background: var(--bg-panel);
   color: var(--ink);
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.88rem;
   cursor: pointer;
 }
-.action-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+.action-btn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); } /* era #fff */
 
 .recipe-page-section { margin-bottom: 28px; }
 .recipe-page-section h4 {
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: var(--ink-soft); /* era --gold: 13.1px fica abaixo do limiar 18px+ */
   font-family: 'Helvetica Neue', Arial, sans-serif;
   margin: 0 0 12px;
 }
@@ -1035,14 +1087,14 @@ body.filter-modal-open { overflow: hidden; }
   border-radius: 999px;
   border: none;
   background: var(--gold);
-  color: #fff;
+  color: var(--ink); /* era #fff: preenchimento sólido, padrão do botão primário */
   font-size: 1.05rem;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 20px;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-.primary-cta:hover { background: #8f6624; }
+.primary-cta:hover { background: var(--color-accent-hover); } /* era #8f6624 hardcoded */
 
 /* ---------- Modo cozinhar ---------- */
 .cook-page { max-width: 600px; }
@@ -1056,7 +1108,7 @@ body.filter-modal-open { overflow: hidden; }
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--gold);
+  color: var(--ink-soft); /* era --gold: 12.8px fica abaixo do limiar 18px+ */
   margin-bottom: 10px;
 }
 .cook-step-text {
@@ -1066,7 +1118,6 @@ body.filter-modal-open { overflow: hidden; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px;
-  box-shadow: var(--shadow);
   margin-bottom: 24px;
   min-height: 120px;
 }
@@ -1098,28 +1149,28 @@ body.filter-modal-open { overflow: hidden; }
   min-height: 40px;
   padding: 0 16px;
   border-radius: 999px;
-  border: 1px solid var(--gold-soft);
+  border: 1px solid var(--color-border); /* era --gold-soft: borda padrão/estática */
   background: var(--bg);
   color: var(--ink);
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 0.85rem;
   cursor: pointer;
 }
-.cook-timer-controls .timer-toggle { background: var(--gold); border-color: var(--gold); color: #fff; }
+.cook-timer-controls .timer-toggle { background: var(--gold); border-color: var(--gold); color: var(--ink); } /* era #fff */
 
 .cook-nav { display: flex; gap: 12px; margin-bottom: 20px; }
 .cook-nav-btn {
   flex: 1;
   min-height: 52px;
   border-radius: 999px;
-  border: 2px solid var(--gold-soft);
+  border: 2px solid var(--color-border); /* era --gold-soft: borda padrão/estática */
   background: var(--bg-panel);
   color: var(--ink);
   font-size: 1rem;
   cursor: pointer;
   font-family: inherit;
 }
-.cook-nav-btn.primary { background: var(--gold); border-color: var(--gold); color: #fff; font-weight: bold; }
+.cook-nav-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: bold; } /* era #fff */
 .cook-nav-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 #progress {

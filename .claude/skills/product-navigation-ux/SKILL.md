@@ -127,6 +127,13 @@ mostra a interseção do OR de país com o equipamento, nunca OR entre tudo.
 Proteínas usam uma seção extra, "Papel da proteína": Principal / Secundário / Tanto faz
 (default). Isso substituiu o antigo conceito de abas "Foco da receita / Também leva / Todas".
 
+## Tema visual (Bloco 4)
+
+O app é 100% tema escuro — não há mais tela remanescente na paleta clara antiga nem
+inconsistência visual entre blocos de redesign. Detalhamento de cores/tokens em
+`.claude/skills/mobile-recipe-ui/SKILL.md` (seção "Reskin escuro (Bloco 4)"); esta skill trata
+só de navegação/IA, não de cor.
+
 ## Critérios de aceite
 
 - A home deve ficar curta.
