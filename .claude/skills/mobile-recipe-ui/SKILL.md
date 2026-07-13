@@ -124,10 +124,16 @@ resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexist
   - Ícones reais em `icons/equipment/` (7 de 9 valores — Processador e Sous Vide ficam sem
     ícone, tile só com label+contagem, sem espaço reservado). 4 SVG (SVGRepo: forno,
     liquidificador, batedeira, micro-ondas) — `fill="currentColor"` no arquivo, injetados
-    INLINE no DOM (não `<img src>`, senão currentColor não herda a cor do CSS) e cacheados via
-    fetch 1x no carregamento da página (EQUIPMENT_TILE_ICONS/equipmentSvgIconCache em app.js).
-    Recolorem com o estado do tile: `--color-text-disabled` parado, `--color-accent`
-    selecionado. 3 PNG (Icons8: air-fryer, panela de pressão, churrasqueira) — `<img>` com
+    INLINE no DOM (não `<img src>`, senão currentColor não herda a cor do CSS). Recolorem com
+    o estado do tile: `--color-text-disabled` parado, `--color-accent` selecionado. O texto do
+    SVG fica EMBUTIDO como string em `EQUIPMENT_SVG_MARKUP` (app.js) — não é carregado via
+    `fetch()`. Motivo: um `fetch()` é assíncrono, e abrir o modal antes dele terminar (ex.:
+    usuário indo direto no filtro logo após o app carregar) deixava o tile sem ícone até uma
+    re-renderização tardia — bug real, confirmado por screenshot. Os arquivos em
+    `icons/equipment/*.svg` continuam existindo como fonte/atribuição; o texto embutido é
+    mantido idêntico a eles (checagem byte-a-byte antes de cada commit que tocar nisso). 3 PNG
+    (Icons8: air-fryer, panela de pressão, churrasqueira) — `<img src>` direto (sem essa
+    corrida: o browser exibe assim que o arquivo chega, sem depender de JS) com
     `filter: invert(1)` (traço preto vira traço claro); NÃO recolorem no estado selecionado
     (limitação de raster — a borda do tile já indica seleção sozinha).
   - Créditos obrigatórios (licença Icons8) + recomendados (SVG Repo) na tela de Minhas

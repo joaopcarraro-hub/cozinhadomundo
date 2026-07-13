@@ -9,10 +9,6 @@
   // então uma navegação (ex.: botão/gesto voltar do celular) enquanto o modal está aberto não o
   // remove sozinha. handleRoute() força o fechamento no início de toda troca de rota.
   let closeActiveFilterModal = null;
-  // Re-renderiza o modal de filtros aberto (se houver) quando um ícone SVG de Equipamento chega
-  // via fetch depois do modal já ter sido aberto (ver EQUIPMENT_TILE_ICONS) — rede de segurança,
-  // na prática os fetches terminam antes do usuário conseguir abrir o modal.
-  let refreshActiveFilterModal = null;
 
   // ---------- Ícones outline (Bloco 2 — barra inferior + tiles novos da home) ----------
   // Único monocromático: stroke=currentColor, cor real vem do CSS (--color-accent /
@@ -484,47 +480,43 @@
     { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true, combineMode: "and" },
   ];
 
-  // Ícones reais (arquivos em icons/equipment/) pro piloto de tiles de Equipamento — substituem
-  // os emoji provisórios. 4 SVG (SVGRepo, fill trocado pra currentColor no arquivo — recolorem
-  // via CSS conforme o estado do tile) + 3 PNG (Icons8, traço preto sobre transparente —
-  // recebem filter:invert(1) via CSS pra virar traço claro; não recolorem no estado
-  // selecionado, limitação de raster, aceitável já que a borda --color-accent do tile já
-  // indica seleção sozinha). Processador e Sous Vide ficam SEM ícone por ora (nenhum arquivo
-  // disponível) — o tile renderiza só label+contagem, sem elemento de ícone reservando espaço.
-  const EQUIPMENT_TILE_ICONS = {
-    "equipment:forno": { type: "svg", src: "icons/equipment/forno.svg" },
-    "equipment:liquidificador": { type: "svg", src: "icons/equipment/liquidificador.svg" },
-    "equipment:batedeira": { type: "svg", src: "icons/equipment/batedeira.svg" },
-    "equipment:microondas": { type: "svg", src: "icons/equipment/microondas.svg" },
-    "equipment:air-fryer": { type: "png", src: "icons/equipment/air-fryer.png" },
-    "equipment:panela-de-pressao": { type: "png", src: "icons/equipment/panela-de-pressao.png" },
-    "equipment:churrasqueira": { type: "png", src: "icons/equipment/churrasqueira.png" },
+  // Ícones reais pro piloto de tiles de Equipamento — substituem os emoji provisórios. Arquivos
+  // originais ficam em icons/equipment/ (fonte/atribuição), mas o SVG é EMBUTIDO aqui como
+  // string, não carregado via fetch() — um fetch é assíncrono, e um usuário abrindo o app e
+  // indo direto no filtro (ou qualquer reload+abertura imediata) podia abrir o modal ANTES do
+  // fetch terminar, renderizando o tile sem ícone até uma re-renderização tardia (bug real,
+  // confirmado por screenshot: só os 3 PNG apareciam, os 4 SVG ficavam em branco). Embutir a
+  // string elimina a corrida por completo — mesmo padrão dos outros ícones outline do app
+  // (ICONS/ICON_SVG_ATTRS no topo do arquivo), sempre disponível de graça, sem round-trip.
+  // fill="#000000" já foi trocado por fill="currentColor" nesses textos (e nos arquivos-fonte)
+  // pra recolorir via CSS conforme o estado do tile.
+  const EQUIPMENT_SVG_MARKUP = {
+    "equipment:forno":
+      '<svg fill="currentColor" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 508 508" xml:space="preserve"><g><g><path d="M493.9,13.3h-49.5C444,5.9,437.9,0,430.4,0H292.6c-7.5,0-13.6,5.9-14,13.3h-49.1C229.1,5.9,223,0,215.4,0H77.7 c-7.5,0-13.6,5.9-14,13.3H14.1C6.3,13.3,0,19.7,0,27.5v466.4c0,7.8,6.3,14.1,14.1,14.1h479.8c7.8,0,14.1-6.3,14.1-14.1V27.5 C508,19.7,501.7,13.3,493.9,13.3z M28.2,41.6h451.6v90.3H28.2V41.6z M479.8,479.8H28.2V160.1h451.6V479.8z"/></g></g><g><g><path d="M427.8,196.6H80.2c-7.8,0-14.1,6.3-14.1,14.1V439c0,7.8,6.3,14.1,14.1,14.1h347.5c7.8,0,14.1-6.3,14.1-14.1V210.7 C441.9,203,435.6,196.6,427.8,196.6z M94.3,424.9v-200h319.3v200H94.3z"/></g></g><g><g><path d="M107.5,72.8H96.6c-7.8,0-14.1,6.3-14.1,14.1c0,7.8,6.4,14.1,14.1,14.1h10.9c7.8,0,14.1-6.3,14.1-14.1 C121.6,79.1,115.3,72.8,107.5,72.8z"/></g></g><g><g><path d="M208.8,72.8h-10.9c-7.8,0-14.1,6.3-14.1,14.1c0,7.8,6.3,14.1,14.1,14.1h10.9c7.8,0,14.1-6.3,14.1-14.1 C222.9,79.1,216.6,72.8,208.8,72.8z"/></g></g><g><g><path d="M310.1,72.8h-10.9c-7.8,0-14.1,6.3-14.1,14.1c0,7.8,6.3,14.1,14.1,14.1h10.9c7.8,0,14.1-6.3,14.1-14.1 C324.2,79.1,317.9,72.8,310.1,72.8z"/></g></g><g><g><path d="M411.3,72.8h-10.9c-7.8,0-14.1,6.3-14.1,14.1c0,7.8,6.3,14.1,14.1,14.1h10.9c7.8,0,14.1-6.3,14.1-14.1 C425.4,79.1,419.1,72.8,411.3,72.8z"/></g></g><g><g><path d="M295.1,246.6h-82.2c-7.8,0-14.1,6.3-14.1,14.1c0,7.8,6.3,14.1,14.1,14.1h82.2c7.8,0,14.1-6.3,14.1-14.1 C309.2,252.9,302.9,246.6,295.1,246.6z"/></g></g></svg>',
+    "equipment:liquidificador":
+      '<svg fill="currentColor" width="800px" height="800px" viewBox="-18.49 0 122.88 122.88" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="enable-background:new 0 0 85.89 122.88" xml:space="preserve"><g><path d="M10.36,23.42h53.68c0.07,0,0.15,0,0.24,0.01c0.68,0.06,1.31,0.36,1.78,0.82c0.5,0.49,0.82,1.16,0.82,1.91 c0,0.07,0,0.15-0.01,0.22l0,0.04L66.38,32h17.96c0.86,0,1.55,0.69,1.55,1.55c0,0.06,0,0.13-0.01,0.19 c-0.44,11-2.54,19.75-6.38,26.12c-3.82,6.35-9.31,10.35-16.55,11.9l-1.4,16.28c-0.06,0.73-0.38,1.4-0.86,1.88 c-0.04,0.04-0.08,0.08-0.13,0.11c-0.49,0.44-1.12,0.7-1.83,0.7H15.02c-0.77,0-1.45-0.31-1.96-0.82l0,0 c-0.49-0.49-0.8-1.16-0.86-1.9L7.54,26.37c-0.01-0.08-0.01-0.15-0.01-0.2c0-0.75,0.32-1.42,0.82-1.92c0.47-0.46,1.11-0.77,1.8-0.82 C10.24,23.43,10.31,23.42,10.36,23.42L10.36,23.42z M13.69,103l0.12-5.43c0.01-0.85,0.7-1.52,1.55-1.52v-0.01h44.09 c0.86,0,1.55,0.69,1.55,1.55v5.43l13.1,17.38c0.52,0.68,0.38,1.65-0.3,2.17c-0.28,0.21-0.61,0.31-0.93,0.31v0H1.55 c-0.86,0-1.55-0.69-1.55-1.55c0-0.41,0.16-0.79,0.43-1.07L13.69,103L13.69,103z M37.21,101.83c3.14,0,5.69,2.55,5.69,5.69 c0,3.14-2.55,5.69-5.69,5.69c-3.14,0-5.69-2.55-5.69-5.69C31.52,104.38,34.07,101.83,37.21,101.83L37.21,101.83z M16.88,99.14 l-0.11,4.42h0c0,0.32-0.11,0.64-0.32,0.92L4.69,119.78h65.06l-11.49-15.25c-0.23-0.27-0.36-0.62-0.36-1v-4.39H16.88L16.88,99.14z M6.72,11.4h26.99c-1.71-1.1-2.85-2.41-2.85-5.21c0-2.8,2.77-6.19,6.19-6.19c3.42,0,6.19,3.39,6.19,6.19c0,2.8-1.14,4.11-2.85,5.21 h27.3c0.47,0,0.86,0.39,0.86,0.86v6.08c0,0.47-0.39,0.86-0.86,0.86H6.72c-0.47,0-0.86-0.39-0.86-0.86v-6.08 C5.86,11.79,6.25,11.4,6.72,11.4L6.72,11.4z M66.12,36.09l-2.88,31.44c15.25-3.88,18.53-17.24,19.31-31.44H66.12L66.12,36.09z M31.81,65.77c-0.86,0-1.55-0.69-1.55-1.55c0-0.86,0.69-1.55,1.55-1.55h11.31c0.86,0,1.55,0.69,1.55,1.55 c0,0.86-0.69,1.55-1.55,1.55H31.81L31.81,65.77z M31.81,38c-0.86,0-1.55-0.69-1.55-1.55c0-0.86,0.69-1.55,1.55-1.55h11.31 c0.86,0,1.55,0.69,1.55,1.55c0,0.86-0.69,1.55-1.55,1.55H31.81L31.81,38z M31.81,51.88c-0.86,0-1.55-0.69-1.55-1.55 c0-0.86,0.69-1.55,1.55-1.55h11.31c0.86,0,1.55,0.69,1.55,1.55c0,0.86-0.69,1.55-1.55,1.55H31.81L31.81,51.88z M31.81,79.65 c-0.86,0-1.55-0.69-1.55-1.55c0-0.86,0.69-1.55,1.55-1.55h11.31c0.86,0,1.55,0.69,1.55,1.55c0,0.86-0.69,1.55-1.55,1.55H31.81 L31.81,79.65z M63.74,26.78H10.66l4.61,60.24h43.2L63.74,26.78L63.74,26.78z M10.63,26.39l0,0.02l0,0L10.63,26.39L10.63,26.39z"/></g></svg>',
+    "equipment:batedeira":
+      '<svg fill="currentColor" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><g><g><path d="M490.667,170.667c11.782,0,21.333-9.551,21.333-21.333v-128C512,9.551,502.449,0,490.667,0H21.333 C9.551,0,0,9.551,0,21.333v469.333C0,502.449,9.551,512,21.333,512h469.333c11.782,0,21.333-9.551,21.333-21.333v-85.333 c0-11.782-9.551-21.333-21.333-21.333H415.39c20.274-22.648,32.61-52.55,32.61-85.333c0-11.782-9.551-21.333-21.333-21.333 h-2.132c-8.475-41.82-41.382-74.726-83.201-83.201v-23.465H490.667z M469.333,469.333H42.667V42.667h426.667V128H106.667 c-11.782,0-21.333,9.551-21.333,21.333v256c0,11.782,9.551,21.333,21.333,21.333h362.667V469.333z M298.667,277.333h-39.02 c6.42-18.199,20.821-32.6,39.02-39.02V277.333z M237.356,320h165.287c-9.476,36.8-42.89,64-82.644,64 C280.247,384,246.832,356.8,237.356,320z M380.353,277.333h-39.02v-39.02C359.533,244.733,373.933,259.134,380.353,277.333z M298.667,194.132c-41.82,8.475-74.726,41.382-83.201,83.201h-2.132c-11.782,0-21.333,9.551-21.333,21.333 c0,32.783,12.336,62.686,32.61,85.333H128V170.667h170.667V194.132z"/><path d="M149.333,106.667c11.776,0,21.333-9.557,21.333-21.333S161.109,64,149.333,64S128,73.557,128,85.333 S137.557,106.667,149.333,106.667z"/><path d="M234.667,106.667c11.776,0,21.333-9.557,21.333-21.333S246.443,64,234.667,64s-21.333,9.557-21.333,21.333 S222.891,106.667,234.667,106.667z"/></g></g></g></svg>',
+    "equipment:microondas":
+      '<svg fill="currentColor" width="800px" height="800px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M3 8C1.355469 8 0 9.355469 0 11L0 39C0 40.644531 1.355469 42 3 42L5 42L5 43C5 44.09375 5.90625 45 7 45L10 45C11.09375 45 12 44.09375 12 43L12 42L38 42L38 43C38 44.09375 38.90625 45 40 45L43 45C44.09375 45 45 44.09375 45 43L45 42L47 42C48.644531 42 50 40.644531 50 39L50 11C50 9.355469 48.644531 8 47 8 Z M 3 10L47 10C47.5625 10 48 10.4375 48 11L48 39C48 39.5625 47.5625 40 47 40L39.1875 40C39.054688 39.972656 38.914063 39.972656 38.78125 40L6.1875 40C6.054688 39.972656 5.914063 39.972656 5.78125 40L3 40C2.4375 40 2 39.5625 2 39L2 11C2 10.4375 2.4375 10 3 10 Z M 5 13L5 37L40 37L40 13 Z M 7 15L38 15L38 35L7 35 Z M 44 16C42.894531 16 42 16.894531 42 18C42 19.105469 42.894531 20 44 20C45.105469 20 46 19.105469 46 18C46 16.894531 45.105469 16 44 16 Z M 34.15625 19.9375C33.957031 19.933594 33.761719 19.988281 33.59375 20.09375C33.59375 20.09375 28.964844 22 26.125 22C24.707031 22 23.75 21.59375 22.59375 21.09375C21.4375 20.59375 20.066406 20 18.21875 20C14.523438 20 10.5625 22.09375 10.5625 22.09375C10.0625 22.335938 9.851563 22.9375 10.09375 23.4375C10.335938 23.9375 10.9375 24.148438 11.4375 23.90625C11.4375 23.90625 15.332031 22 18.21875 22C19.664063 22 20.628906 22.40625 21.78125 22.90625C22.933594 23.40625 24.296875 24 26.125 24C29.785156 24 34.40625 21.90625 34.40625 21.90625C34.894531 21.78125 35.214844 21.3125 35.148438 20.8125C35.085938 20.3125 34.660156 19.9375 34.15625 19.9375 Z M 44 23C42.894531 23 42 23.894531 42 25C42 26.105469 42.894531 27 44 27C45.105469 27 46 26.105469 46 25C46 23.894531 45.105469 23 44 23 Z M 34.15625 25.9375C33.957031 25.933594 33.761719 25.988281 33.59375 26.09375C33.59375 26.09375 28.964844 28 26.125 28C24.707031 28 23.75 27.59375 22.59375 27.09375C21.4375 26.59375 20.066406 26 18.21875 26C14.523438 26 10.5625 28.09375 10.5625 28.09375C10.0625 28.335938 9.851563 28.9375 10.09375 29.4375C10.335938 29.9375 10.9375 30.148438 11.4375 29.90625C11.4375 29.90625 15.332031 28 18.21875 28C19.664063 28 20.628906 28.40625 21.78125 28.90625C22.933594 29.40625 24.296875 30 26.125 30C29.785156 30 34.40625 27.90625 34.40625 27.90625C34.894531 27.78125 35.214844 27.3125 35.148438 26.8125C35.085938 26.3125 34.660156 25.9375 34.15625 25.9375 Z M 44 30C42.894531 30 42 30.894531 42 32C42 33.105469 42.894531 34 44 34C45.105469 34 46 33.105469 46 32C46 30.894531 45.105469 30 44 30 Z M 7 42L10 42L10 43L7 43 Z M 40 42L43 42L43 43L40 43Z"/></svg>',
   };
-  // SVG precisa ser INLINE no DOM (não <img src>) pra fill:currentColor herdar a cor do CSS —
-  // buscados 1x no carregamento da página e cacheados. Se o modal de filtros já estiver aberto
-  // quando um SVG chega, refreshActiveFilterModal (setado por renderFacetModal) re-renderiza
-  // pra aplicar; na prática os fetches (arquivos locais, poucos KB) terminam bem antes do
-  // usuário conseguir abrir o modal, então esse caminho é só uma rede de segurança.
-  const equipmentSvgIconCache = {};
-  Object.keys(EQUIPMENT_TILE_ICONS).forEach((key) => {
-    const icon = EQUIPMENT_TILE_ICONS[key];
-    if (icon.type !== "svg" || equipmentSvgIconCache[icon.src]) return;
-    fetch(icon.src)
-      .then((r) => r.text())
-      .then((svgText) => {
-        equipmentSvgIconCache[icon.src] = svgText;
-        if (refreshActiveFilterModal) refreshActiveFilterModal();
-      })
-      .catch(() => {});
-  });
+  // 3 PNG (Icons8) — <img src>, sem race: o browser exibe assim que o arquivo chega, sem
+  // depender de nenhum JS pra "aplicar" — nunca fica em branco esperando fetch/cache.
+  const EQUIPMENT_PNG_SRC = {
+    "equipment:air-fryer": "icons/equipment/air-fryer.png",
+    "equipment:panela-de-pressao": "icons/equipment/panela-de-pressao.png",
+    "equipment:churrasqueira": "icons/equipment/churrasqueira.png",
+  };
+  // Processador e Sous Vide ficam SEM ícone por ora (nenhum arquivo disponível) — o tile
+  // renderiza só label+contagem, sem elemento de ícone reservando espaço.
   function equipmentTileIconHtml(tagId) {
-    const icon = EQUIPMENT_TILE_ICONS[tagId];
-    if (!icon) return ""; // sem ícone disponível (Processador, Sous Vide) — sem espaço reservado
-    if (icon.type === "png") {
-      return '<img class="filter-tile__icon filter-tile__icon--png" src="' + icon.src + '" alt="" aria-hidden="true">';
+    if (EQUIPMENT_SVG_MARKUP[tagId]) {
+      return '<span class="filter-tile__icon filter-tile__icon--svg" aria-hidden="true">' + EQUIPMENT_SVG_MARKUP[tagId] + "</span>";
     }
-    const svgText = equipmentSvgIconCache[icon.src];
-    return svgText ? '<span class="filter-tile__icon filter-tile__icon--svg" aria-hidden="true">' + svgText + "</span>" : "";
+    if (EQUIPMENT_PNG_SRC[tagId]) {
+      return '<img class="filter-tile__icon filter-tile__icon--png" src="' + EQUIPMENT_PNG_SRC[tagId] + '" alt="" aria-hidden="true">';
+    }
+    return ""; // sem ícone disponível (Processador, Sous Vide) — sem espaço reservado
   }
 
   // Regra geral de combinação: tags do MESMO prefixo (ex: dois ingredient:*) casam em OR
@@ -694,10 +686,8 @@
         overlay.remove();
         document.body.classList.remove("filter-modal-open");
         if (closeActiveFilterModal === closeModal) closeActiveFilterModal = null;
-        if (refreshActiveFilterModal === renderBody) refreshActiveFilterModal = null;
       }
       closeActiveFilterModal = closeModal;
-      refreshActiveFilterModal = renderBody;
       overlay.querySelector(".filter-modal__cancel").addEventListener("click", closeModal);
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeModal();
