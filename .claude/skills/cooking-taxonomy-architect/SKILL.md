@@ -60,13 +60,16 @@ filtros em acordeão (substituiu a antiga barra de dropdowns sempre-visível —
 `.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual), refinando in-place (sem navegar
 de rota, sem camadas sequenciais/funil, mudanças em rascunho até "Ver resultados"):
 
-- País, Complexidade, Tempo, Equipamento: checkboxes com OR PURO entre os valores da MESMA
-  faceta (união — País = Itália + Alemanha mostra receitas de qualquer um dos dois). "Todos" é
-  um item especial que limpa a seleção daquela faceta, não um valor que soma com os demais.
-  Nunca precisa de fallback aqui, porque OR nunca zera ao adicionar mais um valor. Equipamento
-  é multi-valorado por trás (uma receita pode ter vários equipment: simultaneamente, ex: forno
-  E air-fryer) — a faceta já reflete isso naturalmente agora, sem precisar de tratamento
-  especial. Derivado de `steps` (não de `ingredients`) via data/derivation-dict.js (EQUIPMENT).
+- País, Complexidade, Tempo, Equipamento: OR PURO entre os valores da MESMA faceta (união —
+  País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca precisa de fallback
+  aqui, porque OR nunca zera ao adicionar mais um valor. Equipamento é multi-valorado por trás
+  (uma receita pode ter vários equipment: simultaneamente, ex: forno E air-fryer) — a faceta já
+  reflete isso naturalmente, sem tratamento especial. Derivado de `steps` (não de
+  `ingredients`) via data/derivation-dict.js (EQUIPMENT). País/Complexidade/Tempo usam
+  checkbox em lista, com "Todos" como item especial que limpa a faceta (não soma com os
+  demais); Equipamento é PILOTO DE REDESENHO VISUAL — grade de tiles (ícone/label/contagem) em
+  vez de lista, mesma lógica de estado, sem tile "Todos" (nenhum tile marcado = nenhum filtro
+  ativo). Ver `.claude/skills/mobile-recipe-ui/SKILL.md`.
 - Ingrediente é a única faceta com combineMode "and" — os valores selecionados combinam em AND
   entre si (a receita precisa conter todos). Se a combinação atual resultar em zero receitas,
   a UI oferece um fallback pontual para OR (qualquer um dos selecionados), mantendo as demais

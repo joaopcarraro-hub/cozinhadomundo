@@ -472,9 +472,27 @@
     { key: "country", label: "País", prefix: "country:", multi: true, combineMode: "or" },
     { key: "difficulty", label: "Complexidade", prefix: "difficulty:", multi: true, combineMode: "or" },
     { key: "time", label: "Tempo", prefix: "time:", multi: true, combineMode: "or" },
-    { key: "equipment", label: "Equipamento", prefix: "equipment:", multi: true, combineMode: "or" },
+    // layout: "tiles" (piloto de redesenho visual, só Equipamento por ora) — muda SÓ a
+    // apresentação (grade de tiles com ícone/contagem em vez de lista de checkbox); a lógica
+    // de estado/combinação continua a mesma de qualquer combineMode "or" (ver
+    // renderTileSectionBody, que reaproveita computeFacetOptions sem recalcular nada).
+    { key: "equipment", label: "Equipamento", prefix: "equipment:", multi: true, combineMode: "or", layout: "tiles" },
     { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true, combineMode: "and" },
   ];
+
+  // Ícones (emoji, substituto barato conforme docs/DESIGN-TOKENS.md) pro piloto de tiles de
+  // Equipamento. Chave = tag id completo (equipment:*).
+  const EQUIPMENT_TILE_ICONS = {
+    "equipment:forno": "🔥",
+    "equipment:air-fryer": "🌀",
+    "equipment:panela-de-pressao": "⏲️",
+    "equipment:liquidificador": "🧃",
+    "equipment:processador": "🔪",
+    "equipment:churrasqueira": "🍖",
+    "equipment:batedeira": "🥣",
+    "equipment:sous-vide": "🌡️",
+    "equipment:microondas": "📡",
+  };
 
   // Regra geral de combinação: tags do MESMO prefixo (ex: dois ingredient:*) casam em OR
   // entre si; prefixos DIFERENTES combinam em AND. Pra facetas de seleção única isso se
@@ -817,6 +835,43 @@
         });
       }
 
+      // Piloto de redesenho visual (só Equipamento, def.layout === "tiles") — grade de tiles
+      // com ícone/label/contagem em vez de checkbox em lista. Mesma lógica de estado de
+      // qualquer faceta combineMode "or": sem item "Todos" (nenhum tile marcado = nenhum
+      // filtro ativo, igual a "Todos" marcado na versão em lista); marcar/desmarcar um tile
+      // só alterna draftFacetState[def.key], reaproveitando computeFacetOptions pra contagem —
+      // não recalcula nada que já não existisse.
+      function renderTileSectionBody(sectionBody, def, options) {
+        const selectedIds = draftFacetState[def.key] || [];
+        sectionBody.innerHTML =
+          '<div class="filter-tile-grid">' +
+          options
+            .map(
+              (o) =>
+                '<button type="button" class="filter-tile' +
+                (selectedIds.indexOf(o.tagId) !== -1 ? " is-selected" : "") +
+                '" data-value="' +
+                o.tagId +
+                '"><span class="filter-tile__icon" aria-hidden="true">' +
+                (EQUIPMENT_TILE_ICONS[o.tagId] || "🔧") +
+                '</span><span class="filter-tile__label">' +
+                o.tag.label +
+                '</span><span class="filter-tile__count">' +
+                o.count +
+                "</span></button>"
+            )
+            .join("") +
+          "</div>";
+        sectionBody.querySelectorAll(".filter-tile").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const val = btn.dataset.value;
+            const current = draftFacetState[def.key] || [];
+            draftFacetState[def.key] = current.indexOf(val) !== -1 ? current.filter((id) => id !== val) : current.concat([val]);
+            renderBody();
+          });
+        });
+      }
+
       function renderGenericSection(def) {
         const options = computeFacetOptions(opts.getUniverse(draftProteinRole), draftFacetState, defs, def);
         const section = document.createElement("div");
@@ -835,7 +890,8 @@
           '<div class="filter-section__body"></div>';
         section.querySelector(".filter-section__header").addEventListener("click", () => toggleSection(def.key));
         const sectionBody = section.querySelector(".filter-section__body");
-        if (def.multi && def.combineMode === "or") renderCheckboxSectionBody(sectionBody, def, options);
+        if (def.multi && def.combineMode === "or" && def.layout === "tiles") renderTileSectionBody(sectionBody, def, options);
+        else if (def.multi && def.combineMode === "or") renderCheckboxSectionBody(sectionBody, def, options);
         else if (def.multi) renderMultiSectionBody(sectionBody, def, options);
         else renderSingleSectionBody(sectionBody, def, options);
         return section;

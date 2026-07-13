@@ -109,10 +109,17 @@ centro, e "Ver resultados (N)" fixo no rodapé (pill `--color-accent`, N = conta
 
 Dentro, 6 seções em acordeão — País, Complexidade, Tempo, Equipamento, Ingrediente, Papel da
 proteína (só em coleções de proteína) — cada uma com contagem de opções no cabeçalho e um
-resumo do valor já selecionado, se houver. Duas UIs de multi-seleção:
-- País, Complexidade, Tempo, Equipamento: lista de CHECKBOX (`accent-color: --color-accent`),
-  com "Todos" como item especial no topo que, ao marcar, limpa a seleção daquela faceta — não
-  soma com os demais valores. Os outros valores combinam em OR puro entre si (união).
+resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexistem:
+- País, Complexidade, Tempo: lista de CHECKBOX (`accent-color: --color-accent`), com "Todos"
+  como item especial no topo que, ao marcar, limpa a seleção daquela faceta — não soma com os
+  demais valores. Os outros valores combinam em OR puro entre si (união).
+- Equipamento: PILOTO DE REDESENHO — grade de tiles (3 colunas, 2 em telas ≤380px) em vez de
+  lista de checkbox. Cada tile: ícone emoji em cima, label no meio, contagem embaixo em
+  `--color-text-disabled` (mesmo token que as outras seções já usavam pra contagem —
+  `--color-text-muted` não existe em DESIGN-TOKENS.md). Tile marcado ganha borda 2px
+  `--color-accent`. Sem tile "Todos" — nenhum tile marcado = nenhum filtro ativo (equivalente
+  ao "Todos" marcado da versão em lista). Mesma lógica de OR-união dos demais checkbox — só
+  muda a apresentação (ver renderTileSectionBody em app.js, def.layout === "tiles").
 - Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) + select de
   "+ adicionar", combinando em AND entre si — única faceta com essa lógica (e com fallback OR
   na tela de resultados quando zera).

@@ -108,11 +108,13 @@ rodapé recalcula pra contagem sem filtro) e mantém o modal aberto; o usuário 
 Cada seção só lista os valores presentes no resultado atual, com contagem, e nada vem
 pré-selecionado (default = item "Todos" marcado). Duas famílias de multi-seleção coexistem, e
 nenhuma vaza pra outra:
-- País, Complexidade, Tempo, Equipamento: checkboxes com OR PURO entre os valores da MESMA
-  faceta (união — ex.: País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca
-  zera ao adicionar mais um valor, então não tem fallback nenhum aqui. "Todos" é um item
-  especial que, ao marcar, limpa a seleção daquela faceta (não é um valor que soma com os
-  demais).
+- País, Complexidade, Tempo, Equipamento: OR PURO entre os valores da MESMA faceta (união —
+  ex.: País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca zera ao
+  adicionar mais um valor, então não tem fallback nenhum aqui. País/Complexidade/Tempo são
+  checkboxes com "Todos" no topo (item especial que limpa a faceta, não soma com os demais).
+  Equipamento é PILOTO DE REDESENHO — mesma lógica, mas em grade de tiles (ícone+label+
+  contagem, sem tile "Todos"; nenhum tile marcado = nenhum filtro ativo). Ver
+  `.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual.
 - Ingrediente: chips removíveis + campo de adicionar, com AND entre os selecionados (a receita
   precisa conter todos). Se a combinação zerar, a tela de RESULTADOS (não o modal) oferece um
   fallback pontual para OR — o modal não duplica essa UI, só deixa "Ver resultados" aplicável

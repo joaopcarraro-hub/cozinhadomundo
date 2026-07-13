@@ -625,6 +625,44 @@ body.filter-modal-open { overflow: hidden; }
 .filter-option input[type="radio"],
 .filter-option input[type="checkbox"] { accent-color: var(--color-accent); width: 18px; height: 18px; flex-shrink: 0; }
 
+/* Piloto de redesenho visual — só a seção Equipamento (def.layout "tiles"). --color-text-muted
+   não existe em docs/DESIGN-TOKENS.md; reaproveita --color-text-disabled (mesmo token já usado
+   pra contagem nas outras seções em lista), seguindo a regra "todo componente novo reaproveita
+   token existente antes de criar cor nova". */
+.filter-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 4px 2px 14px;
+}
+.filter-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 76px;
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  padding: 10px 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.filter-tile.is-selected { border-color: var(--color-accent); }
+.filter-tile__icon { font-size: 1.4rem; line-height: 1; }
+.filter-tile__label {
+  font-size: 0.76rem;
+  color: var(--color-text-primary);
+  text-align: center;
+  line-height: 1.2;
+}
+.filter-tile__count { font-size: 0.68rem; color: var(--color-text-disabled); }
+
+@media (max-width: 380px) {
+  .filter-tile-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 .filter-section__body select {
   min-height: 44px;
   border-radius: 10px;
