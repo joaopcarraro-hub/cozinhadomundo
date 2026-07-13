@@ -13,11 +13,13 @@
   font-size: 16px;
 
   /* ---- Design tokens v3 (docs/DESIGN-TOKENS.md) ----
-     Usados SÓ pela barra de navegação inferior e pelos elementos novos da home (tiles
-     principais + "Mais categorias"). Nada do resto do app usa estes tokens ainda — é
-     esperado o app ficar visualmente inconsistente entre home/nav (novo) e o restante
-     (paleta clara antiga) até os próximos blocos de redesign. Nomes idênticos aos do
-     DESIGN-TOKENS.md de propósito, pra não exigir rename quando o resto do app migrar. */
+     Usados SÓ pela barra de navegação inferior, pelos elementos novos da home (tiles
+     principais + "Mais categorias") e, a partir do Bloco 3, pelo modal de filtros em
+     acordeão (botão "Filtros" + tudo dentro do modal). Nada do resto do app usa estes tokens
+     ainda — é esperado o app ficar visualmente inconsistente entre esses componentes novos e
+     o restante (paleta clara antiga) até os próximos blocos de redesign. Nomes idênticos aos
+     do DESIGN-TOKENS.md de propósito, pra não exigir rename quando o resto do app migrar. */
+  --color-bg: #0f0f0e;
   --color-bg-secondary: #181816;
   --color-surface: #232321;
   --color-surface-elevated: #2e2d2a;
@@ -446,56 +448,211 @@ body {
 .collection-refine { margin-bottom: 18px; }
 .collection-refine:empty { margin-bottom: 0; }
 
-/* ---------- Barra de facetas (dropdowns lado a lado, quebram linha em telas estreitas) ---------- */
-.facet-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.facet-bar:empty { margin-bottom: 0; }
-.facet-control {
-  display: grid;
-  gap: 6px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.78rem;
-  color: var(--ink-soft);
-}
-.facet-control select {
+/* ---------- Modal de filtros em acordeão (Bloco 3 — design tokens v3) ----------
+   Botão "Filtros" e todo o conteúdo do modal usam os tokens novos (docs/DESIGN-TOKENS.md).
+   .btn-clear-filters e .facet-multi-chips continuam existindo (reaproveitados sem cor própria
+   — só layout), mas o "Limpar filtros" e os chips de Ingrediente agora só aparecem DENTRO do
+   modal, então ganham um override de cor escopado a .filter-modal logo abaixo. */
+.filter-trigger-wrap { margin-bottom: 18px; }
+.filter-trigger-wrap:empty { margin-bottom: 0; }
+.filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   min-height: 44px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: var(--bg-panel);
-  padding: 0 10px;
-  font-size: 0.85rem;
-  font-family: inherit;
-  color: var(--ink);
-  width: 100%;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
 }
+.filter-trigger__icon { width: 18px; height: 18px; }
+.filter-trigger__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-text-primary);
+  font-size: 0.72rem;
+  font-weight: bold;
+}
+
 .facet-multi-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-.clear-filters-wrap {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 18px;
+@keyframes filter-modal-in {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
-.clear-filters-wrap:empty { margin-bottom: 0; }
-.btn-clear-filters {
+.filter-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+}
+body.filter-modal-open { overflow: hidden; }
+.filter-modal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text-primary);
+  animation: filter-modal-in 220ms ease-out;
+}
+.filter-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+.filter-modal__header h3 { margin: 0; font-size: 1.05rem; }
+.filter-modal__cancel,
+.filter-modal__header-spacer {
+  min-width: 64px;
   min-height: 44px;
-  padding: 0 6px;
+  display: flex;
+  align-items: center;
+}
+.filter-modal__cancel {
   border: none;
   background: none;
-  color: var(--gold);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+.filter-modal__clear-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 16px 0;
+}
+.filter-modal__clear-row:empty { padding: 0; }
+.filter-modal .btn-clear-filters {
+  min-height: 44px;
+  padding: 0 4px;
+  border: none;
+  background: none;
+  color: var(--color-text-secondary);
+  font-family: inherit;
   font-size: 0.82rem;
   text-decoration: underline;
   cursor: pointer;
 }
-.btn-clear-filters:hover { color: var(--gold-soft); }
+.filter-modal__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px 16px;
+}
+.filter-modal__footer {
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--color-border);
+}
+.filter-modal__apply {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.filter-modal__apply:hover { background: var(--color-accent-hover); }
+
+.filter-section { border-bottom: 1px solid var(--color-border); }
+.filter-section__header {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: none;
+  background: none;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  padding: 8px 2px;
+  text-align: left;
+}
+.filter-section__label { display: flex; align-items: baseline; gap: 6px; flex: 1; min-width: 0; }
+.filter-section__count { color: var(--color-text-disabled); font-size: 0.78rem; }
+.filter-section__summary {
+  color: var(--color-accent);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 40%;
+}
+.filter-section__chevron { width: 18px; height: 18px; flex-shrink: 0; color: var(--color-text-disabled); transition: transform 200ms ease-out; }
+.filter-section.is-open .filter-section__chevron { transform: rotate(180deg); }
+.filter-section__body {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px 2px 14px;
+}
+.filter-section.is-open .filter-section__body { display: flex; }
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+.filter-option input[type="radio"] { accent-color: var(--color-accent); width: 18px; height: 18px; flex-shrink: 0; }
+
+.filter-section__body select {
+  min-height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  padding: 0 10px;
+  font-size: 0.88rem;
+  font-family: inherit;
+  width: 100%;
+  margin-top: 4px;
+}
+.filter-modal .tag-chip--selected {
+  min-height: 34px;
+  padding: 0 6px 0 14px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: normal;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.filter-modal .tag-chip--selected span { color: var(--color-accent); font-size: 1.1rem; line-height: 1; opacity: 1; }
+.filter-modal .tag-chip--selected:hover { background: var(--color-border); }
 
 .tagsearch-count-row {
   display: flex;

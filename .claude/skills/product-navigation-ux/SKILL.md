@@ -92,23 +92,29 @@ A navegação deve seguir:
 
 Não mostrar todas as possibilidades ao mesmo tempo.
 
-Dentro de uma coleção (país, proteína, tempo, dificuldade, fundamentos), o refino é uma
-barra de facetas em dropdowns — País, Complexidade, Tempo, Equipamento, Ingrediente, Papel da
-proteína — que filtra IN-PLACE (sem trocar de rota). Cada dropdown só lista os valores presentes
-no resultado atual, com contagem, e nada vem pré-selecionado. Ingrediente é a única faceta de
-múltipla seleção. Os valores selecionados combinam em AND entre si (a receita precisa conter
-todos). Se a combinação atual resultar em zero receitas, a UI oferece um fallback pontual para
-OR (qualquer um dos selecionados), mantendo as demais facetas ativas (País, Complexidade,
-Tempo, Equipamento, Papel da proteína) aplicadas normalmente em AND — o fallback nunca ignora os
-outros filtros. As outras facetas são de seleção única — incluindo Equipamento, que mesmo com
-dado multi-valorado por trás (uma receita pode ter forno E air-fryer) só filtra por um valor
-escolhido por vez, sem AND/OR/fallback (isso é exclusivo de Ingrediente).
+Dentro de uma coleção (país, proteína, tempo, dificuldade, fundamentos), o refino é um MODAL
+de filtros em acordeão (Bloco 3) — não mais uma barra sempre-visível. Um botão "Filtros" (com
+badge de contagem de filtros ativos) fica no lugar de onde a barra ficava; abre um modal cheio
+de tela com 6 seções em acordeão: País, Complexidade, Tempo, Equipamento, Ingrediente, Papel
+da proteína (só em coleções de proteína). Cada seção mostra a contagem de opções no cabeçalho
+e, se já tiver algo selecionado, um resumo (ex.: "Brasil", "2 selecionados"). Mudanças dentro
+do modal ficam em RASCUNHO — só se aplicam de fato ao tocar "Ver resultados (N)" (N = contagem
+ao vivo do resultado combinado); "Cancelar" fecha sem aplicar nada. "Limpar filtros" continua
+existindo dentro do modal, só aparece quando há pelo menos 1 filtro ativo, e aplica na hora
+(fecha o modal, não passa pelo rascunho).
 
-Proteínas usam um dropdown extra, "Papel da proteína": Principal / Secundário / Tanto faz
+Cada seção só lista os valores presentes no resultado atual, com contagem, e nada vem
+pré-selecionado. Ingrediente é a única faceta de múltipla seleção (chips removíveis + campo de
+adicionar). Os valores selecionados combinam em AND entre si (a receita precisa conter todos).
+Se a combinação atual resultar em zero receitas, a tela de RESULTADOS (não o modal) oferece um
+fallback pontual para OR (qualquer um dos selecionados) — o modal não duplica essa UI, só deixa
+"Ver resultados" aplicável mesmo com N=0, pra cair nesse mesmo fallback. As outras facetas são
+de seleção única — incluindo Equipamento, que mesmo com dado multi-valorado por trás (uma
+receita pode ter forno E air-fryer) só filtra por um valor escolhido por vez, sem AND/OR/
+fallback (isso é exclusivo de Ingrediente).
+
+Proteínas usam uma seção extra, "Papel da proteína": Principal / Secundário / Tanto faz
 (default). Isso substituiu o antigo conceito de abas "Foco da receita / Também leva / Todas".
-
-Um botão "Limpar filtros" aparece na barra só quando há pelo menos 1 faceta ativa, resetando
-todas de uma vez (heurística de Nielsen #3 — controle e liberdade do usuário).
 
 ## Critérios de aceite
 

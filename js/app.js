@@ -21,6 +21,8 @@
     globe: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4c2.5 2.5 2.5 13 0 16"/><path d="M12 4c-2.5 2.5-2.5 13 0 16"/>',
     cupcake: '<path d="M7 11h10l-1.2 7.5A2 2 0 0 1 13.8 20h-3.6a2 2 0 0 1-2-1.5L7 11Z"/><path d="M6 11a6 4 0 0 1 12 0Z"/><path d="M12 3v2.2"/>',
     dots: '<circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/>',
+    filter: '<path d="M4 5h16l-6.5 7.5V19l-3 1.6v-8.1Z"/>',
+    chevronDown: '<path d="M6 9l6 6 6-6"/>',
   };
   function iconSvg(key, className) {
     return '<svg class="' + className + '" ' + ICON_SVG_ATTRS + ">" + ICONS[key] + "</svg>";
@@ -547,31 +549,176 @@
       .filter((o) => o.count > 0);
   }
 
-  // universeItems: itens ANTES de qualquer faceta ser aplicada (ex: já filtrado por
-  // aba/coleção base, mas não pelas facetas do dropdown).
-  // facetState: objeto { [key]: tagId|null, ou tagId[] pras facetas multi } — mutado in-place.
-  // onChange(): recalcula resultado + re-renderiza (chamado depois do estado mudar).
-  function renderFacetBar(barEl, universeItems, facetState, defs, onChange) {
-    barEl.innerHTML = "";
-    let hasAnyOptions = false;
-    defs.forEach((def) => {
-      const otherTagIds = [];
+  // Calcula as opções (com contagem) de UMA faceta, restringindo o universo pelas OUTRAS
+  // facetas já selecionadas (cross-facet AND) — extraído da antiga renderFacetBar sem mudar a
+  // lógica, só pra ser reaproveitado pelo acordeão do modal (Bloco 3).
+  function computeFacetOptions(universeItems, facetState, defs, def) {
+    const otherTagIds = [];
+    defs.forEach((d) => {
+      if (d.key === def.key) return;
+      if (d.multi) otherTagIds.push.apply(otherTagIds, facetState[d.key] || []);
+      else if (facetState[d.key]) otherTagIds.push(facetState[d.key]);
+    });
+    const restricted = universeItems.filter((item) => matchesGroupedTags(item.tags, otherTagIds));
+    return def.prefix ? facetOptionsFromPrefix(restricted, def.prefix) : facetOptionsFromStatic(restricted, def.staticOptions);
+  }
+
+  // ---------- Modal de filtros em acordeão (Bloco 3 — design tokens v3) ----------
+  // Substitui a antiga barra de dropdowns sempre-visível por um botão "Filtros" (com badge) que
+  // abre um modal cheio de tela. A CARDINALIDADE e a LÓGICA de cada faceta não mudam — só onde
+  // moram na tela: matchesGroupedTags, hasIngredientLikeMultiSelect, facetOptionsFromPrefix/
+  // Static, readFacetStateFromTags, facetStateToTagIds continuam intocadas, só reaproveitadas.
+  // Mudanças dentro do modal ficam em RASCUNHO (draftFacetState/draftProteinRole) — só se
+  // aplicam de fato ao clicar "Ver resultados" ou "Limpar filtros" (que sempre aplicou na hora,
+  // mesmo antes do Bloco 3); "Cancelar" descarta o rascunho sem tocar no estado real.
+  //
+  // triggerWrapEl: onde o botão "Filtros" + badge é renderizado (era o antigo facetBarEl).
+  // defs: GENERIC_FACET_DEFS.
+  // opts:
+  //   facetState: estado ATUAL aplicado (só é mutado quando o rascunho é confirmado).
+  //   getUniverse(draftProteinRoleValue): universo de receitas pra calcular opções/contagens —
+  //     cada caller já tem essa conta pronta, só reaproveita (não recalcula nada novo).
+  //   proteinRole: null OU { value, setValue(v), computeCounts(draftFacetState) -> {focus,
+  //     secondary} } — só passado por renderCategory em coleções de proteína.
+  //   countForDraft(draftFacetState, draftProteinRoleValue): quantas receitas o resultado teria
+  //     se esse rascunho fosse aplicado agora (mesma conta de currentItems()/facetUniverse()).
+  //   onApply(): chamado DEPOIS que facetState/proteinRole já foram escritos com o rascunho —
+  //     é o mesmo corpo que cada dropdown antigo já disparava no onChange, só que uma vez só.
+  //   onClear(): idêntico ao antigo botão "Limpar filtros".
+  // A rede de segurança OR do Ingrediente (zero-resultado) continua vivendo só na tela de
+  // resultados (renderList/renderResults, intocadas) — o modal não duplica essa UI, só deixa
+  // "Ver resultados" aplicável mesmo com N=0, pra cair no mesmo empty-state+fallback de sempre.
+  function renderFacetModal(triggerWrapEl, defs, opts) {
+    const activeCount =
+      defs.reduce((n, d) => n + (d.multi ? (opts.facetState[d.key] || []).length : opts.facetState[d.key] ? 1 : 0), 0) +
+      (opts.proteinRole && opts.proteinRole.value ? 1 : 0);
+
+    triggerWrapEl.innerHTML =
+      '<button type="button" class="filter-trigger">' +
+      iconSvg("filter", "filter-trigger__icon") +
+      "<span>Filtros</span>" +
+      (activeCount ? '<span class="filter-trigger__badge">' + activeCount + "</span>" : "") +
+      "</button>";
+    triggerWrapEl.querySelector(".filter-trigger").addEventListener("click", openModal);
+
+    function openModal() {
+      // Rascunho: cópia independente do estado aplicado — Cancelar descarta sem tocar no real.
+      const draftFacetState = {};
       defs.forEach((d) => {
-        if (d.key === def.key) return;
-        if (d.multi) otherTagIds.push.apply(otherTagIds, facetState[d.key] || []);
-        else if (facetState[d.key]) otherTagIds.push(facetState[d.key]);
+        draftFacetState[d.key] = d.multi ? (opts.facetState[d.key] || []).slice() : opts.facetState[d.key];
       });
-      const restricted = universeItems.filter((item) => matchesGroupedTags(item.tags, otherTagIds));
-      const options = def.prefix ? facetOptionsFromPrefix(restricted, def.prefix) : facetOptionsFromStatic(restricted, def.staticOptions);
+      let draftProteinRole = opts.proteinRole ? opts.proteinRole.value : null;
+      let openSectionKey = null;
 
-      const wrap = document.createElement("div");
-      wrap.className = "facet-control";
+      const overlay = document.createElement("div");
+      overlay.className = "filter-modal-overlay";
+      overlay.innerHTML =
+        '<div class="filter-modal" role="dialog" aria-modal="true" aria-label="Filtros">' +
+        '<div class="filter-modal__header">' +
+        '<button type="button" class="filter-modal__cancel">Cancelar</button>' +
+        "<h3>Filtros</h3>" +
+        '<span class="filter-modal__header-spacer" aria-hidden="true"></span>' +
+        "</div>" +
+        '<div class="filter-modal__clear-row"></div>' +
+        '<div class="filter-modal__body"></div>' +
+        '<div class="filter-modal__footer"><button type="button" class="filter-modal__apply"></button></div>' +
+        "</div>";
+      document.body.appendChild(overlay);
+      document.body.classList.add("filter-modal-open");
 
-      if (def.multi) {
-        const selectedIds = facetState[def.key] || [];
+      const clearRowEl = overlay.querySelector(".filter-modal__clear-row");
+      const bodyEl = overlay.querySelector(".filter-modal__body");
+      const applyBtn = overlay.querySelector(".filter-modal__apply");
+
+      function closeModal() {
+        overlay.remove();
+        document.body.classList.remove("filter-modal-open");
+      }
+      overlay.querySelector(".filter-modal__cancel").addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+
+      function draftIsActive() {
+        return defs.some((d) => (d.multi ? (draftFacetState[d.key] || []).length : draftFacetState[d.key])) || !!draftProteinRole;
+      }
+
+      function renderClearRow() {
+        if (!draftIsActive()) {
+          clearRowEl.innerHTML = "";
+          return;
+        }
+        clearRowEl.innerHTML = '<button type="button" class="btn-clear-filters">Limpar filtros</button>';
+        clearRowEl.querySelector(".btn-clear-filters").addEventListener("click", () => {
+          closeModal();
+          opts.onClear();
+        });
+      }
+
+      function renderFooter() {
+        const n = opts.countForDraft(draftFacetState, draftProteinRole);
+        applyBtn.textContent = "Ver resultados (" + n + ")";
+      }
+      applyBtn.addEventListener("click", () => {
+        defs.forEach((d) => {
+          opts.facetState[d.key] = draftFacetState[d.key];
+        });
+        if (opts.proteinRole) opts.proteinRole.setValue(draftProteinRole);
+        closeModal();
+        opts.onApply();
+      });
+
+      function toggleSection(key) {
+        openSectionKey = openSectionKey === key ? null : key;
+        renderBody();
+      }
+
+      function sectionSummary(def) {
+        if (def.multi) {
+          const n = (draftFacetState[def.key] || []).length;
+          return n ? n + " selecionado" + (n === 1 ? "" : "s") : "";
+        }
+        if (!draftFacetState[def.key]) return "";
+        const tag = TagModel.getTagById(draftFacetState[def.key]);
+        return tag ? tag.label : "";
+      }
+
+      function renderSingleSectionBody(sectionBody, def, options) {
+        const currentVal = draftFacetState[def.key] || "";
+        let html =
+          '<label class="filter-option"><input type="radio" name="filter-' +
+          def.key +
+          '"' +
+          (!currentVal ? " checked" : "") +
+          "><span>" +
+          (def.allLabel || "Todos") +
+          "</span></label>";
+        options.forEach((o) => {
+          html +=
+            '<label class="filter-option"><input type="radio" name="filter-' +
+            def.key +
+            '" value="' +
+            o.tagId +
+            '"' +
+            (o.tagId === currentVal ? " checked" : "") +
+            "><span>" +
+            o.tag.label +
+            " (" +
+            o.count +
+            ")</span></label>";
+        });
+        sectionBody.innerHTML = html;
+        sectionBody.querySelectorAll('input[type="radio"]').forEach((input) => {
+          input.addEventListener("change", () => {
+            draftFacetState[def.key] = input.value || null;
+            renderBody();
+          });
+        });
+      }
+
+      function renderMultiSectionBody(sectionBody, def, options) {
+        const selectedIds = draftFacetState[def.key] || [];
         const addableOptions = options.filter((o) => selectedIds.indexOf(o.tagId) === -1);
-        if (!addableOptions.length && !selectedIds.length) return; // nada pra mostrar nesse dropdown
-        hasAnyOptions = true;
         const chipsHtml = selectedIds
           .map((tagId) => {
             const tag = TagModel.getTagById(tagId);
@@ -584,52 +731,100 @@
             );
           })
           .join("");
-        wrap.innerHTML =
-          "<span>" +
-          def.label +
-          "</span>" +
+        sectionBody.innerHTML =
           (chipsHtml ? '<div class="facet-multi-chips">' + chipsHtml + "</div>" : "") +
-          '<select><option value="">+ Adicionar ' +
-          def.label.toLowerCase() +
-          "</option>" +
-          addableOptions.map((o) => '<option value="' + o.tagId + '">' + o.tag.label + " (" + o.count + ")</option>").join("") +
-          "</select>";
-        wrap.querySelectorAll("[data-remove]").forEach((btn) => {
+          (addableOptions.length
+            ? '<select><option value="">+ Adicionar ' +
+              def.label.toLowerCase() +
+              "</option>" +
+              addableOptions.map((o) => '<option value="' + o.tagId + '">' + o.tag.label + " (" + o.count + ")</option>").join("") +
+              "</select>"
+            : "");
+        sectionBody.querySelectorAll("[data-remove]").forEach((btn) => {
           btn.addEventListener("click", () => {
-            facetState[def.key] = selectedIds.filter((id) => id !== btn.dataset.remove);
-            onChange();
+            draftFacetState[def.key] = selectedIds.filter((id) => id !== btn.dataset.remove);
+            renderBody();
           });
         });
-        const select = wrap.querySelector("select");
-        select.addEventListener("change", () => {
-          if (!select.value) return;
-          facetState[def.key] = selectedIds.concat([select.value]);
-          onChange();
-        });
-      } else {
-        if (!options.length && !facetState[def.key]) return; // nada pra mostrar nesse dropdown
-        hasAnyOptions = true;
-        const currentVal = facetState[def.key] || "";
-        wrap.innerHTML =
-          "<span>" +
-          def.label +
-          '</span><select><option value="">' +
-          (def.allLabel || "Todos") +
-          "</option>" +
-          options
-            .map((o) => '<option value="' + o.tagId + '"' + (o.tagId === currentVal ? " selected" : "") + ">" + o.tag.label + " (" + o.count + ")</option>")
-            .join("") +
-          "</select>";
-        const select = wrap.querySelector("select");
-        select.value = currentVal;
-        select.addEventListener("change", () => {
-          facetState[def.key] = select.value || null;
-          onChange();
-        });
+        const select = sectionBody.querySelector("select");
+        if (select) {
+          select.addEventListener("change", () => {
+            if (!select.value) return;
+            draftFacetState[def.key] = selectedIds.concat([select.value]);
+            renderBody();
+          });
+        }
       }
-      barEl.appendChild(wrap);
-    });
-    if (!hasAnyOptions) barEl.innerHTML = "";
+
+      function renderGenericSection(def) {
+        const options = computeFacetOptions(opts.getUniverse(draftProteinRole), draftFacetState, defs, def);
+        const section = document.createElement("div");
+        section.className = "filter-section" + (openSectionKey === def.key ? " is-open" : "");
+        const summary = sectionSummary(def);
+        section.innerHTML =
+          '<button type="button" class="filter-section__header">' +
+          '<span class="filter-section__label">' +
+          def.label +
+          '<span class="filter-section__count">(' +
+          options.length +
+          ")</span></span>" +
+          (summary ? '<span class="filter-section__summary">' + summary + "</span>" : "") +
+          iconSvg("chevronDown", "filter-section__chevron") +
+          "</button>" +
+          '<div class="filter-section__body"></div>';
+        section.querySelector(".filter-section__header").addEventListener("click", () => toggleSection(def.key));
+        const sectionBody = section.querySelector(".filter-section__body");
+        if (def.multi) renderMultiSectionBody(sectionBody, def, options);
+        else renderSingleSectionBody(sectionBody, def, options);
+        return section;
+      }
+
+      function renderProteinRoleSection() {
+        const counts = opts.proteinRole.computeCounts(draftFacetState);
+        const section = document.createElement("div");
+        section.className = "filter-section" + (openSectionKey === "protein-role" ? " is-open" : "");
+        const summary = draftProteinRole === "focus" ? "Principal" : draftProteinRole === "secondary" ? "Secundário" : "";
+        section.innerHTML =
+          '<button type="button" class="filter-section__header">' +
+          '<span class="filter-section__label">Papel da proteína</span>' +
+          (summary ? '<span class="filter-section__summary">' + summary + "</span>" : "") +
+          iconSvg("chevronDown", "filter-section__chevron") +
+          "</button>" +
+          '<div class="filter-section__body">' +
+          '<label class="filter-option"><input type="radio" name="filter-protein-role"' +
+          (!draftProteinRole ? " checked" : "") +
+          "><span>Tanto faz</span></label>" +
+          '<label class="filter-option"><input type="radio" name="filter-protein-role" value="focus"' +
+          (draftProteinRole === "focus" ? " checked" : "") +
+          "><span>Principal (" +
+          counts.focus +
+          ")</span></label>" +
+          '<label class="filter-option"><input type="radio" name="filter-protein-role" value="secondary"' +
+          (draftProteinRole === "secondary" ? " checked" : "") +
+          "><span>Secundário (" +
+          counts.secondary +
+          ")</span></label>" +
+          "</div>";
+        section.querySelector(".filter-section__header").addEventListener("click", () => toggleSection("protein-role"));
+        section.querySelectorAll('input[type="radio"]').forEach((input) => {
+          input.addEventListener("change", () => {
+            draftProteinRole = input.value || null;
+            renderBody();
+          });
+        });
+        return section;
+      }
+
+      function renderBody() {
+        bodyEl.innerHTML = "";
+        defs.forEach((def) => bodyEl.appendChild(renderGenericSection(def)));
+        if (opts.proteinRole) bodyEl.appendChild(renderProteinRoleSection());
+        renderClearRow();
+        renderFooter();
+      }
+
+      renderBody();
+    }
   }
 
   // ---------- Categoria (coleção) ----------
@@ -726,12 +921,8 @@
     content.appendChild(toolbar);
 
     const facetBarEl = document.createElement("div");
-    facetBarEl.className = "facet-bar";
+    facetBarEl.className = "filter-trigger-wrap";
     content.appendChild(facetBarEl);
-
-    const clearFiltersEl = document.createElement("div");
-    clearFiltersEl.className = "clear-filters-wrap";
-    content.appendChild(clearFiltersEl);
 
     const listEl = document.createElement("div");
     content.appendChild(listEl);
@@ -748,74 +939,57 @@
       progressEl.textContent = doneCount + " de " + currentItems().length + " já feitas ✓";
     }
 
-    // Só aparece quando há pelo menos 1 faceta ativa (nunca polui a view default). Reseta pro
-    // mesmo estado que cada dropdown já reseta individualmente (facetState vazio, proteinRole
-    // null) — reaproveita o mesmo pipeline applyFacets/syncUrl/renderFacets/renderList que o
-    // onChange de qualquer dropdown já dispara, não é um mecanismo novo.
-    function renderClearFilters() {
-      const active = selectedFacetTags.length > 0 || proteinRole !== null;
-      if (!active) {
-        clearFiltersEl.innerHTML = "";
-        return;
-      }
-      clearFiltersEl.innerHTML = '<button type="button" class="btn-clear-filters">Limpar filtros</button>';
-      clearFiltersEl.querySelector(".btn-clear-filters").addEventListener("click", () => {
-        selectedFacetTags = [];
-        proteinRole = null;
-        ingredientOrFallback = false;
-        applyFacets();
-        syncUrl();
-        renderFacets();
-        renderToolbarState();
-        renderClearFilters();
-        renderList();
-      });
-    }
-
-    function renderProteinRoleControl() {
-      if (!isProteinRole) return;
-      const matchesGeneric = (item) => matchesGroupedTags(item.tags, selectedFacetTags);
-      const focusCount = basePrimary.filter(matchesGeneric).length;
-      const secondaryCount = baseRelated.filter(matchesGeneric).length;
-
-      const wrap = document.createElement("label");
-      wrap.className = "facet-control";
-      wrap.innerHTML =
-        "<span>Papel da proteína</span><select>" +
-        '<option value="">Tanto faz</option>' +
-        '<option value="focus">Principal (' +
-        focusCount +
-        ')</option><option value="secondary">Secundário (' +
-        secondaryCount +
-        ")</option></select>";
-      const select = wrap.querySelector("select");
-      select.value = proteinRole || "";
-      select.addEventListener("change", () => {
-        proteinRole = select.value || null;
-        ingredientOrFallback = false;
-        syncUrl();
-        renderToolbarState();
-        renderFacets();
-        renderClearFilters();
-        renderList();
-      });
-      facetBarEl.appendChild(wrap);
-    }
-
+    // Botão "Filtros" (com badge) + modal em acordeão (Bloco 3) — substitui a antiga barra de
+    // dropdowns sempre-visível E o antigo "Limpar filtros" separado (agora vive dentro do
+    // modal). A lógica de cada faceta é a mesma de sempre (matchesGroupedTags/facetStateToTagIds/
+    // etc.) — só o CONTÊINER mudou.
     function renderFacets() {
       const facetState = readFacetStateFromTags(selectedFacetTags, GENERIC_FACET_DEFS);
-      const facetUniverse = proteinRole === "focus" ? basePrimary : proteinRole === "secondary" ? baseRelated : baseAll;
-      renderFacetBar(facetBarEl, facetUniverse, facetState, GENERIC_FACET_DEFS, () => {
-        selectedFacetTags = facetStateToTagIds(facetState, GENERIC_FACET_DEFS);
-        ingredientOrFallback = false;
-        applyFacets();
-        syncUrl();
-        renderFacets();
-        renderToolbarState();
-        renderClearFilters();
-        renderList();
+      renderFacetModal(facetBarEl, GENERIC_FACET_DEFS, {
+        facetState: facetState,
+        getUniverse: (role) => (role === "focus" ? basePrimary : role === "secondary" ? baseRelated : baseAll),
+        proteinRole: isProteinRole
+          ? {
+              value: proteinRole,
+              setValue: (v) => {
+                proteinRole = v;
+              },
+              computeCounts: (draftFacetState) => {
+                const matchesGeneric = (item) => matchesGroupedTags(item.tags, facetStateToTagIds(draftFacetState, GENERIC_FACET_DEFS));
+                return { focus: basePrimary.filter(matchesGeneric).length, secondary: baseRelated.filter(matchesGeneric).length };
+              },
+            }
+          : null,
+        countForDraft: (draftFacetState, draftRole) => {
+          const draftTags = facetStateToTagIds(draftFacetState, GENERIC_FACET_DEFS);
+          const matches = (item) => matchesGroupedTags(item.tags, draftTags);
+          const primary = draftTags.length ? basePrimary.filter(matches) : basePrimary;
+          const related = draftTags.length ? baseRelated.filter(matches) : baseRelated;
+          const all = draftTags.length ? baseAll.filter(matches) : baseAll;
+          if (draftRole === "focus") return primary.length;
+          if (draftRole === "secondary") return related.length;
+          return all.length;
+        },
+        onApply: () => {
+          selectedFacetTags = facetStateToTagIds(facetState, GENERIC_FACET_DEFS);
+          ingredientOrFallback = false;
+          applyFacets();
+          syncUrl();
+          renderFacets();
+          renderToolbarState();
+          renderList();
+        },
+        onClear: () => {
+          selectedFacetTags = [];
+          proteinRole = null;
+          ingredientOrFallback = false;
+          applyFacets();
+          syncUrl();
+          renderFacets();
+          renderToolbarState();
+          renderList();
+        },
       });
-      renderProteinRoleControl();
     }
 
     function renderList() {
@@ -890,7 +1064,6 @@
 
     renderToolbarState();
     renderFacets();
-    renderClearFilters();
     renderList();
   }
 
@@ -936,7 +1109,7 @@
     wrap.appendChild(textChipsEl);
 
     const facetBarEl = document.createElement("div");
-    facetBarEl.className = "facet-bar";
+    facetBarEl.className = "filter-trigger-wrap";
     wrap.appendChild(facetBarEl);
 
     const countRow = document.createElement("div");
@@ -1038,8 +1211,17 @@
     function renderFacets() {
       const facetState = readFacetStateFromTags(tagIds, GENERIC_FACET_DEFS);
       const base = nonFacetTagIds();
-      renderFacetBar(facetBarEl, facetUniverse(base), facetState, GENERIC_FACET_DEFS, () => {
-        goToTags(base.concat(facetStateToTagIds(facetState, GENERIC_FACET_DEFS)));
+      renderFacetModal(facetBarEl, GENERIC_FACET_DEFS, {
+        facetState: facetState,
+        getUniverse: () => facetUniverse(base),
+        proteinRole: null,
+        countForDraft: (draftFacetState) => facetUniverse(base.concat(facetStateToTagIds(draftFacetState, GENERIC_FACET_DEFS))).length,
+        onApply: () => {
+          goToTags(base.concat(facetStateToTagIds(facetState, GENERIC_FACET_DEFS)));
+        },
+        onClear: () => {
+          goToTags(base);
+        },
       });
     }
 

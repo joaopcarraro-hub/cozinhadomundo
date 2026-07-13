@@ -99,26 +99,33 @@ Evitar poluir a UI com:
 - categoria original
 - filtros redundantes com a página atual
 
-## Barra de facetas
+## Modal de filtros em acordeão (Bloco 3 — design tokens v3)
 
-Coleções (país, proteína, tempo, dificuldade, fundamentos) usam uma barra de dropdowns lado
-a lado, que quebram linha em telas estreitas (não usar scroll horizontal): País,
-Complexidade, Tempo, Equipamento, Ingrediente, Papel da proteína (só em coleções de proteína).
+Coleções (país, proteína, tempo, dificuldade, fundamentos) usam um botão "Filtros" (pill,
+`--color-surface`/`--color-border`, ícone outline + badge `--color-accent` com a contagem de
+filtros ativos) no lugar de onde a antiga barra de dropdowns sempre-visível ficava. Toca no
+botão, abre um modal cheio de tela (`--color-bg`) com "Cancelar" / título "Filtros" à esquerda/
+centro, e "Ver resultados (N)" fixo no rodapé (pill `--color-accent`, N = contagem ao vivo).
 
-Cada dropdown lista só os valores presentes no resultado atual, com contagem, e recalcula os
-outros ao mudar. Nada pré-selecionado por padrão. Ingrediente é multi-seleção: os valores
-escolhidos viram chips removíveis acima do dropdown de "+ adicionar"; as demais facetas
-continuam de seleção única — incluindo Equipamento, que filtra por um valor por vez mesmo o
-dado por trás sendo multi-valorado (uma receita pode ter forno e air-fryer ao mesmo tempo).
+Dentro, 6 seções em acordeão — País, Complexidade, Tempo, Equipamento, Ingrediente, Papel da
+proteína (só em coleções de proteína) — cada uma com contagem de opções no cabeçalho e um
+resumo do valor já selecionado, se houver. Facetas de seleção única viram lista de rádio
+dentro da seção; nada pré-selecionado por padrão. Ingrediente é multi-seleção: chips
+removíveis (`--color-surface-elevated`, × em `--color-accent`) + select de "+ adicionar";
+continua sendo a única faceta com essa lógica — as demais são sempre seleção única, incluindo
+Equipamento, que filtra por um valor por vez mesmo o dado por trás sendo multi-valorado (uma
+receita pode ter forno e air-fryer ao mesmo tempo).
 
-Selecionar um filtro atualiza a lista na mesma página (nunca navega pra outra rota).
+Mudanças dentro do modal ficam em rascunho — só valem de fato ao tocar "Ver resultados";
+"Cancelar" descarta tudo. "Papel da proteína" (Principal / Secundário / Tanto faz) substitui
+as antigas abas "Foco da receita / Também leva / Todas".
 
-"Papel da proteína" (Principal / Secundário / Tanto faz) substitui as antigas abas "Foco da
-receita / Também leva / Todas".
+"Limpar filtros" (texto sublinhado, `--color-text-secondary` — nunca `--color-accent` em texto
+pequeno, falha WCAG AA) aparece dentro do modal só quando pelo menos 1 filtro está ativo, e
+aplica na hora (fecha o modal, não precisa de "Ver resultados").
 
-Um botão de texto "Limpar filtros" (área de toque de 44px, sem parecer outro dropdown) aparece
-logo abaixo da barra só quando pelo menos 1 faceta está ativa — nunca no estado default, pra
-não poluir a view limpa.
+O resto da tela de categoria/busca (cards, dropdown de ordenação, toolbar) continua na paleta
+clara antiga — só o botão "Filtros" e o modal usam os tokens novos.
 
 ## Critérios de aceite
 

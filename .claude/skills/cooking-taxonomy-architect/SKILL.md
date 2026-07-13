@@ -53,10 +53,12 @@ primaryTags: identidade principal da receita.
 secondaryTags: ingredientes relevantes, mas não centrais.
 searchTags: termos úteis para busca, mas que não devem poluir filtros.
 
-### Barra de facetas (países, proteínas e qualquer coleção)
+### Modal de filtros em acordeão (países, proteínas e qualquer coleção — Bloco 3)
 
-Todas as coleções (países, proteínas, tempo, dificuldade, fundamentos) usam a MESMA barra de
-filtros facetada, refinando in-place (sem navegar de rota, sem camadas sequenciais/funil):
+Todas as coleções (países, proteínas, tempo, dificuldade, fundamentos) usam o MESMO modal de
+filtros em acordeão (substituiu a antiga barra de dropdowns sempre-visível — ver
+`.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual), refinando in-place (sem navegar
+de rota, sem camadas sequenciais/funil, mudanças em rascunho até "Ver resultados"):
 
 - País
 - Complexidade
@@ -73,13 +75,14 @@ filtros facetada, refinando in-place (sem navegar de rota, sem camadas sequencia
   normalmente em AND — o fallback nunca ignora os outros filtros.
 - Papel da proteína (só aparece em coleções de proteína)
 
-Cada dropdown lista só os valores presentes no resultado ATUAL (já filtrado pelas outras
-facetas ativas), com contagem. Nada vem pré-selecionado — o default é sempre "todos".
+Cada seção do acordeão lista só os valores presentes no resultado ATUAL (já filtrado pelas
+outras facetas do rascunho), com contagem. Nada vem pré-selecionado — o default é sempre
+"todos".
 
-Um botão "Limpar filtros" aparece na barra só quando pelo menos 1 faceta está ativa (nunca no
-estado default) e reseta todas de uma vez — País, Complexidade, Tempo, Equipamento, Ingrediente
-e Papel da proteína — reaproveitando o mesmo pipeline de reset que cada dropdown já dispara
-individualmente.
+Um botão "Limpar filtros" aparece dentro do modal só quando pelo menos 1 faceta está ativa
+(nunca no estado default) e reseta todas de uma vez — País, Complexidade, Tempo, Equipamento,
+Ingrediente e Papel da proteína — aplicando na hora (fecha o modal, não passa pelo rascunho),
+reaproveitando o mesmo pipeline de reset que cada seção já dispara individualmente.
 
 ### Papel da proteína
 
