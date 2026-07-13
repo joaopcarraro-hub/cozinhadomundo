@@ -100,6 +100,14 @@ body {
   color: var(--ink-soft);
   font-style: italic;
 }
+/* Atribuição de ícones (Icons8/SVG Repo) — ver buildIconCreditsEl em app.js */
+.icon-credits {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+.icon-credits a { color: var(--gold); }
 .btn-or-fallback {
   margin-top: 14px;
   min-height: 44px;
@@ -650,7 +658,17 @@ body.filter-modal-open { overflow: hidden; }
   font-family: inherit;
 }
 .filter-tile.is-selected { border-color: var(--color-accent); }
-.filter-tile__icon { font-size: 1.4rem; line-height: 1; }
+.filter-tile__icon { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
+/* SVG (SVGRepo, fill=currentColor no arquivo) — herda a cor do estado do tile: cinza parado,
+   vermelho quando .is-selected. Tamanho do <svg> interno sobrescrito aqui (os arquivos trazem
+   width/height="800px" fixos — CSS vence o atributo de apresentação). */
+.filter-tile__icon--svg { color: var(--color-text-disabled); }
+.filter-tile.is-selected .filter-tile__icon--svg { color: var(--color-accent); }
+.filter-tile__icon--svg svg { width: 100%; height: 100%; display: block; }
+/* PNG (Icons8, traço preto sobre transparente) — invertido pra virar traço claro sobre o fundo
+   escuro. NÃO recolore no estado selecionado (limitação de raster) — a borda do tile já indica
+   seleção sozinha. */
+.filter-tile__icon--png { object-fit: contain; filter: invert(1); }
 .filter-tile__label {
   font-size: 0.76rem;
   color: var(--color-text-primary);

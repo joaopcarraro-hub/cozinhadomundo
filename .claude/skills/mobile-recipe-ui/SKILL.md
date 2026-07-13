@@ -114,12 +114,24 @@ resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexist
   como item especial no topo que, ao marcar, limpa a seleção daquela faceta — não soma com os
   demais valores. Os outros valores combinam em OR puro entre si (união).
 - Equipamento: PILOTO DE REDESENHO — grade de tiles (3 colunas, 2 em telas ≤380px) em vez de
-  lista de checkbox. Cada tile: ícone emoji em cima, label no meio, contagem embaixo em
-  `--color-text-disabled` (mesmo token que as outras seções já usavam pra contagem —
-  `--color-text-muted` não existe em DESIGN-TOKENS.md). Tile marcado ganha borda 2px
-  `--color-accent`. Sem tile "Todos" — nenhum tile marcado = nenhum filtro ativo (equivalente
-  ao "Todos" marcado da versão em lista). Mesma lógica de OR-união dos demais checkbox — só
-  muda a apresentação (ver renderTileSectionBody em app.js, def.layout === "tiles").
+  lista de checkbox. Cada tile: ícone real em cima (arquivo, não emoji — ver abaixo), label no
+  meio, contagem embaixo em `--color-text-disabled` (mesmo token que as outras seções já
+  usavam pra contagem — `--color-text-muted` não existe em DESIGN-TOKENS.md). Tile marcado
+  ganha borda 2px `--color-accent`. Sem tile "Todos" — nenhum tile marcado = nenhum filtro
+  ativo (equivalente ao "Todos" marcado da versão em lista). Mesma lógica de OR-união dos
+  demais checkbox — só muda a apresentação (ver renderTileSectionBody em app.js, def.layout
+  === "tiles").
+  - Ícones reais em `icons/equipment/` (7 de 9 valores — Processador e Sous Vide ficam sem
+    ícone, tile só com label+contagem, sem espaço reservado). 4 SVG (SVGRepo: forno,
+    liquidificador, batedeira, micro-ondas) — `fill="currentColor"` no arquivo, injetados
+    INLINE no DOM (não `<img src>`, senão currentColor não herda a cor do CSS) e cacheados via
+    fetch 1x no carregamento da página (EQUIPMENT_TILE_ICONS/equipmentSvgIconCache em app.js).
+    Recolorem com o estado do tile: `--color-text-disabled` parado, `--color-accent`
+    selecionado. 3 PNG (Icons8: air-fryer, panela de pressão, churrasqueira) — `<img>` com
+    `filter: invert(1)` (traço preto vira traço claro); NÃO recolorem no estado selecionado
+    (limitação de raster — a borda do tile já indica seleção sozinha).
+  - Créditos obrigatórios (licença Icons8) + recomendados (SVG Repo) na tela de Minhas
+    Receitas (buildIconCreditsEl em app.js) — link de texto pra icons8.com e svgrepo.com.
 - Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) + select de
   "+ adicionar", combinando em AND entre si — única faceta com essa lógica (e com fallback OR
   na tela de resultados quando zera).

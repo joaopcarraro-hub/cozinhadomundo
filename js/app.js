@@ -9,6 +9,10 @@
   // então uma navegação (ex.: botão/gesto voltar do celular) enquanto o modal está aberto não o
   // remove sozinha. handleRoute() força o fechamento no início de toda troca de rota.
   let closeActiveFilterModal = null;
+  // Re-renderiza o modal de filtros aberto (se houver) quando um ícone SVG de Equipamento chega
+  // via fetch depois do modal já ter sido aberto (ver EQUIPMENT_TILE_ICONS) — rede de segurança,
+  // na prática os fetches terminam antes do usuário conseguir abrir o modal.
+  let refreshActiveFilterModal = null;
 
   // ---------- Ícones outline (Bloco 2 — barra inferior + tiles novos da home) ----------
   // Único monocromático: stroke=currentColor, cor real vem do CSS (--color-accent /
@@ -480,19 +484,48 @@
     { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true, combineMode: "and" },
   ];
 
-  // Ícones (emoji, substituto barato conforme docs/DESIGN-TOKENS.md) pro piloto de tiles de
-  // Equipamento. Chave = tag id completo (equipment:*).
+  // Ícones reais (arquivos em icons/equipment/) pro piloto de tiles de Equipamento — substituem
+  // os emoji provisórios. 4 SVG (SVGRepo, fill trocado pra currentColor no arquivo — recolorem
+  // via CSS conforme o estado do tile) + 3 PNG (Icons8, traço preto sobre transparente —
+  // recebem filter:invert(1) via CSS pra virar traço claro; não recolorem no estado
+  // selecionado, limitação de raster, aceitável já que a borda --color-accent do tile já
+  // indica seleção sozinha). Processador e Sous Vide ficam SEM ícone por ora (nenhum arquivo
+  // disponível) — o tile renderiza só label+contagem, sem elemento de ícone reservando espaço.
   const EQUIPMENT_TILE_ICONS = {
-    "equipment:forno": "🔥",
-    "equipment:air-fryer": "🌀",
-    "equipment:panela-de-pressao": "⏲️",
-    "equipment:liquidificador": "🧃",
-    "equipment:processador": "🔪",
-    "equipment:churrasqueira": "🍖",
-    "equipment:batedeira": "🥣",
-    "equipment:sous-vide": "🌡️",
-    "equipment:microondas": "📡",
+    "equipment:forno": { type: "svg", src: "icons/equipment/forno.svg" },
+    "equipment:liquidificador": { type: "svg", src: "icons/equipment/liquidificador.svg" },
+    "equipment:batedeira": { type: "svg", src: "icons/equipment/batedeira.svg" },
+    "equipment:microondas": { type: "svg", src: "icons/equipment/microondas.svg" },
+    "equipment:air-fryer": { type: "png", src: "icons/equipment/air-fryer.png" },
+    "equipment:panela-de-pressao": { type: "png", src: "icons/equipment/panela-de-pressao.png" },
+    "equipment:churrasqueira": { type: "png", src: "icons/equipment/churrasqueira.png" },
   };
+  // SVG precisa ser INLINE no DOM (não <img src>) pra fill:currentColor herdar a cor do CSS —
+  // buscados 1x no carregamento da página e cacheados. Se o modal de filtros já estiver aberto
+  // quando um SVG chega, refreshActiveFilterModal (setado por renderFacetModal) re-renderiza
+  // pra aplicar; na prática os fetches (arquivos locais, poucos KB) terminam bem antes do
+  // usuário conseguir abrir o modal, então esse caminho é só uma rede de segurança.
+  const equipmentSvgIconCache = {};
+  Object.keys(EQUIPMENT_TILE_ICONS).forEach((key) => {
+    const icon = EQUIPMENT_TILE_ICONS[key];
+    if (icon.type !== "svg" || equipmentSvgIconCache[icon.src]) return;
+    fetch(icon.src)
+      .then((r) => r.text())
+      .then((svgText) => {
+        equipmentSvgIconCache[icon.src] = svgText;
+        if (refreshActiveFilterModal) refreshActiveFilterModal();
+      })
+      .catch(() => {});
+  });
+  function equipmentTileIconHtml(tagId) {
+    const icon = EQUIPMENT_TILE_ICONS[tagId];
+    if (!icon) return ""; // sem ícone disponível (Processador, Sous Vide) — sem espaço reservado
+    if (icon.type === "png") {
+      return '<img class="filter-tile__icon filter-tile__icon--png" src="' + icon.src + '" alt="" aria-hidden="true">';
+    }
+    const svgText = equipmentSvgIconCache[icon.src];
+    return svgText ? '<span class="filter-tile__icon filter-tile__icon--svg" aria-hidden="true">' + svgText + "</span>" : "";
+  }
 
   // Regra geral de combinação: tags do MESMO prefixo (ex: dois ingredient:*) casam em OR
   // entre si; prefixos DIFERENTES combinam em AND. Pra facetas de seleção única isso se
@@ -661,8 +694,10 @@
         overlay.remove();
         document.body.classList.remove("filter-modal-open");
         if (closeActiveFilterModal === closeModal) closeActiveFilterModal = null;
+        if (refreshActiveFilterModal === renderBody) refreshActiveFilterModal = null;
       }
       closeActiveFilterModal = closeModal;
+      refreshActiveFilterModal = renderBody;
       overlay.querySelector(".filter-modal__cancel").addEventListener("click", closeModal);
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeModal();
@@ -852,9 +887,9 @@
                 (selectedIds.indexOf(o.tagId) !== -1 ? " is-selected" : "") +
                 '" data-value="' +
                 o.tagId +
-                '"><span class="filter-tile__icon" aria-hidden="true">' +
-                (EQUIPMENT_TILE_ICONS[o.tagId] || "🔧") +
-                '</span><span class="filter-tile__label">' +
+                '">' +
+                equipmentTileIconHtml(o.tagId) +
+                '<span class="filter-tile__label">' +
                 o.tag.label +
                 '</span><span class="filter-tile__count">' +
                 o.count +
@@ -1425,7 +1460,7 @@
 
   // ---------- Telas-placeholder da barra inferior (Minhas Receitas / Preparos / Lista de Compras) ----------
   // Só navegação + visual por ora — conteúdo real chega em blocos futuros (ver Bloco 2, Fase 2.1).
-  function renderPlaceholder(title, desc) {
+  function renderPlaceholder(title, desc, extraEl) {
     activeCat = null;
     refreshActiveCounts = null;
     header.innerHTML = "<h2>" + title + "</h2>";
@@ -1435,6 +1470,21 @@
     empty.className = "empty-state";
     empty.textContent = desc;
     content.appendChild(empty);
+    if (extraEl) content.appendChild(extraEl);
+  }
+
+  // Atribuição obrigatória (licença Icons8) pelos 3 ícones raster de Equipamento no modal de
+  // filtros (air-fryer, panela de pressão, churrasqueira) + crédito a SVG Repo pelos outros 4
+  // (não exigido pela licença deles, mas recomendado). Fica em Minhas Receitas por ora — não há
+  // rodapé fixo no app pra isso ainda.
+  function buildIconCreditsEl() {
+    const el = document.createElement("div");
+    el.className = "icon-credits";
+    el.innerHTML =
+      "<p>Ícones de equipamento por " +
+      '<a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a> e ' +
+      '<a href="https://www.svgrepo.com" target="_blank" rel="noopener noreferrer">SVG Repo</a>.</p>';
+    return el;
   }
 
   // ---------- Telas de lista (Favoritos / Quero fazer / Histórico) ----------
@@ -2057,7 +2107,7 @@
     } else if (route.name === "favoritos" || route.name === "quero-fazer" || route.name === "historico") {
       renderListView(route.name);
     } else if (route.name === "minhas-receitas") {
-      renderPlaceholder("📖 Minhas Receitas", "Em breve: favoritos, quero fazer e histórico, tudo aqui.");
+      renderPlaceholder("📖 Minhas Receitas", "Em breve: favoritos, quero fazer e histórico, tudo aqui.", buildIconCreditsEl());
     } else if (route.name === "preparos") {
       renderPlaceholder("🍳 Preparos", "Em breve: acompanhe suas sessões de preparo.");
     } else if (route.name === "lista-compras") {
