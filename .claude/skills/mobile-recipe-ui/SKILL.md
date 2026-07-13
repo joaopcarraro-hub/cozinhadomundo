@@ -138,8 +138,8 @@ resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexist
     `currentColor`) — a borda do tile já indica seleção sozinha, mesmo tratamento dos PNG de
     Equipamento (`.filter-tile__icon--emoji`, só `font-size`, sem regra de cor).
   - Equipamento: ícones reais em `icons/equipment/` (9 de 9 valores — todo tile tem ícone). 6 SVG
-    (SVGRepo: forno, liquidificador, batedeira, micro-ondas; fonte não identificada:
-    processador, sous vide) — `fill="currentColor"` no arquivo, injetados INLINE no DOM (não
+    (SVGRepo: forno, liquidificador, batedeira, micro-ondas; autorais: processador, sous vide)
+    — `fill="currentColor"` no arquivo, injetados INLINE no DOM (não
     `<img src>`, senão currentColor não herda a cor do CSS). Recolorem com o estado do tile:
     `--color-text-disabled` parado, `--color-accent` selecionado. O texto do SVG fica EMBUTIDO
     como string em `EQUIPMENT_SVG_MARKUP` (app.js) — não é carregado via `fetch()`. Motivo: um
@@ -153,9 +153,9 @@ resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexist
     depender de JS) com `filter: invert(1)` (traço preto vira traço claro); NÃO recolorem no
     estado selecionado (limitação de raster — a borda do tile já indica seleção sozinha).
   - Créditos na tela de Minhas Receitas (buildIconCreditsEl em app.js): obrigatório (licença
-    Icons8) + recomendado (SVG Repo), link de texto pra icons8.com e svgrepo.com, mais uma
-    linha genérica pros 2 SVG de fonte não identificada (processador, sous vide) — tratados
-    como exigindo atribuição por segurança até a origem ser confirmada.
+    Icons8) + recomendado (SVG Repo), link de texto pra icons8.com e svgrepo.com. Processador,
+    Sous Vide e o ícone da aba Preparos são autorais (confirmado com o usuário) — sem fonte
+    externa a creditar, não entram nesta lista.
 - Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) continuam
   iguais acima da grade; o antigo `<select>` de "+ adicionar" virou PILOTO DE REDESENHO — grade
   de tiles MAIS DENSA que País/Equipamento (`renderIngredientTileSectionBody` em app.js,
