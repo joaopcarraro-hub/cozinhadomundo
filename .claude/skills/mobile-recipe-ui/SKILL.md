@@ -44,8 +44,16 @@ pros mesmos hex do tema escuro). Não há mais inconsistência visual entre bloc
 ## Barra de navegação inferior
 
 Fixa, 5 abas (Home / Pesquisar / Minhas Receitas / Preparos / Lista de Compras), fundo
-`--color-bg-secondary`, ícones outline monocromáticos. Aba ativa: ícone + label em
-`--color-accent`. Inativas: `--color-text-disabled`. Sem FAB — não é um padrão deste app.
+`--color-bg-secondary`. Aba ativa: ícone + label em `--color-accent`. Inativas:
+`--color-text-disabled`. Sem FAB — não é um padrão deste app.
+
+4 das 5 abas usam o sistema de ícones outline compartilhado (`ICON_SVG_ATTRS`/`ICONS` em
+app.js — stroke-based, viewBox 24x24, `fill="none"`). "Preparos" é exceção: ícone autoral
+próprio (`icons/preparos.svg`, panela de cabo único), formato de traço preenchido
+(`fill="currentColor"`), fora do sistema compartilhado — embutido como string própria
+(`PREPAROS_ICON_SVG` em app.js), nunca via `fetch()`/`<img src>`, mesmo padrão anti-race-
+condition do `EQUIPMENT_SVG_MARKUP`. Visualmente indistinguível do resto (mesmo tamanho
+22x22px via `.bottom-nav__icon`, mesma troca de cor ativo/inativo via `currentColor`).
 
 ## Página de grupo
 
