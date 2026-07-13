@@ -622,7 +622,8 @@ body.filter-modal-open { overflow: hidden; }
   color: var(--color-text-primary);
   cursor: pointer;
 }
-.filter-option input[type="radio"] { accent-color: var(--color-accent); width: 18px; height: 18px; flex-shrink: 0; }
+.filter-option input[type="radio"],
+.filter-option input[type="checkbox"] { accent-color: var(--color-accent); width: 18px; height: 18px; flex-shrink: 0; }
 
 .filter-section__body select {
   min-height: 44px;

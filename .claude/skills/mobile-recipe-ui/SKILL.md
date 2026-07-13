@@ -109,12 +109,19 @@ centro, e "Ver resultados (N)" fixo no rodapé (pill `--color-accent`, N = conta
 
 Dentro, 6 seções em acordeão — País, Complexidade, Tempo, Equipamento, Ingrediente, Papel da
 proteína (só em coleções de proteína) — cada uma com contagem de opções no cabeçalho e um
-resumo do valor já selecionado, se houver. Facetas de seleção única viram lista de rádio
-dentro da seção; nada pré-selecionado por padrão. Ingrediente é multi-seleção: chips
-removíveis (`--color-surface-elevated`, × em `--color-accent`) + select de "+ adicionar";
-continua sendo a única faceta com essa lógica — as demais são sempre seleção única, incluindo
-Equipamento, que filtra por um valor por vez mesmo o dado por trás sendo multi-valorado (uma
-receita pode ter forno e air-fryer ao mesmo tempo).
+resumo do valor já selecionado, se houver. Duas UIs de multi-seleção:
+- País, Complexidade, Tempo, Equipamento: lista de CHECKBOX (`accent-color: --color-accent`),
+  com "Todos" como item especial no topo que, ao marcar, limpa a seleção daquela faceta — não
+  soma com os demais valores. Os outros valores combinam em OR puro entre si (união).
+- Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) + select de
+  "+ adicionar", combinando em AND entre si — única faceta com essa lógica (e com fallback OR
+  na tela de resultados quando zera).
+
+A contagem de cada opção não-selecionada é sempre "quantos eu teria se também adicionasse
+este" — universo restrito pelas OUTRAS facetas, nunca pela própria (mesma lógica que já existia
+pro dropdown de Ingrediente, só reaproveitada).
+
+Papel da proteína continua sendo a única seção de seleção única (lista de rádio).
 
 Mudanças dentro do modal ficam em rascunho — só valem de fato ao tocar "Ver resultados";
 "Cancelar" descarta tudo. "Papel da proteína" (Principal / Secundário / Tanto faz) substitui

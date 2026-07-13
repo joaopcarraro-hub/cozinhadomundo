@@ -13,3 +13,5 @@ copiado como texto plano para outra conversa, sem nenhum símbolo de formataçã
 - Ao reportar resultado de teste, inclua números/exemplos concretos, nunca só "funcionou".
 - Se uma mudança afeta o comportamento descrito em algum .claude/skills/*.md, atualize a
   skill no MESMO commit — nunca deixe pra depois.
+- Screenshot: máximo 2 tentativas por tarefa. Se falhar nas 2, pare, documente a limitação
+  como tal, e prossiga com verificação por DOM/estado real — nunca insista além disso.

@@ -5,6 +5,10 @@
 
   const firstCollection = window.COLLECTIONS[0];
   let activeCat = null; // id da coleção atual; null quando estamos na home, busca global ou telas de lista
+  // Modal de filtros aberto (Bloco 3) — o overlay vive em document.body, fora de #recipes-content,
+  // então uma navegação (ex.: botão/gesto voltar do celular) enquanto o modal está aberto não o
+  // remove sozinha. handleRoute() força o fechamento no início de toda troca de rota.
+  let closeActiveFilterModal = null;
 
   // ---------- Ícones outline (Bloco 2 — barra inferior + tiles novos da home) ----------
   // Único monocromático: stroke=currentColor, cor real vem do CSS (--color-accent /
@@ -455,18 +459,21 @@
     content.appendChild(wrap);
   }
 
-  // ---------- Barra de facetas (dropdowns) — compartilhada por renderCategory e renderBusca ----------
-  // Substitui o refino em funil (chips sequenciais). Cada dropdown lista só os valores
-  // presentes no universo ATUAL já filtrado pelas OUTRAS facetas ativas (não pela própria,
-  // senão o dropdown nunca mostraria alternativa à opção já escolhida), com contagem.
-  // Nada vem pré-selecionado (default = Todos/Tanto faz). Ingrediente é multi-seleção (OR
-  // entre os ingredientes escolhidos); os demais continuam de seleção única.
+  // ---------- Facetas — compartilhadas por renderCategory e renderBusca ----------
+  // Cada seção lista só os valores presentes no universo ATUAL já filtrado pelas OUTRAS
+  // facetas ativas (não pela própria, senão nunca mostraria alternativa à opção já escolhida),
+  // com contagem. Nada vem pré-selecionado (default = Todos/Tanto faz).
+  // País/Complexidade/Tempo/Equipamento são multi-seleção com combineMode "or" — valores da
+  // MESMA faceta se somam (união); entre facetas diferentes continua AND (matchesGroupedTags
+  // já faz isso sozinho pra qualquer prefixo que não seja ingredient:/seasoning:, sem precisar
+  // de nenhuma lógica nova aqui). Ingrediente continua multi-seleção com combineMode "and" +
+  // fallback OR quando zera — intocado.
   const GENERIC_FACET_DEFS = [
-    { key: "country", label: "País", prefix: "country:" },
-    { key: "difficulty", label: "Complexidade", prefix: "difficulty:" },
-    { key: "time", label: "Tempo", prefix: "time:" },
-    { key: "equipment", label: "Equipamento", prefix: "equipment:" },
-    { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true },
+    { key: "country", label: "País", prefix: "country:", multi: true, combineMode: "or" },
+    { key: "difficulty", label: "Complexidade", prefix: "difficulty:", multi: true, combineMode: "or" },
+    { key: "time", label: "Tempo", prefix: "time:", multi: true, combineMode: "or" },
+    { key: "equipment", label: "Equipamento", prefix: "equipment:", multi: true, combineMode: "or" },
+    { key: "ingredient", label: "Ingrediente", prefix: "ingredient:", multi: true, combineMode: "and" },
   ];
 
   // Regra geral de combinação: tags do MESMO prefixo (ex: dois ingredient:*) casam em OR
@@ -633,7 +640,9 @@
       function closeModal() {
         overlay.remove();
         document.body.classList.remove("filter-modal-open");
+        if (closeActiveFilterModal === closeModal) closeActiveFilterModal = null;
       }
+      closeActiveFilterModal = closeModal;
       overlay.querySelector(".filter-modal__cancel").addEventListener("click", closeModal);
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) closeModal();
@@ -756,6 +765,49 @@
         }
       }
 
+      // País/Complexidade/Tempo/Equipamento (combineMode "or"): checkboxes, valores da MESMA
+      // faceta se somam em união — nunca zera ao adicionar mais um, então não precisa de
+      // nenhum fallback (diferente de Ingrediente). "Todos" é um item especial que limpa a
+      // seleção — não é um valor que combina com os demais, sempre reflete
+      // draftFacetState[def.key].length === 0 no re-render (nunca guarda estado próprio).
+      // A contagem de cada opção reaproveita computeFacetOptions/facetOptionsFromPrefix
+      // exatamente como Ingrediente já fazia (universo restrito pelas OUTRAS facetas, nunca
+      // pela própria) — por isso já é "quantos eu teria se também adicionasse este", sem
+      // precisar de nenhum cálculo novo.
+      function renderCheckboxSectionBody(sectionBody, def, options) {
+        const selectedIds = draftFacetState[def.key] || [];
+        let html =
+          '<label class="filter-option"><input type="checkbox" data-todos' +
+          (!selectedIds.length ? " checked" : "") +
+          "><span>" +
+          (def.allLabel || "Todos") +
+          "</span></label>";
+        options.forEach((o) => {
+          html +=
+            '<label class="filter-option"><input type="checkbox" value="' +
+            o.tagId +
+            '"' +
+            (selectedIds.indexOf(o.tagId) !== -1 ? " checked" : "") +
+            "><span>" +
+            o.tag.label +
+            " (" +
+            o.count +
+            ")</span></label>";
+        });
+        sectionBody.innerHTML = html;
+        sectionBody.querySelector("[data-todos]").addEventListener("change", () => {
+          draftFacetState[def.key] = [];
+          renderBody();
+        });
+        sectionBody.querySelectorAll('input[type="checkbox"]:not([data-todos])').forEach((input) => {
+          input.addEventListener("change", () => {
+            const current = draftFacetState[def.key] || [];
+            draftFacetState[def.key] = input.checked ? current.concat([input.value]) : current.filter((id) => id !== input.value);
+            renderBody();
+          });
+        });
+      }
+
       function renderGenericSection(def) {
         const options = computeFacetOptions(opts.getUniverse(draftProteinRole), draftFacetState, defs, def);
         const section = document.createElement("div");
@@ -774,7 +826,8 @@
           '<div class="filter-section__body"></div>';
         section.querySelector(".filter-section__header").addEventListener("click", () => toggleSection(def.key));
         const sectionBody = section.querySelector(".filter-section__body");
-        if (def.multi) renderMultiSectionBody(sectionBody, def, options);
+        if (def.multi && def.combineMode === "or") renderCheckboxSectionBody(sectionBody, def, options);
+        else if (def.multi) renderMultiSectionBody(sectionBody, def, options);
         else renderSingleSectionBody(sectionBody, def, options);
         return section;
       }
@@ -1935,6 +1988,10 @@
 
   // ---------- Roteamento ----------
   function handleRoute(route) {
+    // Modal de filtros aberto sobrevive fora de #recipes-content (ver comentário na declaração
+    // de closeActiveFilterModal) — fecha à força antes de renderizar a rota nova, senão fica
+    // preso na tela por cima do conteúdo trocado (ex.: botão/gesto voltar do celular).
+    if (closeActiveFilterModal) closeActiveFilterModal();
     if (route.name === "busca") {
       renderBusca(route.tags || [], route.textFilters || []);
     } else if (route.name === "grupo") {

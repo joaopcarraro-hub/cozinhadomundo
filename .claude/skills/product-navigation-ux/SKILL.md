@@ -104,14 +104,21 @@ existindo dentro do modal, só aparece quando há pelo menos 1 filtro ativo, e a
 (fecha o modal, não passa pelo rascunho).
 
 Cada seção só lista os valores presentes no resultado atual, com contagem, e nada vem
-pré-selecionado. Ingrediente é a única faceta de múltipla seleção (chips removíveis + campo de
-adicionar). Os valores selecionados combinam em AND entre si (a receita precisa conter todos).
-Se a combinação atual resultar em zero receitas, a tela de RESULTADOS (não o modal) oferece um
-fallback pontual para OR (qualquer um dos selecionados) — o modal não duplica essa UI, só deixa
-"Ver resultados" aplicável mesmo com N=0, pra cair nesse mesmo fallback. As outras facetas são
-de seleção única — incluindo Equipamento, que mesmo com dado multi-valorado por trás (uma
-receita pode ter forno E air-fryer) só filtra por um valor escolhido por vez, sem AND/OR/
-fallback (isso é exclusivo de Ingrediente).
+pré-selecionado (default = item "Todos" marcado). Duas famílias de multi-seleção coexistem, e
+nenhuma vaza pra outra:
+- País, Complexidade, Tempo, Equipamento: checkboxes com OR PURO entre os valores da MESMA
+  faceta (união — ex.: País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca
+  zera ao adicionar mais um valor, então não tem fallback nenhum aqui. "Todos" é um item
+  especial que, ao marcar, limpa a seleção daquela faceta (não é um valor que soma com os
+  demais).
+- Ingrediente: chips removíveis + campo de adicionar, com AND entre os selecionados (a receita
+  precisa conter todos). Se a combinação zerar, a tela de RESULTADOS (não o modal) oferece um
+  fallback pontual para OR — o modal não duplica essa UI, só deixa "Ver resultados" aplicável
+  mesmo com N=0, pra cair nesse mesmo fallback.
+
+ENTRE facetas diferentes (País × Equipamento × Ingrediente etc.) sempre é AND, mesmo quando
+cada faceta individualmente é OR por dentro — ex.: País=Itália+Alemanha E Equipamento=Forno
+mostra a interseção do OR de país com o equipamento, nunca OR entre tudo.
 
 Proteínas usam uma seção extra, "Papel da proteína": Principal / Secundário / Tanto faz
 (default). Isso substituiu o antigo conceito de abas "Foco da receita / Também leva / Todas".

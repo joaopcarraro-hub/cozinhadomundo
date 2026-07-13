@@ -60,20 +60,26 @@ filtros em acordeão (substituiu a antiga barra de dropdowns sempre-visível —
 `.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual), refinando in-place (sem navegar
 de rota, sem camadas sequenciais/funil, mudanças em rascunho até "Ver resultados"):
 
-- País
-- Complexidade
-- Tempo
-- Equipamento é seleção única (dropdown, como País/Complexidade/Tempo) — mesmo o dado por trás
-  sendo multi-valorado (uma receita pode ter vários equipment: simultaneamente, ex: forno E
-  air-fryer), o dropdown filtra por existência de UM valor escolhido por vez, sem lógica de
-  AND/OR/fallback (isso é exclusivo de Ingrediente, ver abaixo). Derivado de `steps` (não de
-  `ingredients`) via data/derivation-dict.js (EQUIPMENT).
-- Ingrediente é a única faceta de múltipla seleção. Os valores selecionados combinam em AND
+- País, Complexidade, Tempo, Equipamento: checkboxes com OR PURO entre os valores da MESMA
+  faceta (união — País = Itália + Alemanha mostra receitas de qualquer um dos dois). "Todos" é
+  um item especial que limpa a seleção daquela faceta, não um valor que soma com os demais.
+  Nunca precisa de fallback aqui, porque OR nunca zera ao adicionar mais um valor. Equipamento
+  é multi-valorado por trás (uma receita pode ter vários equipment: simultaneamente, ex: forno
+  E air-fryer) — a faceta já reflete isso naturalmente agora, sem precisar de tratamento
+  especial. Derivado de `steps` (não de `ingredients`) via data/derivation-dict.js (EQUIPMENT).
+- Ingrediente é a única faceta com combineMode "and" — os valores selecionados combinam em AND
   entre si (a receita precisa conter todos). Se a combinação atual resultar em zero receitas,
   a UI oferece um fallback pontual para OR (qualquer um dos selecionados), mantendo as demais
   facetas ativas (País, Complexidade, Tempo, Equipamento, Papel da proteína) aplicadas
-  normalmente em AND — o fallback nunca ignora os outros filtros.
+  normalmente — o fallback nunca ignora os outros filtros.
 - Papel da proteína (só aparece em coleções de proteína)
+
+ENTRE facetas diferentes sempre é AND, mesmo quando a faceta individual é OR por dentro — ex.:
+País=Itália+Alemanha E Equipamento=Forno é a interseção do OR de país com o equipamento, nunca
+OR entre tudo. matchesGroupedTags já faz isso sozinho pra qualquer prefixo que não seja
+ingredient:/seasoning: (agrupa por prefixo, OR dentro do grupo, AND entre grupos) — nenhuma
+lógica nova foi criada pra generalizar País/Complexidade/Tempo/Equipamento, só GENERIC_FACET_
+DEFS ganhou `multi: true` + `combineMode: "or"` nessas quatro.
 
 Cada seção do acordeão lista só os valores presentes no resultado ATUAL (já filtrado pelas
 outras facetas do rascunho), com contagem. Nada vem pré-selecionado — o default é sempre
@@ -86,8 +92,8 @@ reaproveitando o mesmo pipeline de reset que cada seção já dispara individual
 
 ### Papel da proteína
 
-Substitui o antigo conceito de abas "Foco da receita / Também leva / Todas". É um dropdown
-com 3 opções:
+Substitui o antigo conceito de abas "Foco da receita / Também leva / Todas". É uma seção de
+seleção única (lista de rádio, dentro do modal de filtros) com 3 opções:
 - **Principal** — casa `protein:X` (a proteína é o foco real da receita).
 - **Secundário** — casa `contains:X` (a proteína aparece, mas não é o foco).
 - **Tanto faz** — default, mostra todas (principal + secundário juntas).
