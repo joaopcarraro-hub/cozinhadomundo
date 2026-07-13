@@ -37,6 +37,15 @@
   --color-text-disabled: #8d877f;
   --color-accent: #d63b20;
   --color-accent-hover: #a33f2a;
+
+  /* Altura reservada da barra de navegação inferior fixa (.bottom-nav, Bloco 2) — ponto ÚNICO
+     de ajuste, usado só pelo padding-bottom de #main (o único container de conteúdo rolável
+     do app inteiro, compartilhado por toda página via index.html). Medido ao vivo em 375px
+     com os labels reais: alguns quebram em 2 linhas ("Minhas Receitas", "Lista de Compras"),
+     dando 58.28px por tab + 6px padding-top + 6px padding-bottom + 1px border-top = 71.28px
+     (sem contar env(safe-area-inset-bottom), que é somado separadamente onde este token é
+     usado). Arredondado com folga pra 76px pra não depender de remedir se um label mudar. */
+  --bottom-nav-height: 76px;
 }
 
 * { box-sizing: border-box; }
@@ -83,8 +92,14 @@ body {
 .bottom-nav__tab.is-active { color: var(--color-accent); }
 
 /* ---------- Main ---------- */
+/* padding-bottom: era 80px fixo — cobria a barra de navegação inferior por acidente/coincidência
+   na largura desktop, mas o valor não vinha de lugar nenhum (não somava env(safe-area-inset-
+   bottom), e a media query mobile abaixo sobrescrevia pra 20px, cobrindo o fim do conteúdo com
+   a nav fixa em qualquer tela rolável — bug real, confirmado no fim da tela de receita).
+   Corrigido usando --bottom-nav-height (único ponto de ajuste, ver :root) + o mesmo
+   env(safe-area-inset-bottom) que a própria nav já soma na sua altura. */
 #main {
-  padding: 40px 48px 80px;
+  padding: 40px 48px calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));
   max-width: 980px;
   margin: 0 auto;
 }
@@ -356,7 +371,9 @@ body {
 }
 
 @media (max-width: 700px) {
-  #main { padding: 20px; }
+  /* mesma correção do bug de conteúdo tampado pela nav fixa — só top/laterais mudam pra 20px,
+     o bottom continua vindo de --bottom-nav-height (nunca um valor uniforme de novo). */
+  #main { padding: 20px 20px calc(var(--bottom-nav-height) + env(safe-area-inset-bottom)); }
 }
 
 .ingredients-list {
