@@ -100,8 +100,10 @@ da proteína (só em coleções de proteína). Cada seção mostra a contagem de
 e, se já tiver algo selecionado, um resumo (ex.: "Brasil", "2 selecionados"). Mudanças dentro
 do modal ficam em RASCUNHO — só se aplicam de fato ao tocar "Ver resultados (N)" (N = contagem
 ao vivo do resultado combinado); "Cancelar" fecha sem aplicar nada. "Limpar filtros" continua
-existindo dentro do modal, só aparece quando há pelo menos 1 filtro ativo, e aplica na hora
-(fecha o modal, não passa pelo rascunho).
+existindo dentro do modal, só aparece quando há pelo menos 1 filtro ativo, mas NÃO aplica nem
+fecha sozinho — zera só o RASCUNHO (todas as seções voltam a "Todos"/nenhuma selecionada,
+rodapé recalcula pra contagem sem filtro) e mantém o modal aberto; o usuário ainda confirma em
+"Ver resultados" ou desiste em "Cancelar", como qualquer outra mudança de faceta.
 
 Cada seção só lista os valores presentes no resultado atual, com contagem, e nada vem
 pré-selecionado (default = item "Todos" marcado). Duas famílias de multi-seleção coexistem, e

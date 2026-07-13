@@ -576,8 +576,11 @@
   // moram na tela: matchesGroupedTags, hasIngredientLikeMultiSelect, facetOptionsFromPrefix/
   // Static, readFacetStateFromTags, facetStateToTagIds continuam intocadas, só reaproveitadas.
   // Mudanças dentro do modal ficam em RASCUNHO (draftFacetState/draftProteinRole) — só se
-  // aplicam de fato ao clicar "Ver resultados" ou "Limpar filtros" (que sempre aplicou na hora,
-  // mesmo antes do Bloco 3); "Cancelar" descarta o rascunho sem tocar no estado real.
+  // aplicam de fato ao clicar "Ver resultados"; "Cancelar" descarta o rascunho sem tocar no
+  // estado real. "Limpar filtros" zera só o RASCUNHO (todas as seções voltam a "Todos"/nenhuma
+  // selecionada, rodapé recalcula pra contagem sem filtro) e MANTÉM o modal aberto — não
+  // aplica nem fecha sozinho, o usuário ainda confirma em "Ver resultados" ou desiste em
+  // "Cancelar".
   //
   // triggerWrapEl: onde o botão "Filtros" + badge é renderizado (era o antigo facetBarEl).
   // defs: GENERIC_FACET_DEFS.
@@ -591,7 +594,6 @@
   //     se esse rascunho fosse aplicado agora (mesma conta de currentItems()/facetUniverse()).
   //   onApply(): chamado DEPOIS que facetState/proteinRole já foram escritos com o rascunho —
   //     é o mesmo corpo que cada dropdown antigo já disparava no onChange, só que uma vez só.
-  //   onClear(): idêntico ao antigo botão "Limpar filtros".
   // A rede de segurança OR do Ingrediente (zero-resultado) continua vivendo só na tela de
   // resultados (renderList/renderResults, intocadas) — o modal não duplica essa UI, só deixa
   // "Ver resultados" aplicável mesmo com N=0, pra cair no mesmo empty-state+fallback de sempre.
@@ -652,6 +654,9 @@
         return defs.some((d) => (d.multi ? (draftFacetState[d.key] || []).length : draftFacetState[d.key])) || !!draftProteinRole;
       }
 
+      // Limpar filtros só zera o RASCUNHO e mantém o modal aberto (todas as seções colapsadas)
+      // — o usuário ainda precisa confirmar em "Ver resultados" ou desistir em "Cancelar",
+      // igual a qualquer outra mudança de faceta. Não aplica nada sozinho.
       function renderClearRow() {
         if (!draftIsActive()) {
           clearRowEl.innerHTML = "";
@@ -659,8 +664,12 @@
         }
         clearRowEl.innerHTML = '<button type="button" class="btn-clear-filters">Limpar filtros</button>';
         clearRowEl.querySelector(".btn-clear-filters").addEventListener("click", () => {
-          closeModal();
-          opts.onClear();
+          defs.forEach((d) => {
+            draftFacetState[d.key] = d.multi ? [] : null;
+          });
+          draftProteinRole = null;
+          openSectionKey = null;
+          renderBody();
         });
       }
 
@@ -1032,16 +1041,6 @@
           renderToolbarState();
           renderList();
         },
-        onClear: () => {
-          selectedFacetTags = [];
-          proteinRole = null;
-          ingredientOrFallback = false;
-          applyFacets();
-          syncUrl();
-          renderFacets();
-          renderToolbarState();
-          renderList();
-        },
       });
     }
 
@@ -1271,9 +1270,6 @@
         countForDraft: (draftFacetState) => facetUniverse(base.concat(facetStateToTagIds(draftFacetState, GENERIC_FACET_DEFS))).length,
         onApply: () => {
           goToTags(base.concat(facetStateToTagIds(facetState, GENERIC_FACET_DEFS)));
-        },
-        onClear: () => {
-          goToTags(base);
         },
       });
     }

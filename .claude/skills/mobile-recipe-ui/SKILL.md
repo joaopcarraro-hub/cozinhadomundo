@@ -128,8 +128,9 @@ Mudanças dentro do modal ficam em rascunho — só valem de fato ao tocar "Ver 
 as antigas abas "Foco da receita / Também leva / Todas".
 
 "Limpar filtros" (texto sublinhado, `--color-text-secondary` — nunca `--color-accent` em texto
-pequeno, falha WCAG AA) aparece dentro do modal só quando pelo menos 1 filtro está ativo, e
-aplica na hora (fecha o modal, não precisa de "Ver resultados").
+pequeno, falha WCAG AA) aparece dentro do modal só quando pelo menos 1 filtro está ativo. NÃO
+aplica nem fecha o modal — zera só o rascunho (seções voltam a "Todos", rodapé recalcula) e
+mantém o modal aberto; ainda precisa de "Ver resultados" (ou "Cancelar" pra desistir).
 
 O resto da tela de categoria/busca (cards, dropdown de ordenação, toolbar) continua na paleta
 clara antiga — só o botão "Filtros" e o modal usam os tokens novos.

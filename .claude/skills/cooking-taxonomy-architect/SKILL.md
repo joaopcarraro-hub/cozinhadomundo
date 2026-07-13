@@ -87,8 +87,9 @@ outras facetas do rascunho), com contagem. Nada vem pré-selecionado — o defau
 
 Um botão "Limpar filtros" aparece dentro do modal só quando pelo menos 1 faceta está ativa
 (nunca no estado default) e reseta todas de uma vez — País, Complexidade, Tempo, Equipamento,
-Ingrediente e Papel da proteína — aplicando na hora (fecha o modal, não passa pelo rascunho),
-reaproveitando o mesmo pipeline de reset que cada seção já dispara individualmente.
+Ingrediente e Papel da proteína. Zera só o RASCUNHO (não aplica, não fecha o modal) — o rodapé
+"Ver resultados (N)" recalcula pra contagem sem filtro nenhum, e o usuário ainda precisa tocar
+"Ver resultados" (ou "Cancelar" pra desistir de tudo, inclusive da limpeza).
 
 ### Papel da proteína
 
