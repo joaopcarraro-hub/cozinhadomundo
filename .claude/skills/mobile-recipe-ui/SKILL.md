@@ -121,23 +121,25 @@ resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexist
   ativo (equivalente ao "Todos" marcado da versão em lista). Mesma lógica de OR-união dos
   demais checkbox — só muda a apresentação (ver renderTileSectionBody em app.js, def.layout
   === "tiles").
-  - Ícones reais em `icons/equipment/` (7 de 9 valores — Processador e Sous Vide ficam sem
-    ícone, tile só com label+contagem, sem espaço reservado). 4 SVG (SVGRepo: forno,
-    liquidificador, batedeira, micro-ondas) — `fill="currentColor"` no arquivo, injetados
-    INLINE no DOM (não `<img src>`, senão currentColor não herda a cor do CSS). Recolorem com
-    o estado do tile: `--color-text-disabled` parado, `--color-accent` selecionado. O texto do
-    SVG fica EMBUTIDO como string em `EQUIPMENT_SVG_MARKUP` (app.js) — não é carregado via
-    `fetch()`. Motivo: um `fetch()` é assíncrono, e abrir o modal antes dele terminar (ex.:
-    usuário indo direto no filtro logo após o app carregar) deixava o tile sem ícone até uma
-    re-renderização tardia — bug real, confirmado por screenshot. Os arquivos em
-    `icons/equipment/*.svg` continuam existindo como fonte/atribuição; o texto embutido é
-    mantido idêntico a eles (checagem byte-a-byte antes de cada commit que tocar nisso). 3 PNG
-    (Icons8: air-fryer, panela de pressão, churrasqueira) — `<img src>` direto (sem essa
-    corrida: o browser exibe assim que o arquivo chega, sem depender de JS) com
-    `filter: invert(1)` (traço preto vira traço claro); NÃO recolorem no estado selecionado
-    (limitação de raster — a borda do tile já indica seleção sozinha).
-  - Créditos obrigatórios (licença Icons8) + recomendados (SVG Repo) na tela de Minhas
-    Receitas (buildIconCreditsEl em app.js) — link de texto pra icons8.com e svgrepo.com.
+  - Ícones reais em `icons/equipment/` (9 de 9 valores — todo tile tem ícone). 6 SVG
+    (SVGRepo: forno, liquidificador, batedeira, micro-ondas; fonte não identificada:
+    processador, sous vide) — `fill="currentColor"` no arquivo, injetados INLINE no DOM (não
+    `<img src>`, senão currentColor não herda a cor do CSS). Recolorem com o estado do tile:
+    `--color-text-disabled` parado, `--color-accent` selecionado. O texto do SVG fica EMBUTIDO
+    como string em `EQUIPMENT_SVG_MARKUP` (app.js) — não é carregado via `fetch()`. Motivo: um
+    `fetch()` é assíncrono, e abrir o modal antes dele terminar (ex.: usuário indo direto no
+    filtro logo após o app carregar) deixava o tile sem ícone até uma re-renderização tardia —
+    bug real, confirmado por screenshot, corrigido eliminando o fetch por completo. Os arquivos
+    em `icons/equipment/*.svg` continuam existindo como fonte/atribuição; o texto embutido é
+    mantido idêntico a eles, ignorando espaço em branco entre tags (checagem antes de cada
+    commit que tocar nisso). 3 PNG (Icons8: air-fryer, panela de pressão, churrasqueira) —
+    `<img src>` direto (sem essa corrida: o browser exibe assim que o arquivo chega, sem
+    depender de JS) com `filter: invert(1)` (traço preto vira traço claro); NÃO recolorem no
+    estado selecionado (limitação de raster — a borda do tile já indica seleção sozinha).
+  - Créditos na tela de Minhas Receitas (buildIconCreditsEl em app.js): obrigatório (licença
+    Icons8) + recomendado (SVG Repo), link de texto pra icons8.com e svgrepo.com, mais uma
+    linha genérica pros 2 SVG de fonte não identificada (processador, sous vide) — tratados
+    como exigindo atribuição por segurança até a origem ser confirmada.
 - Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) + select de
   "+ adicionar", combinando em AND entre si — única faceta com essa lógica (e com fallback OR
   na tela de resultados quando zera).
