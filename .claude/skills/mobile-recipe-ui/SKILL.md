@@ -118,50 +118,67 @@ filtros ativos) no lugar de onde a antiga barra de dropdowns sempre-visível fic
 botão, abre um modal cheio de tela (`--color-bg`) com "Cancelar" / título "Filtros" à esquerda/
 centro, e "Ver resultados (N)" fixo no rodapé (pill `--color-accent`, N = contagem ao vivo).
 
-Dentro, 7 seções em acordeão — País, Complexidade, Tempo, Equipamento, Proteína, Ingrediente,
-Papel da proteína (só em coleções de proteína) — cada uma com contagem de opções no cabeçalho
-e um resumo do valor já selecionado, se houver. Três UIs de multi-seleção coexistem:
-- Complexidade, Tempo: lista de CHECKBOX (`accent-color: --color-accent`), com "Todos" como
-  item especial no topo que, ao marcar, limpa a seleção daquela faceta — não soma com os
-  demais valores. Os outros valores combinam em OR puro entre si (união).
-- País, Equipamento, Proteína: grade de tiles (3 colunas, 2 em telas ≤380px) em
+Dentro, 9 seções em acordeão — País, Complexidade, Tempo, Equipamento, Proteína, Refeição,
+Tipo de prato, Ingrediente, Papel da proteína (só em coleções de proteína) — cada uma com
+contagem de opções no cabeçalho e um resumo do valor já selecionado, se houver. Três UIs de
+multi-seleção coexistem:
+- Complexidade, Tempo, Tipo de prato: lista de CHECKBOX (`accent-color: --color-accent`), com
+  "Todos" como item especial no topo que, ao marcar, limpa a seleção daquela faceta — não soma
+  com os demais valores. Os outros valores combinam em OR puro entre si (união). Tipo de prato
+  (`dish_type:`, 12 valores) foi pra lista por ter muitos valores textuais — mesma regra que já
+  orientou Equipamento (poucos/iconáveis) virar grade vs. Ingrediente (muitos) ficar em lista.
+- País, Equipamento, Proteína, Refeição: grade de tiles (3 colunas, 2 em telas ≤380px) em
   vez de lista de checkbox (`renderTileSectionBody` em app.js, `def.layout === "tiles"`,
-  reaproveitado pelas três facetas — só o ícone difere via `def.tileIcon(tagId)`, plugável por
-  faceta). Cada tile: ícone em cima (se houver), label no meio, contagem embaixo em
+  reaproveitado pelas quatro facetas — só o ícone difere via `def.tileIcon(tagId)`, plugável
+  por faceta). Cada tile: ícone em cima (se houver), label no meio, contagem embaixo em
   `--color-text-disabled` (mesmo token que as outras seções já usavam pra contagem —
   `--color-text-muted` não existe em DESIGN-TOKENS.md). Tile marcado ganha borda 2px
   `--color-accent`. Sem tile "Todos" — nenhum tile marcado = nenhum filtro ativo (equivalente
   ao "Todos" marcado da versão em lista). Mesma lógica de OR-união dos demais checkbox — só
   muda a apresentação.
-  - Proteína (protein:, NOVA — não confundir com "Papel da proteína" abaixo, que já existia e
+  - Proteína (protein:, não confundir com "Papel da proteína" abaixo, que já existia e
     continua igual): 8 valores (Frango, Carne Bovina, Suíno, Aves, Cordeiro, Peixe, Frutos do
     Mar, Ovo), disponível em QUALQUER coleção/busca (renderCategory e renderBusca), não só
-    dentro de um hub de proteína. `tileIcon: noIconTileIcon` — sempre devolve `""`, sem ícone
-    nesta rodada (label+contagem só, mesmo tratamento que Processador/Sous Vide tiveram antes
-    do ícone real; ícone fica pra rodada futura).
+    dentro de um hub de proteína. Contagem usa só `protein:X` (protagonista) — nunca soma com
+    `contains:X` (secundário), verificado por código e por teste (o total de `protein:suino`
+    globalmente bate exatamente com `basePrimary.length` do hub Suínos: 27 == 27). `tileIcon:
+    noIconTileIcon` — sempre devolve `""`, sem ícone nesta rodada (label+contagem só, mesmo
+    tratamento que Processador/Sous Vide tiveram antes do ícone real; ícone fica pra rodada
+    futura).
+  - Refeição (`course:`, 5 valores: Prato Principal, Entrada, Acompanhamento, Sobremesa, Café
+    da Manhã): cobertura de 161/398 receitas (40,5%). Mesmo `tileIcon: noIconTileIcon` (sem
+    ícone nesta rodada) e mesma lógica OR/grade de Proteína.
+  - "Tipo de prato" (`dish_type:`, 12 valores em uso) e "Restrições" (`diet:`) foram medidos
+    juntos antes de implementar: `dish_type:` tinha cobertura de 166/398 (41,7%) e entrou nesta
+    rodada; `diet:` tinha só 99/398 (24,9%) e um ÚNICO valor (`diet:vegetariana`) — abaixo do
+    limiar combinado com o usuário (30%), NÃO entrou, fica pro backlog de expansão de dados.
   - País: ícone = EMOJI DE BANDEIRA (`COUNTRY_FLAG_EMOJI` em app.js, `country:*` -> caractere
     Unicode padrão, sem arquivo, sem licença). NÃO recolore por estado (emoji não herda
     `currentColor`) — a borda do tile já indica seleção sozinha, mesmo tratamento dos PNG de
     Equipamento (`.filter-tile__icon--emoji`, só `font-size`, sem regra de cor).
-  - Equipamento: ícones reais em `icons/equipment/` (9 de 9 valores — todo tile tem ícone). 6 SVG
-    (SVGRepo: forno, liquidificador, batedeira, micro-ondas; autorais: processador, sous vide)
-    — `fill="currentColor"` no arquivo, injetados INLINE no DOM (não
-    `<img src>`, senão currentColor não herda a cor do CSS). Recolorem com o estado do tile:
-    `--color-text-disabled` parado, `--color-accent` selecionado. O texto do SVG fica EMBUTIDO
-    como string em `EQUIPMENT_SVG_MARKUP` (app.js) — não é carregado via `fetch()`. Motivo: um
-    `fetch()` é assíncrono, e abrir o modal antes dele terminar (ex.: usuário indo direto no
-    filtro logo após o app carregar) deixava o tile sem ícone até uma re-renderização tardia —
-    bug real, confirmado por screenshot, corrigido eliminando o fetch por completo. Os arquivos
-    em `icons/equipment/*.svg` continuam existindo como fonte/atribuição; o texto embutido é
+  - Equipamento: ícones reais em `icons/equipment/` (9 de 9 valores — todo tile tem ícone,
+    TODOS SVG, nenhum PNG restante). 4 SVG de SVGRepo (forno, liquidificador, batedeira,
+    micro-ondas) + 5 autorais (processador, sous vide, air-fryer, panela-de-pressao,
+    churrasqueira — os 3 últimos eram PNG do Icons8 com `filter: invert(1)` como aproximação,
+    substituídos por SVG real nesta rodada). Todos com `fill="currentColor"` no arquivo,
+    injetados INLINE no DOM (não `<img src>`, senão currentColor não herda a cor do CSS).
+    Recolorem com o estado do tile: `--color-text-disabled` parado, `--color-accent`
+    selecionado — os 3 que eram PNG agora recolorem também, coisa que raster nunca conseguia
+    fazer (limitação eliminada, não só contornada). O texto do SVG fica EMBUTIDO como string em
+    `EQUIPMENT_SVG_MARKUP` (app.js) — não é carregado via `fetch()`. Motivo: um `fetch()` é
+    assíncrono, e abrir o modal antes dele terminar (ex.: usuário indo direto no filtro logo
+    após o app carregar) deixava o tile sem ícone até uma re-renderização tardia — bug real,
+    confirmado por screenshot, corrigido eliminando o fetch por completo. Os arquivos em
+    `icons/equipment/*.svg` continuam existindo como fonte/atribuição; o texto embutido é
     mantido idêntico a eles, ignorando espaço em branco entre tags (checagem antes de cada
-    commit que tocar nisso). 3 PNG (Icons8: air-fryer, panela de pressão, churrasqueira) —
-    `<img src>` direto (sem essa corrida: o browser exibe assim que o arquivo chega, sem
-    depender de JS) com `filter: invert(1)` (traço preto vira traço claro); NÃO recolorem no
-    estado selecionado (limitação de raster — a borda do tile já indica seleção sozinha).
-  - Créditos na tela de Minhas Receitas (buildIconCreditsEl em app.js): obrigatório (licença
-    Icons8) + recomendado (SVG Repo), link de texto pra icons8.com e svgrepo.com. Processador,
-    Sous Vide e o ícone da aba Preparos são autorais (confirmado com o usuário) — sem fonte
-    externa a creditar, não entram nesta lista.
+    commit que tocar nisso). `.filter-tile__icon--png`/`EQUIPMENT_PNG_SRC` foram REMOVIDOS do
+    CSS/app.js — não têm mais uso.
+  - Créditos na tela de Minhas Receitas (buildIconCreditsEl em app.js): só SVG Repo agora (link
+    de texto pra svgrepo.com), recomendado mas não obrigatório pela licença deles. Icons8 foi
+    REMOVIDO por completo — os 3 PNG que exigiam essa atribuição viraram SVG autoral, nenhum
+    ícone do app usa mais Icons8. Processador, Sous Vide, air-fryer, panela-de-pressao,
+    churrasqueira e o ícone da aba Preparos são autorais (confirmado com o usuário) — sem fonte
+    externa a creditar, não entram na lista de créditos.
 - Ingrediente: chips removíveis (`--color-surface-elevated`, × em `--color-accent`) continuam
   iguais acima da grade; o antigo `<select>` de "+ adicionar" virou PILOTO DE REDESENHO — grade
   de tiles MAIS DENSA que País/Equipamento (`renderIngredientTileSectionBody` em app.js,

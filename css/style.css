@@ -726,12 +726,10 @@ body.filter-modal-open { overflow: hidden; }
 .filter-tile__icon--svg { color: var(--color-text-disabled); }
 .filter-tile.is-selected .filter-tile__icon--svg { color: var(--color-accent); }
 .filter-tile__icon--svg svg { width: 100%; height: 100%; display: block; }
-/* PNG (Icons8, traço preto sobre transparente) — invertido pra virar traço claro sobre o fundo
-   escuro. NÃO recolore no estado selecionado (limitação de raster) — a borda do tile já indica
-   seleção sozinha. */
-.filter-tile__icon--png { object-fit: contain; filter: invert(1); }
 /* Emoji (bandeira de País, ingrediente) — caractere Unicode, não recolore por estado (emoji não
-   herda currentColor); a borda do tile já indica seleção sozinha, mesmo tratamento do PNG acima. */
+   herda currentColor); a borda do tile já indica seleção sozinha. .filter-tile__icon--png
+   (PNG Icons8, filter:invert(1)) foi removida — os 3 últimos ícones raster de Equipamento
+   viraram SVG real, nenhum PNG resta no app. */
 .filter-tile__icon--emoji { font-size: 1.5rem; line-height: 1; }
 
 /* Piloto de redesenho — Ingrediente (def.layout "ingredient-tiles"). Grade mais densa que

@@ -60,21 +60,27 @@ filtros em acordeão (substituiu a antiga barra de dropdowns sempre-visível —
 `.claude/skills/mobile-recipe-ui/SKILL.md` pro detalhe visual), refinando in-place (sem navegar
 de rota, sem camadas sequenciais/funil, mudanças em rascunho até "Ver resultados"):
 
-- País, Complexidade, Tempo, Equipamento, Proteína: OR PURO entre os valores da MESMA faceta
-  (união — País = Itália + Alemanha mostra receitas de qualquer um dos dois). Nunca precisa de
-  fallback aqui, porque OR nunca zera ao adicionar mais um valor. Equipamento é multi-valorado
-  por trás (uma receita pode ter vários equipment: simultaneamente, ex: forno E air-fryer) — a
-  faceta já reflete isso naturalmente, sem tratamento especial. Derivado de `steps` (não de
-  `ingredients`) via data/derivation-dict.js (EQUIPMENT). País/Complexidade/Tempo usam
-  checkbox em lista, com "Todos" como item especial que limpa a faceta (não soma com os
-  demais); Equipamento e Proteína são grade de tiles (ícone/label/contagem, Proteína só
-  label+contagem por ora — ícone é rodada futura), mesma lógica de estado, sem tile "Todos"
-  (nenhum tile marcado = nenhum filtro ativo). Ver `.claude/skills/mobile-recipe-ui/SKILL.md`.
+- País, Complexidade, Tempo, Equipamento, Proteína, Refeição, Tipo de prato: OR PURO entre os
+  valores da MESMA faceta (união — País = Itália + Alemanha mostra receitas de qualquer um dos
+  dois). Nunca precisa de fallback aqui, porque OR nunca zera ao adicionar mais um valor.
+  Equipamento é multi-valorado por trás (uma receita pode ter vários equipment: simultaneamente,
+  ex: forno E air-fryer) — a faceta já reflete isso naturalmente, sem tratamento especial.
+  Derivado de `steps` (não de `ingredients`) via data/derivation-dict.js (EQUIPMENT). Refeição
+  usa `course:` (5 valores: principal, entrada, acompanhamento, sobremesa, café da manhã) e
+  Tipo de prato usa `dish_type:` (12 valores em uso) — ambas já existiam como tags (injetadas
+  por padrão de categoria em `js/tagmodel.js` pra maioria dos catId, mais tags manuais por
+  receita em casos como `contemporaneos`), só ganharam faceta de filtro nesta rodada.
+  Complexidade/Tempo/Tipo de prato usam checkbox em lista, com "Todos" como item especial que
+  limpa a faceta (não soma com os demais) — Tipo de prato foi pra lista por ter muitos valores
+  textuais, não poucos/iconáveis. Equipamento, Proteína e Refeição são grade de tiles
+  (ícone/label/contagem, Proteína e Refeição só label+contagem por ora — ícone é rodada
+  futura), mesma lógica de estado, sem tile "Todos" (nenhum tile marcado = nenhum filtro
+  ativo). Ver `.claude/skills/mobile-recipe-ui/SKILL.md`.
 - Ingrediente é a única faceta com combineMode "and" — os valores selecionados combinam em AND
   entre si (a receita precisa conter todos). Se a combinação atual resultar em zero receitas,
   a UI oferece um fallback pontual para OR (qualquer um dos selecionados), mantendo as demais
-  facetas ativas (País, Complexidade, Tempo, Equipamento, Proteína, Papel da proteína)
-  aplicadas normalmente — o fallback nunca ignora os outros filtros.
+  facetas ativas (País, Complexidade, Tempo, Equipamento, Proteína, Refeição, Tipo de prato,
+  Papel da proteína) aplicadas normalmente — o fallback nunca ignora os outros filtros.
 - Proteína (protein:, NOVA — não confundir com Papel da proteína abaixo): filtra QUAL proteína
   (Frango, Boi, Suíno, Ave, Cordeiro, Peixe, Frutos do Mar, Ovo), disponível em QUALQUER
   coleção/busca, não só dentro de um hub de proteína — eixo completamente independente de
@@ -92,8 +98,15 @@ ENTRE facetas diferentes sempre é AND, mesmo quando a faceta individual é OR p
 País=Itália+Alemanha E Equipamento=Forno é a interseção do OR de país com o equipamento, nunca
 OR entre tudo. matchesGroupedTags já faz isso sozinho pra qualquer prefixo que não seja
 ingredient:/seasoning: (agrupa por prefixo, OR dentro do grupo, AND entre grupos) — nenhuma
-lógica nova foi criada pra generalizar País/Complexidade/Tempo/Equipamento, só GENERIC_FACET_
-DEFS ganhou `multi: true` + `combineMode: "or"` nessas quatro.
+lógica nova foi criada pra generalizar as facetas OR (País/Complexidade/Tempo/Equipamento/
+Proteína/Refeição/Tipo de prato), só GENERIC_FACET_DEFS ganhou `multi: true` + `combineMode:
+"or"` em cada uma.
+
+"Restrições" (`diet:`) foi MEDIDA mas não virou faceta nesta rodada: cobertura de 99/398
+receitas (24,9%) e um ÚNICO valor em uso (`diet:vegetariana`) — abaixo do limiar de utilidade
+combinado com o usuário (30%), e um valor só não justificaria uma seção própria no acordeão
+(viraria um checkbox binário isolado). Fica registrado como pendência de expansão de dados: se
+`diet:vegana`/outros valores forem adicionados e a cobertura subir, reavaliar.
 
 Cada seção do acordeão lista só os valores presentes no resultado ATUAL (já filtrado pelas
 outras facetas do rascunho), com contagem. Nada vem pré-selecionado — o default é sempre
@@ -101,7 +114,7 @@ outras facetas do rascunho), com contagem. Nada vem pré-selecionado — o defau
 
 Um botão "Limpar filtros" aparece dentro do modal só quando pelo menos 1 faceta está ativa
 (nunca no estado default) e reseta todas de uma vez — País, Complexidade, Tempo, Equipamento,
-Proteína, Ingrediente e Papel da proteína. Zera só o RASCUNHO (não aplica, não fecha o modal) — o rodapé
+Proteína, Refeição, Tipo de prato, Ingrediente e Papel da proteína. Zera só o RASCUNHO (não aplica, não fecha o modal) — o rodapé
 "Ver resultados (N)" recalcula pra contagem sem filtro nenhum, e o usuário ainda precisa tocar
 "Ver resultados" (ou "Cancelar" pra desistir de tudo, inclusive da limpeza).
 
