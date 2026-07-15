@@ -176,9 +176,11 @@ body {
 .subgroup-title:first-child { margin-top: 0; }
 
 /* ---------- Recipe card ---------- */
-/* Card vertical: cabeçalho (thumb + título + ações) e, abaixo, largura cheia pra
-   descrição/tags/meta/CTA — evita o problema de espremer o texto numa coluna estreita
-   ao lado de vários elementos de largura fixa (bug relatado no mobile). */
+/* Card vertical: cabeçalho (thumb + título + chevron) e, abaixo, largura cheia pra
+   descrição/tags/meta — evita o problema de espremer o texto numa coluna estreita
+   ao lado de vários elementos de largura fixa (bug relatado no mobile). Sem CTA/ações
+   próprias (docs/DESIGN-TOKENS.md): o card inteiro é clicável, as 3 ações vivem só na tela
+   de receita (.recipe-page-actions). */
 .recipe-card {
   background: var(--bg-panel);
   border: 1px solid var(--line);
@@ -202,57 +204,19 @@ body {
   align-items: start;
 }
 
-.recipe-card-actions {
+/* Redesenho (docs/DESIGN-TOKENS.md): os 3 botões de ação (já feito/favoritar/quero fazer) e a
+   barra de CTA "Ver receita" saíram do card — só existem agora em .recipe-page-actions (tela
+   de receita própria), que já os tinha antes desta mudança, sem alteração nenhuma lá. O card
+   inteiro é a área de toque (click no elemento raiz); o chevron abaixo é só o indício visual
+   de que é clicável. */
+.recipe-card__chevron {
   display: flex;
   align-items: center;
-  gap: 4px;
-}
-
-.recipe-header .made-toggle {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: 2px solid var(--color-border); /* era --gold-soft: borda padrão/estática */
-  background: transparent;
+  justify-content: center;
   flex-shrink: 0;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  color: transparent;
-  font-size: 0.9rem;
+  align-self: center;
 }
-.recipe-header .made-toggle.made {
-  background: var(--green);
-  border-color: var(--green);
-  color: var(--ink); /* era white (palavra-chave): preenchimento sólido, mesmo padrão */
-}
-
-.recipe-header .favorite-toggle {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: transparent;
-  flex-shrink: 0;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--line);
-  font-size: 1.3rem;
-  line-height: 1;
-}
-.recipe-header .favorite-toggle.favorite { color: var(--gold); }
-
-.recipe-header .wanttocook-toggle {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: none;
-  background: transparent;
-  flex-shrink: 0;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.05rem;
-  line-height: 1;
-  opacity: 0.35;
-  filter: grayscale(1);
-}
-.recipe-header .wanttocook-toggle.active { opacity: 1; filter: none; }
+.recipe-card__chevron-icon { width: 18px; height: 18px; color: var(--color-text-disabled); }
 
 .recipe-thumb {
   width: 48px;
@@ -330,45 +294,27 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Metadados (tempo, complexidade, porções) — ícone outline monocromático + valor, mesmo
+   princípio visual do modal de filtro (--color-text-disabled pro elemento neutro/inativo,
+   --color-text-secondary pro texto de apoio). Sem pill/fundo — só alinhados com espaçamento
+   consistente entre os 3. */
 .recipe-meta {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
   margin-top: 12px;
 }
-.recipe-meta-chip {
+.recipe-meta-item {
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--bg);
-  color: var(--ink-soft);
+  gap: 6px;
+  color: var(--color-text-secondary);
   font-size: 0.78rem;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   white-space: nowrap;
 }
-
-.recipe-card-cta {
-  margin-top: 14px;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 999px;
-  /* borda cheia --color-accent (era --gold-soft): 1px hairline, contraste de borda passa
-     fácil (regra é 3:1 pra componente de UI, não a regra de texto). Fundo: mesmo tom de
-     acento em baixa opacidade da rgba(gold,0.08) original, só trocando a cor-base. Texto:
-     era --gold — 14.4px bold ainda fica abaixo do limiar 18px+ de ghost-text, então
-     --color-text-primary no lugar (CTA de ação real, texto precisa ler claro). */
-  border: 1px solid var(--color-accent);
-  background: rgba(214, 59, 32, 0.08);
-  color: var(--color-text-primary);
-  padding: 0 16px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: bold;
-}
+.recipe-meta-item__icon { width: 15px; height: 15px; color: var(--color-text-disabled); flex-shrink: 0; }
 
 @media (max-width: 700px) {
   /* mesma correção do bug de conteúdo tampado pela nav fixa — só top/laterais mudam pra 20px,

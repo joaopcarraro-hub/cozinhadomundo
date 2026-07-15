@@ -26,6 +26,9 @@
     dots: '<circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/>',
     filter: '<path d="M4 5h16l-6.5 7.5V19l-3 1.6v-8.1Z"/>',
     chevronDown: '<path d="M6 9l6 6 6-6"/>',
+    chevronRight: '<path d="M9 6l6 6-6 6"/>',
+    clock: '<circle cx="12" cy="12" r="8"/><path d="M12 7.5v4.5l3 2"/>',
+    gauge: '<path d="M6 18v-4"/><path d="M12 18V9"/><path d="M18 18V6"/>',
   };
   function iconSvg(key, className) {
     return '<svg class="' + className + '" ' + ICON_SVG_ATTRS + ">" + ICONS[key] + "</svg>";
@@ -1707,6 +1710,11 @@
   }
 
   // ---------- Card de receita (usado na lista de categoria e na busca) ----------
+  // Redesenho do card (docs/DESIGN-TOKENS.md): os 3 ícones de ação (já feito/favoritar/quero
+  // fazer) e a barra de CTA "Ver receita" saíram do card — o card inteiro já é a área de
+  // toque (addEventListener de click no elemento raiz, como antes), só com um chevron sutil
+  // no canto indicando que é clicável. As 3 ações não desapareceram: já existiam (e continuam
+  // existindo, sem mudança) na tela de receita própria (renderReceita, .recipe-page-actions).
   function renderRecipeCard(item, opts) {
     opts = opts || {};
     const recipe = item.recipe;
@@ -1714,14 +1722,11 @@
     card.className = "recipe-card";
     card.dataset.recipeName = recipe.name;
 
-    const isMade = Storage.isMade(item.id);
-    if (isMade) card.classList.add("made-card");
-
     card.addEventListener("click", () => {
       Router.toReceita(item.id, opts.fromCollectionId);
     });
 
-    // ---------- header: thumb | título+origem | ações ----------
+    // ---------- header: thumb | título+origem | indício de clique ----------
     const cardHeader = document.createElement("div");
     cardHeader.className = "recipe-header";
 
@@ -1741,50 +1746,13 @@
       (opts.catLabel ? '<div class="cat-chip">' + opts.catLabel + "</div>" : "") +
       (recipe.origin ? '<div class="origin">' + recipe.origin + "</div>" : "");
 
-    const actions = document.createElement("div");
-    actions.className = "recipe-card-actions";
-
-    const toggle = document.createElement("button");
-    toggle.className = "made-toggle" + (isMade ? " made" : "");
-    toggle.title = "Marcar como já feito";
-    toggle.textContent = "✓";
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const nowMade = Storage.toggleMade(item.id);
-      toggle.classList.toggle("made", nowMade);
-      card.classList.toggle("made-card", nowMade);
-      if (refreshActiveCounts) refreshActiveCounts();
-    });
-
-    const favToggle = document.createElement("button");
-    const isFav = Storage.isFavorite(item.id);
-    favToggle.className = "favorite-toggle" + (isFav ? " favorite" : "");
-    favToggle.title = "Marcar como favorito";
-    favToggle.textContent = "★";
-    favToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const nowFav = Storage.toggleFavorite(item.id);
-      favToggle.classList.toggle("favorite", nowFav);
-    });
-
-    const wantToggle = document.createElement("button");
-    const isWant = Storage.isWantToCook(item.id);
-    wantToggle.className = "wanttocook-toggle" + (isWant ? " active" : "");
-    wantToggle.title = "Quero fazer";
-    wantToggle.textContent = "🔖";
-    wantToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const now = Storage.toggleWantToCook(item.id);
-      wantToggle.classList.toggle("active", now);
-    });
-
-    actions.appendChild(toggle);
-    actions.appendChild(favToggle);
-    actions.appendChild(wantToggle);
+    const chevron = document.createElement("span");
+    chevron.className = "recipe-card__chevron";
+    chevron.innerHTML = iconSvg("chevronRight", "recipe-card__chevron-icon");
 
     cardHeader.appendChild(thumb);
     cardHeader.appendChild(titleBlock);
-    cardHeader.appendChild(actions);
+    cardHeader.appendChild(chevron);
     card.appendChild(cardHeader);
 
     // ---------- descrição (resumo, 2 linhas) ----------
@@ -1811,21 +1779,24 @@
       card.appendChild(tagsWrap);
     }
 
-    // ---------- meta (tempo, rendimento, dificuldade) em chips ----------
+    // ---------- meta (tempo, complexidade, porções) — ícone outline monocromático + valor ----------
     const meta = document.createElement("div");
     meta.className = "recipe-meta";
     let metaHtml = "";
-    if (recipe.time && recipe.time.total) metaHtml += '<span class="recipe-meta-chip">⏱ ' + recipe.time.total + "</span>";
-    if (recipe.yield) metaHtml += '<span class="recipe-meta-chip">🍽 ' + recipe.yield + "</span>";
-    if (recipe.difficulty) metaHtml += '<span class="recipe-meta-chip">📊 ' + recipe.difficulty + "</span>";
+    if (recipe.time && recipe.time.total) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("clock", "recipe-meta-item__icon") + "<span>" + recipe.time.total + "</span></span>";
+    }
+    if (recipe.difficulty) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("gauge", "recipe-meta-item__icon") + "<span>" + recipe.difficulty + "</span></span>";
+    }
+    if (recipe.yield) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("bowl", "recipe-meta-item__icon") + "<span>" + recipe.yield + "</span></span>";
+    }
     meta.innerHTML = metaHtml;
     card.appendChild(meta);
-
-    // ---------- CTA ----------
-    const cta = document.createElement("div");
-    cta.className = "recipe-card-cta";
-    cta.innerHTML = "<span>Ver receita</span><span aria-hidden=\"true\">▶</span>";
-    card.appendChild(cta);
 
     return card;
   }

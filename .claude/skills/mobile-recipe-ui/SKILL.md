@@ -92,10 +92,34 @@ Regras:
 - título até 2 linhas
 - descrição até 2 linhas
 - tags limitadas
-- metadados em chips
-- CTA claro: Ver receita
-- ações organizadas no topo ou rodapé
+- metadados com ícone outline + valor (não chip/pill)
+- sem CTA nem ações próprias — o card inteiro é a área de toque
 - área de toque confortável
+
+### Redesenho (docs/DESIGN-TOKENS.md) — card sem ações nem CTA
+
+`renderRecipeCard` (app.js) é a função ÚNICA compartilhada por 5 pontos de chamada — 4 telas
+distintas: `renderCategory` (categoria/coleção, 2 call sites por causa dos 2 modos de
+ordenação), `renderBusca` (busca global), `renderGrupo` (resultado de busca por ingrediente
+dentro de um hub) e `renderListView` (Favoritos/Quero fazer/Histórico). Mudar a função muda as
+5 de uma vez, sem duplicação.
+
+Removido do card: os 3 ícones de ação (já feito ✓ / favoritar ★ / quero fazer 🔖,
+`.recipe-card-actions`) e a barra de CTA "Ver receita" (`.recipe-card-cta`) como elemento
+próprio. As 3 ações NÃO desapareceram — já existiam antes desta mudança em
+`.recipe-page-actions` na tela de receita própria (`renderReceita`), sem nenhuma alteração lá.
+O card inteiro continua sendo a área de toque (mesmo `card.addEventListener("click", ...)` de
+sempre); no lugar da coluna de ações, um `chevronRight` pequeno e monocromático
+(`--color-text-disabled`, `.recipe-card__chevron`) indica sutilmente que é clicável, sem
+precisar ser um botão grande.
+
+Metadados (tempo, complexidade, porções — nessa ordem) trocaram de chip/pill emoji
+(`.recipe-meta-chip`) pra ícone outline monocromático + valor (`.recipe-meta-item`,
+`clock`/`gauge`/`bowl` no objeto `ICONS` compartilhado do topo do arquivo — mesmo sistema
+stroke-based `ICON_SVG_ATTRS` da nav inferior/tiles da home), alinhados com espaçamento
+consistente (`gap: 16px`), sem fundo/pill. `--color-text-disabled` pro ícone,
+`--color-text-secondary` pro valor — mesmo par de tokens já usado nos metadados do modal de
+filtro. Imagem, título, origem/país e chips de tag (país/tipo) não mudaram.
 
 ## Filtros e chips
 
