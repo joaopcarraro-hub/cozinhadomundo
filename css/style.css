@@ -1014,6 +1014,9 @@ body.filter-modal-open { overflow: hidden; }
 
 .recipe-page-actions { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
 .action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   min-height: 44px;
   padding: 0 18px;
   border-radius: 999px;
@@ -1026,9 +1029,12 @@ body.filter-modal-open { overflow: hidden; }
 }
 .action-btn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); } /* era #fff */
 
-/* Favoritar na tela de receita é só o ícone de coração — sem pill/fundo/texto, mesmo
-   tratamento visual do coração do card (contorno --color-text-disabled parado, preenchido
-   --color-accent via .is-favorite + .recipe-heart-icon, ver regra acima). */
+/* Favoritar na tela de receita troca de ESTRUTURA ao alternar, não só de cor: não favoritado
+   usa .action-btn (mesma pill de "Marcar como feita", com o coração em contorno + texto
+   "Favoritar" dentro, layout inline-flex acima cuida do alinhamento ícone+texto); favoritado
+   troca pra esta classe — pill some por completo, sobra só o ícone preenchido --color-accent,
+   sem borda/fundo, mesmo tratamento visual do coração do card (.is-favorite +
+   .recipe-heart-icon, ver regra acima). */
 .recipe-page-heart {
   display: flex;
   align-items: center;

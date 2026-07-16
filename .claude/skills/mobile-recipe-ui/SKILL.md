@@ -122,13 +122,25 @@ Favoritar virou coração (`HEART_ICON_SVG`, definido perto de `iconSvg()` em ap
 vazio `--color-text-disabled` parado, preenchido `--color-accent` quando favoritado. É um ícone
 "multi-estado" que não usa o sistema genérico `ICON_SVG_ATTRS`/`ICONS` (que tem `fill="none"`
 fixo): o preenchimento troca via classe CSS (`.recipe-heart-icon` base + `.is-favorite` no
-ancestral controla `fill`/`stroke` via seletor descendente), não via troca de ícone. No card, o
-coração é um botão isolado sem texto (`.recipe-card__heart`). Na tela de receita, TAMBÉM é só o
-ícone — sem pill, sem fundo, sem texto "Favoritar"/"Favorito" visível (`.recipe-page-heart`,
-classe própria, NÃO usa `.action-btn`/`.active` — aquilo é só pro botão "Marcar como feita", que
-continua pill preenchida sem mudança). `aria-label` ("Favoritar" / "Favoritado") mantém
-acessibilidade pra leitor de tela mesmo sem texto visível. A classe `.is-favorite` é a mesma nos
-dois lugares (card e tela de receita), controlando o preenchimento do ícone via CSS.
+ancestral controla `fill`/`stroke` via seletor descendente), não via troca de ícone.
+
+No card, o coração é um botão isolado sem texto (`.recipe-card__heart`), sempre no mesmo formato
+— só a cor do preenchimento muda com `.is-favorite`.
+
+Na tela de receita (`renderReceita`), o botão de favoritar troca de ESTRUTURA inteira ao
+alternar, não só de cor (`renderFavBtn(fav)` em app.js recria `className`+`innerHTML` do
+elemento a cada clique):
+- Não favoritado: pill igual à de "Marcar como feita" — reaproveita a própria classe
+  `.action-btn` (mesma borda/padding/formato, sem inventar uma classe nova), contendo o coração
+  em contorno + texto "Favoritar" dentro (`.action-btn` ganhou `display: inline-flex;
+  align-items: center; gap: 8px` pra alinhar ícone+texto lado a lado — antes só tinha texto).
+- Favoritado: a pill inteira some (troca pra `.recipe-page-heart is-favorite`, sem
+  `.action-btn`) — sobra só o ícone preenchido `--color-accent`, sem borda/fundo, mesmo
+  tratamento visual do coração do card.
+`aria-label` ("Favoritar" / "Favoritado") atualizado a cada troca, nos dois estados, mantendo
+acessibilidade pra leitor de tela mesmo quando não há texto visível. O botão "Marcar como feita"
+ao lado (`.action-btn`/`.active`) não participa dessa troca de estrutura — continua sempre pill,
+só muda o preenchimento via `.active` como antes.
 
 No card, o coração fica no canto superior direito (mesmo slot onde antes ficava o chevron —
 `chevronRight`/`.recipe-card__chevron` foram REMOVIDOS, não existe mais afordance de seta).

@@ -1894,21 +1894,24 @@
       madeBtn.textContent = now ? "✓ Já fiz" : "Marcar como feita";
     });
 
-    // Favoritar é só o ícone de coração (docs/DESIGN-TOKENS.md), sem pill/fundo/texto —
-    // mesmo tratamento visual do coração do card: contorno --color-text-disabled quando não
-    // favoritado, preenchido --color-accent quando favoritado (HEART_ICON_SVG, classe
-    // .is-favorite controla o preenchimento via CSS). aria-label mantém acessibilidade pra
-    // leitor de tela mesmo sem texto visível.
+    // Favoritar troca de ESTRUTURA inteira ao alternar (docs/DESIGN-TOKENS.md), não só de cor:
+    // não favoritado = pill igual a "Marcar como feita" (classe .action-btn reaproveitada,
+    // mesma borda/padding/formato), com o coração em contorno + texto "Favoritar". Favoritado =
+    // pill some por completo, sobra só o ícone preenchido --color-accent, sem borda/fundo
+    // (.recipe-page-heart, mesmo tratamento do coração do card). aria-label mantém
+    // acessibilidade pra leitor de tela nos dois estados.
     const isFav = Storage.isFavorite(item.id);
     const favBtn = document.createElement("button");
     favBtn.type = "button";
-    favBtn.className = "recipe-page-heart" + (isFav ? " is-favorite" : "");
-    favBtn.setAttribute("aria-label", isFav ? "Favoritado" : "Favoritar");
-    favBtn.innerHTML = HEART_ICON_SVG;
+    function renderFavBtn(fav) {
+      favBtn.className = fav ? "recipe-page-heart is-favorite" : "action-btn";
+      favBtn.innerHTML = fav ? HEART_ICON_SVG : HEART_ICON_SVG + "<span>Favoritar</span>";
+      favBtn.setAttribute("aria-label", fav ? "Favoritado" : "Favoritar");
+    }
+    renderFavBtn(isFav);
     favBtn.addEventListener("click", () => {
       const now = Storage.toggleFavorite(item.id);
-      favBtn.classList.toggle("is-favorite", now);
-      favBtn.setAttribute("aria-label", now ? "Favoritado" : "Favoritar");
+      renderFavBtn(now);
     });
 
     actions.appendChild(madeBtn);
