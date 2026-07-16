@@ -308,18 +308,13 @@ body {
 /* Metadados (tempo, complexidade, porções) — ícone outline monocromático + valor, mesmo
    princípio visual do modal de filtro (--color-text-disabled pro elemento neutro/inativo,
    --color-text-secondary pro texto de apoio). Sem pill/fundo — só alinhados com espaçamento
-   consistente entre os 3. Fica logo abaixo do título/origem (antes da descrição), mas só na
-   METADE DIREITA do card (width 50% + margin-left auto empurra pro lado direito) — não é mais
-   full-width no rodapé. Primeira versão pra confirmar visualmente (leitura do pedido, ajusta
-   se precisar). */
+   consistente entre os 3. Linha full-width no rodapé do card, alinhada à esquerda. */
 .recipe-meta {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 12px;
-  width: 50%;
-  margin-left: auto;
+  gap: 16px;
   margin-top: 8px;
 }
 .recipe-meta-item {
@@ -1017,11 +1012,8 @@ body.filter-modal-open { overflow: hidden; }
   border-bottom: 1px solid var(--line);
 }
 
-.recipe-page-actions { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+.recipe-page-actions { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
 .action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   min-height: 44px;
   padding: 0 18px;
   border-radius: 999px;
@@ -1033,6 +1025,21 @@ body.filter-modal-open { overflow: hidden; }
   cursor: pointer;
 }
 .action-btn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); } /* era #fff */
+
+/* Favoritar na tela de receita é só o ícone de coração — sem pill/fundo/texto, mesmo
+   tratamento visual do coração do card (contorno --color-text-disabled parado, preenchido
+   --color-accent via .is-favorite + .recipe-heart-icon, ver regra acima). */
+.recipe-page-heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
 
 .recipe-page-section { margin-bottom: 28px; }
 .recipe-page-section h4 {

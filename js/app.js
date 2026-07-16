@@ -1773,25 +1773,6 @@
     cardHeader.appendChild(heartBtn);
     card.appendChild(cardHeader);
 
-    // ---------- meta (tempo, complexidade, porções) — logo abaixo do título, metade direita ----------
-    const meta = document.createElement("div");
-    meta.className = "recipe-meta";
-    let metaHtml = "";
-    if (recipe.time && recipe.time.total) {
-      metaHtml +=
-        '<span class="recipe-meta-item">' + iconSvg("clock", "recipe-meta-item__icon") + "<span>" + recipe.time.total + "</span></span>";
-    }
-    if (recipe.difficulty) {
-      metaHtml +=
-        '<span class="recipe-meta-item">' + iconSvg("gauge", "recipe-meta-item__icon") + "<span>" + recipe.difficulty + "</span></span>";
-    }
-    if (recipe.yield) {
-      metaHtml +=
-        '<span class="recipe-meta-item">' + iconSvg("bowl", "recipe-meta-item__icon") + "<span>" + recipe.yield + "</span></span>";
-    }
-    meta.innerHTML = metaHtml;
-    card.appendChild(meta);
-
     // ---------- descrição (resumo, 2 linhas) ----------
     if (recipe.desc) {
       const desc = document.createElement("div");
@@ -1815,6 +1796,25 @@
       }
       card.appendChild(tagsWrap);
     }
+
+    // ---------- meta (tempo, complexidade, porções) — ícone outline monocromático + valor ----------
+    const meta = document.createElement("div");
+    meta.className = "recipe-meta";
+    let metaHtml = "";
+    if (recipe.time && recipe.time.total) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("clock", "recipe-meta-item__icon") + "<span>" + recipe.time.total + "</span></span>";
+    }
+    if (recipe.difficulty) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("gauge", "recipe-meta-item__icon") + "<span>" + recipe.difficulty + "</span></span>";
+    }
+    if (recipe.yield) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("bowl", "recipe-meta-item__icon") + "<span>" + recipe.yield + "</span></span>";
+    }
+    meta.innerHTML = metaHtml;
+    card.appendChild(meta);
 
     return card;
   }
@@ -1894,19 +1894,21 @@
       madeBtn.textContent = now ? "✓ Já fiz" : "Marcar como feita";
     });
 
-    // Favoritar vira coração (docs/DESIGN-TOKENS.md): contorno --color-text-disabled quando não
-    // favoritado, preenchido --color-accent quando favoritado — mesmo ícone/estado usado no
-    // coração do card (HEART_ICON_SVG, classe .is-favorite controla o preenchimento via CSS,
-    // independente do fundo sólido que ".active" já dava ao botão).
+    // Favoritar é só o ícone de coração (docs/DESIGN-TOKENS.md), sem pill/fundo/texto —
+    // mesmo tratamento visual do coração do card: contorno --color-text-disabled quando não
+    // favoritado, preenchido --color-accent quando favoritado (HEART_ICON_SVG, classe
+    // .is-favorite controla o preenchimento via CSS). aria-label mantém acessibilidade pra
+    // leitor de tela mesmo sem texto visível.
     const isFav = Storage.isFavorite(item.id);
     const favBtn = document.createElement("button");
-    favBtn.className = "action-btn" + (isFav ? " active is-favorite" : "");
-    favBtn.innerHTML = HEART_ICON_SVG + "<span>" + (isFav ? "Favorito" : "Favoritar") + "</span>";
+    favBtn.type = "button";
+    favBtn.className = "recipe-page-heart" + (isFav ? " is-favorite" : "");
+    favBtn.setAttribute("aria-label", isFav ? "Favoritado" : "Favoritar");
+    favBtn.innerHTML = HEART_ICON_SVG;
     favBtn.addEventListener("click", () => {
       const now = Storage.toggleFavorite(item.id);
-      favBtn.classList.toggle("active", now);
       favBtn.classList.toggle("is-favorite", now);
-      favBtn.querySelector("span").textContent = now ? "Favorito" : "Favoritar";
+      favBtn.setAttribute("aria-label", now ? "Favoritado" : "Favoritar");
     });
 
     actions.appendChild(madeBtn);

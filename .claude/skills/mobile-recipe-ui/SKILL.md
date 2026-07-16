@@ -122,10 +122,13 @@ Favoritar virou coração (`HEART_ICON_SVG`, definido perto de `iconSvg()` em ap
 vazio `--color-text-disabled` parado, preenchido `--color-accent` quando favoritado. É um ícone
 "multi-estado" que não usa o sistema genérico `ICON_SVG_ATTRS`/`ICONS` (que tem `fill="none"`
 fixo): o preenchimento troca via classe CSS (`.recipe-heart-icon` base + `.is-favorite` no
-ancestral controla `fill`/`stroke` via seletor descendente), não via troca de ícone. A mesma
-classe `.is-favorite` é aplicada tanto no botão-coração do card (`.recipe-card__heart`, ícone
-sozinho, sem texto) quanto no botão da tela de receita (`.action-btn`, que também mantém
-`.active` pro chrome de pill preenchida — as duas classes coexistem no mesmo elemento).
+ancestral controla `fill`/`stroke` via seletor descendente), não via troca de ícone. No card, o
+coração é um botão isolado sem texto (`.recipe-card__heart`). Na tela de receita, TAMBÉM é só o
+ícone — sem pill, sem fundo, sem texto "Favoritar"/"Favorito" visível (`.recipe-page-heart`,
+classe própria, NÃO usa `.action-btn`/`.active` — aquilo é só pro botão "Marcar como feita", que
+continua pill preenchida sem mudança). `aria-label` ("Favoritar" / "Favoritado") mantém
+acessibilidade pra leitor de tela mesmo sem texto visível. A classe `.is-favorite` é a mesma nos
+dois lugares (card e tela de receita), controlando o preenchimento do ícone via CSS.
 
 No card, o coração fica no canto superior direito (mesmo slot onde antes ficava o chevron —
 `chevronRight`/`.recipe-card__chevron` foram REMOVIDOS, não existe mais afordance de seta).
@@ -139,11 +142,12 @@ Metadados (tempo, complexidade, porções — nessa ordem) usam ícone outline m
 (`.recipe-meta-item`, `clock`/`gauge`/`bowl` no objeto `ICONS` compartilhado do topo do arquivo
 — mesmo sistema stroke-based `ICON_SVG_ATTRS` da nav inferior/tiles da home). `--color-text-
 disabled` pro ícone, `--color-text-secondary` pro valor — mesmo par de tokens já usado nos
-metadados do modal de filtro. A LINHA de metadados (`.recipe-meta`) NÃO fica mais full-width no
-rodapé do card: mora logo abaixo do título/origem (antes da descrição), alinhada à direita e
-ocupando só a metade direita do card (`width: 50%; margin-left: auto; justify-content:
-flex-end`) — decisão visual confirmada por screenshot, primeira versão. Imagem, título,
-origem/país e chips de tag (país/tipo) não mudaram.
+metadados do modal de filtro. A LINHA de metadados (`.recipe-meta`) fica no RODAPÉ do card,
+depois da descrição e das tags — full-width, alinhada à esquerda (`justify-content: flex-start`,
+sem `width`/`margin-left` customizado). Uma rodada anterior tentou mover pra logo abaixo do
+título ocupando só a metade direita (`width: 50%`) — não ficou bom visualmente e foi revertida
+de volta pra posição original de rodapé. Imagem, título, origem/país e chips de tag (país/tipo)
+não mudaram.
 
 ## Filtros e chips
 
