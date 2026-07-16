@@ -101,25 +101,49 @@ Regras:
 `renderRecipeCard` (app.js) é a função ÚNICA compartilhada por 5 pontos de chamada — 4 telas
 distintas: `renderCategory` (categoria/coleção, 2 call sites por causa dos 2 modos de
 ordenação), `renderBusca` (busca global), `renderGrupo` (resultado de busca por ingrediente
-dentro de um hub) e `renderListView` (Favoritos/Quero fazer/Histórico). Mudar a função muda as
-5 de uma vez, sem duplicação.
+dentro de um hub) e `renderListView` (Favoritos/Histórico). Mudar a função muda as 5 de uma vez,
+sem duplicação.
 
-Removido do card: os 3 ícones de ação (já feito ✓ / favoritar ★ / quero fazer 🔖,
+Removido do card: os ícones de ação antigos (já feito ✓ / favoritar ★ / quero fazer 🔖,
 `.recipe-card-actions`) e a barra de CTA "Ver receita" (`.recipe-card-cta`) como elemento
-próprio. As 3 ações NÃO desapareceram — já existiam antes desta mudança em
-`.recipe-page-actions` na tela de receita própria (`renderReceita`), sem nenhuma alteração lá.
-O card inteiro continua sendo a área de toque (mesmo `card.addEventListener("click", ...)` de
-sempre); no lugar da coluna de ações, um `chevronRight` pequeno e monocromático
-(`--color-text-disabled`, `.recipe-card__chevron`) indica sutilmente que é clicável, sem
-precisar ser um botão grande.
+próprio. O card inteiro continua sendo a área de toque (mesmo
+`card.addEventListener("click", ...)` de sempre).
 
-Metadados (tempo, complexidade, porções — nessa ordem) trocaram de chip/pill emoji
-(`.recipe-meta-chip`) pra ícone outline monocromático + valor (`.recipe-meta-item`,
-`clock`/`gauge`/`bowl` no objeto `ICONS` compartilhado do topo do arquivo — mesmo sistema
-stroke-based `ICON_SVG_ATTRS` da nav inferior/tiles da home), alinhados com espaçamento
-consistente (`gap: 16px`), sem fundo/pill. `--color-text-disabled` pro ícone,
-`--color-text-secondary` pro valor — mesmo par de tokens já usado nos metadados do modal de
-filtro. Imagem, título, origem/país e chips de tag (país/tipo) não mudaram.
+"Quero Fazer" foi REMOVIDO DO APP INTEIRO (não só do card) — não existe mais em nenhuma tela.
+Removido de: `LIST_VIEWS["quero-fazer"]` e o bloco `wantBtn`/`isWant` inteiro de `renderReceita`
+(app.js); rota `quero-fazer` e a função morta `toQueroFazer` — zero callers antes mesmo da
+remoção — (router.js); campo `wantToCook` de ambos os ramos de `load()` e os acessores
+`isWantToCook`/`toggleWantToCook`/`getAllWantToCook` do export `window.Storage` (storage.js).
+Acessar `#/quero-fazer` agora cai no fallback padrão do router (`{ name: "home" }`), sem erro.
+A tela de receita (`renderReceita`) e o card ficaram com só 2 ações: Marcar como feita e
+Favoritar.
+
+Favoritar virou coração (`HEART_ICON_SVG`, definido perto de `iconSvg()` em app.js) — contorno
+vazio `--color-text-disabled` parado, preenchido `--color-accent` quando favoritado. É um ícone
+"multi-estado" que não usa o sistema genérico `ICON_SVG_ATTRS`/`ICONS` (que tem `fill="none"`
+fixo): o preenchimento troca via classe CSS (`.recipe-heart-icon` base + `.is-favorite` no
+ancestral controla `fill`/`stroke` via seletor descendente), não via troca de ícone. A mesma
+classe `.is-favorite` é aplicada tanto no botão-coração do card (`.recipe-card__heart`, ícone
+sozinho, sem texto) quanto no botão da tela de receita (`.action-btn`, que também mantém
+`.active` pro chrome de pill preenchida — as duas classes coexistem no mesmo elemento).
+
+No card, o coração fica no canto superior direito (mesmo slot onde antes ficava o chevron —
+`chevronRight`/`.recipe-card__chevron` foram REMOVIDOS, não existe mais afordance de seta).
+Por estar dentro de um card inteiramente clicável, o clique no coração precisa de
+`e.stopPropagation()` ANTES de alternar o favorito, senão o clique vaza pro
+`card.addEventListener("click", ...)` e navega pra receita por engano. Verificado via teste de
+hash: clicar no coração NÃO muda `location.hash`; clicar em qualquer outra parte do card
+(título, descrição, header perto do coração) muda normalmente.
+
+Metadados (tempo, complexidade, porções — nessa ordem) usam ícone outline monocromático + valor
+(`.recipe-meta-item`, `clock`/`gauge`/`bowl` no objeto `ICONS` compartilhado do topo do arquivo
+— mesmo sistema stroke-based `ICON_SVG_ATTRS` da nav inferior/tiles da home). `--color-text-
+disabled` pro ícone, `--color-text-secondary` pro valor — mesmo par de tokens já usado nos
+metadados do modal de filtro. A LINHA de metadados (`.recipe-meta`) NÃO fica mais full-width no
+rodapé do card: mora logo abaixo do título/origem (antes da descrição), alinhada à direita e
+ocupando só a metade direita do card (`width: 50%; margin-left: auto; justify-content:
+flex-end`) — decisão visual confirmada por screenshot, primeira versão. Imagem, título,
+origem/país e chips de tag (país/tipo) não mudaram.
 
 ## Filtros e chips
 

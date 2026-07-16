@@ -26,13 +26,20 @@
     dots: '<circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/>',
     filter: '<path d="M4 5h16l-6.5 7.5V19l-3 1.6v-8.1Z"/>',
     chevronDown: '<path d="M6 9l6 6 6-6"/>',
-    chevronRight: '<path d="M9 6l6 6-6 6"/>',
     clock: '<circle cx="12" cy="12" r="8"/><path d="M12 7.5v4.5l3 2"/>',
     gauge: '<path d="M6 18v-4"/><path d="M12 18V9"/><path d="M18 18V6"/>',
   };
   function iconSvg(key, className) {
     return '<svg class="' + className + '" ' + ICON_SVG_ATTRS + ">" + ICONS[key] + "</svg>";
   }
+
+  // Ícone de coração pro favoritar (docs/DESIGN-TOKENS.md) — usado tanto no botão da tela de
+  // receita quanto no card. Não usa o sistema ICON_SVG_ATTRS/ICONS acima porque precisa de 2
+  // estados de PREENCHIMENTO (contorno vazio parado, sólido quando favoritado), não só troca
+  // de cor — a classe .recipe-heart-icon/.is-favorite no CSS controla isso (fill: none parado,
+  // fill: var(--color-accent) quando o ancestral tem .is-favorite).
+  const HEART_ICON_SVG =
+    '<svg class="recipe-heart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg>';
 
   // Ícone autoral da aba "Preparos" (panela de cabo único) — arquivo próprio em icons/preparos.svg,
   // sem exigência de atribuição. Não usa o sistema ICON_SVG_ATTRS/ICONS acima (todos stroke-based,
@@ -428,7 +435,7 @@
 
   // ---------- Home ----------
   // Tiles grandes da home (Bloco 2, Fase 2.2) — cada um leva direto pra sua categoria/hub já
-  // existente. Busca livre e atalhos de favoritos/quero-fazer/histórico saem daqui e migram pra
+  // existente. Busca livre e atalhos de favoritos/histórico saem daqui e migram pra
   // dentro de "Minhas Receitas" num bloco futuro (conteúdo ainda não implementado).
   const HOME_MAIN_TILES = [
     { id: "massas", label: "Massas", icon: "bowl", go: () => Router.toCategoria("massas") },
@@ -1675,10 +1682,9 @@
     return el;
   }
 
-  // ---------- Telas de lista (Favoritos / Quero fazer / Histórico) ----------
+  // ---------- Telas de lista (Favoritos / Histórico) ----------
   const LIST_VIEWS = {
     favoritos: { title: "★ Favoritos", empty: "Você ainda não marcou nenhum prato como favorito.", getIds: () => Storage.getAllFavorites() },
-    "quero-fazer": { title: "🔖 Quero fazer", empty: "Você ainda não adicionou nenhum prato à lista de \"quero fazer\".", getIds: () => Storage.getAllWantToCook() },
     historico: { title: "🕘 Histórico de receitas feitas", empty: "Você ainda não marcou nenhum prato como feito.", getIds: () => Storage.getAllMade() },
   };
 
@@ -1710,11 +1716,14 @@
   }
 
   // ---------- Card de receita (usado na lista de categoria e na busca) ----------
-  // Redesenho do card (docs/DESIGN-TOKENS.md): os 3 ícones de ação (já feito/favoritar/quero
-  // fazer) e a barra de CTA "Ver receita" saíram do card — o card inteiro já é a área de
-  // toque (addEventListener de click no elemento raiz, como antes), só com um chevron sutil
-  // no canto indicando que é clicável. As 3 ações não desapareceram: já existiam (e continuam
-  // existindo, sem mudança) na tela de receita própria (renderReceita, .recipe-page-actions).
+  // Redesenho do card (docs/DESIGN-TOKENS.md): os 3 ícones de ação viraram 2 (já feito/
+  // favoritar — "quero fazer" foi removido do app inteiro) e a barra de CTA "Ver receita"
+  // saiu — o card inteiro é a área de toque (addEventListener de click no elemento raiz).
+  // O coração de favoritar (canto direito do header, onde antes tinha um chevron — removido,
+  // o coração já sinaliza interatividade daquela área sozinho) TEM que parar a propagação do
+  // clique (stopPropagation), senão favoritar dispararia também a navegação pra receita. As
+  // outras 2 ações (já feito/favoritar) continuam só na tela de receita própria
+  // (renderReceita, .recipe-page-actions), sem mudança de comportamento lá além do ícone.
   function renderRecipeCard(item, opts) {
     opts = opts || {};
     const recipe = item.recipe;
@@ -1726,7 +1735,7 @@
       Router.toReceita(item.id, opts.fromCollectionId);
     });
 
-    // ---------- header: thumb | título+origem | indício de clique ----------
+    // ---------- header: thumb | título+origem | coração de favoritar ----------
     const cardHeader = document.createElement("div");
     cardHeader.className = "recipe-header";
 
@@ -1746,14 +1755,42 @@
       (opts.catLabel ? '<div class="cat-chip">' + opts.catLabel + "</div>" : "") +
       (recipe.origin ? '<div class="origin">' + recipe.origin + "</div>" : "");
 
-    const chevron = document.createElement("span");
-    chevron.className = "recipe-card__chevron";
-    chevron.innerHTML = iconSvg("chevronRight", "recipe-card__chevron-icon");
+    const isFav = Storage.isFavorite(item.id);
+    const heartBtn = document.createElement("button");
+    heartBtn.type = "button";
+    heartBtn.className = "recipe-card__heart" + (isFav ? " is-favorite" : "");
+    heartBtn.setAttribute("aria-label", isFav ? "Remover dos favoritos" : "Favoritar");
+    heartBtn.innerHTML = HEART_ICON_SVG;
+    heartBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const now = Storage.toggleFavorite(item.id);
+      heartBtn.classList.toggle("is-favorite", now);
+      heartBtn.setAttribute("aria-label", now ? "Remover dos favoritos" : "Favoritar");
+    });
 
     cardHeader.appendChild(thumb);
     cardHeader.appendChild(titleBlock);
-    cardHeader.appendChild(chevron);
+    cardHeader.appendChild(heartBtn);
     card.appendChild(cardHeader);
+
+    // ---------- meta (tempo, complexidade, porções) — logo abaixo do título, metade direita ----------
+    const meta = document.createElement("div");
+    meta.className = "recipe-meta";
+    let metaHtml = "";
+    if (recipe.time && recipe.time.total) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("clock", "recipe-meta-item__icon") + "<span>" + recipe.time.total + "</span></span>";
+    }
+    if (recipe.difficulty) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("gauge", "recipe-meta-item__icon") + "<span>" + recipe.difficulty + "</span></span>";
+    }
+    if (recipe.yield) {
+      metaHtml +=
+        '<span class="recipe-meta-item">' + iconSvg("bowl", "recipe-meta-item__icon") + "<span>" + recipe.yield + "</span></span>";
+    }
+    meta.innerHTML = metaHtml;
+    card.appendChild(meta);
 
     // ---------- descrição (resumo, 2 linhas) ----------
     if (recipe.desc) {
@@ -1778,25 +1815,6 @@
       }
       card.appendChild(tagsWrap);
     }
-
-    // ---------- meta (tempo, complexidade, porções) — ícone outline monocromático + valor ----------
-    const meta = document.createElement("div");
-    meta.className = "recipe-meta";
-    let metaHtml = "";
-    if (recipe.time && recipe.time.total) {
-      metaHtml +=
-        '<span class="recipe-meta-item">' + iconSvg("clock", "recipe-meta-item__icon") + "<span>" + recipe.time.total + "</span></span>";
-    }
-    if (recipe.difficulty) {
-      metaHtml +=
-        '<span class="recipe-meta-item">' + iconSvg("gauge", "recipe-meta-item__icon") + "<span>" + recipe.difficulty + "</span></span>";
-    }
-    if (recipe.yield) {
-      metaHtml +=
-        '<span class="recipe-meta-item">' + iconSvg("bowl", "recipe-meta-item__icon") + "<span>" + recipe.yield + "</span></span>";
-    }
-    meta.innerHTML = metaHtml;
-    card.appendChild(meta);
 
     return card;
   }
@@ -1876,29 +1894,23 @@
       madeBtn.textContent = now ? "✓ Já fiz" : "Marcar como feita";
     });
 
+    // Favoritar vira coração (docs/DESIGN-TOKENS.md): contorno --color-text-disabled quando não
+    // favoritado, preenchido --color-accent quando favoritado — mesmo ícone/estado usado no
+    // coração do card (HEART_ICON_SVG, classe .is-favorite controla o preenchimento via CSS,
+    // independente do fundo sólido que ".active" já dava ao botão).
     const isFav = Storage.isFavorite(item.id);
     const favBtn = document.createElement("button");
-    favBtn.className = "action-btn" + (isFav ? " active" : "");
-    favBtn.textContent = isFav ? "★ Favorito" : "☆ Favoritar";
+    favBtn.className = "action-btn" + (isFav ? " active is-favorite" : "");
+    favBtn.innerHTML = HEART_ICON_SVG + "<span>" + (isFav ? "Favorito" : "Favoritar") + "</span>";
     favBtn.addEventListener("click", () => {
       const now = Storage.toggleFavorite(item.id);
       favBtn.classList.toggle("active", now);
-      favBtn.textContent = now ? "★ Favorito" : "☆ Favoritar";
-    });
-
-    const isWant = Storage.isWantToCook(item.id);
-    const wantBtn = document.createElement("button");
-    wantBtn.className = "action-btn" + (isWant ? " active" : "");
-    wantBtn.textContent = isWant ? "🔖 Na lista" : "🔖 Quero fazer";
-    wantBtn.addEventListener("click", () => {
-      const now = Storage.toggleWantToCook(item.id);
-      wantBtn.classList.toggle("active", now);
-      wantBtn.textContent = now ? "🔖 Na lista" : "🔖 Quero fazer";
+      favBtn.classList.toggle("is-favorite", now);
+      favBtn.querySelector("span").textContent = now ? "Favorito" : "Favoritar";
     });
 
     actions.appendChild(madeBtn);
     actions.appendChild(favBtn);
-    actions.appendChild(wantBtn);
     page.appendChild(actions);
 
     if (recipe.steps && recipe.steps.length) {
@@ -2260,7 +2272,7 @@
       renderReceita(route.id, route.from);
     } else if (route.name === "cozinhar") {
       renderCookMode(route.id, route.from);
-    } else if (route.name === "favoritos" || route.name === "quero-fazer" || route.name === "historico") {
+    } else if (route.name === "favoritos" || route.name === "historico") {
       renderListView(route.name);
     } else if (route.name === "minhas-receitas") {
       renderPlaceholder("📖 Minhas Receitas", "Em breve: favoritos, quero fazer e histórico, tudo aqui.", buildIconCreditsEl());

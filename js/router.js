@@ -1,6 +1,6 @@
 // router.js — navegação baseada em hash (#/...), sem depender de servidor.
 // Rotas: home | grupo/:id (grupo macro) | categoria/:id (id de coleção) | busca?tags=a,b,c
-//        receita/:id | cozinhar/:id | favoritos | quero-fazer | historico
+//        receita/:id | cozinhar/:id | favoritos | historico
 //        minhas-receitas | preparos | lista-compras (telas-placeholder da barra inferior)
 // :id de receita/cozinhar é o id único global da receita (TagModel), não mais catId+nome.
 (function () {
@@ -75,9 +75,6 @@
     }
     if (parts[0] === "favoritos") {
       return { name: "favoritos" };
-    }
-    if (parts[0] === "quero-fazer") {
-      return { name: "quero-fazer" };
     }
     if (parts[0] === "historico") {
       return { name: "historico" };
@@ -155,9 +152,6 @@
     },
     toFavoritos: function () {
       navigate("favoritos");
-    },
-    toQueroFazer: function () {
-      navigate("quero-fazer");
     },
     toHistorico: function () {
       navigate("historico");

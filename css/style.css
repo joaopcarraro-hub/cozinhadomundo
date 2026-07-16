@@ -204,19 +204,30 @@ body {
   align-items: start;
 }
 
-/* Redesenho (docs/DESIGN-TOKENS.md): os 3 botões de ação (já feito/favoritar/quero fazer) e a
-   barra de CTA "Ver receita" saíram do card — só existem agora em .recipe-page-actions (tela
-   de receita própria), que já os tinha antes desta mudança, sem alteração nenhuma lá. O card
-   inteiro é a área de toque (click no elemento raiz); o chevron abaixo é só o indício visual
-   de que é clicável. */
-.recipe-card__chevron {
+/* Redesenho (docs/DESIGN-TOKENS.md): "quero fazer" foi removido do app inteiro — sobram só
+   já feito/favoritar, e só existem em .recipe-page-actions (tela de receita própria). O card
+   inteiro é a área de toque (click no elemento raiz); o coração no canto (era um chevron,
+   removido — o coração já sinaliza interatividade daquela área sozinho) PARA a propagação do
+   clique (stopPropagation no handler, em app.js), senão favoritar dispararia a navegação. */
+.recipe-card__heart {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   align-self: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }
-.recipe-card__chevron-icon { width: 18px; height: 18px; color: var(--color-text-disabled); }
+/* Coração: contorno --color-text-disabled parado, preenchido --color-accent quando
+   favoritado (.is-favorite) — mesma classe/regra reaproveitada pelo botão da tela de receita
+   (.action-btn.is-favorite), não é exclusiva do card. */
+.recipe-heart-icon { width: 22px; height: 22px; flex-shrink: 0; display: block; }
+.recipe-heart-icon path { fill: none; stroke: var(--color-text-disabled); stroke-width: 1.6; }
+.is-favorite .recipe-heart-icon path { fill: var(--color-accent); stroke: var(--color-accent); }
 
 .recipe-thumb {
   width: 48px;
@@ -297,13 +308,19 @@ body {
 /* Metadados (tempo, complexidade, porções) — ícone outline monocromático + valor, mesmo
    princípio visual do modal de filtro (--color-text-disabled pro elemento neutro/inativo,
    --color-text-secondary pro texto de apoio). Sem pill/fundo — só alinhados com espaçamento
-   consistente entre os 3. */
+   consistente entre os 3. Fica logo abaixo do título/origem (antes da descrição), mas só na
+   METADE DIREITA do card (width 50% + margin-left auto empurra pro lado direito) — não é mais
+   full-width no rodapé. Primeira versão pra confirmar visualmente (leitura do pedido, ajusta
+   se precisar). */
 .recipe-meta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  margin-top: 12px;
+  gap: 12px;
+  width: 50%;
+  margin-left: auto;
+  margin-top: 8px;
 }
 .recipe-meta-item {
   display: inline-flex;
@@ -1002,6 +1019,9 @@ body.filter-modal-open { overflow: hidden; }
 
 .recipe-page-actions { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
 .action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   min-height: 44px;
   padding: 0 18px;
   border-radius: 999px;

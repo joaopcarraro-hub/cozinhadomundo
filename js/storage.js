@@ -36,7 +36,6 @@
         return {
           made: migrateIdList(parsed.made || []),
           favorites: migrateIdList(parsed.favorites || []),
-          wantToCook: migrateIdList(parsed.wantToCook || []),
           checkedIngredients: migrateCheckedIngredients(parsed.checkedIngredients || {}),
         };
       }
@@ -48,7 +47,7 @@
       const legacy = localStorage.getItem(LEGACY_MADE_KEY);
       if (legacy) made = migrateIdList(JSON.parse(legacy));
     } catch (e) {}
-    return { made, favorites: [], wantToCook: [], checkedIngredients: {} };
+    return { made, favorites: [], checkedIngredients: {} };
   }
 
   const state = load();
@@ -85,9 +84,6 @@
     isFavorite: (id) => has(state.favorites, id),
     toggleFavorite: (id) => toggleIn("favorites", id),
 
-    isWantToCook: (id) => has(state.wantToCook, id),
-    toggleWantToCook: (id) => toggleIn("wantToCook", id),
-
     getCheckedIngredients: (id) => state.checkedIngredients[id] || [],
     isIngredientChecked: (id, index) => {
       const arr = state.checkedIngredients[id] || [];
@@ -104,7 +100,6 @@
     },
 
     getAllFavorites: () => state.favorites.slice(),
-    getAllWantToCook: () => state.wantToCook.slice(),
     getAllMade: () => state.made.slice(),
   };
 })();
