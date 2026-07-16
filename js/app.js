@@ -1914,8 +1914,8 @@
       renderFavBtn(now);
     });
 
-    actions.appendChild(madeBtn);
     actions.appendChild(favBtn);
+    actions.appendChild(madeBtn);
     page.appendChild(actions);
 
     if (recipe.steps && recipe.steps.length) {
@@ -1926,10 +1926,17 @@
       page.appendChild(cookBtn);
     }
 
+    // Ingredientes vem minimizado por padrão (docs/DESIGN-TOKENS.md) — reaproveita o mesmo
+    // mecanismo de acordeão do modal de filtro (.filter-section/.filter-section__header com
+    // chevron que gira 180deg via .is-open, .filter-section__body escondido/mostrado via
+    // display:none/flex), em vez de criar um padrão novo. Aqui é só um toggle local de classe
+    // (sem draft-state/re-render do modal, que não se aplica — a lista é estática e os
+    // checkboxes já aplicam direto no Storage).
     const ingSection = document.createElement("div");
-    ingSection.className = "recipe-page-section";
+    ingSection.className = "recipe-page-section filter-section";
     const checked = Storage.getCheckedIngredients(item.id);
-    const ingItems = (recipe.ingredients || [])
+    const ingredientsList = recipe.ingredients || [];
+    const ingItems = ingredientsList
       .map((ing, i) => {
         const isChecked = checked.indexOf(i) !== -1;
         return (
@@ -1945,7 +1952,19 @@
         );
       })
       .join("");
-    ingSection.innerHTML = "<h4>Ingredientes</h4><ul class=\"ingredients-list checklist\">" + ingItems + "</ul>";
+    ingSection.innerHTML =
+      '<button type="button" class="filter-section__header">' +
+      '<span class="filter-section__label">Ver ingredientes<span class="filter-section__count">(' +
+      ingredientsList.length +
+      ")</span></span>" +
+      iconSvg("chevronDown", "filter-section__chevron") +
+      "</button>" +
+      '<div class="filter-section__body"><ul class="ingredients-list checklist">' +
+      ingItems +
+      "</ul></div>";
+    ingSection.querySelector(".filter-section__header").addEventListener("click", () => {
+      ingSection.classList.toggle("is-open");
+    });
     page.appendChild(ingSection);
     ingSection.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
       cb.addEventListener("change", () => {

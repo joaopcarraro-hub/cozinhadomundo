@@ -142,6 +142,9 @@ acessibilidade pra leitor de tela mesmo quando não há texto visível. O botão
 ao lado (`.action-btn`/`.active`) não participa dessa troca de estrutura — continua sempre pill,
 só muda o preenchimento via `.active` como antes.
 
+Ordem dos 2 botões na tela de receita: Favoritar primeiro (esquerda), "Marcar como feita" depois
+(direita) — só ordem de `appendChild` em `renderReceita`, nenhuma lógica muda.
+
 No card, o coração fica no canto superior direito (mesmo slot onde antes ficava o chevron —
 `chevronRight`/`.recipe-card__chevron` foram REMOVIDOS, não existe mais afordance de seta).
 Por estar dentro de um card inteiramente clicável, o clique no coração precisa de
@@ -160,6 +163,22 @@ sem `width`/`margin-left` customizado). Uma rodada anterior tentou mover pra log
 título ocupando só a metade direita (`width: 50%`) — não ficou bom visualmente e foi revertida
 de volta pra posição original de rodapé. Imagem, título, origem/país e chips de tag (país/tipo)
 não mudaram.
+
+### Ingredientes minimizados por padrão (acordeão reaproveitado do modal de filtro)
+
+A seção de ingredientes na tela de receita abre FECHADA por padrão (sempre — não lembra estado
+entre visitas), com um botão "Ver ingredientes (N)" que expande em dropdown mostrando a lista
+completa com os checkboxes de sempre. Em vez de criar um mecanismo de expandir/colapsar novo,
+reaproveita literalmente as MESMAS classes CSS do acordeão do modal de filtro
+(`.filter-section`/`.filter-section__header`/`.filter-section__label`/`.filter-section__count`/
+`.filter-section__chevron`/`.filter-section__body`, ver "Modal de filtros em acordeão" abaixo) —
+chevron que gira 180° quando `.is-open`, corpo escondido via `display:none`/mostrado via
+`display:flex`. A diferença é que aqui o toggle é local e simples
+(`ingSection.classList.toggle("is-open")` num único listener de clique no header), sem o
+draft-state/re-render completo que o modal usa — não se aplica aqui porque é uma lista estática
+por receita, não múltiplas facetas recalculáveis; os checkboxes de ingrediente continuam
+aplicando direto no `Storage.toggleIngredient` como sempre, sem mudança nessa lógica. `<h4>
+Ingredientes</h4>` (heading estático) foi substituído pelo próprio botão-cabeçalho do acordeão.
 
 ## Filtros e chips
 
