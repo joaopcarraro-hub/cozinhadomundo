@@ -1109,7 +1109,8 @@ window.RECIPES["molhos"] = [
         raw: "1 ramo de estragão fresco + 1 colher (sopa) picado para finalizar",
         group: null,
         items: [
-          { qty: 1, qtyRange: null, unit: "ramo", item: "estragão fresco + 1 colher (sopa)", prep: "picado para finalizar", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "ramo", item: "estragão fresco", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "estragão", prep: "picado, para finalizar", alt: null, optional: false, isReference: false },
         ],
       },
       {

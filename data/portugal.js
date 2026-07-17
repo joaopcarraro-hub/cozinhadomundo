@@ -385,7 +385,8 @@ window.RECIPES["portugal"] = [
         raw: "6 dentes de alho, inteiros com casca (+ 2 picados)",
         group: null,
         items: [
-          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: "inteiros com casca (+ 2 picados)", alt: null, optional: false, isReference: false },
+          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: "inteiros com casca", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
         ],
       },
       {

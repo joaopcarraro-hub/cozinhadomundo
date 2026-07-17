@@ -38,7 +38,8 @@ window.RECIPES["sopas"] = [
         raw: "2 colheres (sopa) de manteiga + 1 fio de azeite",
         group: null,
         items: [
-          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "manteiga + 1 fio de azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "fio", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {
@@ -345,7 +346,8 @@ window.RECIPES["sopas"] = [
         raw: "50 g de manteiga + 1 fio de azeite",
         group: null,
         items: [
-          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga + 1 fio de azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "fio", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {

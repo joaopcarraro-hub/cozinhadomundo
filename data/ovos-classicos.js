@@ -341,7 +341,8 @@ window.RECIPES["ovos-classicos"] = [
         raw: "20 g de manteiga + 20 g de manteiga gelada",
         group: null,
         items: [
-          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga + 20 g de manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {

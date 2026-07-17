@@ -603,7 +603,8 @@ window.RECIPES["entradas-quentes"] = [
         raw: "12 escargots em conserva, escorridos (+ 12 conchas, se for usar conchas de verdade)",
         group: null,
         items: [
-          { qty: 12, qtyRange: null, unit: null, item: "escargots em conserva", prep: "escorridos (+ 12 conchas, se for usar conchas de verdade)", alt: null, optional: false, isReference: false },
+          { qty: 12, qtyRange: null, unit: null, item: "escargots em conserva", prep: "escorridos", alt: null, optional: false, isReference: false },
+          { qty: 12, qtyRange: null, unit: null, item: "conchas", prep: "se for usar conchas de verdade", alt: null, optional: true, isReference: false },
         ],
       },
       {

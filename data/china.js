@@ -390,7 +390,8 @@ window.RECIPES["china"] = [
         raw: "1 colher (sopa) de amido de milho dissolvido em 2 colheres (sopa) de água",
         group: null,
         items: [
-          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de milho", prep: "dissolvido em 2 colheres (sopa) de água", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de milho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "água", prep: "para dissolver o amido de milho", alt: null, optional: false, isReference: false },
         ],
       },
       {

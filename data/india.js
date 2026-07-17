@@ -559,7 +559,8 @@ window.RECIPES["india"] = [
         raw: "1 pitada de açafrão, dissolvida em 3 colheres (sopa) de leite morno",
         group: null,
         items: [
-          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: "dissolvida em 3 colheres (sopa) de leite morno", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "leite morno", prep: "para dissolver o açafrão", alt: null, optional: false, isReference: false },
         ],
       },
       {

@@ -236,7 +236,8 @@ window.RECIPES["franca"] = [
         raw: "1 cebola espetada com 2 cravos",
         group: null,
         items: [
-          { qty: 1, qtyRange: null, unit: null, item: "cebola espetada com 2 cravos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "espetada com cravos", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cravos", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {
@@ -342,7 +343,8 @@ window.RECIPES["franca"] = [
         raw: "1 cebola espetada com 1 cravo",
         group: null,
         items: [
-          { qty: 1, qtyRange: null, unit: null, item: "cebola espetada com 1 cravo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "espetada com cravo", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cravo", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {

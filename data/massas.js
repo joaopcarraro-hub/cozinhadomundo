@@ -39,7 +39,8 @@ window.RECIPES["massas"] = [
         raw: "2 ovos inteiros + 2 gemas",
         group: null,
         items: [
-          { qty: 2, qtyRange: null, unit: null, item: "ovos inteiros + 2 gemas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "ovos inteiros", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {

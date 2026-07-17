@@ -1563,7 +1563,7 @@ window.RECIPES["dinamarca"] = [
         raw: "Variações: 2 colheres (sopa) de curry em pó (para a versão 'curry'); ou 3 colheres (sopa) de extrato de tomate (para a versão 'tomate')",
         group: null,
         items: [
-          { qty: null, qtyRange: null, unit: null, item: "variações: 2 colheres (sopa) de curry em pó (para a versão 'curry');", prep: null, alt: "3 colheres (sopa) de extrato de tomate (para a versão 'tomate')", optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "curry em pó", prep: "variação 'curry'", alt: "3 colheres (sopa) de extrato de tomate (para a versão 'tomate')", optional: false, isReference: false },
         ],
       },
     ],
@@ -2772,7 +2772,8 @@ window.RECIPES["dinamarca"] = [
         raw: "80 g de amêndoas, picadas grosseiramente (+ 1 amêndoa inteira, para a brincadeira tradicional)",
         group: null,
         items: [
-          { qty: 80, qtyRange: null, unit: "grama", item: "amêndoas", prep: "picadas grosseiramente (+ 1 amêndoa inteira, para a brincadeira tradicional)", alt: null, optional: false, isReference: false },
+          { qty: 80, qtyRange: null, unit: "grama", item: "amêndoas", prep: "picadas grosseiramente", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "amêndoa", prep: "inteira, para a brincadeira tradicional", alt: null, optional: false, isReference: false },
         ],
       },
       {

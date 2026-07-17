@@ -95,7 +95,8 @@ window.RECIPES["aves"] = [
         raw: "30 g de manteiga + 20 g de farinha (para a manteiga com farinha final)",
         group: null,
         items: [
-          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga + 20 g de farinha (para a manteiga com farinha final)", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 20, qtyRange: null, unit: "grama", item: "farinha", prep: "para a manteiga com farinha final", alt: null, optional: false, isReference: false },
         ],
       },
       {

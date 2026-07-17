@@ -156,7 +156,8 @@ window.RECIPES["contemporaneos"] = [
         raw: "1 sifão de cozinha + 1-2 cápsulas de N2O",
         group: null,
         items: [
-          { qty: 1, qtyRange: null, unit: null, item: "sifão de cozinha + 1-2 cápsulas de n2o", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "sifão de cozinha", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: [1, 2], unit: null, item: "cápsulas de n2o", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
     ],

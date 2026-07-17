@@ -1012,6 +1012,51 @@ body.filter-modal-open { overflow: hidden; }
   border-bottom: 1px solid var(--line);
 }
 
+/* Multiplicador de porções — substitui o "🍽 N porções" estático quando o yield tem uma base
+   numérica segura de extrair (parseYieldBase em app.js). Some como mais um item flex dentro de
+   .recipe-page-meta (mesmo gap/wrap dos outros <span>), não como linha própria. */
+.portion-stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-soft);
+}
+.portion-stepper__icon { font-size: 0.95rem; }
+.portion-stepper__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--bg-panel);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+.portion-stepper__btn:active { background: var(--gold); border-color: var(--gold); }
+.portion-stepper__input {
+  width: 34px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  -moz-appearance: textfield;
+}
+.portion-stepper__input::-webkit-outer-spin-button,
+.portion-stepper__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.portion-stepper__suffix { white-space: nowrap; }
+
 .recipe-page-actions { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
 .action-btn {
   display: inline-flex;

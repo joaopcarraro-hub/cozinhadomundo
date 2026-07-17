@@ -1819,6 +1819,121 @@
     return card;
   }
 
+  // ---------- Multiplicador de porções (usa ingredientsStructured pra escalar quantidade) ----------
+  // Mesmos ids canônicos de unidade que o parser usou pra gerar ingredientsStructured (Fase 2b) —
+  // grama/quilograma/mililitro/litro viram abreviação sem plural (g, kg, ml, L); o resto é
+  // substantivo contável com singular/plural, que escolhemos conforme a quantidade escalada.
+  const UNIT_DISPLAY = {
+    grama: { abbr: "g" },
+    quilograma: { abbr: "kg" },
+    mililitro: { abbr: "ml" },
+    litro: { abbr: "L" },
+    "colher-sopa": { singular: "colher (sopa)", plural: "colheres (sopa)" },
+    "colher-cha": { singular: "colher (chá)", plural: "colheres (chá)" },
+    xicara: { singular: "xícara", plural: "xícaras" },
+    dente: { singular: "dente", plural: "dentes" },
+    pitada: { singular: "pitada", plural: "pitadas" },
+    fio: { singular: "fio", plural: "fios" },
+    fatia: { singular: "fatia", plural: "fatias" },
+    folha: { singular: "folha", plural: "folhas" },
+    ramo: { singular: "ramo", plural: "ramos" },
+    talo: { singular: "talo", plural: "talos" },
+    posta: { singular: "posta", plural: "postas" },
+    file: { singular: "filé", plural: "filés" },
+    disco: { singular: "disco", plural: "discos" },
+    pedaco: { singular: "pedaço", plural: "pedaços" },
+    lata: { singular: "lata", plural: "latas" },
+    pacote: { singular: "pacote", plural: "pacotes" },
+    gomo: { singular: "gomo", plural: "gomos" },
+    copo: { singular: "copo", plural: "copos" },
+    punhado: { singular: "punhado", plural: "punhados" },
+    fava: { singular: "fava", plural: "favas" },
+  };
+
+  // Arredonda pra fração comum de cozinha quando a parte decimal bate de perto (1/4, 1/3, 1/2,
+  // 2/3, 3/4) — nunca mostra decimal cru tipo "0.333333333". Fora dessas frações, cai pra 1 casa
+  // decimal com vírgula (mesmo padrão PT-BR já usado no texto original, ex. "1,5 kg").
+  const COMMON_FRACTIONS = [
+    [0.25, "1/4"],
+    [1 / 3, "1/3"],
+    [0.5, "1/2"],
+    [2 / 3, "2/3"],
+    [0.75, "3/4"],
+  ];
+  const FRACTION_EPS = 0.04;
+  function formatQty(value) {
+    const intPart = Math.floor(value + 1e-9);
+    const frac = value - intPart;
+    if (frac < FRACTION_EPS || frac > 1 - FRACTION_EPS) {
+      return String(Math.max(0, Math.round(value)));
+    }
+    for (const [target, label] of COMMON_FRACTIONS) {
+      if (Math.abs(frac - target) < FRACTION_EPS) {
+        return (intPart > 0 ? intPart + " " : "") + label;
+      }
+    }
+    return String(Math.round(value * 10) / 10).replace(".", ",");
+  }
+
+  // Só escala qty/qtyRange (os únicos campos verdadeiramente numéricos do schema). prep/alt/group
+  // ficam como texto puro original, sem tentar escalar números que porventura apareçam dentro
+  // deles (ex.: "cerca de 4 cm de espessura" no prep) — são texto livre, não campo estruturado,
+  // e escalar um número solto dentro de texto livre arriscaria acertar a coisa errada.
+  function scaleQtyField(it, ratio) {
+    if (it.qty !== null && it.qty !== undefined) {
+      const scaled = it.qty * ratio;
+      return { qtyText: formatQty(scaled), refQty: scaled, isRange: false };
+    }
+    if (it.qtyRange) {
+      const lo = it.qtyRange[0] * ratio;
+      const hi = it.qtyRange[1] * ratio;
+      return { qtyText: formatQty(lo) + "-" + formatQty(hi), refQty: hi, isRange: true };
+    }
+    return { qtyText: "", refQty: null, isRange: false }; // sem qty (a gosto, referência, etc.) — nunca inventa número
+  }
+
+  function formatStructuredItem(it, ratio) {
+    const { qtyText, refQty, isRange } = scaleQtyField(it, ratio);
+    let unitText = "";
+    if (it.unit) {
+      const u = UNIT_DISPLAY[it.unit];
+      if (u && u.abbr) unitText = u.abbr;
+      else if (u) unitText = isRange || refQty === null || Math.round(refQty) !== 1 ? u.plural : u.singular;
+      else unitText = it.unit;
+    }
+    let head;
+    if (qtyText) {
+      head = [qtyText, unitText].filter(Boolean).join(" ") + (unitText ? " de " : " ") + it.item;
+    } else {
+      head = it.item.charAt(0).toUpperCase() + it.item.slice(1);
+    }
+    let extra = "";
+    if (it.prep) extra += ", " + it.prep;
+    if (it.alt) extra += " (ou " + it.alt + ")";
+    if (it.optional) extra += " (opcional)";
+    return head + extra;
+  }
+
+  function formatStructuredEntry(entry, ratio) {
+    const itemsText = entry.items.map((it) => formatStructuredItem(it, ratio)).join("; ");
+    return entry.group ? "Para " + entry.group + ": " + itemsText : itemsText;
+  }
+
+  // Extrai o número-base de porções do texto livre de recipe.yield (ex.: "4 porções" -> 4,
+  // "4-6 porções" -> 4 com sufixo " porções", "1 pão grande" -> 1 com sufixo " pão grande"). Só
+  // habilita o multiplicador quando o texto COMEÇA com um número — formas como "≈ 500 ml",
+  // "Para 1 prato", "Conforme a peça" ficam de fora (o número não está numa posição segura pra
+  // extrair sem ambiguidade); nesses casos o yield aparece como sempre, sem controle interativo,
+  // em vez de arriscar uma base errada.
+  function parseYieldBase(yieldText) {
+    if (!yieldText) return null;
+    const m = String(yieldText).trim().match(/^(\d+)(?:\s*[-–]\s*\d+)?\s*(.*)$/);
+    if (!m) return null;
+    const base = parseInt(m[1], 10);
+    if (!base || base <= 0) return null;
+    return { base, suffix: m[2] };
+  }
+
   // ---------- Página própria da receita ----------
   function renderReceita(id, fromCollectionId) {
     const item = TagModel.findRecipeById(id);
@@ -1871,10 +1986,54 @@
     if (recipe.time && recipe.time.total) metaHtml += "<span>⏱ Total: " + recipe.time.total + "</span>";
     if (recipe.time && recipe.time.prep) metaHtml += "<span>🔪 Preparo: " + recipe.time.prep + "</span>";
     if (recipe.time && recipe.time.cook) metaHtml += "<span>🔥 Cozimento: " + recipe.time.cook + "</span>";
-    if (recipe.yield) metaHtml += "<span>🍽 " + recipe.yield + "</span>";
+    // Multiplicador de porções (usa ingredientsStructured, ver funções acima) só entra quando o
+    // yield COMEÇA com um número seguro de extrair (parseYieldBase) — senão mostra o texto de
+    // sempre, sem controle, pra não arriscar uma base errada.
+    const yieldInfo = parseYieldBase(recipe.yield);
+    if (recipe.yield && !yieldInfo) metaHtml += "<span>🍽 " + recipe.yield + "</span>";
     if (recipe.difficulty) metaHtml += "<span>📊 " + recipe.difficulty + "</span>";
     metaRow.innerHTML = metaHtml;
     page.appendChild(metaRow);
+
+    let stepperInput = null;
+    if (yieldInfo) {
+      const stepperWrap = document.createElement("div");
+      stepperWrap.className = "portion-stepper";
+      stepperWrap.innerHTML =
+        '<span class="portion-stepper__icon" aria-hidden="true">🍽</span>' +
+        '<button type="button" class="portion-stepper__btn" data-dir="-1" aria-label="Diminuir porções">−</button>' +
+        '<input type="number" class="portion-stepper__input" min="1" max="999" step="1" inputmode="numeric" ' +
+        'aria-label="Número de porções" value="' +
+        yieldInfo.base +
+        '">' +
+        '<button type="button" class="portion-stepper__btn" data-dir="1" aria-label="Aumentar porções">+</button>' +
+        (yieldInfo.suffix ? '<span class="portion-stepper__suffix">' + yieldInfo.suffix + "</span>" : "");
+      metaRow.appendChild(stepperWrap);
+      stepperInput = stepperWrap.querySelector(".portion-stepper__input");
+      stepperWrap.querySelectorAll(".portion-stepper__btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const dir = parseInt(btn.dataset.dir, 10);
+          const v = Math.max(1, (parseInt(stepperInput.value, 10) || yieldInfo.base) + dir);
+          stepperInput.value = v;
+          refreshIngredients();
+        });
+      });
+      stepperInput.addEventListener("input", () => {
+        if (stepperInput.value !== "") refreshIngredients();
+      });
+      stepperInput.addEventListener("change", () => {
+        let v = parseInt(stepperInput.value, 10);
+        if (!v || v < 1) v = 1;
+        if (v > 999) v = 999;
+        stepperInput.value = v;
+        refreshIngredients();
+      });
+    }
+    function currentRatio() {
+      if (!yieldInfo) return 1;
+      const v = parseInt(stepperInput.value, 10);
+      return (v && v > 0 ? v : yieldInfo.base) / yieldInfo.base;
+    }
 
     const pageTagIds = priorityTagIds(item.tags || [], 8);
     if (pageTagIds.length) {
@@ -1934,24 +2093,51 @@
     // checkboxes já aplicam direto no Storage).
     const ingSection = document.createElement("div");
     ingSection.className = "recipe-page-section filter-section";
-    const checked = Storage.getCheckedIngredients(item.id);
     const ingredientsList = recipe.ingredients || [];
-    const ingItems = ingredientsList
-      .map((ing, i) => {
-        const isChecked = checked.indexOf(i) !== -1;
-        return (
-          '<li><label><input type="checkbox" data-idx="' +
-          i +
-          '"' +
-          (isChecked ? " checked" : "") +
-          '><span class="' +
-          (isChecked ? "struck" : "") +
-          '">' +
-          ing +
-          "</span></label></li>"
-        );
-      })
-      .join("");
+    // ingredientsStructured (Fase 2b) tem 1 entrada por linha de ingredients, mesma ordem — usado
+    // pra escalar a exibição quando o multiplicador de porções muda. Se a receita não tiver o
+    // campo (não deveria acontecer, as 398 já foram cobertas), cai pro raw sem escalar, sem quebrar.
+    const structuredList = recipe.ingredientsStructured || null;
+
+    function ingredientItemsHtml(ratio) {
+      const checked = Storage.getCheckedIngredients(item.id);
+      return ingredientsList
+        .map((ing, i) => {
+          const isChecked = checked.indexOf(i) !== -1;
+          const entry = structuredList && structuredList[i];
+          const text = entry ? formatStructuredEntry(entry, ratio) : ing;
+          return (
+            '<li><label><input type="checkbox" data-idx="' +
+            i +
+            '"' +
+            (isChecked ? " checked" : "") +
+            '><span class="' +
+            (isChecked ? "struck" : "") +
+            '">' +
+            text +
+            "</span></label></li>"
+          );
+        })
+        .join("");
+    }
+
+    function bindIngredientCheckboxes() {
+      ingSection.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+        cb.addEventListener("change", () => {
+          const idx = parseInt(cb.dataset.idx, 10);
+          Storage.toggleIngredient(item.id, idx);
+          cb.nextElementSibling.classList.toggle("struck", cb.checked);
+        });
+      });
+    }
+
+    function refreshIngredients() {
+      const ul = ingSection.querySelector(".ingredients-list");
+      if (!ul) return; // stepper pode disparar antes do acordeão existir, nunca acontece na prática mas evita erro
+      ul.innerHTML = ingredientItemsHtml(currentRatio());
+      bindIngredientCheckboxes();
+    }
+
     ingSection.innerHTML =
       '<button type="button" class="filter-section__header">' +
       '<span class="filter-section__label">Ver ingredientes<span class="filter-section__count">(' +
@@ -1960,19 +2146,13 @@
       iconSvg("chevronDown", "filter-section__chevron") +
       "</button>" +
       '<div class="filter-section__body"><ul class="ingredients-list checklist">' +
-      ingItems +
+      ingredientItemsHtml(1) +
       "</ul></div>";
     ingSection.querySelector(".filter-section__header").addEventListener("click", () => {
       ingSection.classList.toggle("is-open");
     });
     page.appendChild(ingSection);
-    ingSection.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
-      cb.addEventListener("change", () => {
-        const idx = parseInt(cb.dataset.idx, 10);
-        Storage.toggleIngredient(item.id, idx);
-        cb.nextElementSibling.classList.toggle("struck", cb.checked);
-      });
-    });
+    bindIngredientCheckboxes();
 
     const stepsSection = document.createElement("div");
     stepsSection.className = "recipe-page-section";

@@ -180,6 +180,89 @@ por receita, não múltiplas facetas recalculáveis; os checkboxes de ingredient
 aplicando direto no `Storage.toggleIngredient` como sempre, sem mudança nessa lógica. `<h4>
 Ingredientes</h4>` (heading estático) foi substituído pelo próprio botão-cabeçalho do acordeão.
 
+### Multiplicador de porções (usa ingredientsStructured)
+
+Na tela de receita, o "🍽 N porções" de `.recipe-page-meta` vira um controle interativo
+(`.portion-stepper`: botões −/+ redondos de 30px + `<input type="number">` central + sufixo de
+texto) sempre que `parseYieldBase` (app.js) consegue extrair uma base numérica segura do começo
+do texto de `recipe.yield` — ex. "4 porções" -> base 4, sufixo "porções"; "4-6 porções" -> base 4
+(primeiro número do intervalo), sufixo "porções", o "-6" nunca fica solto no sufixo. Formatos como
+"≈ 500 ml", "Para 1 prato", "Conforme a peça" (o número não começa o texto, ou não existe) ficam
+de fora de propósito — mostram o yield como sempre, sem controle, em vez de arriscar uma base
+errada. Isso é uma decisão de escopo explícita, não uma limitação a corrigir depois.
+
+Mudar o valor recalcula a lista de ingredientes ao vivo (`refreshIngredients()`, re-renderiza só o
+`<ul class="ingredients-list">`, sem afetar o estado aberto/fechado do acordeão nem os checkboxes
+já marcados — o estado marcado vem sempre do `Storage.getCheckedIngredients`, nunca do DOM
+anterior, então sobrevive à re-renderização). A escala usa `recipe.ingredientsStructured` (Fase
+2b) — só os campos verdadeiramente numéricos (`qty`, `qtyRange`) são multiplicados pela razão
+`porçõesAtuais / porçõesBase`; `item`/`prep`/`alt`/`group` são texto livre e ficam INTOCADOS mesmo
+quando contêm números (ex. "cerca de 4 cm de espessura" no prep) — escalar um número solto dentro
+de texto livre arriscaria acertar a coisa errada. Itens sem `qty` nem `qtyRange` (ex. "sal a
+gosto", referências cruzadas) nunca ganham um número inventado, em qualquer multiplicador.
+
+Formatação do número escalado (`formatQty`) nunca mostra decimal cru: fecha pra fração comum de
+cozinha (1/4, 1/3, 1/2, 2/3, 3/4, com tolerância de 4% e número misto tipo "1 1/2" quando a parte
+inteira é maior que zero) quando a parte decimal bate de perto; senão cai pra 1 casa decimal com
+vírgula (padrão PT-BR já usado no texto original, ex. "1,5 kg"); valores bem próximos de um inteiro
+arredondam pro inteiro. `qtyRange` escala os dois extremos independentemente e junta com hífen (ex.
+"8-10" x2 -> "16-20"). Unidade usa `UNIT_DISPLAY` (mesmos ids canônicos do parser da Fase 2b) —
+grama/quilograma/mililitro/litro viram abreviação sem plural (g/kg/ml/L); o resto (dente, xícara,
+colher-sopa etc.) é substantivo contável com singular/plural escolhido pela quantidade escalada
+arredondada (ex. "1 dente" vs "2 dentes"). Limitação explícita, não corrigida nesta rodada: o
+substantivo do próprio `item` (ex. "cenouras") não se reconcilia gramaticalmente com a quantidade
+escalada — só a unidade (quando existe) ganha esse tratamento; o schema não guarda uma forma
+singular/plural separada pro nome do item.
+
+Cada entrada de `ingredientsStructured` pode ter mais de um `items[]` (linha multi-item ou rótulo
+de grupo "Para X:") — todos os itens da MESMA entrada são reconstruídos e juntados com "; " (ex.
+"1 cebola, em pedaços; 2 cenouras, em pedaços; 1 talo de salsão, em pedaços"), preservando o
+`group` como prefixo "Para {group}: " quando existir. Isso ainda ocupa 1 único `<li>`/checkbox
+(mesmo índice do array `ingredients` original) — a granularidade de marcação continua por LINHA
+original, não por item individual dentro dela.
+
+Fallback obrigatório: se `recipe.ingredientsStructured` não existir pra alguma receita (não
+deveria acontecer, as 398 já foram cobertas na Fase 2b), a linha cai pro `ing` (texto raw) sem
+escalar, sem quebrar — testado forçando a ausência do campo em runtime.
+
+Bug de dados encontrado e corrigido durante esta rodada (não é do multiplicador, é da Fase 2b):
+linhas de ingrediente que juntam DUAS quantidades sem usar vírgula/" e "/travessão (os únicos
+separadores que o classificador da Fase 2b reconhecia) nunca disparavam revisão manual — caíam no
+bucket "confiante" como 1 item só, com a segunda quantidade colada dentro do texto do `item` ou do
+`prep` (nunca virava um `qty` próprio, por isso nunca escalava). Duas rodadas de varredura no
+acervo inteiro (2942 linhas):
+
+1ª rodada — separador "+": regex `/\+\s*\d/` no campo `item`. 9 ocorrências em 8 receitas (Coq au
+Vin, Espuma com Sifão, Carbonara, Béarnaise, Ovos en Meurette, Crème Caramel, Petit Gâteau, Bisque,
+French Onion Soup), em 7 arquivos.
+
+2ª rodada — varredura mais ampla pedida explicitamente (checar `;`, `/`, `+` em outras posições,
+e qualquer padrão numérico repetido sem separador reconhecido): reaplicou o mesmo regex `+` mas
+nos 4 campos (`item`/`prep`/`alt`/`group`, não só `item` — achou 4 casos onde o "+" tinha caído no
+`prep`, não no `item`, por isso escaparam da 1ª rodada); scan de conectores de combinação
+("dissolvido em", "hidratado em", "espetado com" etc. seguidos de número) achou mais 5 casos onde
+a segunda quantidade nem usava vírgula nem "+"; scan bruto de contagem de dígitos (2+ números numa
+linha, mais que o `items.length` atual) cobriu o resto e não achou nada novo além do já encontrado
+pelos scans direcionados — usado só pra checar cobertura, não como fonte primária (produz muitos
+falsos positivos de faixas de peso/tempo/tamanho em parênteses, ex. "(1,2-1,5 kg)", "por 8h",
+que descrevem o MESMO item único, não um segundo item). 10 ocorrências novas em 10 receitas (Mapo
+Tofu, Biryani, Risotto ai Funghi, Cassoulet, Blanquette de Veau, Arenque em Conserva/Sild, Vitello
+Tonnato, Escargot, Polvo à Lagareiro, Risalamande), em 8 arquivos novos.
+
+Total: 19 ocorrências em 18 receitas, 15 arquivos — todas corrigidas pra `items[]` separados (ou,
+no caso de Arenque em Conserva, só a extração do `qty` que faltava no item primário — a segunda
+metade já era uma alternativa "ou" legítima, tratada via `alt` como as outras ~155 linhas desse
+tipo no acervo). Confirmado por rescan: 0 ocorrências de `+` residual em item/prep/alt/group, 0
+conectores de combinação com `items.length` ainda em 1.
+
+Casos revisados e propositalmente NÃO alterados (falso-positivo do scan, não bug): ~15 linhas com
+alternativa "ou" que também têm uma quantidade dentro do próprio `alt` (ex. "50 g de tutano de boi
+... ou 20 g de manteiga extra") — o `alt` nunca escala mesmo, é decisão de schema já testada, não
+confundir com o bug acima. Também não alterado: a família "Suco de 1/2 limão" (9 ocorrências, 7
+receitas) — a fração está no meio da frase, não é um separador de múltiplos itens (só 1
+quantidade na linha), então fica fora do escopo desta varredura; registrado como limitação
+conhecida separada, não corrigido nesta rodada.
+
 ## Filtros e chips
 
 Não mostrar tudo que é possível.

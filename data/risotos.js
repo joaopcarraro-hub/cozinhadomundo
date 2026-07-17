@@ -140,7 +140,8 @@ window.RECIPES["risotos"] = [
         raw: "30 g de cogumelos secos (porcini), hidratados em 300 ml de água morna",
         group: null,
         items: [
-          { qty: 30, qtyRange: null, unit: "grama", item: "cogumelos secos (porcini)", prep: "hidratados em 300 ml de água morna", alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "cogumelos secos (porcini)", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "água morna", prep: "para hidratar os cogumelos", alt: null, optional: false, isReference: false },
         ],
       },
       {

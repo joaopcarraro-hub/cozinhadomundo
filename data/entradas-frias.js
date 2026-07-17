@@ -550,7 +550,8 @@ window.RECIPES["entradas-frias"] = [
         raw: "2 gemas cozidas + 1 gema crua",
         group: null,
         items: [
-          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: "cozidas + 1 gema crua", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: "cozidas", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: "crua", alt: null, optional: false, isReference: false },
         ],
       },
       {

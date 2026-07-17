@@ -116,7 +116,8 @@ window.RECIPES["sobremesas-classicas"] = [
         raw: "4 ovos inteiros + 2 gemas",
         group: null,
         items: [
-          { qty: 4, qtyRange: null, unit: null, item: "ovos inteiros + 2 gemas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "ovos inteiros", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {
@@ -1304,7 +1305,8 @@ window.RECIPES["sobremesas-classicas"] = [
         raw: "3 ovos + 2 gemas",
         group: null,
         items: [
-          { qty: 3, qtyRange: null, unit: null, item: "ovos + 2 gemas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {
