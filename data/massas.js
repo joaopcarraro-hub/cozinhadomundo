@@ -20,6 +20,50 @@ window.RECIPES["massas"] = [
       "Pimenta-do-reino preta moída na hora, generosamente",
       "Sal para a água da massa"
     ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de spaghetti ou rigatoni",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "spaghetti", prep: null, alt: "rigatoni", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "120 g de guanciale (ou pancetta), em tiras",
+        group: null,
+        items: [
+          { qty: 120, qtyRange: null, unit: "grama", item: "guanciale", prep: "em tiras", alt: "pancetta", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos inteiros + 2 gemas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos inteiros + 2 gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de pecorino romano ralado (+ extra para servir)",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "pecorino romano", prep: "ralado (+ extra para servir)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino preta moída na hora, generosamente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino preta", prep: "moída na hora, generosamente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal para a água da massa",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal para a água da massa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe a massa em água bem salgada até ficar al dente, seguindo o tempo da embalagem.",
       "Enquanto isso, doure o guanciale numa frigideira grande, em fogo médio, sem óleo (a própria gordura solta), até ficar crocante, 6-8 minutos. Desligue o fogo.",
@@ -50,6 +94,36 @@ window.RECIPES["massas"] = [
       "100 g de pecorino romano ralado bem fino",
       "2 colheres (chá) de pimenta-do-reino preta em grãos, tostada e moída grosseiramente",
       "Sal para a água da massa"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de tonnarelli ou spaghetti",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "tonnarelli", prep: null, alt: "spaghetti", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de pecorino romano ralado bem fino",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "pecorino romano", prep: "ralado bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (chá) de pimenta-do-reino preta em grãos, tostada e moída grosseiramente",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-cha", item: "pimenta-do-reino preta em grãos", prep: "tostada e moída grosseiramente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal para a água da massa",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal para a água da massa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tueste a pimenta-do-reino em grãos numa frigideira seca por 1 minuto, até perfumar, depois moa grosseiramente (no pilão ou moedor).",
@@ -82,6 +156,57 @@ window.RECIPES["massas"] = [
       "80 g de pecorino romano ralado",
       "Sal para a água da massa",
       "Vinho branco seco (opcional, um fio para deglacear)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "250 g de bucatini ou spaghetti",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "bucatini", prep: null, alt: "spaghetti", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de guanciale em tiras",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "guanciale", prep: "em tiras", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado, picado grosseiramente (ou molho de tomate simples)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado grosseiramente", alt: "molho de tomate simples", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta dedo-de-moça seca (ou pitada de pimenta calabresa)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta dedo-de-moça seca", prep: null, alt: "pitada de pimenta calabresa", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de pecorino romano ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "pecorino romano", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal para a água da massa",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal para a água da massa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Vinho branco seco (opcional, um fio para deglacear)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "vinho branco seco", prep: "um fio para deglacear", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa frigideira grande, doure o guanciale em fogo médio, sem óleo, até ficar crocante e soltar a gordura, 6-8 minutos. Retire parte do guanciale crocante e reserve para finalizar.",
@@ -120,6 +245,78 @@ window.RECIPES["massas"] = [
       "Salsinha picada",
       "Sal a gosto (cuidado: anchova e alcaparra já salgam bastante)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "250 g de spaghetti",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "spaghetti", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho fatiados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 filés de anchova",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "file", item: "anchova", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta dedo-de-moça picada (ou flocos de pimenta)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta dedo-de-moça", prep: "picada", alt: "flocos de pimenta", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado picado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de azeitonas pretas sem caroço, picadas grosseiramente",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "azeitonas pretas sem caroço", prep: "picadas grosseiramente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de alcaparras",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "alcaparras", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto (cuidado: anchova e alcaparra já salgam bastante)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto (cuidado: anchova e alcaparra já salgam bastante)", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe a massa em água salgada até al dente.",
       "Numa frigideira grande, aqueça o azeite e refogue o alho e a pimenta em fogo médio até perfumar, sem dourar demais.",
@@ -150,6 +347,50 @@ window.RECIPES["massas"] = [
       "1 pimenta dedo-de-moça picada ou flocos de pimenta a gosto",
       "Salsinha picada",
       "Sal para a água da massa"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de spaghetti",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "spaghetti", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de azeite de oliva extra virgem",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "azeite de oliva extra virgem", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 dentes de alho fatiados finos",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: "dente", item: "alho", prep: "fatiados finos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta dedo-de-moça picada ou flocos de pimenta a gosto",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta dedo-de-moça", prep: "picada", alt: "flocos de pimenta a gosto", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal para a água da massa",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal para a água da massa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe a massa em água bem salgada até al dente. Reserve um pouco da água do cozimento.",
@@ -184,6 +425,50 @@ window.RECIPES["massas"] = [
       "200 g de muçarela ralada ou fatiada",
       "Manteiga para untar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "12 folhas de lasanha (fresca ou seca pré-cozida)",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: "folha", item: "lasanha (fresca ou seca pré-cozida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 g de ragù à bolonhesa pronto (carne moída, tomate, mirepoix, vinho — cozido lentamente)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "ragù à bolonhesa pronto", prep: "carne moída, tomate, mirepoix, vinho — cozido lentamente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 ml de Béchamel (ver receita)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "mililitro", item: "béchamel", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "150 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de muçarela ralada ou fatiada",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "muçarela", prep: "ralada", alt: "fatiada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga para untar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para untar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se as folhas de lasanha forem secas (não pré-cozidas), ferva-as em água salgada por 2-3 minutos antes de montar (verifique a embalagem).",
       "Unte um refratário grande com manteiga.",
@@ -217,6 +502,56 @@ window.RECIPES["massas"] = [
       "1 gema",
       "Noz-moscada, sal e pimenta a gosto",
       "Manteiga e sálvia fresca para servir (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 300 g de farinha de trigo tipo 00 (ou comum), 3 ovos grandes, 1 pitada de sal",
+        group: "massa",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha de trigo tipo 00", prep: null, alt: "comum", optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: null, item: "ovos grandes", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 250 g de ricota escorrida, 100 g de espinafre cozido e bem espremido, picado",
+        group: "recheio",
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "ricota", prep: "escorrida", alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "grama", item: "espinafre", prep: "cozido e bem espremido, picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Noz-moscada, sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga e sálvia fresca para servir (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para servir", alt: null, optional: true, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sálvia fresca", prep: "para servir", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Faça a massa: numa superfície, forme uma coroa com a farinha, quebre os ovos no centro e o sal. Vá incorporando a farinha aos ovos com um garfo, depois sove com as mãos por 8-10 minutos até ficar lisa e elástica.",
@@ -253,6 +588,66 @@ window.RECIPES["massas"] = [
       "Noz-moscada a gosto",
       "Caldo de galinha para servir (tradicional, 'tortellini in brodo') ou creme de leite com parmesão"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 300 g de farinha tipo 00, 3 ovos grandes, 1 pitada de sal",
+        group: "massa",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha tipo 00", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: null, item: "ovos grandes", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 150 g de presunto parma picado bem fino",
+        group: "recheio",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "presunto parma", prep: "picado bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de mortadela picada bem fino",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "mortadela", prep: "picada bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de lombo de porco assado, picado bem fino",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "lombo de porco assado", prep: "picado bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Noz-moscada a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Caldo de galinha para servir (tradicional, 'tortellini in brodo') ou creme de leite com parmesão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "caldo de galinha", prep: "para servir (tradicional, 'tortellini in brodo')", alt: "creme de leite com parmesão", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a massa como no Ravioli: sove bem, descanse por 30 minutos.",
       "Prepare o recheio: no processador, bata o presunto, mortadela e lombo até formar uma pasta fina e homogênea. Misture com o parmesão, ovo e noz-moscada.",
@@ -284,6 +679,53 @@ window.RECIPES["massas"] = [
       "80 g de parmesão ralado",
       "1 ovo",
       "Manteiga e sálvia (ou o próprio jus do assado) para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 300 g de farinha tipo 00, 3 ovos grandes, 1 pitada de sal",
+        group: "massa",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha tipo 00", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: null, item: "ovos grandes", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 300 g de sobras de assado (vitela, porco ou coelho, desfiado)",
+        group: "recheio",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "sobras de assado", prep: "vitela, porco ou coelho, desfiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de espinafre ou acelga refogado e picado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "espinafre", prep: "refogado e picado", alt: "acelga", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga e sálvia (ou o próprio jus do assado) para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para servir", alt: "o próprio jus do assado", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sálvia", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa como no Ravioli, sove bem e descanse por 30 minutos.",
@@ -319,6 +761,43 @@ window.RECIPES["massas"] = [
       "Semolina para polvilhar",
       "Ragù à bolonhesa ou molho de manteiga e sálvia para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de farinha tipo 00 (ou comum)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha tipo 00", prep: null, alt: "comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 ovos grandes",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos grandes", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Semolina para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "semolina", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ragù à bolonhesa ou molho de manteiga e sálvia para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ragù à bolonhesa", prep: "para servir", alt: "molho de manteiga e sálvia", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Forme uma coroa com a farinha numa superfície, quebre os ovos no centro com o sal.",
       "Incorpore os ovos à farinha aos poucos com um garfo, depois sove com as mãos por 8-10 minutos até a massa ficar lisa, elástica e homogênea.",
@@ -350,6 +829,43 @@ window.RECIPES["massas"] = [
       "1 pitada de sal",
       "Semolina para polvilhar",
       "Ragù de javali, cordeiro ou cogumelos silvestres para servir (tradicional toscano)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de farinha tipo 00 (ou comum)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha tipo 00", prep: null, alt: "comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 ovos grandes",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos grandes", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Semolina para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "semolina", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ragù de javali, cordeiro ou cogumelos silvestres para servir (tradicional toscano)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ragù de javali", prep: "para servir (tradicional toscano)", alt: "cordeiro ou cogumelos silvestres", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare e sove a massa como no Tagliatelle, descansando por 30 minutos.",
@@ -384,6 +900,51 @@ window.RECIPES["massas"] = [
       "Sal a gosto",
       "Manteiga e sálvia, ou molho de tomate, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de batata (tipo asterix ou inglesa), com casca",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batata", prep: "tipo asterix ou inglesa, com casca", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200-250 g de farinha de trigo (a quantidade exata depende da umidade da batata)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [200, 250], unit: "grama", item: "farinha de trigo (a quantidade exata depende da umidade da batata)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga e sálvia, ou molho de tomate, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para servir", alt: "molho de tomate", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sálvia", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe as batatas inteiras, com casca, em água ou no forno (assadas ficam menos aguadas) até ficarem bem macias.",
       "Ainda quentes, descasque e passe por um espremedor de batatas (nunca processador — deixa a massa elástica e borrachuda) direto sobre uma superfície limpa.",
@@ -417,6 +978,57 @@ window.RECIPES["massas"] = [
       "Sal a gosto",
       "Manteiga para finalizar",
       "Cebola frita crocante para servir (opcional, tradicional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de água ou leite",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: "leite", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebola frita crocante para servir (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebola frita crocante", prep: "para servir (tradicional)", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa tigela, misture a farinha com sal e noz-moscada.",

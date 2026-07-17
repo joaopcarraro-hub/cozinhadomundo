@@ -26,6 +26,80 @@ window.RECIPES["portugal"] = [
       "100 g de queijo ralado (parmesão ou flamengo)",
       "Noz-moscada, sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de bacalhau dessalgado, desfiado em lascas",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "bacalhau dessalgado", prep: "desfiado em lascas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de batata, descascada e em palitos finos (batata palha ou batata frita em cubos pequenos)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batata", prep: "descascada e em palitos finos (batata palha ou batata frita em cubos pequenos)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar as batatas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar as batatas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola grande, fatiada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola grande", prep: "fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de Béchamel (ver receita, categoria Molhos)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "béchamel", prep: "ver receita, categoria molhos", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "200 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo ralado (parmesão ou flamengo)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo", prep: "ralado (parmesão ou flamengo)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Noz-moscada, sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe o bacalhau em água ou leite por 5 minutos, escorra e desfie em lascas, removendo peles e espinhas.",
       "Frite as batatas em óleo quente até dourarem e ficarem crocantes. Escorra bem em papel toalha.",
@@ -60,6 +134,66 @@ window.RECIPES["portugal"] = [
       "2 colheres (sopa) de salsinha picada",
       "Noz-moscada, sal e pimenta a gosto",
       "Óleo, para fritar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de bacalhau dessalgado",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "bacalhau dessalgado", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de batata, descascada",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "batata", prep: "descascada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Noz-moscada, sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe o bacalhau em água por 8-10 minutos, até macio. Escorra, deixe amornar e desfie bem fino, removendo peles e espinhas (pode usar as mãos para desfiar em fibras bem finas — quanto mais fino, melhor a textura final).",
@@ -101,6 +235,89 @@ window.RECIPES["portugal"] = [
       "Azeite de oliva, louro, coentro ou salsinha",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de camarão médio, limpo",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de amêijoas (ou vôngole), limpas",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "amêijoas", prep: "limpas", alt: "vôngole", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de mexilhões limpos",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "mexilhões", prep: "limpos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de peixe branco firme, em postas",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "peixe branco firme", prep: "em postas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de chouriço português, fatiado",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chouriço português", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola fatiada, 1 pimentão vermelho fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva, louro, coentro ou salsinha",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: null, alt: "salsinha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa cataplana (ou panela funda com tampa), aqueça o azeite e refogue a cebola, pimentão e alho até macios, 8-10 minutos.",
       "Junte o chouriço fatiado e refogue por 2-3 minutos, para soltar sabor na gordura.",
@@ -134,6 +351,57 @@ window.RECIPES["portugal"] = [
       "6 dentes de alho, inteiros com casca (+ 2 picados)",
       "Sal grosso",
       "Salsinha picada"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 polvo (1,2-1,5 kg), limpo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "polvo", prep: "(1,2-1,5 kg), limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, cortada ao meio",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "cortada ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de batatas pequenas (batata a murro), com casca",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batatas pequenas (batata a murro)", prep: "com casca", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de azeite de oliva extra virgem (generoso, característica do prato)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "azeite de oliva extra virgem", prep: "generoso, característica do prato", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 dentes de alho, inteiros com casca (+ 2 picados)",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: "inteiros com casca (+ 2 picados)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe o polvo em água com a cebola até ficar macio, cerca de 45-50 minutos (ver técnica na receita Polvo Grelhado, categoria Frutos do Mar). Corte em tentáculos inteiros ou grandes pedaços.",
@@ -171,6 +439,71 @@ window.RECIPES["portugal"] = [
       "150 ml de água",
       "6 gemas",
       "Canela em pó, para polvilhar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 disco de massa folhada (ou massa folhada caseira enrolada em cilindro, técnica tradicional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "disco", item: "massa folhada", prep: null, alt: "massa folhada caseira enrolada em cilindro, técnica tradicional", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de leite integral",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "leite integral", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 casca de limão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "casca de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pau de canela",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pau de canela", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 g de açúcar",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de água",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 gemas",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Canela em pó, para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "canela em pó", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Se for usar massa folhada caseira, enrole-a bem apertada num cilindro (como um rocambole) e corte em fatias de cerca de 2 cm. Se for massa pronta em disco, enrole-a também em cilindro antes de fatiar — essa técnica cria as camadas espirais características.",

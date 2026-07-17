@@ -26,6 +26,102 @@ window.RECIPES["marrocos"] = [
       "Sal e pimenta a gosto",
       "Cuscuz, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de paleta de cordeiro, em cubos grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "paleta de cordeiro", prep: "em cubos grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas fatiadas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "fatiadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de gengibre em pó, 1 colher (chá) de cominho, 1 colher (chá) de canela",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "gengibre em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "canela", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açafrão (ou cúrcuma)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: null, alt: "cúrcuma", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "700 ml de água ou caldo",
+        group: null,
+        items: [
+          { qty: 700, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: "caldo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de damasco seco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "damasco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de amêndoas tostadas",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "amêndoas tostadas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de mel",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "mel", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cuscuz, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cuscuz", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere a carne com sal e pimenta. Numa panela funda (ou tajine, se tiver), aqueça o azeite e doure a carne por todos os lados. Retire e reserve.",
       "Na mesma panela, refogue a cebola até dourar levemente, 8 minutos. Junte o alho e todas as especiarias, refogando por 1-2 minutos até perfumarem intensamente.",
@@ -58,6 +154,57 @@ window.RECIPES["marrocos"] = [
       "50 g de amêndoas tostadas, picadas",
       "50 g de passas",
       "Coentro ou salsinha picada"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de cuscuz (sêmola pré-cozida)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "cuscuz (sêmola pré-cozida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "450 ml de água ou caldo de legumes, fervendo",
+        group: null,
+        items: [
+          { qty: 450, qtyRange: null, unit: "mililitro", item: "água", prep: "fervendo", alt: "caldo de legumes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite ou manteiga",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: "manteiga", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de amêndoas tostadas, picadas",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "amêndoas tostadas", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de passas",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "passas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro ou salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: null, alt: "salsinha picada", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Coloque o cuscuz seco numa travessa larga e rasa.",
@@ -94,6 +241,81 @@ window.RECIPES["marrocos"] = [
       "3 colheres (sopa) de açúcar de confeiteiro (+ extra para polvilhar)",
       "1 pacote de massa filo",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 frango inteiro, em pedaços (ou 6 sobrecoxas)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "frango inteiro", prep: "em pedaços", alt: "6 sobrecoxas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas picadas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de gengibre em pó, 1 colher (chá) de canela (+ extra para polvilhar), 1 pitada de açafrão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "gengibre em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "canela", prep: "+ extra para polvilhar", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de água ou caldo de galinha",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: "caldo de galinha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de amêndoas tostadas, picadas",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "amêndoas tostadas", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de açúcar de confeiteiro (+ extra para polvilhar)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "açúcar de confeiteiro (+ extra para polvilhar)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pacote de massa filo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pacote", item: "massa filo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela funda, derreta metade da manteiga e refogue a cebola até dourar. Junte o gengibre, canela e açafrão, refogando por 1 minuto.",
@@ -136,6 +358,96 @@ window.RECIPES["marrocos"] = [
       "2 colheres (sopa) de farinha de trigo dissolvida em água (para engrossar, opcional)",
       "Suco de 1 limão",
       "Coentro e salsinha picados"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de carne bovina ou cordeiro, em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "carne bovina", prep: null, alt: "cordeiro, em cubos pequenos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 talos de salsão picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "salsão", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de gengibre em pó, 1 colher (chá) de cúrcuma, 1 pitada de canela",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "gengibre em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cúrcuma", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "canela", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado picado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de lentilha, de molho por 30 minutos",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "lentilha", prep: "de molho por 30 minutos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de grão-de-bico cozido",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "grão-de-bico", prep: "cozido", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de água ou caldo",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "caldo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de farinha de trigo dissolvida em água (para engrossar, opcional)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo", prep: "dissolvida em água (para engrossar)", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro e salsinha picados",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela funda, aqueça o azeite e doure a carne em cubos por todos os lados.",

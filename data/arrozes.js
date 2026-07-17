@@ -23,6 +23,71 @@ window.RECIPES["arrozes"] = [
       "4 xícaras de caldo de galinha ou água quente",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 xícaras de arroz branco",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "xicara", item: "arroz branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos, batidos e feitos em omelete fina, depois cortada em tiras",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos e feitos em omelete fina, depois cortada em tiras", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de bacon em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "bacon", prep: "em cubos pequenos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de salsinha e cebolinha picadas",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "salsinha e cebolinha", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 xícaras de caldo de galinha ou água quente",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "xicara", item: "caldo de galinha", prep: null, alt: "água quente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela, doure o bacon em fogo médio até crocante, retire e reserve, deixando a gordura na panela.",
       "Na mesma panela, derreta parte da manteiga e refogue a cebola e o alho até dourarem levemente.",
@@ -59,6 +124,87 @@ window.RECIPES["arrozes"] = [
       "3 xícaras de arroz",
       "Sal e pimenta a gosto",
       "Raspas de laranja (opcional, toque tradicional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 pato inteiro (1,8-2 kg), em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pato", prep: "inteiro (1,8-2 kg), em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de chouriço/linguiça calabresa fatiado",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chouriço/linguiça calabresa", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de bacon em cubos",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "bacon", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 1 cenoura — em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em cubos", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de vinho branco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de água ou caldo de legumes",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "caldo de legumes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 xícaras de arroz",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raspas de laranja (opcional, toque tradicional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "raspas de laranja", prep: "toque tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere o pato com sal e pimenta. Numa panela funda, doure o bacon até crocante, retire e reserve.",
@@ -103,6 +249,92 @@ window.RECIPES["arrozes"] = [
       "Salsinha picada",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz tipo bomba (ou arbóreo)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz tipo bomba", prep: null, alt: "arbóreo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de lula em anéis",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "lula", prep: "em anéis", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 mexilhões limpos",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "mexilhões", prep: "limpos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 tomates maduros ralados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "tomates maduros", prep: "ralados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açafrão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de fumet de peixe (feito com as cascas do camarão), bem quente",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "fumet de peixe", prep: "feito com as cascas do camarão, bem quente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare um fumet rápido fervendo as cascas do camarão em água por 15 minutos; coe e mantenha quente.",
       "Numa panela larga, aqueça o azeite e sele rapidamente o camarão e a lula, só para dourar por fora. Retire e reserve.",
@@ -141,6 +373,86 @@ window.RECIPES["arrozes"] = [
       "1 folha de louro",
       "Coentro ou salsinha picada",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 polvo (1,2-1,5 kg), limpo e pré-cozido (ver receita Polvo Grelhado para o cozimento inicial, sem grelhar)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "polvo", prep: "(1,2-1,5 kg), limpo e pré-cozido; ver receita polvo grelhado para o cozimento inicial, sem grelhar", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates maduros picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates maduros", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L do caldo de cozimento do polvo (reservado)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "caldo de cozimento do polvo", prep: "reservado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 xícaras de arroz",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro ou salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: null, alt: "salsinha picada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe o polvo em água com cebola e louro até ficar macio (cerca de 45-50 minutos), seguindo a técnica da receita de Polvo Grelhado. Reserve o caldo de cozimento e corte o polvo em pedaços.",
@@ -181,6 +493,102 @@ window.RECIPES["arrozes"] = [
       "100 ml de vinho branco",
       "Azeite de oliva, louro, coentro ou salsinha",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de mexilhões limpos",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "mexilhões", prep: "limpos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de amêijoas (ou vôngole), limpas",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "amêijoas", prep: "limpas", alt: "vôngole", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de lula em anéis",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "lula", prep: "em anéis", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 tomates maduros picados sem pele",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "tomates maduros", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de fumet de peixe (feito com as cascas do camarão)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "fumet de peixe", prep: "feito com as cascas do camarão", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 xícaras de arroz",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva, louro, coentro ou salsinha",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: null, alt: "salsinha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare um fumet rápido fervendo as cascas do camarão em água por 15 minutos; coe e mantenha quente.",

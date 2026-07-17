@@ -23,6 +23,65 @@ window.RECIPES["peru"] = [
       "Coentro fresco, cebola roxa fatiada bem fina, para decorar",
       "Batata-doce cozida, para acompanhar (opcional, tradicional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de peixe branco bem fresco (robalo ou linguado), em fatias finas (estilo sashimi)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "peixe branco bem fresco (robalo ou linguado)", prep: "em fatias finas (estilo sashimi)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de suco de limão-tahiti, espremido na hora",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "suco de limão-tahiti", prep: "espremido na hora", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dente de alho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pedaço pequeno de gengibre",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pedaço pequeno de gengibre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta amarela peruana (ají amarillo), sem sementes (ou substituto: pimenta amarela em pasta)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta amarela peruana (ají amarillo)", prep: "sem sementes", alt: "pimenta amarela em pasta", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco, cebola roxa fatiada bem fina, para decorar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: "para decorar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebola roxa", prep: "fatiada bem fina, para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Batata-doce cozida, para acompanhar (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "batata-doce cozida", prep: "para acompanhar (tradicional)", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata o suco de limão com o alho, gengibre, pimenta amarela e sal no liquidificador, até formar um molho liso — esse é o 'leche de tigre' simplificado que tempera o prato.",
       "Coe o molho para uma textura mais limpa, se desejar.",
@@ -60,6 +119,82 @@ window.RECIPES["peru"] = [
       "Sal e pimenta a gosto",
       "Arroz branco, ovo cozido e azeitonas pretas, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de peito de frango cozido e desfiado (reserve o caldo do cozimento)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "peito de frango", prep: "cozido e desfiado (reserve o caldo do cozimento)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de pão de forma, sem casca",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "pão de forma", prep: "sem casca", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de leite",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de pasta de ají amarillo (pimenta amarela peruana)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "pasta de ají amarillo (pimenta amarela peruana)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de queijo parmesão ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "queijo parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de nozes ou castanhas, moídas",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "nozes", prep: null, alt: "castanhas, moídas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz branco, ovo cozido e azeitonas pretas, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz branco", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ovo cozido", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "azeitonas pretas", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Deixe o pão de molho no leite até amolecer completamente.",
       "Numa panela, aqueça o azeite e refogue a cebola e o alho até dourarem, 8 minutos.",
@@ -95,6 +230,72 @@ window.RECIPES["peru"] = [
       "2 ovos cozidos, fatiados",
       "Azeitonas pretas",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de batata amarela (ou batata comum), cozida",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batata amarela", prep: "cozida", alt: "batata comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de pasta de ají amarillo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "pasta de ají amarillo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 3 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 3 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de frango cozido e desfiado (ou atum em conserva), temperado com maionese e cebola picada",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "frango", prep: "cozido e desfiado, temperado com maionese e cebola picada", alt: "atum em conserva", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 abacate, fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "abacate", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos cozidos, fatiados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos cozidos", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeitonas pretas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeitonas pretas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Amasse a batata cozida ainda quente, sem líquido, até formar um purê seco e liso.",
@@ -137,6 +338,85 @@ window.RECIPES["peru"] = [
       "Coentro picado",
       "Arroz branco, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de contrafilé ou alcatra, em tiras",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "contrafilé", prep: null, alt: "alcatra, em tiras", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo neutro (dividido)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo neutro (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola roxa, em pétalas grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola roxa", prep: "em pétalas grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates, em tiras (sem sementes)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "em tiras (sem sementes)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta amarela peruana, em tiras (ou pimentão amarelo)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta amarela peruana", prep: "em tiras", alt: "pimentão amarelo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de vinagre de vinho tinto",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre de vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de batata, cortada em palitos e frita (batata frita crocante)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "batata", prep: "cortada em palitos e frita (batata frita crocante)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz branco, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz branco", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere a carne com sal e pimenta.",
       "Aqueça bem o óleo numa wok ou frigideira grande em fogo alto. Salteie a carne rapidamente, em lotes (sem lotar a frigideira), até dourar bem por fora, mantendo rosada por dentro, 2-3 minutos por lote. Retire e reserve.",
@@ -172,6 +452,72 @@ window.RECIPES["peru"] = [
       "2 dentes de alho picados, 1 pedaço de gengibre picado",
       "4 colheres (sopa) de shoyu",
       "1 colher (chá) de óleo de gergelim"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 xícaras de arroz cozido, de preferência do dia anterior (mais seco)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "xicara", item: "arroz", prep: "cozido, de preferência do dia anterior (mais seco)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de frango ou carne bovina, em tiras finas",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "frango", prep: null, alt: "carne bovina, em tiras finas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de camarão pequeno, limpo (opcional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "camarão pequeno", prep: "limpo", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo neutro (dividido)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo neutro (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos, batidos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 talos de cebolinha, em pedaços (parte branca e verde separadas)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "talo", item: "cebolinha", prep: "em pedaços (parte branca e verde separadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados, 1 pedaço de gengibre picado",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de óleo de gergelim",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça um pouco de óleo numa wok em fogo alto e salteie a carne/frango até dourar bem. Retire e reserve.",
@@ -210,6 +556,73 @@ window.RECIPES["peru"] = [
       "Sal e pimenta a gosto",
       "Espetos de bambu (de molho em água por 30 minutos)",
       "Batata cozida e milho cozido, para acompanhar (tradicional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de coração de boi (ou alcatra/contrafilé, alternativa mais acessível), em cubos",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "coração de boi", prep: "em cubos", alt: "alcatra/contrafilé, alternativa mais acessível", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de pasta de ají panca (pimenta vermelha peruana) ou páprica + pimenta calabresa",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "pasta de ají panca (pimenta vermelha peruana)", prep: null, alt: "páprica + pimenta calabresa", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de vinagre de vinho tinto",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "vinagre de vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Espetos de bambu (de molho em água por 30 minutos)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "espetos de bambu", prep: "de molho em água por 30 minutos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Batata cozida e milho cozido, para acompanhar (tradicional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "batata cozida", prep: "para acompanhar (tradicional)", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "milho cozido", prep: "para acompanhar (tradicional)", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a pasta de ají panca, alho, vinagre, cominho e óleo, formando a marinada.",

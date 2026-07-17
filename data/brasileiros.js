@@ -25,6 +25,91 @@ window.RECIPES["brasileiros"] = [
       "Azeite, sal (com moderação) e pimenta a gosto",
       "Arroz branco, couve refogada, farofa e laranja em rodelas, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de feijão preto",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "feijão preto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de carne seca, dessalgada (24h de molho, trocando a água)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne seca", prep: "dessalgada (24h de molho, trocando a água)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de costelinha de porco salgada",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "costelinha de porco salgada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de paio",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "paio", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de linguiça calabresa",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "linguiça calabresa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de bacon em pedaço",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "bacon em pedaço", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de orelha e pé de porco salgados (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "orelha e pé de porco", prep: "salgados, tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite, sal (com moderação) e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "com moderação", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz branco, couve refogada, farofa e laranja em rodelas, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz branco", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "couve refogada", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "farofa", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "laranja", prep: "em rodelas, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Deixe o feijão de molho em água por 8 horas (ou durante a noite). Deixe as carnes salgadas (carne seca, costelinha, orelha e pé) de molho separadamente, trocando a água 2-3 vezes, também por 8-24h, para dessalgar.",
       "Escorra o feijão e cozinhe em água nova com o louro, em panela de pressão (25-30 min após pegar pressão) ou panela comum (1h30-2h), até ficar macio mas não desmanchando.",
@@ -59,6 +144,54 @@ window.RECIPES["brasileiros"] = [
       "Sal e pimenta a gosto",
       "Torresmo, ovo frito e couve refogada, para acompanhar (tradicional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de feijão carioca ou preto, já cozido e com bastante caldo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "feijão carioca", prep: "já cozido e com bastante caldo", alt: "preto", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de bacon em cubos",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "bacon", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de farinha de mandioca (ou farinha de milho, torrada)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "farinha de mandioca", prep: null, alt: "farinha de milho, torrada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Torresmo, ovo frito e couve refogada, para acompanhar (tradicional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "torresmo", prep: "para acompanhar (tradicional)", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ovo frito", prep: "para acompanhar (tradicional)", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "couve refogada", prep: "para acompanhar (tradicional)", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Doure o bacon numa panela até crocante. Retire parte para reservar como finalização, deixando o restante e a gordura na panela.",
       "Refogue a cebola e o alho na gordura do bacon até dourarem.",
@@ -92,6 +225,74 @@ window.RECIPES["brasileiros"] = [
       "2 folhas de louro",
       "Páprica, sal e pimenta a gosto",
       "Azeite"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1,2 kg de dobradinha (bucho bovino), bem limpa",
+        group: null,
+        items: [
+          { qty: 1.2, qtyRange: null, unit: "quilograma", item: "dobradinha (bucho bovino)", prep: "bem limpa", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de feijão branco (de molho por 8h)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "feijão branco", prep: "de molho por 8h", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de linguiça calabresa em rodelas",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "linguiça calabresa", prep: "em rodelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Páprica, sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "páprica", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Pré-cozinhe a dobradinha: cozinhe em água com um pouco de vinagre e sal por 1h30-2 horas (ou 40 minutos em panela de pressão), até ficar macia. Escorra e corte em tiras/quadrados.",
@@ -130,6 +331,81 @@ window.RECIPES["brasileiros"] = [
       "3 batatas médias, em pedaços grandes (opcional, tradicional em algumas regiões)",
       "Sal, pimenta e cheiro-verde a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de rabo bovino, em pedaços",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "rabo bovino", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de vinho tinto (opcional)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de carne ou água",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de carne", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 batatas médias, em pedaços grandes (opcional, tradicional em algumas regiões)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "batatas médias", prep: "em pedaços grandes, tradicional em algumas regiões", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e cheiro-verde a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o rabo com sal e pimenta. Numa panela funda (ou de pressão), doure bem os pedaços em fogo alto, em lotes, até pegarem cor por todos os lados. Retire e reserve.",
       "Na mesma panela, refogue a cebola, alho e pimentão até dourarem, 8 minutos.",
@@ -164,6 +440,67 @@ window.RECIPES["brasileiros"] = [
       "2 folhas de louro",
       "1 kg de mandioca, descascada e em pedaços grandes",
       "Sal, pimenta e cheiro-verde a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de costela bovina, em pedaços",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "costela bovina", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de água ou caldo de carne",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "caldo de carne", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de mandioca, descascada e em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "mandioca", prep: "descascada e em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e cheiro-verde a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere a costela com sal e pimenta. Numa panela funda, doure bem os pedaços em fogo alto, até pegarem cor por todos os lados. Retire e reserve.",
@@ -203,6 +540,82 @@ window.RECIPES["brasileiros"] = [
       "Sal e pimenta a gosto",
       "Camarão (opcional, para enriquecer)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de peixe branco firme (robalo, badejo ou cação), em postas",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "peixe branco firme", prep: "robalo, badejo ou cação, em postas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola fatiada, 1 pimentão vermelho fatiado, 1 pimentão amarelo fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "fatiado", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão amarelo", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 tomates maduros fatiados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "tomates maduros", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de leite de coco",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "leite de coco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de dendê (para a versão baiana) ou azeite de oliva (versão capixaba)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de dendê (para a versão baiana)", prep: null, alt: "azeite de oliva (versão capixaba)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro e cebolinha picados",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Camarão (opcional, para enriquecer)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "camarão", prep: "para enriquecer", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o peixe com sal, o suco de limão e metade do alho. Deixe marinar por 20-30 minutos.",
       "Numa panela de barro (tradicional) ou panela larga, monte camadas: um fio de azeite, uma camada de cebola, pimentões e tomate fatiados, depois o peixe temperado por cima.",
@@ -238,6 +651,81 @@ window.RECIPES["brasileiros"] = [
       "Coentro e cebolinha picados",
       "Sal e pimenta a gosto",
       "Suco de 1 limão"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de mandioca, descascada e em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "mandioca", prep: "descascada e em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de leite de coco",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "leite de coco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de dendê",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de dendê", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro e cebolinha picados",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere o camarão com sal, pimenta e limão. Reserve na geladeira.",
@@ -277,6 +765,80 @@ window.RECIPES["brasileiros"] = [
       "Coentro picado",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de camarão seco",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "camarão seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de camarão fresco, limpo",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "camarão fresco", prep: "limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de pão amanhecido (ou farinha de pão)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "pão amanhecido", prep: null, alt: "farinha de pão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de leite de coco",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "leite de coco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de castanha de caju (ou amendoim), moída",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "castanha de caju", prep: "moída", alt: "amendoim", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pedaço de gengibre ralado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de dendê",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de dendê", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Deixe o pão de molho em um pouco de água ou leite de coco até amolecer completamente.",
       "Bata o camarão seco no processador até virar um pó grosso.",
@@ -309,6 +871,51 @@ window.RECIPES["brasileiros"] = [
       "Azeite de dendê, o suficiente para fritar (fritura por imersão)",
       "Para o recheio (vatapá e caruru): ver receita Vatapá, e camarão seco extra",
       "Salada de tomate, cebola e pimenta, para acompanhar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de feijão-fradinho, deixado de molho por 12h",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "feijão-fradinho", prep: "deixado de molho por 12h", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de dendê, o suficiente para fritar (fritura por imersão)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de dendê", prep: "o suficiente para fritar (fritura por imersão)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio (vatapá e caruru): ver receita Vatapá, e camarão seco extra",
+        group: "recheio (vatapá e caruru)",
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de vatapá", prep: "ver receita", alt: null, optional: false, isReference: true },
+          { qty: null, qtyRange: null, unit: null, item: "camarão seco", prep: "extra", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salada de tomate, cebola e pimenta, para acompanhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salada de tomate, cebola e pimenta", prep: "para acompanhar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Depois de demolhado, esfregue os feijões entre as mãos (ou num pano) sob água corrente para retirar as cascas — esse é o passo mais trabalhoso, mas essencial.",
@@ -348,6 +955,73 @@ window.RECIPES["brasileiros"] = [
       "Cheiro-verde picado",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de mandioca (ou batata), descascada e em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "mandioca", prep: "descascada e em pedaços", alt: "batata", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de leite",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de carne seca dessalgada e desfiada (ou carne moída)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "carne seca", prep: "dessalgada e desfiada", alt: "carne moída", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo muçarela ralado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo muçarela", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cheiro-verde picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe a mandioca em água salgada até ficar bem macia, 20-25 minutos.",
       "Escorra e amasse (ou bata no processador) com o leite e a manteiga até formar um purê liso e cremoso. Ajuste o sal.",
@@ -385,6 +1059,79 @@ window.RECIPES["brasileiros"] = [
       "Sal e pimenta a gosto",
       "Rodelas de laranja, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 bifes de lombo suíno (ou costeleta)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "bifes de lombo suíno", prep: null, alt: "costeleta", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de Tutu de Feijão (ver receita)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de tutu de feijão", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "200 g de couve, fatiada bem fina",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "couve", prep: "fatiada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de bacon ou linguiça, em rodelas",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "bacon", prep: null, alt: "linguiça, em rodelas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farofa (farinha de mandioca torrada com manteiga e ovo, opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farofa", prep: "farinha de mandioca torrada com manteiga e ovo", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Rodelas de laranja, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "rodelas de laranja", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere os bifes com sal e pimenta. Grelhe ou frite numa frigideira até dourarem bem dos dois lados, 3-4 minutos por lado. Reserve.",
       "Prepare o Tutu de Feijão (ver receita), mantendo quente.",
@@ -421,6 +1168,80 @@ window.RECIPES["brasileiros"] = [
       "Cheiro-verde picado",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 frango caipira, em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "frango caipira", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo ou banha",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: "banha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açafrão-da-terra (cúrcuma) ou colorau, para a cor amarela característica",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão-da-terra (cúrcuma)", prep: "para a cor amarela característica", alt: "colorau", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 xícaras de arroz",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 xícaras de caldo de galinha ou água quente",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "xicara", item: "caldo de galinha", prep: null, alt: "água quente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de ervilha (opcional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "ervilha", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Cheiro-verde picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o frango com sal e pimenta. Numa panela funda, aqueça o óleo e doure os pedaços de frango bem por todos os lados. Retire e reserve.",
       "Na mesma panela, refogue a cebola e o alho até dourarem. Junte o tomate picado e refogue até desmanchar.",
@@ -456,6 +1277,67 @@ window.RECIPES["brasileiros"] = [
       "Sal e pimenta a gosto",
       "Banana e arroz branco, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 kg de carne bovina para cozimento longo (músculo, acém), em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "quilograma", item: "carne bovina para cozimento longo", prep: "músculo, acém, em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de bacon em fatias",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "bacon", prep: "em fatias", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas picadas, 6 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas", alt: null, optional: false, isReference: false },
+          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de mandioca, para vedar a panela e para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de mandioca", prep: "para vedar a panela e para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Banana e arroz branco, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "banana", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "arroz branco", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela de barro grande (tradicional) ou panela funda comum, disponha camadas alternadas de bacon, carne, cebola e alho, temperando cada camada com sal, pimenta, louro e cominho.",
       "Adicione um pouco de água (só o suficiente para começar, o próprio cozimento longo vai gerar bastante líquido).",
@@ -489,6 +1371,66 @@ window.RECIPES["brasileiros"] = [
       "Manteiga de garrafa (ou manteiga comum)",
       "Coentro picado",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de feijão-de-corda (feijão fradinho), de molho por 8h",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "feijão-de-corda (feijão fradinho)", prep: "de molho por 8h", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de carne seca dessalgada e desfiada",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "carne seca", prep: "dessalgada e desfiada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de queijo coalho, em cubos",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "queijo coalho", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 xícaras de arroz",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga de garrafa (ou manteiga comum)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga de garrafa", prep: null, alt: "manteiga comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe o feijão-de-corda em água até ficar macio mas ainda inteiro (não desmanchando), cerca de 30-40 minutos. Escorra, reservando um pouco do caldo.",
@@ -526,6 +1468,73 @@ window.RECIPES["brasileiros"] = [
       "Cheiro-verde picado",
       "Sal (com moderação) e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de charque ou carne seca, dessalgada e desfiada",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "charque", prep: "dessalgada e desfiada", alt: "carne seca", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo ou banha",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: "banha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão verde picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão verde", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 xícaras de arroz",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 xícaras de água ou caldo",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "xicara", item: "água", prep: null, alt: "caldo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cheiro-verde picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal (com moderação) e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "com moderação", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe o charque dessalgado em água até ficar macio, cerca de 40-50 minutos (ou até amaciar bem). Escorra e desfie com dois garfos.",
       "Numa panela grande, aqueça o óleo/banha e doure a carne desfiada até ficar levemente crocante nas bordas, 5-8 minutos. Retire e reserve.",
@@ -560,6 +1569,57 @@ window.RECIPES["brasileiros"] = [
       "2 dentes de alho amassados",
       "Sal a gosto",
       "Pimenta-de-cheiro a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 L de tucupi (líquido extraído da mandioca brava, já cozido e pronto para consumo — encontrado congelado ou fresco em mercados do Norte)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "tucupi", prep: "líquido extraído da mandioca brava, já cozido e pronto para consumo — encontrado congelado ou fresco em mercados do norte", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de goma de tapioca (goma de mandioca fresca)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "goma de tapioca (goma de mandioca fresca)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de camarão seco",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 maços de folhas de jambu",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "maços de folhas de jambu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-de-cheiro a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-de-cheiro", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela, aqueça o tucupi com o alho amassado e uma pitada de sal, deixando ferver por 15 minutos para apurar o sabor (o tucupi cru é tóxico e deve sempre ser fervido antes de consumir — se comprado já pronto, ferva mesmo assim por segurança e sabor).",

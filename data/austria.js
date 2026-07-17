@@ -19,6 +19,46 @@ window.RECIPES["austria"] = [
       "100 g de manteiga clarificada (ou uma mistura de manteiga e óleo)",
       "Limão em gomos e salsinha, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 filés de vitela (corte do coxão, batidos bem finos)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "file", item: "vitela (corte do coxão, batidos bem finos)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, 2 ovos batidos e farinha de rosca fina — para empanar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos, para empanar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "farinha de rosca fina", prep: "para empanar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de manteiga clarificada (ou uma mistura de manteiga e óleo)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "manteiga clarificada", prep: null, alt: "mistura de manteiga e óleo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Limão em gomos e salsinha, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "em gomos", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata os filés de vitela entre filme plástico até ficarem bem finos, cerca de 3-4 mm — mais finos que um schnitzel de porco comum.",
       "Tempere levemente com sal.",
@@ -52,6 +92,71 @@ window.RECIPES["austria"] = [
       "80 g de farinha de rosca",
       "80 g de manteiga derretida (dividida)",
       "Açúcar de confeiteiro, para polvilhar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 disco de massa filo (ou massa strudel pronta, ou massa folhada na falta de outra opção)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "disco", item: "massa filo", prep: null, alt: "massa strudel pronta, ou massa folhada na falta de outra opção", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de maçã (tipo ácida, como Granny Smith), descascada e fatiada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "maçã", prep: "tipo ácida, como granny smith, descascada e fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de canela em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "canela em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de passas",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "passas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de nozes picadas, tostadas",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "nozes", prep: "picadas, tostadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga derretida (dividida)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida (dividida)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Açúcar de confeiteiro, para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "açúcar de confeiteiro", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture as maçãs fatiadas com açúcar, canela, passas e nozes picadas. Deixe descansar por 10 minutos.",
@@ -89,6 +194,71 @@ window.RECIPES["austria"] = [
       "50 g de passas (opcional, hidratadas em rum por 10 minutos)",
       "Açúcar de confeiteiro, para polvilhar",
       "Compota de frutas vermelhas ou molho de maçã, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 ovos (claras e gemas separadas)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: "claras e gemas separadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de açúcar (dividido)",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "açúcar (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 ml de leite",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de passas (opcional, hidratadas em rum por 10 minutos)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "passas", prep: "hidratadas em rum por 10 minutos", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Açúcar de confeiteiro, para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "açúcar de confeiteiro", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Compota de frutas vermelhas ou molho de maçã, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "compota de frutas vermelhas", prep: "para servir", alt: "molho de maçã", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Bata as gemas com metade do açúcar, a farinha e o leite até formar uma massa lisa, sem grumos, semelhante a uma massa de panqueca grossa.",

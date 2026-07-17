@@ -22,6 +22,66 @@ window.RECIPES["china"] = [
       "Panquecas mandarim (ou tortillas finas), para servir",
       "Molho hoisin, pepino em palitos e cebolinha, para acompanhar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 pato inteiro (2-2,5 kg)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pato", prep: "inteiro (2-2,5 kg)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 L de água fervente (para escaldar)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "litro", item: "água fervente (para escaldar)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de mel",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "mel", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de vinagre de arroz",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "vinagre de arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de shoyu escuro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "shoyu escuro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pedaço de gengibre fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Panquecas mandarim (ou tortillas finas), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "panquecas mandarim", prep: "para servir", alt: "tortillas finas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Molho hoisin, pepino em palitos e cebolinha, para acompanhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "molho hoisin", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pepino", prep: "em palitos", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "para acompanhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Escalde o pato inteiro despejando água fervente por toda a pele, com uma concha, várias vezes — isso retrai a pele e prepara para ficar crocante depois.",
       "Seque muito bem o pato, por dentro e por fora, com papel toalha.",
@@ -56,6 +116,64 @@ window.RECIPES["china"] = [
       "1 colher (chá) de cinco-especiarias chinesas",
       "2 dentes de alho picados",
       "Corante vermelho alimentício (opcional, tradicional para a cor característica)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de lombo ou paleta de porco, em tiras longas",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "lombo", prep: null, alt: "paleta de porco, em tiras longas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de molho hoisin",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "molho hoisin", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de mel (dividido)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "mel (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de vinho de arroz Shaoxing (ou xerez seco)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinho de arroz shaoxing", prep: null, alt: "xerez seco", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cinco-especiarias chinesas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cinco-especiarias chinesas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Corante vermelho alimentício (opcional, tradicional para a cor característica)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "corante vermelho alimentício", prep: "tradicional para a cor característica", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture o hoisin, shoyu, metade do mel, vinho Shaoxing, cinco-especiarias, alho e o corante (se usar), formando a marinada.",
@@ -92,6 +210,83 @@ window.RECIPES["china"] = [
       "80 g de amendoim torrado",
       "3 talos de cebolinha, em pedaços",
       "Para o molho: 2 colheres (sopa) de shoyu, 1 colher (sopa) de vinagre de arroz preto (ou balsâmico), 1 colher (sopa) de açúcar, 1 colher (chá) de amido de milho, 3 colheres (sopa) de água"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de peito de frango, em cubos",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "peito de frango", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 clara de ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "clara de ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de amido de milho (para a carne)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de milho (para a carne)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo neutro",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo neutro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8-10 pimentas secas (tipo dedo-de-moça seca), inteiras",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [8, 10], unit: null, item: "pimentas secas", prep: "tipo dedo-de-moça seca, inteiras", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de grãos de pimenta de Sichuan (opcional, dá o dormência característica)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "grãos de pimenta de sichuan", prep: "dá a dormência característica", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados, 1 pedaço de gengibre picado",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picado", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de amendoim torrado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "amendoim", prep: "torrado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 talos de cebolinha, em pedaços",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "talo", item: "cebolinha", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o molho: 2 colheres (sopa) de shoyu, 1 colher (sopa) de vinagre de arroz preto (ou balsâmico), 1 colher (sopa) de açúcar, 1 colher (chá) de amido de milho, 3 colheres (sopa) de água",
+        group: "molho",
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre de arroz preto", prep: null, alt: "balsâmico", optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "amido de milho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Marine o frango em cubos com a clara de ovo e o amido de milho por 15 minutos — essa técnica ('velveting') deixa a carne mais macia e sedosa depois de salteada.",
@@ -133,6 +328,86 @@ window.RECIPES["china"] = [
       "1 colher (chá) de grãos de pimenta de Sichuan, tostados e moídos",
       "Cebolinha fatiada"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de tofu macio (silken ou firme), em cubos",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tofu macio (silken ou firme)", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de carne suína ou bovina moída",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "carne suína", prep: null, alt: "bovina moída", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo neutro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo neutro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de pasta de feijão fermentado picante (doubanjiang)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "pasta de feijão fermentado picante (doubanjiang)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de molho de feijão preto fermentado (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "molho de feijão preto fermentado", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados, 1 pedaço de gengibre picado",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de caldo de galinha ou água",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "caldo de galinha", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de amido de milho dissolvido em 2 colheres (sopa) de água",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de milho", prep: "dissolvido em 2 colheres (sopa) de água", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de grãos de pimenta de Sichuan, tostados e moídos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "grãos de pimenta de sichuan", prep: "tostados e moídos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha fatiada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Ferva água numa panela com uma pitada de sal e escalde os cubos de tofu por 2 minutos (isso remove o sabor de 'cru' e ajuda a manter a forma). Escorra delicadamente e reserve.",
       "Aqueça o óleo numa wok em fogo médio-alto e salteie a carne moída até dourar bem, desmanchando os grumos.",
@@ -165,6 +440,63 @@ window.RECIPES["china"] = [
       "1 cenoura em tiras finas, 1 pimentão em tiras, 150 g de repolho fatiado",
       "3 talos de cebolinha, em pedaços",
       "Para o molho: 3 colheres (sopa) de shoyu, 1 colher (sopa) de molho de ostra, 1 colher (chá) de óleo de gergelim, 1 colher (chá) de açúcar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de macarrão chow mein (ou macarrão de ovo chinês)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "macarrão chow mein", prep: null, alt: "macarrão de ovo chinês", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de peito de frango (ou carne/camarão), em tiras finas",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "peito de frango", prep: "em tiras finas", alt: "carne/camarão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo neutro (dividido)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo neutro (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados, 1 pedaço de gengibre picado",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura em tiras finas, 1 pimentão em tiras, 150 g de repolho fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "em tiras finas", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão", prep: "em tiras", alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "repolho", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 talos de cebolinha, em pedaços",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "talo", item: "cebolinha", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o molho: 3 colheres (sopa) de shoyu, 1 colher (sopa) de molho de ostra, 1 colher (chá) de óleo de gergelim, 1 colher (chá) de açúcar",
+        group: "molho",
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "molho de ostra", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe o macarrão em água fervente até quase al dente (um pouco menos que o indicado na embalagem, já que vai terminar de cozinhar na wok). Escorra, enxágue em água fria e misture com um fio de óleo para não grudar.",
@@ -201,6 +533,56 @@ window.RECIPES["china"] = [
       "Para a massa: 250 g de farinha de trigo, 130 ml de água morna",
       "Vinagre preto e gengibre em tiras finas, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Para a gelatina de caldo: 500 ml de caldo de porco/frango bem encorpado, 10 g de gelatina em folha (ou pele de porco cozida, técnica tradicional)",
+        group: "gelatina de caldo",
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "caldo de porco/frango", prep: "bem encorpado", alt: null, optional: false, isReference: false },
+          { qty: 10, qtyRange: null, unit: "grama", item: "gelatina em folha", prep: null, alt: "pele de porco cozida, técnica tradicional", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de carne suína moída",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne suína", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de gengibre picado, 2 talos de cebolinha picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "gengibre", prep: "picado", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "cebolinha", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de shoyu, 1 colher (sopa) de vinho Shaoxing, 1 colher (chá) de óleo de gergelim",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinho shaoxing", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a massa: 250 g de farinha de trigo, 130 ml de água morna",
+        group: "massa",
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 130, qtyRange: null, unit: "mililitro", item: "água", prep: "morna", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Vinagre preto e gengibre em tiras finas, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "vinagre preto", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "gengibre", prep: "em tiras finas, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a gelatina de caldo: hidrate a gelatina em água fria, dissolva no caldo quente, despeje numa forma rasa e leve à geladeira por 3-4 horas, até firmar completamente. Corte em cubos pequenos.",
       "Misture a carne moída com gengibre, cebolinha, shoyu, vinho Shaoxing e óleo de gergelim, formando o recheio. Incorpore os cubos de gelatina de caldo delicadamente.",
@@ -235,6 +617,62 @@ window.RECIPES["china"] = [
       "30 discos de massa para dumpling (gyoza/jiaozi, prontos)",
       "Óleo neutro, para fritar (se for a versão potsticker)",
       "Molho para mergulhar: shoyu, vinagre preto e óleo de chili a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de carne suína moída",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne suína", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de repolho picado bem fino, salgado e espremido (para remover água)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "repolho", prep: "picado bem fino, salgado e espremido (para remover água)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 talos de cebolinha picados, 1 colher (sopa) de gengibre picado",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "talo", item: "cebolinha", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "gengibre", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de shoyu, 1 colher (chá) de óleo de gergelim, 1 colher (sopa) de vinho Shaoxing",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinho shaoxing", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 discos de massa para dumpling (gyoza/jiaozi, prontos)",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "disco", item: "massa para dumpling", prep: "gyoza/jiaozi, prontos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo neutro, para fritar (se for a versão potsticker)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo neutro", prep: "para fritar (se for a versão potsticker)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Molho para mergulhar: shoyu, vinagre preto e óleo de chili a gosto",
+        group: "molho para mergulhar",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "vinagre preto", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "óleo de chili", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a carne moída com o repolho espremido, cebolinha, gengibre, shoyu, óleo de gergelim e vinho Shaoxing, formando um recheio bem temperado.",
@@ -271,6 +709,61 @@ window.RECIPES["china"] = [
       "Macarrão de batata-doce (glass noodles) ou udon",
       "Molhos individuais de mergulho: pasta de gergelim, shoyu com alho, óleo de chili"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 L de caldo base (pode ser dividido em dois: um mais suave de galinha/kombu, outro picante com doubanjiang e pimentas)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "caldo base", prep: "pode ser dividido em dois: um mais suave de galinha/kombu, outro picante com doubanjiang e pimentas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de carne bovina fatiada bem fina",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "carne bovina", prep: "fatiada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de camarão limpo",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão", prep: "limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de tofu firme, em cubos",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "tofu firme", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Vegetais variados: repolho chinês, cogumelos (enoki, shiitake), espinafre",
+        group: "vegetais variados",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "repolho chinês", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cogumelos", prep: "enoki, shiitake", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "espinafre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Macarrão de batata-doce (glass noodles) ou udon",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "macarrão de batata-doce (glass noodles)", prep: null, alt: "udon", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Molhos individuais de mergulho: pasta de gergelim, shoyu com alho, óleo de chili",
+        group: "molhos individuais de mergulho",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pasta de gergelim", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "shoyu", prep: "com alho", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "óleo de chili", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare o(s) caldo(s) base: aqueça até ferver levemente numa panela própria para fondue/hot pot (idealmente com divisória, para ter dois sabores), mantida aquecida na mesa com um rechaud ou fogareiro portátil.",
       "Disponha todos os ingredientes crus (carne fatiada fina, camarão, tofu, vegetais, macarrão) em travessas ao redor da mesa.",
@@ -303,6 +796,67 @@ window.RECIPES["china"] = [
       "1,5 L de caldo de galinha bem encorpado",
       "1 colher (sopa) de shoyu (para o caldo)",
       "Folhas de espinafre ou acelga chinesa, cebolinha fatiada"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de camarão picado bem fino",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "camarão", prep: "picado bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de carne suína moída",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "carne suína", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de cebolinha picada, 1 colher (chá) de gengibre picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "cebolinha", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "gengibre", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de shoyu, 1 colher (chá) de óleo de gergelim",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "24 discos de massa para wonton",
+        group: null,
+        items: [
+          { qty: 24, qtyRange: null, unit: "disco", item: "massa para wonton", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de caldo de galinha bem encorpado",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "caldo de galinha", prep: "bem encorpado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de shoyu (para o caldo)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "shoyu (para o caldo)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de espinafre ou acelga chinesa, cebolinha fatiada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "folhas de espinafre", prep: null, alt: "acelga chinesa", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture o camarão picado, a carne moída, cebolinha, gengibre, shoyu e óleo de gergelim, formando um recheio bem temperado.",

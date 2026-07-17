@@ -21,6 +21,58 @@ window.RECIPES["peixes"] = [
       "2 colheres (sopa) de salsinha picada",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 filés de linguado (ou sole), com pele se possível",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "file", item: "linguado", prep: "com pele se possível", alt: "sole", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, para empanar levemente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar levemente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de óleo neutro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "óleo neutro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Seque muito bem os filés com papel toalha. Tempere com sal e pimenta.",
       "Passe os filés na farinha, sacudindo o excesso — deve ficar uma camada bem fina.",
@@ -57,6 +109,79 @@ window.RECIPES["peixes"] = [
       "Suco de 1 limão",
       "2 colheres (sopa) de salsinha picada",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 filés de linguado",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "file", item: "linguado", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 camarões médios, limpos",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "camarões médios", prep: "limpos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de cogumelos paris, fatiados",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "cogumelos paris", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 tomate, sem pele e sem semente, em cubos pequenos (concassé)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "tomate", prep: "sem pele e sem semente, em cubos pequenos (concassé)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, para empanar o peixe",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar o peixe", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de óleo neutro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "óleo neutro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare o peixe como na receita de Sole Meunière: tempere, passe na farinha e doure na manteiga com óleo, 2-3 minutos de cada lado. Reserve nos pratos.",
@@ -97,6 +222,86 @@ window.RECIPES["peixes"] = [
       "Sal e pimenta a gosto",
       "Papel manteiga ou papel-alumínio"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 filés de peixe branco (robalo, badejo ou linguado), cerca de 180 g cada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "file", item: "peixe branco", prep: "cerca de 180 g cada", alt: "robalo, badejo ou linguado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 abobrinha pequena, em fatias finas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "abobrinha pequena", prep: "em fatias finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura pequena, em fitas finas (com descascador)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura pequena", prep: "em fitas finas (com descascador)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 tomates cereja, cortados ao meio",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "tomates cereja", prep: "cortados ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas fatiadas fino",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "fatiadas fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias finas de limão-siciliano",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "fatias finas de limão-siciliano", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas frescas (endro, tomilho ou manjericão)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "endro, tomilho ou manjericão", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de vinho branco seco (opcional)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Papel manteiga ou papel-alumínio",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "papel manteiga", prep: null, alt: "papel-alumínio", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 200°C. Corte dois grandes retângulos de papel manteiga (ou papel-alumínio), cerca de 40x30 cm cada.",
       "No centro de cada retângulo, faça uma cama com metade dos vegetais fatiados (abobrinha, cenoura, tomate cereja e cebola).",
@@ -126,6 +331,42 @@ window.RECIPES["peixes"] = [
       "Para o molho hovmästarsås (mostarda e endro): 3 colheres (sopa) de mostarda Dijon, 1 colher (sopa) de mostarda em grãos, 2 colheres (sopa) de açúcar, 2 colheres (sopa) de vinagre branco, 100 ml de óleo neutro, endro fresco picado",
       "Pão escuro (pumpernickel ou centeio) ou torradas, para servir",
       "Endro fresco e limão para decorar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 receita de Gravlax já curado (ver receita, categoria Técnicas Contemporâneas Avançadas)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de gravlax", prep: "já curado; ver receita, categoria técnicas contemporâneas avançadas", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Para o molho hovmästarsås (mostarda e endro): 3 colheres (sopa) de mostarda Dijon, 1 colher (sopa) de mostarda em grãos, 2 colheres (sopa) de açúcar, 2 colheres (sopa) de vinagre branco, 100 ml de óleo neutro, endro fresco picado",
+        group: "molho hovmästarsås (mostarda e endro)",
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "mostarda dijon", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "mostarda em grãos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "vinagre branco", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "óleo neutro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "endro", prep: "fresco, picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão escuro (pumpernickel ou centeio) ou torradas, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão escuro", prep: "para servir", alt: "pumpernickel ou centeio; ou torradas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Endro fresco e limão para decorar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "endro", prep: "fresco, para decorar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare o gravlax com antecedência, seguindo a receita de cura (48-72 horas).",
@@ -164,6 +405,72 @@ window.RECIPES["peixes"] = [
       "Salsinha picada",
       "Sal (com cuidado, o bacalhau já salga) e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de bacalhau dessalgado e desfiado (deixe de molho na geladeira por 24-48h, trocando a água algumas vezes)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "bacalhau", prep: "dessalgado e desfiado (deixe de molho na geladeira por 24-48h, trocando a água algumas vezes)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 g de batata palha fina (pode ser comprada pronta ou feita em casa, fina como fósforos)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "batata palha fina", prep: "pode ser comprada pronta ou feita em casa, fina como fósforos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola grande, fatiada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola grande", prep: "fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 ovos",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeitonas pretas, para decorar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeitonas pretas", prep: "para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal (com cuidado, o bacalhau já salga) e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "com cuidado, o bacalhau já salga", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Após dessalgar, cozinhe o bacalhau em água fervente por 5 minutos (ou apenas escalde), escorra e desfie em lascas, removendo peles e espinhas.",
       "Se for fazer a batata palha em casa, corte as batatas em palitos bem finos e frite em óleo quente até dourar e ficar crocante; escorra bem.",
@@ -199,6 +506,72 @@ window.RECIPES["peixes"] = [
       "Azeitonas pretas",
       "Salsinha picada",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de bacalhau dessalgado, em postas",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "bacalhau dessalgado", prep: "em postas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 g de batata, descascada e em rodelas",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "batata", prep: "descascada e em rodelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas grandes, fatiadas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas grandes", prep: "fatiadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho fatiados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de azeite de oliva (dividido)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "azeite de oliva (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos cozidos duros, em rodelas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos cozidos duros", prep: "em rodelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeitonas pretas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeitonas pretas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Após dessalgar, cozinhe o bacalhau em água ou leite por 15-20 minutos, até macio. Escorra, deixe amornar e desfie em lascas grandes, removendo peles e espinhas.",

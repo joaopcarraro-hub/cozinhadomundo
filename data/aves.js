@@ -26,6 +26,94 @@ window.RECIPES["aves"] = [
       "Sal e pimenta a gosto",
       "Salsinha picada para finalizar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 frango caipira, cortado em 8 pedaços (ou 6-8 sobrecoxas com pele)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "frango caipira", prep: "cortado em 8 pedaços", alt: "6-8 sobrecoxas com pele", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de bacon em cubos",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "bacon", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 cebolinhas pérola (ou 2 cebolas médias em cubos)",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: null, item: "cebolinhas pérola", prep: null, alt: "2 cebolas médias em cubos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 g de cogumelos paris, inteiros ou em metades",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "cogumelos paris", prep: "inteiros ou em metades", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "750 ml de vinho tinto encorpado (Borgonha, se possível)",
+        group: null,
+        items: [
+          { qty: 750, qtyRange: null, unit: "mililitro", item: "vinho tinto encorpado", prep: "borgonha, se possível", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de fundo escuro de carne ou caldo de frango",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "fundo escuro de carne", prep: null, alt: "caldo de frango", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 2 ramos de tomilho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga + 20 g de farinha (para a manteiga com farinha final)",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga + 20 g de farinha (para a manteiga com farinha final)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o frango com sal e pimenta. Numa panela funda, doure o bacon até crocante, retire e reserve, deixando a gordura na panela.",
       "Sele o frango na gordura do bacon, em fogo médio-alto, até dourar bem por todos os lados. Retire e reserve.",
@@ -59,6 +147,53 @@ window.RECIPES["aves"] = [
       "Farinha de trigo, 2 ovos batidos e farinha panko — para empanar",
       "Óleo para fritar (ou manteiga e azeite, para dourar na frigideira)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 filés de peito de frango grandes",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "file", item: "peito de frango grandes", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de presunto",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "presunto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de queijo gruyère (ou emmental)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "queijo gruyère", prep: null, alt: "emmental", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, 2 ovos batidos e farinha panko — para empanar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos, para empanar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "farinha panko", prep: "para empanar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo para fritar (ou manteiga e azeite, para dourar na frigideira)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: "manteiga e azeite, para dourar na frigideira", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Corte cada filé de frango ao meio, sem chegar a separar completamente, formando uma 'borboleta'. Abra e cubra com filme plástico, batendo levemente com um batedor de carne até uniformizar a espessura.",
       "Tempere com sal e pimenta. Coloque uma fatia de presunto e uma de queijo sobre metade de cada filé aberto.",
@@ -89,6 +224,44 @@ window.RECIPES["aves"] = [
       "1 colher (sopa) de azeite",
       "1 receita de molho Suprême (ver receita, categoria Molhos)",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 suprêmes de frango (peito com o osso da asa, pele mantida)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "suprêmes de frango", prep: "peito com o osso da asa, pele mantida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de manteiga",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de molho Suprême (ver receita, categoria Molhos)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de molho suprême", prep: "ver receita, categoria molhos", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere o frango com sal e pimenta, deixando a pele intacta.",
@@ -126,6 +299,83 @@ window.RECIPES["aves"] = [
       "Manteiga amolecida, ervas frescas, sal e pimenta",
       "1 cebola, 1 cenoura — para a assadeira"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 frango inteiro (1,8-2 kg)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "frango", prep: "inteiro (1,8-2 kg)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de farofa ou farinha de rosca temperada",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "farofa", prep: null, alt: "farinha de rosca temperada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de linguiça calabresa picada (ou bacon)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "linguiça calabresa", prep: "picada", alt: "bacon", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de damasco seco ou ameixa seca picada (opcional, toque agridoce)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "damasco seco", prep: "toque agridoce", alt: "ameixa seca picada", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de castanhas picadas (opcional)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "castanhas", prep: "picadas", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Caldo de galinha, o suficiente para umedecer o recheio",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "caldo de galinha", prep: "o suficiente para umedecer o recheio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga amolecida, ervas frescas, sal e pimenta",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "amolecida", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 1 cenoura — para a assadeira",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "para a assadeira", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "para a assadeira", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare o recheio: refogue a linguiça, cebola e alho até dourarem. Misture com a farofa/farinha de rosca, damasco, castanhas e o ovo, umedecendo com caldo de galinha até formar uma mistura úmida mas não encharcada. Tempere e deixe esfriar.",
       "Tempere o frango por dentro e por fora com sal, pimenta e ervas. Recheie a cavidade com a farofa preparada, sem compactar demais (o recheio expande no calor).",
@@ -160,6 +410,51 @@ window.RECIPES["aves"] = [
       "1 colher (chá) de pimenta-do-reino em grãos, amassada",
       "800 g de gordura de pato (ou o suficiente para cobrir as coxas)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 coxas de pato com sobrecoxa",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "coxas de pato com sobrecoxa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de sal grosso",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro, alguns ramos de tomilho",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: "ramo", item: "tomilho", prep: "alguns", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de pimenta-do-reino em grãos, amassada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "pimenta-do-reino em grãos", prep: "amassada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 g de gordura de pato (ou o suficiente para cobrir as coxas)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "gordura de pato", prep: null, alt: "o suficiente para cobrir as coxas", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere as coxas de pato com o sal grosso, alho amassado, louro, tomilho e pimenta, esfregando bem por toda a superfície.",
       "Cubra e leve à geladeira por 12 a 24 horas — esse tempo de salga tempera profundamente e começa a extrair um pouco de umidade.",
@@ -188,6 +483,30 @@ window.RECIPES["aves"] = [
       "1 peito de pato (magret), com a pele",
       "Sal e pimenta-do-reino a gosto",
       "1 receita de Gastrique de frutas vermelhas (ver receita Gastrique, categoria Molhos) ou molho de laranja"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 peito de pato (magret), com a pele",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "peito de pato (magret)", prep: "com a pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de Gastrique de frutas vermelhas (ver receita Gastrique, categoria Molhos) ou molho de laranja",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de gastrique de frutas vermelhas", prep: "ver receita gastrique, categoria molhos", alt: "molho de laranja", optional: false, isReference: true },
+        ],
+      },
     ],
     steps: [
       "Retire o peito de pato da geladeira 30 minutos antes de cozinhar, para amornar levemente.",

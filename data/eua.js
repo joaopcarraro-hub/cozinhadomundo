@@ -25,6 +25,72 @@ window.RECIPES["eua"] = [
       "Sal e pimenta a gosto",
       "Páprica, para polvilhar (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de carne de lagosta cozida, em pedaços grandes (cauda e pinças)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "carne de lagosta", prep: "cozida, em pedaços grandes (cauda e pinças)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de maionese",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "maionese", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 talo de salsão picado bem fino",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "picado bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de suco de limão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 pães tipo hot dog (buns, idealmente com laterais achatadas, estilo New England)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "pães tipo hot dog", prep: "buns, idealmente com laterais achatadas, estilo new england", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Páprica, para polvilhar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "páprica", prep: "para polvilhar", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa tigela, misture a carne de lagosta com a maionese, salsão picado e suco de limão, delicadamente para não desmanchar os pedaços.",
       "Tempere com sal e pimenta a gosto. Leve à geladeira até a hora de montar.",
@@ -58,6 +124,67 @@ window.RECIPES["eua"] = [
       "Sal e pimenta a gosto",
       "Óleo, para fritar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "8 pedaços de frango com osso e pele (coxa e sobrecoxa)",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "pedaco", item: "frango com osso e pele", prep: "coxa e sobrecoxa", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de leitelho (buttermilk, ou leite com 1 colher de sopa de vinagre, descansado 10 min)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "leitelho (buttermilk)", prep: null, alt: "leite com 1 colher (sopa) de vinagre, descansado 10 min", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de molho de pimenta",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "molho de pimenta", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de páprica, 1 colher (chá) de alho em pó, 1 colher (chá) de cebola em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "páprica", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "alho em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cebola em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de pimenta caiena",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "pimenta caiena", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture o leitelho com o molho de pimenta. Submerja os pedaços de frango, cubra e deixe marinar na geladeira por no mínimo 4 horas (idealmente durante a noite).",
       "Misture a farinha com páprica, alho em pó, cebola em pó, caiena, sal e pimenta, numa tigela larga.",
@@ -88,6 +215,47 @@ window.RECIPES["eua"] = [
       "Sal e pimenta a gosto",
       "Para o molho: 120 g de manteiga, 150 ml de molho de pimenta tipo Frank's RedHot (ou molho de pimenta similar), 1 colher (chá) de vinagre",
       "Aipo em talos e molho ranch ou blue cheese, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de asas de frango, separadas em drumette e flat",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "asas de frango", prep: "separadas em drumette e flat", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar (ou 2 colheres de sopa, para assar)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: "2 colheres (sopa), para assar", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o molho: 120 g de manteiga, 150 ml de molho de pimenta tipo Frank's RedHot (ou molho de pimenta similar), 1 colher (chá) de vinagre",
+        group: "molho",
+        items: [
+          { qty: 120, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "molho de pimenta tipo frank's redhot", prep: null, alt: "molho de pimenta similar", optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "vinagre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Aipo em talos e molho ranch ou blue cheese, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "aipo", prep: "em talos", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "molho ranch", prep: "para servir", alt: "blue cheese", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Seque bem as asas com papel toalha. Tempere com sal e pimenta.",
@@ -127,6 +295,88 @@ window.RECIPES["eua"] = [
       "Sal e pimenta a gosto",
       "Salsinha picada e crackers, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de amêijoas (ou vôngole), limpas (ou 2 latas de amêijoa em conserva, com o líquido)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "amêijoas", prep: "limpas", alt: "vôngole (fresco); ou 2 latas de amêijoa em conserva, com o líquido", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de bacon em cubos",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "bacon", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 talos de salsão picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "salsão", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de manteiga",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de batata, em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "batata", prep: "em cubos pequenos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de caldo de peixe ou água (ou o líquido das amêijoas em conserva, complementado)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "caldo de peixe", prep: null, alt: "água; ou o líquido das amêijoas em conserva, complementado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de creme de leite fresco (ou uma mistura de leite e creme)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: "mistura de leite e creme", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada e crackers, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "crackers", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se for usar amêijoas frescas, cozinhe-as numa panela com um pouco de água até abrirem, 5-6 minutos. Retire a carne das conchas, pique se estiverem grandes, e reserve o líquido de cozimento (coado, para remover areia).",
       "Numa panela funda, doure o bacon até crocante. Retire parte para reservar, deixando o restante e a gordura na panela.",
@@ -164,6 +414,79 @@ window.RECIPES["eua"] = [
       "80 g de farinha de rosca (opcional, para gratinar)",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de macarrão tipo cotovelo (elbow) ou penne",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "macarrão tipo cotovelo (elbow)", prep: null, alt: "penne", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "700 ml de leite integral, morno",
+        group: null,
+        items: [
+          { qty: 700, qtyRange: null, unit: "mililitro", item: "leite integral", prep: "morno", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de queijo cheddar ralado (dividido)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "queijo cheddar", prep: "ralado (dividido)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo gruyère ou parmesão ralado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo gruyère", prep: null, alt: "parmesão ralado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de mostarda em pó (opcional, realça o sabor do queijo)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "mostarda em pó", prep: "realça o sabor do queijo", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de farinha de rosca (opcional, para gratinar)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "farinha de rosca", prep: "para gratinar", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe o macarrão em água salgada até ficar al dente. Escorra e reserve.",
       "Numa panela, derreta a manteiga em fogo baixo, junte a farinha e cozinhe por 2 minutos, formando o roux.",
@@ -195,6 +518,50 @@ window.RECIPES["eua"] = [
       "1 colher (sopa) de páprica defumada",
       "1 colher (sopa) de alho em pó",
       "Molho barbecue, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "3 kg de peito bovino (brisket), com a camada de gordura",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "quilograma", item: "peito bovino (brisket)", prep: "com a camada de gordura", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de sal grosso",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de pimenta-do-reino grossa",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "pimenta-do-reino grossa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de páprica defumada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "páprica defumada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de alho em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "alho em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Molho barbecue, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "molho barbecue", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Apare o excesso de gordura da peça, deixando uma camada de cerca de 5-6 mm por cima (protege a carne durante o cozimento longo).",
@@ -230,6 +597,63 @@ window.RECIPES["eua"] = [
       "1 colher (chá) de canela, 1 pitada de noz-moscada",
       "Suco de 1/2 limão",
       "1 gema + 1 colher de leite, para pincelar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 350 g de farinha de trigo, 250 g de manteiga gelada em cubos, 1 pitada de sal, 1 colher (sopa) de açúcar, 100 ml de água gelada",
+        group: "massa",
+        items: [
+          { qty: 350, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 250, qtyRange: null, unit: "grama", item: "manteiga", prep: "gelada em cubos", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "água", prep: "gelada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 1 kg de maçã (mistura de tipos ácidos e doces), descascada e fatiada",
+        group: "recheio",
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "maçã", prep: "mistura de tipos ácidos e doces, descascada e fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de açúcar (+ extra para polvilhar)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar (+ extra para polvilhar)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de amido de milho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de milho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de canela, 1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "canela", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1/2 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1/2 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema + 1 colher de leite, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: "para pincelar", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher", item: "leite", prep: "para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa: misture a farinha, sal e açúcar. Adicione a manteiga gelada e trabalhe rapidamente com as pontas dos dedos (ou processador, pulsando) até formar uma farofa grossa com pedaços visíveis de manteiga.",

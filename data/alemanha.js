@@ -23,6 +23,74 @@ window.RECIPES["alemanha"] = [
       "2 colheres (sopa) de passas (opcional)",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de acém ou coxão duro bovino, em peça",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "acém", prep: "em peça", alt: "coxão duro bovino", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de vinagre de vinho tinto",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "vinagre de vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de água",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas, 2 cenouras — em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 6 grãos de cravo, 1 colher (sopa) de grãos de pimenta-do-reino",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 6, qtyRange: null, unit: null, item: "grãos de cravo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "grãos de pimenta-do-reino", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de pão de gengibre (lebkuchen) ou biscoito de gengibre, esfarelado (espessante tradicional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "pão de gengibre (lebkuchen)", prep: "esfarelado (espessante tradicional)", alt: "biscoito de gengibre", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de passas (opcional)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "passas", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a marinada: ferva o vinagre, água, cebola, cenoura, louro, cravo e pimenta-do-reino por 5 minutos. Deixe esfriar completamente.",
       "Coloque a carne num recipiente não reativo (vidro ou cerâmica) e cubra completamente com a marinada fria.",
@@ -58,6 +126,61 @@ window.RECIPES["alemanha"] = [
       "Sal a gosto",
       "Chucrute (repolho fermentado) e purê de batata, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 joelhos de porco (eisbein), com pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "joelhos de porco (eisbein)", prep: "com pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 L de água",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "litro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 2 cenouras, 1 talo de salsão — em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em pedaços", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro, 1 colher (sopa) de grãos de pimenta-do-reino",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "grãos de pimenta-do-reino", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de sementes de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "sementes de cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Chucrute (repolho fermentado) e purê de batata, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "chucrute (repolho fermentado)", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "purê de batata", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela grande, cubra os joelhos de porco com água, junte a cebola, cenoura, salsão, louro, pimenta-do-reino e cominho.",
       "Tempere com sal generosamente (a água deve ficar como um caldo bem temperado).",
@@ -91,6 +214,72 @@ window.RECIPES["alemanha"] = [
       "2 colheres (sopa) de azeite ou óleo",
       "Cebolinha picada",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de batata, com casca",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batata", prep: "com casca", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de bacon em cubos",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "bacon", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinagre de vinho branco (ou de maçã)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinagre de vinho branco", prep: null, alt: "vinagre de maçã", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de caldo de carne ou água quente",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "caldo de carne", prep: null, alt: "água quente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de mostarda Dijon",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "mostarda dijon", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite ou óleo",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: "óleo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe as batatas com casca em água salgada até ficarem macias mas ainda firmes, cerca de 20 minutos. Escorra, deixe amornar levemente e descasque enquanto ainda quentes.",

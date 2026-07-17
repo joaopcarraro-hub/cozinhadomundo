@@ -25,6 +25,85 @@ window.RECIPES["mexico"] = [
       "1,5 L de caldo de carne ou água",
       "Tortillas de milho, cebola e coentro picados, limão, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 kg de paleta ou costela bovina, em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "quilograma", item: "paleta", prep: null, alt: "costela bovina, em pedaços grandes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 pimentas guajillo secas, sem sementes",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "pimentas guajillo secas", prep: "sem sementes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 pimentas ancho secas, sem sementes",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "pimentas ancho secas", prep: "sem sementes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 pimentas chipotle secas (ou em conserva)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "pimentas chipotle secas", prep: null, alt: "em conserva", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 6 dentes de alho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de cominho, 1 colher (chá) de orégano, 2 cravos, 1 pau de canela pequeno",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "orégano", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cravos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pau de canela pequeno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de vinagre",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "vinagre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de caldo de carne ou água",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "caldo de carne", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Tortillas de milho, cebola e coentro picados, limão, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "tortillas de milho", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebola", prep: "picada, para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picado, para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Toste as pimentas secas numa frigideira seca por 1-2 minutos de cada lado, até perfumarem (sem queimar). Hidrate em água quente por 15-20 minutos.",
       "Toste também a cebola, alho e tomate numa frigideira seca (ou na grelha) até pegarem cor em pontos, isso aprofunda o sabor.",
@@ -64,6 +143,100 @@ window.RECIPES["mexico"] = [
       "Óleo, sal a gosto",
       "Gergelim torrado, para finalizar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 frango inteiro, em pedaços (ou peru)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "frango inteiro", prep: "em pedaços", alt: "peru", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 pimentas ancho secas, 3 pimentas mulato secas, 2 pimentas pasilla secas, sem sementes",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "pimentas ancho secas", prep: "sem sementes", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: null, item: "pimentas mulato secas", prep: "sem sementes", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "pimentas pasilla secas", prep: "sem sementes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 4 dentes de alho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de amêndoas, 30 g de amendoim, 30 g de passas",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "amêndoas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "amendoim", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "passas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 tortilla de milho, torrada e picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "tortilla de milho", prep: "torrada e picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fatia de pão amanhecido, torrada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fatia", item: "pão amanhecido", prep: "torrada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de chocolate amargo, picado",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "chocolate amargo", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de canela em pó, 1 colher (chá) de cominho, 2 cravos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "canela em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cravos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 ml de caldo de galinha",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "mililitro", item: "caldo de galinha", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Gergelim torrado, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "gergelim", prep: "torrado, para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o frango com sal e cozinhe em água ou caldo até ficar macio, cerca de 35-40 minutos. Reserve a carne e o caldo separadamente.",
       "Toste as pimentas secas numa frigideira seca, sem queimar, e hidrate em água quente por 15-20 minutos.",
@@ -102,6 +275,77 @@ window.RECIPES["mexico"] = [
       "Sal a gosto",
       "Para servir: repolho fatiado, rabanete fatiado, cebola picada, orégano, limão, tortillas fritas (tostadas) ou totopos"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de paleta de porco, em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "paleta de porco", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 g de milho para pozole (hominy), pré-cozido ou em lata, escorrido",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "milho para pozole (hominy)", prep: "pré-cozido ou em lata, escorrido", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 pimentas guajillo secas, sem sementes",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "pimentas guajillo secas", prep: "sem sementes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 pimentas ancho secas, sem sementes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "pimentas ancho secas", prep: "sem sementes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 6 dentes de alho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de orégano seco",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "orégano seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 L de água ou caldo",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "caldo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para servir: repolho fatiado, rabanete fatiado, cebola picada, orégano, limão, tortillas fritas (tostadas) ou totopos",
+        group: "servir",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "repolho", prep: "fatiado", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "rabanete", prep: "fatiado", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "orégano", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "tortillas fritas (tostadas)", prep: null, alt: "totopos", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe a paleta de porco em água com metade da cebola e 2 dentes de alho, até ficar macia, cerca de 1h30-2 horas. Reserve a carne e o caldo.",
       "Toste as pimentas secas numa frigideira seca (sem queimar) e hidrate em água quente por 15-20 minutos.",
@@ -139,6 +383,75 @@ window.RECIPES["mexico"] = [
       "Cebola e coentro picados, limão, para servir",
       "Molho de pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de lombo de porco, fatiado fino",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "lombo de porco", prep: "fatiado fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 pimentas guajillo secas, sem sementes, hidratadas",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "pimentas guajillo secas", prep: "sem sementes, hidratadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho, 1/4 de cebola",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 0.25, qtyRange: null, unit: null, item: "cebola", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de vinagre",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "vinagre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho, 1 colher (chá) de orégano",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "orégano", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de abacaxi picado (dividido)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "abacaxi", prep: "picado (dividido)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "16 tortillas de milho pequenas",
+        group: null,
+        items: [
+          { qty: 16, qtyRange: null, unit: null, item: "tortillas de milho pequenas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebola e coentro picados, limão, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebola", prep: "picados, para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picados, para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Molho de pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "molho de pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata as pimentas hidratadas com alho, cebola, vinagre, cominho, orégano e um pouco do abacaxi picado no liquidificador, até formar uma pasta lisa.",
       "Cubra as fatias de porco com essa marinada, massageando bem. Deixe marinar na geladeira por no mínimo 4 horas (idealmente durante a noite).",
@@ -174,6 +487,67 @@ window.RECIPES["mexico"] = [
       "150 g de queijo tipo mussarela ou queijo fresco mexicano, ralado",
       "Creme de leite ou crema mexicana, cebola roxa fatiada, coentro, para finalizar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "12 tortillas de milho",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: null, item: "tortillas de milho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de frango cozido e desfiado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "frango", prep: "cozido e desfiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 pimentas guajillo secas (ou 400g tomate para versão verde/vermelha simples)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "pimentas guajillo secas", prep: null, alt: "400g tomate para versão verde/vermelha simples", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho, 1/4 de cebola",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 0.25, qtyRange: null, unit: null, item: "cebola", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de caldo de galinha",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "caldo de galinha", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar levemente as tortillas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar levemente as tortillas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de queijo tipo mussarela ou queijo fresco mexicano, ralado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "queijo tipo mussarela", prep: null, alt: "queijo fresco mexicano, ralado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Creme de leite ou crema mexicana, cebola roxa fatiada, coentro, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "creme de leite", prep: "para finalizar", alt: "crema mexicana", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebola roxa", prep: "fatiada, para finalizar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Toste as pimentas secas e hidrate em água quente por 15 minutos.",
       "Bata as pimentas hidratadas com alho, cebola e o caldo de galinha no liquidificador, até formar um molho liso.",
@@ -207,6 +581,44 @@ window.RECIPES["mexico"] = [
       "1 colher (sopa) de óleo ou manteiga",
       "Guacamole e pico de gallo, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 tortillas de trigo ou milho grandes",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "tortillas de trigo", prep: null, alt: "milho grandes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de queijo tipo mussarela ou queijo Oaxaca, ralado",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "queijo tipo mussarela", prep: null, alt: "queijo Oaxaca, ralado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de recheio opcional (frango desfiado, cogumelos salteados, ou flor de abóbora)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "recheio opcional", prep: "frango desfiado, cogumelos salteados, ou flor de abóbora", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de óleo ou manteiga",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: "manteiga", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Guacamole e pico de gallo, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "guacamole", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pico de gallo", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça uma frigideira grande em fogo médio com um pouco de óleo ou manteiga.",
       "Distribua o queijo ralado (e o recheio adicional, se usar) sobre metade de cada tortilla.",
@@ -238,6 +650,65 @@ window.RECIPES["mexico"] = [
       "400 g de tomate pelado, para o molho",
       "1/4 de cebola, 1 dente de alho",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "6 pimentões poblano (ou pimentão verde grande, na falta do poblano)",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "pimentões poblano", prep: null, alt: "pimentão verde grande, na falta do poblano", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de queijo tipo Oaxaca ou muçarela, em tiras",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "queijo tipo oaxaca", prep: null, alt: "muçarela, em tiras", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos (claras e gemas separadas)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: "claras e gemas separadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de farinha de trigo (dividida)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado, para o molho",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "para o molho", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/4 de cebola, 1 dente de alho",
+        group: null,
+        items: [
+          { qty: 0.25, qtyRange: null, unit: null, item: "cebola", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Toste os pimentões poblano diretamente na chama do fogão (ou sob o grill do forno), virando até a pele ficar totalmente enegrecida e bolhada por todos os lados.",
@@ -272,6 +743,50 @@ window.RECIPES["mexico"] = [
       "1 colher (sopa) de fermento em pó",
       "300 g de frango desfiado (ou porco), em molho vermelho ou verde (ver receitas Mole ou Enchiladas)",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "20 folhas de milho secas (para tamales), hidratadas em água morna por 30 minutos",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "folha", item: "milho secas", prep: "para tamales, hidratadas em água morna por 30 minutos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de massa de milho (masa harina, hidratada com caldo conforme instrução da embalagem)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "massa de milho (masa harina)", prep: "hidratada com caldo conforme instrução da embalagem", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de banha ou manteiga, batida até ficar fofa",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "banha", prep: null, alt: "manteiga, batida até ficar fofa", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de fermento em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "fermento em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de frango desfiado (ou porco), em molho vermelho ou verde (ver receitas Mole ou Enchiladas)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "frango desfiado", prep: "em molho vermelho ou verde; ver receitas mole ou enchiladas", alt: "porco", optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Bata a banha (ou manteiga) na batedeira até ficar bem fofa e clara, cerca de 5 minutos.",
@@ -309,6 +824,57 @@ window.RECIPES["mexico"] = [
       "Suco de 1-2 limões",
       "Coentro fresco picado",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "3 abacates maduros",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "abacates maduros", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 cebola roxa picada bem fina",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola roxa", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1-2 pimentas jalapeño ou serrano, picadas bem fino (sem sementes se quiser menos picante)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [1, 2], unit: null, item: "pimentas jalapeño", prep: null, alt: "serrano, picadas bem fino (sem sementes se quiser menos picante)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados, sem sementes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates picados", prep: "sem sementes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1-2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1-2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Corte os abacates ao meio, retire o caroço e retire a polpa com uma colher para uma tigela.",

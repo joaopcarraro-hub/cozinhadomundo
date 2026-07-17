@@ -19,6 +19,43 @@ window.RECIPES["sobremesas-classicas"] = [
       "80 g de açúcar (+ extra para caramelizar por cima)",
       "1 pitada de sal"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fava de baunilha (ou 1 colher (chá) de extrato)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fava", item: "baunilha", prep: null, alt: "1 colher (chá) de extrato", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 gemas",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar (+ extra para caramelizar por cima)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar (+ extra para caramelizar por cima)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 150°C.",
       "Aqueça o creme de leite com a fava de baunilha (raspada, sementes e casca) até quase ferver. Desligue e deixe em infusão por 10 minutos. Retire a casca da fava.",
@@ -51,6 +88,44 @@ window.RECIPES["sobremesas-classicas"] = [
       "1 fava de baunilha (ou extrato)",
       "4 ovos inteiros + 2 gemas",
       "100 g de açúcar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para o caramelo: 150 g de açúcar + 50 ml de água",
+        group: "caramelo",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o creme: 500 ml de leite integral",
+        group: "creme",
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "leite integral", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fava de baunilha (ou extrato)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fava", item: "baunilha", prep: null, alt: "extrato", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos inteiros + 2 gemas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos inteiros + 2 gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de açúcar",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare o caramelo: derreta o açúcar com a água em fogo médio, sem mexer (só balance a panela), até virar um caramelo âmbar escuro.",
@@ -86,6 +161,50 @@ window.RECIPES["sobremesas-classicas"] = [
       "6 g de gelatina em folha (ou 1 colher (sopa) de gelatina em pó sem sabor)",
       "Calda de frutas vermelhas ou caramelo, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de leite integral",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "leite integral", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "70 g de açúcar",
+        group: null,
+        items: [
+          { qty: 70, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fava de baunilha (ou extrato)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fava", item: "baunilha", prep: null, alt: "extrato", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 g de gelatina em folha (ou 1 colher (sopa) de gelatina em pó sem sabor)",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "grama", item: "gelatina em folha", prep: null, alt: "1 colher (sopa) de gelatina em pó sem sabor", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Calda de frutas vermelhas ou caramelo, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "calda de frutas vermelhas", prep: "para servir", alt: "caramelo", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Hidrate a gelatina em folha em água fria por 5-10 minutos (se for em pó, hidrate em 3 colheres (sopa) de água fria).",
       "Aqueça o creme de leite, o leite, o açúcar e a fava de baunilha (raspada) numa panela, mexendo até o açúcar dissolver, sem deixar ferver.",
@@ -116,6 +235,35 @@ window.RECIPES["sobremesas-classicas"] = [
       "Para a massa choux: 125 ml de água, 125 ml de leite, 110 g de manteiga, 1 pitada de sal, 1 colher (chá) de açúcar, 140 g de farinha de trigo, 4-5 ovos",
       "Para o recheio: 500 ml de crème pâtissière (creme de confeiteiro) de baunilha ou chocolate",
       "Para a cobertura: 200 g de chocolate meio amargo (ou fondant de café/chocolate)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa choux: 125 ml de água, 125 ml de leite, 110 g de manteiga, 1 pitada de sal, 1 colher (chá) de açúcar, 140 g de farinha de trigo, 4-5 ovos",
+        group: "massa choux",
+        items: [
+          { qty: 125, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 125, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 110, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 140, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: [4, 5], unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 500 ml de crème pâtissière (creme de confeiteiro) de baunilha ou chocolate",
+        group: "recheio",
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "crème pâtissière (creme de confeiteiro)", prep: "sabor baunilha", alt: "sabor chocolate", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a cobertura: 200 g de chocolate meio amargo (ou fondant de café/chocolate)",
+        group: "cobertura",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: null, alt: "fondant de café/chocolate", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa choux: ferva a água, leite, manteiga, sal e açúcar. Fora do fogo, adicione a farinha de uma vez, mexendo vigorosamente.",
@@ -149,6 +297,43 @@ window.RECIPES["sobremesas-classicas"] = [
       "150 ml de creme de leite fresco",
       "Amêndoas laminadas tostadas (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 receita de massa choux (ver receita Éclair)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de massa choux", prep: "ver receita éclair", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "500 ml de sorvete de creme ou baunilha",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "sorvete de creme", prep: null, alt: "baunilha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de chocolate meio amargo",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Amêndoas laminadas tostadas (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "amêndoas laminadas tostadas", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a massa choux seguindo os mesmos passos da receita de Éclair.",
       "Com um saco de confeitar (ou duas colheres), modele pequenas bolinhas de cerca de 3-4 cm sobre uma assadeira forrada, espaçadas entre si.",
@@ -179,6 +364,38 @@ window.RECIPES["sobremesas-classicas"] = [
       "Para o creme mousseline de praliné: 500 ml de crème pâtissière, 200 g de manteiga em temperatura ambiente, 150 g de pasta de praliné (avelã caramelizada batida até virar pasta)",
       "Açúcar de confeiteiro para polvilhar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 receita de massa choux (ver receita Éclair)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de massa choux", prep: "ver receita éclair", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Amêndoas laminadas, para decorar a massa antes de assar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "amêndoas laminadas", prep: "para decorar a massa antes de assar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o creme mousseline de praliné: 500 ml de crème pâtissière, 200 g de manteiga em temperatura ambiente, 150 g de pasta de praliné (avelã caramelizada batida até virar pasta)",
+        group: "creme mousseline de praliné",
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "crème pâtissière", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "manteiga", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "pasta de praliné", prep: "avelã caramelizada batida até virar pasta", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Açúcar de confeiteiro para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "açúcar de confeiteiro", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a massa choux. Com um saco de confeitar com bico grande, modele um anel de cerca de 20 cm de diâmetro sobre uma assadeira forrada (faça um segundo anel por cima do primeiro para dar volume).",
       "Polvilhe amêndoas laminadas por cima. Asse a 200°C por 15 minutos, depois abaixe para 180°C e asse por mais 20 minutos, sem abrir o forno, até dourar bem.",
@@ -208,6 +425,36 @@ window.RECIPES["sobremesas-classicas"] = [
       "1 receita de massa choux (ver receita Éclair), suficiente para o anel e para 12-15 bolinhas pequenas",
       "200 g de açúcar (para o caramelo de cobertura das bolinhas)",
       "500 ml de crème chantilly (creme de leite fresco batido com açúcar, bem firme) ou creme Chiboust (crème pâtissière + merengue italiano)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 disco de massa folhada (25 cm de diâmetro)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "disco", item: "massa folhada", prep: "25 cm de diâmetro", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de massa choux (ver receita Éclair), suficiente para o anel e para 12-15 bolinhas pequenas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de massa choux", prep: "ver receita éclair; suficiente para o anel e para 12-15 bolinhas pequenas", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "200 g de açúcar (para o caramelo de cobertura das bolinhas)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar (para o caramelo de cobertura das bolinhas)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de crème chantilly (creme de leite fresco batido com açúcar, bem firme) ou creme Chiboust (crème pâtissière + merengue italiano)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "crème chantilly (creme de leite fresco batido com açúcar, bem firme)", prep: null, alt: "creme Chiboust (crème pâtissière + merengue italiano)", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Corte um disco de massa folhada de 25 cm e fure toda a superfície com um garfo. Asse a 200°C por 15-18 minutos até dourar, e deixe esfriar.",
@@ -242,6 +489,43 @@ window.RECIPES["sobremesas-classicas"] = [
       "1 disco de massa folhada",
       "1 pitada de canela (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "6-8 maçãs (tipo gala ou fuji), descascadas, sem o miolo, cortadas ao meio",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [6, 8], unit: null, item: "maçãs", prep: "tipo gala ou fuji, descascadas, sem o miolo, cortadas ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de açúcar",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 disco de massa folhada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "disco", item: "massa folhada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de canela (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "canela", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa frigideira que possa ir ao forno (ferro fundido idealmente), derreta o açúcar em fogo médio, sem mexer, até virar um caramelo âmbar.",
       "Junte a manteiga ao caramelo, mexendo até incorporar.",
@@ -271,6 +555,38 @@ window.RECIPES["sobremesas-classicas"] = [
       "Para a massa (pâte sucrée): 250 g de farinha, 120 g de manteiga gelada em cubos, 100 g de açúcar de confeiteiro, 1 ovo, 1 pitada de sal",
       "Para o recheio (lemon curd): 4 ovos inteiros + 2 gemas, 200 g de açúcar, 150 ml de suco de limão-siciliano (ou tahiti) fresco, raspas de 2 limões, 150 g de manteiga gelada em cubos",
       "Merengue italiano (opcional, para cobertura maçaricada)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa (pâte sucrée): 250 g de farinha, 120 g de manteiga gelada em cubos, 100 g de açúcar de confeiteiro, 1 ovo, 1 pitada de sal",
+        group: "massa (pâte sucrée)",
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "farinha", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 120, qtyRange: null, unit: "grama", item: "manteiga", prep: "gelada em cubos", alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar de confeiteiro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio (lemon curd): 4 ovos inteiros + 2 gemas, 200 g de açúcar, 150 ml de suco de limão-siciliano (ou tahiti) fresco, raspas de 2 limões, 150 g de manteiga gelada em cubos",
+        group: "recheio (lemon curd)",
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: "inteiros", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "suco de limão-siciliano", prep: "fresco", alt: "tahiti", optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "raspas de limão", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "manteiga", prep: "gelada em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Merengue italiano (opcional, para cobertura maçaricada)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "merengue italiano", prep: "para cobertura maçaricada", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa: misture a farinha, açúcar e sal. Adicione a manteiga gelada e trabalhe com as pontas dos dedos até formar uma farofa grossa. Junte o ovo e misture só até formar uma massa homogênea, sem sovar.",
@@ -302,6 +618,30 @@ window.RECIPES["sobremesas-classicas"] = [
       "Para a base: 200 g de biscoito tipo maisena ou graham, triturado, 80 g de manteiga derretida",
       "Para o recheio: 700 g de queijo cremoso em temperatura ambiente, 200 g de açúcar, 3 ovos + 1 gema, 200 ml de creme de leite fresco (ou azedo), 1 colher (sopa) de amido de milho, raspas de 1 limão, 1 colher (chá) de extrato de baunilha"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Para a base: 200 g de biscoito tipo maisena ou graham, triturado, 80 g de manteiga derretida",
+        group: "base",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "biscoito tipo maisena", prep: "triturado", alt: "graham", optional: false, isReference: false },
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 700 g de queijo cremoso em temperatura ambiente, 200 g de açúcar, 3 ovos + 1 gema, 200 ml de creme de leite fresco (ou azedo), 1 colher (sopa) de amido de milho, raspas de 1 limão, 1 colher (chá) de extrato de baunilha",
+        group: "recheio",
+        items: [
+          { qty: 700, qtyRange: null, unit: "grama", item: "queijo cremoso", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: "azedo", optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de milho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "raspas de limão", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "extrato de baunilha", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 160°C. Misture o biscoito triturado com a manteiga derretida e pressione firmemente no fundo de uma forma de fundo removível (22-24 cm).",
       "Asse a base por 10 minutos, retire e deixe esfriar enquanto prepara o recheio. Embrulhe a parte de fora da forma com papel-alumínio (se for usar banho-maria, para evitar que entre água).",
@@ -332,6 +672,36 @@ window.RECIPES["sobremesas-classicas"] = [
       "Para o bolo: 150 g de chocolate meio amargo, 150 g de manteiga, 150 g de açúcar (dividido), 6 ovos (claras e gemas separadas), 150 g de farinha de trigo, 1 pitada de sal",
       "Para o recheio: 200 g de geleia de damasco (peneirada, sem pedaços)",
       "Para a cobertura: 200 g de chocolate meio amargo, 150 ml de creme de leite fresco, 30 g de glucose de milho ou mel (dá brilho)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para o bolo: 150 g de chocolate meio amargo, 150 g de manteiga, 150 g de açúcar (dividido), 6 ovos (claras e gemas separadas), 150 g de farinha de trigo, 1 pitada de sal",
+        group: "bolo",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar", prep: "dividido", alt: null, optional: false, isReference: false },
+          { qty: 6, qtyRange: null, unit: null, item: "ovos", prep: "claras e gemas separadas", alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 200 g de geleia de damasco (peneirada, sem pedaços)",
+        group: "recheio",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "geleia de damasco", prep: "peneirada, sem pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a cobertura: 200 g de chocolate meio amargo, 150 ml de creme de leite fresco, 30 g de glucose de milho ou mel (dá brilho)",
+        group: "cobertura",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "glucose de milho", prep: "dá brilho", alt: "mel", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Derreta o chocolate em banho-maria e deixe amornar. Bata a manteiga com metade do açúcar até esbranquiçar, junte as gemas uma a uma, depois o chocolate derretido.",
@@ -366,6 +736,54 @@ window.RECIPES["sobremesas-classicas"] = [
       "Para a ganache: 200 g de chocolate meio amargo, 200 ml de creme de leite fresco",
       "Para a cobertura final: 100 g de chocolate meio amargo (glaçagem brilhante)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Para o biscuit Joconde: 150 g de farinha de amêndoas, 150 g de açúcar de confeiteiro, 4 ovos, 40 g de farinha de trigo, 30 g de manteiga derretida, 4 claras, 20 g de açúcar",
+        group: "biscuit joconde",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "farinha de amêndoas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar de confeiteiro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 40, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "claras", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 20, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a calda de café: 150 ml de café forte, 50 g de açúcar",
+        group: "calda de café",
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "café", prep: "forte", alt: null, optional: false, isReference: false },
+          { qty: 50, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o creme de manteiga de café: 200 g de manteiga, 150 g de açúcar, 3 gemas, 2 colheres (sopa) de café solúvel dissolvido em pouca água",
+        group: "creme de manteiga de café",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "café solúvel", prep: "dissolvido em pouca água", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a ganache: 200 g de chocolate meio amargo, 200 ml de creme de leite fresco",
+        group: "ganache",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a cobertura final: 100 g de chocolate meio amargo (glaçagem brilhante)",
+        group: "cobertura final",
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: "glaçagem brilhante", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare o biscuit Joconde: bata a farinha de amêndoas, açúcar de confeiteiro e ovos até esbranquiçar e dobrar de volume. Junte a farinha de trigo e a manteiga derretida.",
       "Em outra tigela, bata as claras em neve com o açúcar até formar um merengue firme. Incorpore delicadamente à massa de amêndoas.",
@@ -398,6 +816,37 @@ window.RECIPES["sobremesas-classicas"] = [
       "Açúcar de confeiteiro para polvilhar durante o cozimento",
       "600 ml de crème pâtissière (creme de confeiteiro) de baunilha, bem gelado",
       "150 g de fondant branco (ou glacê real) e 30 g de chocolate derretido, para a decoração clássica (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 receita de massa folhada (ou 2 discos prontos de boa qualidade)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de massa folhada", prep: null, alt: "2 discos prontos de boa qualidade", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Açúcar de confeiteiro para polvilhar durante o cozimento",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "açúcar de confeiteiro", prep: "para polvilhar durante o cozimento", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "600 ml de crème pâtissière (creme de confeiteiro) de baunilha, bem gelado",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "mililitro", item: "crème pâtissière (creme de confeiteiro) de baunilha", prep: "bem gelado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de fondant branco (ou glacê real) e 30 g de chocolate derretido, para a decoração clássica (opcional)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "fondant branco", prep: null, alt: "glacê real", optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "chocolate derretido", prep: "para a decoração clássica", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Abra a massa folhada bem fina e corte em 3 retângulos iguais. Fure toda a superfície com um garfo (evita que cresça demais e irregular).",
@@ -436,6 +885,64 @@ window.RECIPES["sobremesas-classicas"] = [
       "Cacau em pó para polvilhar",
       "1 pitada de sal"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de mascarpone em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "mascarpone", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 ovos (gemas e claras separadas)",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: null, item: "ovos", prep: "gemas e claras separadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "120 g de açúcar (dividido)",
+        group: null,
+        items: [
+          { qty: 120, qtyRange: null, unit: "grama", item: "açúcar (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de café espresso forte, frio",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "café espresso", prep: "forte, frio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de licor de café ou Marsala (opcional)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "licor de café", prep: null, alt: "Marsala", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "24 biscoitos champanhe (savoiardi)",
+        group: null,
+        items: [
+          { qty: 24, qtyRange: null, unit: null, item: "biscoitos champanhe (savoiardi)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cacau em pó para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cacau em pó", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata as gemas com metade do açúcar até esbranquiçar e engrossar (formar fita).",
       "Junte o mascarpone às gemas batidas, misturando delicadamente até ficar liso e homogêneo (não bata demais, para não talhar).",
@@ -468,6 +975,45 @@ window.RECIPES["sobremesas-classicas"] = [
       "Óleo para fritar",
       "Para o recheio: 500 g de ricota bem escorrida, 150 g de açúcar de confeiteiro, 100 g de chocolate meio amargo picado, raspas de laranja",
       "Pistache picado e açúcar de confeiteiro para finalizar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 300 g de farinha de trigo, 30 g de açúcar, 1 pitada de sal, 30 g de manteiga gelada, 1 ovo, 100 ml de vinho branco (Marsala ou vinho seco), 1 colher (chá) de vinagre",
+        group: "massa",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: "gelada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco", prep: null, alt: "marsala ou vinho seco", optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "vinagre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 500 g de ricota bem escorrida, 150 g de açúcar de confeiteiro, 100 g de chocolate meio amargo picado, raspas de laranja",
+        group: "recheio",
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "ricota", prep: "bem escorrida", alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar de confeiteiro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: "picado", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "raspas de laranja", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pistache picado e açúcar de confeiteiro para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pistache", prep: "picado e açúcar de confeiteiro para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa: misture a farinha, açúcar e sal. Adicione a manteiga gelada e trabalhe até formar uma farofa. Junte o ovo, o vinho e o vinagre, misture até formar uma massa firme.",
@@ -504,6 +1050,50 @@ window.RECIPES["sobremesas-classicas"] = [
       "500 ml de creme de leite fresco batido (chantilly, levemente adoçado)",
       "Frutas frescas variadas (morango, kiwi, maracujá, frutas vermelhas) para cobrir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "6 claras em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "claras", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "350 g de açúcar",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de vinagre branco ou suco de limão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "vinagre branco", prep: null, alt: "suco de limão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de amido de milho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de milho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de creme de leite fresco batido (chantilly, levemente adoçado)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: "batido (chantilly, levemente adoçado)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Frutas frescas variadas (morango, kiwi, maracujá, frutas vermelhas) para cobrir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "frutas frescas variadas", prep: "morango, kiwi, maracujá, frutas vermelhas, para cobrir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 150°C e desenhe um círculo de 22 cm num papel manteiga (como guia) sobre uma assadeira.",
       "Bata as claras em velocidade média até formar picos moles, depois adicione o açúcar aos poucos, uma colher de cada vez, batendo bem entre as adições, até o merengue ficar brilhante, firme e liso (teste esfregando um pouco entre os dedos — não deve sentir grãos de açúcar).",
@@ -532,6 +1122,39 @@ window.RECIPES["sobremesas-classicas"] = [
       "Para a massa: 250 g de farinha de trigo, 7 g de fermento biológico seco, 30 g de açúcar, 4 ovos, 80 ml de leite morno, 80 g de manteiga derretida, 1 pitada de sal",
       "Para a calda: 500 ml de água, 200 g de açúcar, raspas de 1 laranja, 100 ml de rum",
       "Chantilly e frutas para servir (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 250 g de farinha de trigo, 7 g de fermento biológico seco, 30 g de açúcar, 4 ovos, 80 ml de leite morno, 80 g de manteiga derretida, 1 pitada de sal",
+        group: "massa",
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 7, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "leite", prep: "morno", alt: null, optional: false, isReference: false },
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a calda: 500 ml de água, 200 g de açúcar, raspas de 1 laranja, 100 ml de rum",
+        group: "calda",
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "raspas de laranja", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "rum", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Chantilly e frutas para servir (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "chantilly", prep: null, alt: null, optional: true, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "frutas", prep: "para servir", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, fermento, açúcar e sal. Adicione os ovos e o leite morno, misture até formar uma massa mole (bem mais líquida que pão comum).",
@@ -569,6 +1192,64 @@ window.RECIPES["sobremesas-classicas"] = [
       "1 pitada de sal",
       "100 g de nozes ou chocolate picado (opcional, para textura)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de chocolate meio amargo, picado",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "180 g de manteiga",
+        group: null,
+        items: [
+          { qty: 180, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 g de açúcar",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 ovos",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de cacau em pó",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "cacau em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de nozes ou chocolate picado (opcional, para textura)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "nozes", prep: "para textura", alt: "chocolate picado", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 180°C e unte/forre uma forma quadrada (20x20 cm) com papel manteiga.",
       "Derreta o chocolate com a manteiga em banho-maria (ou no micro-ondas, em intervalos curtos), mexendo até ficar liso. Deixe amornar.",
@@ -603,6 +1284,57 @@ window.RECIPES["sobremesas-classicas"] = [
       "50 g de farinha de trigo",
       "Cacau em pó, para polvilhar as forminhas",
       "Sorvete de creme, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "150 g de chocolate meio amargo",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "chocolate meio amargo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de manteiga (+ extra para untar)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "manteiga (+ extra para untar)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 ovos + 2 gemas",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos + 2 gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de açúcar",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cacau em pó, para polvilhar as forminhas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cacau em pó", prep: "para polvilhar as forminhas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sorvete de creme, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sorvete de creme", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Unte generosamente 4 forminhas individuais (ramequins ou forminhas de alumínio) com manteiga e polvilhe com cacau em pó, removendo o excesso.",

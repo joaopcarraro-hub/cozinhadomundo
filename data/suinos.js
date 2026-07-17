@@ -23,6 +23,71 @@ window.RECIPES["suinos"] = [
       "Pimenta-do-reino a gosto",
       "Azeite de oliva"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 barriga de porco inteira, com pele, aberta em manta (2,5-3 kg)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "barriga de porco inteira", prep: "com pele, aberta em manta (2,5-3 kg)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 lombo de porco (1 kg), para o recheio central",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "lombo de porco", prep: "(1 kg), para o recheio central", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de erva-doce (sementes), levemente tostadas e amassadas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "erva-doce (sementes)", prep: "levemente tostadas e amassadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de alecrim fresco picado",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "alecrim fresco", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de raspas de limão",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "raspas de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso (generoso, cerca de 3% do peso total da carne)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: "generoso, cerca de 3% do peso total da carne", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Abra a barriga de porco numa superfície, com a pele para baixo. Faça cortes leves na carne (sem atingir a pele) para o tempero penetrar melhor.",
       "Misture o alho, erva-doce tostada, alecrim, raspas de limão, sal e pimenta, formando uma pasta com um fio de azeite.",
@@ -62,6 +127,71 @@ window.RECIPES["suinos"] = [
       "Pimenta-do-reino a gosto",
       "Azeite de oliva"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 pernil de porco com pele e osso (3,5-4 kg)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pernil de porco com pele e osso", prep: "(3,5-4 kg)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de sal",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de páprica doce",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "páprica doce", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 laranjas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 laranjas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Com uma faca, faça furos profundos por toda a superfície do pernil e finque pedaços de alho dentro deles.",
       "Misture o sal, páprica, suco de laranja, vinho branco, louro e pimenta, formando uma marinada.",
@@ -97,6 +227,73 @@ window.RECIPES["suinos"] = [
       "Barbante culinário",
       "Sal, pimenta e ervas frescas a gosto",
       "2 colheres (sopa) de azeite"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 lombo de porco inteiro (1,2-1,5 kg)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "lombo de porco inteiro", prep: "(1,2-1,5 kg)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de damasco seco picado (ou ameixa seca)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "damasco seco", prep: "picado", alt: "ameixa seca", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de espinafre refogado e bem escorrido",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "espinafre", prep: "refogado e bem escorrido", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de queijo tipo provolone ou muçarela, em tiras",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "queijo tipo provolone", prep: null, alt: "muçarela, em tiras", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de nozes ou castanhas picadas (opcional)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "nozes", prep: null, alt: "castanhas picadas", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Barbante culinário",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "barbante culinário", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e ervas frescas a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Abra o lombo em borboleta: com uma faca afiada, corte no sentido do comprimento sem atingir o outro lado, abrindo como um livro. Cubra com filme plástico e bata levemente para uniformizar a espessura.",
@@ -137,6 +334,72 @@ window.RECIPES["suinos"] = [
       "1 pitada de cravo em pó ou canela",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 postas de lombo de porco defumado e curado (kassler), cerca de 200 g cada",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "posta", item: "lombo de porco defumado e curado (kassler)", prep: "cerca de 200 g cada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de manteiga",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola fatiada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de repolho roxo fatiado (para o acompanhamento clássico, Rotkohl)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "repolho roxo", prep: "fatiado (para o acompanhamento clássico, rotkohl)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 maçã picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "maçã", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de vinagre de maçã",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "vinagre de maçã", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de cravo em pó ou canela",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "cravo em pó", prep: null, alt: "canela", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se as postas de kassler não estiverem prontas (algumas versões vêm cruas, apenas curadas e defumadas), cozinhe-as em água ou caldo por 20-25 minutos até aquecer por completo — o kassler tradicional já vem curado e defumado, precisando só de reaquecimento e uma boa selada.",
       "Prepare o repolho roxo: refogue a cebola na manteiga até macia, junte o repolho fatiado e a maçã picada.",
@@ -164,6 +427,35 @@ window.RECIPES["suinos"] = [
       "1,5 kg de costelinha suína (ripa ou costela)",
       "Para o rub seco: 2 colheres (sopa) de páprica defumada, 1 colher (sopa) de açúcar mascavo, 1 colher (chá) de alho em pó, 1 colher (chá) de cebola em pó, 1 colher (chá) de cominho, sal e pimenta a gosto",
       "300 ml de molho barbecue (ver nota nas dicas para versão caseira rápida)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de costelinha suína (ripa ou costela)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "costelinha suína", prep: "ripa ou costela", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o rub seco: 2 colheres (sopa) de páprica defumada, 1 colher (sopa) de açúcar mascavo, 1 colher (chá) de alho em pó, 1 colher (chá) de cebola em pó, 1 colher (chá) de cominho, sal e pimenta a gosto",
+        group: "rub seco",
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "páprica defumada", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar mascavo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "alho em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cebola em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de molho barbecue (ver nota nas dicas para versão caseira rápida)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "molho barbecue (ver nota nas dicas para versão caseira rápida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Remova a membrana da parte de trás da costelinha (puxe com a ajuda de uma faca e papel toalha para não escorregar) — isso permite que o tempero penetre melhor e a carne fique mais macia.",
@@ -197,6 +489,47 @@ window.RECIPES["suinos"] = [
       "Farinha de trigo, 2 ovos batidos e farinha de rosca — para empanar",
       "Manteiga e óleo, para fritar",
       "Limão, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 bifes de lombo ou alcatra suína, cortados finos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "bifes de lombo", prep: null, alt: "alcatra suína, cortados finos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, 2 ovos batidos e farinha de rosca — para empanar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos, para empanar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "farinha de rosca", prep: "para empanar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga e óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para fritar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Limão, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cubra os bifes com filme plástico e bata com um batedor de carne até ficarem bem finos e uniformes (cerca de 5 mm de espessura).",

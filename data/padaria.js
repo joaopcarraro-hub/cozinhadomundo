@@ -18,6 +18,36 @@ window.RECIPES["padaria"] = [
       "10 g de sal",
       "5 g de fermento biológico seco (ou 15 g de fermento fresco)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo (idealmente tipo 55 francesa, ou farinha comum de boa qualidade)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: "idealmente tipo 55 francesa, ou farinha comum de boa qualidade", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "350 ml de água fria",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "mililitro", item: "água fria", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 g de fermento biológico seco (ou 15 g de fermento fresco)",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: "15 g de fermento fresco", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha com a água numa tigela até incorporar (sem sovar), cubra e deixe descansar por 20-30 minutos (autólise) — isso desenvolve o glúten naturalmente.",
       "Adicione o fermento e o sal por cima da massa, sove por 10 minutos (na mão ou batedeira com gancho) até ficar lisa e elástica.",
@@ -54,6 +84,65 @@ window.RECIPES["padaria"] = [
       "300 g de manteiga em temperatura ambiente, em cubos",
       "1 gema + 1 colher (sopa) de leite, para pincelar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de açúcar",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 ovos",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de manteiga em temperatura ambiente, em cubos",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "manteiga em temperatura ambiente", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema + 1 colher (sopa) de leite, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: "para pincelar", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "leite", prep: "para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Na batedeira com gancho, misture a farinha, sal, açúcar e fermento (mantendo o sal longe do fermento ao adicionar).",
       "Junte os ovos e o leite morno, bata em velocidade baixa até formar uma massa, depois aumente e sove por 10 minutos até ficar lisa e elástica.",
@@ -88,6 +177,64 @@ window.RECIPES["padaria"] = [
       "50 g de manteiga derretida (para a massa)",
       "280 g de manteiga gelada, em bloco (para o empasse/laminação)",
       "1 ovo batido, para pincelar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de açúcar",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "12 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "280 ml de leite frio",
+        group: null,
+        items: [
+          { qty: 280, qtyRange: null, unit: "mililitro", item: "leite frio", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga derretida (para a massa)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida (para a massa)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "280 g de manteiga gelada, em bloco (para o empasse/laminação)",
+        group: null,
+        items: [
+          { qty: 280, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: "em bloco (para o empasse/laminação)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo batido, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: "batido, para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, sal, açúcar e fermento. Adicione o leite frio e a manteiga derretida, sove por 8-10 minutos até formar uma massa lisa (détrempe).",
@@ -124,6 +271,50 @@ window.RECIPES["padaria"] = [
       "10 g de sal",
       "100 g de fermento natural (levain) ativo, ou 5 g de fermento biológico seco",
       "Farinha de arroz ou semolina, para polvilhar o cesto de fermentação"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de farinha de trigo branca",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "farinha de trigo branca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de farinha de trigo integral (ou centeio)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "farinha de trigo integral", prep: null, alt: "centeio", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "350 ml de água morna",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "mililitro", item: "água morna", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de fermento natural (levain) ativo, ou 5 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "fermento natural (levain)", prep: "ativo", alt: "5 g de fermento biológico seco", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de arroz ou semolina, para polvilhar o cesto de fermentação",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de arroz", prep: "para polvilhar o cesto de fermentação", alt: "semolina", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture as farinhas com a água, deixe descansar por 30 minutos (autólise).",
@@ -162,6 +353,66 @@ window.RECIPES["padaria"] = [
       "Sal grosso ou flor de sal, alecrim fresco e tomate cereja para decorar",
       "Água para a salmoura final"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "350 ml de água morna",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "mililitro", item: "água morna", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "7 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 7, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de azeite de oliva extra virgem (dividido, para a massa e para untar)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "azeite de oliva extra virgem", prep: "dividido, para a massa e para untar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso ou flor de sal, alecrim fresco e tomate cereja para decorar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: null, alt: "flor de sal", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "alecrim fresco", prep: "para decorar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "tomate cereja", prep: "para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Água para a salmoura final",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "água para a salmoura final", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha, fermento e açúcar. Adicione a água e 40 ml de azeite, misture até formar uma massa bem mole e pegajosa (não sove como pão comum, é uma massa mais líquida).",
       "Com uma espátula ou as mãos untadas de azeite, dobre a massa sobre si mesma algumas vezes dentro da tigela. Cubra e deixe fermentar por 1h30-2h, até dobrar de volume.",
@@ -191,6 +442,35 @@ window.RECIPES["padaria"] = [
       "Para o poolish (fermento prévio): 150 g de farinha, 150 ml de água, 1 g de fermento biológico seco",
       "Para a massa final: 350 g de farinha de trigo, 250 ml de água morna, 8 g de sal, 4 g de fermento biológico seco",
       "Farinha extra e semolina para polvilhar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para o poolish (fermento prévio): 150 g de farinha, 150 ml de água, 1 g de fermento biológico seco",
+        group: "poolish (fermento prévio)",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "farinha", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a massa final: 350 g de farinha de trigo, 250 ml de água morna, 8 g de sal, 4 g de fermento biológico seco",
+        group: "massa final",
+        items: [
+          { qty: 350, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "água", prep: "morna", alt: null, optional: false, isReference: false },
+          { qty: 8, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha extra e semolina para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha extra", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "semolina", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare o poolish: misture a farinha, água e fermento do poolish, cubra e deixe fermentar em temperatura ambiente por 12 horas (ou durante a noite), até ficar bem bolhoso e com cheiro azedo levemente alcoólico.",
@@ -225,6 +505,43 @@ window.RECIPES["padaria"] = [
       "100 g de fermento natural (levain) ativo e alimentado, em pico de atividade",
       "10 g de sal",
       "Farinha de arroz para polvilhar o cesto de fermentação"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo (pode misturar com um pouco de integral)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo (pode misturar com um pouco de integral)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "350 ml de água morna",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "mililitro", item: "água morna", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de fermento natural (levain) ativo e alimentado, em pico de atividade",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "fermento natural (levain)", prep: "ativo e alimentado, em pico de atividade", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de arroz para polvilhar o cesto de fermentação",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de arroz", prep: "para polvilhar o cesto de fermentação", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Certifique-se de que o levain está ativo: alimentado 4-8 horas antes, dobrando de volume e flutuando quando testado numa tigela com água.",
@@ -265,6 +582,65 @@ window.RECIPES["padaria"] = [
       "8 g de sal",
       "1 gema + 1 colher (sopa) de leite, para pincelar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de açúcar",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 g de sal",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema + 1 colher (sopa) de leite, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: "para pincelar", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "leite", prep: "para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha, o fermento e o açúcar numa tigela.",
       "Adicione o leite morno, o ovo e a manteiga, misture até formar uma massa. Junte o sal.",
@@ -301,6 +677,72 @@ window.RECIPES["padaria"] = [
       "Para o banho: 2 L de água + 60 g de bicarbonato de sódio",
       "Sal grosso para polvilhar",
       "1 gema batida, para pincelar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de água morna",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "água morna", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "7 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 7, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de açúcar mascavo (ou açúcar comum)",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "açúcar mascavo", prep: null, alt: "açúcar comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga derretida",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o banho: 2 L de água + 60 g de bicarbonato de sódio",
+        group: "banho",
+        items: [
+          { qty: 2, qtyRange: null, unit: "litro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 60, qtyRange: null, unit: "grama", item: "bicarbonato de sódio", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso para polvilhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: "para polvilhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema batida, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: "batida, para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, fermento e açúcar. Adicione a água morna e a manteiga derretida, misture até formar uma massa. Junte o sal.",

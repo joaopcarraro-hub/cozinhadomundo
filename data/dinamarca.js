@@ -26,6 +26,64 @@ window.RECIPES["dinamarca"] = [
       "15 g de sal",
       "1 colher (sopa) de melaço ou açúcar mascavo (opcional, tradicional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de grãos de centeio inteiros (ou centeio em flocos grossos)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "grãos de centeio", prep: "inteiros", alt: "centeio em flocos grossos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de farinha de centeio integral",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "farinha de centeio integral", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de sementes variadas (girassol, linhaça, abóbora)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "sementes variadas", prep: "girassol, linhaça, abóbora", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de fermento natural de centeio (rugsurdej) ativo, ou 10 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "fermento natural de centeio (rugsurdej)", prep: "ativo", alt: "10 g de fermento biológico seco", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de água morna",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "água morna", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "15 g de sal",
+        group: null,
+        items: [
+          { qty: 15, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de melaço ou açúcar mascavo (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "melaço", prep: "tradicional", alt: "açúcar mascavo", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se for usar os grãos de centeio inteiros, deixe de molho em água por 8-12 horas antes de usar, para amaciar.",
       "Misture os grãos escorridos, farinha de centeio, farinha de trigo, sementes, fermento, água, sal e melaço, formando uma massa densa e pegajosa (bem diferente de uma massa de pão de trigo comum — não deve ficar lisa e elástica).",
@@ -56,6 +114,50 @@ window.RECIPES["dinamarca"] = [
       "20 g de açúcar",
       "30 g de manteiga amolecida",
       "300 ml de leite morno"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de açúcar",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga amolecida",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: "amolecida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, fermento, sal e açúcar.",
@@ -90,6 +192,64 @@ window.RECIPES["dinamarca"] = [
       "1 ovo batido, para pincelar",
       "Sementes de papoula ou gergelim, para polvilhar (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "15 g de açúcar",
+        group: null,
+        items: [
+          { qty: 15, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga amolecida",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: "amolecida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de água morna",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "água morna", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo batido, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: "batido, para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sementes de papoula ou gergelim, para polvilhar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sementes de papoula", prep: "para polvilhar", alt: "gergelim", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha, fermento, sal e açúcar. Junte a manteiga e a água morna, formando uma massa. Sove por 8-10 minutos até ficar lisa.",
       "Cubra e deixe fermentar por 1 hora, até dobrar de volume.",
@@ -122,6 +282,64 @@ window.RECIPES["dinamarca"] = [
       "60 g de manteiga amolecida",
       "250 ml de leite morno",
       "1 gema, para pincelar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de açúcar",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 g de sal",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga amolecida",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga", prep: "amolecida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: "para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, fermento, açúcar e sal.",
@@ -156,6 +374,72 @@ window.RECIPES["dinamarca"] = [
       "Recheio a gosto: creme de confeiteiro (remonce), pasta de amêndoas, ou geleia",
       "1 ovo batido, para pincelar",
       "Glacê de açúcar de confeiteiro, para finalizar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal, 60 g de açúcar",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 60, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "12 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "180 ml de leite frio",
+        group: null,
+        items: [
+          { qty: 180, qtyRange: null, unit: "mililitro", item: "leite frio", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "280 g de manteiga gelada (para o empasse/laminação)",
+        group: null,
+        items: [
+          { qty: 280, qtyRange: null, unit: "grama", item: "manteiga gelada (para o empasse/laminação)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Recheio a gosto: creme de confeiteiro (remonce), pasta de amêndoas, ou geleia",
+        group: "recheio",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "creme de confeiteiro (remonce)", prep: "a gosto", alt: "pasta de amêndoas; ou geleia", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo batido, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: "batido, para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Glacê de açúcar de confeiteiro, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "glacê de açúcar de confeiteiro", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare e lamine a massa seguindo exatamente a mesma técnica do Croissant (ver receita, categoria Padaria): détrempe, empasse de manteiga, e 3 dobras triplas com descanso na geladeira entre cada uma.",
@@ -193,6 +477,73 @@ window.RECIPES["dinamarca"] = [
       "Para o recheio: 100 g de manteiga amolecida, 100 g de açúcar mascavo, 2 colheres (sopa) de canela em pó",
       "1 ovo batido, para pincelar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 g de sal",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga amolecida",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga", prep: "amolecida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "220 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 220, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 100 g de manteiga amolecida, 100 g de açúcar mascavo, 2 colheres (sopa) de canela em pó",
+        group: "recheio",
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "manteiga", prep: "amolecida", alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar mascavo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "canela em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo batido, para pincelar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: "batido, para pincelar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha, fermento, açúcar e sal. Adicione o ovo, manteiga e leite morno, formando uma massa. Sove por 10 minutos até ficar lisa e macia.",
       "Cubra e deixe fermentar por 1 hora, até dobrar de volume.",
@@ -226,6 +577,40 @@ window.RECIPES["dinamarca"] = [
       "Cobertura (topping) à escolha — ver receitas específicas de arenque, camarão e roast beef",
       "Guarnições finais: ervas frescas, limão, cebola roxa, rabanete, ovo cozido, etc."
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 fatia fina de rugbrød (ver receita)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "fatia fina de rugbrød", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Manteiga em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cobertura (topping) à escolha — ver receitas específicas de arenque, camarão e roast beef",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cobertura (topping)", prep: "à escolha; ver receitas específicas de arenque, camarão e roast beef", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Guarnições finais: ervas frescas, limão, cebola roxa, rabanete, ovo cozido, etc.",
+        group: "guarnições finais",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebola roxa", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "rabanete", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ovo cozido", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Passe uma camada generosa de manteiga em temperatura ambiente sobre a fatia de rugbrød — essa camada não é opcional, ela sela o pão e evita que o topping o encharque.",
       "Escolha e prepare o topping principal (proteína) de sua preferência.",
@@ -256,6 +641,50 @@ window.RECIPES["dinamarca"] = [
       "Endro fresco",
       "1 ovo cozido, fatiado (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 fatias de rugbrød, amanteigadas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "rugbrød", prep: "amanteigadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de Arenque em Conserva (ver receita), fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de arenque em conserva", prep: "ver receita; fatiado", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 cebola roxa, fatiada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola roxa", prep: "fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Alcaparras",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "alcaparras", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Endro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "endro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo cozido, fatiado (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo cozido", prep: "fatiado", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Disponha o arenque em conserva generosamente sobre a fatia de rugbrød amanteigada.",
       "Cubra com fatias finas de cebola roxa e alcaparras.",
@@ -284,6 +713,50 @@ window.RECIPES["dinamarca"] = [
       "1 limão, em rodelas finas",
       "Endro fresco",
       "Alface, para forrar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 fatias de franskbrød ou rugbrød, amanteigadas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "franskbrød", prep: "amanteigadas", alt: "rugbrød", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de camarão pequeno, cozido e descascado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "camarão pequeno", prep: "cozido e descascado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de maionese",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "maionese", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 limão, em rodelas finas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "limão", prep: "em rodelas finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Endro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "endro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Alface, para forrar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "alface", prep: "para forrar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Forre a fatia de pão amanteigada com uma folha de alface.",
@@ -315,6 +788,50 @@ window.RECIPES["dinamarca"] = [
       "Rabanete fatiado fino",
       "Raiz-forte ralada (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 fatias de rugbrød, amanteigadas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "rugbrød", prep: "amanteigadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de roast beef fatiado bem fino (fatias frias)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "roast beef", prep: "fatiado bem fino (fatias frias)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de remoulade (ver receita)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "remoulade", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 cebola roxa fatiada fina, ou cebolas crispy fritas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola roxa", prep: "fatiada fina", alt: "cebolas crispy fritas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Rabanete fatiado fino",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "rabanete", prep: "fatiado fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raiz-forte ralada (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "raiz-forte", prep: "ralada", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Disponha as fatias de roast beef sobrepostas, formando ondas, sobre a fatia de pão amanteigada.",
       "Adicione uma colher generosa de remoulade por cima ou ao lado.",
@@ -343,6 +860,36 @@ window.RECIPES["dinamarca"] = [
       "Sal grosso, generoso",
       "4 folhas de louro",
       "Pimenta-do-reino a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2,5 kg de pernil de porco com pele, pele com cortes profundos e paralelos (score)",
+        group: null,
+        items: [
+          { qty: 2.5, qtyRange: null, unit: "quilograma", item: "pernil de porco com pele", prep: "pele com cortes profundos e paralelos (score)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso, generoso",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: "generoso", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 folhas de louro",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Certifique-se de que a pele está bem seca (deixe descoberta na geladeira por algumas horas, se possível, para secar ainda mais).",
@@ -374,6 +921,37 @@ window.RECIPES["dinamarca"] = [
       "Sal e pimenta a gosto",
       "1 receita de Persillesovs (molho de salsinha, ver receita)",
       "800 g de batata, cozida inteira, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de barriga de porco, fatiada (cerca de 1 cm de espessura)",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "barriga de porco", prep: "fatiada (cerca de 1 cm de espessura)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de Persillesovs (molho de salsinha, ver receita)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de persillesovs", prep: "molho de salsinha; ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "800 g de batata, cozida inteira, para servir",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "batata", prep: "cozida inteira, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere as fatias de barriga de porco com sal e pimenta.",
@@ -408,6 +986,74 @@ window.RECIPES["dinamarca"] = [
       "Manteiga e óleo, para fritar",
       "Batatas cozidas e Rødkål, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de carne de porco moída",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "carne de porco", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de carne bovina moída",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "carne bovina", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena, ralada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "ralada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de leite ou água gelada",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: "água gelada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga e óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para fritar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Batatas cozidas e Rødkål, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "batatas cozidas", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "rødkål", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture as carnes moídas com a cebola ralada, ovo, farinha e sal, batendo bem com uma colher (ou na batedeira) por alguns minutos.",
       "Adicione o leite/água gelada aos poucos, continuando a bater até a mistura ficar homogênea, levemente aerada e um pouco mais mole que uma almôndega comum.",
@@ -437,6 +1083,36 @@ window.RECIPES["dinamarca"] = [
       "1 colher (sopa) de manteiga",
       "800 g de batata, cozida",
       "1 receita de Persillesovs (ver receita) ou Rødkål (ver receita), para acompanhar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de linguiça fresca de porco tipo medister (ou linguiça fresca de porco comum, em rolo)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "linguiça fresca de porco tipo medister", prep: null, alt: "linguiça fresca de porco comum, em rolo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de manteiga",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 g de batata, cozida",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "batata", prep: "cozida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de Persillesovs (ver receita) ou Rødkål (ver receita), para acompanhar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de persillesovs", prep: "ver receita; para acompanhar", alt: "rødkål (ver receita)", optional: false, isReference: true },
+        ],
+      },
     ],
     steps: [
       "Se a linguiça estiver em gomos individuais, uma a duas vezes com um palito para evitar que estoure durante o cozimento.",
@@ -470,6 +1146,72 @@ window.RECIPES["dinamarca"] = [
       "200 ml de fundo escuro ou caldo de carne (para o molho)",
       "Batatas cozidas, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de carne bovina moída",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "carne bovina", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de leite",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas grandes, fatiadas em rodelas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas grandes", prep: "fatiadas em rodelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de fundo escuro ou caldo de carne (para o molho)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "fundo escuro", prep: null, alt: "caldo de carne (para o molho)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Batatas cozidas, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "batatas cozidas", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a carne moída com o ovo, farinha de rosca e leite, temperando com sal e pimenta. Molde em hambúrgueres achatados e grossos.",
       "Aqueça a manteiga numa frigideira em fogo médio-alto e frite os hambúrgueres por 4-5 minutos de cada lado, até dourarem bem e cozinharem no ponto desejado.",
@@ -499,6 +1241,52 @@ window.RECIPES["dinamarca"] = [
       "1 cebola picada",
       "Cebolinha picada, para finalizar",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de batata, descascada e em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batata", prep: "descascada e em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de leite, 50 g de manteiga (para o purê)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "leite", prep: "para o purê", alt: null, optional: false, isReference: false },
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: "para o purê", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de bacon em cubos",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "bacon", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha picada, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picada, para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe a batata em água salgada até ficar bem macia, 20 minutos.",
@@ -531,6 +1319,58 @@ window.RECIPES["dinamarca"] = [
       "4 ovos, para fritar",
       "Picles (agurkesalat ou syltede rødbeder), para servir",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de sobras de carne assada (rosbife, flæskesteg ou similar), em cubos",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "sobras de carne assada", prep: "rosbife, flæskesteg ou similar, em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "600 g de batata, cozida e em cubos",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "batata", prep: "cozida e em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos, para fritar",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Picles (agurkesalat ou syltede rødbeder), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "picles", prep: "agurkesalat ou syltede rødbeder, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa frigideira grande, derreta metade da manteiga e refogue a cebola até dourar.",
@@ -567,6 +1407,79 @@ window.RECIPES["dinamarca"] = [
       "200 ml de fundo escuro ou caldo de carne (para o molho)",
       "Geleia de groselha (ou geleia de frutas vermelhas), para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de carne de porco moída",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "carne de porco", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de carne bovina moída",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne bovina", prep: "moída", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de bacon, moído ou picado bem fino (+ fatias extras para envolver)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "bacon", prep: "moído", alt: "picado bem fino (+ fatias extras para envolver)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de zimbro moído (ou pimenta-da-jamaica)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "zimbro", prep: "moído", alt: "pimenta-da-jamaica", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de fundo escuro ou caldo de carne (para o molho)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "fundo escuro", prep: null, alt: "caldo de carne (para o molho)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Geleia de groselha (ou geleia de frutas vermelhas), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "geleia de groselha", prep: "para servir", alt: "geleia de frutas vermelhas", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture as carnes moídas com o bacon picado, ovo, farinha de rosca, creme de leite e zimbro, temperando com sal e pimenta.",
       "Molde a mistura num formato oval alongado, imitando o formato de uma lebre assada (daí o nome 'lebre falsa').",
@@ -601,6 +1514,59 @@ window.RECIPES["dinamarca"] = [
       "1 folha de louro, alguns grãos de pimenta-do-reino, algumas sementes de mostarda",
       "Variações: 2 colheres (sopa) de curry em pó (para a versão 'curry'); ou 3 colheres (sopa) de extrato de tomate (para a versão 'tomate')"
     ],
+    ingredientsStructured: [
+      {
+        raw: "6 filés de arenque salgado, dessalgados (de molho em água por 12-24h, trocando a água)",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "file", item: "arenque salgado", prep: "dessalgados (de molho em água por 12-24h, trocando a água)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de vinagre branco",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "vinagre branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de água",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de açúcar",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, fatiada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, alguns grãos de pimenta-do-reino, algumas sementes de mostarda",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "grãos de pimenta-do-reino", prep: "alguns", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sementes de mostarda", prep: "algumas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Variações: 2 colheres (sopa) de curry em pó (para a versão 'curry'); ou 3 colheres (sopa) de extrato de tomate (para a versão 'tomate')",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "variações: 2 colheres (sopa) de curry em pó (para a versão 'curry');", prep: null, alt: "3 colheres (sopa) de extrato de tomate (para a versão 'tomate')", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Após dessalgar, corte os filés de arenque em pedaços de cerca de 3 cm.",
       "Prepare a salmoura: ferva o vinagre, água e açúcar até dissolver, junte a folha de louro, pimenta e mostarda em grãos. Deixe esfriar completamente.",
@@ -633,6 +1599,50 @@ window.RECIPES["dinamarca"] = [
       "Raiz-forte ralada ou rodelas de limão",
       "Aspargos cozidos, para acompanhar (na estação)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de salmão defumado a frio, fatiado",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "salmão defumado a frio", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de rugbrød ou franskbrød, amanteigadas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "rugbrød", prep: "amanteigadas", alt: "franskbrød", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo mexido cremoso (ver receita, categoria Ovos Básicos) ou ovo cozido em rodelas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo mexido cremoso", prep: "ver receita, categoria ovos básicos", alt: "ovo cozido em rodelas", optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Endro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "endro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raiz-forte ralada ou rodelas de limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "raiz-forte", prep: "ralada", alt: "rodelas de limão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Aspargos cozidos, para acompanhar (na estação)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "aspargos cozidos", prep: "para acompanhar (na estação)", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Disponha as fatias de salmão defumado sobre a fatia de pão amanteigada, formando ondas.",
       "Adicione o ovo mexido cremoso morno por cima (a combinação clássica), ou fatias de ovo cozido.",
@@ -662,6 +1672,60 @@ window.RECIPES["dinamarca"] = [
       "60 g de manteiga",
       "Sal e pimenta a gosto",
       "1 receita de Remoulade (ver receita), limão e batatas cozidas, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 filés de linguado (rødspætte)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "file", item: "linguado (rødspætte)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de farinha de rosca fina",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "farinha de rosca fina", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos batidos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de Remoulade (ver receita), limão e batatas cozidas, para servir",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de remoulade", prep: "ver receita; para servir", alt: null, optional: false, isReference: true },
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "batatas cozidas", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere os filés de linguado com sal e pimenta.",
@@ -695,6 +1759,74 @@ window.RECIPES["dinamarca"] = [
       "Sal e pimenta a gosto",
       "Manteiga e óleo, para fritar",
       "Remoulade e limão, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de filé de peixe branco (bacalhau, badejo), picado bem fino ou processado",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "filé de peixe branco", prep: "bacalhau, badejo, picado bem fino ou processado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena, ralada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "ralada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de leite",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga e óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga", prep: "para fritar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Remoulade e limão, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "remoulade", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Bata o peixe picado com a cebola, ovo, farinha e sal no processador (ou misture bem à mão), até formar uma massa homogênea.",
@@ -732,6 +1864,65 @@ window.RECIPES["dinamarca"] = [
       "150 ml de creme de leite fresco",
       "1 gema (opcional, para engrossar mais)",
       "Sal e pimenta branca a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de aspargos brancos ou verdes, com as pontas reservadas",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "aspargos brancos", prep: "com as pontas reservadas", alt: "verdes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 ml de caldo de legumes ou galinha",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "mililitro", item: "caldo de legumes", prep: null, alt: "galinha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema (opcional, para engrossar mais)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: "para engrossar mais", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Corte as pontas dos aspargos (cerca de 4 cm) e reserve separadamente. Pique o restante dos talos.",
@@ -771,6 +1962,81 @@ window.RECIPES["dinamarca"] = [
       "Endro fresco",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de peixe branco firme (badejo ou bacalhau), em cubos",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "peixe branco firme (badejo ou bacalhau)", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de camarão pequeno",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "camarão pequeno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 1 cenoura picada, 1 talo de salsão picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de peixe",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Endro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "endro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela, derreta a manteiga e refogue a cebola, cenoura e salsão até macios, 8 minutos.",
       "Junte a farinha, cozinhando por 2 minutos, depois adicione o caldo de peixe aos poucos, mexendo sempre.",
@@ -803,6 +2069,56 @@ window.RECIPES["dinamarca"] = [
       "Para servir: pequenas almôndegas (kødboller), cenoura em cubos pequenos cozida, ervilha, salsinha picada",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de ossos ou carcaça de galinha (ou carne com osso)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "ossos", prep: null, alt: "carcaça de galinha; ou carne com osso", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 L de água",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "litro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 2 cenouras, 1 talo de salsão — em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em pedaços", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, alguns grãos de pimenta-do-reino",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "grãos de pimenta-do-reino", prep: "alguns", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para servir: pequenas almôndegas (kødboller), cenoura em cubos pequenos cozida, ervilha, salsinha picada",
+        group: "servir",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pequenas almôndegas (kødboller)", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cenoura", prep: "em cubos pequenos cozida", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ervilha", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela grande, cubra os ossos/carcaça com a água, leve para ferver e retire a espuma que sobe.",
       "Junte a cebola, cenoura, salsão, louro e pimenta.",
@@ -834,6 +2150,36 @@ window.RECIPES["dinamarca"] = [
       "80 g de manteiga",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de batatas pequenas, cozidas e descascadas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batatas pequenas", prep: "cozidas e descascadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de açúcar",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa frigideira grande, derreta o açúcar em fogo médio, sem mexer, só balançando a panela de leve, até virar um caramelo dourado claro.",
       "Adicione a manteiga ao caramelo, mexendo até incorporar e formar um caramelo líquido brilhante.",
@@ -863,6 +2209,51 @@ window.RECIPES["dinamarca"] = [
       "1 maço grande de salsinha fresca, picada bem fina",
       "Sal e pimenta branca a gosto",
       "Noz-moscada (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de leite (ou metade leite, metade caldo de cozimento de carne/peixe)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: "metade leite, metade caldo de cozimento de carne/peixe", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 maço grande de salsinha fresca, picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "maço grande de salsinha fresca", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Noz-moscada (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Derreta a manteiga em fogo baixo, junte a farinha e cozinhe por 2 minutos, formando o roux.",
@@ -896,6 +2287,64 @@ window.RECIPES["dinamarca"] = [
       "Suco de 1/2 limão",
       "Salsinha picada"
     ],
+    ingredientsStructured: [
+      {
+        raw: "250 g de maionese",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "maionese", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de picles (pepino em conserva), picado bem fino",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "picles (pepino em conserva)", prep: "picado bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de alcaparras, picadas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "alcaparras", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de mostarda Dijon",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "mostarda dijon", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de curry em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "curry em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1/2 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1/2 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa tigela, misture a maionese com a mostarda, curry em pó e açúcar.",
       "Junte o picles picado e as alcaparras, misturando bem.",
@@ -926,6 +2375,57 @@ window.RECIPES["dinamarca"] = [
       "50 ml de água",
       "Pimenta-do-reino moída na hora",
       "Endro fresco picado"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 pepino grande, fatiado bem fino",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pepino grande", prep: "fatiado bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinagre branco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinagre branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de água",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino moída na hora",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "moída na hora", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Endro fresco picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "endro fresco", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Fatie o pepino bem fino (numa mandolina, se tiver) e disponha numa peneira. Polvilhe com sal e deixe descansar por 15-20 minutos, para soltar o excesso de água.",
@@ -960,6 +2460,64 @@ window.RECIPES["dinamarca"] = [
       "1 pau de canela",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 repolho roxo grande, fatiado fino",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "repolho roxo grande", prep: "fatiado fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 maçãs, descascadas e picadas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "maçãs", prep: "descascadas e picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinagre de maçã",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinagre de maçã", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de suco de groselha (ou suco de uva, na falta)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "suco de groselha", prep: null, alt: "suco de uva, na falta", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pau de canela",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pau de canela", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela grande, derreta a manteiga e refogue o repolho fatiado com a maçã picada por 5 minutos.",
       "Junte o açúcar, vinagre, suco de groselha e o pau de canela.",
@@ -988,6 +2546,45 @@ window.RECIPES["dinamarca"] = [
       "200 ml de água",
       "150 g de açúcar",
       "1 pau de canela, alguns cravos, grãos de pimenta-do-reino"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de beterraba, com casca",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "beterraba", prep: "com casca", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de vinagre branco",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "vinagre branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de água",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de açúcar",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pau de canela, alguns cravos, grãos de pimenta-do-reino",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pau de canela", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cravos", prep: "alguns", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "grãos de pimenta-do-reino", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe as beterrabas inteiras, com casca, em água até ficarem macias (o tempo varia conforme o tamanho, geralmente 35-45 minutos).",
@@ -1026,6 +2623,79 @@ window.RECIPES["dinamarca"] = [
       "Manteiga extra, para untar a forma",
       "Açúcar de confeiteiro e geleia, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "250 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de fermento em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "fermento em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de cardamomo em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "cardamomo em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos (claras e gemas separadas)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "claras e gemas separadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de açúcar",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "350 ml de leitelho (buttermilk) ou leite",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "mililitro", item: "leitelho (buttermilk)", prep: null, alt: "leite", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga derretida",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga extra, para untar a forma",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga extra", prep: "para untar a forma", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Açúcar de confeiteiro e geleia, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "açúcar de confeiteiro", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "geleia", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha, fermento, cardamomo e sal.",
       "Bata as gemas com o açúcar até esbranquiçar levemente, junte o leitelho e a manteiga derretida.",
@@ -1062,6 +2732,64 @@ window.RECIPES["dinamarca"] = [
       "60 g de açúcar",
       "Calda de cereja (kirsebærsauce), para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de arroz arbóreo (ou arroz para doce)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "arroz para doce", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de leite integral",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "leite integral", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fava de baunilha (ou extrato)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fava", item: "baunilha", prep: null, alt: "extrato", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de creme de leite fresco, batido em chantilly",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: "batido em chantilly", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de amêndoas, picadas grosseiramente (+ 1 amêndoa inteira, para a brincadeira tradicional)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "amêndoas", prep: "picadas grosseiramente (+ 1 amêndoa inteira, para a brincadeira tradicional)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de açúcar",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Calda de cereja (kirsebærsauce), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "calda de cereja (kirsebærsauce)", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe o arroz no leite com a fava de baunilha (raspada) e uma pitada de sal, em fogo baixo, mexendo ocasionalmente, por 35-40 minutos, até formar um mingau espesso e cremoso (arroz doce, 'risengrød').",
       "Deixe esfriar completamente (idealmente na geladeira por algumas horas, ou durante a noite).",
@@ -1088,6 +2816,30 @@ window.RECIPES["dinamarca"] = [
     ingredients: [
       "Para o bolo: 4 ovos, 250 g de açúcar, 250 g de farinha de trigo, 1 colher (sopa) de fermento em pó, 150 ml de leite, 50 g de manteiga",
       "Para a cobertura: 150 g de manteiga, 200 g de açúcar mascavo, 100 ml de leite, 150 g de coco ralado"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para o bolo: 4 ovos, 250 g de açúcar, 250 g de farinha de trigo, 1 colher (sopa) de fermento em pó, 150 ml de leite, 50 g de manteiga",
+        group: "bolo",
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 250, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 250, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "fermento em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a cobertura: 150 g de manteiga, 200 g de açúcar mascavo, 100 ml de leite, 150 g de coco ralado",
+        group: "cobertura",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar mascavo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "coco ralado", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Pré-aqueça o forno a 180°C. Unte e forre uma forma retangular (ou redonda de 24 cm).",
@@ -1119,6 +2871,35 @@ window.RECIPES["dinamarca"] = [
       "Para a massa: 300 g de farinha de trigo, 150 g de manteiga gelada, 100 g de açúcar, 1 ovo, 1 pitada de sal",
       "200 g de geleia de framboesa",
       "Para a cobertura: 150 g de açúcar de confeiteiro, 2-3 colheres (sopa) de água, granulado colorido (característico)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 300 g de farinha de trigo, 150 g de manteiga gelada, 100 g de açúcar, 1 ovo, 1 pitada de sal",
+        group: "massa",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "manteiga", prep: "gelada", alt: null, optional: false, isReference: false },
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de geleia de framboesa",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "geleia de framboesa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a cobertura: 150 g de açúcar de confeiteiro, 2-3 colheres (sopa) de água, granulado colorido (característico)",
+        group: "cobertura",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "açúcar de confeiteiro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: [2, 3], unit: "colher-sopa", item: "água", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "granulado colorido", prep: "característico", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, açúcar e sal. Adicione a manteiga gelada em cubos e trabalhe com as pontas dos dedos até formar uma farofa grossa.",
@@ -1153,6 +2934,41 @@ window.RECIPES["dinamarca"] = [
       "Para a cobertura: mais chantilly, frutas frescas inteiras para decorar",
       "Amêndoas laminadas tostadas, para as laterais (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Para o bolo: 6 ovos, 200 g de açúcar, 200 g de farinha de trigo, 1 colher (chá) de fermento em pó",
+        group: "bolo",
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "fermento em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 500 ml de creme de leite fresco batido em chantilly, 300 g de morango fatiado (ou outras frutas vermelhas)",
+        group: "recheio",
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: "batido em chantilly", alt: null, optional: false, isReference: false },
+          { qty: 300, qtyRange: null, unit: "grama", item: "morango", prep: "fatiado", alt: "outras frutas vermelhas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a cobertura: mais chantilly, frutas frescas inteiras para decorar",
+        group: "cobertura",
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "chantilly", prep: "mais", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "frutas frescas", prep: "inteiras, para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Amêndoas laminadas tostadas, para as laterais (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "amêndoas laminadas", prep: "tostadas, para as laterais", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 180°C. Bata os ovos com o açúcar até dobrar de volume e formar fitas espessas, cerca de 5-8 minutos na batedeira.",
       "Peneire a farinha com o fermento e incorpore delicadamente à massa de ovos batidos, em movimentos de baixo para cima, sem perder o ar incorporado.",
@@ -1186,6 +3002,50 @@ window.RECIPES["dinamarca"] = [
       "Suco de 1/2 limão",
       "Biscoitos amanteigados (kammerjunker), para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 L de leitelho (buttermilk/kærnemælk)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "leitelho (buttermilk/kærnemælk)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 gemas",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fava de baunilha (ou extrato)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fava", item: "baunilha", prep: null, alt: "extrato", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1/2 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1/2 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Biscoitos amanteigados (kammerjunker), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "biscoitos amanteigados (kammerjunker)", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata as gemas com o açúcar e a baunilha até esbranquiçar e engrossar levemente.",
       "Incorpore o leitelho aos poucos, batendo bem para homogeneizar.",
@@ -1215,6 +3075,43 @@ window.RECIPES["dinamarca"] = [
       "2 colheres (sopa) de amido de milho, dissolvido em um pouco de água fria",
       "Creme de leite fresco (não batido, apenas gelado), para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de frutas vermelhas variadas (morango, framboesa, groselha, cereja), frescas ou congeladas",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "frutas vermelhas variadas", prep: "morango, framboesa, groselha, cereja, frescas ou congeladas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de água",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar (ajustar conforme a doçura das frutas)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar (ajustar conforme a doçura das frutas)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de amido de milho, dissolvido em um pouco de água fria",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "amido de milho", prep: "dissolvido em um pouco de água fria", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Creme de leite fresco (não batido, apenas gelado), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "creme de leite fresco", prep: "não batido, apenas gelado, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela, cozinhe as frutas vermelhas com a água e o açúcar em fogo médio por 8-10 minutos, até as frutas amolecerem e liberarem seus sucos.",
       "Se desejar uma textura mais lisa, bata levemente e passe por peneira para remover sementes (opcional, muitas versões mantêm rústico).",
@@ -1242,6 +3139,36 @@ window.RECIPES["dinamarca"] = [
       "1 receita de lemon curd (ver receita Lemon Tart)",
       "200 ml de creme de leite fresco, batido em chantilly, para decorar (opcional)",
       "Raspas de limão, para finalizar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 receita de massa pâte sucrée (ver receita Lemon Tart, categoria Sobremesas Clássicas)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de massa pâte sucrée", prep: "ver receita lemon tart, categoria sobremesas clássicas", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 receita de lemon curd (ver receita Lemon Tart)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de lemon curd", prep: "ver receita lemon tart", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "200 ml de creme de leite fresco, batido em chantilly, para decorar (opcional)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: "batido em chantilly, para decorar", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Raspas de limão, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "raspas de limão", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa e asse a base 'às cegas', seguindo exatamente a técnica descrita na receita de Lemon Tart (categoria Sobremesas Clássicas).",
@@ -1274,6 +3201,58 @@ window.RECIPES["dinamarca"] = [
       "200 ml de leite morno",
       "Para a cobertura: 150 g de manteiga, 200 g de açúcar mascavo"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "7 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 7, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de açúcar",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga amolecida",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga", prep: "amolecida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a cobertura: 150 g de manteiga, 200 g de açúcar mascavo",
+        group: "cobertura",
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar mascavo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha, fermento e açúcar. Adicione o ovo, manteiga e leite morno, formando uma massa. Sove por 8-10 minutos até ficar lisa.",
       "Cubra e deixe fermentar por 1 hora, até dobrar de volume.",
@@ -1305,6 +3284,45 @@ window.RECIPES["dinamarca"] = [
       "3-4 claras de ovo",
       "1 colher (chá) de extrato de amêndoas amargas (opcional)",
       "Para a decoração: 200 g de açúcar de confeiteiro, 2-3 colheres (sopa) de clara de ovo, algumas gotas de limão"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de amêndoas moídas (farinha de amêndoas)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "amêndoas", prep: "moídas (farinha de amêndoas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de açúcar de confeiteiro",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "açúcar de confeiteiro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3-4 claras de ovo",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [3, 4], unit: null, item: "claras de ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de extrato de amêndoas amargas (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "extrato de amêndoas amargas", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a decoração: 200 g de açúcar de confeiteiro, 2-3 colheres (sopa) de clara de ovo, algumas gotas de limão",
+        group: "decoração",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar de confeiteiro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: [2, 3], unit: "colher-sopa", item: "clara de ovo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "gotas de limão", prep: "algumas", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha de amêndoas com o açúcar de confeiteiro.",
@@ -1347,6 +3365,79 @@ window.RECIPES["dinamarca"] = [
       "Sal e pimenta a gosto",
       "Fatias extras de toucinho, para forrar a forma"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de fígado de porco, limpo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "fígado de porco", prep: "limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de toucinho, em cubos",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "toucinho", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 filés de anchova (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "file", item: "anchova", prep: "tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de leite",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de pimenta-da-jamaica (allspice)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "pimenta-da-jamaica (allspice)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Fatias extras de toucinho, para forrar a forma",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "fatias extras de toucinho", prep: "para forrar a forma", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata o fígado, toucinho, cebola e anchova (se usar) no processador, até formar uma pasta bem fina e homogênea.",
       "Numa panela, prepare uma Béchamel rápida: derreta um pouco de manteiga, junte a farinha, cozinhe 1 minuto, adicione o leite aos poucos até engrossar. Deixe esfriar levemente.",
@@ -1382,6 +3473,64 @@ window.RECIPES["dinamarca"] = [
       "1 colher (chá) de sementes de endro (ou alguns raminhos de endro fresco)",
       "2 folhas de louro"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de pepinos pequenos (ou pepino comum, em rodelas grossas)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "pepinos pequenos", prep: null, alt: "pepino comum, em rodelas grossas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de vinagre branco",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "vinagre branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de água",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de açúcar",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de sal",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de sementes de mostarda",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "sementes de mostarda", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sementes de endro (ou alguns raminhos de endro fresco)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sementes de endro", prep: null, alt: "alguns raminhos de endro fresco", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Lave bem os pepinos. Se forem grandes, corte em rodelas grossas ou palitos; se pequenos, deixe inteiros ou corte ao meio.",
       "Prepare a salmoura: ferva o vinagre, água, açúcar e sal, mexendo até dissolver completamente.",
@@ -1413,6 +3562,50 @@ window.RECIPES["dinamarca"] = [
       "80 g de açúcar",
       "1 colher (chá) de sal",
       "Alguns grãos de pimenta-do-reino"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 cebolas roxas, fatiadas bem fino",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas roxas", prep: "fatiadas bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de vinagre branco",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "vinagre branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de água",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Alguns grãos de pimenta-do-reino",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "alguns grãos de pimenta-do-reino", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Disponha a cebola fatiada bem fina num pote de vidro esterilizado.",

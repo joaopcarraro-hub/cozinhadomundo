@@ -18,6 +18,29 @@ window.RECIPES["contemporaneos"] = [
       "1 pitada de sal",
       "Ervas frescas a gosto (manjericão, para aromatizar, opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de tomate bem maduro, picado grosseiramente",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "tomate bem maduro", prep: "picado grosseiramente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas frescas a gosto (manjericão, para aromatizar, opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "a gosto (manjericão, para aromatizar)", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata o tomate picado no liquidificador com o sal (e ervas, se usar) até formar uma polpa bem líquida.",
       "Forre uma peneira grande com um pano de algodão limpo (ou filtro de café/voile) e posicione sobre uma tigela funda.",
@@ -44,6 +67,29 @@ window.RECIPES["contemporaneos"] = [
       "500 ml de consommé clarificado (ver receita Consommé, em Sopas) ou água de tomate",
       "4 g de folhas de gelatina (ou 2 g de ágar-ágar para versão que segura em temperatura ambiente)",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 ml de consommé clarificado (ver receita Consommé, em Sopas) ou água de tomate",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "consommé clarificado", prep: "ver receita consommé, em sopas", alt: "água de tomate", optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "4 g de folhas de gelatina (ou 2 g de ágar-ágar para versão que segura em temperatura ambiente)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "grama", item: "folhas de gelatina", prep: null, alt: "2 g de ágar-ágar para versão que segura em temperatura ambiente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Se for usar gelatina em folha, hidrate em água fria por 5-10 minutos.",
@@ -77,6 +123,43 @@ window.RECIPES["contemporaneos"] = [
       "Sal a gosto",
       "1 sifão de cozinha + 1-2 cápsulas de N2O"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 ml de base líquida saborizada (purê de legume coado, caldo encorpado, ou creme)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "base líquida saborizada", prep: "purê de legume coado, caldo encorpado, ou creme", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de gelatina (4 g) hidratadas, ou 4 g de lecitina de soja (para versões sem gelatina)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "gelatina", prep: "(4 g) hidratadas", alt: "4 g de lecitina de soja (para versões sem gelatina)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco (opcional, para espumas mais densas)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: "para espumas mais densas", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 sifão de cozinha + 1-2 cápsulas de N2O",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "sifão de cozinha + 1-2 cápsulas de n2o", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça uma parte da base líquida e dissolva a gelatina hidratada e escorrida (pule esta etapa se for usar lecitina).",
       "Misture com o restante da base, o creme de leite (se usar) e ajuste o sal. A mistura deve estar bem temperada, já que a espuma dilui a percepção de sabor.",
@@ -104,6 +187,29 @@ window.RECIPES["contemporaneos"] = [
       "300 ml de base líquida saborizada (caldo, purê coado ou suco de fruta)",
       "3 g de lecitina de soja em pó",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 ml de base líquida saborizada (caldo, purê coado ou suco de fruta)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "base líquida saborizada", prep: "caldo, purê coado ou suco de fruta", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 g de lecitina de soja em pó",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "grama", item: "lecitina de soja em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere bem a base líquida e certifique-se de que está coada, sem partículas sólidas.",
@@ -134,6 +240,36 @@ window.RECIPES["contemporaneos"] = [
       "100 ml de creme de leite fresco (ou caldo, para versão mais leve)",
       "80 g de manteiga gelada, em cubos",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g do vegetal escolhido (batata, couve-flor, ervilha, cenoura, aipo-rábano), descascado e picado",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "vegetal escolhido", prep: "batata, couve-flor, ervilha, cenoura, aipo-rábano, descascado e picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco (ou caldo, para versão mais leve)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: "caldo, para versão mais leve", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga gelada, em cubos",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe o vegetal em água salgada (ou no vapor) até ficar bem macio — o ponto de cozimento total é essencial para a liquidificação perfeita.",
@@ -166,6 +302,29 @@ window.RECIPES["contemporaneos"] = [
       "40 g de açúcar (ajustar conforme a acidez da fruta)",
       "2 g de ágar-ágar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "200 ml de suco cítrico fresco (limão, laranja ou uma mistura)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "suco cítrico fresco", prep: "limão, laranja ou uma mistura", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de açúcar (ajustar conforme a acidez da fruta)",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "açúcar (ajustar conforme a acidez da fruta)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 g de ágar-ágar",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "grama", item: "ágar-ágar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture o suco cítrico com o açúcar e o ágar-ágar numa panela pequena, mexendo bem para dissolver o ágar.",
       "Leve ao fogo médio e deixe ferver por 1-2 minutos, mexendo sempre (o ágar precisa ferver para ativar).",
@@ -192,6 +351,29 @@ window.RECIPES["contemporaneos"] = [
       "300 ml de vinho tinto (ou branco) encorpado",
       "30 g de açúcar",
       "2 g de ágar-ágar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 ml de vinho tinto (ou branco) encorpado",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: "encorpado", alt: "branco", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de açúcar",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 g de ágar-ágar",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "grama", item: "ágar-ágar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Reduza o vinho em fogo médio até restar cerca de 200 ml, para concentrar o sabor.",
@@ -221,6 +403,36 @@ window.RECIPES["contemporaneos"] = [
       "150 ml de água",
       "1 pitada de sal",
       "2 g de ágar-ágar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "100 g de folhas de ervas frescas (manjericão, salsinha, coentro ou uma mistura), sem talos grossos",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "folhas de ervas frescas", prep: "manjericão, salsinha, coentro ou uma mistura, sem talos grossos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de água",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 g de ágar-ágar",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "grama", item: "ágar-ágar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Branqueie as ervas: mergulhe em água fervente por 10-15 segundos, depois transfira imediatamente para água com gelo — isso fixa a cor verde vibrante.",
@@ -253,6 +465,36 @@ window.RECIPES["contemporaneos"] = [
       "50 g de farinha de trigo (ou farinha de amêndoas, para versão sem glúten) — pular na versão de queijo puro",
       "2 claras de ovo (só para a versão doce)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "50 g de manteiga derretida",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: "derretida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de açúcar de confeiteiro (para versão doce) ou queijo parmesão ralado (para versão salgada)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "açúcar de confeiteiro (para versão doce)", prep: null, alt: "queijo parmesão ralado (para versão salgada)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de farinha de trigo (ou farinha de amêndoas, para versão sem glúten) — pular na versão de queijo puro",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: "pular na versão de queijo puro", alt: "farinha de amêndoas, para versão sem glúten", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 claras de ovo (só para a versão doce)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "claras de ovo (só para a versão doce)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Para a versão doce: misture a manteiga derretida, açúcar de confeiteiro, farinha e claras até formar uma pasta lisa e homogênea.",
       "Para a versão salgada de queijo: simplesmente disponha montinhos finos de parmesão ralado direto na assadeira, sem outros ingredientes.",
@@ -280,6 +522,29 @@ window.RECIPES["contemporaneos"] = [
       "1 vegetal de sua escolha (beterraba, cenoura, batata-doce, aipim), fatiado bem fino numa mandolina",
       "Azeite de oliva ou óleo neutro",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 vegetal de sua escolha (beterraba, cenoura, batata-doce, aipim), fatiado bem fino numa mandolina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "vegetal de sua escolha", prep: "beterraba, cenoura, batata-doce, aipim, fatiado bem fino numa mandolina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva ou óleo neutro",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: "óleo neutro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Fatie o vegetal bem fino e uniforme numa mandolina (essencial para um cozimento parelho).",
@@ -312,6 +577,51 @@ window.RECIPES["contemporaneos"] = [
       "Raspas de limão (opcional)",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "100 g de farinha de rosca (ou pão amanhecido processado)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "farinha de rosca", prep: null, alt: "pão amanhecido processado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de ervas frescas picadas (salsinha, tomilho, alecrim)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "ervas frescas", prep: "picadas (salsinha, tomilho, alecrim)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raspas de limão (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "raspas de limão", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a farinha de rosca com a manteiga amolecida, ervas picadas, alho, raspas de limão, sal e pimenta até formar uma pasta úmida e uniforme.",
       "Abra a mistura entre duas folhas de papel manteiga com um rolo, formando uma camada fina e uniforme.",
@@ -342,6 +652,50 @@ window.RECIPES["contemporaneos"] = [
       "Sal a gosto",
       "Ervas frescas picadas (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "150 g de farinha de mandioca crua",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "farinha de mandioca crua", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de castanha-do-pará (ou castanha de caju, amêndoas), picada grosseiramente",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "castanha-do-pará", prep: "picada grosseiramente", alt: "castanha de caju, amêndoas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas frescas picadas (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "picadas", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Toste levemente as castanhas picadas numa frigideira seca, em fogo médio, por 3-4 minutos, até perfumarem. Reserve.",
       "Na mesma frigideira, derreta a manteiga e refogue a cebola até dourar levemente.",
@@ -370,6 +724,43 @@ window.RECIPES["contemporaneos"] = [
       "50 g de parmesão ralado (ou outro queijo curado)",
       "1 pitada de sal e pimenta",
       "Ervas secas a gosto (opcional: tomilho, páprica)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "100 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de manteiga gelada, em cubos",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de parmesão ralado (ou outro queijo curado)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: "outro queijo curado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal e pimenta",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal e pimenta", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas secas a gosto (opcional: tomilho, páprica)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas secas", prep: "a gosto (tomilho, páprica)", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, o queijo ralado, sal, pimenta e ervas numa tigela.",
@@ -401,6 +792,29 @@ window.RECIPES["contemporaneos"] = [
       "30 g de ervas frescas (manjericão, salsinha, coentro) ou especiarias (páprica, açafrão)",
       "1 pitada de sal"
     ],
+    ingredientsStructured: [
+      {
+        raw: "150 ml de azeite de oliva (ou óleo neutro, conforme o uso)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: "óleo neutro, conforme o uso", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de ervas frescas (manjericão, salsinha, coentro) ou especiarias (páprica, açafrão)",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "ervas frescas (manjericão, salsinha, coentro)", prep: null, alt: "especiarias (páprica, açafrão)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Para óleo de ervas frescas: branqueie as ervas em água fervente por 10 segundos, choque em água gelada, escorra e seque muito bem.",
       "Bata as ervas com o azeite no liquidificador em velocidade alta por 2-3 minutos, até ficar bem verde e homogêneo (o atrito esquenta levemente a mistura, o que é normal).",
@@ -431,6 +845,52 @@ window.RECIPES["contemporaneos"] = [
       "Sal, pimenta e ervas frescas picadas a gosto",
       "1 fio de mel ou xarope (opcional, para equilibrar acidez)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "3 partes de azeite de oliva extra virgem",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "partes de azeite de oliva extra virgem", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 parte de ácido (vinagre balsâmico, vinagre de xerez ou suco cítrico)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "parte de ácido", prep: "vinagre balsâmico, vinagre de xerez ou suco cítrico", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de mostarda Dijon (agente emulsificante)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "mostarda dijon (agente emulsificante)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada bem fina (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e ervas frescas picadas a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "picadas a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de mel ou xarope (opcional, para equilibrar acidez)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "mel", prep: "para equilibrar acidez", alt: "xarope", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa tigela ou vidro com tampa, junte o ácido, a mostarda, sal e pimenta, misturando bem.",
       "Adicione o azeite aos poucos, batendo vigorosamente com um fouet (ou balançando o vidro fechado com força) até emulsionar e engrossar levemente.",
@@ -459,6 +919,43 @@ window.RECIPES["contemporaneos"] = [
       "1 colher (sopa) de vinagre ou suco de limão",
       "1 dente de alho pequeno (opcional)",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "100 ml de leite integral, em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "leite integral", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de óleo neutro (girassol ou canola)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "óleo neutro (girassol ou canola)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de vinagre ou suco de limão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre", prep: null, alt: "suco de limão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dente de alho pequeno (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho pequeno", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Coloque o leite, o vinagre, o alho (se usar) e uma pitada de sal no copo de um mixer de mão ou liquidificador.",
@@ -490,6 +987,50 @@ window.RECIPES["contemporaneos"] = [
       "1 colher (chá) de suco de limão",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4-5 dentes de alho",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [4, 5], unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal grosso",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de azeite de oliva (misturado com um pouco de óleo neutro, para não ficar amargo demais)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: "misturado com um pouco de óleo neutro, para não ficar amargo demais", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de suco de limão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Amasse o alho com o sal grosso num pilão (ou rale bem fino) até formar uma pasta lisa.",
       "Transfira para uma tigela, junte a gema e misture bem.",
@@ -519,6 +1060,43 @@ window.RECIPES["contemporaneos"] = [
       "Sal a gosto",
       "Raspas da fruta cítrica usada"
     ],
+    ingredientsStructured: [
+      {
+        raw: "100 ml de suco cítrico fresco (laranja, limão ou uma mistura)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "suco cítrico fresco", prep: "laranja, limão ou uma mistura", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema (ou 1 colher (sopa) de lecitina de soja, para versão vegana)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: null, alt: "1 colher (sopa) de lecitina de soja, para versão vegana", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de azeite de oliva leve",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "azeite de oliva leve", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raspas da fruta cítrica usada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "raspas da fruta cítrica usada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata o suco cítrico com a gema (ou lecitina) num mixer de mão ou liquidificador em velocidade baixa.",
       "Adicione o azeite em fio fino, aumentando a velocidade aos poucos, até emulsionar e formar um molho encorpado mas ainda fluido.",
@@ -543,6 +1121,22 @@ window.RECIPES["contemporaneos"] = [
     ingredients: [
       "250 g de manteiga gelada, em cubos",
       "2 colheres (sopa) de água"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "250 g de manteiga gelada, em cubos",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de água",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça a água numa panela pequena em fogo baixo até ficar morna (não fervendo).",
@@ -573,6 +1167,29 @@ window.RECIPES["contemporaneos"] = [
       "300 ml de azeite de oliva (ou óleo neutro)",
       "Sal em flocos"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 gemas bem frescas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "gemas bem frescas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de azeite de oliva (ou óleo neutro)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: "óleo neutro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal em flocos",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal em flocos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o azeite numa panela pequena até atingir cerca de 65°C (use termômetro — mais baixo que o confit de clara inteira).",
       "Separe as gemas com cuidado, mantendo-as inteiras, e mergulhe delicadamente no azeite morno.",
@@ -600,6 +1217,36 @@ window.RECIPES["contemporaneos"] = [
       "300 g de sal grosso",
       "300 g de açúcar",
       "Especiarias opcionais (pimenta-do-reino em grãos, raspas cítricas)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "6 gemas bem frescas",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "gemas bem frescas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de sal grosso",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de açúcar",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Especiarias opcionais (pimenta-do-reino em grãos, raspas cítricas)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "especiarias", prep: "pimenta-do-reino em grãos, raspas cítricas", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture o sal grosso e o açúcar numa tigela (e as especiarias, se usar).",
@@ -635,6 +1282,50 @@ window.RECIPES["contemporaneos"] = [
       "20 g de sal",
       "Especiarias a gosto (grãos de mostarda, pimenta-do-reino, louro)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de vegetal à sua escolha (pepino, cebola roxa, cenoura, rabanete), fatiado fino",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "vegetal à sua escolha", prep: "pepino, cebola roxa, cenoura, rabanete, fatiado fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de vinagre (branco, de arroz ou de maçã)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "vinagre", prep: "branco, de arroz ou de maçã", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de água",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de açúcar",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de sal",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Especiarias a gosto (grãos de mostarda, pimenta-do-reino, louro)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "especiarias", prep: "a gosto (grãos de mostarda, pimenta-do-reino, louro)", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Disponha o vegetal fatiado num pote de vidro esterilizado.",
       "Numa panela, aqueça o vinagre, água, açúcar, sal e especiarias até dissolver completamente (não precisa ferver forte).",
@@ -665,6 +1356,43 @@ window.RECIPES["contemporaneos"] = [
       "Água ou caldo claro, o suficiente para cobrir pela metade",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de legumes (cenoura, nabo ou cebola pérola), descascados e cortados uniformemente",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "legumes", prep: "cenoura, nabo ou cebola pérola, descascados e cortados uniformemente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Água ou caldo claro, o suficiente para cobrir pela metade",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "água", prep: "o suficiente para cobrir pela metade", alt: "caldo claro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Disponha os legumes numa panela larga e rasa, numa camada única.",
       "Cubra pela metade com água ou caldo, adicione a manteiga, o açúcar e uma pitada de sal.",
@@ -690,6 +1418,22 @@ window.RECIPES["contemporaneos"] = [
     ingredients: [
       "Legumes firmes (cenoura, batata, nabo, abobrinha)",
       "Uma faca pequena e bem afiada (faca de torneamento/pitanga, se tiver)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Legumes firmes (cenoura, batata, nabo, abobrinha)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "legumes firmes", prep: "cenoura, batata, nabo, abobrinha", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Uma faca pequena e bem afiada (faca de torneamento/pitanga, se tiver)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "faca pequena e bem afiada", prep: "faca de torneamento/pitanga, se tiver", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Corte o legume em pedaços do tamanho aproximado de um ovo pequeno (ou menor, dependendo do uso).",
@@ -718,6 +1462,37 @@ window.RECIPES["contemporaneos"] = [
       "Azeite de oliva",
       "Sal e ervas a gosto",
       "Água (para a versão em purê/gel)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 vegetal principal (ex: cenoura, beterraba ou abóbora), em quantidade generosa",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "vegetal principal", prep: "ex: cenoura, beterraba ou abóbora, em quantidade generosa", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e ervas a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ervas", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Água (para a versão em purê/gel)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "água (para a versão em purê/gel)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Divida o vegetal em 3 porções para preparar em texturas diferentes.",
@@ -751,6 +1526,45 @@ window.RECIPES["contemporaneos"] = [
       "1 fio de vinho branco ou conhaque (opcional)",
       "Sal, pimenta e noz-moscada a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de cogumelos (paris ou uma mistura), picados bem fino",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "cogumelos (paris ou uma mistura)", prep: "picados bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de vinho branco ou conhaque (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "vinho branco", prep: null, alt: "conhaque", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e noz-moscada a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pique os cogumelos bem fino, quase como uma farofa (pode usar processador, pulsando com cuidado para não formar uma pasta).",
       "Derreta a manteiga numa frigideira e refogue a cebola até translúcida.",
@@ -781,6 +1595,54 @@ window.RECIPES["contemporaneos"] = [
       "1 folha de louro, alguns ramos de tomilho, grãos de pimenta-do-reino",
       "4 L de água fria",
       "Sal (opcional, geralmente não se tempera o fundo — o sal entra no prato final)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 kg de ossos (frango/vitela para fundo claro; boi/vitela para fundo escuro)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "quilograma", item: "ossos (frango/vitela para fundo claro; boi/vitela para fundo escuro)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 2 cenouras, 2 talos de salsão — em pedaços grandes (mirepoix)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em pedaços grandes (mirepoix)", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços grandes (mirepoix)", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "salsão", prep: "em pedaços grandes (mirepoix)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate (só para o fundo escuro)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate (só para o fundo escuro)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, alguns ramos de tomilho, grãos de pimenta-do-reino",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: "ramo", item: "tomilho", prep: "alguns", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "grãos de pimenta-do-reino", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 L de água fria",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "litro", item: "água fria", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal (opcional, geralmente não se tempera o fundo — o sal entra no prato final)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "geralmente não se tempera o fundo — o sal entra no prato final", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Para fundo claro: coloque os ossos numa panela grande, cubra com água fria e leve ao fogo. Assim que ferver, escorra e enxágue os ossos (isso remove impurezas e resulta num caldo mais limpo e claro).",

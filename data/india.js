@@ -24,6 +24,80 @@ window.RECIPES["india"] = [
       "Sal a gosto",
       "Manteiga derretida, para regar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 frango inteiro, em pedaços (ou 8 sobrecoxas), com pequenos cortes na carne",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "frango inteiro", prep: "em pedaços, com pequenos cortes na carne", alt: "8 sobrecoxas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de iogurte natural integral",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "iogurte natural integral", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho, 1 pedaço de gengibre, ambos ralados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "ralados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "ralados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de garam masala",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "garam masala", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de páprica (ou colorau, para a cor vermelha característica)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "páprica", prep: null, alt: "colorau, para a cor vermelha característica", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho, 1 colher (chá) de coentro em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "coentro em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de pimenta caiena (a gosto)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "pimenta caiena (a gosto)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga derretida, para regar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga derretida", prep: "para regar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Faça cortes profundos na carne do frango (isso ajuda a marinada a penetrar bem).",
       "Misture o iogurte, alho, gengibre, limão e todas as especiarias, formando a marinada.",
@@ -62,6 +136,95 @@ window.RECIPES["india"] = [
       "1 colher (sopa) de açúcar ou mel",
       "Coentro fresco, para finalizar",
       "Arroz basmati ou naan, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de peito ou coxa de frango, em cubos",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "peito", prep: null, alt: "coxa de frango, em cubos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de iogurte natural",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "iogurte natural", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de suco de limão",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de garam masala (dividida)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "garam masala (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados, 1 pedaço de gengibre ralado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de tomate pelado (ou tomate fresco maduro, ralado)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "tomate pelado", prep: null, alt: "tomate fresco maduro, ralado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho, 1 colher (chá) de páprica",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "páprica", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar ou mel",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: "mel", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz basmati ou naan, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz basmati", prep: "para servir", alt: "naan", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Marine o frango com iogurte, limão e metade do garam masala por no mínimo 2 horas (idealmente durante a noite).",
@@ -104,6 +267,103 @@ window.RECIPES["india"] = [
       "Coentro fresco",
       "Arroz basmati, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de peito de frango, em cubos",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "peito de frango", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de iogurte natural",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "iogurte natural", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de suco de limão",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de garam masala",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "garam masala", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de páprica defumada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "páprica defumada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo ou manteiga",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: "manteiga", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados, 1 pedaço de gengibre ralado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de pasta de tomate",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "pasta de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho, 1 colher (chá) de coentro em pó, 1/2 colher (chá) de pimenta caiena",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "coentro em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 0.5, qtyRange: null, unit: "colher-cha", item: "pimenta caiena", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz basmati, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz basmati", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Marine o frango com iogurte, limão, garam masala e páprica defumada por no mínimo 2 horas.",
       "Grelhe ou asse o frango marinado até dourar bem e ficar levemente carbonizado nas bordas (imita o efeito do forno tandoor). Reserve.",
@@ -144,6 +404,90 @@ window.RECIPES["india"] = [
       "300 ml de caldo de carne ou água",
       "Coentro fresco, arroz basmati para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de cordeiro (paleta ou pernil), em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "cordeiro (paleta ou pernil)", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de óleo ou ghee (manteiga clarificada)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: "ghee (manteiga clarificada)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas picadas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 dentes de alho, 1 pedaço de gengibre — ambos ralados ou em pasta",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: "dente", item: "alho", prep: "ralados ou em pasta", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "ralados ou em pasta", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de iogurte natural",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "iogurte natural", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de páprica (para a cor vermelha característica)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "páprica (para a cor vermelha característica)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de coentro em pó, 1 colher (chá) de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "coentro em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pau de canela, 4 cravos, 4 vagens de cardamomo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pau de canela", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "cravos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "vagens de cardamomo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de pimenta caiena (a gosto)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "pimenta caiena (a gosto)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de caldo de carne ou água",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "caldo de carne", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco, arroz basmati para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "arroz basmati", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o óleo/ghee numa panela funda e doure a cebola até ficar bem dourada, 10-12 minutos.",
       "Junte o alho e o gengibre, refogando por 2 minutos.",
@@ -181,6 +525,89 @@ window.RECIPES["india"] = [
       "Especiarias inteiras: 1 pau de canela, 4 cravos, 4 cardamomos, 2 folhas de louro",
       "Coentro e hortelã frescos, picados",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de frango ou cordeiro, em pedaços",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "frango", prep: null, alt: "cordeiro, em pedaços", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de iogurte natural",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "iogurte natural", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de pasta de gengibre e alho",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "pasta de gengibre e alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de garam masala",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "garam masala", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açafrão, dissolvida em 3 colheres (sopa) de leite morno",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: "dissolvida em 3 colheres (sopa) de leite morno", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 xícaras de arroz basmati, de molho por 30 minutos",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "xicara", item: "arroz basmati", prep: "de molho por 30 minutos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas, fatiadas fino e fritas até dourar bem e ficarem crocantes (birista)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "fatiadas fino e fritas até dourar bem e ficarem crocantes (birista)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de ghee ou manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "ghee", prep: null, alt: "manteiga (dividida)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Especiarias inteiras: 1 pau de canela, 4 cravos, 4 cardamomos, 2 folhas de louro",
+        group: "especiarias inteiras",
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pau de canela", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "cravos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: null, item: "cardamomos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro e hortelã frescos, picados",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "hortelã fresca", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Marine a carne com o iogurte, pasta de gengibre-alho, garam masala e sal por no mínimo 1 hora.",
@@ -222,6 +649,81 @@ window.RECIPES["india"] = [
       "Coentro fresco",
       "Naan ou arroz, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de feijão preto pequeno (urad dal inteiro), de molho por 8h",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "feijão preto pequeno (urad dal inteiro)", prep: "de molho por 8h", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de feijão vermelho (rajma), de molho junto",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "feijão vermelho (rajma)", prep: "de molho junto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de ghee ou manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "ghee", prep: null, alt: "manteiga (dividida)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados, 1 pedaço de gengibre ralado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de tomate pelado (ou tomate fresco ralado)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "tomate pelado", prep: null, alt: "tomate fresco ralado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho, 1 colher (chá) de garam masala",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "garam masala", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 colher (chá) de pimenta caiena (a gosto)",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: "colher-cha", item: "pimenta caiena (a gosto)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Naan ou arroz, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "naan", prep: "para servir", alt: "arroz", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Escorra o feijão de molho e cozinhe em água nova (panela de pressão reduz bastante o tempo: cerca de 30-35 minutos após pegar pressão; em panela comum, 1h30-2h), até ficar bem macio.",
       "Numa panela separada, aqueça metade do ghee e refogue a cebola até dourar, 8 minutos. Junte o alho e o gengibre, refogando por 2 minutos.",
@@ -256,6 +758,77 @@ window.RECIPES["india"] = [
       "1 colher (chá) de garam masala, 1/2 colher (chá) de cúrcuma",
       "Coentro fresco picado, suco de limão",
       "Óleo, para fritar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 300 g de farinha de trigo, 60 ml de óleo, 1 pitada de sal, água morna o suficiente para formar a massa",
+        group: "massa",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 60, qtyRange: null, unit: "mililitro", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "água morna", prep: "o suficiente para formar a massa", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 3 batatas médias, cozidas e amassadas grosseiramente",
+        group: "recheio",
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "batatas médias", prep: "cozidas e amassadas grosseiramente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de ervilha (fresca ou congelada)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "ervilha (fresca ou congelada)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sementes de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sementes de cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pedaço de gengibre ralado, 1 pimenta verde picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: "ralado", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta verde", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de garam masala, 1/2 colher (chá) de cúrcuma",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "garam masala", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 0.5, qtyRange: null, unit: "colher-cha", item: "cúrcuma", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco picado, suco de limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: "picado", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa: misture a farinha, óleo e sal, esfregando com os dedos até formar uma farofa. Adicione água morna aos poucos, formando uma massa firme (mais dura que massa de pão). Sove por 5 minutos, cubra e descanse por 20 minutos.",
@@ -292,6 +865,65 @@ window.RECIPES["india"] = [
       "150 ml de água morna",
       "2 colheres (sopa) de óleo",
       "Manteiga derretida (ou ghee) e alho picado, para pincelar (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "7 g de fermento biológico seco",
+        group: null,
+        items: [
+          { qty: 7, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de iogurte natural",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "iogurte natural", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de água morna",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "água morna", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manteiga derretida (ou ghee) e alho picado, para pincelar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga derretida", prep: "para pincelar", alt: "ghee", optional: true, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "alho", prep: "picado, para pincelar", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture a farinha, fermento, açúcar e sal.",

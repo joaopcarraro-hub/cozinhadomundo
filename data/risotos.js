@@ -23,6 +23,71 @@ window.RECIPES["risotos"] = [
       "80 g de parmesão ralado",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz arbóreo ou carnaroli",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "carnaroli", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de carne ou galinha, bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de carne", prep: null, alt: "galinha, bem quente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de tutano de boi (opcional, tradicional) ou 20 g de manteiga extra",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "tutano de boi", prep: "tradicional", alt: "20 g de manteiga extra", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada generosa de açafrão em pistilos (ou em pó)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão em pistilos", prep: "generosa", alt: "em pó", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o caldo numa panela à parte e mantenha em fogo baixo, sempre quente, durante todo o preparo.",
       "Numa panela larga, derreta metade da manteiga (e o tutano, se usar) e refogue a cebola em fogo baixo até ficar translúcida, sem dourar, 3-4 minutos.",
@@ -63,6 +128,86 @@ window.RECIPES["risotos"] = [
       "Salsinha picada",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz arbóreo ou carnaroli",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "carnaroli", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de cogumelos secos (porcini), hidratados em 300 ml de água morna",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "cogumelos secos (porcini)", prep: "hidratados em 300 ml de água morna", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 g de cogumelos frescos (paris, shitake ou porcini frescos), fatiados",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "cogumelos frescos", prep: "paris, shitake ou porcini frescos, fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de legumes ou galinha, bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de legumes", prep: null, alt: "galinha, bem quente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga gelada (dividida)",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga gelada (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Hidrate os cogumelos secos em água morna por 20 minutos. Escorra (reservando a água de hidratação, coada, para juntar ao caldo) e pique.",
       "Numa frigideira, salteie os cogumelos frescos com metade da manteiga e o alho em fogo alto até dourarem bem. Tempere com sal e pimenta, reserve.",
@@ -97,6 +242,58 @@ window.RECIPES["risotos"] = [
       "70 g de manteiga gelada (dividida)",
       "120 g de parmesão ralado na hora (de boa qualidade, envelhecido)",
       "Sal e pimenta-do-reino a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz arbóreo ou carnaroli",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "carnaroli", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de galinha ou legumes, bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de galinha", prep: null, alt: "legumes, bem quente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "70 g de manteiga gelada (dividida)",
+        group: null,
+        items: [
+          { qty: 70, qtyRange: null, unit: "grama", item: "manteiga gelada (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "120 g de parmesão ralado na hora (de boa qualidade, envelhecido)",
+        group: null,
+        items: [
+          { qty: 120, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado na hora (de boa qualidade, envelhecido)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça o caldo e mantenha quente durante todo o preparo.",
@@ -138,6 +335,94 @@ window.RECIPES["risotos"] = [
       "Salsinha picada",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz arbóreo ou carnaroli",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "carnaroli", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de mexilhões limpos",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "mexilhões", prep: "limpos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de lula em anéis",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "lula", prep: "em anéis", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de fumet de peixe (feito com as cascas do camarão) ou caldo de peixe",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "fumet de peixe (feito com as cascas do camarão)", prep: null, alt: "caldo de peixe", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de tomate pelado picado (opcional, para um toque rosado)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado; para um toque rosado", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare um fumet rápido fervendo as cascas do camarão em água por 15 minutos; coe e mantenha quente junto com o caldo de peixe.",
       "Numa panela larga, aqueça o azeite e refogue os mexilhões com um pouco de alho até abrirem (descarte os que não abrirem). Retire, reserve o líquido que soltarem e junte ao caldo.",
@@ -175,6 +460,80 @@ window.RECIPES["risotos"] = [
       "Sal e pimenta a gosto",
       "Manjericão ou tomilho-limão para decorar (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz arbóreo ou carnaroli",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "carnaroli", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de legumes, bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de legumes", prep: "bem quente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raspas e suco de 2 limões-sicilianos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "limões-sicilianos", prep: "raspas", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "limões-sicilianos", prep: "suco", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco (opcional, para mais cremosidade)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: "para mais cremosidade", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manjericão ou tomilho-limão para decorar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manjericão", prep: null, alt: "tomilho-limão para decorar", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o caldo e mantenha quente.",
       "Refogue a cebola em metade da manteiga até translúcida, junte o arroz e toste por 2 minutos.",
@@ -210,6 +569,79 @@ window.RECIPES["risotos"] = [
       "100 g de queijo de cabra (opcional, para finalizar)",
       "Sal e pimenta a gosto",
       "Nozes tostadas picadas (opcional, para textura)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz arbóreo ou carnaroli",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "carnaroli", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 beterrabas médias",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "beterrabas médias", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de legumes, bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de legumes", prep: "bem quente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho tinto seco (ou branco)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho tinto seco", prep: null, alt: "branco", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo de cabra (opcional, para finalizar)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo de cabra", prep: "para finalizar", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Nozes tostadas picadas (opcional, para textura)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "nozes tostadas", prep: "picadas; para textura", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe ou asse as beterrabas até ficarem macias (no forno, embrulhadas em papel-alumínio, a 200°C por cerca de 45 minutos, ou cozidas em água). Descasque e bata metade no processador com um pouco de caldo até formar um purê; corte a outra metade em cubos pequenos.",
@@ -247,6 +679,79 @@ window.RECIPES["risotos"] = [
       "80 g de parmesão ralado",
       "Sálvia fresca (algumas folhas, fritas em manteiga, para decorar)",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de arroz arbóreo ou carnaroli",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "arroz arbóreo", prep: null, alt: "carnaroli", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de abóbora (kabocha ou moranga), em cubos",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "abóbora (kabocha ou moranga)", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de legumes, bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de legumes", prep: "bem quente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sálvia fresca (algumas folhas, fritas em manteiga, para decorar)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sálvia fresca", prep: "algumas folhas, fritas em manteiga, para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Asse metade da abóbora em cubos no forno a 200°C por 25 minutos, até macia e levemente caramelizada nas bordas (para textura). Cozinhe a outra metade em água ou no vapor e bata em purê (para dar corpo ao risoto).",

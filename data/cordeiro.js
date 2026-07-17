@@ -21,6 +21,58 @@ window.RECIPES["cordeiro"] = [
       "2 colheres (sopa) de azeite (dividido)",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 carré de cordeiro (costelinha francesa, ossos limpos), cerca de 8 costelas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "carré de cordeiro", prep: "costelinha francesa, ossos limpos, cerca de 8 costelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de mostarda Dijon",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "mostarda dijon", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de ervas frescas picadas (alecrim, tomilho)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "ervas frescas", prep: "picadas (alecrim, tomilho)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite (dividido)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Retire o cordeiro da geladeira 30 minutos antes de cozinhar. Tempere generosamente com sal e pimenta.",
       "Aqueça 1 colher de azeite numa frigideira em fogo alto e sele o carré por todos os lados (inclusive as pontas), até dourar bem, 4-5 minutos no total.",
@@ -57,6 +109,75 @@ window.RECIPES["cordeiro"] = [
       "2 ramos de alecrim, 2 ramos de tomilho",
       "2 folhas de louro",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 pernil de cordeiro inteiro (2-2,5 kg), com osso",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pernil de cordeiro", prep: "inteiro (2-2,5 kg), com osso", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 dentes de alho, alguns inteiros e outros fatiados (para fincar na carne)",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: "dente", item: "alho", prep: "alguns inteiros e outros fatiados (para fincar na carne)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 2 cenouras, 2 talos de salsão — em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "salsão", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de vinho tinto",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de fundo de carne ou caldo",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "fundo de carne", prep: null, alt: "caldo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ramos de alecrim, 2 ramos de tomilho",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "ramo", item: "alecrim", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de louro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Com a ponta de uma faca, faça pequenos furos por toda a superfície do pernil e finque fatias de alho dentro deles.",
@@ -96,6 +217,89 @@ window.RECIPES["cordeiro"] = [
       "Raspas de 1 laranja (opcional, toque mediterrâneo)",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 shanks de cordeiro (jarrete/canela, com osso)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "shanks de cordeiro", prep: "jarrete/canela, com osso", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, para empanar levemente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar levemente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 2 cenouras, 2 talos de salsão — em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em cubos", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em cubos", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "salsão", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de vinho tinto",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "600 ml de fundo de carne ou caldo",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "mililitro", item: "fundo de carne", prep: null, alt: "caldo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 2 ramos de alecrim",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "ramo", item: "alecrim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raspas de 1 laranja (opcional, toque mediterrâneo)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "raspas de laranja", prep: "toque mediterrâneo", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere os shanks com sal e pimenta, e passe levemente na farinha.",
       "Aqueça o azeite numa panela funda e sele os shanks por todos os lados até dourar bem. Retire e reserve.",
@@ -133,6 +337,90 @@ window.RECIPES["cordeiro"] = [
       "1 folha de louro, 1 ramo de alecrim, raspas de limão (opcional)",
       "Sal e pimenta a gosto",
       "Pappardelle ou polenta, para servir (ver receita Pappardelle, categoria Massas)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de pernil ou paleta de cordeiro, em cubos ou moído grosseiramente",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "pernil", prep: null, alt: "paleta de cordeiro, em cubos ou moído grosseiramente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 1 cenoura, 1 talo de salsão — em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em cubos pequenos", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "em cubos pequenos", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "em cubos pequenos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de vinho tinto",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado picado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de caldo de carne",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "caldo de carne", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 1 ramo de alecrim, raspas de limão (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "ramo", item: "alecrim", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "raspas de limão", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pappardelle ou polenta, para servir (ver receita Pappardelle, categoria Massas)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pappardelle", prep: "para servir; ver receita pappardelle, categoria massas", alt: "polenta", optional: false, isReference: true },
+        ],
+      },
     ],
     steps: [
       "Tempere o cordeiro com sal e pimenta. Aqueça o azeite numa panela funda e doure a carne bem, em lotes se necessário, até pegar cor por todos os lados.",

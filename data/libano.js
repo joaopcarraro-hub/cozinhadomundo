@@ -23,6 +23,72 @@ window.RECIPES["libano"] = [
       "Páprica e salsinha, para decorar",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de grão-de-bico cozido (ou 2 latas, escorridas, reservando o líquido)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "grão-de-bico cozido", prep: null, alt: "2 latas, escorridas, reservando o líquido", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de tahine (pasta de gergelim)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "tahine (pasta de gergelim)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1-2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1-2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de oliva (+ extra para servir)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva (+ extra para servir)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Água gelada ou o líquido do grão-de-bico, para ajustar a textura",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "água gelada", prep: "para ajustar a textura", alt: "o líquido do grão-de-bico", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Páprica e salsinha, para decorar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "páprica", prep: "para decorar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se quiser um hommus ainda mais liso, retire as peles do grão-de-bico esfregando-o entre as mãos debaixo de água (passo tradicional, opcional mas recomendado).",
       "Bata o grão-de-bico, tahine, suco de limão, alho, cominho e uma pitada de sal no processador, até começar a formar uma pasta.",
@@ -54,6 +120,58 @@ window.RECIPES["libano"] = [
       "2 colheres (sopa) de azeite de oliva (+ extra para servir)",
       "Salsinha picada e romã (opcional), para decorar",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 berinjelas grandes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "berinjelas grandes", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de tahine",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "tahine", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite de oliva (+ extra para servir)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva (+ extra para servir)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada e romã (opcional), para decorar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada, para decorar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "romã", prep: "para decorar", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Fure as berinjelas inteiras em vários pontos com um garfo. Asse diretamente na chama do fogão (virando com uma pinça) ou no forno bem quente (220°C) por 30-35 minutos, até a pele ficar completamente enegrecida e a polpa bem macia.",
@@ -88,6 +206,52 @@ window.RECIPES["libano"] = [
       "Sal a gosto",
       "Azeite de oliva, hortelã fresca e cebola fatiada, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de carne bovina moída (patinho ou coxão mole), bem fresca e magra",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne bovina moída", prep: "patinho ou coxão mole, bem fresca e magra", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de trigo para quibe (bulgur fino), hidratado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "trigo para quibe (bulgur fino)", prep: "hidratado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 cebola ralada",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola", prep: "ralada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de pimenta síria (ou mistura de especiarias: pimenta-da-jamaica, canela, cominho)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "pimenta síria", prep: null, alt: "mistura de especiarias: pimenta-da-jamaica, canela, cominho", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva, hortelã fresca e cebola fatiada, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "hortelã fresca", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebola", prep: "fatiada, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Hidrate o trigo para quibe em água fria por 15-20 minutos, até amolecer. Esprema bem o excesso de água com as mãos ou um pano.",
       "Numa tigela grande e bem gelada, misture a carne moída com a cebola ralada e a pimenta síria.",
@@ -116,6 +280,37 @@ window.RECIPES["libano"] = [
       "Para a casca: 300 g de carne bovina moída, 150 g de trigo para quibe (bulgur fino), hidratado e escorrido, 1/2 cebola ralada, sal e pimenta síria a gosto",
       "Para o recheio: 200 g de carne bovina moída, 1 cebola picada bem fina, 2 colheres (sopa) de azeite, 30 g de pinoli (ou castanha de caju picada), pimenta síria",
       "Óleo, para fritar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a casca: 300 g de carne bovina moída, 150 g de trigo para quibe (bulgur fino), hidratado e escorrido, 1/2 cebola ralada, sal e pimenta síria a gosto",
+        group: "casca",
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne bovina moída", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 150, qtyRange: null, unit: "grama", item: "trigo para quibe (bulgur fino)", prep: "hidratado e escorrido", alt: null, optional: false, isReference: false },
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola", prep: "ralada", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta síria", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 200 g de carne bovina moída, 1 cebola picada bem fina, 2 colheres (sopa) de azeite, 30 g de pinoli (ou castanha de caju picada), pimenta síria",
+        group: "recheio",
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "carne bovina moída", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 30, qtyRange: null, unit: "grama", item: "pinoli", prep: null, alt: "castanha de caju picada", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta síria", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare o recheio: refogue a cebola no azeite até dourar. Junte a carne moída, cozinhando até dourar bem e perder toda a água.",
@@ -150,6 +345,51 @@ window.RECIPES["libano"] = [
       "1 colher (chá) de pimenta síria (ou mistura de especiarias: pimenta-da-jamaica, canela, noz-moscada)",
       "Sal e pimenta a gosto",
       "Espetos (de metal, achatados, ou de bambu de molho em água)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de carne bovina moída (ou cordeiro, ou uma mistura)",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "carne bovina moída", prep: null, alt: "cordeiro; ou uma mistura", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola ralada e bem escorrida",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "ralada e bem escorrida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de pimenta síria (ou mistura de especiarias: pimenta-da-jamaica, canela, noz-moscada)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "pimenta síria", prep: null, alt: "mistura de especiarias: pimenta-da-jamaica, canela, noz-moscada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Espetos (de metal, achatados, ou de bambu de molho em água)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "espetos", prep: "de metal, achatados, ou de bambu de molho em água", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa tigela, misture a carne moída com a cebola bem escorrida, salsinha e pimenta síria, temperando com sal e pimenta.",
@@ -187,6 +427,64 @@ window.RECIPES["libano"] = [
       "60 ml de azeite de oliva",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "60 g de trigo para quibe (bulgur fino), hidratado em água fria por 15 minutos e bem escorrido",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "trigo para quibe (bulgur fino)", prep: "hidratado em água fria por 15 minutos e bem escorrido", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 maços grandes de salsinha, picada bem fina",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "maços grandes de salsinha", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 maço pequeno de hortelã, picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "maço pequeno de hortelã", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 tomates maduros, picados em cubos pequenos, sem sementes",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "tomates maduros", prep: "picados em cubos pequenos, sem sementes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 cebola picada bem fina",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 ml de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Certifique-se de que o trigo está bem hidratado e completamente escorrido, sem excesso de água.",
       "Numa tigela grande, misture a salsinha e a hortelã picadas bem fino (o tabule tradicional é essencialmente uma salada de ervas com um toque de trigo, não o contrário).",
@@ -222,6 +520,76 @@ window.RECIPES["libano"] = [
       "Folhas de hortelã e salsinha, picadas",
       "Para o molho: suco de 1 limão, 60 ml de azeite, 1 colher (chá) de melaço de romã (sumac, opcional), 1 dente de alho picado, sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 pães pita, cortados em pedaços e tostados/fritos até crocantes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "pães pita", prep: "cortados em pedaços e tostados/fritos até crocantes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates, em cubos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pepino, em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pepino", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão verde, em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão verde", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 rabanetes, fatiados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "rabanetes", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 cebola roxa, fatiada fina",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola roxa", prep: "fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 alface romana, picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "alface romana", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de hortelã e salsinha, picadas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "folhas de hortelã", prep: "picadas", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o molho: suco de 1 limão, 60 ml de azeite, 1 colher (chá) de melaço de romã (sumac, opcional), 1 dente de alho picado, sal a gosto",
+        group: "molho",
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 60, qtyRange: null, unit: "mililitro", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "melaço de romã (sumac)", prep: null, alt: null, optional: true, isReference: false },
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: "picado", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Corte os pães pita em pedaços irregulares e toste no forno (ou frite rapidamente em óleo) até ficarem bem crocantes e dourados.",
       "Numa tigela grande, misture o tomate, pepino, pimentão, rabanete, cebola roxa, alface, hortelã e salsinha.",
@@ -248,6 +616,34 @@ window.RECIPES["libano"] = [
     ingredients: [
       "Para a massa: 500 g de farinha de trigo, 7 g de fermento biológico seco, 1 colher (sopa) de açúcar, 1 colher (chá) de sal, 280 ml de água morna, 3 colheres (sopa) de azeite",
       "Para o recheio: 400 g de carne bovina moída, 2 tomates picados bem fino, 1 cebola picada bem fina, suco de 1 limão, 2 colheres (sopa) de azeite, hortelã picada, pimenta síria, sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Para a massa: 500 g de farinha de trigo, 7 g de fermento biológico seco, 1 colher (sopa) de açúcar, 1 colher (chá) de sal, 280 ml de água morna, 3 colheres (sopa) de azeite",
+        group: "massa",
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 7, qtyRange: null, unit: "grama", item: "fermento biológico seco", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 280, qtyRange: null, unit: "mililitro", item: "água", prep: "morna", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o recheio: 400 g de carne bovina moída, 2 tomates picados bem fino, 1 cebola picada bem fina, suco de 1 limão, 2 colheres (sopa) de azeite, hortelã picada, pimenta síria, sal a gosto",
+        group: "recheio",
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "carne bovina moída", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados bem fino", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "hortelã", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta síria", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a massa: misture a farinha, fermento, açúcar e sal. Adicione a água morna e o azeite, misturando até formar uma massa. Sove por 8-10 minutos até ficar lisa e elástica.",

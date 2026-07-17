@@ -27,6 +27,86 @@ window.RECIPES["espanha"] = [
       "Aioli (ver receita, categoria Clássicos Contemporâneos), para servir",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "350 g de arroz tipo bomba (ou arbóreo)",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "grama", item: "arroz tipo bomba", prep: null, alt: "arbóreo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de lula, em anéis (limpe e reserve as bolsas de tinta, se disponíveis, ou compre tinta de lula em sachê)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "lula", prep: "em anéis (limpe e reserve as bolsas de tinta, se disponíveis, ou compre tinta de lula em sachê)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates ralados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "ralados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 sachês de tinta de lula (ou a tinta reservada)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "sachês de tinta de lula", prep: null, alt: "a tinta reservada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de fumet de peixe (feito com as cascas do camarão), bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "fumet de peixe (feito com as cascas do camarão)", prep: "bem quente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Aioli (ver receita, categoria Clássicos Contemporâneos), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "aioli", prep: "ver receita, categoria clássicos contemporâneos; para servir", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare um fumet rápido fervendo as cascas do camarão em água por 15 minutos; coe e mantenha quente.",
       "Numa paellera ou frigideira larga, aqueça o azeite e sele rapidamente a lula e o camarão, só para dourar por fora. Retire e reserve.",
@@ -66,6 +146,86 @@ window.RECIPES["espanha"] = [
       "Azeite de oliva",
       "Aioli, para servir (ver receita, categoria Clássicos Contemporâneos)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "350 g de massa fideuà (ou vermicelli/cabelo-de-anjo, quebrados em pedaços de 3-4 cm)",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "grama", item: "massa fideuà", prep: null, alt: "vermicelli/cabelo-de-anjo, quebrados em pedaços de 3-4 cm", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de lula em anéis",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "lula", prep: "em anéis", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 mexilhões limpos",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "mexilhões", prep: "limpos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates ralados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "ralados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açafrão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de fumet de peixe (feito com as cascas do camarão), bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "fumet de peixe (feito com as cascas do camarão)", prep: "bem quente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Aioli, para servir (ver receita, categoria Clássicos Contemporâneos)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "aioli", prep: "para servir; ver receita, categoria clássicos contemporâneos", alt: null, optional: false, isReference: true },
+        ],
+      },
+    ],
     steps: [
       "Prepare um fumet rápido fervendo as cascas do camarão em água por 15 minutos; coe e mantenha quente.",
       "Numa paellera ou frigideira larga, torre a massa fideuà a seco (sem gordura) em fogo médio, mexendo sempre, até dourar levemente — isso realça o sabor de torrado da massa. Reserve.",
@@ -104,6 +264,64 @@ window.RECIPES["espanha"] = [
       "Sal a gosto",
       "Pão rústico para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de camarão médio, limpo",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 dentes de alho fatiados finos",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: "fatiados finos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta dedo-de-moça (ou flocos de pimenta) a gosto",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta dedo-de-moça", prep: "a gosto", alt: "flocos de pimenta", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de conhaque ou vinho branco (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "conhaque", prep: null, alt: "vinho branco", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão rústico para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão rústico", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o camarão com sal.",
       "Numa frigideira ou cazuela de barro individual, aqueça o azeite em fogo médio com o alho fatiado e a pimenta, até o alho começar a dourar levemente (sem queimar).",
@@ -134,6 +352,51 @@ window.RECIPES["espanha"] = [
       "Azeite de oliva extra virgem",
       "Páprica doce e páprica picante (pimentón dulce e picante), a gosto",
       "Sal grosso"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 polvo (1,2-1,5 kg), limpo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "polvo", prep: "(1,2-1,5 kg), limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, cortada ao meio",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "cortada ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 batatas médias, cozidas e fatiadas em rodelas grossas",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "batatas médias", prep: "cozidas e fatiadas em rodelas grossas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva extra virgem",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva extra virgem", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Páprica doce e páprica picante (pimentón dulce e picante), a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "páprica doce (pimentón dulce)", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "páprica picante (pimentón picante)", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe o polvo seguindo a técnica clássica (ver receita Polvo Grelhado, categoria Frutos do Mar, para o processo de amaciar e cozinhar) até ficar macio, cerca de 45-50 minutos, junto com a cebola na água.",
@@ -167,6 +430,49 @@ window.RECIPES["espanha"] = [
       "Aioli, para servir (ver receita, categoria Clássicos Contemporâneos)",
       "Sal grosso"
     ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de batata, descascada e em cubos grandes",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "batata", prep: "descascada e em cubos grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, o suficiente para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "o suficiente para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o molho bravas: 2 colheres (sopa) de azeite, 1 colher (sopa) de farinha, 1 colher (sopa) de páprica doce, 1 colher (chá) de páprica picante, 200 ml de caldo, 1 colher (sopa) de extrato de tomate, 1 colher (chá) de vinagre",
+        group: "molho bravas",
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "farinha", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "páprica doce", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "páprica picante", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "caldo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "vinagre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Aioli, para servir (ver receita, categoria Clássicos Contemporâneos)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "aioli", prep: "para servir; ver receita, categoria clássicos contemporâneos", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Sal grosso",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe os cubos de batata em água salgada por 5 minutos (pré-cozimento, deixa por dentro macio e ajuda a crocância por fora depois). Escorra e seque bem.",
       "Frite as batatas em óleo quente (170°C) até dourarem bem e ficarem crocantes por fora, 8-10 minutos. Escorra em papel toalha e tempere com sal grosso.",
@@ -195,6 +501,36 @@ window.RECIPES["espanha"] = [
       "Pão rústico ou torradas finas",
       "Azeite de oliva extra virgem (opcional)",
       "Tomate ralado (para o clássico 'pan con tomate' espanhol, opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 peça (ou fatias já cortadas) de jamón ibérico de bellota, de boa procedência",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "peça de jamón ibérico de bellota", prep: "de boa procedência", alt: "fatias já cortadas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão rústico ou torradas finas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão rústico", prep: null, alt: "torradas finas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva extra virgem (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva extra virgem", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Tomate ralado (para o clássico 'pan con tomate' espanhol, opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "tomate ralado", prep: "para o clássico 'pan con tomate' espanhol", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Retire o jamón da geladeira 20-30 minutos antes de servir — deve ser degustado em temperatura ambiente, nunca gelado, para a gordura amolecer e liberar todo o sabor.",
@@ -231,6 +567,71 @@ window.RECIPES["espanha"] = [
       "Presunto cru em tiras finas, para servir",
       "Azeite extra, para finalizar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de tomate bem maduro, picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "tomate bem maduro", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de pão amanhecido, sem casca, picado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "pão amanhecido", prep: "sem casca, picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dente de alho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de azeite de oliva extra virgem",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "azeite de oliva extra virgem", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de vinagre de xerez",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "vinagre de xerez", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos cozidos duros, picados, para servir",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "cozidos duros, picados, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Presunto cru em tiras finas, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "presunto cru", prep: "em tiras finas, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite extra, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite extra", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Deixe o pão de molho num pouco de água por 5-10 minutos, depois esprema bem o excesso.",
       "Bata o tomate, o pão embebido e o alho no liquidificador em velocidade alta, até ficar completamente liso.",
@@ -265,6 +666,71 @@ window.RECIPES["espanha"] = [
       "1 pitada de açafrão",
       "1 folha de louro",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de feijão branco grande (tipo fabada, ou cannellini), de molho por 8h",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "feijão branco grande", prep: "tipo fabada, ou cannellini, de molho por 8h", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de chouriço espanhol (chorizo), inteiro ou em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "chouriço espanhol (chorizo)", prep: "inteiro ou em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de morcela (blood sausage/morcilla)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "morcela (blood sausage/morcilla)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de toucinho (lacón ou toucinho salgado)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "toucinho (lacón ou toucinho salgado)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola inteira",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola inteira", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açafrão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Escorra o feijão de molho e coloque numa panela grande com água fria suficiente para cobrir generosamente.",

@@ -21,6 +21,57 @@ window.RECIPES["ovos-classicos"] = [
       "Cebolinha picada para finalizar",
       "Pimenta-do-reino a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 English muffins, cortados ao meio",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "english muffins", prep: "cortados ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de bacon canadense (ou presunto grosso)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "bacon canadense", prep: null, alt: "presunto grosso", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos para poché (ver receita Ovo Poché)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos para poché", prep: "ver receita ovo poché", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 receita de Hollandaise (ver receita)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de hollandaise", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Manteiga para tostar os muffins",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga para tostar os muffins", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha picada para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picada para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a Hollandaise (ver receita) e mantenha em local morno.",
       "Toste os English muffins com manteiga até dourarem levemente.",
@@ -54,6 +105,59 @@ window.RECIPES["ovos-classicos"] = [
       "1 receita de Hollandaise (ver receita)",
       "Sal, pimenta e noz-moscada a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 English muffins, cortados ao meio",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "english muffins", prep: "cortados ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de espinafre fresco",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "espinafre fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dente de alho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de manteiga",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos para poché (ver receita)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos para poché", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 receita de Hollandaise (ver receita)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de hollandaise", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e noz-moscada a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a Hollandaise e mantenha morna.",
       "Refogue o espinafre na manteiga com o alho até murchar completamente. Tempere com sal, pimenta e noz-moscada. Escorra o excesso de líquido.",
@@ -85,6 +189,57 @@ window.RECIPES["ovos-classicos"] = [
       "Manteiga para tostar os muffins",
       "Endro (dill) fresco para finalizar",
       "Pimenta-do-reino a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 English muffins, cortados ao meio",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "english muffins", prep: "cortados ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de salmão defumado, fatiado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "salmão defumado", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos para poché (ver receita)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos para poché", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 receita de Hollandaise (ver receita)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de hollandaise", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Manteiga para tostar os muffins",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manteiga para tostar os muffins", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Endro (dill) fresco para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "endro (dill) fresco", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a Hollandaise e mantenha morna.",
@@ -124,6 +279,100 @@ window.RECIPES["ovos-classicos"] = [
       "1 colher (sopa) de vinagre (para pochear os ovos)",
       "Fatias de baguete torradas com alho, para servir",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 ovos bem frescos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos bem frescos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de vinho tinto encorpado (Borgonha, se possível)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "vinho tinto encorpado", prep: "borgonha, se possível", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de fundo escuro de carne ou caldo de carne",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "fundo escuro de carne", prep: null, alt: "caldo de carne", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de bacon ou toucinho em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "bacon", prep: null, alt: "toucinho em cubos pequenos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "12 cebolinhas pérola (ou 1 cebola pequena em cubos)",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: null, item: "cebolinhas pérola", prep: null, alt: "1 cebola pequena em cubos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de cogumelos paris, fatiados",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "cogumelos paris", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dente de alho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de manteiga + 20 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga + 20 g de manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de vinagre (para pochear os ovos)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre (para pochear os ovos)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Fatias de baguete torradas com alho, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "fatias de baguete", prep: "torradas com alho, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela, doure o bacon até crocante. Retire e reserve, deixando a gordura na panela.",
@@ -166,6 +415,101 @@ window.RECIPES["ovos-classicos"] = [
       "Coentro ou salsinha picada, queijo feta esfarelado (opcional) para finalizar",
       "Pão árabe ou pão rústico para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de páprica doce (ou defumada)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "páprica doce", prep: null, alt: "defumada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 colher (chá) de pimenta calabresa (opcional)",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: "colher-cha", item: "pimenta calabresa", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "800 g de tomate pelado picado (ou tomate fresco maduro)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: "tomate fresco maduro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4-6 ovos",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [4, 6], unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro ou salsinha picada, queijo feta esfarelado (opcional) para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "para finalizar", alt: "salsinha picada", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "queijo feta", prep: "esfarelado, para finalizar", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão árabe ou pão rústico para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão árabe", prep: null, alt: "pão rústico para servir", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa frigideira grande (que tenha tampa), aqueça o azeite e refogue a cebola e o pimentão até macios, 8 minutos.",
       "Junte o alho, cominho, páprica e pimenta calabresa, refogue por 1 minuto até perfumar.",
@@ -200,6 +544,72 @@ window.RECIPES["ovos-classicos"] = [
       "Sal e pimenta a gosto",
       "Queijo beyaz peynir (ou feta) esfarelado (opcional)",
       "Pão turco ou pão rústico para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "3 colheres (sopa) de azeite de oliva ou manteiga",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: "manteiga", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão verde longo (tipo italiano), picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão verde longo (tipo italiano)", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena picada (opcional, algumas versões tradicionais não levam)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada; algumas versões tradicionais não levam", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "3 tomates maduros, sem pele, picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "tomates maduros", prep: "sem pele, picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de páprica ou pimenta síria (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "páprica", prep: null, alt: "pimenta síria", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Queijo beyaz peynir (ou feta) esfarelado (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "queijo beyaz peynir", prep: "esfarelado", alt: "feta", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão turco ou pão rústico para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão turco", prep: null, alt: "pão rústico para servir", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça o azeite numa frigideira e refogue o pimentão (e a cebola, se usar) até macios, 5-6 minutos.",
@@ -237,6 +647,87 @@ window.RECIPES["ovos-classicos"] = [
       "Abacate fatiado, coentro picado, queijo fresco esfarelado para finalizar",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 tortillas de milho",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "tortillas de milho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo (dividido)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 cebola picada",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta jalapeño picada (sem sementes se quiser menos picante)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta jalapeño", prep: "picada (sem sementes se quiser menos picante)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate picado (ou tomate pelado)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate", prep: "picado", alt: "tomate pelado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de feijão preto ou feijão refogado (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "feijão preto", prep: "tradicional", alt: "feijão refogado", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Abacate fatiado, coentro picado, queijo fresco esfarelado para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "abacate", prep: "fatiado, para finalizar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picado, para finalizar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "queijo fresco", prep: "esfarelado, para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare o molho: refogue cebola, alho e jalapeño em um pouco de óleo até macios, junte o tomate e o cominho, tempere com sal e cozinhe em fogo médio por 12-15 minutos até encorpar. Bata levemente ou deixe rústico, a gosto.",
       "Numa frigideira separada, esquente rapidamente as tortillas de milho num pouco de óleo, dos dois lados, até ficarem levemente crocantes nas bordas mas ainda flexíveis.",
@@ -272,6 +763,86 @@ window.RECIPES["ovos-classicos"] = [
       "Salsinha picada para finalizar",
       "Pão rústico ou batata cozida para acompanhar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola fatiada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de tomate maduro picado (ou tomate pelado)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "tomate maduro", prep: "picado", alt: "tomate pelado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de presunto ou chouriço fatiado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "presunto", prep: null, alt: "chouriço fatiado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4-6 ovos",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [4, 6], unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão rústico ou batata cozida para acompanhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão rústico", prep: null, alt: "batata cozida para acompanhar", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o azeite numa frigideira grande e refogue a cebola, o alho e o pimentão até macios, 8 minutos.",
       "Junte o presunto ou chouriço fatiado e refogue por 2-3 minutos para soltar sabor.",
@@ -305,6 +876,51 @@ window.RECIPES["ovos-classicos"] = [
       "Cebolinha picada ou páprica para finalizar",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 ovos cozidos duros (ver receita Ovo Cozido, ponto duro), descascados e cortados ao meio",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos cozidos duros", prep: "ver receita ovo cozido, ponto duro; descascados e cortados ao meio", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "150 g de maionese caseira (gemas, óleo, mostarda, limão)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "maionese caseira", prep: "gemas, óleo, mostarda, limão", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de mostarda Dijon extra (para temperar a maionese)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "mostarda dijon extra (para temperar a maionese)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de alface para forrar o prato",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: "folha", item: "alface para forrar o prato", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha picada ou páprica para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picada", alt: "páprica para finalizar", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe os ovos no ponto duro (10-11 minutos) e resfrie em água com gelo. Descasque com cuidado.",
       "Tempere a maionese com a mostarda Dijon extra, sal e pimenta a gosto.",
@@ -336,6 +952,60 @@ window.RECIPES["ovos-classicos"] = [
       "Farinha de trigo, 2 ovos batidos e farinha panko — para empanar",
       "Óleo para fritar",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 ovos cozidos no ponto mollet ou médio (ver receita), descascados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos cozidos no ponto mollet", prep: "ver receita; descascados", alt: "médio", optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "400 g de linguiça de porco fresca (sem a tripa) ou carne de salsicha temperada",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "linguiça de porco fresca (sem a tripa)", prep: null, alt: "carne de salsicha temperada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de mostarda em pó ou Dijon",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "mostarda em pó", prep: null, alt: "Dijon", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas frescas picadas (sálvia ou tomilho, opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "picadas (sálvia ou tomilho)", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, 2 ovos batidos e farinha panko — para empanar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos, para empanar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "farinha panko", prep: "para empanar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere a carne de linguiça com mostarda, ervas, sal e pimenta, misturando bem.",
@@ -369,6 +1039,66 @@ window.RECIPES["ovos-classicos"] = [
       "1 fio de conhaque ou vinho branco (opcional)",
       "Salsinha picada",
       "Sal, pimenta e noz-moscada a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de cogumelos variados (paris, shitake, portobello), picados bem fino (duxelles)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "cogumelos variados", prep: "paris, shitake, portobello, picados bem fino (duxelles)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de creme de leite fresco (dividido)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "creme de leite fresco (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de conhaque ou vinho branco (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "conhaque", prep: null, alt: "vinho branco", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e noz-moscada a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a duxelles: refogue a cebola na metade da manteiga até translúcida, junte os cogumelos picados bem fino e cozinhe em fogo médio até toda a água evaporar e a mistura ficar bem seca e escura, 10-12 minutos.",

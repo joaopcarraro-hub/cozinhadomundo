@@ -21,6 +21,57 @@ window.RECIPES["molhos"] = [
       "Pimenta-do-reino branca a gosto",
       "1 folha de louro (opcional, para infusionar o leite)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "50 g de manteiga sem sal",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga sem sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de leite integral, morno",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "leite integral", prep: "morno", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada ralada na hora",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: "ralada na hora", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro (opcional, para infusionar o leite)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: "para infusionar o leite", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se for usar o louro, aqueça o leite até quase ferver com a folha dentro, desligue e deixe em infusão por 10 min. Coe e mantenha morno.",
       "Em uma panela de fundo grosso, derreta a manteiga em fogo baixo sem deixar dourar.",
@@ -53,6 +104,50 @@ window.RECIPES["molhos"] = [
       "Sal a gosto",
       "Pimenta-do-reino branca a gosto",
       "1 fio de suco de limão (opcional, para realçar)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "50 g de manteiga sem sal",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga sem sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "600 ml de caldo claro quente (frango, peixe ou vitela, conforme o uso)",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "mililitro", item: "caldo claro quente", prep: "frango, peixe ou vitela, conforme o uso", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de suco de limão (opcional, para realçar)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "suco de limão", prep: "para realçar", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça o caldo e mantenha quente (não precisa fervendo).",
@@ -91,6 +186,92 @@ window.RECIPES["molhos"] = [
       "2 ramos de tomilho",
       "4 grãos de pimenta-do-reino",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "40 g de manteiga ou óleo",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: "óleo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de fundo escuro de carne (boi ou vitela)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "fundo escuro de carne", prep: "boi ou vitela", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola média em cubos (mirepoix)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola média", prep: "em cubos (mirepoix)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura média em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura média", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 talo de salsão em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato/concentrado de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato/concentrado de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 tomate maduro picado (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "tomate maduro", prep: "picado", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ramos de tomilho",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 grãos de pimenta-do-reino",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "grãos de pimenta-do-reino", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela larga, doure a manteiga com a cebola, cenoura e salsão (mirepoix) em fogo médio até pegar cor dourada, cerca de 10 minutos.",
@@ -131,6 +312,94 @@ window.RECIPES["molhos"] = [
       "1 pitada de açúcar (para equilibrar a acidez)",
       "Sal e pimenta-do-reino a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 colheres (sopa) de azeite ou manteiga",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: "manteiga", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de bacon ou toucinho em cubos pequenos (tradicional, opcional)",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "bacon", prep: "tradicional", alt: "toucinho em cubos pequenos", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura pequena em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura pequena", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 talo de salsão em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de tomate maduro sem pele e sem semente, picado (ou 800 g de tomate pelado)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "tomate maduro", prep: "sem pele e sem semente, picado", alt: "800 g de tomate pelado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de fundo claro ou água",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "fundo claro", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 1 ramo de tomilho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açúcar (para equilibrar a acidez)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açúcar (para equilibrar a acidez)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta-do-reino a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o azeite e doure o bacon, se usar. Junte a cebola, cenoura e salsão e refogue até amolecer, 8 minutos.",
       "Adicione o alho e o extrato de tomate, refogue por 2 minutos.",
@@ -163,6 +432,50 @@ window.RECIPES["molhos"] = [
       "1 colher (sopa) de suco de limão fresco",
       "Sal a gosto",
       "1 pitada de pimenta-caiena (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "3 gemas",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de água fria",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "água fria", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de manteiga clarificada, morna",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "manteiga clarificada", prep: "morna", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de suco de limão fresco",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "suco de limão fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de pimenta-caiena (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "pimenta-caiena", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Clarifique a manteiga: derreta em fogo baixo, retire a espuma da superfície e reserve só a gordura dourada (deixando o soro de leite no fundo). Mantenha morna, não quente.",
@@ -197,6 +510,51 @@ window.RECIPES["molhos"] = [
       "1 pitada de noz-moscada",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 ml de Béchamel quente (ver receita)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "béchamel quente", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "60 g de queijo gruyère ralado",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "queijo gruyère", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Com a Béchamel ainda quente (mas fora do fogo), tempere a gema com uma colher da Béchamel para amornar (evita cozinhar a gema de uma vez).",
       "Devolva essa mistura à panela com o restante da Béchamel, misturando bem.",
@@ -228,6 +586,65 @@ window.RECIPES["molhos"] = [
       "1 colher (sopa) de extrato de tomate",
       "Sal, pimenta-caiena a gosto",
       "Camarões pequenos cozidos para finalizar (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de cascas e cabeças de camarão ou lagostim (para a manteiga de crustáceos)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "cascas e cabeças de camarão", prep: "para a manteiga de crustáceos", alt: "lagostim", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de manteiga",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de conhaque",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "conhaque", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de Béchamel (ver receita)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "béchamel", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta-caiena a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-caiena", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Camarões pequenos cozidos para finalizar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "camarões pequenos", prep: "cozidos para finalizar", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a manteiga de crustáceos: refogue as cascas e cabeças na manteiga em fogo médio por 10 minutos até ficarem bem vermelhas e aromáticas.",
@@ -262,6 +679,51 @@ window.RECIPES["molhos"] = [
       "Sal e pimenta branca a gosto",
       "1 pitada de noz-moscada (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 ml de Velouté de frango (ver receita, feito com caldo de frango)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "velouté de frango", prep: "ver receita, feito com caldo de frango", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1/2 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1/2 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o Velouté de frango em fogo médio-baixo.",
       "Junte o creme de leite e deixe reduzir levemente por 10-12 minutos, até encorpar.",
@@ -293,6 +755,58 @@ window.RECIPES["molhos"] = [
       "Sal, pimenta branca a gosto",
       "Suco de limão a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 ml de Velouté de peixe (ver receita, feito com fumet de peixe)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "velouté de peixe", prep: "ver receita, feito com fumet de peixe", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "150 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas picadas finas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de limão a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de limão", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela, reduza o vinho branco com as cebolas até restar 1/3 do volume.",
       "Junte o Velouté de peixe e cozinhe em fogo baixo por 8-10 minutos, mexendo de vez em quando.",
@@ -323,6 +837,36 @@ window.RECIPES["molhos"] = [
       "1 L de fundo escuro de carne adicional",
       "100 ml de vinho tinto seco (opcional, para redução extra)",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 L de Espagnole (ver receita)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "espagnole", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 L de fundo escuro de carne adicional",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "fundo escuro de carne adicional", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho tinto seco (opcional, para redução extra)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho tinto seco", prep: "para redução extra", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Junte a Espagnole e o fundo escuro numa panela larga.",
@@ -358,6 +902,66 @@ window.RECIPES["molhos"] = [
       "20 g de manteiga gelada",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 cebola pequena picada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de vinho tinto encorpado (idealmente Bordeaux)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "vinho tinto encorpado (idealmente bordeaux)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ramo de tomilho, 1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 grãos de pimenta-do-reino amassados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "grãos de pimenta-do-reino", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de Demi-glace",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "demi-glace", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de tutano de boi em cubos (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "tutano de boi", prep: "em cubos, tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de manteiga gelada",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela, junte a cebola, vinho, tomilho, louro e pimenta-do-reino.",
       "Reduza em fogo médio até restar cerca de 1/4 do volume (bem concentrado), 15-20 minutos.",
@@ -390,6 +994,58 @@ window.RECIPES["molhos"] = [
       "1 colher (sopa) de mostarda Dijon",
       "1 pitada de açúcar",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 cebola média picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola média", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de manteiga",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de Demi-glace (ver receita)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "demi-glace", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de mostarda Dijon",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "mostarda dijon", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Refogue a cebola na manteiga em fogo baixo até ficar bem macia e translúcida, sem dourar muito, 8-10 minutos.",
@@ -427,6 +1083,78 @@ window.RECIPES["molhos"] = [
       "Sal a gosto",
       "1 fio de suco de limão (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 cebolas picadas finas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinagre de vinho branco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinagre de vinho branco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ramo de estragão fresco + 1 colher (sopa) picado para finalizar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "ramo", item: "estragão fresco + 1 colher (sopa)", prep: "picado para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 grãos de pimenta-do-reino amassados",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: null, item: "grãos de pimenta-do-reino", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 gemas",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de água fria",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "água fria", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de manteiga clarificada, morna",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "manteiga clarificada", prep: "morna", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de suco de limão (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "suco de limão", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela pequena, junte as cebolas, vinagre, vinho, o ramo de estragão e a pimenta.",
       "Reduza em fogo médio até restar cerca de 2 colheres (sopa) de líquido concentrado.",
@@ -455,6 +1183,29 @@ window.RECIPES["molhos"] = [
       "1 receita de Béarnaise pronta (ver receita), sem o estragão de finalização",
       "3 colheres (sopa) de purê de tomate bem concentrado (tomate sem pele, sem semente, cozido até secar)",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 receita de Béarnaise pronta (ver receita), sem o estragão de finalização",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de béarnaise pronta", prep: "ver receita; sem o estragão de finalização", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de purê de tomate bem concentrado (tomate sem pele, sem semente, cozido até secar)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "purê de tomate bem concentrado", prep: "tomate sem pele, sem semente, cozido até secar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Prepare a Béarnaise até o ponto final da emulsão, mas reserve o estragão picado para depois.",
@@ -487,6 +1238,58 @@ window.RECIPES["molhos"] = [
       "250 g de manteiga gelada, em cubos",
       "Sal e pimenta branca a gosto",
       "Suco de limão a gosto (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 cebolas picadas finas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de vinagre de vinho branco (ou vinagre de champagne)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "vinagre de vinho branco", prep: null, alt: "vinagre de champagne", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de creme de leite fresco (opcional, ajuda a estabilizar)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "creme de leite fresco", prep: "ajuda a estabilizar", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "250 g de manteiga gelada, em cubos",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de limão a gosto (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de limão", prep: "a gosto", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela pequena, junte as cebolas, o vinho e o vinagre.",
@@ -523,6 +1326,61 @@ window.RECIPES["molhos"] = [
       "1 ramo de tomilho, 1 folha de louro",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Aparas e ossos da carne que está sendo preparada (ou ossos de boi/vitela)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "aparas e ossos da carne que está sendo preparada", prep: null, alt: "ossos de boi/vitela", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena, 1 cenoura pequena, 1 talo de salsão — em cubos (mirepoix)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "em cubos (mirepoix)", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura pequena", prep: "em cubos (mirepoix)", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "em cubos (mirepoix)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de vinho tinto (opcional)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "800 ml de água ou fundo claro",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: "fundo claro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ramo de tomilho, 1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Doure bem os ossos/aparas numa assadeira ou panela em fogo alto (ou no forno a 220°C) até pegar cor escura por todos os lados.",
       "Junte o mirepoix e doure junto por mais 5-8 minutos.",
@@ -552,6 +1410,29 @@ window.RECIPES["molhos"] = [
       "100 g de açúcar",
       "80 ml de vinagre (vinho tinto, vinho branco ou balsâmico, conforme o prato)",
       "Opcional: frutas (frutas vermelhas, laranja, manga) para variações frutadas"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "100 g de açúcar",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de vinagre (vinho tinto, vinho branco ou balsâmico, conforme o prato)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "vinagre", prep: "vinho tinto, vinho branco ou balsâmico, conforme o prato", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Opcional: frutas (frutas vermelhas, laranja, manga) para variações frutadas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "frutas", prep: "frutas vermelhas, laranja, manga, para variações frutadas", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela de fundo claro (para enxergar a cor), derreta o açúcar em fogo médio sem mexer, só balançando a panela de leve, até virar caramelo âmbar.",

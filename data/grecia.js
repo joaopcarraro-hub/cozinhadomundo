@@ -24,6 +24,86 @@ window.RECIPES["grecia"] = [
       "Para o molho béchamel: 60 g de manteiga, 60 g de farinha, 700 ml de leite, 2 gemas, 80 g de queijo parmesão ou kefalotyri ralado, noz-moscada",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 berinjelas grandes, em fatias longitudinais",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "berinjelas grandes", prep: "em fatias longitudinais", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso, para salgar as berinjelas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: "para salgar as berinjelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite, o suficiente para grelhar/fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite", prep: "o suficiente para grelhar/fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "600 g de carne de cordeiro ou bovina moída",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "carne de cordeiro", prep: null, alt: "bovina moída", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado picado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de canela em pó, 1 pitada de cravo em pó",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "canela em pó", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "cravo em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho tinto",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o molho béchamel: 60 g de manteiga, 60 g de farinha, 700 ml de leite, 2 gemas, 80 g de queijo parmesão ou kefalotyri ralado, noz-moscada",
+        group: "molho béchamel",
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 60, qtyRange: null, unit: "grama", item: "farinha", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 700, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 80, qtyRange: null, unit: "grama", item: "queijo parmesão", prep: "ralado", alt: "kefalotyri ralado", optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Salgue as fatias de berinjela e deixe descansar por 20-30 minutos, para eliminar o amargor e o excesso de água. Enxágue e seque bem.",
       "Grelhe ou frite levemente as fatias de berinjela em azeite, até dourarem e amaciarem. Escorra em papel toalha.",
@@ -60,6 +140,66 @@ window.RECIPES["grecia"] = [
       "Espetos de bambu (de molho em água por 30 minutos)",
       "Pão pita e molho tzatziki (ver receita), para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de peito de frango ou pernil de porco, em cubos",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "peito de frango", prep: null, alt: "pernil de porco, em cubos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de orégano seco",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "orégano seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Espetos de bambu (de molho em água por 30 minutos)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "espetos de bambu", prep: "de molho em água por 30 minutos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão pita e molho tzatziki (ver receita), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão pita", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "molho tzatziki", prep: "ver receita; para servir", alt: null, optional: false, isReference: true },
+        ],
+      },
+    ],
     steps: [
       "Misture o azeite, suco de limão, alho, orégano, sal e pimenta, formando a marinada.",
       "Cubra os cubos de carne com a marinada, massageando bem. Deixe marinar na geladeira por no mínimo 2 horas.",
@@ -92,6 +232,67 @@ window.RECIPES["grecia"] = [
       "Suco de 1 limão",
       "Pão pita, tomate, cebola roxa fatiada e molho tzatziki (ver receita), para servir",
       "Batata frita, para acompanhar (tradicional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de pernil de porco (ou frango), fatiado bem fino",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "pernil de porco", prep: "fatiado bem fino", alt: "frango", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de orégano seco",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "orégano seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de páprica",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "páprica", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão pita, tomate, cebola roxa fatiada e molho tzatziki (ver receita), para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão pita", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "tomate", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebola roxa", prep: "fatiada, para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "molho tzatziki", prep: "ver receita; para servir", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Batata frita, para acompanhar (tradicional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "batata frita", prep: "para acompanhar (tradicional)", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture o azeite, alho, orégano, páprica e suco de limão, formando a marinada.",
@@ -129,6 +330,73 @@ window.RECIPES["grecia"] = [
       "1 pacote de massa filo (cerca de 12-16 folhas)",
       "100 g de manteiga derretida (ou azeite)",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de espinafre fresco, picado",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "espinafre fresco", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 talos de cebolinha picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "talo", item: "cebolinha", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de queijo feta, esfarelado",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "queijo feta", prep: "esfarelado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de ricota",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "ricota", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de endro fresco picado",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "endro fresco", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pacote de massa filo (cerca de 12-16 folhas)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pacote", item: "massa filo", prep: "cerca de 12-16 folhas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de manteiga derretida (ou azeite)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "manteiga derretida", prep: null, alt: "azeite", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Refogue a cebola e a cebolinha num pouco de azeite até macias. Junte o espinafre picado e refogue até murchar completamente, liberando e depois evaporando a água.",
@@ -168,6 +436,73 @@ window.RECIPES["grecia"] = [
       "Sal e pimenta a gosto",
       "Iogurte grego, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "40 folhas de parreira (uva) em conserva, enxaguadas",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "folha", item: "parreira (uva) em conserva", prep: "enxaguadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 xícara de arroz",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite (dividido)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de endro fresco picado, 2 colheres (sopa) de hortelã picada",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "endro fresco", prep: "picado", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "hortelã", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 limões (dividido)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 limões (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de água ou caldo de legumes",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: "caldo de legumes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Iogurte grego, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "iogurte grego", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Refogue a cebola no azeite até translúcida. Junte o arroz, refogando por 2 minutos.",
       "Adicione metade do suco de limão, o endro e a hortelã, temperando com sal e pimenta. Deixe esfriar levemente.",
@@ -202,6 +537,57 @@ window.RECIPES["grecia"] = [
       "1 colher (sopa) de vinagre de vinho branco (ou suco de limão)",
       "1 colher (sopa) de endro fresco picado",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 pepino grande, ralado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pepino grande", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de iogurte grego bem espesso",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "iogurte grego bem espesso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2-3 dentes de alho, ralados ou amassados",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [2, 3], unit: "dente", item: "alho", prep: "ralados", alt: "amassados", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de vinagre de vinho branco (ou suco de limão)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre de vinho branco", prep: null, alt: "suco de limão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de endro fresco picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "endro fresco", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Rale o pepino e coloque numa peneira com uma pitada de sal, deixando escorrer por 15-20 minutos. Esprema bem com as mãos para remover o máximo de água possível — esse passo é essencial para não aguar o molho.",

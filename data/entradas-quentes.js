@@ -23,6 +23,72 @@ window.RECIPES["entradas-quentes"] = [
       "1 pitada de cremor tártaro (opcional, ajuda a estabilizar as claras)",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "30 g de manteiga (+ extra para untar)",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga (+ extra para untar)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 gemas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 claras",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: null, item: "claras", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo gruyère ralado (+ extra para as forminhas)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo gruyère", prep: "ralado (+ extra para as forminhas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de cremor tártaro (opcional, ajuda a estabilizar as claras)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "cremor tártaro", prep: "ajuda a estabilizar as claras", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Unte generosamente 4 ramequins com manteiga em movimentos verticais (ajuda o soufflé a subir reto) e polvilhe com queijo ralado.",
       "Prepare uma Béchamel: derreta a manteiga, junte a farinha, cozinhe 2 minutos, adicione o leite morno e cozinhe mexendo até engrossar.",
@@ -56,6 +122,57 @@ window.RECIPES["entradas-quentes"] = [
       "Mostarda Dijon a gosto",
       "30 g de manteiga",
       "50 g de queijo ralado extra para gratinar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 fatias de pão de forma (tipo brioche ou pão de fôrma grosso)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "pão de forma (tipo brioche ou pão de fôrma grosso)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de presunto de boa qualidade",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "presunto de boa qualidade", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo gruyère fatiado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo gruyère", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de Béchamel pronta (ver receita)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "béchamel pronta", prep: "ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Mostarda Dijon a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "mostarda dijon", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de queijo ralado extra para gratinar",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "queijo", prep: "ralado extra para gratinar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Passe uma fina camada de mostarda Dijon em duas fatias de pão.",
@@ -93,6 +210,74 @@ window.RECIPES["entradas-quentes"] = [
       "Farinha de trigo, 2 ovos batidos e farinha panko — para empanar",
       "Óleo para fritar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "50 g de manteiga",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de leite morno",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "leite morno", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de presunto (ou frango desfiado) picado bem fino",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "presunto", prep: "picado bem fino", alt: "frango desfiado", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de noz-moscada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "noz-moscada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, 2 ovos batidos e farinha panko — para empanar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos, para empanar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "farinha panko", prep: "para empanar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Refogue a cebola na manteiga até ficar translúcida. Junte a farinha e cozinhe por 2 minutos, formando o roux.",
       "Adicione o leite morno aos poucos, mexendo sempre, até formar uma Béchamel bem espessa (mais grossa que o normal, para conseguir moldar depois).",
@@ -126,6 +311,57 @@ window.RECIPES["entradas-quentes"] = [
       "Farinha panko ou farinha de rosca",
       "Óleo para fritar",
       "Molho de tomate para acompanhar (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de risoto pronto e frio (idealmente à milanese ou simples, com parmesão)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "risoto pronto e frio", prep: "idealmente à milanese ou simples, com parmesão", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo muçarela em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo muçarela", prep: "em cubos pequenos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos batidos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "batidos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha panko ou farinha de rosca",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha panko", prep: null, alt: "farinha de rosca", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Molho de tomate para acompanhar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "molho de tomate", prep: "para acompanhar", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Com as mãos levemente úmidas, pegue uma porção de risoto frio e achate na palma da mão.",
@@ -162,6 +398,73 @@ window.RECIPES["entradas-quentes"] = [
       "Sal, pimenta e uma pitada de pimenta calabresa (opcional)",
       "Baguete para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de camarão médio, limpo (com ou sem cauda)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (com ou sem cauda)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1/2 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1/2 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e uma pitada de pimenta calabresa (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pitada", item: "pimenta calabresa", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Baguete para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "baguete", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o camarão com sal e pimenta.",
       "Aqueça o azeite numa frigideira grande em fogo alto e sele o camarão rapidamente, 1-2 minutos de cada lado. Retire e reserve.",
@@ -196,6 +499,72 @@ window.RECIPES["entradas-quentes"] = [
       "Salsinha picada",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "16 cogumelos Paris grandes, limpos, com os talos separados",
+        group: null,
+        items: [
+          { qty: 16, qtyRange: null, unit: null, item: "cogumelos paris grandes", prep: "limpos, com os talos separados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo cremoso",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo cremoso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de parmesão ralado (+ extra para polvilhar)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado (+ extra para polvilhar)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 200°C. Pique os talos dos cogumelos bem fino.",
       "Aqueça o azeite numa frigideira e refogue o alho, cebola e os talos picados até dourarem levemente, 5 minutos.",
@@ -229,6 +598,65 @@ window.RECIPES["entradas-quentes"] = [
       "Sal e pimenta a gosto",
       "Baguete para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "12 escargots em conserva, escorridos (+ 12 conchas, se for usar conchas de verdade)",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: null, item: "escargots em conserva", prep: "escorridos (+ 12 conchas, se for usar conchas de verdade)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "120 g de manteiga em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: 120, qtyRange: null, unit: "grama", item: "manteiga", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados bem fino (ou ralados)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados bem fino", alt: "ralados", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas picadas bem fino",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de conhaque (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "conhaque", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Baguete para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "baguete", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare a manteiga composta: misture a manteiga amolecida com alho, cebola, salsinha, conhaque (se usar), sal e pimenta até homogêneo.",
       "Se for usar conchas, coloque um pouco da manteiga no fundo de cada uma, insira o escargot e cubra com mais manteiga, selando a abertura.",
@@ -260,6 +688,65 @@ window.RECIPES["entradas-quentes"] = [
       "Suco de 1/2 limão",
       "Sal e pimenta a gosto",
       "Salsinha picada para finalizar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "8 vieiras frescas, limpas",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "vieiras frescas", prep: "limpas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de Mornay ou Béchamel (ver receita)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "mornay", prep: "ver receita", alt: "béchamel", optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "50 g de queijo gruyère ralado",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "queijo gruyère", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de manteiga derretida",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: "derretida", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1/2 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1/2 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere as vieiras com sal, pimenta e limão.",

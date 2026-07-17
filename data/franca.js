@@ -22,6 +22,44 @@ window.RECIPES["franca"] = [
       "2 fatias de brioche ou pão rústico, tostadas",
       "Frutas para acompanhar (figo, maçã ou pêra), fatiadas"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 fatias de foie gras fresco, cerca de 2 cm de espessura",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "fatia", item: "foie gras fresco", prep: "cerca de 2 cm de espessura", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de vinagre balsâmico ou redução de vinho do Porto",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre balsâmico", prep: null, alt: "redução de vinho do Porto", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 fatias de brioche ou pão rústico, tostadas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "fatia", item: "brioche", prep: "tostadas", alt: "pão rústico", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Frutas para acompanhar (figo, maçã ou pêra), fatiadas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "frutas para acompanhar", prep: "figo, maçã ou pêra, fatiadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Retire o foie gras da geladeira 15-20 minutos antes de cozinhar.",
       "Faça leves cortes em losango na superfície de cada fatia (ajuda a liberar gordura uniformemente e evita que curve).",
@@ -56,6 +94,75 @@ window.RECIPES["franca"] = [
       "8 filés de anchova",
       "Folhas de alface ou mix de folhas",
       "Para o vinagrete: 4 colheres (sopa) de azeite, 1 colher (sopa) de vinagre de vinho tinto, 1 dente de alho picado, sal e pimenta"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de atum fresco (ou em conserva de boa qualidade, em azeite)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "atum fresco", prep: null, alt: "em conserva de boa qualidade, em azeite", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de vagem, cozida al dente",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "vagem", prep: "cozida al dente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 tomates médios, em quartos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "tomates médios", prep: "em quartos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos cozidos no ponto mollet (ver receita, categoria Ovos Básicos), cortados ao meio",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos cozidos no ponto mollet", prep: "ver receita, categoria ovos básicos; cortados ao meio", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "1/2 cebola roxa fatiada fina",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola roxa", prep: "fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de azeitonas pretas de Nice (ou pretas comuns)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "azeitonas pretas de nice", prep: null, alt: "pretas comuns", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 filés de anchova",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "file", item: "anchova", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de alface ou mix de folhas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: "folha", item: "alface", prep: null, alt: "mix de folhas", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o vinagrete: 4 colheres (sopa) de azeite, 1 colher (sopa) de vinagre de vinho tinto, 1 dente de alho picado, sal e pimenta",
+        group: "vinagrete",
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre de vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: "picado", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Se for usar atum fresco, tempere com sal e pimenta e sele rapidamente numa frigideira bem quente, 1 minuto de cada lado, mantendo rosado no centro. Deixe esfriar e fatie.",
@@ -96,6 +203,93 @@ window.RECIPES["franca"] = [
       "100 g de farinha de rosca",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de feijão branco, de molho por 8h",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "feijão branco", prep: "de molho por 8h", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 coxas de confit de pato (ver receita, categoria Aves)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "coxas de confit de pato", prep: "ver receita, categoria aves", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "300 g de linguiça de Toulouse (ou linguiça fresca de porco)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "linguiça de toulouse", prep: null, alt: "linguiça fresca de porco", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de bacon ou toucinho em pedaço",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "bacon", prep: null, alt: "toucinho em pedaço", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola espetada com 2 cravos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola espetada com 2 cravos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cenouras em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 buquê de ervas (louro, tomilho, salsão)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "buquê de ervas", prep: "louro, tomilho, salsão", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de caldo de carne ou água",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "caldo de carne", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Escorra o feijão de molho e cozinhe em água nova com a cebola cravejada, cenoura e o buquê de ervas, até ficar macio mas ainda inteiro, cerca de 1 hora. Escorra, reservando o caldo, e descarte a cebola e as ervas.",
       "Numa panela funda, doure o bacon em pedaço até render um pouco de gordura. Adicione a linguiça e doure também. Retire ambos e reserve.",
@@ -135,6 +329,100 @@ window.RECIPES["franca"] = [
       "100 ml de creme de leite fresco",
       "Suco de 1/2 limão",
       "Sal e pimenta branca a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1,2 kg de vitela (paleta ou peito), em cubos",
+        group: null,
+        items: [
+          { qty: 1.2, qtyRange: null, unit: "quilograma", item: "vitela", prep: "paleta ou peito, em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola espetada com 1 cravo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola espetada com 1 cravo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cenouras em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 buquê de ervas (louro, tomilho, salsão)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "buquê de ervas", prep: "louro, tomilho, salsão", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de água ou fundo claro de vitela",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "fundo claro de vitela", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de cogumelos paris",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "cogumelos paris", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "12 cebolinhas pérola",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: null, item: "cebolinhas pérola", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 gemas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1/2 limão",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1/2 limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela grande, cubra a carne com água fria, leve para ferver e escorra (isso remove impurezas, resultando num molho mais claro e limpo). Enxágue a carne e a panela.",
@@ -178,6 +466,107 @@ window.RECIPES["franca"] = [
       "200 g de batatinhas, inteiras ou em metades",
       "100 g de ervilha fresca ou congelada",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1,2 kg de paleta ou pescoço de cordeiro, em cubos",
+        group: null,
+        items: [
+          { qty: 1.2, qtyRange: null, unit: "quilograma", item: "paleta", prep: "em cubos", alt: "pescoço de cordeiro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de farinha de trigo",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "farinha de trigo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 ml de fundo escuro ou caldo de carne",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "mililitro", item: "fundo escuro", prep: null, alt: "caldo de carne", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 buquê de ervas (louro, tomilho)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "buquê de ervas", prep: "louro, tomilho", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "12 cebolinhas pérola",
+        group: null,
+        items: [
+          { qty: 12, qtyRange: null, unit: null, item: "cebolinhas pérola", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 cenouras pequenas (ou baby), inteiras",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "cenouras pequenas", prep: "inteiras", alt: "baby", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 nabos pequenos, em quartos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "nabos pequenos", prep: "em quartos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de batatinhas, inteiras ou em metades",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "batatinhas", prep: "inteiras ou em metades", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de ervilha fresca ou congelada",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "ervilha fresca", prep: null, alt: "congelada", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere o cordeiro com sal e pimenta. Aqueça o óleo numa panela funda e doure bem os cubos por todos os lados.",

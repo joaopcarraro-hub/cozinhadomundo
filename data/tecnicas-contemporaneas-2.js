@@ -25,6 +25,79 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "Sal e pimenta a gosto",
       "Gelo (opcional, para servir bem gelado)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "150 ml de suco de limão-tahiti espremido na hora",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "suco de limão-tahiti", prep: "espremido na hora", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de aparas de peixe branco fresco (do mesmo peixe usado no ceviche)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "aparas de peixe branco fresco (do mesmo peixe usado no ceviche)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/4 de cebola roxa picada grosseiramente",
+        group: null,
+        items: [
+          { qty: 0.25, qtyRange: null, unit: null, item: "de cebola roxa", prep: "picada grosseiramente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dente de alho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pedaço pequeno de gengibre (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pedaço pequeno de gengibre", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 talo de aipo picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "talo", item: "aipo", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta amarela peruana (ají amarillo) ou pimenta dedo-de-moça",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta amarela peruana (ají amarillo)", prep: null, alt: "pimenta dedo-de-moça", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Gelo (opcional, para servir bem gelado)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "gelo", prep: "para servir bem gelado", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata todos os ingredientes no liquidificador em velocidade alta por 1-2 minutos, até ficar bem líquido e homogêneo.",
       "Coe através de uma peneira fina, pressionando levemente para extrair todo o líquido, descartando os sólidos.",
@@ -55,6 +128,57 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "Raspas de 1 limão (opcional)",
       "50 ml de aquavit ou vodka (opcional, tradicional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de salmão fresco, em posta com pele, sem espinhas",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "salmão fresco", prep: "em posta com pele, sem espinhas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de sal grosso",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de açúcar",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 maço grande de endro (dill) fresco, picado grosseiramente com os talos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "maço grande de endro (dill) fresco", prep: "picado grosseiramente com os talos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de pimenta-do-reino em grãos, levemente amassada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "pimenta-do-reino em grãos", prep: "levemente amassada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Raspas de 1 limão (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "raspas de 1 limão", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de aquavit ou vodka (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "aquavit", prep: "tradicional", alt: "vodka", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Seque bem o salmão com papel toalha.",
       "Misture o sal grosso, o açúcar, a pimenta amassada e as raspas de limão.",
@@ -84,6 +208,31 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "1 peça de peixe (robalo, salmão) ou carne (lombo, peito de pato), fresca e de procedência confiável",
       "Sal grosso e açúcar, em partes iguais (proporção base: 1:1)",
       "Especiarias e ervas a gosto (erva-doce, pimenta-do-reino, raspas cítricas, beterraba ralada para cor)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 peça de peixe (robalo, salmão) ou carne (lombo, peito de pato), fresca e de procedência confiável",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "peça de peixe (robalo, salmão)", prep: "fresca e de procedência confiável", alt: "carne (lombo, peito de pato)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso e açúcar, em partes iguais (proporção base: 1:1)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: "em partes iguais (proporção base: 1:1)", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "açúcar", prep: "em partes iguais (proporção base: 1:1)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Especiarias e ervas a gosto (erva-doce, pimenta-do-reino, raspas cítricas, beterraba ralada para cor)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "especiarias", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ervas", prep: "a gosto (erva-doce, pimenta-do-reino, raspas cítricas, beterraba ralada para cor)", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Misture o sal, o açúcar e as especiarias/ervas escolhidas.",
@@ -117,6 +266,45 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "Saco próprio a vácuo (ou saco ziplock com o método de deslocamento de água)",
       "Circulador de imersão (sous-vide) ou panela grande com termômetro"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 peça de carne, peixe ou vegetal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "peça de carne", prep: null, alt: "peixe ou vegetal", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e ervas/aromáticos a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "ervas/aromáticos", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite ou manteiga (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite", prep: null, alt: "manteiga", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Saco próprio a vácuo (ou saco ziplock com o método de deslocamento de água)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "saco próprio a vácuo", prep: null, alt: "saco ziplock com o método de deslocamento de água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Circulador de imersão (sous-vide) ou panela grande com termômetro",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "circulador de imersão (sous-vide)", prep: null, alt: "panela grande com termômetro", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere a peça com sal, pimenta e aromáticos.",
       "Coloque num saco próprio para vácuo com um fio de azeite, e sele a vácuo (ou use um saco ziplock, submergindo lentamente na água para expulsar o ar antes de fechar, no chamado 'método de deslocamento de água').",
@@ -144,6 +332,29 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "1 peça grande de carne bovina com osso (contrafilé/costela, em peça, não porcionada)",
       "Câmara ou geladeira dedicada com controle de temperatura (1-3°C) e umidade (75-85%)",
       "Circulação de ar constante (ventilador pequeno, se for uma geladeira caseira adaptada)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 peça grande de carne bovina com osso (contrafilé/costela, em peça, não porcionada)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "peça grande de carne bovina com osso", prep: "contrafilé/costela, em peça, não porcionada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Câmara ou geladeira dedicada com controle de temperatura (1-3°C) e umidade (75-85%)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "câmara ou geladeira dedicada", prep: "com controle de temperatura (1-3°c) e umidade (75-85%)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Circulação de ar constante (ventilador pequeno, se for uma geladeira caseira adaptada)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "circulação de ar constante", prep: "ventilador pequeno, se for uma geladeira caseira adaptada", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Coloque a peça de carne, sem embalagem, sobre uma grade dentro da câmara/geladeira dedicada, permitindo circulação de ar por todos os lados.",
@@ -173,6 +384,37 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "Lascas ou serragem de madeira própria para defumação (hickory, macieira, cerejeira)",
       "Sal e temperos a gosto",
       "Defumador próprio, ou uma panela funda com tampa e uma grade improvisada, para defumação caseira rápida"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 peça de carne, peixe ou queijo para defumar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "peça de carne", prep: "para defumar", alt: "peixe ou queijo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Lascas ou serragem de madeira própria para defumação (hickory, macieira, cerejeira)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "lascas", prep: null, alt: "serragem de madeira própria para defumação (hickory, macieira, cerejeira)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e temperos a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "temperos", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Defumador próprio, ou uma panela funda com tampa e uma grade improvisada, para defumação caseira rápida",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "defumador próprio", prep: "para defumação caseira rápida", alt: "uma panela funda com tampa e uma grade improvisada", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Para defumação a frio (peixes curados, queijos): mantenha a fonte de fumaça separada do alimento, com temperatura abaixo de 30°C, por várias horas — exige equipamento específico.",
@@ -205,6 +447,36 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "1 L de água",
       "5 g de cloreto de cálcio (ou 50 g de gluconolactato de cálcio, para 'esferificação reversa' sem gosto residual)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "250 ml de purê ou suco de fruta (morango, manga, maracujá), coado",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "purê de fruta", prep: "morango, manga, maracujá, coado", alt: "suco de fruta", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2,5 g de alginato de sódio",
+        group: null,
+        items: [
+          { qty: 2.5, qtyRange: null, unit: "grama", item: "alginato de sódio", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de água",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 g de cloreto de cálcio (ou 50 g de gluconolactato de cálcio, para 'esferificação reversa' sem gosto residual)",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: "grama", item: "cloreto de cálcio", prep: null, alt: "50 g de gluconolactato de cálcio, para 'esferificação reversa' sem gosto residual", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata o purê de fruta com o alginato de sódio no liquidificador até dissolver completamente, sem grumos. Deixe descansar por algumas horas na geladeira para eliminar bolhas de ar (facilita esferas mais lisas).",
       "Prepare o banho de cálcio: dissolva o cloreto de cálcio (ou gluconolactato) na água.",
@@ -232,6 +504,29 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "300 ml de líquido bem saboroso e fino (suco de fruta, caldo claro coado, ou água aromatizada)",
       "2 g de lecitina de soja em pó",
       "1 pitada de sal (se for salgado)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "300 ml de líquido bem saboroso e fino (suco de fruta, caldo claro coado, ou água aromatizada)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "líquido bem saboroso e fino", prep: "suco de fruta, caldo claro coado, ou água aromatizada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 g de lecitina de soja em pó",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "grama", item: "lecitina de soja em pó", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal (se for salgado)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal (se for salgado)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Dissolva a lecitina de soja no líquido, misturando bem com um fouet — o líquido precisa estar em temperatura ambiente ou morno.",
@@ -269,6 +564,75 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "Ervas (louro, tomilho) e especiarias a gosto",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de corte de carne para braseado (paleta, acém, ossobuco, bochecha)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "corte de carne para braseado", prep: "paleta, acém, ossobuco, bochecha", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo ou banha",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: "banha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 2 cenouras, 2 talos de salsão — em pedaços grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "salsão", prep: "em pedaços grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de vinho tinto (ou cerveja escura)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: "cerveja escura", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de fundo escuro ou caldo de carne",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "fundo escuro", prep: null, alt: "caldo de carne", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas (louro, tomilho) e especiarias a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas (louro, tomilho)", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "especiarias", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere a carne generosamente com sal e pimenta. Sele em fogo alto numa panela funda (com óleo/banha) até dourar bem por todos os lados. Retire e reserve.",
       "Na mesma panela, doure os legumes até pegarem cor, 8-10 minutos. Junte o alho e o extrato de tomate, refogue por 2 minutos.",
@@ -299,6 +663,36 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "Ervas frescas (tomilho, louro)",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 cabeças de alho, dentes separados e descascados (ou 4 tomates, ou 3 cebolas em pétalas — escolha um)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cabeças de alho", prep: "dentes separados e descascados", alt: "4 tomates; ou 3 cebolas em pétalas — escolha um", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300-400 ml de azeite de oliva, o suficiente para cobrir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [300, 400], unit: "mililitro", item: "azeite de oliva", prep: "o suficiente para cobrir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas frescas (tomilho, louro)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "tomilho, louro", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Coloque o ingrediente escolhido (alho, tomate ou cebola) numa panela pequena e funda.",
       "Cubra completamente com o azeite — o ingrediente deve ficar totalmente submerso.",
@@ -328,6 +722,22 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "300 g de casca ou aparas de vegetal (casca de beterraba, folhas de cenoura, casca de cebola), bem lavadas",
       "Sal (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de casca ou aparas de vegetal (casca de beterraba, folhas de cenoura, casca de cebola), bem lavadas",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "casca de vegetal", prep: "casca de beterraba, folhas de cenoura, casca de cebola, bem lavadas", alt: "aparas de vegetal", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Corte ou rasgue o vegetal em pedaços pequenos e uniformes.",
       "Disponha numa assadeira forrada, numa camada única, sem sobrepor.",
@@ -354,6 +764,22 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     ingredients: [
       "200 g de azeitonas pretas sem caroço",
       "1 colher (sopa) de açúcar (opcional, ajuda a desidratar mais rápido)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de azeitonas pretas sem caroço",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "azeitonas pretas sem caroço", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar (opcional, ajuda a desidratar mais rápido)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: "ajuda a desidratar mais rápido", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Corte as azeitonas ao meio e retire o máximo de umidade possível com papel toalha.",
@@ -384,6 +810,43 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "1 pitada de sal",
       "Óleo para fritar",
       "Corante ou pó de vegetal (opcional, para cor)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de arroz branco cozido (de preferência do dia anterior, mais seco)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "arroz branco", prep: "cozido (de preferência do dia anterior, mais seco)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de água",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Corante ou pó de vegetal (opcional, para cor)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "corante", prep: "para cor", alt: "pó de vegetal", optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Bata o arroz cozido com a água e o sal no liquidificador até formar um creme bem liso (tipo um mingau ralo).",
@@ -416,6 +879,50 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "1 colher (sopa) de páprica defumada",
       "Sal grosso a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 colheres (sopa) de grãos de coentro",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "grãos de coentro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de grãos de cominho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "grãos de cominho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de pimenta-do-reino em grãos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "pimenta-do-reino em grãos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sementes de erva-doce (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sementes de erva-doce", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de páprica defumada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "páprica defumada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tueste os grãos inteiros (coentro, cominho, pimenta, erva-doce) numa frigideira seca em fogo médio, por 2-3 minutos, mexendo sempre, até perfumarem bem — cuidado para não queimar.",
       "Deixe esfriar levemente, depois moa grosseiramente num pilão ou moedor de especiarias (a textura deve ficar rústica, não um pó fino).",
@@ -444,6 +951,30 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "200 g de manteiga sem sal, em temperatura ambiente",
       "2 colheres (sopa) de ervas frescas picadas (salsinha, estragão, cebolinha) ou 2 dentes de alho assado, ou raspas e suco de limão — escolha uma direção de sabor",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de manteiga sem sal, em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "manteiga sem sal", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de ervas frescas picadas (salsinha, estragão, cebolinha) ou 2 dentes de alho assado, ou raspas e suco de limão — escolha uma direção de sabor",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "ervas frescas", prep: "picadas (salsinha, estragão, cebolinha); escolha uma direção de sabor", alt: "2 dentes de alho assado; ou raspas e suco de limão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Amasse a manteiga em temperatura ambiente com um garfo ou espátula até ficar bem cremosa.",
@@ -476,6 +1007,52 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "1 colher (chá) de goma xantana (opcional, para engrossar sem farinha, resultando num molho mais leve e brilhante)",
       "Sal, pimenta e um toque cítrico a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 ml de caldo bem encorpado (frango, peixe ou vegetal, feito em casa)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "caldo bem encorpado", prep: "frango, peixe ou vegetal, feito em casa", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco (ou creme de castanhas, para versão sem lactose)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: "creme de castanhas, para versão sem lactose", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de manteiga",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de goma xantana (opcional, para engrossar sem farinha, resultando num molho mais leve e brilhante)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "goma xantana", prep: "para engrossar sem farinha, resultando num molho mais leve e brilhante", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e um toque cítrico a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "toque cítrico", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Refogue a cebola na manteiga até translúcida.",
       "Junte o caldo e deixe reduzir em fogo médio por 15 minutos, até concentrar o sabor.",
@@ -503,6 +1080,22 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "100 ml de um molho encorpado e bem coado (redução de vinho, molho de tomate liso, purê fino)",
       "Prato bem limpo e seco"
     ],
+    ingredientsStructured: [
+      {
+        raw: "100 ml de um molho encorpado e bem coado (redução de vinho, molho de tomate liso, purê fino)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "molho encorpado", prep: "bem coado (redução de vinho, molho de tomate liso, purê fino)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Prato bem limpo e seco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "prato", prep: "bem limpo e seco", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Certifique-se de que o molho está bem coado, sem grumos, e na temperatura adequada (a maioria dos 'espelhos' é servida com o molho morno ou frio, dependendo do prato).",
       "Despeje uma porção do molho no centro do prato.",
@@ -527,6 +1120,15 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     tags: ["protein:boi"],
     ingredients: [
       "2 L de fundo escuro de carne, bem feito e já coado (ver receita Caldos e Fundos)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 L de fundo escuro de carne, bem feito e já coado (ver receita Caldos e Fundos)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "litro", item: "fundo escuro de carne", prep: "bem feito e já coado; ver receita caldos e fundos", alt: null, optional: false, isReference: true },
+        ],
+      },
     ],
     steps: [
       "Numa panela larga (para acelerar a evaporação), leve o fundo escuro para ferver.",
@@ -557,6 +1159,29 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "500 g de vegetal firme (repolho, cenoura, pepino, rabanete), fatiado ou ralado",
       "10 g de sal não iodado (2% do peso do vegetal)",
       "Especiarias a gosto (grãos de mostarda, pimenta, alho)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de vegetal firme (repolho, cenoura, pepino, rabanete), fatiado ou ralado",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "vegetal firme", prep: "repolho, cenoura, pepino, rabanete, fatiado ou ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "10 g de sal não iodado (2% do peso do vegetal)",
+        group: null,
+        items: [
+          { qty: 10, qtyRange: null, unit: "grama", item: "sal não iodado", prep: "2% do peso do vegetal", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Especiarias a gosto (grãos de mostarda, pimenta, alho)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "especiarias", prep: "a gosto (grãos de mostarda, pimenta, alho)", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Pese o vegetal e calcule o sal na proporção de 2% do peso (ex: 500 g de vegetal = 10 g de sal).",

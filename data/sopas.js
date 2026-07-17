@@ -26,6 +26,96 @@ window.RECIPES["sopas"] = [
       "Sal, pimenta-caiena a gosto",
       "Camarões pequenos para finalizar (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de cascas e cabeças de camarão (ou de lagosta/caranguejo)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "cascas e cabeças de camarão", prep: null, alt: "lagosta/caranguejo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de manteiga + 1 fio de azeite",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "manteiga + 1 fio de azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 1 cenoura picada, 1 talo de salsão picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de conhaque",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "conhaque", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de fundo de peixe ou água",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "fundo de peixe", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 1 ramo de tomilho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta-caiena a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-caiena", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Camarões pequenos para finalizar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "camarões pequenos", prep: "para finalizar", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela larga, refogue as cascas e cabeças de camarão na manteiga e azeite em fogo alto por 5-8 minutos até ficarem bem vermelhas.",
       "Junte cebola, cenoura, salsão e alho, refogue por mais 8 minutos.",
@@ -61,6 +151,60 @@ window.RECIPES["sopas"] = [
       "1 folha de louro, alguns talos de salsa",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 L de caldo de carne ou frango, frio e desengordurado",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "caldo de carne", prep: "frio e desengordurado", alt: "frango", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de carne moída magra (patinho ou peito de frango)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne", prep: "moída magra (patinho ou peito de frango)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 claras de ovo",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "claras de ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura, 1 talo de salsão, 1 cebola — picados bem fino (brunoise)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "picados bem fino (brunoise)", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "picados bem fino (brunoise)", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picados bem fino (brunoise)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 tomate picado sem pele/semente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "tomate", prep: "picado sem pele/semente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, alguns talos de salsa",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: "talo", item: "salsa", prep: "alguns", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a carne moída, as claras, os legumes picados e o tomate numa tigela — essa é a 'jangada' (raft) clarificante.",
       "Numa panela, junte o caldo frio com essa mistura e mexa bem para incorporar.",
@@ -94,6 +238,65 @@ window.RECIPES["sopas"] = [
       "200 ml de creme de leite fresco",
       "Sal e pimenta branca a gosto",
       "Cebolinha picada para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "3 talos de alho-poró (só a parte branca), fatiados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "talo", item: "alho-poró (só a parte branca)", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola pequena picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola pequena", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 batatas médias, descascadas e em cubos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "batatas médias", prep: "descascadas e em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "700 ml de caldo de galinha",
+        group: null,
+        items: [
+          { qty: 700, qtyRange: null, unit: "mililitro", item: "caldo de galinha", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta branca a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta branca", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha picada para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picada para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela, refogue o alho-poró e a cebola na manteiga em fogo baixo, sem dourar, até ficarem bem macios, 10 minutos.",
@@ -129,6 +332,80 @@ window.RECIPES["sopas"] = [
       "Sal e pimenta a gosto",
       "4 fatias de baguete torradas",
       "150 g de queijo gruyère ralado"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de cebola (cerca de 5-6 grandes), fatiada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "cebola", prep: "cerca de 5-6 grandes, fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de manteiga + 1 fio de azeite",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga + 1 fio de azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,2 L de caldo de carne",
+        group: null,
+        items: [
+          { qty: 1.2, qtyRange: null, unit: "litro", item: "caldo de carne", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 2 ramos de tomilho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de baguete torradas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "baguete", prep: "torradas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de queijo gruyère ralado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "queijo gruyère", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela larga e de fundo grosso, derreta a manteiga com o azeite e junte as cebolas fatiadas com a pitada de açúcar (ajuda a caramelizar).",
@@ -171,6 +448,102 @@ window.RECIPES["sopas"] = [
       "Sal e pimenta a gosto",
       "Parmesão ralado para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 cenouras em cubos, 2 talos de salsão em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "cenouras", prep: "em cubos", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "talo", item: "salsão", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 abobrinha em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "abobrinha", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de vagem picada",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "vagem", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado picado",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de caldo de legumes",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "caldo de legumes", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 lata de feijão branco cozido, escorrido",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "lata", item: "feijão branco cozido", prep: "escorrido", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de massa curta (ex: ditalini) ou arroz",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "massa curta (ex: ditalini)", prep: null, alt: "arroz", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Casca de parmesão (opcional, dá sabor ao caldo)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "casca de parmesão", prep: "dá sabor ao caldo", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de manjericão fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: "folha", item: "manjericão fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Parmesão ralado para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "parmesão", prep: "ralado para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça o azeite numa panela grande e refogue cebola, cenoura e salsão por 8 minutos.",
       "Junte o alho, a abobrinha e a vagem, refogue por 3 minutos.",
@@ -211,6 +584,97 @@ window.RECIPES["sopas"] = [
       "Sal e pimenta a gosto",
       "Fatias de baguete torradas e rouille (aioli com pimentão e açafrão) para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de peixes variados (robalo, badejo, cabeças e aparas para o caldo)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "peixes variados", prep: "robalo, badejo, cabeças e aparas para o caldo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de frutos do mar (mexilhões, camarões, lula)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "frutos do mar", prep: "mexilhões, camarões, lula", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 1 alho-poró fatiado, 2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "alho-poró", prep: "fatiado", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates maduros picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates maduros", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 bulbo de erva-doce (funcho) fatiado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "bulbo de erva-doce (funcho)", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 casca de laranja",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "casca de laranja", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada generosa de açafrão",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pitada generosa de açafrão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de água ou fundo de peixe",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "fundo de peixe", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro, 1 ramo de tomilho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "ramo", item: "tomilho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Fatias de baguete torradas e rouille (aioli com pimentão e açafrão) para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "fatias de baguete", prep: "torradas, para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "rouille (aioli com pimentão e açafrão)", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela grande, refogue cebola, alho-poró, alho e erva-doce no azeite até murcharem, 10 minutos.",
       "Junte os tomates, a casca de laranja e o açafrão, refogue por 3 minutos.",
@@ -246,6 +710,80 @@ window.RECIPES["sopas"] = [
       "1 fatia de pão amanhecido, sem casca (opcional, tradicional para dar corpo)",
       "Sal a gosto",
       "Cubos de pepino, pimentão e cubos de pão torrado para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de tomate bem maduro, picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "tomate bem maduro", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pepino, descascado e picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pepino", prep: "descascado e picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão verde pequeno, picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão verde pequeno", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 cebola roxa picada",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: null, item: "cebola roxa", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dente de alho",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de azeite de oliva extra virgem",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "azeite de oliva extra virgem", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de vinagre de xerez (ou vinho tinto)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "vinagre de xerez", prep: null, alt: "vinho tinto", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fatia de pão amanhecido, sem casca (opcional, tradicional para dar corpo)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fatia", item: "pão amanhecido", prep: "sem casca; tradicional para dar corpo", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cubos de pepino, pimentão e cubos de pão torrado para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cubos de pepino", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimentão", prep: "para servir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cubos de pão torrado", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Se for usar o pão, deixe de molho em um pouco de água por 5 minutos e esprema antes de usar.",
@@ -283,6 +821,64 @@ window.RECIPES["sopas"] = [
       "50 ml de azeite de oliva",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de batata, descascada e em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "batata", prep: "descascada e em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de água ou caldo de legumes",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "caldo de legumes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de couve-galega (ou couve-manteiga) fatiada bem fina, em tiras",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "couve-galega", prep: "fatiada bem fina, em tiras", alt: "couve-manteiga", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de chouriço/linguiça calabresa fatiado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "chouriço/linguiça calabresa", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela, cozinhe a batata, cebola e alho na água/caldo até a batata ficar bem macia, 20 minutos.",
       "Bata tudo no liquidificador (ou use um mixer de mão) até formar um purê liso. Volte à panela.",
@@ -317,6 +913,66 @@ window.RECIPES["sopas"] = [
       "1 talo de salsão picado (opcional)",
       "Sal e pimenta a gosto",
       "Cheiro-verde (salsinha e cebolinha) picado para finalizar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 sobrecoxas de frango com osso (ou 1 frango caipira em pedaços)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "sobrecoxas de frango com osso", prep: null, alt: "1 frango caipira em pedaços", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 L de água",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "litro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "em cubos pequenos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1/2 xícara de arroz",
+        group: null,
+        items: [
+          { qty: 0.5, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 talo de salsão picado (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "picado", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cheiro-verde (salsinha e cebolinha) picado para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde (salsinha e cebolinha)", prep: "picado, para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela grande, cozinhe o frango na água com metade da cebola e do alho, em fogo médio, por 30 minutos, retirando a espuma que sobe.",

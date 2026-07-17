@@ -17,6 +17,29 @@ window.RECIPES["ovos-basicos"] = [
       "Água suficiente para cobrir os ovos",
       "1 colher (chá) de sal ou vinagre (opcional, ajuda se a casca rachar)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Ovos em temperatura ambiente (saem da geladeira 20-30 min antes)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ovos", prep: "em temperatura ambiente (saem da geladeira 20-30 min antes)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Água suficiente para cobrir os ovos",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "água suficiente para cobrir os ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de sal ou vinagre (opcional, ajuda se a casca rachar)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "sal", prep: "ajuda se a casca rachar", alt: "vinagre", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Ferva água numa panela suficiente para cobrir os ovos por 2-3 cm.",
       "Com uma colher, abaixe os ovos delicadamente na água já fervendo (evita rachar por choque térmico direto no fundo).",
@@ -44,6 +67,36 @@ window.RECIPES["ovos-basicos"] = [
       "1 L de água",
       "1 colher (sopa) de vinagre branco ou de álcool",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 ovo bem fresco por porção",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo bem fresco por porção", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de água",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de vinagre branco ou de álcool",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "vinagre branco", prep: null, alt: "de álcool", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Quebre o ovo numa xícara ou ramequim pequeno (facilita deslizar na água sem quebrar a gema).",
@@ -73,6 +126,22 @@ window.RECIPES["ovos-basicos"] = [
       "Ovos em temperatura ambiente",
       "Água suficiente para cobrir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "Ovos em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ovos", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Água suficiente para cobrir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "água suficiente para cobrir", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Ferva a água e abaixe os ovos delicadamente com uma colher.",
       "Cozinhe por exatamente 6 minutos a partir do retorno da fervura — o ponto fica entre o poché e o cozido mole: a clara totalmente firme, a gema cremosa mas não líquida.",
@@ -99,6 +168,29 @@ window.RECIPES["ovos-basicos"] = [
       "Ovos com casca, em temperatura ambiente",
       "Água suficiente para um banho controlado",
       "Termômetro culinário ou circulador de imersão (sous-vide)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "Ovos com casca, em temperatura ambiente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ovos com casca", prep: "em temperatura ambiente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Água suficiente para um banho controlado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "água suficiente para um banho controlado", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Termômetro culinário ou circulador de imersão (sous-vide)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "termômetro culinário", prep: null, alt: "circulador de imersão (sous-vide)", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça um banho de água (numa panela grande ou com circulador sous-vide) e mantenha estável a 63°C — use um termômetro para monitorar constantemente se não tiver equipamento próprio.",
@@ -129,6 +221,30 @@ window.RECIPES["ovos-basicos"] = [
       "1 colher (chá) de manteiga ou óleo neutro",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de manteiga ou óleo neutro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "manteiga", prep: null, alt: "óleo neutro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça uma frigideira antiaderente em fogo médio-baixo com a manteiga.",
       "Quebre o ovo numa xícara pequena primeiro (garante que não haja pedaços de casca e permite deslizar suavemente) e depois deslize na frigideira.",
@@ -156,6 +272,37 @@ window.RECIPES["ovos-basicos"] = [
       "200 ml de azeite de oliva (ou óleo neutro), o suficiente para submergir parcialmente o ovo",
       "Sal em flocos e pimenta a gosto",
       "Ervas frescas (opcional, para aromatizar o óleo)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 ovo por porção",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo por porção", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de azeite de oliva (ou óleo neutro), o suficiente para submergir parcialmente o ovo",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "azeite de oliva", prep: "o suficiente para submergir parcialmente o ovo", alt: "óleo neutro", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal em flocos e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal em flocos", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas frescas (opcional, para aromatizar o óleo)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "para aromatizar o óleo", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça o azeite numa panela pequena e funda até atingir cerca de 70-80°C (morno, nunca chegando a fritar/borbulhar) — use um termômetro se tiver.",
@@ -188,6 +335,45 @@ window.RECIPES["ovos-basicos"] = [
       "Sal, pimenta e noz-moscada a gosto",
       "Cebolinha ou queijo ralado (opcional, para finalizar)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1-2 ovos por ramequim",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [1, 2], unit: null, item: "ovos por ramequim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de creme de leite fresco por ramequim",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "creme de leite fresco por ramequim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de manteiga (para untar)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "manteiga (para untar)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal, pimenta e noz-moscada a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "noz-moscada", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha ou queijo ralado (opcional, para finalizar)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "para finalizar", alt: "queijo ralado", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 180°C. Unte generosamente os ramequins com manteiga.",
       "Coloque uma colher de creme de leite no fundo de cada ramequim.",
@@ -217,6 +403,37 @@ window.RECIPES["ovos-basicos"] = [
       "1 colher (chá) de manteiga",
       "Sal e pimenta a gosto",
       "Pão torrado para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1-2 ovos por ramequim",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [1, 2], unit: null, item: "ovos por ramequim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de manteiga",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pão torrado para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pão", prep: "torrado para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Pré-aqueça o forno a 200°C. Unte bem o ramequim com manteiga.",
@@ -249,6 +466,44 @@ window.RECIPES["ovos-basicos"] = [
       "Sal e pimenta a gosto",
       "Cebolinha picada (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "3 ovos",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "20 g de manteiga gelada, em cubos (dividida)",
+        group: null,
+        items: [
+          { qty: 20, qtyRange: null, unit: "grama", item: "manteiga gelada", prep: "em cubos (dividida)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de creme de leite fresco (opcional, no final)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "creme de leite fresco", prep: "no final", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha picada (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picada", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata os ovos numa tigela só até misturar gema e clara (não precisa bater muito).",
       "Numa panela (não frigideira — panela retém melhor o calor baixo e uniforme), derreta um pouco da manteiga em fogo bem baixo.",
@@ -278,6 +533,37 @@ window.RECIPES["ovos-basicos"] = [
       "2 colheres (sopa) de leite ou creme de leite",
       "1 colher (sopa) de manteiga ou óleo",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "3 ovos",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de leite ou creme de leite",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "leite", prep: null, alt: "creme de leite", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de manteiga ou óleo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: "óleo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Bata os ovos com o leite, sal e pimenta até ficar homogêneo e levemente espumoso.",
@@ -309,6 +595,44 @@ window.RECIPES["ovos-basicos"] = [
       "Sal e pimenta a gosto",
       "Ervas finas picadas ou queijo ralado (opcional, para rechear)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "3 ovos",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de água ou leite (opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "água", prep: null, alt: "leite", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "15 g de manteiga",
+        group: null,
+        items: [
+          { qty: 15, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas finas picadas ou queijo ralado (opcional, para rechear)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas finas", prep: "picadas; para rechear", alt: "queijo ralado", optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Bata os ovos vigorosamente com um garfo até ficarem completamente homogêneos, sem partes de clara e gema separadas.",
       "Aqueça a manteiga numa frigideira pequena antiaderente em fogo médio-alto até espumar, sem dourar.",
@@ -339,6 +663,43 @@ window.RECIPES["ovos-basicos"] = [
       "1 cebola média, fatiada fina",
       "250 ml de azeite de oliva (para confitar as batatas)",
       "Sal a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "6 ovos grandes",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: null, item: "ovos grandes", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de batata, descascada e fatiada fina",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "batata", prep: "descascada e fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola média, fatiada fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola média", prep: "fatiada fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 ml de azeite de oliva (para confitar as batatas)",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "azeite de oliva (para confitar as batatas)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa frigideira funda, aqueça o azeite em fogo médio-baixo e adicione as batatas e a cebola, temperadas com sal.",
@@ -375,6 +736,65 @@ window.RECIPES["ovos-basicos"] = [
       "Sal e pimenta a gosto",
       "Ervas frescas picadas (opcional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "8 ovos",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 ml de leite ou creme de leite",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "mililitro", item: "leite", prep: null, alt: "creme de leite", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de queijo (parmesão ou queijo de sua preferência), ralado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "queijo (parmesão ou queijo de sua preferência)", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de legumes cozidos ou salteados (abobrinha, espinafre, cogumelos, pimentão — a gosto)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "legumes", prep: "cozidos ou salteados (abobrinha, espinafre, cogumelos, pimentão — a gosto)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de presunto ou bacon (opcional)",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "presunto", prep: null, alt: "bacon", optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Ervas frescas picadas (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "ervas frescas", prep: "picadas", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Pré-aqueça o forno a 190°C.",
       "Bata os ovos com o leite, sal, pimenta e metade do queijo.",
@@ -407,6 +827,50 @@ window.RECIPES["ovos-basicos"] = [
       "1 colher (sopa) de açúcar",
       "1 colher (chá) de mirin",
       "Óleo neutro para untar (um pedaço de papel toalha dobrado, embebido em óleo, facilita untar entre as camadas)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de dashi (caldo japonês) ou água",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "dashi (caldo japonês)", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de molho shoyu",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "molho shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de mirin",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "mirin", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo neutro para untar (um pedaço de papel toalha dobrado, embebido em óleo, facilita untar entre as camadas)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo neutro", prep: "para untar (um pedaço de papel toalha dobrado, embebido em óleo, facilita untar entre as camadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Bata os ovos numa tigela com o dashi, shoyu, açúcar e mirin até dissolver bem o açúcar, sem bater demais (evite formar muita espuma).",

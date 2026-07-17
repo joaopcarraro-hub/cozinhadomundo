@@ -28,6 +28,106 @@ window.RECIPES["frutos-do-mar"] = [
       "Sal a gosto",
       "Rodelas de limão para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de arroz tipo bomba (ou arbóreo, na falta do original)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "arroz tipo bomba", prep: null, alt: "arbóreo, na falta do original", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de mexilhões limpos",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "mexilhões", prep: "limpos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de lula em anéis",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "lula", prep: "em anéis", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 pedaços de frango com osso (coxa/sobrecoxa), opcional para paella mista",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "pedaco", item: "frango com osso", prep: "coxa/sobrecoxa; opcional para paella mista", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 tomates maduros ralados (só a polpa, sem a pele)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "tomates maduros", prep: "ralados (só a polpa, sem a pele)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada generosa de açafrão em pistilos (ou corante próprio para paella)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "açafrão em pistilos", prep: "generosa", alt: "corante próprio para paella", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de fumet de peixe (feito com as cascas do camarão) ou caldo de peixe, bem quente",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "fumet de peixe (feito com as cascas do camarão)", prep: null, alt: "caldo de peixe, bem quente", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de ervilha (opcional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "ervilha", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Rodelas de limão para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "rodelas de limão", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare um fumet rápido fervendo as cascas do camarão em água por 15 minutos; coe e mantenha quente.",
       "Numa paellera (ou frigideira larga e rasa), aqueça bastante azeite e doure o frango (se usar), até dourar bem. Retire e reserve.",
@@ -69,6 +169,71 @@ window.RECIPES["frutos-do-mar"] = [
       "Pimenta a gosto (o sal geralmente não é necessário — os mexilhões já são salgados)",
       "Baguete para acompanhar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1,5 kg de mexilhões frescos, limpos e escovados",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "quilograma", item: "mexilhões", prep: "frescos, limpos e escovados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "30 g de manteiga",
+        group: null,
+        items: [
+          { qty: 30, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas picadas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "picadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco (opcional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta a gosto (o sal geralmente não é necessário — os mexilhões já são salgados)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto (o sal geralmente não é necessário — os mexilhões já são salgados)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Baguete para acompanhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "baguete", prep: "para acompanhar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Verifique os mexilhões: descarte qualquer um que esteja quebrado ou que não feche ao ser pressionado levemente.",
       "Numa panela grande (com tampa), derreta a manteiga e refogue a cebola e o alho até perfumarem, sem dourar, 2-3 minutos.",
@@ -102,6 +267,65 @@ window.RECIPES["frutos-do-mar"] = [
       "Páprica defumada",
       "Sal grosso e pimenta a gosto",
       "Limão para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 polvo inteiro (1,5-2 kg), limpo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "polvo", prep: "inteiro (1,5-2 kg), limpo", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, cortada ao meio",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "cortada ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 folha de louro",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "folha", item: "louro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva extra virgem",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva extra virgem", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Páprica defumada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "páprica defumada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal grosso e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal grosso", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Limão para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Se o polvo for fresco (não pré-cozido), bata-o contra uma superfície dura algumas vezes ou congele por 24h e descongele — isso ajuda a quebrar as fibras e amaciar naturalmente.",
@@ -141,6 +365,93 @@ window.RECIPES["frutos-do-mar"] = [
       "400 ml de molho de tomate (ver receita Sauce Tomate, categoria Molhos)",
       "100 ml de vinho branco seco",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "8 lulas médias inteiras, limpas (com os tentáculos separados e reservados)",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "lulas médias", prep: "inteiras, limpas (com os tentáculos separados e reservados)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite (dividido)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada bem fina",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada bem fina", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Os tentáculos das lulas, picados",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "os tentáculos das lulas", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de farinha de rosca",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "farinha de rosca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de parmesão ralado",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "parmesão", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de salsinha picada",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de molho de tomate (ver receita Sauce Tomate, categoria Molhos)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "molho de tomate", prep: "ver receita sauce tomate, categoria molhos", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Pique os tentáculos reservados bem fino. Numa frigideira, aqueça um pouco do azeite e refogue a cebola e o alho até macios, junte os tentáculos picados e refogue por 3-4 minutos.",
@@ -183,6 +494,94 @@ window.RECIPES["frutos-do-mar"] = [
       "Pimenta-caiena, sal e pimenta a gosto",
       "Salsinha picada"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 lagostas inteiras (600-700 g cada), vivas ou já cozidas",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "lagostas", prep: "inteiras (600-700 g cada), vivas ou já cozidas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de cogumelos fatiados",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "cogumelos", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de conhaque",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "conhaque", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de mostarda Dijon",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "mostarda dijon", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 g de queijo gruyère ralado",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "grama", item: "queijo gruyère", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 gema",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "gema", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-caiena, sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-caiena", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se as lagostas estiverem vivas, cozinhe em água fervente salgada por 8-10 minutos (para o tamanho indicado). Deixe esfriar levemente.",
       "Corte cada lagosta ao meio no sentido do comprimento. Retire a carne da cauda e das pinças, picando em pedaços grandes. Reserve as cascas (metades) inteiras para rechear depois.",
@@ -219,6 +618,65 @@ window.RECIPES["frutos-do-mar"] = [
       "Arroz branco ou massa, para servir",
       "Salsinha picada"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 receita de Bisque pronta (ver receita, categoria Sopas), ou 500 ml se já tiver pronta",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita de bisque", prep: "pronta; ver receita, categoria sopas", alt: "500 ml se já tiver pronta", optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de manteiga",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "manteiga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de conhaque",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "conhaque", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de creme de leite fresco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz branco ou massa, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz branco", prep: "para servir", alt: "massa", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se ainda não tiver a bisque pronta, prepare-a com as cascas do camarão usado nesta receita (ver receita Bisque, categoria Sopas).",
       "Tempere o camarão com sal e pimenta.",
@@ -246,6 +704,22 @@ window.RECIPES["frutos-do-mar"] = [
     ingredients: [
       "1 receita completa de Camarão à Provençal (ver receita, categoria Entradas Quentes) — dobre as quantidades para servir como prato principal",
       "Arroz branco, para acompanhar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 receita completa de Camarão à Provençal (ver receita, categoria Entradas Quentes) — dobre as quantidades para servir como prato principal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "receita completa de camarão à provençal", prep: "ver receita, categoria entradas quentes; dobre as quantidades para servir como prato principal", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "Arroz branco, para acompanhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz branco", prep: "para acompanhar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Siga a receita de Camarão à Provençal já detalhada na categoria Entradas Quentes, dobrando as proporções.",

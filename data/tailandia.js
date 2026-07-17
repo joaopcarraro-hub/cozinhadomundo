@@ -25,6 +25,85 @@ window.RECIPES["tailandia"] = [
       "Pimenta vermelha fatiada, para decorar",
       "Arroz jasmim, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de peito de frango, em tiras",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "peito de frango", prep: "em tiras", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de pasta de curry verde (pronta ou caseira: pimenta verde, capim-limão, galanga, alho, cebola, coentro, camarão seco batidos)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "pasta de curry verde", prep: "pronta ou caseira: pimenta verde, capim-limão, galanga, alho, cebola, coentro, camarão seco batidos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de leite de coco (dividido)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "leite de coco (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 berinjela tailandesa pequena (ou berinjela comum em cubos)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "berinjela tailandesa", prep: "pequena", alt: "berinjela comum em cubos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de vagem, em pedaços",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "vagem", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de limã kaffir (ou raspas de limão)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "limã kaffir", prep: null, alt: "raspas de limão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de molho de peixe",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar de palma (ou açúcar mascavo)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar de palma", prep: null, alt: "açúcar mascavo", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manjericão tailandês (ou manjericão comum)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manjericão tailandês", prep: null, alt: "manjericão comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta vermelha fatiada, para decorar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta vermelha", prep: "fatiada, para decorar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz jasmim, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz jasmim", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa panela, aqueça a parte mais grossa (o creme que sobe) de uma lata de leite de coco em fogo médio até começar a soltar óleo nas bordas.",
       "Junte a pasta de curry verde e refogue por 2-3 minutos, mexendo sempre, até perfumar intensamente e a cor ficar mais viva.",
@@ -62,6 +141,78 @@ window.RECIPES["tailandia"] = [
       "Manjericão tailandês",
       "Arroz jasmim, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de carne bovina ou frango, em tiras (ou camarão)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "carne bovina", prep: "em tiras", alt: "frango, ou camarão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de pasta de curry vermelho",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "pasta de curry vermelho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de leite de coco (dividido)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "leite de coco (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão vermelho, em tiras",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão vermelho", prep: "em tiras", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de vagem ou brócolis, em pedaços",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "vagem", prep: null, alt: "brócolis, em pedaços", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de limã kaffir",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "limã kaffir", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de molho de peixe",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar de palma",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar de palma", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Manjericão tailandês",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "manjericão tailandês", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz jasmim, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz jasmim", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Aqueça a parte gordurosa do leite de coco numa panela até soltar óleo nas bordas.",
       "Junte a pasta de curry vermelho e refogue por 2-3 minutos, até perfumar.",
@@ -98,6 +249,85 @@ window.RECIPES["tailandia"] = [
       "2 colheres (sopa) de açúcar de palma",
       "2 colheres (sopa) de tamarindo (polpa ou pasta)",
       "Arroz jasmim, para servir"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de paleta ou acém bovino, em cubos grandes",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "paleta", prep: null, alt: "acém bovino, em cubos grandes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de pasta de curry massaman (pronta ou caseira, com canela, cardamomo, cominho, cravo, pimentas)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "pasta de curry massaman", prep: "pronta ou caseira, com canela, cardamomo, cominho, cravo, pimentas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 ml de leite de coco",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "mililitro", item: "leite de coco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de caldo de carne ou água",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "caldo de carne", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de batata, em cubos grandes",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "batata", prep: "em cubos grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, em pétalas grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em pétalas grandes", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de amendoim torrado",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "amendoim", prep: "torrado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de molho de peixe",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de açúcar de palma",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "açúcar de palma", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de tamarindo (polpa ou pasta)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "tamarindo (polpa ou pasta)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Arroz jasmim, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "arroz jasmim", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Aqueça a parte gordurosa do leite de coco numa panela funda até soltar óleo.",
@@ -137,6 +367,78 @@ window.RECIPES["tailandia"] = [
       "2 colheres (sopa) de pasta de pimenta tailandesa (nam prik pao) ou pimenta fresca a gosto",
       "Coentro fresco, para finalizar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de camarão médio, limpo (cascas reservadas)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo (cascas reservadas)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de água ou caldo de galinha",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "água", prep: null, alt: "caldo de galinha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 talos de capim-limão, amassados e cortados em pedaços",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "talo", item: "capim-limão", prep: "amassados e cortados em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de galanga (ou gengibre)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "galanga", prep: null, alt: "gengibre", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 folhas de limã kaffir, rasgadas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "folha", item: "limã kaffir", prep: "rasgadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de cogumelo paris ou shimeji, em metades",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "cogumelo paris", prep: null, alt: "shimeji, em metades", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de molho de peixe",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de suco de limão",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de pasta de pimenta tailandesa (nam prik pao) ou pimenta fresca a gosto",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "pasta de pimenta tailandesa (nam prik pao)", prep: null, alt: "pimenta fresca a gosto", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se possível, ferva as cascas do camarão em água por 10 minutos para fazer um caldo mais saboroso; coe e use como base.",
       "Numa panela, aqueça o caldo com o capim-limão, galanga e folhas de limã kaffir. Deixe ferver e cozinhar por 5-8 minutos, para infusionar os aromáticos.",
@@ -172,6 +474,85 @@ window.RECIPES["tailandia"] = [
       "2 colheres (sopa) de suco de limão",
       "1-2 pimentas tailandesas, amassadas (a gosto)",
       "Coentro fresco"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de peito ou coxa de frango, em tiras",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "peito", prep: null, alt: "coxa de frango, em tiras", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "800 ml de leite de coco",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "mililitro", item: "leite de coco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de caldo de galinha",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "caldo de galinha", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 talos de capim-limão, amassados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "talo", item: "capim-limão", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 fatias de galanga",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "fatia", item: "galanga", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 folhas de limã kaffir, rasgadas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "folha", item: "limã kaffir", prep: "rasgadas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de cogumelo paris, em metades",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "cogumelo paris", prep: "em metades", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de molho de peixe",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de suco de limão",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1-2 pimentas tailandesas, amassadas (a gosto)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [1, 2], unit: null, item: "pimentas tailandesas", prep: "amassadas (a gosto)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela, aqueça o leite de coco e o caldo de galinha com o capim-limão, galanga e folhas de limã kaffir, deixando ferver e infusionar por 8-10 minutos.",
@@ -210,6 +591,81 @@ window.RECIPES["tailandia"] = [
       "Para o molho: 3 colheres (sopa) de molho de peixe, 3 colheres (sopa) de açúcar de palma (ou mascavo), 3 colheres (sopa) de pasta de tamarindo, 1 colher (sopa) de pimenta em flocos (opcional)",
       "Limão em gomos, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "250 g de macarrão de arroz plano (tipo pad thai)",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "macarrão de arroz plano (tipo pad thai)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "250 g de camarão médio, limpo (ou tofu firme, em cubos)",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "camarão médio", prep: "limpo", alt: "tofu firme, em cubos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo neutro",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo neutro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de broto de feijão",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "broto de feijão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 talos de cebolinha, em pedaços",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "talo", item: "cebolinha", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de amendoim torrado, picado",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "amendoim torrado", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para o molho: 3 colheres (sopa) de molho de peixe, 3 colheres (sopa) de açúcar de palma (ou mascavo), 3 colheres (sopa) de pasta de tamarindo, 1 colher (sopa) de pimenta em flocos (opcional)",
+        group: "molho",
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "açúcar de palma", prep: null, alt: "mascavo", optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "pasta de tamarindo", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "pimenta em flocos", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Limão em gomos, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "limão", prep: "em gomos, para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Deixe o macarrão de arroz de molho em água morna por 20-30 minutos, até ficar flexível mas ainda firme (não totalmente macio, vai terminar de cozinhar na wok). Escorra.",
       "Misture os ingredientes do molho numa tigela pequena, dissolvendo bem o açúcar.",
@@ -246,6 +702,72 @@ window.RECIPES["tailandia"] = [
       "Folhas de hortelã e coentro frescas",
       "Folhas de alface, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de carne suína ou frango moído",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "carne suína", prep: null, alt: "frango moído", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de arroz cru (para tostar e moer)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "arroz cru", prep: "para tostar e moer", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de suco de limão",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de molho de peixe",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 cebolas fatiadas fino",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "cebolas", prep: "fatiadas fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 talos de capim-limão, fatiados bem fino",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "talo", item: "capim-limão", prep: "fatiados bem fino", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de pimenta em flocos (a gosto)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "pimenta em flocos (a gosto)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de hortelã e coentro frescas",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "folhas de hortelã", prep: "frescas", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "frescas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de alface, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "folhas de alface", prep: "para servir", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Toste o arroz cru numa frigideira seca em fogo médio, mexendo sempre, até dourar bem e ficar perfumado, 5-6 minutos. Deixe esfriar e moa num pilão ou moedor de especiarias até virar um pó grosso (khao khua) — esse é o ingrediente que dá crocância e sabor tostado característico.",
       "Numa frigideira, cozinhe a carne moída em fogo médio-alto com um pouco de água (em vez de óleo, técnica tradicional), mexendo e desmanchando bem, até cozinhar por completo, 8-10 minutos.",
@@ -281,6 +803,78 @@ window.RECIPES["tailandia"] = [
       "1 colher (sopa) de açúcar de palma",
       "2 colheres (sopa) de amendoim torrado, picado grosseiramente",
       "1 colher (sopa) de camarão seco (opcional, tradicional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de mamão verde, ralado em tiras finas (num ralador especial ou faca)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "mamão verde", prep: "ralado em tiras finas (num ralador especial ou faca)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2-4 pimentas tailandesas (a gosto)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [2, 4], unit: null, item: "pimentas tailandesas (a gosto)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de vagem, em pedaços",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "vagem", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates cereja, cortados ao meio",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates cereja", prep: "cortados ao meio", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de molho de peixe",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de suco de limão",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "suco de limão", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de açúcar de palma",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "açúcar de palma", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de amendoim torrado, picado grosseiramente",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "amendoim torrado", prep: "picado grosseiramente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de camarão seco (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "camarão seco", prep: "tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Num pilão grande (ou tigela, socando com um socador de madeira ou o fundo de um copo), amasse levemente o alho e as pimentas até formar uma pasta grosseira.",

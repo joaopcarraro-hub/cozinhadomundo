@@ -29,6 +29,78 @@ window.RECIPES["italia"] = [
       "Folhas de manjericão fresco",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "350 g de rigatoni ou penne",
+        group: null,
+        items: [
+          { qty: 350, qtyRange: null, unit: "grama", item: "rigatoni", prep: null, alt: "penne", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 berinjela grande, em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "berinjela grande", prep: "em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo, o suficiente para fritar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo", prep: "o suficiente para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite de oliva",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho fatiados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "700 g de tomate pelado picado (ou molho de tomate simples)",
+        group: null,
+        items: [
+          { qty: 700, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: "molho de tomate simples", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de flocos de pimenta",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "flocos de pimenta", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de ricota salata (ou parmesão), ralada grosseiramente",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "ricota salata", prep: "ralada grosseiramente", alt: "parmesão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de manjericão fresco",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: "folha", item: "manjericão fresco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Salgue os cubos de berinjela e deixe descansar em um escorredor por 20-30 minutos, para eliminar o amargor e o excesso de água. Enxágue e seque bem.",
       "Frite a berinjela em óleo quente até dourar bem por fora e ficar macia por dentro, em lotes se necessário. Escorra em papel toalha.",
@@ -59,6 +131,43 @@ window.RECIPES["italia"] = [
       "80 g de pecorino romano ralado (+ extra para servir)",
       "Pimenta-do-reino preta moída na hora, generosamente",
       "Sal para a água da massa"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "200 g de rigatoni ou spaghetti",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "rigatoni", prep: null, alt: "spaghetti", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de guanciale, em tiras",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "guanciale", prep: "em tiras", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "80 g de pecorino romano ralado (+ extra para servir)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: "grama", item: "pecorino romano", prep: "ralado (+ extra para servir)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-do-reino preta moída na hora, generosamente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-do-reino preta", prep: "moída na hora, generosamente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal para a água da massa",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal para a água da massa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe a massa em água bem salgada até ficar al dente.",
@@ -95,6 +204,88 @@ window.RECIPES["italia"] = [
       "Azeite de oliva",
       "Sal e pimenta a gosto",
       "Tagliatelle fresco, para servir (ver receita, categoria Massas)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de carne bovina moída (patinho ou acém)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "carne bovina", prep: "moída (patinho ou acém)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de pancetta ou bacon, em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "pancetta", prep: null, alt: "bacon, em cubos pequenos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, 1 cenoura, 1 talo de salsão — em cubos pequenos (mirepoix fino)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "em cubos pequenos (mirepoix fino)", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "em cubos pequenos (mirepoix fino)", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "talo", item: "salsão", prep: "em cubos pequenos (mirepoix fino)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de vinho tinto",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho tinto", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de leite integral",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "leite integral", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "400 g de tomate pelado picado (ou molho de tomate simples)",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tomate pelado", prep: "picado", alt: "molho de tomate simples", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de caldo de carne",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "caldo de carne", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de extrato de tomate",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "extrato de tomate", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Tagliatelle fresco, para servir (ver receita, categoria Massas)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "tagliatelle fresco", prep: "para servir; ver receita, categoria massas", alt: null, optional: false, isReference: true },
+        ],
+      },
     ],
     steps: [
       "Numa panela funda, doure a pancetta no azeite até render a gordura. Junte a cebola, cenoura e salsão, refogando em fogo baixo até bem macios, 12-15 minutos (soffritto).",
@@ -133,6 +324,65 @@ window.RECIPES["italia"] = [
       "150 ml de vinho branco seco (ou Marsala)",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "8 filés finos de vitela (ou frango/porco, alternativas comuns)",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: null, item: "filés finos de vitela", prep: null, alt: "frango/porco, alternativas comuns", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "8 fatias de presunto de Parma",
+        group: null,
+        items: [
+          { qty: 8, qtyRange: null, unit: "fatia", item: "presunto de parma", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "16 folhas de sálvia fresca",
+        group: null,
+        items: [
+          { qty: 16, qtyRange: null, unit: "folha", item: "sálvia fresca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Farinha de trigo, para empanar levemente",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "farinha de trigo", prep: "para empanar levemente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "40 g de manteiga (dividida)",
+        group: null,
+        items: [
+          { qty: 40, qtyRange: null, unit: "grama", item: "manteiga (dividida)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 ml de vinho branco seco (ou Marsala)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: "marsala", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Achate levemente os filés entre filme plástico, se necessário, para uniformizar a espessura.",
       "Tempere com pimenta (o presunto já vai salgar, então cuidado com o sal).",
@@ -166,6 +416,36 @@ window.RECIPES["italia"] = [
       "100 ml de vinho Marsala",
       "Frutas frescas ou biscoitos amaretti, para servir"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 gemas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "60 g de açúcar",
+        group: null,
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho Marsala",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho marsala", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Frutas frescas ou biscoitos amaretti, para servir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "frutas frescas", prep: "para servir", alt: "biscoitos amaretti", optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Numa tigela de vidro ou inox, bata as gemas com o açúcar até esbranquiçar.",
       "Junte o vinho Marsala, misturando bem.",
@@ -197,6 +477,57 @@ window.RECIPES["italia"] = [
       "4 claras",
       "1 pitada de sal"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 gemas",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "gemas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de açúcar (dividido)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "açúcar (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "50 ml de água",
+        group: null,
+        items: [
+          { qty: 50, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de creme de leite fresco, gelado",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "creme de leite fresco", prep: "gelado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de extrato de baunilha (ou 50 g de pasta de pistache/café, para variações de sabor)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "extrato de baunilha", prep: null, alt: "50 g de pasta de pistache/café, para variações de sabor", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 claras",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "claras", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pitada de sal",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "pitada", item: "sal", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare uma calda: aqueça metade do açúcar com a água até dissolver e formar um xarope fino (não precisa caramelizar, só dissolver bem), fervendo por 2-3 minutos.",
       "Bata as gemas em velocidade alta enquanto despeja a calda quente em fio fino (cuidado para não queimar), continuando a bater até a mistura esfriar, engrossar e clarear (técnica de pâte à bombe).",
@@ -227,6 +558,36 @@ window.RECIPES["italia"] = [
       "1 dose de café espresso, bem quente e recém-tirado",
       "1 fio de licor (amaretto ou café, opcional)",
       "Biscoito amaretti ou cantuccini, para acompanhar (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 bolas de sorvete de creme (ou baunilha) de boa qualidade",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "bolas de sorvete de creme", prep: "de boa qualidade", alt: "baunilha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 dose de café espresso, bem quente e recém-tirado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "dose de café espresso", prep: "bem quente e recém-tirado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 fio de licor (amaretto ou café, opcional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "fio", item: "licor", prep: "amaretto ou café", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Biscoito amaretti ou cantuccini, para acompanhar (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "biscoito amaretti", prep: "para acompanhar", alt: "cantuccini", optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Coloque as bolas de sorvete num copo ou tigela pequena, resistente ao calor.",

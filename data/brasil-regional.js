@@ -25,6 +25,64 @@ window.RECIPES["brasil-regional"] = [
       "Pimenta-de-cheiro a gosto",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 pato inteiro, em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pato inteiro", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1,5 L de tucupi (fervido, ver nota de segurança na receita Tacacá)",
+        group: null,
+        items: [
+          { qty: 1.5, qtyRange: null, unit: "litro", item: "tucupi", prep: "fervido; ver nota de segurança na receita tacacá", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "2 maços de folhas de jambu",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "maços de folhas de jambu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Pimenta-de-cheiro a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "pimenta-de-cheiro", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o pato com sal, alho amassado e suco de limão. Deixe marinar na geladeira por 2 horas.",
       "Numa panela funda, doure os pedaços de pato em fogo médio-alto até pegarem cor por todos os lados, liberando parte da gordura.",
@@ -61,6 +119,73 @@ window.RECIPES["brasil-regional"] = [
       "1 cebola picada, 4 dentes de alho picados",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "2 kg de folha de mandioca brava, moída (maniva/maniçoba, encontrada já moída em mercados paraenses ou congelada)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "quilograma", item: "folha de mandioca brava", prep: "moída (maniva/maniçoba, encontrada já moída em mercados paraenses ou congelada)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de carne seca dessalgada",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne seca dessalgada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 g de costelinha de porco salgada, dessalgada",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "costelinha de porco salgada", prep: "dessalgada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de bacon em pedaço",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "bacon em pedaço", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de linguiça calabresa",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "linguiça calabresa", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de paio",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "paio", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pé e 1 orelha de porco (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pé de porco", prep: "tradicional", alt: null, optional: true, isReference: false },
+          { qty: 1, qtyRange: null, unit: null, item: "orelha de porco", prep: "tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe a folha de mandioca moída em água, trocando a água e fervendo repetidamente por 5 a 7 dias seguidos (mínimo de 7 horas de fervura por dia) — esse cozimento extremamente prolongado é indispensável para eliminar os compostos tóxicos naturalmente presentes na folha crua.",
       "Ao final desse processo (a folha deve estar bem macia e sem qualquer sabor ou cheiro amargo residual), reserve.",
@@ -96,6 +221,81 @@ window.RECIPES["brasil-regional"] = [
       "2 ovos cozidos, fatiados",
       "Azeite de oliva",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de pirarucu salgado (ou fresco, dessalgado se necessário)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "pirarucu salgado", prep: null, alt: "fresco, dessalgado se necessário", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de banana-da-terra madura",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "banana-da-terra madura", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de mandioca ou batata, para o purê",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "mandioca", prep: "para o purê", alt: "batata", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de leite, 50 g de manteiga (para o purê)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "leite", prep: "para o purê", alt: null, optional: false, isReference: false },
+          { qty: 50, qtyRange: null, unit: "grama", item: "manteiga", prep: "para o purê", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola fatiada, 2 tomates fatiados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de azeitonas pretas",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "azeitonas pretas", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos cozidos, fatiados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos cozidos", prep: "fatiados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Azeite de oliva",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "azeite de oliva", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Se o pirarucu for salgado, deixe de molho por 12-24h, trocando a água, para dessalgar. Cozinhe em água até ficar macio, depois desfie em lascas grandes, removendo espinhas.",
@@ -135,6 +335,83 @@ window.RECIPES["brasil-regional"] = [
       "Vinagre e água, o suficiente para cobrir",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de miúdos de porco variados (fígado, coração, rim, bucho), limpos e em cubos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "miúdos de porco variados", prep: "fígado, coração, rim, bucho, limpos e em cubos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "300 ml de sangue de porco (opcional, tradicional, pode omitir)",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "mililitro", item: "sangue de porco", prep: "tradicional, pode omitir", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimenta malagueta picada (a gosto)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimenta malagueta", prep: "picada (a gosto)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Folhas de louro, cominho, coentro",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "folhas de louro", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cominho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Vinagre e água, o suficiente para cobrir",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "vinagre", prep: "o suficiente para cobrir", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "água", prep: "o suficiente para cobrir", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Lave bem os miúdos e deixe de molho com água e suco de limão por 20-30 minutos, para eliminar odores fortes. Escorra e corte em cubos pequenos e uniformes.",
       "Numa panela, cozinhe os miúdos mais firmes (coração, rim) em água com um pouco de vinagre por 20-25 minutos, até amaciarem. Adicione o fígado e o bucho nos últimos 10 minutos (cozinham mais rápido).",
@@ -168,6 +445,58 @@ window.RECIPES["brasil-regional"] = [
       "3 dentes de alho picados",
       "Coentro picado",
       "Sal (com moderação) e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de carne de sol, dessalgada (de molho em água ou leite por 4-8h, trocando o líquido)",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "carne de sol", prep: "dessalgada (de molho em água ou leite por 4-8h, trocando o líquido)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 kg de macaxeira (mandioca), descascada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "macaxeira (mandioca)", prep: "descascada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de manteiga de garrafa (ou manteiga comum)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "manteiga de garrafa", prep: null, alt: "manteiga comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola grande fatiada em rodelas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola grande", prep: "fatiada em rodelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal (com moderação) e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "com moderação", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Cozinhe a macaxeira em água salgada até ficar bem macia, 20-25 minutos. Escorra e reserve, mantendo aquecida.",
@@ -203,6 +532,51 @@ window.RECIPES["brasil-regional"] = [
       "6 xícaras de caldo de galinha",
       "Sal a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "8-10 pequis inteiros (frescos ou em conserva)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: [8, 10], unit: null, item: "pequis inteiros (frescos ou em conserva)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 xícaras de arroz",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "xicara", item: "arroz", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 xícaras de caldo de galinha",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "xicara", item: "caldo de galinha", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se os pequis forem frescos, lave bem e corte ao meio com muito cuidado (o caroço tem espinhos internos finos e perigosos — nunca morda o caroço diretamente).",
       "Numa panela, aqueça o óleo e refogue a cebola e o alho até dourarem.",
@@ -235,6 +609,58 @@ window.RECIPES["brasil-regional"] = [
       "Sal e pimenta a gosto",
       "Salsinha picada"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 postas de peixe pintado (ou surubim), cerca de 250 g cada",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "posta", item: "peixe pintado", prep: "cerca de 250 g cada", alt: "surubim", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 2 limões",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 2 limões", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de azeite",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "azeite", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Páprica defumada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "páprica defumada", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Salsinha picada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "salsinha", prep: "picada", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere as postas de peixe com sal, pimenta, alho amassado, suco de limão e azeite. Deixe marinar na geladeira por 1 hora.",
       "Prepare a churrasqueira ou grelha em fogo médio-alto.",
@@ -266,6 +692,67 @@ window.RECIPES["brasil-regional"] = [
       "500 g de mandioca, cozida e amassada (ou farinha de mandioca, para engrossar)",
       "Coentro e cebolinha picados",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "800 g de posta de peixe de água doce (pintado, pacu ou dourado)",
+        group: null,
+        items: [
+          { qty: 800, qtyRange: null, unit: "grama", item: "posta de peixe de água doce", prep: "pintado, pacu ou dourado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de água ou caldo de peixe",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "água", prep: null, alt: "caldo de peixe", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de mandioca, cozida e amassada (ou farinha de mandioca, para engrossar)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "mandioca", prep: "cozida e amassada", alt: "farinha de mandioca, para engrossar", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Coentro e cebolinha picados",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "coentro", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere as postas de peixe com sal e pimenta.",
@@ -305,6 +792,66 @@ window.RECIPES["brasil-regional"] = [
       "Cheiro-verde picado",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "1 frango caipira, em pedaços",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "frango caipira", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 g de quiabo, em rodelas",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "quiabo", prep: "em rodelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo ou banha",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: "banha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 4 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Suco de 1 limão (para o quiabo)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "suco de 1 limão (para o quiabo)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cheiro-verde picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Tempere o frango com sal e pimenta. Numa panela, aqueça o óleo e doure bem os pedaços por todos os lados. Retire e reserve.",
       "Na mesma panela, refogue a cebola e o alho até dourarem. Junte o tomate e refogue até desmanchar.",
@@ -340,6 +887,80 @@ window.RECIPES["brasil-regional"] = [
       "2 ovos fritos, para servir (tradicional)",
       "Cheiro-verde picado",
       "Sal e pimenta a gosto"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de coxão mole ou patinho, em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "coxão mole", prep: null, alt: "patinho, em cubos pequenos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 3 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 tomates picados sem pele",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "tomates", prep: "picados sem pele", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 ml de caldo de carne ou água",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "mililitro", item: "caldo de carne", prep: null, alt: "água", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de ervilha (opcional)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "ervilha", prep: null, alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos fritos, para servir (tradicional)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "fritos, para servir (tradicional)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cheiro-verde picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Tempere a carne em cubos com sal e pimenta.",
@@ -379,6 +1000,73 @@ window.RECIPES["brasil-regional"] = [
       "Cheiro-verde picado",
       "Sal e pimenta a gosto"
     ],
+    ingredientsStructured: [
+      {
+        raw: "300 g de carne bovina grelhada (sobras de churrasco ou carne fresca), em cubos ou tiras",
+        group: null,
+        items: [
+          { qty: 300, qtyRange: null, unit: "grama", item: "carne bovina grelhada (sobras de churrasco ou carne fresca)", prep: "em cubos", alt: "tiras", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de linguiça, em rodelas",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "linguiça", prep: "em rodelas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de coração de galinha (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "coração de galinha", prep: "tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola picada, 2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "picada", alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pimentão picado",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pimentão", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 ovos",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cheiro-verde picado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cheiro-verde", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se for usar carne fresca, tempere e grelhe rapidamente em fogo alto até dourar, depois corte em cubos ou tiras. Se for usar sobras de churrasco, apenas corte em pedaços.",
       "Numa frigideira grande, aqueça o óleo e refogue a cebola, alho e pimentão até dourarem.",
@@ -412,6 +1100,67 @@ window.RECIPES["brasil-regional"] = [
       "Alecrim e salsinha frescos",
       "Sal e pimenta a gosto",
       "Polenta e molho de campanha (vinagrete), para acompanhar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 galetos (frangos jovens, pequenos), abertos em borboleta",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "galetos", prep: "frangos jovens, pequenos, abertos em borboleta", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 ml de vinho branco seco",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "mililitro", item: "vinho branco seco", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho amassados",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "amassados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de banha de porco (ou azeite)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "banha de porco", prep: null, alt: "azeite", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de páprica",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "páprica", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Alecrim e salsinha frescos",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "alecrim fresco", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "salsinha fresca", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Sal e pimenta a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "sal", prep: "a gosto", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "pimenta", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Polenta e molho de campanha (vinagrete), para acompanhar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "polenta", prep: "para acompanhar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "molho de campanha (vinagrete)", prep: "para acompanhar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Abra os galetos em borboleta (corte pela espinha e achate) — peça ao açougueiro se preferir.",

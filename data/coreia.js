@@ -23,6 +23,72 @@ window.RECIPES["coreia"] = [
       "1 cebola, fatiada",
       "Gergelim torrado, para finalizar"
     ],
+    ingredientsStructured: [
+      {
+        raw: "600 g de contrafilé ou alcatra, fatiado bem fino",
+        group: null,
+        items: [
+          { qty: 600, qtyRange: null, unit: "grama", item: "contrafilé", prep: null, alt: "alcatra, fatiado bem fino", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pera asiática (ou pera comum), ralada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pera asiática", prep: "ralada", alt: "pera comum", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 colheres (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo de gergelim",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 dentes de alho picados, 1 colher (sopa) de gengibre ralado",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "gengibre", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 talos de cebolinha, em pedaços",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "talo", item: "cebolinha", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, fatiada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Gergelim torrado, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "gergelim", prep: "torrado, para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Misture a pera ralada, shoyu, açúcar, óleo de gergelim, alho e gengibre, formando a marinada.",
       "Cubra a carne fatiada com a marinada, massageando bem. Cubra e deixe marinar na geladeira por no mínimo 2 horas (idealmente durante a noite).",
@@ -56,6 +122,73 @@ window.RECIPES["coreia"] = [
       "5 dentes de alho picados, 1 colher (sopa) de gengibre ralado",
       "2 colheres (sopa) de vinho de arroz ou mirin",
       "Gergelim torrado e cebolinha, para finalizar"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 kg de costela bovina cortada estilo 'flanken' (fatias finas cruzando o osso)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "quilograma", item: "costela bovina", prep: "cortada estilo 'flanken' (fatias finas cruzando o osso)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pera asiática ralada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pera asiática", prep: "ralada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola ralada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "ralada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "6 colheres (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 6, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de óleo de gergelim",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "5 dentes de alho picados, 1 colher (sopa) de gengibre ralado",
+        group: null,
+        items: [
+          { qty: 5, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "gengibre", prep: "ralado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de vinho de arroz ou mirin",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "vinho de arroz", prep: null, alt: "mirin", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Gergelim torrado e cebolinha, para finalizar",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "gergelim", prep: "torrado, para finalizar", alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "para finalizar", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Deixe a costela de molho em água fria por 30 minutos, trocando a água uma vez, para remover excesso de sangue (resulta numa carne mais limpa ao grelhar).",
@@ -94,6 +227,79 @@ window.RECIPES["coreia"] = [
       "Gochujang (pasta de pimenta coreana), a gosto",
       "Óleo de gergelim e gergelim torrado"
     ],
+    ingredientsStructured: [
+      {
+        raw: "4 xícaras de arroz cozido, quente",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "xicara", item: "arroz", prep: "cozido, quente", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de carne bovina em tiras finas (temperada como bulgogi simplificado: shoyu, açúcar, alho, óleo de gergelim)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "carne bovina", prep: "em tiras finas (temperada como bulgogi simplificado: shoyu, açúcar, alho, óleo de gergelim)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura, em tiras finas, salteada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "em tiras finas, salteada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de espinafre, escaldado e temperado com óleo de gergelim e sal",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "espinafre", prep: "escaldado e temperado com óleo de gergelim e sal", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de broto de feijão, escaldado e temperado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "broto de feijão", prep: "escaldado e temperado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de cogumelo shiitake, fatiado e salteado",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "cogumelo shiitake", prep: "fatiado e salteado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 pepino, em tiras finas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "pepino", prep: "em tiras finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 ovos",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: null, item: "ovos", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Gochujang (pasta de pimenta coreana), a gosto",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "gochujang (pasta de pimenta coreana)", prep: "a gosto", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Óleo de gergelim e gergelim torrado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "gergelim", prep: "torrado", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Prepare cada vegetal separadamente: escalde o espinafre e o broto de feijão rapidamente, temperando cada um individualmente com um fio de óleo de gergelim e sal.",
       "Salteie a cenoura e o cogumelo separadamente, cada um por poucos minutos, mantendo cores vibrantes e texturas distintas.",
@@ -131,6 +337,78 @@ window.RECIPES["coreia"] = [
       "2 colheres (sopa) de açúcar",
       "Gergelim torrado"
     ],
+    ingredientsStructured: [
+      {
+        raw: "250 g de macarrão de batata-doce (glass noodles / dangmyeon)",
+        group: null,
+        items: [
+          { qty: 250, qtyRange: null, unit: "grama", item: "macarrão de batata-doce (glass noodles / dangmyeon)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de carne bovina em tiras finas",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "carne bovina", prep: "em tiras finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cenoura, em tiras finas",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cenoura", prep: "em tiras finas", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 cebola, fatiada",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "cebola", prep: "fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "150 g de espinafre",
+        group: null,
+        items: [
+          { qty: 150, qtyRange: null, unit: "grama", item: "espinafre", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de cogumelo shiitake, fatiado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "cogumelo shiitake", prep: "fatiado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de óleo de gergelim (dividido)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "óleo de gergelim (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "4 colheres (sopa) de shoyu (dividido)",
+        group: null,
+        items: [
+          { qty: 4, qtyRange: null, unit: "colher-sopa", item: "shoyu (dividido)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Gergelim torrado",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "gergelim", prep: "torrado", alt: null, optional: false, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Cozinhe o macarrão de batata-doce em água fervente conforme o tempo da embalagem (geralmente 6-8 minutos), até ficar macio e translúcido. Escorra, enxágue em água fria e corte em pedaços mais curtos com uma tesoura, se estiver muito longo.",
       "Tempere o macarrão com um pouco de óleo de gergelim e shoyu, misturando bem. Reserve.",
@@ -167,6 +445,71 @@ window.RECIPES["coreia"] = [
       "2 talos de cebolinha, em pedaços",
       "2 ovos cozidos (opcional, tradicional)"
     ],
+    ingredientsStructured: [
+      {
+        raw: "500 g de tteok (bolinhos de arroz cilíndricos coreanos), frescos ou descongelados",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "grama", item: "tteok (bolinhos de arroz cilíndricos coreanos)", prep: "frescos", alt: "descongelados", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de caldo de anchova ou caldo de peixe (dashi funciona como substituto)",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "caldo de anchova", prep: null, alt: "caldo de peixe (dashi funciona como substituto)", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 colheres (sopa) de gochujang (pasta de pimenta coreana)",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "gochujang (pasta de pimenta coreana)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de gochugaru (pimenta coreana em flocos, opcional, para mais picância)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "gochugaru (pimenta coreana em flocos)", prep: "para mais picância", alt: null, optional: true, isReference: false },
+        ],
+      },
+      {
+        raw: "2 colheres (sopa) de açúcar",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 folhas de repolho, em pedaços",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "folha", item: "repolho", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 talos de cebolinha, em pedaços",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "talo", item: "cebolinha", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos cozidos (opcional, tradicional)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "cozidos, tradicional", alt: null, optional: true, isReference: false },
+        ],
+      },
+    ],
     steps: [
       "Se o tteok estiver duro ou congelado, deixe de molho em água morna por 10-15 minutos até amolecer.",
       "Numa panela larga, aqueça o caldo e dissolva o gochujang, gochugaru (se usar), açúcar e shoyu, misturando bem.",
@@ -199,6 +542,66 @@ window.RECIPES["coreia"] = [
       "1 colher (chá) de óleo de gergelim",
       "2 ovos, para fritar",
       "Cebolinha fatiada, gergelim torrado, alga nori em tiras (opcional)"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "2 xícaras de arroz cozido, de preferência do dia anterior (mais seco)",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "xicara", item: "arroz", prep: "cozido, de preferência do dia anterior (mais seco)", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "200 g de kimchi bem fermentado, picado (ver receita)",
+        group: null,
+        items: [
+          { qty: 200, qtyRange: null, unit: "grama", item: "kimchi", prep: "bem fermentado, picado; ver receita", alt: null, optional: false, isReference: true },
+        ],
+      },
+      {
+        raw: "80 ml do líquido do kimchi (a salmoura fermentada)",
+        group: null,
+        items: [
+          { qty: 80, qtyRange: null, unit: null, item: "ml do líquido do kimchi (a salmoura fermentada)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de bacon ou carne suína em cubos pequenos",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "bacon", prep: null, alt: "carne suína em cubos pequenos", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de gochujang",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "gochujang", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (chá) de óleo de gergelim",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-cha", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 ovos, para fritar",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: null, item: "ovos", prep: "para fritar", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha fatiada, gergelim torrado, alga nori em tiras (opcional)",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "fatiada", alt: null, optional: true, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "gergelim", prep: "torrado", alt: null, optional: true, isReference: false },
+          { qty: null, qtyRange: null, unit: null, item: "alga nori", prep: "em tiras", alt: null, optional: true, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa frigideira ou wok, doure o bacon (ou carne suína) em fogo médio-alto até dourar e liberar gordura, 3-4 minutos.",
@@ -233,6 +636,55 @@ window.RECIPES["coreia"] = [
       "1 rabanete (daikon), em palitos finos",
       "3 talos de cebolinha, em pedaços",
       "Para a pasta: 60 g de gochugaru (pimenta coreana em flocos), 3 colheres (sopa) de molho de peixe (ou shoyu, para versão vegetariana), 2 colheres (sopa) de açúcar, 6 dentes de alho, 1 pedaço de gengibre, 1 colher (sopa) de amido de arroz (ou farinha de arroz) cozido com água formando uma pasta rala"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "1 repolho napa grande, cortado em quartos ou tiras grandes",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "repolho napa grande", prep: "cortado em quartos", alt: "tiras grandes", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de sal grosso",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "sal grosso", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 L de água",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "litro", item: "água", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 rabanete (daikon), em palitos finos",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "rabanete (daikon)", prep: "em palitos finos", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "3 talos de cebolinha, em pedaços",
+        group: null,
+        items: [
+          { qty: 3, qtyRange: null, unit: "talo", item: "cebolinha", prep: "em pedaços", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Para a pasta: 60 g de gochugaru (pimenta coreana em flocos), 3 colheres (sopa) de molho de peixe (ou shoyu, para versão vegetariana), 2 colheres (sopa) de açúcar, 6 dentes de alho, 1 pedaço de gengibre, 1 colher (sopa) de amido de arroz (ou farinha de arroz) cozido com água formando uma pasta rala",
+        group: "pasta",
+        items: [
+          { qty: 60, qtyRange: null, unit: "grama", item: "gochugaru (pimenta coreana em flocos)", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 3, qtyRange: null, unit: "colher-sopa", item: "molho de peixe", prep: null, alt: "shoyu, para versão vegetariana", optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "colher-sopa", item: "açúcar", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 6, qtyRange: null, unit: "dente", item: "alho", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "pedaco", item: "gengibre", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "amido de arroz", prep: "cozido com água formando uma pasta rala", alt: "farinha de arroz", optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Dissolva o sal grosso na água e submerja o repolho nessa salmoura, com um peso por cima para mantê-lo submerso. Deixe descansar por 2 horas, virando na metade do tempo, até as folhas ficarem murchas e flexíveis.",
@@ -269,6 +721,78 @@ window.RECIPES["coreia"] = [
       "1 colher (sopa) de shoyu",
       "1 ovo",
       "Cebolinha fatiada"
+    ],
+    ingredientsStructured: [
+      {
+        raw: "400 g de tofu macio (silken tofu), não escorrido",
+        group: null,
+        items: [
+          { qty: 400, qtyRange: null, unit: "grama", item: "tofu macio (silken tofu)", prep: "não escorrido", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de carne suína ou bovina em tiras finas (ou camarão)",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "carne suína", prep: "em tiras finas", alt: "bovina; ou camarão", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "100 g de kimchi bem fermentado, picado",
+        group: null,
+        items: [
+          { qty: 100, qtyRange: null, unit: "grama", item: "kimchi bem fermentado", prep: "picado", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de óleo de gergelim",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "óleo de gergelim", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de gochugaru (pimenta coreana em flocos)",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "gochugaru (pimenta coreana em flocos)", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "2 dentes de alho picados",
+        group: null,
+        items: [
+          { qty: 2, qtyRange: null, unit: "dente", item: "alho", prep: "picados", alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "500 ml de caldo de anchova ou caldo de galinha",
+        group: null,
+        items: [
+          { qty: 500, qtyRange: null, unit: "mililitro", item: "caldo de anchova", prep: null, alt: "caldo de galinha", optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 colher (sopa) de shoyu",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: "colher-sopa", item: "shoyu", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "1 ovo",
+        group: null,
+        items: [
+          { qty: 1, qtyRange: null, unit: null, item: "ovo", prep: null, alt: null, optional: false, isReference: false },
+        ],
+      },
+      {
+        raw: "Cebolinha fatiada",
+        group: null,
+        items: [
+          { qty: null, qtyRange: null, unit: null, item: "cebolinha", prep: "fatiada", alt: null, optional: false, isReference: false },
+        ],
+      },
     ],
     steps: [
       "Numa panela de barro (ttukbaegi, tradicional) ou panela funda comum, aqueça o óleo de gergelim e refogue a carne (ou camarão) até dourar levemente.",
