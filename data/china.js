@@ -184,6 +184,15 @@ window.RECIPES["china"] = [
       "Nos últimos 3-4 minutos, pincele com o restante do mel para dar um brilho final e leve caramelização.",
       "Deixe descansar 5 minutos, fatie e sirva com arroz branco."
     ],
+    stepIngredients: [
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "A cor vermelha vibrante tradicional vem de corante alimentício — pode ser omitida sem afetar o sabor, resultando numa versão mais dourada/marrom.",
       "Quanto mais tempo de marinada (dentro do razoável, até 24h), mais profundo o sabor final.",
@@ -508,6 +517,16 @@ window.RECIPES["china"] = [
       "Adicione o macarrão já cozido e a proteína reservada, misturando bem.",
       "Regue com o molho, tossing (misturando com movimentos de wok) por 2-3 minutos, até tudo incorporar e aquecer bem.",
       "Sirva imediatamente, quente."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.667 }],
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.333 }],
+      null,
+      null,
+      null,
+      null,
     ],
     tips: [
       "Fogo bem alto (a técnica do 'wok hei', o 'sopro do wok') é essencial para o sabor levemente defumado característico da comida de wok chinesa — fogão doméstico nunca chega à potência de um fogão profissional, mas use o fogo mais alto disponível.",

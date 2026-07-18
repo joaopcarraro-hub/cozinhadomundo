@@ -291,6 +291,16 @@ window.RECIPES["alemanha"] = [
       "Regue com um fio de azeite, ajuste sal e pimenta.",
       "Finalize com o bacon reservado e cebolinha picada. Sirva morna ou em temperatura ambiente."
     ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+    ],
     tips: [
       "Misturar o molho quente com as batatas ainda mornas (nunca frias) é o segredo — as batatas absorvem muito mais sabor nesse estado do que depois de esfriarem.",
       "Esta é a versão 'quente' bávara/do sul da Alemanha (com bacon e vinagre, sem maionese) — existe também uma versão do norte com maionese, igualmente tradicional em sua região.",

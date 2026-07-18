@@ -217,6 +217,14 @@ window.RECIPES["massas"] = [
       "Escorra a massa e misture direto no molho, adicionando um pouco da água do cozimento se precisar afinar.",
       "Fora do fogo, misture metade do pecorino. Sirva com o guanciale reservado por cima e mais pecorino."
     ],
+    stepIngredients: [
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+    ],
     tips: [
       "Nunca leva alho ou cebola na receita tradicional — a base de sabor vem só do guanciale e do tomate.",
       "É considerado o 'pai' da Bolonhesa e de muitos molhos de tomate com carne curada da Itália central.",
@@ -955,6 +963,16 @@ window.RECIPES["massas"] = [
       "Corte os cordões em pedaços de 2 cm. Se desejar, role cada pedaço nos dentes de um garfo para formar os sulcos clássicos (ajuda o molho a grudar).",
       "Cozinhe em água salgada fervente — os gnocchi estão prontos assim que sobem à superfície, cerca de 1-2 minutos.",
       "Escorra e misture imediatamente com manteiga derretida e sálvia, ou o molho de sua preferência."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
     ],
     tips: [
       "O segredo do gnocchi leve é usar o mínimo de farinha possível e nunca sovar demais — excesso de farinha e manipulação deixam a massa pesada e borrachuda.",

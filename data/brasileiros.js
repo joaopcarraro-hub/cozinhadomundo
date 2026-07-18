@@ -200,6 +200,14 @@ window.RECIPES["brasileiros"] = [
       "Cozinhe por mais 5 minutos, mexendo sempre para não grudar no fundo.",
       "Finalize com o bacon crocante reservado por cima. Sirva quente, acompanhado de torresmo, ovo frito e couve refogada."
     ],
+    stepIngredients: [
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+    ],
     tips: [
       "A farinha de mandioca crua (não torrada) é a tradicional para engrossar o tutu, mas a torrada também funciona e dá um sabor levemente diferente.",
       "Use um feijão com bastante caldo — se estiver seco, adicione um pouco de água ou caldo para conseguir a consistência cremosa característica.",
@@ -738,6 +746,17 @@ window.RECIPES["brasileiros"] = [
       "Junte o camarão ao creme de mandioca, misturando delicadamente. Ajuste o sal.",
       "Finalize com coentro e cebolinha picados. Sirva com arroz branco."
     ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "O purê de mandioca é a base cremosa que dá nome ao prato ('bobó') — bata bem até ficar completamente liso, sem pedaços.",
       "Selar o camarão à parte e juntar só no final evita que ele cozinhe demais e fique borrachudo dentro do creme quente.",
@@ -1251,6 +1270,16 @@ window.RECIPES["brasileiros"] = [
       "Adicione o restante do caldo quente, ajuste o sal, tampe e cozinhe em fogo baixo por 18-20 minutos, até o arroz absorver o líquido e ficar macio.",
       "Se for usar ervilha, junte nos últimos 5 minutos.",
       "Finalize com cheiro-verde picado antes de servir."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
     ],
     tips: [
       "O açafrão-da-terra (cúrcuma) é o que dá a cor amarela vibrante característica — é diferente do açafrão espanhol (mais caro) e muito usado na culinária brasileira do interior.",

@@ -427,6 +427,16 @@ window.RECIPES["peru"] = [
       "Junte a batata frita crocante por último, misturando delicadamente só para incorporar (evita que a batata amoleça no molho).",
       "Finalize com coentro picado. Sirva imediatamente com arroz branco."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "É um prato de fusão clássica peruano-chinesa (influência da imigração cantonesa no Peru, técnica de wok combinada com ingredientes locais) — o shoyu é a assinatura dessa fusão.",
       "A batata frita entra só no final e é misturada delicadamente — o objetivo é que fique parcialmente crocante ainda, não encharcada no molho.",

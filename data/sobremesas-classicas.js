@@ -466,6 +466,15 @@ window.RECIPES["sobremesas-classicas"] = [
       "Preencha o centro do disco com o restante do creme, usando um saco de confeitar com bico especial 'Saint-Honoré' (ou bico estrela) para criar ondas decorativas.",
       "Sirva no mesmo dia, já que a massa folhada e o choux perdem a crocância com o tempo."
     ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.35 }],
+      null,
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.65 }],
+      null,
+    ],
     tips: [
       "É considerada uma das sobremesas francesas mais trabalhosas — combina três técnicas (massa folhada, choux e caramelo) numa peça só.",
       "O caramelo deve ser feito por último e usado rapidamente, já que endurece assim que esfria.",
@@ -715,6 +724,17 @@ window.RECIPES["sobremesas-classicas"] = [
       "Despeje a ganache ainda morna sobre o bolo (já sobre uma grade, com uma bandeja embaixo para aparar o excesso), alisando as laterais e o topo com uma espátula.",
       "Deixe firmar em temperatura ambiente por algumas horas antes de fatiar. Tradicionalmente servida com chantilly sem açúcar ao lado."
     ],
+    stepIngredients: [
+      [{ entryIndex: 0, itemIndex: 2, fraction: 0.5 }],
+      [{ entryIndex: 0, itemIndex: 2, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "A camada de geleia de damasco por baixo do chocolate não é só sabor — ela sela as migalhas e cria uma superfície lisa para a ganache assentar perfeitamente.",
       "Criada em 1832 no Hotel Sacher em Viena — a receita original é segredo guardado pelo hotel até hoje; esta é uma versão fiel ao espírito clássico.",
@@ -955,6 +975,18 @@ window.RECIPES["sobremesas-classicas"] = [
       "Repita com outra camada de biscoitos embebidos e finalize com o restante do creme por cima.",
       "Leve à geladeira por no mínimo 4 horas (idealmente durante a noite).",
       "Polvilhe generosamente com cacau em pó só na hora de servir."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
     ],
     tips: [
       "Passe os biscoitos rapidamente no café — tempo demais e eles absorvem líquido em excesso, deixando o tiramisù encharcado e mole.",

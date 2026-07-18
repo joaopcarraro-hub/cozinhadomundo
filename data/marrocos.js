@@ -330,6 +330,19 @@ window.RECIPES["marrocos"] = [
       "Asse a 190°C por 25-30 minutos, até dourar bem por cima.",
       "Polvilhe generosamente com açúcar de confeiteiro e faça um padrão decorativo com canela em pó por cima antes de servir."
     ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "A combinação de doce (açúcar de confeiteiro, canela) por cima de um recheio salgado de frango é a assinatura mais surpreendente e característica da pastilla — não é um erro, é intencional.",
       "Mantenha as folhas de massa filo não utilizadas cobertas com um pano úmido enquanto monta, para não secarem e rasgarem.",

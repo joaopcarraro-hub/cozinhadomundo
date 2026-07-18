@@ -1296,6 +1296,14 @@ window.RECIPES["dinamarca"] = [
       "Sirva o purê de batata numa tigela, coberto generosamente com o bacon crocante e a cebola refogada por cima.",
       "Finalize com cebolinha picada."
     ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "O nome significa literalmente 'amor em chamas' — uma referência afetuosa à simplicidade reconfortante e ao contraste quente/crocante do prato.",
       "É um prato de conforto extremamente simples e rápido, popular como refeição caseira do dia a dia em toda a Dinamarca.",
@@ -1934,6 +1942,17 @@ window.RECIPES["dinamarca"] = [
       "Escalde as pontas de aspargo reservadas em água fervente por 2-3 minutos, até macias mas ainda com leve crocância.",
       "Junte o creme de leite à sopa (e a gema, se usar, temperada com um pouco de sopa quente antes de incorporar). Ajuste sal e pimenta branca.",
       "Sirva quente, com as pontas de aspargo escaldadas por cima."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.85 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.15 }],
+      null,
+      null,
     ],
     tips: [
       "É um prato de primavera clássico na Dinamarca, tradicionalmente feito na curta temporada de aspargos brancos locais (maio-junho).",

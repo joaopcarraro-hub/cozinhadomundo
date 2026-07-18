@@ -115,6 +115,17 @@ window.RECIPES["grecia"] = [
       "Cubra generosamente com a Béchamel, polvilhe com o restante do queijo.",
       "Asse por 35-40 minutos, até dourar bem por cima e firmar. Deixe descansar 10-15 minutos antes de cortar e servir."
     ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 8, itemIndex: 4, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 8, itemIndex: 4, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "Salgar a berinjela antes de grelhar é essencial — reduz o amargor natural e evita que absorva óleo em excesso.",
       "O descanso antes de cortar é importante para a moussaka firmar e cortar em fatias limpas, sem desmoronar.",
@@ -410,6 +421,18 @@ window.RECIPES["grecia"] = [
       "Asse por 30-35 minutos, até a massa dourar bem e ficar crocante.",
       "Deixe amornar levemente, corte pelas marcas já feitas e sirva."
     ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }, { entryIndex: 7, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }, { entryIndex: 7, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Espremer bem o espinafre depois de refogado é fundamental — excesso de água encharca as camadas de massa filo, que ficam moles em vez de crocantes.",
       "Trabalhe rápido com a massa filo e mantenha as folhas não utilizadas cobertas com um pano úmido enquanto monta — ela seca e quebra facilmente se exposta ao ar.",
@@ -513,6 +536,17 @@ window.RECIPES["grecia"] = [
       "Regue com o restante do azeite e suco de limão, cubra com água ou caldo até quase cobrir os charutinhos.",
       "Coloque um prato virado por cima (como peso, para manterem a forma), tampe a panela e cozinhe em fogo baixo por 40-45 minutos, até o arroz ficar macio.",
       "Deixe esfriar levemente ou sirva em temperatura ambiente, com iogurte grego à parte."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }, { entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
     ],
     tips: [
       "Enrolar firmemente mas sem apertar demais é importante — o arroz ainda cru precisa de espaço para expandir durante o cozimento.",

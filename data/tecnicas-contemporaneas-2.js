@@ -189,6 +189,16 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
       "Retire o peixe, raspe o excesso de sal, açúcar e endro (não lave com água).",
       "Fatie bem fino, na diagonal, começando pela cauda, com uma faca longa e afiada. Sirva com pão escuro, mostarda e endro fresco."
     ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }, { entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }, { entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "O peso por cima é importante — ele ajuda a extrair a umidade do peixe de forma mais uniforme, resultando numa textura mais firme e um sabor mais concentrado.",
       "Quanto mais tempo de cura (dentro da faixa de 48-72h), mais firme e salgado fica o resultado — ajuste conforme sua preferência.",

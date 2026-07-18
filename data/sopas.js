@@ -984,6 +984,14 @@ window.RECIPES["sopas"] = [
       "Volte o frango desfiado à panela, ajuste sal e pimenta, e cozinhe por mais 5 minutos.",
       "Finalize com cheiro-verde picado antes de servir."
     ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }, { entryIndex: 2, itemIndex: 1, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }, { entryIndex: 2, itemIndex: 1, fraction: 0.5 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Fazer o caldo com o próprio frango (em vez de caldo pronto) é o que dá o sabor caseiro característico da canja.",
       "É o prato clássico de conforto brasileiro para quando alguém está gripado — sirva bem quente.",

@@ -100,6 +100,18 @@ window.RECIPES["risotos"] = [
       "Finalize com a mantecatura: adicione a manteiga gelada em cubos e o parmesão, mexendo vigorosamente até o risoto ficar cremoso e brilhante ('all'onda' — deve se mexer em ondas no prato).",
       "Ajuste o sal e sirva imediatamente."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "A mantecatura (bater manteiga gelada e queijo fora do fogo, no final) é a técnica que dá a cremosidade característica do risoto — nunca pule essa etapa.",
       "Mexer com frequência mas não sem parar ajuda a soltar o amido do arroz, criando a textura cremosa sem precisar de creme de leite.",
@@ -220,6 +232,17 @@ window.RECIPES["risotos"] = [
       "Desligue o fogo e finalize com a mantecatura: manteiga gelada e parmesão, mexendo até cremoso.",
       "Sirva com os cogumelos salteados reservados por cima e salsinha picada."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 7, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 7, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Cogumelos secos (porcini) dão uma profundidade de sabor que cogumelos frescos sozinhos não conseguem — vale sempre incluir mesmo que use frescos também.",
       "Não descarte a água de hidratação dos cogumelos secos: ela é puro sabor concentrado e deve entrar no caldo.",
@@ -304,6 +327,15 @@ window.RECIPES["risotos"] = [
       "Adicione o caldo quente aos poucos, uma concha de cada vez, mexendo com frequência, por cerca de 17-18 minutos até o arroz ficar al dente.",
       "Desligue o fogo e faça a mantecatura: incorpore a manteiga gelada restante e o parmesão, mexendo vigorosamente até ficar bem cremoso.",
       "Ajuste sal (com cuidado, o parmesão já salga bastante) e finalize com pimenta-do-reino moída na hora."
+    ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      null,
     ],
     tips: [
       "É o risoto mais 'puro' de todos — sem ele dominado, nenhuma variação (com cogumelo, frutos do mar etc.) vai funcionar bem.",
@@ -434,6 +466,16 @@ window.RECIPES["risotos"] = [
       "Quando o arroz estiver quase no ponto, junte o camarão, a lula e os mexilhões, misturando delicadamente para aquecer e terminar de cozinhar, mais 2-3 minutos.",
       "Ajuste sal e pimenta, finalize com salsinha picada e sirva imediatamente."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 5, itemIndex: 1, fraction: 0.3 }],
+      null,
+      [{ entryIndex: 5, itemIndex: 1, fraction: 0.7 }],
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Frutos do mar cozinham muito rápido — selar rapidamente e devolver só no final evita que fiquem borrachudos.",
       "Um fumet feito com as próprias cascas do camarão faz toda a diferença de sabor comparado a usar só água ou caldo genérico.",
@@ -543,6 +585,15 @@ window.RECIPES["risotos"] = [
       "Se for usar, junte o creme de leite nos últimos 3 minutos de cozimento.",
       "Desligue o fogo, adicione as raspas e o suco de limão, a manteiga gelada restante e o parmesão. Mexa vigorosamente até ficar cremoso (mantecatura).",
       "Ajuste sal e pimenta. Sirva imediatamente, decorado com ervas frescas se desejar."
+    ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
     ],
     tips: [
       "Adicione o suco de limão só no final, fora do fogo — cozinhar o limão por muito tempo deixa o sabor amargo.",
@@ -654,6 +705,16 @@ window.RECIPES["risotos"] = [
       "Desligue o fogo e finalize com a manteiga gelada restante e o parmesão, mexendo até cremoso.",
       "Sirva com lascas de queijo de cabra por cima e nozes tostadas, se desejar."
     ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.15 }],
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.85 }],
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "Use luvas ao manusear a beterraba crua/cozida para não manchar as mãos.",
       "O queijo de cabra por cima contrasta lindamente com a doçura terrosa da beterraba — não pule esse toque se puder.",
@@ -763,6 +824,16 @@ window.RECIPES["risotos"] = [
       "Junte o purê de abóbora e a noz-moscada, continue adicionando caldo até o arroz ficar al dente, mais 2-3 minutos.",
       "Desligue o fogo, finalize com a manteiga gelada restante e o parmesão (mantecatura).",
       "Frite algumas folhas de sálvia em manteiga até crocantes. Sirva o risoto com os cubos de abóbora assada e a sálvia crocante por cima."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
     ],
     tips: [
       "Combinar abóbora assada (para textura e sabor concentrado) com abóbora em purê (para dar corpo ao caldo) é o que eleva esse risoto.",

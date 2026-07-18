@@ -110,6 +110,15 @@ window.RECIPES["italia"] = [
       "Escorra a massa e misture ao molho, junte a maior parte da berinjela frita, adicionando água da massa se precisar afinar.",
       "Sirva com o restante da berinjela por cima, ricota salata ralada generosamente e folhas de manjericão fresco."
     ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.75 }],
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.25 }],
+    ],
     tips: [
       "Salgar a berinjela antes de fritar não é só para tirar o amargor — também reduz a quantidade de óleo que ela absorve durante a fritura.",
       "A ricota salata (queijo salgado e curado, diferente da ricota fresca) é a assinatura do prato — parmesão é um substituto aceitável, mas muda o caráter final.",
@@ -537,6 +546,16 @@ window.RECIPES["italia"] = [
       "Se for usar um sabor (baunilha, pistache, café), incorpore agora.",
       "Despeje numa forma forrada com filme plástico (facilita desenformar) e leve ao congelador por no mínimo 6 horas, idealmente durante a noite.",
       "Desenforme e fatie para servir — a textura deve ser cremosa e macia mesmo congelada, nunca dura como um sorvete comum."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
     ],
     tips: [
       "'Semifreddo' significa 'meio gelado' — a textura deve permanecer macia e cremosa mesmo depois de horas no congelador, graças ao ar incorporado pelas claras e creme batidos.",

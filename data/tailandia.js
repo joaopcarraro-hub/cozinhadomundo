@@ -114,6 +114,16 @@ window.RECIPES["tailandia"] = [
       "Ajuste o tempero (equilíbrio entre salgado do molho de peixe, doce do açúcar e picante da pasta).",
       "Finalize com folhas de manjericão tailandês e pimenta fatiada. Sirva com arroz jasmim."
     ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.33 }],
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.67 }],
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "'Quebrar' o leite de coco (aquecer só a parte gordurosa até soltar óleo) antes de adicionar a pasta de curry é uma técnica tailandesa clássica que intensifica muito o sabor da pasta.",
       "Curry verde é geralmente o mais picante entre os curries tailandeses tradicionais — ajuste a quantidade de pasta conforme a tolerância.",
@@ -221,6 +231,15 @@ window.RECIPES["tailandia"] = [
       "Deixe ferver, abaixe o fogo e cozinhe em fervura suave por 10 minutos.",
       "Adicione o pimentão e a vagem/brócolis, cozinhando por mais 6-8 minutos, até os legumes ficarem macios (mas ainda com leve crocância) e a proteína cozida.",
       "Ajuste o tempero. Finalize com manjericão tailandês. Sirva com arroz jasmim."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.33 }],
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.67 }],
+      null,
+      null,
+      null,
     ],
     tips: [
       "O curry vermelho é geralmente menos picante que o verde, mas mais encorpado em sabor devido às pimentas vermelhas secas usadas na pasta.",
@@ -337,6 +356,15 @@ window.RECIPES["tailandia"] = [
       "Adicione a batata, a cebola e o amendoim, cozinhando por mais 25-30 minutos, até tudo ficar macio.",
       "Tempere com molho de peixe, açúcar de palma e tamarindo, ajustando o equilíbrio entre salgado, doce e azedo.",
       "Sirva com arroz jasmim."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.33 }],
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.67 }],
+      null,
+      null,
+      null,
     ],
     tips: [
       "É o curry tailandês mais suave e menos picante de todos, com influência clara das especiarias persas e indianas (canela, cardamomo, cravo) trazidas por comerciantes muçulmanos históricos.",
@@ -884,6 +912,15 @@ window.RECIPES["tailandia"] = [
       "Adicione o camarão seco (se usar) e a maior parte do amendoim, misturando mais uma vez.",
       "Prove e ajuste o equilíbrio entre picante, ácido, salgado e doce.",
       "Sirva imediatamente, finalizado com o restante do amendoim picado por cima."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 8, itemIndex: 0, fraction: 0.7 }],
+      null,
+      [{ entryIndex: 8, itemIndex: 0, fraction: 0.3 }],
     ],
     tips: [
       "Tradicionalmente preparado num pilão grande de barro ou madeira (tradicional tailandês), socando (não batendo com força) os ingredientes para liberar sabores sem transformar tudo em purê.",

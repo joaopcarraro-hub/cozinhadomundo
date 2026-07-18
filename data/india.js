@@ -237,6 +237,17 @@ window.RECIPES["india"] = [
       "Adicione o frango grelhado ao molho, cozinhando por 5-8 minutos para incorporar sabores.",
       "Finalize com coentro fresco. Sirva com arroz basmati ou naan."
     ],
+    stepIngredients: [
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+    ],
     tips: [
       "Grelhar/assar o frango separadamente antes de juntar ao molho (em vez de cozinhá-lo direto nele) dá um sabor de carne grelhada que enriquece muito o prato final.",
       "Bater o molho de tomate até ficar completamente liso é o que dá a textura aveludada característica do Butter Chicken — não pule essa etapa.",
@@ -620,6 +631,17 @@ window.RECIPES["india"] = [
       "Regue com o restante do ghee derretido por cima de tudo.",
       "Tampe bem (selando as bordas com massa de farinha e água, ou papel-alumínio bem apertado, técnica chamada 'dum') e cozinhe em fogo bem baixo por 25-30 minutos, deixando o vapor terminar de cozinhar o arroz e incorporar todos os sabores.",
       "Misture delicadamente antes de servir, revelando as camadas."
+    ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 7, itemIndex: 0, fraction: 0.25 }],
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }, { entryIndex: 4, itemIndex: 1, fraction: 0.5 }, { entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }, { entryIndex: 4, itemIndex: 0, fraction: 0.5 }, { entryIndex: 4, itemIndex: 1, fraction: 0.5 }, { entryIndex: 6, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 7, itemIndex: 0, fraction: 0.75 }],
+      null,
+      null,
     ],
     tips: [
       "A técnica 'dum' (cozimento lacrado a vapor, em fogo bem baixo) é o que permite que os sabores da carne e das especiarias subam e se infundam no arroz sem misturar tudo previamente.",

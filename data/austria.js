@@ -272,6 +272,18 @@ window.RECIPES["austria"] = [
       "Adicione o restante da manteiga e deixe os pedaços dourarem levemente por mais 2-3 minutos, virando ocasionalmente, até ficarem com bordas caramelizadas.",
       "Polvilhe com açúcar de confeiteiro e sirva imediatamente, com compota de frutas vermelhas ou molho de maçã."
     ],
+    stepIngredients: [
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "O nome significa 'bagunça do Kaiser' (imperador) — reza a lenda que foi criado por acidente na cozinha imperial austríaca e o prato despedaçado ainda assim agradou o imperador Francisco José I.",
       "Rasgar a panqueca em pedaços irregulares e deixá-los caramelizar mais um pouco na manteiga é o que diferencia esse prato de uma panqueca comum — não pule essa etapa final.",

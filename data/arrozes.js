@@ -97,6 +97,15 @@ window.RECIPES["arrozes"] = [
       "Quando o arroz estiver pronto, misture delicadamente o bacon crocante, as tiras de omelete, o restante da manteiga e o cheiro-verde picado.",
       "Sirva quente, como acompanhamento generoso."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "O toque de omelete em tiras e bacon crocante é o que diferencia esse arroz de um arroz branco comum — ambos entram só no final, para preservar a textura.",
       "Tostar bem o arroz antes de adicionar o líquido é o que garante grãos soltos no final, sem empapar.",

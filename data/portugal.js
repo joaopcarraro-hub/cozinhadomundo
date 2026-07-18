@@ -110,6 +110,16 @@ window.RECIPES["portugal"] = [
       "Cubra generosamente com o molho de Béchamel e creme, polvilhe com o restante do queijo ralado.",
       "Leve ao forno por 20-25 minutos, até gratinar e dourar bem por cima. Sirva quente."
     ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 8, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 8, itemIndex: 0, fraction: 0.5 }],
+      null,
+    ],
     tips: [
       "Fritar as batatas antes de misturar ao bacalhau (em vez de cozinhá-las em água) é o que mantém alguma textura mesmo depois de gratinadas no forno.",
       "Misture o bacalhau com as batatas delicadamente, para não desmanchar tudo numa papa — a textura em lascas e pedaços é parte do prato.",

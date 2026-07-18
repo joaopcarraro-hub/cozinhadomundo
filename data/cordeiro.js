@@ -82,6 +82,15 @@ window.RECIPES["cordeiro"] = [
       "Asse a 200°C por 15-20 minutos, até a crosta dourar e a temperatura interna atingir 54-57°C para malpassado a ao ponto.",
       "Deixe descansar por 8-10 minutos antes de cortar entre os ossos, formando costeletas individuais. Sirva."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Peça ao açougueiro para 'francesar' o carré (limpar os ossos, removendo carne e gordura das pontas) para uma apresentação mais elegante.",
       "A camada de mostarda entre a carne e a farofa de ervas não é só sabor — ela também ajuda a farofa a grudar na carne durante o forno.",

@@ -382,6 +382,16 @@ window.RECIPES["carnes-bovinas"] = [
       "Volte os filés à frigideira, regando com o molho, por 1-2 minutos para aquecer.",
       "Finalize com salsinha picada e sirva imediatamente, com o molho por cima."
     ],
+    stepIngredients: [
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Tradicionalmente preparado 'à mesa' (tableside) em restaurantes clássicos, como um show culinário — pode ser recriado em casa com a mesma sequência de passos.",
       "A combinação de mostarda Dijon e molho inglês é o que dá a acidez e profundidade características do molho Diane.",
@@ -1069,6 +1079,15 @@ window.RECIPES["carnes-bovinas"] = [
       "Deglaceie com o vinho Madeira, raspando o fundo da frigideira, e deixe reduzir pela metade.",
       "Junte a Demi-glace ou o fundo escuro reduzido, cozinhe por 3-5 minutos até o molho encorpar.",
       "Ajuste o sal, volte os medalhões à frigideira só para aquecer no molho, e sirva imediatamente."
+    ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
     ],
     tips: [
       "Use um vinho Madeira de verdade (não conhaque ou vinho do Porto) — o sabor levemente oxidado e adocicado é a assinatura do prato.",

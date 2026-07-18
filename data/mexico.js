@@ -249,6 +249,18 @@ window.RECIPES["mexico"] = [
       "Cozinhe em fogo baixo por 20-30 minutos, mexendo ocasionalmente, até o molho ficar bem escuro e encorpado.",
       "Adicione o frango cozido ao molho, aquecendo bem. Ajuste o sal. Finalize com gergelim torrado e sirva com arroz e tortillas."
     ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 9, itemIndex: 0, fraction: 0.3 }],
+      [{ entryIndex: 9, itemIndex: 0, fraction: 0.7 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "O chocolate no mole não é para deixar doce — é usado em pequena quantidade para dar profundidade e amargor complexo, equilibrando as pimentas e especiarias.",
       "É um dos pratos mais trabalhosos e simbólicos da culinária mexicana, com dúzias de ingredientes e etapas de torrefação — tradicionalmente reservado para grandes celebrações.",
@@ -354,6 +366,15 @@ window.RECIPES["mexico"] = [
       "Adicione o milho pozole (hominy) e a carne desfiada ou em pedaços, cozinhando em fogo médio-baixo por mais 30-40 minutos, até os sabores se incorporarem bem.",
       "Sirva bem quente, em tigelas fundas, com os acompanhamentos (repolho, rabanete, cebola, orégano, limão) à parte, para cada um montar o próprio prato.",
       "Acompanhe com tortillas tostadas ou totopos crocantes."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }, { entryIndex: 4, itemIndex: 1, fraction: 0.333 }],
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }, { entryIndex: 4, itemIndex: 1, fraction: 0.667 }],
+      null,
+      null,
+      null,
+      null,
     ],
     tips: [
       "O milho pozole (hominy, milho nixtamalizado) tem textura e sabor bem diferentes do milho comum — encontre em latas em mercados latinos, já pronto para uso.",
@@ -461,6 +482,16 @@ window.RECIPES["mexico"] = [
       "Aqueça as tortillas de milho numa frigideira seca, poucos segundos de cada lado.",
       "Monte os tacos: tortilla, porco picado, um pouco de abacaxi grelhado, cebola e coentro picados.",
       "Sirva com limão e molho de pimenta à parte."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.25 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 5, itemIndex: 0, fraction: 0.75 }],
+      null,
+      null,
+      null,
     ],
     tips: [
       "A técnica tradicional usa um espeto vertical rotativo (trompo), inspirado no shawarma trazido por imigrantes libaneses ao México — a versão de frigideira/chapa recria o sabor de forma acessível em casa.",

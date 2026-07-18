@@ -1110,6 +1110,15 @@ window.RECIPES["ovos-classicos"] = [
       "Coloque os ramequins em banho-maria numa assadeira e asse por 10-12 minutos, até a clara firmar e a gema continuar mole.",
       "Finalize com salsinha picada e sirva imediatamente, quente, direto no ramequim."
     ],
+    stepIngredients: [
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 3, itemIndex: 0, fraction: 0.5 }],
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+    ],
     tips: [
       "Esta é a versão elevada do Ovo Cocotte básico (ver categoria Ovos Básicos) — domine a técnica simples antes de partir para esta.",
       "A duxelles (cogumelos picados e reduzidos até secar) é uma preparação clássica francesa que vale aprender separadamente — funciona também como recheio de carnes e tortas.",

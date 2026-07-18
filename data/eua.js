@@ -387,6 +387,16 @@ window.RECIPES["eua"] = [
       "Adicione o creme de leite e as amêijoas, aquecendo bem sem deixar ferver forte (para não talhar o creme).",
       "Ajuste sal e pimenta. Sirva com o bacon reservado por cima, salsinha picada e crackers ao lado."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+    ],
     tips: [
       "É a versão 'branca' de New England (com creme) — existe também a versão 'vermelha' de Manhattan, com tomate no lugar do creme, uma variação regional distinta.",
       "Não deixe ferver forte depois de adicionar o creme de leite — pode talhar; mantenha em fogo baixo até servir.",
@@ -495,6 +505,15 @@ window.RECIPES["eua"] = [
       "Misture o macarrão cozido ao molho de queijo, envolvendo bem.",
       "Pré-aqueça o forno a 190°C. Transfira para um refratário, polvilhe com o restante do cheddar e a farinha de rosca por cima, se for gratinar.",
       "Asse por 20-25 minutos, até borbulhar e dourar por cima. Alternativa: sirva diretamente da panela, sem levar ao forno, para uma versão cremosa mais rápida."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.8 }],
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.2 }],
+      null,
     ],
     tips: [
       "Ralar o queijo você mesmo (em vez de usar já ralado industrialmente) faz diferença real — queijos pré-ralados têm anticaking agents que atrapalham a fusão lisa no molho.",

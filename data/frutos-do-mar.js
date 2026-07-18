@@ -463,6 +463,16 @@ window.RECIPES["frutos-do-mar"] = [
       "Junte o molho de tomate, tampe e cozinhe em fogo baixo por 25-30 minutos, até as lulas ficarem macias.",
       "Retire os palitos antes de servir. Sirva com o molho, acompanhado de arroz ou pão."
     ],
+    stepIngredients: [
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Não superlote as lulas com recheio — elas encolhem um pouco durante o cozimento e um recheio muito apertado pode romper a lula.",
       "Cozinhar em fogo baixo e por tempo suficiente é importante: lula cozida rápido e em fogo alto fica borrachuda; cozida lentamente no molho, fica macia.",

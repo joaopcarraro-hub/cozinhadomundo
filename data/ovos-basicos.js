@@ -513,6 +513,15 @@ window.RECIPES["ovos-basicos"] = [
       "Quando os ovos estiverem cremosos, em pequenos grumos macios (como um creme, nunca secos), retire do fogo — eles continuam cozinhando com o calor residual.",
       "Finalize com o creme de leite (se usar), sal, pimenta e cebolinha. Sirva imediatamente."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.3 }],
+      null,
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.7 }],
+      null,
+      null,
+    ],
     tips: [
       "O segredo é fogo muito baixo e paciência — ovo mexido francês nunca deve fritar ou dourar, é essencially um cozimento lento tipo 'creme'.",
       "Tirar a panela do fogo periodicamente ('cozinhar fora do fogo') é a técnica clássica para controlar a velocidade do cozimento.",
@@ -804,6 +813,16 @@ window.RECIPES["ovos-basicos"] = [
       "Polvilhe o restante do queijo por cima e transfira a frigideira para o forno.",
       "Asse por 12-15 minutos, até o centro firmar completamente e o topo dourar levemente.",
       "Deixe descansar 5 minutos, desenforme ou corte em fatias direto na frigideira e sirva morna ou em temperatura ambiente."
+    ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
     ],
     tips: [
       "Diferente da omelete francesa, a frittata é cozinhada devagar e finalizada no forno — não precisa dobrar nem virar.",

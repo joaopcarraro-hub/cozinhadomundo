@@ -83,6 +83,16 @@ window.RECIPES["peixes"] = [
       "Retire do fogo, adicione o suco de limão (vai espumar) e a salsinha picada, misturando rapidamente.",
       "Regue os filés imediatamente com essa manteiga dourada e sirva na hora."
     ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "O nome 'meunière' (à moda da moleira) vem justamente da fina camada de farinha usada para empanar antes de dourar na manteiga.",
       "O ponto da beurre noisette (manteiga avelã) é rápido e crucial — retire do fogo assim que sentir o cheiro de avelã torrada, antes de escurecer demais e queimar.",
@@ -581,6 +591,15 @@ window.RECIPES["peixes"] = [
       "Regue generosamente com o restante do azeite.",
       "Leve ao forno por 20-25 minutos, até dourar levemente por cima.",
       "Retire do forno, decore com as rodelas de ovo cozido, azeitonas pretas e salsinha picada por cima. Sirva quente."
+    ],
+    stepIngredients: [
+      null,
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 4, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
     ],
     tips: [
       "Diferente do Bacalhau à Brás (que leva batata palha e ovo mexido), este é montado em camadas e finalizado com ovo cozido por cima — são pratos irmãos, mas com identidades bem distintas.",

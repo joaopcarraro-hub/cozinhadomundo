@@ -99,6 +99,14 @@ window.RECIPES["contemporaneos"] = [
       "Leve à geladeira por no mínimo 3 horas, até firmar completamente.",
       "Corte em cubos delicados com uma faca quente (mergulhada em água quente) ou desenforme inteiro para usar como base de um prato."
     ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.3 }],
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.7 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "Ágar-ágar tem a vantagem de permanecer firme em temperatura ambiente (diferente da gelatina, que derrete com o calor) — ideal se o prato for servido fora da geladeira.",
       "Use como elemento de textura surpresa em pratos frios: cubos translúcidos de consommê que 'explodem' sabor ao morder.",
@@ -168,6 +176,14 @@ window.RECIPES["contemporaneos"] = [
       "Despeje no sifão (sem passar da marca máxima indicada), feche bem e carregue com 1-2 cápsulas de N2O, agitando vigorosamente entre cada carga.",
       "Leve à geladeira por no mínimo 2 horas (o sifão deitado ou em pé, conforme o modelo) para a base firmar levemente antes de usar.",
       "Agite bem antes de servir e disparo a espuma diretamente sobre o prato."
+    ],
+    stepIngredients: [
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.3 }],
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.7 }],
+      null,
+      null,
+      null,
+      null,
     ],
     tips: [
       "A base precisa estar bem coada e sem pedaços — qualquer resíduo sólido entope o mecanismo do sifão.",
@@ -1257,6 +1273,15 @@ window.RECIPES["contemporaneos"] = [
       "Leve à geladeira, coberta, por 24 a 48 horas — quanto mais tempo, mais firme e concentrada fica a gema.",
       "Retire as gemas da cura, escove delicadamente o excesso de sal/açúcar (não lave com água) e seque ao ar, sobre uma grade, na geladeira, por mais algumas horas.",
       "A gema deve ficar com textura firme, quase como um queijo mole, e pode ser ralada por cima de pratos como um 'parmesão de ovo'."
+    ],
+    stepIngredients: [
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }, { entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      [{ entryIndex: 1, itemIndex: 0, fraction: 0.5 }, { entryIndex: 2, itemIndex: 0, fraction: 0.5 }],
+      null,
+      null,
+      null,
     ],
     tips: [
       "A cura remove a umidade da gema por osmose, concentrando o sabor e transformando a textura em algo entre um queijo curado e um caramelo salgado.",

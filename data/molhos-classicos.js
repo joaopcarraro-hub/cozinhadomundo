@@ -562,6 +562,13 @@ window.RECIPES["molhos"] = [
       "Ajuste noz-moscada, sal e pimenta.",
       "Use imediatamente para gratinar."
     ],
+    stepIngredients: [
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.05 }],
+      [{ entryIndex: 0, itemIndex: 0, fraction: 0.95 }],
+      null,
+      null,
+      null,
+    ],
     tips: [
       "É a Béchamel enriquecida com queijo e gema — a base clássica de tudo que vai 'au gratin'.",
       "Para gratinar: cubra o prato com o molho, polvilhe mais queijo por cima e leve ao forno bem quente ou salamandra até dourar."
