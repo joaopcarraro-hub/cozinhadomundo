@@ -164,21 +164,33 @@ título ocupando só a metade direita (`width: 50%`) — não ficou bom visualme
 de volta pra posição original de rodapé. Imagem, título, origem/país e chips de tag (país/tipo)
 não mudaram.
 
-### Ingredientes minimizados por padrão (acordeão reaproveitado do modal de filtro)
+### Ingredientes: EXPANDIDA por padrão (revertido de novo — acordeão reaproveitado do modal de filtro)
 
-A seção de ingredientes na tela de receita abre FECHADA por padrão (sempre — não lembra estado
-entre visitas), com um botão "Ver ingredientes (N)" que expande em dropdown mostrando a lista
-completa com os checkboxes de sempre. Em vez de criar um mecanismo de expandir/colapsar novo,
-reaproveita literalmente as MESMAS classes CSS do acordeão do modal de filtro
+A seção de ingredientes na tela de receita abre EXPANDIDA por padrão (sempre — não lembra
+estado entre visitas; `ingSection.className` já inclui `is-open` desde a criação do elemento).
+Já foi FECHADA por padrão numa rodada anterior — revertido de volta porque o botão de
+mostrar/ocultar ficava discreto demais (fácil de não notar que existia). Dessa vez o botão
+ganhou uma classe própria, `.ingredients-toggle`, sobreposta ao header genérico do acordeão só
+nesta instância (borda grossa em `--color-accent` + fundo `--color-surface-elevated`, texto
+continua em `--ink`/negrito — nunca `--color-accent` no texto, 14.7px fica abaixo do limiar de
+18px+ pra ghost-text, mesma regra de sempre; o acento fica só na borda/chevron) — bem mais
+visível que o header padrão do modal (`border:none; background:none`), que é discreto DE
+PROPÓSITO lá (é repetido várias vezes na mesma tela) mas não deveria ser aqui (aparece 1 vez só,
+precisa ser notado). O rótulo também é dinâmico agora: "Ocultar ingredientes (N)" quando aberto,
+"Ver ingredientes (N)" quando fechado — antes era sempre o mesmo texto.
+
+Continua reaproveitando literalmente as MESMAS classes CSS do acordeão do modal de filtro
 (`.filter-section`/`.filter-section__header`/`.filter-section__label`/`.filter-section__count`/
 `.filter-section__chevron`/`.filter-section__body`, ver "Modal de filtros em acordeão" abaixo) —
 chevron que gira 180° quando `.is-open`, corpo escondido via `display:none`/mostrado via
 `display:flex`. A diferença é que aqui o toggle é local e simples
-(`ingSection.classList.toggle("is-open")` num único listener de clique no header), sem o
-draft-state/re-render completo que o modal usa — não se aplica aqui porque é uma lista estática
-por receita, não múltiplas facetas recalculáveis; os checkboxes de ingrediente continuam
-aplicando direto no `Storage.toggleIngredient` como sempre, sem mudança nessa lógica. `<h4>
-Ingredientes</h4>` (heading estático) foi substituído pelo próprio botão-cabeçalho do acordeão.
+(`ingSection.classList.toggle("is-open")` num único listener de clique no header, que também
+atualiza o texto do rótulo), sem o draft-state/re-render completo que o modal usa — não se
+aplica aqui porque é uma lista estática por receita, não múltiplas facetas recalculáveis; os
+checkboxes de ingrediente continuam aplicando direto no `Storage.toggleIngredient` como sempre,
+sem NENHUMA mudança nessa lógica (só o estado inicial do acordeão mudou). `<h4>
+Ingredientes</h4>` (heading estático) continua substituído pelo próprio botão-cabeçalho do
+acordeão.
 
 ### Multiplicador de porções (usa ingredientsStructured)
 
@@ -305,9 +317,16 @@ multi-seleção coexistem:
   - Proteína (protein:, não confundir com "Papel da proteína" abaixo, que já existia e
     continua igual): 8 valores (Frango, Carne Bovina, Suíno, Aves, Cordeiro, Peixe, Frutos do
     Mar, Ovo), disponível em QUALQUER coleção/busca (renderCategory e renderBusca), não só
-    dentro de um hub de proteína. Contagem usa só `protein:X` (protagonista) — nunca soma com
-    `contains:X` (secundário), verificado por código e por teste (o total de `protein:suino`
-    globalmente bate exatamente com `basePrimary.length` do hub Suínos: 27 == 27). `tileIcon:
+    dentro de um hub de proteína. MUDANÇA: "protein:X" agora significa "essa proteína está
+    presente" (protagonista OU não), não só protagonista — passou a casar também com
+    `contains:X` (`matchesTagId` em app.js: cai pro `contains:` correspondente se `protein:X`
+    não bater direto; `facetOptionsFromPrefix` conta os dois lados, deduplicado por receita).
+    Exemplo real verificado: dentro de Massas, Proteína=Suíno mostra Carbonara/Amatriciana/
+    Tortellini/Agnolotti (guanciale/presunto/lombo presentes, mas nenhuma tem `protein:suino`
+    — o protagonista ali é sempre "massa"). "Papel da proteína" (Principal/Secundário/Tanto
+    faz, abaixo) é OUTRO mecanismo, via `getRecipesByCollection`/`matchesAnyTag` em
+    tagmodel.js — não foi tocado; os números de lá (Principal 27, Secundário 43 no hub Suínos)
+    continuam batendo exatamente como antes. `tileIcon:
     noIconTileIcon` — sempre devolve `""`, sem ícone nesta rodada (label+contagem só, mesmo
     tratamento que Processador/Sous Vide tiveram antes do ícone real; ícone fica pra rodada
     futura).

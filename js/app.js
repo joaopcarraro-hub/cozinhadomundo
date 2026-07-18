@@ -670,6 +670,18 @@
     return ""; // sem ícone disponível — sem espaço reservado
   }
 
+  // Faceta Proteína: "protein:X" agora significa "essa proteína está presente" (protagonista
+  // OU não) — casa também se a receita só tiver "contains:X". Não confundir com "Papel da
+  // proteína" (renderProteinRoleSection/getRecipesByCollection em tagmodel.js, focus/secondary
+  // via primaryFilterTags/relatedFilterTags) — mecanismo totalmente separado, não tocado aqui.
+  function matchesTagId(itemTags, id) {
+    if (itemTags.indexOf(id) !== -1) return true;
+    if (id.indexOf("protein:") === 0) {
+      return itemTags.indexOf("contains:" + id.slice("protein:".length)) !== -1;
+    }
+    return false;
+  }
+
   // Regra geral de combinação: tags do MESMO prefixo (ex: dois ingredient:*) casam em OR
   // entre si; prefixos DIFERENTES combinam em AND. Pra facetas de seleção única isso se
   // comporta exatamente como um AND simples (só há uma tag por grupo).
@@ -685,9 +697,9 @@
     });
     return Object.keys(groups).every((prefix) => {
       if ((prefix === "ingredient:" || prefix === "seasoning:") && ingredientMode !== "or") {
-        return groups[prefix].every((id) => itemTags.indexOf(id) !== -1);
+        return groups[prefix].every((id) => matchesTagId(itemTags, id));
       }
-      return groups[prefix].some((id) => itemTags.indexOf(id) !== -1);
+      return groups[prefix].some((id) => matchesTagId(itemTags, id));
     });
   }
 
@@ -728,12 +740,26 @@
   function facetOptionsFromPrefix(items, prefix) {
     const counts = {};
     items.forEach((item) => {
+      // Dedupe por item: uma receita com protein:X E contains:X (redundante, não deveria
+      // acontecer mas não é garantido pelo schema) só conta 1x pro mesmo valor de X.
+      const countedForThisItem = new Set();
       item.tags.forEach((tagId) => {
-        if (tagId.indexOf(prefix) !== 0) return;
-        const tag = TagModel.getTagById(tagId);
+        let countTagId = null;
+        if (tagId.indexOf(prefix) === 0) {
+          countTagId = tagId;
+        } else if (prefix === "protein:" && tagId.indexOf("contains:") === 0) {
+          // Mesma regra de matchesTagId, do lado da contagem: contains:X conta como protein:X
+          // pra faceta Proteína, DESDE QUE protein:X exista de verdade na taxonomia (senão
+          // ignora — nem todo contains: tem um valor de proteína correspondente).
+          const candidate = "protein:" + tagId.slice("contains:".length);
+          if (TagModel.getTagById(candidate)) countTagId = candidate;
+        }
+        if (!countTagId || countedForThisItem.has(countTagId)) return;
+        const tag = TagModel.getTagById(countTagId);
         // alho/cebola (lowPriority): fora do dropdown em destaque, continuam buscáveis por texto.
         if (!tag || tag.lowPriority) return;
-        counts[tagId] = (counts[tagId] || 0) + 1;
+        countedForThisItem.add(countTagId);
+        counts[countTagId] = (counts[countTagId] || 0) + 1;
       });
     });
     return Object.keys(counts)
@@ -1682,6 +1708,87 @@
     if (extraEl) content.appendChild(extraEl);
   }
 
+  // ---------- Aba "Preparos": lista real de sessões em andamento (Fase 2) ----------
+  // Só "em-andamento" (getActivePreparoSessions já filtra) — "concluido" nunca aparece aqui.
+  // Tocar no card retoma (#/cozinhar/:id, mesma sessão); "✕" remove a sessão do localStorage
+  // por completo (Storage.deletePreparoSession), não só esconde da lista.
+  function renderPreparosList() {
+    activeCat = null;
+    refreshActiveCounts = null;
+    header.innerHTML = "<h2>🍳 Preparos</h2>";
+    content.innerHTML = "";
+    progressEl.textContent = "";
+
+    const sessions = Storage.getActivePreparoSessions();
+    if (!sessions.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty-state";
+      empty.textContent = "Nenhum preparo em andamento. Comece pela tela de uma receita.";
+      content.appendChild(empty);
+      return;
+    }
+
+    const list = document.createElement("div");
+    list.className = "preparo-list";
+
+    sessions
+      .slice()
+      .sort((a, b) => b.startedAt - a.startedAt)
+      .forEach((session) => {
+        const recipeItem = TagModel.findRecipeById(session.recipeId);
+        if (!recipeItem) return; // defensivo: receita não existe mais (renomeada/removida)
+        const recipe = recipeItem.recipe;
+        const totalSteps = recipe.steps ? recipe.steps.length : 0;
+
+        const card = document.createElement("div");
+        card.className = "preparo-card";
+
+        const thumb = document.createElement("div");
+        thumb.className = "preparo-card__thumb placeholder";
+        thumb.textContent = "🍽";
+        if (recipe.image) applyImage(thumb, recipe.image);
+        else loadRecipeImage(imageQuery(recipe), thumb);
+        card.appendChild(thumb);
+
+        // Tempo restante é uma FOTO no momento de renderizar a lista, não fica contando ao
+        // vivo aqui (evita mais um setInterval de fundo pra gerenciar — o timer de verdade só
+        // roda dentro do próprio modo de preparo).
+        let timerHtml = "";
+        const timerState = session.stepTimers && session.stepTimers[session.currentStep];
+        if (timerState && timerState.running && timerState.endsAt) {
+          const secs = Math.max(0, Math.round((timerState.endsAt - Date.now()) / 1000));
+          const mm = String(Math.floor(secs / 60)).padStart(2, "0");
+          const ss = String(secs % 60).padStart(2, "0");
+          timerHtml = '<span class="preparo-card__timer">⏱ ' + mm + ":" + ss + "</span>";
+        }
+
+        const info = document.createElement("div");
+        info.className = "preparo-card__info";
+        info.innerHTML =
+          "<strong>" + recipe.name + "</strong>" +
+          '<span class="preparo-card__step">Passo ' + (session.currentStep + 1) + " de " + totalSteps + "</span>" +
+          timerHtml;
+        card.appendChild(info);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.type = "button";
+        deleteBtn.className = "preparo-card__delete";
+        deleteBtn.setAttribute("aria-label", "Remover preparo de " + recipe.name);
+        deleteBtn.textContent = "✕";
+        deleteBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          Storage.deletePreparoSession(session.recipeId);
+          renderPreparosList();
+        });
+        card.appendChild(deleteBtn);
+
+        card.addEventListener("click", () => Router.toCozinhar(session.recipeId));
+        list.appendChild(card);
+      });
+
+    content.appendChild(list);
+  }
+
   // Crédito a SVG Repo pelos 4 ícones de Equipamento que vieram de lá (forno, liquidificador,
   // batedeira, micro-ondas — não exigido pela licença deles, mas recomendado). Icons8 foi
   // REMOVIDO: os 3 últimos PNG (air-fryer, panela de pressão, churrasqueira) que exigiam essa
@@ -2096,7 +2203,10 @@
       const cookBtn = document.createElement("button");
       cookBtn.className = "primary-cta";
       cookBtn.textContent = "👩‍🍳 Começar preparo";
-      cookBtn.addEventListener("click", () => Router.toCozinhar(item.id, fromCollectionId));
+      // Captura o multiplicador ATUAL do stepper (currentRatio(), já existe acima) e leva pro
+      // modo de preparo via URL — só é usado se for criar uma sessão nova (Fase 2); retomar
+      // uma sessão em andamento ignora isso e usa o portionMultiplier já salvo nela.
+      cookBtn.addEventListener("click", () => Router.toCozinhar(item.id, fromCollectionId, currentRatio()));
       page.appendChild(cookBtn);
     }
 
@@ -2106,8 +2216,13 @@
     // display:none/flex), em vez de criar um padrão novo. Aqui é só um toggle local de classe
     // (sem draft-state/re-render do modal, que não se aplica — a lista é estática e os
     // checkboxes já aplicam direto no Storage).
+    // Reversão: volta a vir EXPANDIDA por padrão ao carregar (is-open já no className inicial)
+    // — o colapso continua existindo (mesmo acordeão do modal de filtro), só não é mais o
+    // estado padrão. O botão de ocultar/mostrar ganha estilo próprio (.ingredients-toggle,
+    // ver CSS) bem mais visível que o header de acordeão genérico — discreto demais foi o
+    // problema que motivou reverter pra sempre-expandida da primeira vez.
     const ingSection = document.createElement("div");
-    ingSection.className = "recipe-page-section filter-section";
+    ingSection.className = "recipe-page-section filter-section is-open";
     const ingredientsList = recipe.ingredients || [];
     // ingredientsStructured (Fase 2b) tem 1 entrada por linha de ingredients, mesma ordem — usado
     // pra escalar a exibição quando o multiplicador de porções muda. Se a receita não tiver o
@@ -2154,8 +2269,8 @@
     }
 
     ingSection.innerHTML =
-      '<button type="button" class="filter-section__header">' +
-      '<span class="filter-section__label">Ver ingredientes<span class="filter-section__count">(' +
+      '<button type="button" class="filter-section__header ingredients-toggle">' +
+      '<span class="filter-section__label">Ocultar ingredientes<span class="filter-section__count">(' +
       ingredientsList.length +
       ")</span></span>" +
       iconSvg("chevronDown", "filter-section__chevron") +
@@ -2163,8 +2278,10 @@
       '<div class="filter-section__body"><ul class="ingredients-list checklist">' +
       ingredientItemsHtml(1) +
       "</ul></div>";
+    const ingToggleLabel = ingSection.querySelector(".filter-section__label");
     ingSection.querySelector(".filter-section__header").addEventListener("click", () => {
-      ingSection.classList.toggle("is-open");
+      const isOpen = ingSection.classList.toggle("is-open");
+      ingToggleLabel.childNodes[0].textContent = isOpen ? "Ocultar ingredientes" : "Ver ingredientes";
     });
     page.appendChild(ingSection);
     bindIngredientCheckboxes();
@@ -2213,7 +2330,23 @@
     } catch (e) {}
   }
 
-  function renderCookMode(id, fromCollectionId) {
+  // Valores da roleta do timer (Fase A) — 30 em 30s até 5 min (granularidade fina, onde mais
+  // se usa: temperar, dar uma fritada rápida etc.), depois de 1 em 1 min até 90 min (a partir
+  // daí, minuto a minuto já é fino o bastante — ninguém cronometra um braseado de 2h no
+  // segundo). Substitui os 4 presets fixos (1/5/10/15 min) por um intervalo livre.
+  const TIMER_WHEEL_VALUES = (function () {
+    const values = [];
+    for (let s = 0; s <= 300; s += 30) values.push(s);
+    for (let m = 6; m <= 90; m++) values.push(m * 60);
+    return values;
+  })();
+  function formatWheelTime(seconds) {
+    const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
+    const ss = String(seconds % 60).padStart(2, "0");
+    return mm + ":" + ss;
+  }
+
+  function renderCookMode(id, fromCollectionId, portionMultiplier) {
     const item = TagModel.findRecipeById(id);
     const recipe = item && item.recipe;
     if (!recipe || !recipe.steps || !recipe.steps.length) {
@@ -2229,10 +2362,23 @@
     content.innerHTML = "";
     progressEl.textContent = "";
 
-    let stepIndex = 0;
     const totalSteps = recipe.steps.length;
+    const yieldInfo = parseYieldBase(recipe.yield);
+
+    // Retoma sessão em andamento pra essa receita (passo atual + timer de cada passo) ou
+    // começa uma nova — modo de preparo agora sobrevive a sair/voltar e a recarregar a
+    // página (Storage, chave gusta-preparos-v1, ver storage.js). Uma sessão "concluida"
+    // (já finalizada antes) NÃO é retomada — cozinhar de novo começa do passo 1. portionMultiplier
+    // (capturado do stepper da tela de receita, ver cookBtn em renderReceita) só é usado ao
+    // CRIAR sessão nova — retomar ignora o parâmetro e usa o que já estava salvo.
+    const existingSession = Storage.getPreparoSession(id);
+    const initialSession =
+      existingSession && existingSession.status === "em-andamento"
+        ? existingSession
+        : Storage.startPreparoSession(id, portionMultiplier || 1);
+
+    let stepIndex = Math.min(Math.max(initialSession.currentStep || 0, 0), totalSteps - 1);
     let timerInterval = null;
-    let timerSeconds = 0;
 
     const page = document.createElement("div");
     page.className = "cook-page";
@@ -2240,7 +2386,15 @@
     const exitBtn = document.createElement("button");
     exitBtn.className = "back-button";
     exitBtn.textContent = "✕ Sair do modo cozinhar";
-    exitBtn.addEventListener("click", () => Router.toReceita(id, fromCollectionId));
+    exitBtn.addEventListener("click", () => {
+      // Bug do "timer fantasma" (corrigido aqui): antes, sair sem finalizar não limpava o
+      // interval do timer — ele continuava rodando escondido (atualizando um timerBox já
+      // desconectado do DOM) até a página recarregar de verdade. Passo atual e timer já ficam
+      // persistidos a cada transição (troca de passo, iniciar/pausar/zerar) — não em cada
+      // tick — então não há nada novo pra salvar aqui, só garantir que o interval pare.
+      clearInterval(timerInterval);
+      Router.toReceita(id, fromCollectionId);
+    });
     page.appendChild(exitBtn);
 
     const titleEl = document.createElement("div");
@@ -2260,6 +2414,12 @@
     stepText.className = "cook-step-text";
     page.appendChild(stepText);
 
+    // Quantidade por passo (Fase 2, usa stepIngredients — Fase 2a) — só aparece nos ~8% dos
+    // passos que têm o campo preenchido (ver renderStep). Vazio/oculto no resto.
+    const stepIngredientsEl = document.createElement("div");
+    stepIngredientsEl.className = "cook-step-ingredients";
+    page.appendChild(stepIngredientsEl);
+
     const navRow = document.createElement("div");
     navRow.className = "cook-nav";
     const prevBtn = document.createElement("button");
@@ -2277,68 +2437,189 @@
 
     content.appendChild(page);
 
+    // Timer por passo (não mais por sessão inteira): cada stepIndex tem seu próprio estado
+    // {endsAt, remainingSeconds, running}, lido/gravado via Storage a cada transição (nunca a
+    // cada tick de segundo). endsAt é horário absoluto — trocar de passo só troca QUAL timer
+    // está na tela; um timer "rodando" que fica pra trás continua contando de verdade (é só
+    // Date.now() vs endsAt), e ao voltar pro passo dele o restante é recalculado certo, mesmo
+    // que a aba tenha sido fechada e reaberta no meio do caminho.
+    function getStepTimerState() {
+      const s = Storage.getPreparoSession(id);
+      const t = s && s.stepTimers && s.stepTimers[stepIndex];
+      return t || { endsAt: null, remainingSeconds: 0, running: false };
+    }
+    function currentRemainingSeconds() {
+      const t = getStepTimerState();
+      if (t.running && t.endsAt) return Math.max(0, Math.round((t.endsAt - Date.now()) / 1000));
+      return t.remainingSeconds || 0;
+    }
+    function persistStepTimer(partial) {
+      const merged = Object.assign({}, getStepTimerState(), partial);
+      Storage.savePreparoStepTimer(id, stepIndex, merged);
+    }
+    function startTicking() {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (currentRemainingSeconds() <= 0) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+          persistStepTimer({ endsAt: null, remainingSeconds: 0, running: false });
+          playBeep();
+        }
+        updateTimerDisplay(); // só mostrador+botão — nunca redesenha a roleta (ver comentário abaixo)
+      }, 1000);
+    }
+
+    // Só atualiza o mostrador digital e o texto Iniciar/Pausar — chamado a cada tick do
+    // setInterval. NUNCA reconstrói a roleta (isso só acontece em renderTimer, em transições
+    // discretas: trocar de passo, iniciar/pausar/zerar), senão o scroll "pularia" de volta pro
+    // centro a cada segundo enquanto o timer conta — a roleta fica congelada no valor
+    // escolhido durante a contagem, igual um timer de relógio nativo.
+    function updateTimerDisplay() {
+      const displayEl = timerBox.querySelector(".cook-timer-display");
+      if (displayEl) displayEl.textContent = formatWheelTime(currentRemainingSeconds());
+      const toggleBtn = timerBox.querySelector(".timer-toggle");
+      if (toggleBtn) toggleBtn.textContent = getStepTimerState().running ? "Pausar" : "Iniciar";
+    }
+
+    // Acha o item da roleta cujo centro REAL (getBoundingClientRect, não um número mágico
+    // duplicado do CSS) está mais perto do centro vertical do wrapper — é o item que o
+    // scroll-snap encaixou no momento.
+    function findCenteredWheelItem(wheelEl) {
+      const wrapRect = wheelEl.getBoundingClientRect();
+      const centerY = wrapRect.top + wrapRect.height / 2;
+      let best = null;
+      let bestDist = Infinity;
+      wheelEl.querySelectorAll(".cook-timer-wheel__item").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        const dist = Math.abs(r.top + r.height / 2 - centerY);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = el;
+        }
+      });
+      return best;
+    }
+
+    function markSelectedWheelItem(wheelEl, seconds) {
+      wheelEl.querySelectorAll(".cook-timer-wheel__item").forEach((el) => {
+        el.classList.toggle("is-selected", parseInt(el.dataset.seconds, 10) === seconds);
+      });
+    }
+
+    // Fase A (casco): roleta com scroll-snap NATIVO substitui o slider+input — o navegador já dá
+    // momentum/inércia em touch sozinho (scroll-snap-type: y mandatory + scroll-snap-align:
+    // center em cada item, ver CSS), nenhuma física customizada nesta fase. Sincroniza com o
+    // MESMO estado de sempre (persistStepTimer/endsAt) — só troca o controle visual que edita o
+    // mesmo valor, nenhuma fonte de verdade nova.
     function renderTimer() {
-      const mm = String(Math.floor(timerSeconds / 60)).padStart(2, "0");
-      const ss = String(timerSeconds % 60).padStart(2, "0");
+      const seconds = currentRemainingSeconds();
       timerBox.innerHTML =
         '<div class="cook-timer-display">' +
-        mm +
-        ":" +
-        ss +
+        formatWheelTime(seconds) +
         "</div>" +
-        '<div class="cook-timer-presets">' +
-        '<button type="button" data-min="1">1 min</button>' +
-        '<button type="button" data-min="5">5 min</button>' +
-        '<button type="button" data-min="10">10 min</button>' +
-        '<button type="button" data-min="15">15 min</button>' +
+        '<div class="cook-timer-wheel-wrap">' +
+        '<div class="cook-timer-wheel-frame" aria-hidden="true"></div>' +
+        '<div class="cook-timer-wheel" role="listbox" aria-label="Minutos e segundos do timer">' +
+        TIMER_WHEEL_VALUES.map(
+          (v) => '<div class="cook-timer-wheel__item" data-seconds="' + v + '">' + formatWheelTime(v) + "</div>"
+        ).join("") +
+        "</div>" +
         "</div>" +
         '<div class="cook-timer-controls">' +
         '<button type="button" class="timer-toggle">' +
-        (timerInterval ? "Pausar" : "Iniciar") +
+        (getStepTimerState().running ? "Pausar" : "Iniciar") +
         "</button>" +
         '<button type="button" class="timer-reset">Zerar</button>' +
         "</div>";
 
-      timerBox.querySelectorAll("[data-min]").forEach((btn) => {
-        btn.addEventListener("click", () => {
+      const wheelEl = timerBox.querySelector(".cook-timer-wheel");
+      // Posiciona a roleta no valor mais próximo do atual (sem animação) e marca selecionado —
+      // um valor salvo que não bate exato com nenhum item da roleta (ex.: sessão antiga com
+      // segundo "quebrado") só encosta no mais próximo, sem sobrescrever nada até o usuário
+      // mexer de novo.
+      const nearestValue = TIMER_WHEEL_VALUES.reduce((a, b) => (Math.abs(b - seconds) < Math.abs(a - seconds) ? b : a));
+      const targetItem = wheelEl.querySelector('.cook-timer-wheel__item[data-seconds="' + nearestValue + '"]');
+      if (targetItem) {
+        wheelEl.scrollTop = targetItem.offsetTop - (wheelEl.clientHeight - targetItem.offsetHeight) / 2;
+        markSelectedWheelItem(wheelEl, nearestValue);
+      }
+
+      let scrollSettleTimeout = null;
+      wheelEl.addEventListener("scroll", () => {
+        clearTimeout(scrollSettleTimeout);
+        scrollSettleTimeout = setTimeout(() => {
+          const centered = findCenteredWheelItem(wheelEl);
+          if (!centered) return;
+          const newSeconds = parseInt(centered.dataset.seconds, 10);
+          markSelectedWheelItem(wheelEl, newSeconds);
           clearInterval(timerInterval);
           timerInterval = null;
-          timerSeconds = parseInt(btn.dataset.min, 10) * 60;
-          renderTimer();
-        });
+          persistStepTimer({ endsAt: null, remainingSeconds: newSeconds, running: false });
+          updateTimerDisplay();
+        }, 150);
       });
+
       timerBox.querySelector(".timer-toggle").addEventListener("click", () => {
-        if (timerInterval) {
+        if (getStepTimerState().running) {
           clearInterval(timerInterval);
           timerInterval = null;
+          persistStepTimer({ endsAt: null, remainingSeconds: currentRemainingSeconds(), running: false });
           renderTimer();
           return;
         }
-        if (timerSeconds <= 0) return;
-        timerInterval = setInterval(() => {
-          timerSeconds--;
-          if (timerSeconds <= 0) {
-            timerSeconds = 0;
-            clearInterval(timerInterval);
-            timerInterval = null;
-            playBeep();
-          }
-          renderTimer();
-        }, 1000);
+        const secs = currentRemainingSeconds();
+        if (secs <= 0) return;
+        persistStepTimer({ endsAt: Date.now() + secs * 1000, remainingSeconds: secs, running: true });
+        startTicking();
         renderTimer();
       });
       timerBox.querySelector(".timer-reset").addEventListener("click", () => {
         clearInterval(timerInterval);
         timerInterval = null;
-        timerSeconds = 0;
+        persistStepTimer({ endsAt: null, remainingSeconds: 0, running: false });
         renderTimer();
       });
     }
-    renderTimer();
+
+    // Quantidade por passo (stepIngredients, Fase 2a) — reaproveita formatStructuredItem
+    // (mesma formatação/arredondamento de fração já usado no multiplicador de porções da tela
+    // de receita, nenhuma lógica nova). Ratio = fraction do passo x portionMultiplier da sessão
+    // / porção base da receita — igual ao currentRatio() de renderReceita, só que lido da
+    // sessão salva em vez do stepper (o modo de preparo não tem stepper próprio).
+    function renderStepIngredients() {
+      const usage = recipe.stepIngredients && recipe.stepIngredients[stepIndex];
+      if (!usage || !usage.length || !recipe.ingredientsStructured) {
+        stepIngredientsEl.innerHTML = "";
+        stepIngredientsEl.style.display = "none";
+        return;
+      }
+      const session = Storage.getPreparoSession(id);
+      const portionRatio = yieldInfo && session && session.portionMultiplier ? session.portionMultiplier : 1;
+      const lines = usage
+        .map(({ entryIndex, itemIndex, fraction }) => {
+          const entry = recipe.ingredientsStructured[entryIndex];
+          const it = entry && entry.items && entry.items[itemIndex];
+          if (!it) return null;
+          return formatStructuredItem(it, portionRatio * fraction);
+        })
+        .filter(Boolean);
+      if (!lines.length) {
+        stepIngredientsEl.innerHTML = "";
+        stepIngredientsEl.style.display = "none";
+        return;
+      }
+      stepIngredientsEl.style.display = "";
+      stepIngredientsEl.innerHTML =
+        '<div class="cook-step-ingredients__label">Quanto entra aqui</div><ul>' +
+        lines.map((l) => "<li>" + l + "</li>").join("") +
+        "</ul>";
+    }
 
     function renderStep() {
       stepLabel.textContent = "Passo " + (stepIndex + 1) + " de " + totalSteps;
       stepText.textContent = recipe.steps[stepIndex];
+      renderStepIngredients();
       progressWrap.innerHTML = recipe.steps
         .map(function (_, i) {
           return '<span class="cook-dot' + (i === stepIndex ? " active" : i < stepIndex ? " done" : "") + '"></span>';
@@ -2346,12 +2627,20 @@
         .join("");
       prevBtn.disabled = stepIndex === 0;
       nextBtn.textContent = stepIndex === totalSteps - 1 ? "Finalizar ✓" : "Próximo →";
+
+      // Troca de passo troca qual timer aparece na tela (ver comentário acima da função
+      // getStepTimerState) — reinicia o ticker só se o timer DESSE passo estiver rodando.
+      clearInterval(timerInterval);
+      timerInterval = null;
+      renderTimer();
+      if (getStepTimerState().running) startTicking();
     }
     renderStep();
 
     prevBtn.addEventListener("click", () => {
       if (stepIndex > 0) {
         stepIndex--;
+        Storage.savePreparoStep(id, stepIndex);
         renderStep();
         window.scrollTo({ top: 0, behavior: "instant" });
       }
@@ -2359,11 +2648,13 @@
     nextBtn.addEventListener("click", () => {
       if (stepIndex < totalSteps - 1) {
         stepIndex++;
+        Storage.savePreparoStep(id, stepIndex);
         renderStep();
         window.scrollTo({ top: 0, behavior: "instant" });
       } else {
         if (!Storage.isMade(id)) Storage.toggleMade(id);
         clearInterval(timerInterval);
+        Storage.finishPreparoSession(id);
         Router.toReceita(id, fromCollectionId);
       }
     });
@@ -2490,13 +2781,13 @@
     } else if (route.name === "receita") {
       renderReceita(route.id, route.from);
     } else if (route.name === "cozinhar") {
-      renderCookMode(route.id, route.from);
+      renderCookMode(route.id, route.from, route.portion);
     } else if (route.name === "favoritos" || route.name === "historico") {
       renderListView(route.name);
     } else if (route.name === "minhas-receitas") {
       renderPlaceholder("📖 Minhas Receitas", "Em breve: favoritos, quero fazer e histórico, tudo aqui.", buildIconCreditsEl());
     } else if (route.name === "preparos") {
-      renderPlaceholder("🍳 Preparos", "Em breve: acompanhe suas sessões de preparo.");
+      renderPreparosList();
     } else if (route.name === "lista-compras") {
       renderPlaceholder("🛒 Lista de Compras", "Em breve: monte sua lista de compras a partir das receitas.");
     } else {

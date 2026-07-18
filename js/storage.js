@@ -76,6 +76,33 @@
     return ids.filter((id) => has(state[listName], id)).length;
   }
 
+  // ---------- Modo de preparo: sessão por receita (Fase 1 — schema + persistência) ----------
+  // Chave própria (não entra no cardapio-state-v2 acima — domínio separado, versionado à parte).
+  // Timer é por PASSO, não por sessão inteira: cada stepIndex guarda seu próprio
+  // {endsAt, remainingSeconds, running}. endsAt é horário absoluto (Date.now() + duração) —
+  // ao retomar, o restante é recalculado pela diferença real de relógio (endsAt - now), nunca
+  // assumindo que o JS ficou rodando contínuo (funciona depois de fechar/reabrir a aba).
+  const PREPARO_KEY = "gusta-preparos-v1";
+
+  function loadPreparo() {
+    try {
+      const raw = localStorage.getItem(PREPARO_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.version === 1 && parsed.sessions) return parsed;
+      }
+    } catch (e) {}
+    return { version: 1, sessions: {} };
+  }
+
+  const preparoState = loadPreparo();
+
+  function savePreparo() {
+    try {
+      localStorage.setItem(PREPARO_KEY, JSON.stringify(preparoState));
+    } catch (e) {}
+  }
+
   window.Storage = {
     isMade: (id) => has(state.made, id),
     toggleMade: (id) => toggleIn("made", id),
@@ -101,5 +128,49 @@
 
     getAllFavorites: () => state.favorites.slice(),
     getAllMade: () => state.made.slice(),
+
+    // Sessão do modo de preparo — retorna null se a receita nunca foi iniciada (status pode
+    // ser "em-andamento" ou "concluido"; quem chama decide se retoma ou começa nova a partir
+    // do status, ver renderCookMode em app.js).
+    getPreparoSession: (recipeId) => preparoState.sessions[recipeId] || null,
+    startPreparoSession: (recipeId, portionMultiplier) => {
+      const session = {
+        recipeId,
+        startedAt: Date.now(),
+        currentStep: 0,
+        portionMultiplier: portionMultiplier || 1,
+        stepTimers: {},
+        status: "em-andamento",
+      };
+      preparoState.sessions[recipeId] = session;
+      savePreparo();
+      return session;
+    },
+    savePreparoStep: (recipeId, stepIndex) => {
+      const session = preparoState.sessions[recipeId];
+      if (!session) return;
+      session.currentStep = stepIndex;
+      savePreparo();
+    },
+    savePreparoStepTimer: (recipeId, stepIndex, timerState) => {
+      const session = preparoState.sessions[recipeId];
+      if (!session) return;
+      session.stepTimers[stepIndex] = timerState;
+      savePreparo();
+    },
+    finishPreparoSession: (recipeId) => {
+      const session = preparoState.sessions[recipeId];
+      if (!session) return;
+      session.status = "concluido";
+      savePreparo();
+    },
+    // Só as "em-andamento" — usado pela aba Preparos (Fase 2). "concluido" nunca aparece lá.
+    getActivePreparoSessions: () =>
+      Object.values(preparoState.sessions).filter((s) => s.status === "em-andamento"),
+    // Remove a sessão por completo do localStorage (não só marca como concluída/escondida).
+    deletePreparoSession: (recipeId) => {
+      delete preparoState.sessions[recipeId];
+      savePreparo();
+    },
   };
 })();

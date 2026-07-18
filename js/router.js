@@ -55,6 +55,7 @@
       return { name: "busca", tags: tags, textFilters: textFilters };
     }
     let from = null;
+    let portion = null;
     if (queryPart) {
       queryPart.split("&").forEach(function (pair) {
         const [k, v] = pair.split("=");
@@ -65,13 +66,20 @@
             from = v;
           }
         }
+        if (k === "portion" && v) {
+          portion = parseFloat(v);
+        }
       });
     }
     if (parts[0] === "receita" && parts[1]) {
       return { name: "receita", id: parts[1], from: from };
     }
     if (parts[0] === "cozinhar" && parts[1]) {
-      return { name: "cozinhar", id: parts[1], from: from };
+      // portion: multiplicador de porções capturado do stepper da tela de receita no momento
+      // de clicar "Começar preparo" (Fase 2) — só usado se renderCookMode for CRIAR uma sessão
+      // nova; retomar uma sessão em andamento ignora esse valor (usa o portionMultiplier já
+      // salvo). null quando a receita não tinha stepper (yield sem base numérica).
+      return { name: "cozinhar", id: parts[1], from: from, portion: portion && !isNaN(portion) ? portion : null };
     }
     if (parts[0] === "favoritos") {
       return { name: "favoritos" };
@@ -147,8 +155,11 @@
     toReceita: function (id, fromCollectionId) {
       navigate("receita/" + encodeURIComponent(id) + (fromCollectionId ? "?from=" + encodeURIComponent(fromCollectionId) : ""));
     },
-    toCozinhar: function (id, fromCollectionId) {
-      navigate("cozinhar/" + encodeURIComponent(id) + (fromCollectionId ? "?from=" + encodeURIComponent(fromCollectionId) : ""));
+    toCozinhar: function (id, fromCollectionId, portionMultiplier) {
+      const params = [];
+      if (fromCollectionId) params.push("from=" + encodeURIComponent(fromCollectionId));
+      if (portionMultiplier) params.push("portion=" + encodeURIComponent(portionMultiplier));
+      navigate("cozinhar/" + encodeURIComponent(id) + (params.length ? "?" + params.join("&") : ""));
     },
     toFavoritos: function () {
       navigate("favoritos");
