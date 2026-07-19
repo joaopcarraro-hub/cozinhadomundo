@@ -1250,16 +1250,25 @@ body.filter-modal-open { overflow: hidden; }
   margin-bottom: 12px;
   font-variant-numeric: tabular-nums;
 }
-/* Roleta do timer (Fase A) — scroll-snap NATIVO substitui o slider+input do Fase 2; o
-   navegador já dá momentum/inércia em touch sozinho, nenhuma física customizada ainda (ver
-   comentário em renderTimer, js/app.js). padding-top/bottom do wrapper (88px = (220-44)/2)
-   deixa o 1º/último item da lista chegarem até o centro do quadro — JS não depende deste
-   número (usa getBoundingClientRect ao vivo), só precisa bater com a altura real do wrap/item
-   pra a rolagem inicial ficar correta. */
+/* Roleta do timer (Fase A -> Fase B: 3 colunas -> Fase C: compacta + esconde/mostra) —
+   scroll-snap NATIVO substitui o slider+input do Fase 2; o navegador já dá momentum/inércia em
+   touch sozinho, nenhuma física customizada ainda (ver comentário em renderTimer, js/app.js).
+   Uma ÚNICA faixa de destaque (.cook-timer-wheel-frame) atravessa as 3 colunas — mesmo padrão
+   visual de um seletor de hora nativo, não 3 molduras separadas. Altura de 3 linhas visíveis
+   (132px = 3×44px, era 220px/5 linhas) — padding-top/bottom de cada coluna (44px =
+   (132-44)/2) acompanha, deixando o 1º/último item chegarem até o centro. JS não depende
+   desses números (usa getBoundingClientRect ao vivo), só precisa bater com a altura real do
+   wrap/item pra a rolagem inicial ficar correta. Entrada/saída (Iniciar esconde, Cancelar traz
+   de volta) REAPROVEITA literalmente as mesmas keyframes do modal de filtro
+   (filter-modal-in/out, definidas mais acima) — nenhum keyframe novo. */
 .cook-timer-wheel-wrap {
   position: relative;
-  height: 220px;
-  margin-bottom: 12px;
+  height: 132px;
+  margin-bottom: 4px;
+  animation: filter-modal-in 220ms ease-out;
+}
+.cook-timer-wheel-wrap.cook-timer-wheel-wrap--hiding {
+  animation: filter-modal-out 220ms ease-out forwards;
 }
 .cook-timer-wheel-frame {
   position: absolute;
@@ -1273,13 +1282,25 @@ body.filter-modal-open { overflow: hidden; }
   background: rgba(214, 59, 32, 0.08);
   pointer-events: none;
 }
+.cook-timer-wheel-columns {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+}
 .cook-timer-wheel {
+  flex: 1;
+  min-width: 0;
   height: 100%;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 88px 0;
+  padding: 44px 0;
+  /* Sem linha divisória entre colunas (só o gap acima) e sem barra de rolagem nativa — a faixa
+     de destaque central já indica onde está; rolar continua funcionando normal (touch/mouse/
+     scroll), só a barra visual com setinhas some. */
+  scrollbar-width: none;
 }
+.cook-timer-wheel::-webkit-scrollbar { display: none; }
 .cook-timer-wheel__item {
   height: 44px;
   display: flex;
@@ -1292,11 +1313,25 @@ body.filter-modal-open { overflow: hidden; }
   font-variant-numeric: tabular-nums;
 }
 /* Item centralizado — destaque via cor/peso/tamanho (nunca --color-accent no texto: mesmo
-   limiar de 18px+ pra ghost-text de sempre; o acento fica só no quadro/moldura ao redor). */
+   limiar de 18px+ pra ghost-text de sempre; o acento fica só na faixa/moldura ao redor). */
 .cook-timer-wheel__item.is-selected {
   color: var(--ink);
   font-weight: bold;
   font-size: 1.3rem;
+}
+/* Rótulo h / min / s — fora do wrap (não disputa altura com o padding-top/bottom que
+   centraliza o 1º/último item de cada coluna), alinhado por baixo de cada coluna via os
+   mesmos 3 flex:1 lado a lado. */
+.cook-timer-wheel-labels {
+  display: flex;
+  margin-bottom: 12px;
+}
+.cook-timer-wheel-labels span {
+  flex: 1;
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
 }
 
 .cook-timer-controls {
@@ -1476,6 +1511,14 @@ body.filter-modal-open { overflow: hidden; }
     animation: none;
   }
   .filter-modal.filter-modal--closing {
+    animation: none;
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  .cook-timer-wheel-wrap {
+    animation: none;
+  }
+  .cook-timer-wheel-wrap.cook-timer-wheel-wrap--hiding {
     animation: none;
     opacity: 0;
     transition: opacity 200ms ease;

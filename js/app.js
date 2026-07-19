@@ -2330,20 +2330,28 @@
     } catch (e) {}
   }
 
-  // Valores da roleta do timer (Fase A) — 30 em 30s até 5 min (granularidade fina, onde mais
-  // se usa: temperar, dar uma fritada rápida etc.), depois de 1 em 1 min até 90 min (a partir
-  // daí, minuto a minuto já é fino o bastante — ninguém cronometra um braseado de 2h no
-  // segundo). Substitui os 4 presets fixos (1/5/10/15 min) por um intervalo livre.
-  const TIMER_WHEEL_VALUES = (function () {
+  // Roleta do timer (Fase B): 3 colunas independentes — Horas (0-4), Minutos (0-59), Segundos
+  // (0-55 de 5 em 5, 12 itens em vez de 60 — mais rápido de rolar; granularidade mais fina não
+  // faz diferença prática numa cozinha). Substitui a roleta única da Fase A (0-90 min corridos).
+  const TIMER_WHEEL_HOURS = [0, 1, 2, 3, 4];
+  const TIMER_WHEEL_MINUTES = (function () {
     const values = [];
-    for (let s = 0; s <= 300; s += 30) values.push(s);
-    for (let m = 6; m <= 90; m++) values.push(m * 60);
+    for (let m = 0; m <= 59; m++) values.push(m);
     return values;
   })();
-  function formatWheelTime(seconds) {
-    const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
-    const ss = String(seconds % 60).padStart(2, "0");
-    return mm + ":" + ss;
+  const TIMER_WHEEL_SECONDS = (function () {
+    const values = [];
+    for (let s = 0; s <= 55; s += 5) values.push(s);
+    return values;
+  })();
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
+  function formatBigTime(seconds) {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = seconds % 60;
+    return pad2(h) + ":" + pad2(m) + ":" + pad2(s);
   }
 
   function renderCookMode(id, fromCollectionId, portionMultiplier) {
@@ -2443,10 +2451,19 @@
     // está na tela; um timer "rodando" que fica pra trás continua contando de verdade (é só
     // Date.now() vs endsAt), e ao voltar pro passo dele o restante é recalculado certo, mesmo
     // que a aba tenha sido fechada e reaberta no meio do caminho.
+    // "started" (novo campo, aditivo — sessões antigas sem ele caem em "false", que é o
+    // fallback seguro: mostra a roleta, igual sempre mostrou) distingue PARADO (nunca
+    // iniciado desde o último Zerar/Cancelar — roleta visível) de PAUSADO (iniciado, contando
+    // pausada agora — roleta continua escondida, só o texto do toggle muda pra "Continuar").
+    // running sozinho não bastava pra isso: hoje "não rodando" cobria os 2 casos ao mesmo tempo.
     function getStepTimerState() {
       const s = Storage.getPreparoSession(id);
       const t = s && s.stepTimers && s.stepTimers[stepIndex];
-      return t || { endsAt: null, remainingSeconds: 0, running: false };
+      if (!t) return { endsAt: null, remainingSeconds: 0, running: false, started: false };
+      // Migração leve: sessões de antes deste campo existir não tinham "started" — se já
+      // estava rodando, é óbvio que tinha sido iniciada; senão cai no default seguro (mostra a
+      // roleta, igual sempre mostrou).
+      return t.started === undefined ? Object.assign({}, t, { started: !!t.running }) : t;
     }
     function currentRemainingSeconds() {
       const t = getStepTimerState();
@@ -2466,25 +2483,29 @@
           persistStepTimer({ endsAt: null, remainingSeconds: 0, running: false });
           playBeep();
         }
-        updateTimerDisplay(); // só mostrador+botão — nunca redesenha a roleta (ver comentário abaixo)
+        updateTimerDisplay(); // só mostrador+botão — nunca redesenha as colunas (ver comentário abaixo)
       }, 1000);
     }
 
     // Só atualiza o mostrador digital e o texto Iniciar/Pausar — chamado a cada tick do
-    // setInterval. NUNCA reconstrói a roleta (isso só acontece em renderTimer, em transições
+    // setInterval. NUNCA reconstrói as colunas (isso só acontece em renderTimer, em transições
     // discretas: trocar de passo, iniciar/pausar/zerar), senão o scroll "pularia" de volta pro
-    // centro a cada segundo enquanto o timer conta — a roleta fica congelada no valor
+    // centro a cada segundo enquanto o timer conta — as colunas ficam congeladas no valor
     // escolhido durante a contagem, igual um timer de relógio nativo.
+    function toggleLabelFor(state) {
+      if (state.running) return "Pausar";
+      return state.started ? "Continuar" : "Iniciar";
+    }
     function updateTimerDisplay() {
       const displayEl = timerBox.querySelector(".cook-timer-display");
-      if (displayEl) displayEl.textContent = formatWheelTime(currentRemainingSeconds());
+      if (displayEl) displayEl.textContent = formatBigTime(currentRemainingSeconds());
       const toggleBtn = timerBox.querySelector(".timer-toggle");
-      if (toggleBtn) toggleBtn.textContent = getStepTimerState().running ? "Pausar" : "Iniciar";
+      if (toggleBtn) toggleBtn.textContent = toggleLabelFor(getStepTimerState());
     }
 
-    // Acha o item da roleta cujo centro REAL (getBoundingClientRect, não um número mágico
-    // duplicado do CSS) está mais perto do centro vertical do wrapper — é o item que o
-    // scroll-snap encaixou no momento.
+    // Acha o item de UMA coluna cujo centro REAL (getBoundingClientRect, não um número mágico
+    // duplicado do CSS) está mais perto do centro vertical do wrapper — o item que o scroll-snap
+    // encaixou no momento. Genérico: mesma função serve pras 3 colunas (Horas/Minutos/Segundos).
     function findCenteredWheelItem(wheelEl) {
       const wrapRect = wheelEl.getBoundingClientRect();
       const centerY = wrapRect.top + wrapRect.height / 2;
@@ -2501,83 +2522,177 @@
       return best;
     }
 
-    function markSelectedWheelItem(wheelEl, seconds) {
+    function markSelectedWheelItem(wheelEl, value) {
       wheelEl.querySelectorAll(".cook-timer-wheel__item").forEach((el) => {
-        el.classList.toggle("is-selected", parseInt(el.dataset.seconds, 10) === seconds);
+        el.classList.toggle("is-selected", parseInt(el.dataset.value, 10) === value);
       });
     }
 
-    // Fase A (casco): roleta com scroll-snap NATIVO substitui o slider+input — o navegador já dá
-    // momentum/inércia em touch sozinho (scroll-snap-type: y mandatory + scroll-snap-align:
-    // center em cada item, ver CSS), nenhuma física customizada nesta fase. Sincroniza com o
-    // MESMO estado de sempre (persistStepTimer/endsAt) — só troca o controle visual que edita o
-    // mesmo valor, nenhuma fonte de verdade nova.
+    // Posiciona UMA coluna no valor mais próximo do atual (sem animação) e marca selecionado —
+    // reaproveitado pelas 3 colunas. Um valor salvo que não bate exato (ex.: sessão antiga da
+    // Fase A) só encosta no mais próximo, sem sobrescrever nada até o usuário mexer de novo.
+    function positionWheelColumn(wheelEl, values, currentValue) {
+      const nearest = values.reduce((a, b) => (Math.abs(b - currentValue) < Math.abs(a - currentValue) ? b : a));
+      const targetItem = wheelEl.querySelector('.cook-timer-wheel__item[data-value="' + nearest + '"]');
+      if (targetItem) {
+        wheelEl.scrollTop = targetItem.offsetTop - (wheelEl.clientHeight - targetItem.offsetHeight) / 2;
+        markSelectedWheelItem(wheelEl, nearest);
+      }
+      return nearest;
+    }
+
+    // Fase C: PARADO mostra a roleta (3 colunas, agora compacta — 3 linhas visíveis em vez de
+    // 5); RODANDO e PAUSADO escondem a roleta (só o mostrador digital fica, mais o toggle e um
+    // botão novo, Cancelar) — a roleta some/aparece reaproveitando a MESMA animação de saída/
+    // entrada do modal de filtro (filter-modal-in/out, CSS), nenhum keyframe novo. Sincroniza
+    // com o MESMO estado de sempre (persistStepTimer/endsAt/started) — a UI só decide o que
+    // mostrar a partir do estado, nunca fonte de verdade nova.
     function renderTimer() {
-      const seconds = currentRemainingSeconds();
+      const state = getStepTimerState();
+      if (!state.started) renderTimerStopped(currentRemainingSeconds());
+      else renderTimerActive(state);
+    }
+
+    // RODANDO ou PAUSADO — roleta já escondida (foi embora na transição pra "rodando", ver
+    // renderTimerStopped). "Cancelar" é o único jeito de trazê-la de volta nesses 2 estados.
+    function renderTimerActive(state) {
       timerBox.innerHTML =
         '<div class="cook-timer-display">' +
-        formatWheelTime(seconds) +
-        "</div>" +
-        '<div class="cook-timer-wheel-wrap">' +
-        '<div class="cook-timer-wheel-frame" aria-hidden="true"></div>' +
-        '<div class="cook-timer-wheel" role="listbox" aria-label="Minutos e segundos do timer">' +
-        TIMER_WHEEL_VALUES.map(
-          (v) => '<div class="cook-timer-wheel__item" data-seconds="' + v + '">' + formatWheelTime(v) + "</div>"
-        ).join("") +
-        "</div>" +
+        formatBigTime(currentRemainingSeconds()) +
         "</div>" +
         '<div class="cook-timer-controls">' +
         '<button type="button" class="timer-toggle">' +
-        (getStepTimerState().running ? "Pausar" : "Iniciar") +
+        toggleLabelFor(state) +
         "</button>" +
-        '<button type="button" class="timer-reset">Zerar</button>' +
+        '<button type="button" class="timer-cancel">Cancelar</button>' +
         "</div>";
-
-      const wheelEl = timerBox.querySelector(".cook-timer-wheel");
-      // Posiciona a roleta no valor mais próximo do atual (sem animação) e marca selecionado —
-      // um valor salvo que não bate exato com nenhum item da roleta (ex.: sessão antiga com
-      // segundo "quebrado") só encosta no mais próximo, sem sobrescrever nada até o usuário
-      // mexer de novo.
-      const nearestValue = TIMER_WHEEL_VALUES.reduce((a, b) => (Math.abs(b - seconds) < Math.abs(a - seconds) ? b : a));
-      const targetItem = wheelEl.querySelector('.cook-timer-wheel__item[data-seconds="' + nearestValue + '"]');
-      if (targetItem) {
-        wheelEl.scrollTop = targetItem.offsetTop - (wheelEl.clientHeight - targetItem.offsetHeight) / 2;
-        markSelectedWheelItem(wheelEl, nearestValue);
-      }
-
-      let scrollSettleTimeout = null;
-      wheelEl.addEventListener("scroll", () => {
-        clearTimeout(scrollSettleTimeout);
-        scrollSettleTimeout = setTimeout(() => {
-          const centered = findCenteredWheelItem(wheelEl);
-          if (!centered) return;
-          const newSeconds = parseInt(centered.dataset.seconds, 10);
-          markSelectedWheelItem(wheelEl, newSeconds);
-          clearInterval(timerInterval);
-          timerInterval = null;
-          persistStepTimer({ endsAt: null, remainingSeconds: newSeconds, running: false });
-          updateTimerDisplay();
-        }, 150);
-      });
 
       timerBox.querySelector(".timer-toggle").addEventListener("click", () => {
         if (getStepTimerState().running) {
+          // Pausar: roleta já está escondida, nada pra animar aqui — só troca estado/texto.
           clearInterval(timerInterval);
           timerInterval = null;
           persistStepTimer({ endsAt: null, remainingSeconds: currentRemainingSeconds(), running: false });
           renderTimer();
           return;
         }
+        // Continuar (retomar de pausado): roleta segue escondida, só a contagem retoma.
         const secs = currentRemainingSeconds();
         if (secs <= 0) return;
         persistStepTimer({ endsAt: Date.now() + secs * 1000, remainingSeconds: secs, running: true });
         startTicking();
         renderTimer();
       });
+
+      timerBox.querySelector(".timer-cancel").addEventListener("click", () => {
+        // Cancelar: para por completo E traz a roleta de volta com o valor que estava faltando
+        // no instante do cancelamento. Precisa recalcular via currentRemainingSeconds() (não só
+        // reaproveitar o remainingSeconds já salvo) porque, se cancelar durante a contagem
+        // (running:true) sem antes pausar, o remainingSeconds salvo é o de antes de "Continuar" —
+        // desatualizado. "Zerar" já existe pra zerar, depois que ela reaparecer. started:false é
+        // o que faz renderTimer() cair no ramo "parado" de novo.
+        const secs = currentRemainingSeconds();
+        clearInterval(timerInterval);
+        timerInterval = null;
+        persistStepTimer({ endsAt: null, remainingSeconds: secs, running: false, started: false });
+        renderTimer(); // roleta é um elemento NOVO no DOM -> animation:filter-modal-in toca sozinha
+      });
+    }
+
+    // PARADO — roleta visível (3 colunas: Horas/Minutos/Segundos), MESMO mecanismo de
+    // scroll-snap nativo de sempre, só triplicado (ver findCenteredWheelItem/
+    // markSelectedWheelItem/positionWheelColumn acima, genéricas e reaproveitadas). Uma ÚNICA
+    // faixa de destaque atravessa as 3 (.cook-timer-wheel-frame, CSS), não 3 molduras
+    // separadas. Sincroniza com o MESMO estado — as 3 colunas só editam, juntas, o mesmo valor
+    // único em segundos (h×3600 + min×60 + s).
+    function renderTimerStopped(seconds) {
+      let hVal = Math.min(4, Math.floor(seconds / 3600));
+      let mVal = Math.floor((seconds % 3600) / 60);
+      let sVal = seconds % 60;
+
+      function buildColumn(values, unitLabel) {
+        return (
+          '<div class="cook-timer-wheel" role="listbox" aria-label="' +
+          unitLabel +
+          '">' +
+          values.map((v) => '<div class="cook-timer-wheel__item" data-value="' + v + '">' + pad2(v) + "</div>").join("") +
+          "</div>"
+        );
+      }
+
+      timerBox.innerHTML =
+        '<div class="cook-timer-display">' +
+        formatBigTime(seconds) +
+        "</div>" +
+        '<div class="cook-timer-wheel-wrap">' +
+        '<div class="cook-timer-wheel-frame" aria-hidden="true"></div>' +
+        '<div class="cook-timer-wheel-columns">' +
+        buildColumn(TIMER_WHEEL_HOURS, "Horas") +
+        buildColumn(TIMER_WHEEL_MINUTES, "Minutos") +
+        buildColumn(TIMER_WHEEL_SECONDS, "Segundos") +
+        "</div>" +
+        "</div>" +
+        '<div class="cook-timer-wheel-labels"><span>h</span><span>min</span><span>s</span></div>' +
+        '<div class="cook-timer-controls">' +
+        '<button type="button" class="timer-toggle">Iniciar</button>' +
+        '<button type="button" class="timer-reset">Zerar</button>' +
+        "</div>";
+
+      const columns = timerBox.querySelectorAll(".cook-timer-wheel");
+      const hoursWheel = columns[0];
+      const minutesWheel = columns[1];
+      const secondsWheel = columns[2];
+
+      hVal = positionWheelColumn(hoursWheel, TIMER_WHEEL_HOURS, hVal);
+      mVal = positionWheelColumn(minutesWheel, TIMER_WHEEL_MINUTES, mVal);
+      sVal = positionWheelColumn(secondsWheel, TIMER_WHEEL_SECONDS, sVal);
+
+      // Toda vez que QUALQUER coluna encaixa um valor novo, recombina as 3 (hVal/mVal/sVal
+      // vivem na closure, atualizadas pelo settle de cada coluna) e persiste o total único —
+      // nenhuma coluna decide sozinha.
+      function commitCombined() {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        const total = hVal * 3600 + mVal * 60 + sVal;
+        persistStepTimer({ endsAt: null, remainingSeconds: total, running: false });
+        updateTimerDisplay();
+      }
+      function bindColumnScroll(wheelEl, onSettle) {
+        let scrollSettleTimeout = null;
+        wheelEl.addEventListener("scroll", () => {
+          clearTimeout(scrollSettleTimeout);
+          scrollSettleTimeout = setTimeout(() => {
+            const centered = findCenteredWheelItem(wheelEl);
+            if (!centered) return;
+            const newValue = parseInt(centered.dataset.value, 10);
+            markSelectedWheelItem(wheelEl, newValue);
+            onSettle(newValue);
+            commitCombined();
+          }, 150);
+        });
+      }
+      bindColumnScroll(hoursWheel, (v) => (hVal = v));
+      bindColumnScroll(minutesWheel, (v) => (mVal = v));
+      bindColumnScroll(secondsWheel, (v) => (sVal = v));
+
+      timerBox.querySelector(".timer-toggle").addEventListener("click", () => {
+        // Iniciar (parado -> rodando): persiste JÁ (endsAt correto, sem atraso de animação) —
+        // só a TROCA VISUAL espera a roleta terminar de sumir, reaproveitando a mesma animação
+        // de saída do modal de filtro (filter-modal-out, CSS) em vez de recriar algo novo. Sem
+        // isso a roleta nunca teria tempo de animar (renderTimer troca tudo na hora).
+        const secs = currentRemainingSeconds();
+        if (secs <= 0) return;
+        persistStepTimer({ endsAt: Date.now() + secs * 1000, remainingSeconds: secs, running: true, started: true });
+        startTicking();
+        const wheelWrap = timerBox.querySelector(".cook-timer-wheel-wrap");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        wheelWrap.classList.add("cook-timer-wheel-wrap--hiding");
+        setTimeout(renderTimer, reducedMotion ? 200 : 220);
+      });
       timerBox.querySelector(".timer-reset").addEventListener("click", () => {
         clearInterval(timerInterval);
         timerInterval = null;
-        persistStepTimer({ endsAt: null, remainingSeconds: 0, running: false });
+        persistStepTimer({ endsAt: null, remainingSeconds: 0, running: false, started: false });
         renderTimer();
       });
     }
