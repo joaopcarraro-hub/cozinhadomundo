@@ -112,8 +112,10 @@ novo reutiliza token existente antes de criar cor/estilo novo.
    sem uso em nenhum componente por ora (nenhum componente do sistema atual pede uma 3ª/4ª cor
    de marca; ativar só se surgir necessidade concreta, com regra explícita na hora).
 2. **Estrutura de Telas (seção 10 do PDF):** Onboarding/Perfil são visão de produto futura, não
-   deste ciclo. "Minhas Receitas" deve voltar à lista completa (sumiu por engano). Não bloqueia
-   nada — é só ajuste de registro no PDF de vocês, quando conveniente.
+   deste ciclo. ~~"Minhas Receitas" deve voltar à lista completa (sumiu por engano)~~ —
+   **RESOLVIDO:** virou tela real (`renderMinhasReceitas`, abas Favoritas/Já Feitas), ver
+   `.claude/skills/mobile-recipe-ui/SKILL.md`. Só falta o ajuste de registro no PDF de vocês,
+   quando conveniente.
 
 ## Estados ainda sem design (natural nesta fase — desenhar ao construir o Bloco 2/3)
 Distinção visual seleção única vs múltipla no filtro, toggle `##` (todos/qualquer um), estado

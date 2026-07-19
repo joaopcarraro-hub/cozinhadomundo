@@ -1,7 +1,8 @@
 // router.js — navegação baseada em hash (#/...), sem depender de servidor.
 // Rotas: home | grupo/:id (grupo macro) | categoria/:id (id de coleção) | busca?tags=a,b,c
-//        receita/:id | cozinhar/:id | favoritos | historico
-//        minhas-receitas | preparos | lista-compras (telas-placeholder da barra inferior)
+//        receita/:id | cozinhar/:id
+//        minhas-receitas (favoritas/já feitas, com abas) | preparos | lista-compras
+//        (as 2 últimas ainda são telas-placeholder da barra inferior)
 // :id de receita/cozinhar é o id único global da receita (TagModel), não mais catId+nome.
 (function () {
   const listeners = [];
@@ -81,12 +82,6 @@
       // salvo). null quando a receita não tinha stepper (yield sem base numérica).
       return { name: "cozinhar", id: parts[1], from: from, portion: portion && !isNaN(portion) ? portion : null };
     }
-    if (parts[0] === "favoritos") {
-      return { name: "favoritos" };
-    }
-    if (parts[0] === "historico") {
-      return { name: "historico" };
-    }
     if (parts[0] === "minhas-receitas") {
       return { name: "minhas-receitas" };
     }
@@ -160,12 +155,6 @@
       if (fromCollectionId) params.push("from=" + encodeURIComponent(fromCollectionId));
       if (portionMultiplier) params.push("portion=" + encodeURIComponent(portionMultiplier));
       navigate("cozinhar/" + encodeURIComponent(id) + (params.length ? "?" + params.join("&") : ""));
-    },
-    toFavoritos: function () {
-      navigate("favoritos");
-    },
-    toHistorico: function () {
-      navigate("historico");
     },
     toMinhasReceitas: function () {
       navigate("minhas-receitas");

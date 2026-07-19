@@ -152,8 +152,36 @@ body {
   font-style: italic;
 }
 /* Atribuição de ícones (Icons8/SVG Repo) — ver buildIconCreditsEl em app.js */
+/* Minhas Receitas — 2 abas (Favoritas / Já Feitas), troca em memória (sem navegação de rota),
+   ver renderMinhasReceitas em js/app.js. Fundo tingido da aba ativa reaproveita o mesmo tom
+   translúcido de --color-accent já documentado no reskin escuro (era --gold-soft). */
+.minhas-receitas__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.minhas-receitas__tab {
+  flex: 1;
+  min-height: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  color: var(--ink-soft);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.minhas-receitas__tab.is-active {
+  border-color: var(--gold);
+  border-width: 2px;
+  color: var(--ink);
+  background: rgba(214, 59, 32, 0.08);
+}
 .icon-credits {
-  margin-top: 16px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
   text-align: center;
   font-size: 0.8rem;
   color: var(--ink-soft);

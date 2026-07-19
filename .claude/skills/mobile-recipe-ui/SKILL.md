@@ -55,6 +55,32 @@ próprio (`icons/preparos.svg`, panela de cabo único), formato de traço preenc
 condition do `EQUIPMENT_SVG_MARKUP`. Visualmente indistinguível do resto (mesmo tamanho
 22x22px via `.bottom-nav__icon`, mesma troca de cor ativo/inativo via `currentColor`).
 
+## Minhas Receitas (aba da barra inferior)
+
+Deixou de ser placeholder — é uma tela real (`renderMinhasReceitas` em app.js), com 2 abas em
+memória (sem navegação de rota): Favoritas (`Storage.getAllFavorites()`) e Já Feitas
+(`Storage.getAllMade()`). Alternar aba só troca a variável de módulo `minhasReceitasTab` e
+re-renderiza a mesma tela — não empilha histórico nem muda `location.hash`. Cada aba lista com
+`renderRecipeCard` (sem adaptação nenhuma, já funcionava standalone antes disso) e tem sua
+própria mensagem de vazio; nenhuma aba mostra contador comparativo com a outra.
+
+As antigas rotas standalone `#/favoritos` e `#/historico` (e `Router.toFavoritos`/
+`toHistorico`) foram REMOVIDAS — não tinham nenhum link visível apontando pra elas (só
+acessíveis digitando a URL direto), e depois desta tela existir teriam virado caminho
+redundante mostrando os mesmos dados de novo. `LIST_VIEWS`/`renderListView` também saíram do
+app.js. Acessar `#/favoritos` ou `#/historico` agora cai no fallback padrão do router (`{ name:
+"home" }`), mesmo tratamento que `#/quero-fazer` já recebe.
+
+"Histórico de receitas vistas" (visita real à tela de receita, distinto de "já feita") não
+existe — a antiga entrada `historico` de `LIST_VIEWS` só reaproveitava `Storage.getAllMade()`
+com outro rótulo, sem nenhum rastreamento de visita de verdade. Construir isso de verdade exige
+infraestrutura nova (gravar cada visita à tela de receita) — fora do escopo desta rodada,
+fica pra quando for aprovado como tarefa própria.
+
+Créditos de ícones (`buildIconCreditsEl`) ficam no fim da tela, numa seção visualmente separada
+da listagem por um divisor (`.icon-credits` ganhou `border-top`) — evita misturar crédito de
+terceiros com o conteúdo de verdade da tela, provisório até o app ter um rodapé fixo.
+
 ## Página de grupo
 
 Cada grupo deve ter:
@@ -101,8 +127,8 @@ Regras:
 `renderRecipeCard` (app.js) é a função ÚNICA compartilhada por 5 pontos de chamada — 4 telas
 distintas: `renderCategory` (categoria/coleção, 2 call sites por causa dos 2 modos de
 ordenação), `renderBusca` (busca global), `renderGrupo` (resultado de busca por ingrediente
-dentro de um hub) e `renderListView` (Favoritos/Histórico). Mudar a função muda as 5 de uma vez,
-sem duplicação.
+dentro de um hub) e `renderMinhasReceitas` (aba Minhas Receitas, ver seção própria abaixo).
+Mudar a função muda as 5 de uma vez, sem duplicação.
 
 Removido do card: os ícones de ação antigos (já feito ✓ / favoritar ★ / quero fazer 🔖,
 `.recipe-card-actions`) e a barra de CTA "Ver receita" (`.recipe-card-cta`) como elemento

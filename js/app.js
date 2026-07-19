@@ -1804,37 +1804,61 @@
     return el;
   }
 
-  // ---------- Telas de lista (Favoritos / Histórico) ----------
-  const LIST_VIEWS = {
-    favoritos: { title: "★ Favoritos", empty: "Você ainda não marcou nenhum prato como favorito.", getIds: () => Storage.getAllFavorites() },
-    historico: { title: "🕘 Histórico de receitas feitas", empty: "Você ainda não marcou nenhum prato como feito.", getIds: () => Storage.getAllMade() },
-  };
+  // ---------- Tela "Minhas Receitas" (aba da barra inferior) ----------
+  // Substitui o antigo placeholder + as antigas rotas standalone #/favoritos e #/historico
+  // (removidas — nenhum link visível apontava pra elas, e depois desta tela existir elas
+  // seriam um caminho redundante mostrando os mesmos dados de novo). Guarda a aba ativa numa
+  // variável de módulo simples (sobrevive só entre re-renders desta tela, não persiste em
+  // localStorage) pra alternar sem navegação de rota nenhuma.
+  let minhasReceitasTab = "favoritas";
+  const MINHAS_RECEITAS_TABS = [
+    { id: "favoritas", label: "Favoritas", getIds: () => Storage.getAllFavorites(), empty: "Você ainda não marcou nenhum prato como favorito." },
+    { id: "feitas", label: "Já Feitas", getIds: () => Storage.getAllMade(), empty: "Você ainda não marcou nenhum prato como feito." },
+  ];
 
-  function renderListView(view) {
-    const cfg = LIST_VIEWS[view];
+  function renderMinhasReceitas() {
     activeCat = null;
     refreshActiveCounts = null;
-
-    header.innerHTML = '<button type="button" class="back-button">← Voltar</button><h2>' + cfg.title + "</h2>";
-    header.querySelector(".back-button").addEventListener("click", () => {
-      if (history.length > 1) history.back();
-      else Router.toHome();
-    });
+    header.innerHTML = "<h2>📖 Minhas Receitas</h2>";
     content.innerHTML = "";
     progressEl.textContent = "";
 
+    const tabsEl = document.createElement("div");
+    tabsEl.className = "minhas-receitas__tabs";
+    MINHAS_RECEITAS_TABS.forEach((tab) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "minhas-receitas__tab" + (tab.id === minhasReceitasTab ? " is-active" : "");
+      btn.textContent = tab.label;
+      btn.addEventListener("click", () => {
+        if (minhasReceitasTab === tab.id) return;
+        minhasReceitasTab = tab.id;
+        renderMinhasReceitas();
+      });
+      tabsEl.appendChild(btn);
+    });
+    content.appendChild(tabsEl);
+
+    const cfg = MINHAS_RECEITAS_TABS.find((t) => t.id === minhasReceitasTab);
     const ids = cfg.getIds();
     const items = ids.map((id) => TagModel.findRecipeById(id)).filter(Boolean);
 
     if (!items.length) {
-      content.innerHTML = '<div class="empty-state">' + cfg.empty + "</div>";
-      return;
+      const empty = document.createElement("div");
+      empty.className = "empty-state";
+      empty.textContent = cfg.empty;
+      content.appendChild(empty);
+    } else {
+      items.forEach((item) => {
+        const cat = window.CATEGORIES.find((c) => c.id === item.catId);
+        content.appendChild(renderRecipeCard(item, { catLabel: cat ? cat.label : item.catId }));
+      });
     }
 
-    items.forEach((item) => {
-      const cat = window.CATEGORIES.find((c) => c.id === item.catId);
-      content.appendChild(renderRecipeCard(item, { catLabel: cat ? cat.label : item.catId }));
-    });
+    // Créditos de ícones: seção claramente separada no fim, não misturada com a listagem
+    // (border-top próprio em .icon-credits) — só existe rodapé fixo de verdade quando o app
+    // ganhar um pra valer.
+    content.appendChild(buildIconCreditsEl());
   }
 
   // ---------- Card de receita (usado na lista de categoria e na busca) ----------
@@ -2897,10 +2921,8 @@
       renderReceita(route.id, route.from);
     } else if (route.name === "cozinhar") {
       renderCookMode(route.id, route.from, route.portion);
-    } else if (route.name === "favoritos" || route.name === "historico") {
-      renderListView(route.name);
     } else if (route.name === "minhas-receitas") {
-      renderPlaceholder("📖 Minhas Receitas", "Em breve: favoritos, quero fazer e histórico, tudo aqui.", buildIconCreditsEl());
+      renderMinhasReceitas();
     } else if (route.name === "preparos") {
       renderPreparosList();
     } else if (route.name === "lista-compras") {
