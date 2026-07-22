@@ -81,6 +81,68 @@ Créditos de ícones (`buildIconCreditsEl`) ficam no fim da tela, numa seção v
 da listagem por um divisor (`.icon-credits` ganhou `border-top`) — evita misturar crédito de
 terceiros com o conteúdo de verdade da tela, provisório até o app ter um rodapé fixo.
 
+## Lista de Compras (aba da barra inferior)
+
+Deixou de ser placeholder — Fase 1 trouxe a visão "Por receita" e Fase 2 trouxe "Geral"
+(`renderListaCompras` em app.js, as 2 abas já funcionam). Botão "Adicionar à lista de compras"
+na tela de receita (`.action-btn`, 3ª ação —
+ver seção de ações acima) adiciona TODAS as entries de `ingredientsStructured` de uma vez,
+capturando o `portionMultiplier` atual do stepper (mesmo padrão de `currentRatio()` que o
+botão "Começar preparo" já usava). Clicar de novo com a receita já na lista só ressincroniza
+(porção/entries/`addedAt` atualizados) — não existe remover 1 receita pela tela de receita
+nesta fase, só "Limpar lista" inteira dentro da própria Lista de Compras (remove tudo:
+receitas E o registro de comprados, sem confirmação — mesmo padrão sem `window.confirm` já
+usado no "✕" de remover preparo).
+
+Schema `gusta-lista-compras-v1` segue o MESMO padrão de 2 níveis de `gusta-preparos-v1`
+(`SHOPPING_LIST_MIGRATIONS` mapa vazio desde a v1, validação individual por receita que
+descarta só a entrada malformada) — projetado com migração desde o início, não como remendo
+depois. `selectedEntries` guarda só os ÍNDICES das linhas de `ingredientsStructured`
+escolhidas, nunca copia texto/qty/unit — a exibição sempre resolve contra a receita de
+verdade, reaproveitando `formatStructuredItem` (mesma função do multiplicador de porções)
+pra escalar pelo `portionMultiplier` salvo.
+
+"Comprado" NÃO é por receita: `boughtKeys` é um registro único e compartilhado, chaveado por
+"item normalizado + unit" (`normalizeShoppingKey` em storage.js — trim + lowercase do texto do
+item, concatenado com a unidade). Marcar um ingrediente numa receita reflete em QUALQUER outra
+seção que tenha o mesmo item+unit, mesmo vindo de uma receita diferente — o checkbox nunca
+guarda estado próprio da receita. Cada marcação re-renderiza a tela inteira
+(`renderListaCompras()` de novo), mesmo princípio simples já usado em `renderMinhasReceitas`
+ao trocar de aba, garantindo que toda ocorrência do mesmo ingrediente atualize junto.
+
+Toggle no topo (Por receita / Geral, `.shopping-list__tabs`, mesmo padrão visual das abas de
+Minhas Receitas) alterna a variável de módulo `listaComprasView` e re-renderiza — mesmo
+princípio de `minhasReceitasTab`.
+
+Visão "Geral" (Fase 2, `buildShoppingListGroups` em app.js): percorre TODAS as entries
+selecionadas de TODAS as receitas da lista e agrupa por (item normalizado + família de
+unidade, quando a unidade tem família — ou item+unidade exata, quando não tem), somando
+qty/qtyRange já escalado pelo `portionMultiplier` de CADA receita. Famílias:
+- Peso (grama/quilograma): conversão trivial por potência de 1000 (`UNIT_TO_BASE_FACTOR`).
+- Volume (mililitro/litro/colher-sopa/colher-cha/xícara): tabela fixa de equivalência
+  culinária (colher-sopa=15ml, colher-cha=5ml, xícara=240ml, litro=1000ml) — soma tudo
+  convertido pra mililitro, depois formata de volta pra litro se o total passar de 1000ml
+  (nunca mostra "3000 ml", mostra "3 litros").
+- Contagem (dente/folha/talo/etc. + itens sem unidade mas com número, tipo "2 cebolas"): soma
+  direta, SEM conversão nenhuma, só dentro do mesmo par item+unidade exato — a família entra
+  na chave de agrupamento, então peso e volume NUNCA se misturam, mesmo com o item de nome
+  idêntico (2 linhas separadas nesse caso, nunca consolidado — densidade não é confiável,
+  decisão da investigação anterior).
+Itens com `qtyRange` somam limite inferior e superior separadamente (ex.: "8-10" + "2" vira
+"10-12") — funciona porque todo grupo acumula lo/hi desde o início (item exato: lo=hi=valor),
+sem tratamento especial pra faixa. Grupo sem quantidade numérica nenhuma (~28% do acervo, ex.
+"a gosto") aparece só como nome + "usado em: Receita A, Receita B", sem número (nunca inventa
+quantidade). Formatação reaproveita `formatStructuredItem` com um item sintético (o total já
+somado, `ratio=1`) — mesma função do multiplicador de porções, sem duplicar lógica de
+pluralização/fração.
+
+Checkbox "comprado" na visão Geral representa TODOS os pares item+unit originais daquele
+grupo de uma vez (`pairs` em cada grupo) — marcado só quando todos já estão em `boughtKeys`;
+clicar alterna todos juntos via `Storage.isShoppingItemBought`/`toggleShoppingItemBought`
+(as MESMAS funções da visão Por receita, nunca um estado próprio) — testado marcando um item
+compartilhado (mesma unidade em 2 receitas) na visão Geral e confirmando refletido nas 2
+seções da visão Por receita, e vice-versa.
+
 ## Página de grupo
 
 Cada grupo deve ter:
@@ -142,7 +204,9 @@ remoção — (router.js); campo `wantToCook` de ambos os ramos de `load()` e os
 `isWantToCook`/`toggleWantToCook`/`getAllWantToCook` do export `window.Storage` (storage.js).
 Acessar `#/quero-fazer` agora cai no fallback padrão do router (`{ name: "home" }`), sem erro.
 A tela de receita (`renderReceita`) e o card ficaram com só 2 ações: Marcar como feita e
-Favoritar.
+Favoritar. (Atualização Lista de Compras, Fase 1: a tela de receita ganhou uma 3ª ação,
+"Adicionar à lista de compras" — `.action-btn` reaproveitado, mesmo formato — mas só ali, o
+card continua com as mesmas 2 de sempre, sem 3ª ação.)
 
 Favoritar virou coração (`HEART_ICON_SVG`, definido perto de `iconSvg()` em app.js) — contorno
 vazio `--color-text-disabled` parado, preenchido `--color-accent` quando favoritado. É um ícone
@@ -212,11 +276,17 @@ chevron que gira 180° quando `.is-open`, corpo escondido via `display:none`/mos
 `display:flex`. A diferença é que aqui o toggle é local e simples
 (`ingSection.classList.toggle("is-open")` num único listener de clique no header, que também
 atualiza o texto do rótulo), sem o draft-state/re-render completo que o modal usa — não se
-aplica aqui porque é uma lista estática por receita, não múltiplas facetas recalculáveis; os
-checkboxes de ingrediente continuam aplicando direto no `Storage.toggleIngredient` como sempre,
-sem NENHUMA mudança nessa lógica (só o estado inicial do acordeão mudou). `<h4>
+aplica aqui porque é uma lista estática por receita, não múltiplas facetas recalculáveis. `<h4>
 Ingredientes</h4>` (heading estático) continua substituído pelo próprio botão-cabeçalho do
 acordeão.
+
+MUDANÇA (Lista de Compras, Fase 1): a lista de ingredientes na tela de receita virou SÓ LEITURA
+— não tem mais `<input type="checkbox">` nenhum (nem a classe `checklist` no `<ul>`, volta ao
+marcador de bullet padrão de `.ingredients-list`). `Storage.toggleIngredient`/
+`getCheckedIngredients`/`isIngredientChecked` e o campo `checkedIngredients` de
+`cardapio-state-v2` foram REMOVIDOS por completo de storage.js (mesmo tratamento que "quero
+fazer" recebeu antes) — marcar item como comprado só existe dentro da tela Lista de Compras
+agora, chaveado por ingrediente (item+unit normalizado), não por receita.
 
 ### Multiplicador de porções (usa ingredientsStructured)
 

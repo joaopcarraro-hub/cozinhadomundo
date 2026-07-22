@@ -178,6 +178,55 @@ body {
   color: var(--ink);
   background: rgba(214, 59, 32, 0.08);
 }
+/* Lista de Compras — mesmo padrão visual de abas de Minhas Receitas acima (troca em memória).
+   Fase 2: as 2 abas já funcionam — Por receita (.shopping-list__recipe, seção por receita,
+   sequencial) e Geral (soma agrupada entre receitas, ver buildShoppingListGroups em
+   js/app.js). Ambas reaproveitam a MESMA lista/checkbox (.ingredients-list.checklist) que a
+   tela de receita usava antes de virar só leitura. */
+.shopping-list__tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.shopping-list__tab {
+  flex: 1;
+  min-height: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  color: var(--ink-soft);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.shopping-list__tab.is-active {
+  border-color: var(--gold);
+  border-width: 2px;
+  color: var(--ink);
+  background: rgba(214, 59, 32, 0.08);
+}
+.shopping-list__clear {
+  display: block;
+  margin: 0 0 18px;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--color-error);
+  background: none;
+  color: var(--color-error);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.shopping-list__recipe {
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.shopping-list__recipe h3 {
+  margin: 0 0 4px;
+}
 .icon-credits {
   margin-top: 24px;
   padding-top: 16px;

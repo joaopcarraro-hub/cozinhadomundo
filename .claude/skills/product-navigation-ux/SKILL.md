@@ -60,9 +60,10 @@ exibição na grade que muda.
 ## Barra de navegação inferior
 
 Fixa, 5 abas: Home, Pesquisar, Minhas Receitas, Preparos, Lista de Compras. Substitui o antigo
-botão "Início" do topo (removido). Minhas Receitas/Preparos/Lista de Compras são
-telas-placeholder por ora — só a navegação e o visual existem, conteúdo real vem em blocos
-futuros.
+botão "Início" do topo (removido). Minhas Receitas, Preparos e Lista de Compras já são telas
+reais (não placeholder mais) — Minhas Receitas (favoritas/já feitas em abas), Preparos (lista
+de sessões de cozinha em andamento) e Lista de Compras (2 visões já funcionam: "Por receita" e
+"Geral" com soma agrupada entre receitas por família de unidade, ver mobile-recipe-ui/SKILL.md).
 
 ## Páginas intermediárias
 

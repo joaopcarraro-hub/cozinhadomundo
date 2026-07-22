@@ -1789,6 +1789,262 @@
     content.appendChild(list);
   }
 
+  // ---------- Tela "Lista de Compras" (aba da barra inferior) ----------
+  // Fase 1: só a visão "por receita" (uma receita de cada vez, sequencial) — a visão "geral"
+  // (soma agrupada entre receitas, todas as famílias de unidade resolvidas) fica pra Fase 2.
+  // O toggle no topo já existe visualmente mas "Geral" fica desabilitado por ora.
+  // Família decide SE dá pra somar direto entre unidades diferentes (peso/volume, via fator
+  // fixo pra uma unidade-base) ou só dentro do MESMO par item+unidade exato (contagem — nunca
+  // soma "dente" com "folha", nem tenta converter peso<->volume: densidade não é confiável,
+  // decisão já tomada na investigação anterior). Tabela de equivalência de volume é convenção
+  // culinária fixa (colher-sopa/colher-cha/xícara em ml), não depende do ingrediente.
+  const UNIT_FAMILY = {
+    grama: "peso",
+    quilograma: "peso",
+    mililitro: "volume",
+    litro: "volume",
+    "colher-sopa": "volume",
+    "colher-cha": "volume",
+    xicara: "volume",
+  };
+  const UNIT_TO_BASE_FACTOR = {
+    grama: 1,
+    quilograma: 1000,
+    mililitro: 1,
+    litro: 1000,
+    "colher-sopa": 15,
+    "colher-cha": 5,
+    xicara: 240,
+  };
+  function normalizeGroupKey(s) {
+    return String(s || "").trim().toLowerCase();
+  }
+
+  // Percorre TODAS as entries selecionadas de TODAS as receitas da lista, agrupando por
+  // (item normalizado + família de unidade — peso/volume — ou item+unidade exata quando não há
+  // família) e somando qty (já escalado pelo portionMultiplier de CADA receita) dentro do mesmo
+  // grupo. lo/hi são sempre acumulados separadamente (item exato: lo=hi=valor; qtyRange: lo/hi
+  // reais) — isso cobre soma de faixa (item 4) sem tratamento especial. Cada grupo guarda os
+  // pares {item, unit} ORIGINAIS que contribuíram, pra sincronizar o checkbox "comprado" com o
+  // MESMO boughtKeys da visão Por receita (nunca um estado próprio da visão Geral).
+  function buildShoppingListGroups() {
+    const groups = {};
+    Storage.getShoppingListRecipes().forEach((entry) => {
+      const recipeItem = TagModel.findRecipeById(entry.recipeId);
+      if (!recipeItem) return;
+      const recipe = recipeItem.recipe;
+      const structured = recipe.ingredientsStructured || [];
+      (entry.selectedEntries || []).forEach((entryIndex) => {
+        const structEntry = structured[entryIndex];
+        if (!structEntry) return;
+        structEntry.items.forEach((it) => {
+          const family = it.unit ? UNIT_FAMILY[it.unit] : null;
+          // Peso e Volume NUNCA se misturam (item 3) — a família entra na chave, então o mesmo
+          // item em peso numa receita e volume em outra vira 2 grupos, nunca 1 consolidado.
+          const groupKey = normalizeGroupKey(it.item) + "|" + (family ? "FAM:" + family : "UNIT:" + (it.unit || ""));
+          if (!groups[groupKey]) {
+            groups[groupKey] = { itemLabel: it.item, family: family, literalUnit: it.unit || null, lo: 0, hi: 0, hasQuantity: false, pairs: {}, recipeNames: {} };
+          }
+          const g = groups[groupKey];
+          g.pairs[normalizeGroupKey(it.item) + "|" + (it.unit || "")] = { item: it.item, unit: it.unit || null };
+          g.recipeNames[recipe.name] = true;
+
+          const factor = family ? UNIT_TO_BASE_FACTOR[it.unit] : 1;
+          if (it.qty !== null && it.qty !== undefined) {
+            const v = it.qty * entry.portionMultiplier * factor;
+            g.lo += v;
+            g.hi += v;
+            g.hasQuantity = true;
+          } else if (it.qtyRange) {
+            g.lo += it.qtyRange[0] * entry.portionMultiplier * factor;
+            g.hi += it.qtyRange[1] * entry.portionMultiplier * factor;
+            g.hasQuantity = true;
+          }
+        });
+      });
+    });
+
+    return Object.keys(groups)
+      .map((key) => {
+        const g = groups[key];
+        const pairs = Object.values(g.pairs);
+        const recipeNames = Object.keys(g.recipeNames);
+        let displayText;
+        if (!g.hasQuantity) {
+          // Item 5: sem quantidade nenhuma (a gosto) — só nome + de quais receitas vem, sem
+          // número (nunca inventa quantidade).
+          displayText = g.itemLabel.charAt(0).toUpperCase() + g.itemLabel.slice(1) + " — usado em: " + recipeNames.join(", ");
+        } else {
+          // Formata de volta pra unidade mais legível do total (nunca "3000 ml" — "3 litros").
+          let displayUnit = g.literalUnit;
+          let lo = g.lo;
+          let hi = g.hi;
+          if (g.family === "peso") {
+            if (hi >= 1000) {
+              displayUnit = "quilograma";
+              lo /= 1000;
+              hi /= 1000;
+            } else {
+              displayUnit = "grama";
+            }
+          } else if (g.family === "volume") {
+            if (hi >= 1000) {
+              displayUnit = "litro";
+              lo /= 1000;
+              hi /= 1000;
+            } else {
+              displayUnit = "mililitro";
+            }
+          }
+          // Reaproveita formatStructuredItem (mesma função do multiplicador de porções) — um
+          // item sintético com o total já somado, ratio 1 (não escala de novo, só formata).
+          const synthItem = { qty: lo === hi ? lo : null, qtyRange: lo === hi ? null : [lo, hi], unit: displayUnit, item: g.itemLabel, prep: null, alt: null, optional: false };
+          displayText = formatStructuredItem(synthItem, 1);
+        }
+        return { key, displayText, pairs, hasQuantity: g.hasQuantity, itemLabel: g.itemLabel };
+      })
+      .sort((a, b) => a.itemLabel.localeCompare(b.itemLabel, "pt-BR"));
+  }
+
+  let listaComprasView = "porReceita";
+
+  function renderListaCompras() {
+    activeCat = null;
+    refreshActiveCounts = null;
+    header.innerHTML = "<h2>🛒 Lista de Compras</h2>";
+    content.innerHTML = "";
+    progressEl.textContent = "";
+
+    const toggleEl = document.createElement("div");
+    toggleEl.className = "shopping-list__tabs";
+    toggleEl.innerHTML =
+      '<button type="button" class="shopping-list__tab' +
+      (listaComprasView === "porReceita" ? " is-active" : "") +
+      '">Por receita</button>' +
+      '<button type="button" class="shopping-list__tab' +
+      (listaComprasView === "geral" ? " is-active" : "") +
+      '">Geral</button>';
+    const tabButtons = toggleEl.querySelectorAll(".shopping-list__tab");
+    tabButtons[0].addEventListener("click", () => {
+      if (listaComprasView === "porReceita") return;
+      listaComprasView = "porReceita";
+      renderListaCompras();
+    });
+    tabButtons[1].addEventListener("click", () => {
+      if (listaComprasView === "geral") return;
+      listaComprasView = "geral";
+      renderListaCompras();
+    });
+    content.appendChild(toggleEl);
+
+    const recipeEntries = Storage.getShoppingListRecipes();
+
+    if (!recipeEntries.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty-state";
+      empty.textContent = "Sua lista de compras está vazia. Adicione receitas pela tela de cada receita.";
+      content.appendChild(empty);
+      return;
+    }
+
+    const clearBtn = document.createElement("button");
+    clearBtn.type = "button";
+    clearBtn.className = "shopping-list__clear";
+    clearBtn.textContent = "Limpar lista";
+    clearBtn.addEventListener("click", () => {
+      Storage.clearShoppingList();
+      renderListaCompras();
+    });
+    content.appendChild(clearBtn);
+
+    if (listaComprasView === "geral") {
+      renderShoppingListGeral();
+    } else {
+      renderShoppingListPorReceita(recipeEntries);
+    }
+  }
+
+  // "Comprado" é uma chave COMPARTILHADA entre receitas (item normalizado + unit) — marcar
+  // aqui precisa refletir em qualquer outra seção que tenha o mesmo ingrediente, por isso o
+  // re-render é da tela inteira, não só da linha clicada (mesmo princípio simples já usado
+  // em renderMinhasReceitas ao trocar de aba).
+  function renderShoppingListPorReceita(recipeEntries) {
+    recipeEntries.forEach((entry) => {
+      const recipeItem = TagModel.findRecipeById(entry.recipeId);
+      if (!recipeItem) return; // defensivo: receita não existe mais (renomeada/removida)
+      const recipe = recipeItem.recipe;
+      const structured = recipe.ingredientsStructured || [];
+
+      const section = document.createElement("div");
+      section.className = "shopping-list__recipe";
+
+      const title = document.createElement("h3");
+      title.textContent = recipe.name;
+      section.appendChild(title);
+
+      const ul = document.createElement("ul");
+      ul.className = "ingredients-list checklist";
+
+      (entry.selectedEntries || []).forEach((entryIndex) => {
+        const structEntry = structured[entryIndex];
+        if (!structEntry) return; // defensivo: índice não existe mais (dado da receita mudou)
+        structEntry.items.forEach((it) => {
+          const text = formatStructuredItem(it, entry.portionMultiplier);
+          const bought = Storage.isShoppingItemBought(it.item, it.unit);
+          const li = document.createElement("li");
+          li.innerHTML =
+            '<label><input type="checkbox"' +
+            (bought ? " checked" : "") +
+            '><span class="' +
+            (bought ? "struck" : "") +
+            '">' +
+            text +
+            "</span></label>";
+          li.querySelector('input[type="checkbox"]').addEventListener("change", () => {
+            Storage.toggleShoppingItemBought(it.item, it.unit);
+            renderListaCompras();
+          });
+          ul.appendChild(li);
+        });
+      });
+
+      section.appendChild(ul);
+      content.appendChild(section);
+    });
+  }
+
+  // Visão Geral (Fase 2): 1 linha por grupo (buildShoppingListGroups), checkbox reflete/altera
+  // TODOS os pares item+unit originais daquele grupo de uma vez — "comprado" fica marcado só
+  // quando TODOS os pares originais já estão marcados; clicar alterna todos juntos. Nunca guarda
+  // estado próprio: sempre lê/escreve via Storage.isShoppingItemBought/toggleShoppingItemBought,
+  // o MESMO boughtKeys da visão Por receita.
+  function renderShoppingListGeral() {
+    const groups = buildShoppingListGroups();
+    const ul = document.createElement("ul");
+    ul.className = "ingredients-list checklist";
+    groups.forEach((g) => {
+      const bought = g.pairs.every((p) => Storage.isShoppingItemBought(p.item, p.unit));
+      const li = document.createElement("li");
+      li.innerHTML =
+        '<label><input type="checkbox"' +
+        (bought ? " checked" : "") +
+        '><span class="' +
+        (bought ? "struck" : "") +
+        '">' +
+        g.displayText +
+        "</span></label>";
+      li.querySelector('input[type="checkbox"]').addEventListener("change", () => {
+        const target = !bought;
+        g.pairs.forEach((p) => {
+          if (Storage.isShoppingItemBought(p.item, p.unit) !== target) Storage.toggleShoppingItemBought(p.item, p.unit);
+        });
+        renderListaCompras();
+      });
+      ul.appendChild(li);
+    });
+    content.appendChild(ul);
+  }
+
   // Crédito a SVG Repo pelos 4 ícones de Equipamento que vieram de lá (forno, liquidificador,
   // batedeira, micro-ondas — não exigido pela licença deles, mas recomendado). Icons8 foi
   // REMOVIDO: os 3 últimos PNG (air-fryer, panela de pressão, churrasqueira) que exigiam essa
@@ -2244,6 +2500,28 @@
 
     actions.appendChild(favBtn);
     actions.appendChild(madeBtn);
+
+    // Adicionar à lista de compras (Fase 1): sempre adiciona TODAS as entries de
+    // ingredientsStructured de uma vez (sem UI de selecionar item por item nesta fase),
+    // capturando o portionMultiplier ATUAL do stepper (currentRatio(), mesmo padrão do cookBtn
+    // abaixo). Clicar de novo com a receita já na lista só ressincroniza (atualiza porção/
+    // entries/addedAt) — não existe remover pela tela de receita nesta fase, só "Limpar lista"
+    // inteira dentro da própria Lista de Compras.
+    const shoppingBtn = document.createElement("button");
+    shoppingBtn.type = "button";
+    function renderShoppingBtn(inList) {
+      shoppingBtn.className = "action-btn" + (inList ? " active" : "");
+      shoppingBtn.textContent = inList ? "✓ Na lista de compras" : "🛒 Adicionar à lista de compras";
+    }
+    renderShoppingBtn(Storage.isRecipeInShoppingList(item.id));
+    shoppingBtn.addEventListener("click", () => {
+      const entries = recipe.ingredientsStructured || [];
+      const entryIndexes = entries.map((_, i) => i);
+      Storage.addRecipeToShoppingList(item.id, currentRatio(), entryIndexes);
+      renderShoppingBtn(true);
+    });
+    actions.appendChild(shoppingBtn);
+
     page.appendChild(actions);
 
     if (recipe.steps && recipe.steps.length) {
@@ -2276,43 +2554,24 @@
     // campo (não deveria acontecer, as 398 já foram cobertas), cai pro raw sem escalar, sem quebrar.
     const structuredList = recipe.ingredientsStructured || null;
 
+    // Lista SÓ LEITURA a partir daqui (Fase 1 da Lista de Compras) — o check de "comprado"
+    // saiu inteiramente pra Lista de Compras (Storage.toggleIngredient/checkedIngredients
+    // foram removidos de storage.js). Sem <input type="checkbox">, sem classe "checklist"
+    // (volta a usar o marcador de bullet padrão de .ingredients-list, não o checkbox).
     function ingredientItemsHtml(ratio) {
-      const checked = Storage.getCheckedIngredients(item.id);
       return ingredientsList
         .map((ing, i) => {
-          const isChecked = checked.indexOf(i) !== -1;
           const entry = structuredList && structuredList[i];
           const text = entry ? formatStructuredEntry(entry, ratio) : ing;
-          return (
-            '<li><label><input type="checkbox" data-idx="' +
-            i +
-            '"' +
-            (isChecked ? " checked" : "") +
-            '><span class="' +
-            (isChecked ? "struck" : "") +
-            '">' +
-            text +
-            "</span></label></li>"
-          );
+          return "<li>" + text + "</li>";
         })
         .join("");
-    }
-
-    function bindIngredientCheckboxes() {
-      ingSection.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
-        cb.addEventListener("change", () => {
-          const idx = parseInt(cb.dataset.idx, 10);
-          Storage.toggleIngredient(item.id, idx);
-          cb.nextElementSibling.classList.toggle("struck", cb.checked);
-        });
-      });
     }
 
     function refreshIngredients() {
       const ul = ingSection.querySelector(".ingredients-list");
       if (!ul) return; // stepper pode disparar antes do acordeão existir, nunca acontece na prática mas evita erro
       ul.innerHTML = ingredientItemsHtml(currentRatio());
-      bindIngredientCheckboxes();
     }
 
     ingSection.innerHTML =
@@ -2322,7 +2581,7 @@
       ")</span></span>" +
       iconSvg("chevronDown", "filter-section__chevron") +
       "</button>" +
-      '<div class="filter-section__body"><ul class="ingredients-list checklist">' +
+      '<div class="filter-section__body"><ul class="ingredients-list">' +
       ingredientItemsHtml(1) +
       "</ul></div>";
     const ingToggleLabel = ingSection.querySelector(".filter-section__label");
@@ -2331,7 +2590,6 @@
       ingToggleLabel.childNodes[0].textContent = isOpen ? "Ocultar ingredientes" : "Ver ingredientes";
     });
     page.appendChild(ingSection);
-    bindIngredientCheckboxes();
 
     const stepsSection = document.createElement("div");
     stepsSection.className = "recipe-page-section";
@@ -2949,7 +3207,7 @@
     } else if (route.name === "preparos") {
       renderPreparosList();
     } else if (route.name === "lista-compras") {
-      renderPlaceholder("🛒 Lista de Compras", "Em breve: monte sua lista de compras a partir das receitas.");
+      renderListaCompras();
     } else {
       renderHome();
     }

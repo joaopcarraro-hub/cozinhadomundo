@@ -19,15 +19,6 @@
     return migrated.filter((id, i) => migrated.indexOf(id) === i); // dedupe
   }
 
-  function migrateCheckedIngredients(obj) {
-    const out = {};
-    Object.keys(obj).forEach((oldId) => {
-      const newId = migrateOldId(oldId);
-      out[newId] = obj[oldId];
-    });
-    return out;
-  }
-
   function load() {
     try {
       const raw = localStorage.getItem(KEY);
@@ -36,7 +27,6 @@
         return {
           made: migrateIdList(parsed.made || []),
           favorites: migrateIdList(parsed.favorites || []),
-          checkedIngredients: migrateCheckedIngredients(parsed.checkedIngredients || {}),
         };
       }
     } catch (e) {}
@@ -47,7 +37,7 @@
       const legacy = localStorage.getItem(LEGACY_MADE_KEY);
       if (legacy) made = migrateIdList(JSON.parse(legacy));
     } catch (e) {}
-    return { made, favorites: [], checkedIngredients: {} };
+    return { made, favorites: [] };
   }
 
   const state = load();
@@ -146,6 +136,71 @@
     } catch (e) {}
   }
 
+  // ---------- Lista de compras (Fase 1 — schema + "por receita") ----------
+  // Mesmo padrão de 2 níveis de gusta-preparos-v1 (migração seletiva por versão + validação
+  // individual, ver acima) — projetado com o mapa de migração desde a v1, não como remendo
+  // depois. selectedEntries guarda só os ÍNDICES das linhas de ingredientsStructured que
+  // entraram na lista pra aquela receita (nunca copia texto/qty/unit — sempre resolve contra
+  // ingredientsStructured na hora de exibir, com o portionMultiplier salvo na hora de
+  // adicionar). "Comprado" NÃO é por receita: boughtKeys é um registro único e compartilhado,
+  // chaveado por "item normalizado|unit" — o mesmo ingrediente marcado numa receita aparece
+  // marcado em qualquer outra receita que também precise dele.
+  const SHOPPING_LIST_KEY = "gusta-lista-compras-v1";
+  const SHOPPING_LIST_SCHEMA_VERSION = 1;
+
+  // Nenhuma migração real existe ainda (schema nunca mudou desde a v1) — fica vazio até o dia
+  // em que precisar de uma de verdade, mesmo padrão de PREPARO_MIGRATIONS.
+  const SHOPPING_LIST_MIGRATIONS = {};
+
+  function isValidShoppingListRecipe(r) {
+    return !!r && typeof r === "object" && typeof r.recipeId === "string" && typeof r.portionMultiplier === "number" && Array.isArray(r.selectedEntries);
+  }
+
+  function normalizeShoppingKey(itemText, unit) {
+    return String(itemText || "").trim().toLowerCase() + "|" + (unit || "");
+  }
+
+  function loadShoppingList() {
+    const empty = { version: SHOPPING_LIST_SCHEMA_VERSION, recipes: {}, boughtKeys: {} };
+    try {
+      const raw = localStorage.getItem(SHOPPING_LIST_KEY);
+      if (!raw) return empty;
+      let parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return empty; // corrompido de um jeito irrecuperável
+
+      let hops = 0;
+      while (parsed.version !== SHOPPING_LIST_SCHEMA_VERSION) {
+        const migrate = SHOPPING_LIST_MIGRATIONS[parsed.version];
+        if (!migrate) return empty; // versão sem migração conhecida — irrecuperável
+        parsed = migrate(parsed);
+        if (!parsed || typeof parsed !== "object") return empty;
+        hops++;
+        if (hops > 20) return empty; // guarda contra migração mal escrita em loop
+      }
+
+      if (!parsed.recipes || typeof parsed.recipes !== "object") return empty;
+
+      const recipes = {};
+      Object.keys(parsed.recipes).forEach((recipeId) => {
+        if (isValidShoppingListRecipe(parsed.recipes[recipeId])) recipes[recipeId] = parsed.recipes[recipeId];
+      });
+
+      const boughtKeys = parsed.boughtKeys && typeof parsed.boughtKeys === "object" ? parsed.boughtKeys : {};
+
+      return { version: SHOPPING_LIST_SCHEMA_VERSION, recipes, boughtKeys };
+    } catch (e) {
+      return empty;
+    }
+  }
+
+  const shoppingListState = loadShoppingList();
+
+  function saveShoppingList() {
+    try {
+      localStorage.setItem(SHOPPING_LIST_KEY, JSON.stringify(shoppingListState));
+    } catch (e) {}
+  }
+
   window.Storage = {
     isMade: (id) => has(state.made, id),
     toggleMade: (id) => toggleIn("made", id),
@@ -153,21 +208,6 @@
 
     isFavorite: (id) => has(state.favorites, id),
     toggleFavorite: (id) => toggleIn("favorites", id),
-
-    getCheckedIngredients: (id) => state.checkedIngredients[id] || [],
-    isIngredientChecked: (id, index) => {
-      const arr = state.checkedIngredients[id] || [];
-      return arr.indexOf(index) !== -1;
-    },
-    toggleIngredient: (id, index) => {
-      const arr = (state.checkedIngredients[id] || []).slice();
-      const i = arr.indexOf(index);
-      if (i === -1) arr.push(index);
-      else arr.splice(i, 1);
-      state.checkedIngredients[id] = arr;
-      save();
-      return arr;
-    },
 
     getAllFavorites: () => state.favorites.slice(),
     getAllMade: () => state.made.slice(),
@@ -214,6 +254,41 @@
     deletePreparoSession: (recipeId) => {
       delete preparoState.sessions[recipeId];
       savePreparo();
+    },
+
+    // Lista de compras — adicionar sempre substitui a entrada da receita inteira (portas de
+    // entrada nesta fase só adicionam TODAS as entries de uma vez, ver renderReceita/app.js),
+    // atualizando portionMultiplier/addedAt/selectedEntries pro estado atual.
+    addRecipeToShoppingList: (recipeId, portionMultiplier, entryIndexes) => {
+      shoppingListState.recipes[recipeId] = {
+        recipeId,
+        portionMultiplier: portionMultiplier || 1,
+        addedAt: Date.now(),
+        selectedEntries: (entryIndexes || []).slice(),
+      };
+      saveShoppingList();
+    },
+    isRecipeInShoppingList: (recipeId) => !!shoppingListState.recipes[recipeId],
+    // Ordenado por addedAt — visão "por receita" mostra na ordem em que foram adicionadas.
+    getShoppingListRecipes: () =>
+      Object.values(shoppingListState.recipes)
+        .slice()
+        .sort((a, b) => a.addedAt - b.addedAt),
+    isShoppingItemBought: (itemText, unit) => !!shoppingListState.boughtKeys[normalizeShoppingKey(itemText, unit)],
+    // Chave compartilhada entre receitas — marcar num lugar reflete em qualquer outra receita
+    // que tenha o mesmo item+unit.
+    toggleShoppingItemBought: (itemText, unit) => {
+      const key = normalizeShoppingKey(itemText, unit);
+      if (shoppingListState.boughtKeys[key]) delete shoppingListState.boughtKeys[key];
+      else shoppingListState.boughtKeys[key] = true;
+      saveShoppingList();
+      return !!shoppingListState.boughtKeys[key];
+    },
+    // Remove tudo — receitas E o registro de comprados, volta ao estado vazio.
+    clearShoppingList: () => {
+      shoppingListState.recipes = {};
+      shoppingListState.boughtKeys = {};
+      saveShoppingList();
     },
   };
 })();
