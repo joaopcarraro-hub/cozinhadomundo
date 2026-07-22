@@ -83,16 +83,59 @@
   // ao retomar, o restante é recalculado pela diferença real de relógio (endsAt - now), nunca
   // assumindo que o JS ficou rodando contínuo (funciona depois de fechar/reabrir a aba).
   const PREPARO_KEY = "gusta-preparos-v1";
+  const PREPARO_SCHEMA_VERSION = 1;
+
+  // Migração seletiva por versão antiga — cada entrada recebe o objeto salvo NA versão indicada
+  // pela chave e devolve o objeto já convertido pra versão seguinte (loadPreparo encadeia até
+  // bater na atual, ver abaixo). Nenhuma migração real existe ainda (o schema nunca mudou desde
+  // a v1) — fica vazio até o dia em que precisar de uma de verdade.
+  const PREPARO_MIGRATIONS = {};
+
+  // Nível 2: uma sessão é válida se os 4 campos que o resto do app depende de verdade baterem
+  // no tipo esperado. Sessão que falhar aqui é descartada sozinha, sem derrubar as outras.
+  function isValidPreparoSession(s) {
+    return (
+      !!s &&
+      typeof s === "object" &&
+      typeof s.recipeId === "string" &&
+      typeof s.currentStep === "number" &&
+      !!s.stepTimers &&
+      typeof s.stepTimers === "object" &&
+      typeof s.status === "string"
+    );
+  }
 
   function loadPreparo() {
+    const empty = { version: PREPARO_SCHEMA_VERSION, sessions: {} };
     try {
       const raw = localStorage.getItem(PREPARO_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (parsed && parsed.version === 1 && parsed.sessions) return parsed;
+      if (!raw) return empty;
+      let parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") return empty; // corrompido de um jeito irrecuperável
+
+      // Nível 1: sobe de versão em versão enquanto existir migração registrada pra versão
+      // salva. Só reseta tudo se a versão for genuinamente desconhecida (sem migração
+      // registrada) — nunca só por ser diferente da atual.
+      let hops = 0;
+      while (parsed.version !== PREPARO_SCHEMA_VERSION) {
+        const migrate = PREPARO_MIGRATIONS[parsed.version];
+        if (!migrate) return empty; // versão sem migração conhecida — irrecuperável
+        parsed = migrate(parsed);
+        if (!parsed || typeof parsed !== "object") return empty;
+        hops++;
+        if (hops > 20) return empty; // guarda contra migração mal escrita em loop
       }
-    } catch (e) {}
-    return { version: 1, sessions: {} };
+
+      if (!parsed.sessions || typeof parsed.sessions !== "object") return empty;
+
+      const sessions = {};
+      Object.keys(parsed.sessions).forEach((recipeId) => {
+        if (isValidPreparoSession(parsed.sessions[recipeId])) sessions[recipeId] = parsed.sessions[recipeId];
+      });
+      return { version: PREPARO_SCHEMA_VERSION, sessions };
+    } catch (e) {
+      return empty;
+    }
   }
 
   const preparoState = loadPreparo();
