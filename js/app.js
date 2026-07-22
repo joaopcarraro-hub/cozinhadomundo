@@ -1996,9 +1996,12 @@
     fava: { singular: "fava", plural: "favas" },
   };
 
-  // Arredonda pra fração comum de cozinha quando a parte decimal bate de perto (1/4, 1/3, 1/2,
-  // 2/3, 3/4) — nunca mostra decimal cru tipo "0.333333333". Fora dessas frações, cai pra 1 casa
-  // decimal com vírgula (mesmo padrão PT-BR já usado no texto original, ex. "1,5 kg").
+  // Arredondamento depende da NATUREZA da unidade — objeto físico marcado em fração (xícara,
+  // colher-sopa, colher-cha) aceita as 5 frações de cozinha de sempre; grama/mililitro (base de
+  // peso/volume) e quilograma/litro (múltiplo) nunca mostram fração (ninguém mede "1/3 de
+  // grama" ou "1,5 1/2 kg" — só faz sentido pra utensílio marcado); contagem (dente, folha,
+  // objeto sem unidade tipo "2 cebolas", etc.) só aceita a metade (1/2 dente faz sentido, 1/3 ou
+  // 1/4 de dente não — ninguém fala assim), o resto vira inteiro mais próximo.
   const COMMON_FRACTIONS = [
     [0.25, "1/4"],
     [1 / 3, "1/3"],
@@ -2006,19 +2009,39 @@
     [2 / 3, "2/3"],
     [0.75, "3/4"],
   ];
+  const HALF_ONLY_FRACTIONS = [[0.5, "1/2"]];
+  const FRACTION_UNITS = ["xicara", "colher-sopa", "colher-cha"];
   const FRACTION_EPS = 0.04;
-  function formatQty(value) {
+  function formatQty(value, unit) {
+    // grama/mililitro: unidade-base de peso/volume — inteiro, sem fração, sem decimal.
+    if (unit === "grama" || unit === "mililitro") {
+      return String(Math.max(0, Math.round(value)));
+    }
+    // quilograma/litro: múltiplo — 1 casa decimal com vírgula (convenção já usada no texto
+    // original, ex. "1,5 kg"), nunca fração.
+    if (unit === "quilograma" || unit === "litro") {
+      return String(Math.round(value * 10) / 10).replace(".", ",");
+    }
+
     const intPart = Math.floor(value + 1e-9);
     const frac = value - intPart;
     if (frac < FRACTION_EPS || frac > 1 - FRACTION_EPS) {
       return String(Math.max(0, Math.round(value)));
     }
-    for (const [target, label] of COMMON_FRACTIONS) {
+    const isFractionUnit = FRACTION_UNITS.indexOf(unit) !== -1;
+    const fractions = isFractionUnit ? COMMON_FRACTIONS : HALF_ONLY_FRACTIONS;
+    for (const [target, label] of fractions) {
       if (Math.abs(frac - target) < FRACTION_EPS) {
         return (intPart > 0 ? intPart + " " : "") + label;
       }
     }
-    return String(Math.round(value * 10) / 10).replace(".", ",");
+    if (isFractionUnit) {
+      // Nenhuma mudança de comportamento aqui — mesmo fallback decimal de sempre.
+      return String(Math.round(value * 10) / 10).replace(".", ",");
+    }
+    // Contagem: não bateu em 1/2 nem tá perto de inteiro — nunca mostra 1/3/1/4/2/3/3/4 nem
+    // decimal cru pra objeto discreto, arredonda pro inteiro mais próximo.
+    return String(Math.max(0, Math.round(value)));
   }
 
   // Só escala qty/qtyRange (os únicos campos verdadeiramente numéricos do schema). prep/alt/group
@@ -2028,12 +2051,12 @@
   function scaleQtyField(it, ratio) {
     if (it.qty !== null && it.qty !== undefined) {
       const scaled = it.qty * ratio;
-      return { qtyText: formatQty(scaled), refQty: scaled, isRange: false };
+      return { qtyText: formatQty(scaled, it.unit), refQty: scaled, isRange: false };
     }
     if (it.qtyRange) {
       const lo = it.qtyRange[0] * ratio;
       const hi = it.qtyRange[1] * ratio;
-      return { qtyText: formatQty(lo) + "-" + formatQty(hi), refQty: hi, isRange: true };
+      return { qtyText: formatQty(lo, it.unit) + "-" + formatQty(hi, it.unit), refQty: hi, isRange: true };
     }
     return { qtyText: "", refQty: null, isRange: false }; // sem qty (a gosto, referência, etc.) — nunca inventa número
   }

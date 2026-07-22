@@ -239,12 +239,25 @@ quando contêm números (ex. "cerca de 4 cm de espessura" no prep) — escalar u
 de texto livre arriscaria acertar a coisa errada. Itens sem `qty` nem `qtyRange` (ex. "sal a
 gosto", referências cruzadas) nunca ganham um número inventado, em qualquer multiplicador.
 
-Formatação do número escalado (`formatQty`) nunca mostra decimal cru: fecha pra fração comum de
-cozinha (1/4, 1/3, 1/2, 2/3, 3/4, com tolerância de 4% e número misto tipo "1 1/2" quando a parte
-inteira é maior que zero) quando a parte decimal bate de perto; senão cai pra 1 casa decimal com
-vírgula (padrão PT-BR já usado no texto original, ex. "1,5 kg"); valores bem próximos de um inteiro
-arredondam pro inteiro. `qtyRange` escala os dois extremos independentemente e junta com hífen (ex.
-"8-10" x2 -> "16-20"). Unidade usa `UNIT_DISPLAY` (mesmos ids canônicos do parser da Fase 2b) —
+Formatação do número escalado (`formatQty(value, unit)`) DEPENDE da unidade — corrigido depois de
+constatar que a fração "bonita" universal fazia sentido pra utensílio marcado em fração mas não
+pra peso/volume nem pra objeto discreto (ninguém fala "1/3 de grama" ou "2/3 de dente de alho"):
+- xícara/colher-sopa/colher-cha (instrumento físico marcado em fração): fecha pra fração comum de
+  cozinha (1/4, 1/3, 1/2, 2/3, 3/4, tolerância de 4%, número misto tipo "1 1/2" quando a parte
+  inteira é maior que zero) quando a parte decimal bate de perto; fora disso cai pra 1 casa
+  decimal com vírgula. Comportamento IDÊNTICO ao de antes desta correção, sem mudança nenhuma.
+- grama/mililitro (unidade-base de peso/volume): sempre número inteiro, nunca fração, nunca casa
+  decimal (ex. 66,67 g escalado vira "67 g", nunca "66 2/3 g" nem "66,7 g").
+- quilograma/litro (múltiplo): sempre 1 casa decimal com vírgula (padrão PT-BR já usado no texto
+  original, ex. "1,5 kg"), nunca fração (nunca "1 1/2 kg").
+- Contagem (dente, folha, talo, fatia, ramo, pedaço, filé, fio, disco, fava, posta, pacote, lata,
+  e qualquer item sem unidade mas com número, tipo "2 cebolas" — na prática, qualquer unidade que
+  não caia nos 2 grupos acima): só aceita a fração 1/2 (ex. "1 1/2 dente" é aceitável); 1/3, 1/4,
+  2/3 e 3/4 NUNCA aparecem pra objeto discreto — se não estiver perto de inteiro nem de meio,
+  arredonda pro inteiro mais próximo (ex. alho 2 dentes × 0,33 -> "1 dente", não "2/3 dente").
+`qtyRange` escala os dois extremos independentemente e junta com hífen (ex.
+"8-10" x2 -> "16-20"), cada extremo passando pela MESMA regra por unidade acima. Unidade usa
+`UNIT_DISPLAY` (mesmos ids canônicos do parser da Fase 2b) —
 grama/quilograma/mililitro/litro viram abreviação sem plural (g/kg/ml/L); o resto (dente, xícara,
 colher-sopa etc.) é substantivo contável com singular/plural escolhido pela quantidade escalada
 arredondada (ex. "1 dente" vs "2 dentes"). Limitação explícita, não corrigida nesta rodada: o
