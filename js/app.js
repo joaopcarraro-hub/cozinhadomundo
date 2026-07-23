@@ -1795,6 +1795,10 @@
     "colher-sopa": "volume",
     "colher-cha": "volume",
     xicara: "volume",
+    // "colher" nua (1 ocorrência no acervo — Apple Pie "1 colher de leite") = colher de sopa,
+    // convenção culinária BR. Tratada como volume só na camada da lista de compras pra nunca
+    // exibir "1 colher de leite" na Geral (o dado da receita fica intocado — bug de dado é Fase 4).
+    colher: "volume",
   };
   const UNIT_TO_BASE_FACTOR = {
     grama: 1,
@@ -1804,6 +1808,7 @@
     "colher-sopa": 15,
     "colher-cha": 5,
     xicara: 240,
+    colher: 15,
   };
   function normalizeGroupKey(s) {
     return String(s || "").trim().toLowerCase();
@@ -1856,23 +1861,39 @@
           // existir linha quantificada do mesmo núcleo, encosta nela como "+ a gosto em N
           // receitas" (fim da dupla linha mapeada na investigação); senão, vira o grupo
           // "usado em" de sempre. Resolvido num pós-passe, depois de todos os grupos existirem.
-          if ((it.qty === null || it.qty === undefined) && !it.qtyRange) {
+          // Erva fresca em COLHERADA entra no mesmo caminho (decisão 2026-07-23): venda é por
+          // maço, nem colher nem grama comparam com isso — a colherada vale como "sem
+          // quantidade útil"; talos/ramos/folhas da mesma erva seguem contando normal.
+          const herbSpoon =
+            (it.unit === "colher-sopa" || it.unit === "colher-cha" || it.unit === "xicara") &&
+            ShoppingDict.isSpoonNoQuantity(core);
+          if (herbSpoon || ((it.qty === null || it.qty === undefined) && !it.qtyRange)) {
             if (!aGosto[core]) aGosto[core] = { pairs: {}, recipeNames: {} };
             aGosto[core].pairs[normalizeGroupKey(it.item) + "|" + (it.unit || "")] = { item: it.item, unit: it.unit || null };
             aGosto[core].recipeNames[recipe.name] = true;
             return;
           }
-          // Peso e Volume NUNCA se misturam (item 3) — a família entra na chave, então o mesmo
-          // item em peso numa receita e volume em outra vira 2 grupos, nunca 1 consolidado.
-          const groupKey = core + "|" + (family ? "FAM:" + family : "UNIT:" + (it.unit || ""));
+          // Fase 3B: sólido vendido por PESO mas medido em colher/xícara converte pra grama
+          // JÁ NO ACÚMULO e entra no grupo de PESO do mesmo núcleo — o rótulo da embalagem é
+          // em g ("12 g de cominho" compara com o vidro de 50 g; "2 colheres" não compara com
+          // rótulo nenhum). Líquido não tem entrada na tabela e segue no fluxo de volume
+          // (ml/L é a unidade de venda dele). Fora isso, peso e volume seguem NUNCA se
+          // misturando (item 3) — a família entra na chave.
+          const spoonGram = family === "volume" ? ShoppingDict.spoonToGram(core, it.unit) : null;
+          const effFamily = spoonGram ? "peso" : family;
+          const groupKey = core + "|" + (effFamily ? "FAM:" + effFamily : "UNIT:" + (it.unit || ""));
           if (!groups[groupKey]) {
-            groups[groupKey] = { itemLabel: core, family: family, literalUnit: it.unit || null, lo: 0, hi: 0, hasQuantity: false, pairs: {}, recipeNames: {} };
+            groups[groupKey] = { itemLabel: core, family: effFamily, literalUnit: it.unit || null, lo: 0, hi: 0, hasQuantity: false, pairs: {}, recipeNames: {}, unitsSeen: {} };
           }
           const g = groups[groupKey];
           g.pairs[normalizeGroupKey(it.item) + "|" + (it.unit || "")] = { item: it.item, unit: it.unit || null };
           g.recipeNames[recipe.name] = true;
+          // Quais unidades ORIGINAIS alimentaram o grupo — decide a unidade de EXIBIÇÃO do
+          // total da família volume (Fase 3A): ml de verdade força ml/L; só colheradas exibe
+          // em colher/xícara de novo (ninguém lê "15 ml de sementes de cominho").
+          if (it.unit) g.unitsSeen[it.unit] = true;
 
-          const factor = family ? UNIT_TO_BASE_FACTOR[it.unit] : 1;
+          const factor = spoonGram ? spoonGram : effFamily ? UNIT_TO_BASE_FACTOR[it.unit] : 1;
           if (it.qty !== null && it.qty !== undefined) {
             const v = it.qty * entry.portionMultiplier * factor;
             g.lo += v;
@@ -1903,7 +1924,7 @@
         g.aGostoCount = Object.keys(aGosto[core].recipeNames).length;
         Object.keys(aGosto[core].recipeNames).forEach((n) => { g.recipeNames[n] = true; });
       } else {
-        groups[core + "|UNIT:"] = { itemLabel: core, family: null, literalUnit: null, lo: 0, hi: 0, hasQuantity: false, pairs: aGosto[core].pairs, recipeNames: aGosto[core].recipeNames };
+        groups[core + "|UNIT:"] = { itemLabel: core, family: null, literalUnit: null, lo: 0, hi: 0, hasQuantity: false, pairs: aGosto[core].pairs, recipeNames: aGosto[core].recipeNames, unitsSeen: {} };
       }
     });
 
@@ -1917,6 +1938,21 @@
           // Item 5: sem quantidade nenhuma (a gosto) — só nome + de quais receitas vem, sem
           // número (nunca inventa quantidade).
           displayText = g.itemLabel.charAt(0).toUpperCase() + g.itemLabel.slice(1) + " — usado em: " + recipeNames.join(", ");
+        } else if (g.family === "peso" && ShoppingDict.packageFor(g.itemLabel)) {
+          // Vendido em embalagem de tamanho padrão universal (PACKAGE_SIZE): o peso somado
+          // vira contagem de embalagens, arredondando pra CIMA (meia lata não se compra) —
+          // "2 latas de 400 g de tomate pelado" compara direto com a prateleira; "800 g" não.
+          const pack = ShoppingDict.packageFor(g.itemLabel);
+          const nLo = Math.max(1, Math.ceil(g.lo / pack.grams));
+          const nHi = Math.max(1, Math.ceil(g.hi / pack.grams));
+          displayText =
+            (nLo === nHi ? String(nHi) : nLo + "-" + nHi) +
+            " " +
+            (nHi === 1 ? pack.label : pack.labelPlural) +
+            " de " + pack.grams + " g de " + g.itemLabel;
+          if (g.aGostoCount) {
+            displayText += " + a gosto em " + g.aGostoCount + (g.aGostoCount === 1 ? " receita" : " receitas");
+          }
         } else {
           // Formata de volta pra unidade mais legível do total (nunca "3000 ml" — "3 litros").
           let displayUnit = g.literalUnit;
@@ -1931,6 +1967,9 @@
               displayUnit = "grama";
             }
           } else if (g.family === "volume") {
+            // Fase 3B: sólido tabelado já virou grama no acúmulo e erva em colherada virou
+            // ocorrência sem quantidade — o que chega aqui é LÍQUIDO, cuja unidade de venda
+            // é ml/L (limiar de sempre pra litros). Colher/xícara nunca é unidade final.
             if (hi >= 1000) {
               displayUnit = "litro";
               lo /= 1000;
@@ -1946,6 +1985,15 @@
           // Total exatamente 1 (ou fração) fica no singular; núcleo fora de PLURALS
           // (massa/invariável) nunca flexiona. A tela de receita segue usando o texto
           // original de ingredientsStructured — nada muda lá.
+          // Contagem (family null: sem unidade OU unidade discreta tipo dente/folha/fatia)
+          // NUNCA mostra fração na lista de compras — não se compra meio abacate. Arredonda
+          // pra CIMA (precisa cobrir a receita). Peso/volume não passam por aqui (já formatam
+          // em g/ml inteiro; kg/L com 1 decimal é venda, não fração). A tela de receita segue
+          // com a fração de sempre ("1/2 abacate") via o formatStructuredItem do stepper.
+          if (g.family !== "peso" && g.family !== "volume") {
+            lo = Math.ceil(lo - 1e-9);
+            hi = Math.ceil(hi - 1e-9);
+          }
           let displayLabel = g.itemLabel;
           if (!displayUnit && hi > 1) displayLabel = ShoppingDict.pluralFor(g.itemLabel) || g.itemLabel;
           // Reaproveita formatStructuredItem (mesma função do multiplicador de porções) — um

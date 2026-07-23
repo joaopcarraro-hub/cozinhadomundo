@@ -294,6 +294,15 @@
     "vegetal principal": "vegetal de sua escolha",
     // identidade protegida do strip da camada 3 ("firme" aqui é produto, não descritor)
     "tofu firme": "tofu firme",
+
+    // colaterais da varredura da Fase 3B (2026-07-23): grafia/sinônimo do mesmo produto
+    "pimenta-caiena": "pimenta caiena",
+    "flocos de pimenta": "pimenta em flocos",
+    "açafrão-da-terra": "cúrcuma",
+    "parmesão": "queijo parmesão",
+    "salsa": "salsinha",
+    "aipo": "salsão",
+    "negi": "cebolinha grossa",
   };
 
   // ---- Formas plurais de EXIBIÇÃO (visão Geral, grupos de contagem sem unidade) ----
@@ -429,6 +438,135 @@
     return !!PANTRY_SET[String(core || "").trim().toLowerCase()];
   }
 
+  // ---- Fase 3B: unidade de VENDA pra medidas de colher/xícara ----
+  // Princípio: a lista de compras exibe a unidade em que o item é VENDIDO (rótulo da
+  // embalagem), não a unidade em que a receita mede. Colher e xícara nunca aparecem em
+  // rótulo — sólido vendido por peso converte pra GRAMA (e funde com o grupo de peso do
+  // mesmo núcleo); líquido vendido por volume converte pro ml padrão (15/5/240), que já é o
+  // comportamento default da família volume — por isso líquidos NÃO entram nesta tabela.
+  // Valores em gramas POR UNIDADE: cs = colher-sopa rasa, cc = colher-chá (default cs/3),
+  // xic = xícara de 240 ml (só onde o acervo mede em xícara). Fontes: tabela da investigação
+  // de 2026-07-23 + tabelas culinárias padrão. "EST:" = estimado sem referência consolidada —
+  // dá noção de proporção, mas está marcado pra revisão.
+  const SPOON_TO_GRAM = {
+    // tabela da investigação (aprovada)
+    "açúcar": { cs: 12, cc: 4, xic: 180 },
+    "farinha de trigo": { cs: 8, cc: 3, xic: 120 },
+    "manteiga sem sal": { cs: 14, cc: 5 },
+    "arroz branco": { cs: 12, xic: 200 },
+    "farinha de rosca": { cs: 8, cc: 3 },
+    "açúcar mascavo": { cs: 12, cc: 4 },
+    "passas": { cs: 10 },
+    "banha": { cs: 13 },
+    "maionese": { cs: 15 },
+    "amendoim torrado": { cs: 10 },
+    "gochugaru": { cs: 6 }, // EST (aprovada como estimativa na investigação)
+    "camarão seco": { cs: 10 }, // EST (aprovada como estimativa na investigação)
+    // tabelas culinárias padrão
+    "açúcar de confeiteiro": { cs: 8, cc: 3, xic: 120 },
+    "mel": { cs: 21, cc: 7 },
+    "melaço": { cs: 20, cc: 7 },
+    "ghee": { cs: 13, cc: 4 },
+    "alcaparras": { cs: 9, cc: 3 },
+    "extrato de tomate": { cs: 16, cc: 5 },
+    "pasta de tomate": { cs: 16, cc: 5 },
+    "purê de tomate concentrado": { cs: 16, cc: 5 },
+    "extrato/concentrado de tomate": { cs: 16, cc: 5 },
+    "mostarda dijon": { cs: 15, cc: 5 },
+    "mostarda em pó": { cs: 7, cc: 2 },
+    "mostarda em grãos": { cs: 11, cc: 4 },
+    "sementes de mostarda": { cs: 11, cc: 4 },
+    "amido de milho": { cs: 8, cc: 3 },
+    "amido de arroz": { cs: 8, cc: 3 },
+    "canela em pó": { cs: 8, cc: 3 },
+    "páprica doce": { cs: 7, cc: 2 },
+    "páprica defumada": { cs: 7, cc: 2 },
+    "páprica picante": { cs: 7, cc: 2 },
+    "páprica doce húngara": { cs: 7, cc: 2 },
+    "pimenta caiena": { cs: 5, cc: 2 },
+    "cominho": { cs: 6, cc: 2 },
+    "sementes de cominho": { cs: 6, cc: 2 },
+    "coentro em pó": { cs: 5, cc: 2 },
+    "grãos de coentro": { cs: 5, cc: 2 },
+    "cúrcuma": { cs: 9, cc: 3 },
+    "gengibre em pó": { cs: 5, cc: 2 },
+    "alho em pó": { cs: 9, cc: 3 },
+    "cebola em pó": { cs: 7, cc: 2 },
+    "garam masala": { cs: 6, cc: 2 },
+    "curry em pó": { cs: 6, cc: 2 },
+    "cinco-especiarias chinesas": { cs: 6, cc: 2 },
+    "pimenta-da-jamaica": { cs: 6, cc: 2 },
+    "orégano": { cs: 3, cc: 1 },
+    "fermento em pó": { cs: 14, cc: 5 },
+    "sementes de endro": { cs: 6, cc: 2 },
+    "sementes de erva-doce": { cs: 6, cc: 2 },
+    "erva-doce": { cs: 6, cc: 2 },
+    "arroz japonês": { xic: 200 },
+    "arroz basmati": { xic: 200 },
+    // estimados — SEM tabela consolidada, revisar (noção de proporção > nenhum número)
+    "açúcar de palma": { cs: 12, cc: 4 }, // EST
+    "farinha de mandioca": { cs: 10, cc: 3 }, // EST
+    "gochujang": { cs: 20, cc: 7 }, // EST
+    "pasta de ají amarillo": { cs: 15, cc: 5 }, // EST
+    "pasta de ají panca": { cs: 15, cc: 5 }, // EST
+    "pasta de curry verde": { cs: 15, cc: 5 }, // EST
+    "pasta de curry vermelho": { cs: 15, cc: 5 }, // EST
+    "pasta de curry massaman": { cs: 15, cc: 5 }, // EST
+    "pasta de pimenta tailandesa": { cs: 18, cc: 6 }, // EST
+    "pasta de feijão fermentado picante": { cs: 18, cc: 6 }, // EST
+    "molho de feijão preto fermentado": { cs: 18, cc: 6 }, // EST (pasta de grãos, pote em g)
+    "pasta de gengibre e alho": { cs: 15, cc: 5 }, // EST
+    "tamarindo": { cs: 15, cc: 5 }, // EST
+    "pasta de tamarindo": { cs: 16, cc: 5 }, // EST
+    "pimenta síria": { cs: 8, cc: 3 }, // EST
+    "pimenta calabresa": { cs: 5, cc: 2 }, // EST
+    "pimenta em flocos": { cs: 5, cc: 2 }, // EST
+    "zimbro": { cs: 6, cc: 2 }, // EST
+    "grãos de pimenta de sichuan": { cs: 6, cc: 2 }, // EST
+    "goma xantana": { cs: 9, cc: 3 }, // EST
+    "café solúvel": { cs: 2, cc: 1 }, // EST
+  };
+
+  // Ervas frescas & afins medidas em colher: a unidade de VENDA é o maço/a fruta, e nem
+  // colher nem grama são comparáveis com isso — decisão de 2026-07-23: a colherada vira
+  // ocorrência SEM quantidade ("usado em N receitas", mesmo caminho do "a gosto"), na lista
+  // principal (é compra de verdade, só sem quantidade útil). Unidades de contagem desses
+  // núcleos (talo, ramo, folha) seguem normais.
+  const SPOON_NO_QUANTITY = {
+    "salsinha": 1, "cebolinha": 1, "salsinha e cebolinha": 1, "ervas frescas": 1,
+    "endro": 1, "hortelã": 1, "alecrim": 1, "estragão": 1, "raspas de limão": 1,
+  };
+
+  // Gramas de 1 unidade de medida (colher-sopa/colher-cha/xicara) do núcleo, ou null se o
+  // núcleo não é sólido tabelado (líquido → ml padrão; pendente → fallback de colher).
+  function spoonToGram(core, unit) {
+    const t = SPOON_TO_GRAM[String(core || "").trim().toLowerCase()];
+    if (!t) return null;
+    if (unit === "colher-sopa") return t.cs || null;
+    if (unit === "colher-cha") return t.cc || (t.cs ? Math.round(t.cs / 3) : null);
+    if (unit === "xicara") return t.xic || (t.cs ? t.cs * 16 : null);
+    return null;
+  }
+
+  function isSpoonNoQuantity(core) {
+    return !!SPOON_NO_QUANTITY[String(core || "").trim().toLowerCase()];
+  }
+
+  // ---- Itens vendidos em EMBALAGEM de tamanho padrão universal ----
+  // Peso somado vira contagem de embalagens ("2 latas de 400 g de tomate pelado"), sempre
+  // arredondando pra CIMA (meia lata não se compra). Só entra aqui tamanho que não varia por
+  // marca: tomate pelado é lata de 400 g em qualquer marca. Ficaram FORA por variação real
+  // (decisão 2026-07-23, seguem em g/ml): leite de coco (200/400/500 ml), creme de leite
+  // (caixinha 200 g vs lata 300 g), azeitonas e alcaparras (vidros de vários tamanhos).
+  // Leite condensado não existe no acervo hoje.
+  const PACKAGE_SIZE = {
+    "tomate pelado": { grams: 400, label: "lata", labelPlural: "latas" },
+  };
+
+  function packageFor(core) {
+    return PACKAGE_SIZE[String(core || "").trim().toLowerCase()] || null;
+  }
+
   // Pipeline de 3 camadas. Retorna sempre lowercase — é chave de agrupamento e de
   // boughtKeys; quem exibe capitaliza (mesma convenção do formatStructuredItem).
   function purchaseCore(itemText) {
@@ -461,5 +599,5 @@
     return t;
   }
 
-  return { KNOWN_UNITS: KNOWN_UNITS, CANONICAL: CANONICAL, STRIP_WORDS: STRIP_WORDS, STRIP_PHRASES: STRIP_PHRASES, PLURALS: PLURALS, PANTRY_SET: PANTRY_SET, purchaseCore: purchaseCore, pluralFor: pluralFor, isPantry: isPantry };
+  return { KNOWN_UNITS: KNOWN_UNITS, CANONICAL: CANONICAL, STRIP_WORDS: STRIP_WORDS, STRIP_PHRASES: STRIP_PHRASES, PLURALS: PLURALS, PANTRY_SET: PANTRY_SET, SPOON_TO_GRAM: SPOON_TO_GRAM, SPOON_NO_QUANTITY: SPOON_NO_QUANTITY, PACKAGE_SIZE: PACKAGE_SIZE, purchaseCore: purchaseCore, pluralFor: pluralFor, isPantry: isPantry, spoonToGram: spoonToGram, isSpoonNoQuantity: isSpoonNoQuantity, packageFor: packageFor };
 });

@@ -18,7 +18,7 @@ window.RECIPES["tailandia"] = [
       "400 ml de leite de coco (dividido)",
       "1 berinjela tailandesa pequena (ou berinjela comum em cubos)",
       "100 g de vagem, em pedaços",
-      "2 folhas de limã kaffir (ou raspas de limão)",
+      "2 folhas de limão kaffir (ou raspas de limão)",
       "2 colheres (sopa) de molho de peixe",
       "1 colher (sopa) de açúcar de palma (ou açúcar mascavo)",
       "Manjericão tailandês (ou manjericão comum)",
@@ -62,10 +62,10 @@ window.RECIPES["tailandia"] = [
         ],
       },
       {
-        raw: "2 folhas de limã kaffir (ou raspas de limão)",
+        raw: "2 folhas de limão kaffir (ou raspas de limão)",
         group: null,
         items: [
-          { qty: 2, qtyRange: null, unit: "folha", item: "limã kaffir", prep: null, alt: "raspas de limão", optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "folha", item: "limão kaffir", prep: null, alt: "raspas de limão", optional: false, isReference: false },
         ],
       },
       {
@@ -108,7 +108,7 @@ window.RECIPES["tailandia"] = [
       "Numa panela, aqueça a parte mais grossa (o creme que sobe) de uma lata de leite de coco em fogo médio até começar a soltar óleo nas bordas.",
       "Junte a pasta de curry verde e refogue por 2-3 minutos, mexendo sempre, até perfumar intensamente e a cor ficar mais viva.",
       "Adicione o frango em tiras, mexendo para envolver na pasta, cozinhando por 3-4 minutos.",
-      "Junte o restante do leite de coco, as folhas de limã kaffir, molho de peixe e açúcar de palma.",
+      "Junte o restante do leite de coco, as folhas de limão kaffir, molho de peixe e açúcar de palma.",
       "Deixe ferver, abaixe o fogo e cozinhe em fervura suave por 10 minutos.",
       "Adicione a berinjela e a vagem, cozinhando por mais 8-10 minutos, até os legumes ficarem macios e o frango cozido por completo.",
       "Ajuste o tempero (equilíbrio entre salgado do molho de peixe, doce do açúcar e picante da pasta).",
@@ -145,7 +145,7 @@ window.RECIPES["tailandia"] = [
       "400 ml de leite de coco (dividido)",
       "1 pimentão vermelho, em tiras",
       "100 g de vagem ou brócolis, em pedaços",
-      "2 folhas de limã kaffir",
+      "2 folhas de limão kaffir",
       "2 colheres (sopa) de molho de peixe",
       "1 colher (sopa) de açúcar de palma",
       "Manjericão tailandês",
@@ -188,10 +188,10 @@ window.RECIPES["tailandia"] = [
         ],
       },
       {
-        raw: "2 folhas de limã kaffir",
+        raw: "2 folhas de limão kaffir",
         group: null,
         items: [
-          { qty: 2, qtyRange: null, unit: "folha", item: "limã kaffir", prep: null, alt: null, optional: false, isReference: false },
+          { qty: 2, qtyRange: null, unit: "folha", item: "limão kaffir", prep: null, alt: null, optional: false, isReference: false },
         ],
       },
       {
@@ -227,7 +227,7 @@ window.RECIPES["tailandia"] = [
       "Aqueça a parte gordurosa do leite de coco numa panela até soltar óleo nas bordas.",
       "Junte a pasta de curry vermelho e refogue por 2-3 minutos, até perfumar.",
       "Adicione a proteína escolhida, mexendo para envolver na pasta, cozinhando por 3-5 minutos.",
-      "Junte o restante do leite de coco, folhas de limã kaffir, molho de peixe e açúcar de palma.",
+      "Junte o restante do leite de coco, folhas de limão kaffir, molho de peixe e açúcar de palma.",
       "Deixe ferver, abaixe o fogo e cozinhe em fervura suave por 10 minutos.",
       "Adicione o pimentão e a vagem/brócolis, cozinhando por mais 6-8 minutos, até os legumes ficarem macios (mas ainda com leve crocância) e a proteína cozida.",
       "Ajuste o tempero. Finalize com manjericão tailandês. Sirva com arroz jasmim."
@@ -388,7 +388,7 @@ window.RECIPES["tailandia"] = [
       "1 L de água ou caldo de galinha",
       "2 talos de capim-limão, amassados e cortados em pedaços",
       "4 fatias de galanga (ou gengibre)",
-      "4 folhas de limã kaffir, rasgadas",
+      "4 folhas de limão kaffir, rasgadas",
       "200 g de cogumelo paris ou shimeji, em metades",
       "3 colheres (sopa) de molho de peixe",
       "3 colheres (sopa) de suco de limão",
@@ -425,10 +425,10 @@ window.RECIPES["tailandia"] = [
         ],
       },
       {
-        raw: "4 folhas de limã kaffir, rasgadas",
+        raw: "4 folhas de limão kaffir, rasgadas",
         group: null,
         items: [
-          { qty: 4, qtyRange: null, unit: "folha", item: "limã kaffir", prep: "rasgadas", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "folha", item: "limão kaffir", prep: "rasgadas", alt: null, optional: false, isReference: false },
         ],
       },
       {
@@ -469,14 +469,14 @@ window.RECIPES["tailandia"] = [
     ],
     steps: [
       "Se possível, ferva as cascas do camarão em água por 10 minutos para fazer um caldo mais saboroso; coe e use como base.",
-      "Numa panela, aqueça o caldo com o capim-limão, galanga e folhas de limã kaffir. Deixe ferver e cozinhar por 5-8 minutos, para infusionar os aromáticos.",
+      "Numa panela, aqueça o caldo com o capim-limão, galanga e folhas de limão kaffir. Deixe ferver e cozinhar por 5-8 minutos, para infusionar os aromáticos.",
       "Junte os cogumelos e cozinhe por 3-4 minutos.",
       "Adicione o camarão e cozinhe até ficarem rosados, 2-3 minutos.",
       "Tempere com molho de peixe, suco de limão e a pasta de pimenta, ajustando o equilíbrio entre picante, ácido e salgado — a sopa deve ser vibrante e intensa nos três aspectos.",
       "Finalize com coentro fresco. Sirva imediatamente, bem quente."
     ],
     tips: [
-      "Os aromáticos (capim-limão, galanga, folhas de limã kaffir) geralmente não são para comer — servem para perfumar o caldo, e podem ser deixados no prato ou retirados antes de servir.",
+      "Os aromáticos (capim-limão, galanga, folhas de limão kaffir) geralmente não são para comer — servem para perfumar o caldo, e podem ser deixados no prato ou retirados antes de servir.",
       "O equilíbrio entre picante, ácido e salgado é a alma do Tom Yum — prove e ajuste constantemente até sentir os três sabores em harmonia intensa.",
       "Pode ser feito na versão 'nam khon' (com leite de coco, mais cremosa) ou 'nam sai' (clara, sem leite de coco, mais tradicional e picante) — esta receita é a versão clara."
     ]
@@ -496,7 +496,7 @@ window.RECIPES["tailandia"] = [
       "300 ml de caldo de galinha",
       "2 talos de capim-limão, amassados",
       "4 fatias de galanga",
-      "4 folhas de limã kaffir, rasgadas",
+      "4 folhas de limão kaffir, rasgadas",
       "150 g de cogumelo paris, em metades",
       "3 colheres (sopa) de molho de peixe",
       "2 colheres (sopa) de suco de limão",
@@ -540,10 +540,10 @@ window.RECIPES["tailandia"] = [
         ],
       },
       {
-        raw: "4 folhas de limã kaffir, rasgadas",
+        raw: "4 folhas de limão kaffir, rasgadas",
         group: null,
         items: [
-          { qty: 4, qtyRange: null, unit: "folha", item: "limã kaffir", prep: "rasgadas", alt: null, optional: false, isReference: false },
+          { qty: 4, qtyRange: null, unit: "folha", item: "limão kaffir", prep: "rasgadas", alt: null, optional: false, isReference: false },
         ],
       },
       {
@@ -583,7 +583,7 @@ window.RECIPES["tailandia"] = [
       },
     ],
     steps: [
-      "Numa panela, aqueça o leite de coco e o caldo de galinha com o capim-limão, galanga e folhas de limã kaffir, deixando ferver e infusionar por 8-10 minutos.",
+      "Numa panela, aqueça o leite de coco e o caldo de galinha com o capim-limão, galanga e folhas de limão kaffir, deixando ferver e infusionar por 8-10 minutos.",
       "Junte o frango em tiras e cozinhe por 8-10 minutos, até cozido por completo.",
       "Adicione os cogumelos e cozinhe por mais 3-4 minutos.",
       "Tempere com molho de peixe, suco de limão e as pimentas amassadas.",
