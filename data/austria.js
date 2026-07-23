@@ -1,5 +1,5 @@
 // ÁUSTRIA
-// Nota: Sachertorte já está em Sobremesas Clássicas (Torta Sacher).
+// Nota: Sachertorte já está em Sobremesas (Torta Sacher).
 window.RECIPES = window.RECIPES || {};
 window.RECIPES["austria"] = [
 

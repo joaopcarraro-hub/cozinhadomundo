@@ -3155,14 +3155,14 @@ window.RECIPES["dinamarca"] = [
     difficulty: "Média",
     tags: ["diet:vegetariana", "ingredient:ovo", "ingredient:limao"],
     ingredients: [
-      "1 receita de massa pâte sucrée (ver receita Lemon Tart, categoria Sobremesas Clássicas)",
+      "1 receita de massa pâte sucrée (ver receita Lemon Tart, categoria Sobremesas)",
       "1 receita de lemon curd (ver receita Lemon Tart)",
       "200 ml de creme de leite fresco, batido em chantilly, para decorar (opcional)",
       "Raspas de limão, para finalizar"
     ],
     ingredientsStructured: [
       {
-        raw: "1 receita de massa pâte sucrée (ver receita Lemon Tart, categoria Sobremesas Clássicas)",
+        raw: "1 receita de massa pâte sucrée (ver receita Lemon Tart, categoria Sobremesas)",
         group: null,
         items: [
           { qty: 1, qtyRange: null, unit: null, item: "receita de massa pâte sucrée", prep: "ver receita lemon tart, categoria sobremesas clássicas", alt: null, optional: false, isReference: true },
@@ -3191,14 +3191,14 @@ window.RECIPES["dinamarca"] = [
       },
     ],
     steps: [
-      "Prepare a massa e asse a base 'às cegas', seguindo exatamente a técnica descrita na receita de Lemon Tart (categoria Sobremesas Clássicas).",
+      "Prepare a massa e asse a base 'às cegas', seguindo exatamente a técnica descrita na receita de Lemon Tart (categoria Sobremesas).",
       "Prepare o lemon curd seguindo a mesma receita.",
       "Despeje o curd ainda morno sobre a base já assada e fria.",
       "Leve à geladeira por pelo menos 2 horas, até firmar completamente.",
       "Decore com pequenas porções de chantilly ao redor da borda, se desejar, e finalize com raspas de limão fresco antes de servir."
     ],
     tips: [
-      "É essencialmente a versão dinamarquesa da clássica torta de limão francesa/inglesa — a técnica de base é idêntica à receita já detalhada em Sobremesas Clássicas.",
+      "É essencialmente a versão dinamarquesa da clássica torta de limão francesa/inglesa — a técnica de base é idêntica à receita já detalhada em Sobremesas.",
       "A torta dinamarquesa costuma ser decorada de forma mais simples (raspas de limão, pequenos toques de chantilly) comparada a versões mais elaboradas com merengue.",
       "Ótima sobremesa para equilibrar uma refeição mais pesada, graças à acidez refrescante do limão."
     ]

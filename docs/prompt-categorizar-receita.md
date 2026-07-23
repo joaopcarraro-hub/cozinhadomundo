@@ -72,7 +72,7 @@ Me diga também em qual arquivo/categoria a receita deve entrar, escolhendo dest
 **Fundamentos**
 `molhos` — Molhos Clássicos · `sopas` — Sopas · `entradas-frias` — Entradas (fria) ·
 `entradas-quentes` — Entradas (quente) · `massas` — Massas · `risotos` — Risotos/Arroz (risoto) ·
-`padaria` — Padaria · `sobremesas-classicas` — Sobremesas Clássicas ·
+`padaria` — Padaria · `sobremesas-classicas` — Sobremesas ·
 `contemporaneos` — Técnicas (prato clássico contemporâneo) ·
 `tecnicas-contemporaneas-2` — Técnicas (técnica/componente avançado)
 

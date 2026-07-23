@@ -238,7 +238,7 @@
 
   // ---------- Grupos macro (home -> página de grupo -> coleção -> receita) ----------
   const GRUPOS = [
-    { id: "fundamentos", label: "Fundamentos", icon: "🥣", desc: "Aprenda as bases, técnicas e preparos essenciais da culinária.", collectionGroup: "Fundamentos" },
+    { id: "fundamentos", label: "Mais Categorias", icon: "🥣", desc: "Aprenda as bases, técnicas e preparos essenciais da culinária.", collectionGroup: "Fundamentos" },
     { id: "proteinas", label: "Proteínas", icon: "🍗", desc: "Encontre receitas pelo tipo de proteína principal ou ingrediente usado.", collectionGroup: "Proteínas" },
     { id: "cozinhas", label: "Cozinhas do mundo", icon: "🌍", desc: "Navegue por receitas do Brasil e de diferentes países.", collectionGroup: "Cozinhas do Mundo" },
     { id: "tempo", label: "Por tempo", icon: "⏱️", desc: "Escolha receitas de acordo com o tempo que você tem para cozinhar.", collectionGroup: "Por tempo" },
@@ -466,7 +466,6 @@
     moreCategorias.className = "home-more-categories";
     moreCategorias.innerHTML = iconSvg("dots", "home-more-categories__icon") + "<span>Mais categorias</span>";
     moreCategorias.addEventListener("click", () => Router.toGrupo("fundamentos"));
-    wrap.appendChild(moreCategorias);
 
     const tilesGrid = document.createElement("div");
     tilesGrid.className = "home-tiles";
@@ -478,7 +477,10 @@
       card.addEventListener("click", tile.go);
       tilesGrid.appendChild(card);
     });
+    // Ordem invertida: tiles primeiro, "Mais categorias" depois (era o contrário) — só
+    // reordenação de appendChild, nenhum comportamento muda.
     wrap.appendChild(tilesGrid);
+    wrap.appendChild(moreCategorias);
 
     content.appendChild(wrap);
   }
@@ -1414,22 +1416,7 @@
       // não duplicar essa distinção aqui com cabeçalhos automáticos. sortKey "relevance" já
       // ordena principal-primeiro via getCollectionRelevanceScore, então "Tanto faz" (default)
       // renderiza uma lista só, na ordem certa, sem seção "Foco da receita"/"Também leva".
-      if (sortKey === "category-az") {
-        let lastLabel = null;
-        sortedItems.forEach((item) => {
-          const label = TagModel.getCategoryLabel(item);
-          if (label !== lastLabel) {
-            const st = document.createElement("div");
-            st.className = "subgroup-title";
-            st.textContent = label;
-            listEl.appendChild(st);
-            lastLabel = label;
-          }
-          listEl.appendChild(renderRecipeCard(item, { fromCollectionId: collection.id }));
-        });
-      } else {
-        sortedItems.forEach((item) => listEl.appendChild(renderRecipeCard(item, { fromCollectionId: collection.id })));
-      }
+      sortedItems.forEach((item) => listEl.appendChild(renderRecipeCard(item, { fromCollectionId: collection.id })));
     }
 
     sortSelect.addEventListener("change", () => {
@@ -1457,11 +1444,10 @@
     textFilters = textFilters || [];
     activeCat = null;
     refreshActiveCounts = null;
-    header.innerHTML = '<button type="button" class="back-button">← Voltar</button><h2>🔎 Buscar por tags</h2>';
-    header.querySelector(".back-button").addEventListener("click", () => {
-      if (history.length > 1) history.back();
-      else Router.toHome();
-    });
+    // Sem cabeçalho: Pesquisar é uma aba de nível superior da barra inferior, igual
+    // Preparos/Lista de Compras/Minhas Receitas (nenhuma delas tem botão voltar) — só a barra
+    // de busca fica visível, sem título "Buscar por tags" nem botão voltar.
+    header.innerHTML = "";
     content.innerHTML = "";
     progressEl.textContent = "";
 
@@ -1471,7 +1457,7 @@
     const input = document.createElement("input");
     input.type = "text";
     input.className = "tagsearch-input";
-    input.placeholder = "Buscar por ingrediente, país, proteína ou nome do prato...";
+    input.placeholder = "Busque por nome do prato, ingrediente, país, tempo...";
     wrap.appendChild(input);
 
     const suggestionsEl = document.createElement("div");

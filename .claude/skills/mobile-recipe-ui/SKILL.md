@@ -18,9 +18,10 @@ Mobile primeiro. Desktop depois.
 A home deve ser simples e guiada.
 
 Mostrar só:
-- "Mais categorias" — entrada pequena, num canto, acima dos tiles, texto em
-  `--color-text-secondary` (nunca `--color-accent` em texto pequeno — falha WCAG AA).
 - 4 tiles grandes: Massas, Proteínas, Navegar por Países, Sobremesas.
+- "Mais categorias" — entrada pequena, num canto, ABAIXO dos tiles (era acima, invertido numa
+  rodada de correção — só troca de ordem de appendChild, mesmo comportamento), texto em
+  `--color-text-secondary` (nunca `--color-accent` em texto pequeno — falha WCAG AA).
 
 Sem contador de progresso ("X de Y receitas já feitas") — removido, era resíduo do sistema
 antigo de tracking, redundante nesta tela.

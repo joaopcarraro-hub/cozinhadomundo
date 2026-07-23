@@ -36,11 +36,14 @@ Página da receita:
 ## Nova home (Bloco 2, Fase 2.2)
 
 A home não mostra mais os 5 grupos macro diretamente. Mostra:
-1. "Mais categorias" — entrada pequena, num canto, acima dos tiles — leva pro hub Fundamentos
-   (#/grupo/fundamentos).
-2. 4 tiles grandes: Massas, Proteínas, Navegar por Países, Sobremesas — cada um leva direto pra
+1. 4 tiles grandes: Massas, Proteínas, Navegar por Países, Sobremesas — cada um leva direto pra
    sua categoria/hub (Massas -> #/categoria/massas, Sobremesas -> #/categoria/sobremesas-classicas,
    Proteínas -> #/grupo/proteinas, Navegar por Países -> #/grupo/cozinhas).
+2. "Mais categorias" — entrada pequena, num canto, ABAIXO dos tiles (era acima, invertido numa
+   rodada de correção) — leva pro grupo `fundamentos` (#/grupo/fundamentos). O cabeçalho dessa
+   tela mostra "Mais Categorias" (rótulo trocado de "Fundamentos", que não fazia sentido pra
+   quem clicou num link chamado "Mais categorias") — só o `label` mudou; o `id`/`collectionGroup`
+   internos continuam "fundamentos"/"Fundamentos", sem afetar a taxonomia de busca escopada.
 
 Sem contador de progresso ("X de Y receitas já feitas") na home — removido (resíduo do sistema
 antigo de tracking, redundante nesta tela).
@@ -53,9 +56,9 @@ Tempo e Dificuldade continuam existindo como grupos/rotas próprios (#/grupo/tem
 #/grupo/dificuldade) mas, neste bloco, sem link direto na home — só alcançáveis por URL direta
 por ora.
 
-Massas e Sobremesas Clássicas saíram da grade do hub Fundamentos (ficam só acessíveis via tile
-da home) — a taxonomia/grupo delas pra efeito de busca escopada continua "Fundamentos", só a
-exibição na grade que muda.
+Massas e Sobremesas saíram da grade do grupo `fundamentos` (tela "Mais Categorias", ficam só
+acessíveis via tile da home) — a taxonomia/grupo delas pra efeito de busca escopada continua
+"Fundamentos" (`collectionGroup`, chave interna, não muda), só a exibição na grade que muda.
 
 ## Barra de navegação inferior
 

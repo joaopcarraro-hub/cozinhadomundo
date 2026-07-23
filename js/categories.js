@@ -11,7 +11,7 @@ window.CATEGORIES = [
   { group: "Fundamentos", id: "ovos-basicos", label: "Ovos", icon: "🥚", ready: true },
   { group: "Fundamentos", id: "ovos-classicos", label: "Ovos", icon: "🥚", ready: true },
   { group: "Fundamentos", id: "padaria", label: "Padaria", icon: "🍞", ready: true },
-  { group: "Fundamentos", id: "sobremesas-classicas", label: "Sobremesas Clássicas", icon: "🍰", ready: true },
+  { group: "Fundamentos", id: "sobremesas-classicas", label: "Sobremesas", icon: "🍰", ready: true },
   { group: "Fundamentos", id: "contemporaneos", label: "Técnicas", icon: "🧪", ready: true },
   { group: "Fundamentos", id: "tecnicas-contemporaneas-2", label: "Técnicas", icon: "🧪", ready: true },
 

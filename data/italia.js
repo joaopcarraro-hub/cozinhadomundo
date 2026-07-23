@@ -2,7 +2,7 @@
 // Nota: Carbonara, Cacio e Pepe, Amatriciana, Puttanesca, Aglio e Olio, Lasanha,
 // Ravioli, Tortellini, Tagliatelle, Pappardelle, Gnocchi e Agnolotti já estão na
 // categoria Massas; Ossobuco em Carnes Bovinas; Vitello Tonnato em Entradas Frias;
-// Porchetta em Suínos; Tiramisù, Panna Cotta e Cannoli em Sobremesas Clássicas.
+// Porchetta em Suínos; Tiramisù, Panna Cotta e Cannoli em Sobremesas.
 // Aqui só o que ainda não apareceu em nenhuma outra categoria.
 window.RECIPES = window.RECIPES || {};
 window.RECIPES["italia"] = [

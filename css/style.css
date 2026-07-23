@@ -530,6 +530,10 @@ body {
   font-family: inherit;
   font-size: 1rem;
   background: var(--bg-panel);
+  /* Sem isso, o texto digitado fica ilegível: nenhuma regra do reskin escuro declarava "color"
+     aqui, então o input caía no estilo nativo do navegador pro widget de formulário (que
+     assume esquema claro por padrão), não no --ink herdado do body. */
+  color: var(--color-text-primary);
 }
 /* era --gold-soft: foco vira --gold (=--color-accent) cheio — regra do DESIGN-TOKENS.md,
    "Inputs:... foco --color-accent". box-shadow removido (sem precedente de elevação em dark
@@ -918,7 +922,13 @@ body.filter-modal-open { overflow: hidden; }
   font-family: inherit;
   font-size: 1rem;
   background: var(--bg-panel);
+  /* Mesmo bug do .home-search: sem "color" explícito, o input caía no estilo nativo do
+     navegador pro widget de formulário (esquema claro por padrão), texto digitado ilegível. */
+  color: var(--color-text-primary);
 }
+/* Placeholder menor que o texto digitado (só o placeholder, .tagsearch-input mantém 1rem pro
+   que o usuário digita) — cabe melhor numa linha só em mobile com o texto mais longo. */
+.tagsearch-input::placeholder { font-size: 0.85rem; }
 /* era --gold-soft: foco vira --gold cheio (regra "foco --color-accent"); box-shadow removido
    (mesma justificativa do .home-search acima). */
 .tagsearch-input:focus { outline: 2px solid var(--gold); }

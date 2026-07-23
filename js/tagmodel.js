@@ -463,7 +463,6 @@
 
   const SORT_OPTIONS = [
     { key: "relevance", label: "Relevância" },
-    { key: "category-az", label: "Categoria original" },
     { key: "recipe-az", label: "Nome da receita A-Z" },
     { key: "time-asc", label: "Tempo: menor primeiro" },
     { key: "time-desc", label: "Tempo: maior primeiro" },
@@ -482,12 +481,6 @@
     const sorted = items.slice();
     const Storage = window.Storage;
     sorted.sort((a, b) => {
-      if (sortKey === "category-az") {
-        return (
-          normalizeForSort(getCategoryLabel(a)).localeCompare(normalizeForSort(getCategoryLabel(b))) ||
-          normalizeForSort(a.recipe.name).localeCompare(normalizeForSort(b.recipe.name))
-        );
-      }
       if (sortKey === "recipe-az") {
         return normalizeForSort(a.recipe.name).localeCompare(normalizeForSort(b.recipe.name));
       }

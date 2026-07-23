@@ -1068,7 +1068,7 @@ window.RECIPES["sobremesas-classicas"] = [
   // ===================== OUTRAS SOBREMESAS CLÁSSICAS =====================
   {
     name: "Pavlova",
-    subgroup: "Outras Sobremesas Clássicas",
+    subgroup: "Outras Sobremesas",
     desc: "Base de merengue assado, crocante por fora e macia como marshmallow por dentro, coberta com chantilly e frutas frescas.",
     origin: "Austrália / Nova Zelândia",
     time: { prep: "20 min", cook: "1h15 + esfriar no forno", total: "≈2h30" },
@@ -1144,7 +1144,7 @@ window.RECIPES["sobremesas-classicas"] = [
   },
   {
     name: "Baba au Rhum",
-    subgroup: "Outras Sobremesas Clássicas",
+    subgroup: "Outras Sobremesas",
     desc: "Bolinho de massa fermentada levemente doce, encharcado numa calda quente de açúcar, laranja e rum até ficar bem úmido.",
     origin: "França / Polônia",
     time: { prep: "30 min + 1h30 fermentação", cook: "20 min", total: "≈2h30" },
@@ -1208,7 +1208,7 @@ window.RECIPES["sobremesas-classicas"] = [
   },
   {
     name: "Brownie",
-    subgroup: "Outras Sobremesas Clássicas",
+    subgroup: "Outras Sobremesas",
     desc: "Bolo denso e úmido de chocolate, com pouca farinha e mistura mínima para garantir a textura 'fudgy' característica.",
     origin: "EUA",
     time: { prep: "15 min", cook: "25 min", total: "40 min" },
@@ -1302,7 +1302,7 @@ window.RECIPES["sobremesas-classicas"] = [
   },
   {
     name: "Petit Gâteau",
-    subgroup: "Outras Sobremesas Clássicas",
+    subgroup: "Outras Sobremesas",
     desc: "Bolinho individual de chocolate assado rapidamente para manter o centro líquido, servido quente com sorvete de creme.",
     origin: "França",
     time: { prep: "15 min", cook: "10 min", total: "25 min" },

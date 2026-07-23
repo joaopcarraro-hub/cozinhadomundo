@@ -1,6 +1,6 @@
 {
-  "name": "Nosso Cardápio Gastronômico",
-  "short_name": "Cardápio",
+  "name": "Gusta",
+  "short_name": "Gusta",
   "description": "Receitas completas de cozinha do mundo, com modo de preparo passo a passo.",
   "start_url": ".",
   "scope": ".",

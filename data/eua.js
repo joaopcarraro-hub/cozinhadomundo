@@ -1,6 +1,6 @@
 // EUA
 // Nota: Eggs Benedict já está em Preparações Clássicas com Ovos; Cheesecake
-// (estilo Nova York) já está em Sobremesas Clássicas.
+// (estilo Nova York) já está em Sobremesas.
 window.RECIPES = window.RECIPES || {};
 window.RECIPES["eua"] = [
 

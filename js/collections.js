@@ -33,7 +33,7 @@
     // (confirmado 25/25), então já aparecem em "Ovos" (col-ovo, Proteínas) sem precisar de
     // nenhuma tag nova. Ver getCatIdToGroup() em app.js pro fallback de escopo de busca do hub.
     { id: "padaria", group: "Fundamentos", collectionType: "dishType", label: "Padaria", icon: "🍞", primaryFilterTags: ["dish_type:pao"] },
-    { id: "sobremesas-classicas", group: "Fundamentos", collectionType: "dishType", label: "Sobremesas Clássicas", icon: "🍰", primaryFilterTags: ["dish_type:sobremesa"], hideFromGrupoGrid: true },
+    { id: "sobremesas-classicas", group: "Fundamentos", collectionType: "dishType", label: "Sobremesas", icon: "🍰", primaryFilterTags: ["dish_type:sobremesa"], hideFromGrupoGrid: true },
     // Clássicos Contemporâneos + Técnicas Contemporâneas Avançadas fundidos em "Técnicas" — mesma
     // lógica: dish_type:contemporaneo e dish_type:tecnica-avancada continuam distintos nos dados
     // (data/contemporaneos.js e data/tecnicas-contemporaneas-2.js), só a coleção exibida é uma.
