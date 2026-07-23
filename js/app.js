@@ -1971,7 +1971,7 @@
     return { groups: groupList, pantry: pantryList, preparos: preparoList };
   }
 
-  let listaComprasView = "porReceita";
+  let listaComprasView = "geral";
   // Colapso por receita na visão Por receita — estado só de UI (não persiste), não afeta as
   // outras receitas. Chave ausente/false = expandida (comportamento de sempre).
   let collapsedShoppingRecipes = {};
