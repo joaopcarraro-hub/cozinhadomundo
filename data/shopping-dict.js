@@ -51,12 +51,12 @@
     ralado: 1, ralada: 1, amassado: 1, amassada: 1,
     tostado: 1, tostada: 1, tostados: 1, tostadas: 1,
     desfiado: 1, desfiada: 1, duro: 1, duros: 1, dura: 1, duras: 1,
-    firme: 1, levemente: 1, bem: 1, muito: 1, muita: 1,
+    firme: 1, firmes: 1, levemente: 1, bem: 1, muito: 1, muita: 1,
   };
   // Sobras de conector quando um modificador some do começo ou do meio da frase ("cebola em
   // rodelas grandes" → "cebola em rodelas"; "tomate bem maduro" → "tomate"; "½ de cebola
   // roxa" chega aqui como "de cebola roxa") — nunca abrem nem terminam um núcleo válido.
-  const DANGLING = { de: 1, da: 1, do: 1, em: 1, e: 1, com: 1, para: 1 };
+  const DANGLING = { de: 1, da: 1, do: 1, em: 1, e: 1, com: 1, para: 1, a: 1 };
 
   // ---- Camada 2: mapa curado texto-completo → núcleo de compra ----
   // Chaves já em lowercase e SEM parênteses (a camada 1 roda antes da consulta). A consulta
@@ -211,6 +211,89 @@
     "iogurte grego espesso": "iogurte grego",
     "crème pâtissière de baunilha": "crème pâtissière",
     "batata palha fina": "batata palha",
+
+    // ---- auditoria de cobertura (2026-07-23): fechamento dos clusters restantes ----
+    // redundância cultural (o genérico É o específico no Brasil)
+    "suco de limão-tahiti": "suco de limão",
+    "cominho em pó": "cominho",
+    "orégano seco": "orégano",
+    "acém bovino": "acém",
+    "carne suína": "carne de porco",
+    "molho shoyu": "shoyu",
+    "pão árabe": "pão pita",
+    "grãos de cominho": "sementes de cominho",
+    "vinho de arroz shaoxing": "vinho shaoxing",
+    "creme de confeiteiro": "crème pâtissière",
+    // ervas: "fresco" redundante (só existe fresca na prateleira; em pó/seca são núcleos próprios)
+    "salsinha fresca": "salsinha",
+    "coentro fresco": "coentro",
+    "endro fresco": "endro",
+    "hortelã fresca": "hortelã",
+    "folhas de hortelã": "hortelã",
+    "sálvia fresca": "sálvia",
+    "estragão fresco": "estragão",
+    "manjericão fresco": "manjericão",
+    "alecrim fresco": "alecrim",
+    "espinafre fresco": "espinafre",
+    "folhas de espinafre": "espinafre",
+    "gengibre fresco": "gengibre",
+    "ervilha fresca": "ervilha",
+    "foie gras fresco": "foie gras",
+    "maço de salsinha fresca": "maço de salsinha",
+    "maço de endro fresco": "maço de endro",
+    // ordenadas → rótulo específico
+    "vinho branco": "vinho branco seco",
+    "páprica": "páprica doce",
+    "pato": "pato inteiro",
+    "canela": "canela em pó",
+    "lombo": "lombo de porco",
+    // paralelas / estado de uso / formato da mesma peça → genérico
+    "vinho tinto seco": "vinho tinto",
+    "vinho tinto encorpado": "vinho tinto",
+    "fundo escuro": "fundo escuro de carne",
+    "fundo de carne": "fundo escuro de carne",
+    "fundo escuro de carne adicional": "fundo escuro de carne",
+    "caldo claro": "fundo claro",
+    "fundo de galinha para o cozimento": "fundo claro",
+    "frango com osso e pele": "frango com osso",
+    "filé de peixe branco": "peixe branco",
+    "lombo de porco assado": "lombo de porco",
+    "lombo de porco inteiro": "lombo de porco",
+    "pernil de porco com pele": "pernil de porco",
+    "pernil de porco com pele e osso": "pernil de porco",
+    "barriga de porco inteira": "barriga de porco",
+    // "batata frita" (Gyros) e "tortillas fritas" (Pozole) NÃO fundem com o cru: o raw das
+    // duas receitas confirma que são acompanhamento pronto na montagem/serviço — nenhum passo
+    // frita; batata frita congelada e tostadas são produtos compráveis por si.
+    "pão amanhecido": "pão",
+    "bacon em pedaço": "bacon",
+    "couve refogada": "couve",
+    "kimchi fermentado": "kimchi",
+    "alcaparras extras": "alcaparras",
+    "azeitonas pretas sem caroço": "azeitonas pretas",
+    "bacalhau dessalgado": "bacalhau",
+    "ragù à bolonhesa pronto": "ragù à bolonhesa",
+    "torradas finas": "torradas",
+    "fatias extras de toucinho": "toucinho",
+    "sobras de carne assada": "sobras de assado",
+    "espetos": "espetos de bambu",
+    "alface para forrar o prato": "alface",
+    "folhas de alface": "alface",
+    "folhas de gelatina": "gelatina em folha",
+    "folhas de ervas frescas": "ervas frescas",
+    "ervas": "ervas frescas",
+    "frutas": "frutas frescas",
+    "frutas para acompanhar": "frutas frescas",
+    "frutas frescas variadas": "frutas frescas",
+    "frutas vermelhas variadas": "frutas vermelhas",
+    "pepinos": "pepino",
+    "cogumelo paris": "cogumelos paris",
+    "vegetal": "vegetal de sua escolha",
+    "vegetal escolhido": "vegetal de sua escolha",
+    "vegetal à sua escolha": "vegetal de sua escolha",
+    "vegetal principal": "vegetal de sua escolha",
+    // identidade protegida do strip da camada 3 ("firme" aqui é produto, não descritor)
+    "tofu firme": "tofu firme",
   };
 
   // ---- Formas plurais de EXIBIÇÃO (visão Geral, grupos de contagem sem unidade) ----
@@ -255,7 +338,6 @@
     "pera asiática": "peras asiáticas",
     "cardamomo": "cardamomos",
     "polvo": "polvos",
-    "pato": "patos",
     "pato inteiro": "patos inteiros",
     "frango inteiro": "frangos inteiros",
     "frango caipira": "frangos caipiras",
@@ -303,8 +385,7 @@
     "cápsula de n2o": "cápsulas de n2o",
     "bola de sorvete de creme": "bolas de sorvete de creme",
     "maço de salsinha": "maços de salsinha",
-    "maço de salsinha fresca": "maços de salsinha fresca",
-    "maço de endro fresco": "maços de endro fresco",
+    "maço de endro": "maços de endro",
     "maço de espinafre japonês": "maços de espinafre japonês",
     "maço de hortelã": "maços de hortelã",
     "maço de folhas de jambu": "maços de folhas de jambu",
@@ -318,6 +399,7 @@
     "bulbo de erva-doce": "bulbos de erva-doce",
     "alho-poró": "alhos-poró",
     "alface romana": "alfaces romanas",
+    "cogumelo shiitake": "cogumelos shiitake",
   };
 
   // Forma plural de exibição do núcleo — null quando não flexiona (massa/invariável).
