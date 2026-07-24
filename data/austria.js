@@ -74,7 +74,7 @@ window.RECIPES["austria"] = [
     ]
   },
   {
-    name: "Apfelstrudel",
+    name: "Strudel de Maçã",
     subgroup: "Sobremesas",
     desc: "Rolo de massa filo fina recheado com maçã fatiada, canela, passas e nozes, assado até dourar — sobremesa clássica austríaca.",
     origin: "Áustria",

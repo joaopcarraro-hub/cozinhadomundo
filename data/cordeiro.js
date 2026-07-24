@@ -205,7 +205,7 @@ window.RECIPES["cordeiro"] = [
     ]
   },
   {
-    name: "Shank de Cordeiro",
+    name: "Jarrete de Cordeiro",
     subgroup: "Braseados",
     desc: "Jarrete de cordeiro (shank) selado e braseado por horas em vinho tinto e caldo, até desmanchar — servido inteiro sobre purê ou polenta.",
     origin: "Mediterrâneo / Internacional",

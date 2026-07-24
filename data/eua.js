@@ -106,7 +106,7 @@ window.RECIPES["eua"] = [
     ]
   },
   {
-    name: "Fried Chicken",
+    name: "Frango Frito Americano",
     subgroup: "Sanduíches e Frituras",
     desc: "Frango marinado em leitelho, empanado numa crosta grossa de farinha temperada e frito — o clássico frango frito sulista.",
     origin: "EUA (Sul)",
@@ -201,7 +201,7 @@ window.RECIPES["eua"] = [
     ]
   },
   {
-    name: "Buffalo Wings",
+    name: "Asinhas de Frango Buffalo",
     subgroup: "Sanduíches e Frituras",
     desc: "Asas de frango fritas ou assadas, mergulhadas em molho picante de manteiga e pimenta — servidas com aipo e molho ranch.",
     origin: "EUA (Buffalo, Nova York)",
@@ -274,7 +274,7 @@ window.RECIPES["eua"] = [
 
   // ===================== PRATOS DE PANELA E FORNO =====================
   {
-    name: "Clam Chowder",
+    name: "Chowder de Amêijoas",
     subgroup: "Pratos de Panela e Forno",
     desc: "Sopa cremosa de Nova Inglaterra com amêijoas, batata e bacon, engrossada com creme de leite.",
     origin: "EUA (Nova Inglaterra)",
@@ -600,7 +600,7 @@ window.RECIPES["eua"] = [
 
   // ===================== SOBREMESAS =====================
   {
-    name: "Apple Pie",
+    name: "Torta de Maçã",
     subgroup: "Sobremesas",
     desc: "Torta clássica americana de massa amanteigada com recheio de maçã fatiada, canela e noz-moscada.",
     origin: "EUA",

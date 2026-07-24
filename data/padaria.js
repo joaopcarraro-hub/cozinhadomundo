@@ -256,7 +256,7 @@ window.RECIPES["padaria"] = [
     ]
   },
   {
-    name: "Pain de Campagne",
+    name: "Pão Rústico",
     subgroup: "Pães Franceses Clássicos",
     desc: "Pão rústico francês de casca grossa e escura, feito com farinha branca e integral, assado dentro de panela para gerar vapor.",
     origin: "França",

@@ -553,7 +553,7 @@ window.RECIPES["sobremesas-classicas"] = [
     ]
   },
   {
-    name: "Lemon Tart",
+    name: "Torta de Limão",
     subgroup: "Tortas e Tartes",
     desc: "Torta de massa amanteigada assada às cegas, recheada com creme ácido de limão (lemon curd), podendo levar merengue maçaricado por cima.",
     origin: "França / Reino Unido",
@@ -824,7 +824,7 @@ window.RECIPES["sobremesas-classicas"] = [
 
   // ===================== FOLHADOS =====================
   {
-    name: "Mille-feuille",
+    name: "Mil-Folhas",
     subgroup: "Folhados",
     desc: "Sobremesa francesa de camadas de massa folhada crocante intercaladas com creme de confeiteiro, geralmente decorada com fondant marmorizado.",
     origin: "França",

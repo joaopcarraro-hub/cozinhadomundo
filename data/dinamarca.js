@@ -356,7 +356,7 @@ window.RECIPES["dinamarca"] = [
     ]
   },
   {
-    name: "Wienerbrød (Danish Pastry)",
+    name: "Wienerbrød (Massa Folhada Dinamarquesa)",
     subgroup: "Pães e Doces de Padaria",
     desc: "Massa folhada amanteigada (mesma técnica do croissant), recheada com creme, amêndoa ou geleia — a famosa 'folhada dinamarquesa'.",
     origin: "Dinamarca",

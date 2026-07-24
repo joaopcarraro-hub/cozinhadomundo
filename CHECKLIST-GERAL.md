@@ -72,6 +72,18 @@ Fase 3A+3B (unidade de VENDA na visão Geral: sólido→grama, líquido→ml/L, 
 arredondada pra cima, tomate pelado→lata; fração eliminada da visão Geral). Visão padrão
 trocada pra "Geral". Suíte versionada (330 testes).
 
+### Nomes de receita em português
+
+398 receitas classificadas (136 já PT, 234 nome próprio mantido, 28 candidatos investigados).
+25 aprovados e aplicados em `recipe.name` (3 dos 28 mantidos no original por serem nome fixo
+internacional: Beef Brisket, Lobster Roll, Mac and Cheese). Critério e lista de exceções
+documentados na skill `recipe-data-quality`. Slug muda pros 25 (`id = slugify(recipe.name)`) —
+migração seletiva em `RENAME_SLUG_MAP` (js/storage.js), aplicada em 2 pontos (favoritas/feitas
+via `migrateOldId`, últimas visitadas via `loadRecent`) + alias no Router pra
+`#/receita/:slug-antigo` e `#/cozinhar/:slug-antigo` resolverem pro slug novo. Zero colisão de
+slug (398 + entre os 25), zero mudança de tag (confirmado via `git show HEAD:` comparando
+antes/depois). Suíte versionada `scripts/verify-recipe-name-pt-2026-07-24.js`.
+
 ### Timer
 
 Roleta de 3 colunas (h/min/s) com máquina de estado; segundos 0–59; toque no mostrador abre
@@ -100,9 +112,7 @@ hierarquia de área de toque confirmada por `elementFromPoint`).
    isto é SUB-PRODUTO DERIVADO — gema/clara vêm de dentro do ovo). Precisa de investigação
    própria: varrer o acervo e medir quantos ingredientes têm esse padrão antes de definir a
    regra geral. Investigação + execução: Sonnet 5 Extra, effort médio.
-4. Nomes de receita em português — mesma metodologia da tradução de ingrediente (investigar,
-   propor lista, João aprova, aplica). Nome próprio de prato fica como está (Carbonara etc.).
-   Conteúdo/dado, não layout. Sonnet 5 Extra, effort médio.
+4. ~~Nomes de receita em português~~ — ✅ FEITO (ver bloco abaixo).
 5. Busca inline da página de grupo sem `fromHash` (pequeno) — 3º caminho que ficou de fora
    quando o "Voltar preservando contexto" foi estendido. Fecha a consistência de navegação.
    Sonnet 5 Extra, effort baixo. Dá pra encaixar o polimento do toggle (abaixo) no mesmo toque

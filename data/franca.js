@@ -76,7 +76,7 @@ window.RECIPES["franca"] = [
     ]
   },
   {
-    name: "Salade Niçoise",
+    name: "Salada Niçoise",
     subgroup: "Entradas",
     desc: "Salada fria de Nice com atum, ovo mollet, vagem, tomate, azeitonas e anchova — sem batata, na receita clássica.",
     origin: "França (Nice)",

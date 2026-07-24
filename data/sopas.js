@@ -314,7 +314,7 @@ window.RECIPES["sopas"] = [
     ]
   },
   {
-    name: "French Onion Soup",
+    name: "Sopa de Cebola Francesa",
     subgroup: "Sopas Francesas",
     desc: "Sopa de cebolas bem caramelizadas em caldo de carne, coberta com torrada e queijo gruyère gratinado.",
     origin: "França",

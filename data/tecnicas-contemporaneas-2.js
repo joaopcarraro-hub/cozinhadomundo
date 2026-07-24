@@ -330,7 +330,7 @@ window.RECIPES["tecnicas-contemporaneas-2"] = [
     ]
   },
   {
-    name: "Dry Aging (Maturação Seca)",
+    name: "Maturação Seca (Dry Aging)",
     subgroup: "Cozimentos de Precisão",
     desc: "Técnica de maturar carne bovina por semanas em câmara com temperatura e umidade controladas, concentrando sabor e maciez antes de aparar a crosta seca.",
     origin: "Técnica internacional",

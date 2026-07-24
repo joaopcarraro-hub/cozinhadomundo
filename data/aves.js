@@ -132,7 +132,7 @@ window.RECIPES["aves"] = [
     ]
   },
   {
-    name: "Chicken Cordon Bleu",
+    name: "Frango Cordon Bleu",
     subgroup: "Frango",
     desc: "Filé de frango recheado com presunto e queijo gruyère, empanado e frito (ou assado) até dourar e o queijo derreter por dentro.",
     origin: "Suíça / França",

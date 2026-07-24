@@ -4,7 +4,7 @@ window.RECIPES["tailandia"] = [
 
   // ===================== CURRIES =====================
   {
-    name: "Green Curry (Gaeng Keow Wan)",
+    name: "Curry Verde (Gaeng Keow Wan)",
     subgroup: "Curries",
     desc: "Curry tailandês verde e picante de frango, cozido em leite de coco com pasta de pimenta verde, berinjela e vagem — servido com arroz jasmim.",
     origin: "Tailândia",
@@ -131,7 +131,7 @@ window.RECIPES["tailandia"] = [
     ]
   },
   {
-    name: "Red Curry (Gaeng Phed)",
+    name: "Curry Vermelho (Gaeng Phed)",
     subgroup: "Curries",
     desc: "Curry tailandês vermelho de carne ou frango (ou camarão), cozido em leite de coco com pasta de pimentas vermelhas, pimentão e vagem — servido com arroz jasmim.",
     origin: "Tailândia",

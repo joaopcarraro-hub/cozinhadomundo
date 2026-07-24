@@ -4,7 +4,7 @@ window.RECIPES = window.RECIPES || {};
 window.RECIPES["hungria"] = [
 
   {
-    name: "Chicken Paprikash",
+    name: "Frango Paprikash",
     subgroup: "Principais",
     desc: "Frango cozido em molho cremoso de páprica húngara, cebola e creme azedo, servido com Spätzle ou nhoque.",
     origin: "Hungria",

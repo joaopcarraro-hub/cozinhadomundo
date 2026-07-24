@@ -191,7 +191,7 @@ window.RECIPES["entradas-quentes"] = [
 
   // ===================== FRITOS E EMPANADOS =====================
   {
-    name: "Croquetas",
+    name: "Croquetes",
     subgroup: "Fritos e Empanados",
     desc: "Bolinhos espanhóis de Béchamel espessa com presunto, empanados e fritos até dourar por fora e cremosos por dentro.",
     origin: "Espanha",

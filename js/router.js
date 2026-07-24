@@ -7,6 +7,15 @@
 (function () {
   const listeners = [];
 
+  // #/receita/:id e #/cozinhar/:id levam o id-slug direto na URL — renomear recipe.name muda
+  // esse slug (ver skill recipe-data-quality, leva de 2026-07-24). window.Storage.RENAME_SLUG_MAP
+  // é a MESMA tabela que migra favoritas/feitas/últimas-visitadas (storage.js, carregado antes
+  // deste arquivo) — um link salvo com o slug antigo continua abrindo a receita certa.
+  function resolveRecipeIdAlias(id) {
+    const map = window.Storage && window.Storage.RENAME_SLUG_MAP;
+    return (map && map[id]) || id;
+  }
+
   function parseHash() {
     const raw = location.hash.replace(/^#\/?/, "");
     if (!raw) return { name: "home" };
@@ -95,14 +104,14 @@
       });
     }
     if (parts[0] === "receita" && parts[1]) {
-      return { name: "receita", id: parts[1], fromHash: fromHash };
+      return { name: "receita", id: resolveRecipeIdAlias(parts[1]), fromHash: fromHash };
     }
     if (parts[0] === "cozinhar" && parts[1]) {
       // portion: multiplicador de porções capturado do stepper da tela de receita no momento
       // de clicar "Começar preparo" (Fase 2) — só usado se renderCookMode for CRIAR uma sessão
       // nova; retomar uma sessão em andamento ignora esse valor (usa o portionMultiplier já
       // salvo). null quando a receita não tinha stepper (yield sem base numérica).
-      return { name: "cozinhar", id: parts[1], fromHash: fromHash, portion: portion && !isNaN(portion) ? portion : null };
+      return { name: "cozinhar", id: resolveRecipeIdAlias(parts[1]), fromHash: fromHash, portion: portion && !isNaN(portion) ? portion : null };
     }
     if (parts[0] === "minhas-receitas") {
       return { name: "minhas-receitas" };

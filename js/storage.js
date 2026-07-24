@@ -5,13 +5,49 @@
   const KEY = "cardapio-state-v2";
   const LEGACY_MADE_KEY = "cardapio-feitos-v1";
 
+  // Slug antigo -> slug novo pra receitas renomeadas (recipe.name em português, 2026-07-24 —
+  // ver skill recipe-data-quality). O id é slugify(recipe.name); renomear muda o slug, então
+  // qualquer chave salva (favoritas/feitas aqui, "últimas visitadas" em RECENT_KEY abaixo)
+  // precisa ser traduzida ou o dado do usuário fica órfão. Compartilhado pelas duas migrações
+  // desta leva — mesmo mapa, dois pontos de aplicação (ver migrateOldId e loadRecent).
+  const RENAME_SLUG_MAP = {
+    "apfelstrudel": "strudel-de-maca",
+    "shank-de-cordeiro": "jarrete-de-cordeiro",
+    "croquetas": "croquetes",
+    "apple-pie": "torta-de-maca",
+    "buffalo-wings": "asinhas-de-frango-buffalo",
+    "clam-chowder": "chowder-de-ameijoas",
+    "fried-chicken": "frango-frito-americano",
+    "salade-nicoise": "salada-nicoise",
+    "pain-de-campagne": "pao-rustico",
+    "risotto-ai-frutti-di-mare": "risoto-ai-frutti-di-mare",
+    "risotto-ai-funghi": "risoto-ai-funghi",
+    "risotto-al-limone": "risoto-al-limone",
+    "risotto-al-parmigiano": "risoto-al-parmigiano",
+    "risotto-alla-barbabietola-beterraba": "risoto-alla-barbabietola-beterraba",
+    "risotto-alla-milanese": "risoto-alla-milanese",
+    "risotto-alla-zucca-abobora": "risoto-alla-zucca-abobora",
+    "lemon-tart": "torta-de-limao",
+    "mille-feuille": "mil-folhas",
+    "french-onion-soup": "sopa-de-cebola-francesa",
+    "green-curry-gaeng-keow-wan": "curry-verde-gaeng-keow-wan",
+    "red-curry-gaeng-phed": "curry-vermelho-gaeng-phed",
+    "dry-aging-maturacao-seca": "maturacao-seca-dry-aging",
+    "wienerbrod-danish-pastry": "wienerbrod-massa-folhada-dinamarquesa",
+    "chicken-cordon-bleu": "frango-cordon-bleu",
+    "chicken-paprikash": "frango-paprikash",
+  };
+
   function migrateOldId(oldId) {
     const sep = oldId.indexOf("::");
-    if (sep === -1) return oldId; // já é um id novo
-    const catId = oldId.slice(0, sep);
-    const name = oldId.slice(sep + 2);
-    const newId = window.TagModel && window.TagModel.getIdForCatAndName(catId, name);
-    return newId || oldId; // se não achar a receita, mantém a chave antiga em vez de perder o dado
+    let id = oldId;
+    if (sep !== -1) {
+      const catId = oldId.slice(0, sep);
+      const name = oldId.slice(sep + 2);
+      const newId = window.TagModel && window.TagModel.getIdForCatAndName(catId, name);
+      id = newId || oldId; // se não achar a receita, mantém a chave antiga em vez de perder o dado
+    }
+    return RENAME_SLUG_MAP[id] || id;
   }
 
   function migrateIdList(list) {
@@ -243,8 +279,13 @@
   const RECENT_SCHEMA_VERSION = 1;
   const RECENT_MAX_ITEMS = 10;
 
-  // Nenhuma migração real existe ainda (schema nunca mudou desde a v1) — mesmo estado inicial
-  // de PREPARO_MIGRATIONS/SHOPPING_LIST_MIGRATIONS quando foram criadas.
+  // Nenhuma migração de SCHEMA existe ainda (a forma {version, items:[{recipeId,viewedAt}]}
+  // nunca mudou desde a v1) — mesmo estado inicial de PREPARO_MIGRATIONS/SHOPPING_LIST_MIGRATIONS
+  // quando foram criadas. RENAME_SLUG_MAP (acima) NÃO entra aqui: é uma tradução de VALOR de
+  // recipeId dentro do MESMO schema, não uma migração estrutural entre versões — colocá-la
+  // num "migrate(parsed) de version 1 pra version 1" forçaria um hop falso. Aplicada direto no
+  // recipeId de cada item ao carregar (mesmo padrão de migrateOldId: traduz se achar no mapa,
+  // mantém como está se não achar).
   const RECENT_MIGRATIONS = {};
 
   function isValidRecentItem(item) {
@@ -269,7 +310,10 @@
         if (hops > 20) return empty; // guarda contra migração mal escrita em loop
       }
 
-      const items = Array.isArray(parsed.items) ? parsed.items.filter(isValidRecentItem) : [];
+      const items = (Array.isArray(parsed.items) ? parsed.items.filter(isValidRecentItem) : []).map((item) => ({
+        recipeId: RENAME_SLUG_MAP[item.recipeId] || item.recipeId,
+        viewedAt: item.viewedAt,
+      }));
       return { version: RECENT_SCHEMA_VERSION, items: items.slice(0, RECENT_MAX_ITEMS) };
     } catch (e) {
       return empty;
@@ -285,6 +329,9 @@
   }
 
   window.Storage = {
+    // Exposto pra Router aplicar o MESMO alias em #/receita/:id e #/cozinhar/:id — fonte única,
+    // sem duplicar os 25 pares num segundo arquivo.
+    RENAME_SLUG_MAP: RENAME_SLUG_MAP,
     isMade: (id) => has(state.made, id),
     toggleMade: (id) => toggleIn("made", id),
     countMade: (ids) => countIn("made", ids),
