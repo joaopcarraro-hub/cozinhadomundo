@@ -38,7 +38,10 @@
     { id: "dish_type:sopa", label: "Sopas", group: "Tipo de prato", synonyms: ["sopa", "caldo"] },
     { id: "dish_type:entrada-fria", label: "Entradas Frias", group: "Tipo de prato", synonyms: ["entrada fria"] },
     { id: "dish_type:entrada-quente", label: "Entradas Quentes", group: "Tipo de prato", synonyms: ["entrada quente"] },
-    { id: "dish_type:massa", label: "Massas", group: "Tipo de prato", synonyms: ["massa", "macarrão", "pasta"] },
+    // "macarrão" removido dos sinônimos: é SUBTIPO de massa, não sinônimo (Lasanha/Ravioli/
+    // Tortellini/Agnolotti/Gnocchi são massa e não são macarrão) — ganhou ingredient:macarrao
+    // própria (ver data/derivation-dict.js). Investigação de taxonomia 2026-07-24.
+    { id: "dish_type:massa", label: "Massas", group: "Tipo de prato", synonyms: ["massa", "pasta"] },
     { id: "dish_type:risoto", label: "Risotos", group: "Tipo de prato", synonyms: ["risoto"] },
     { id: "dish_type:ovo", label: "Pratos de Ovo", group: "Tipo de prato", synonyms: ["ovo", "omelete", "quiche"] },
     { id: "dish_type:pao", label: "Pães e Padaria", group: "Tipo de prato", synonyms: ["pão", "padaria"] },
@@ -74,8 +77,10 @@
     // ---------- protein (proteína — só quando é o foco real da receita) ----------
     { id: "protein:frango", label: "Frango", group: "Proteína", synonyms: ["galinha", "peito de frango", "coxa", "sobrecoxa"] },
     { id: "protein:ave", label: "Aves", group: "Proteína", synonyms: ["pato", "peru", "aves"] },
-    { id: "protein:boi", label: "Carne Bovina", group: "Proteína", synonyms: ["carne bovina", "vaca", "boi"] },
-    { id: "protein:suino", label: "Suíno", group: "Proteína", synonyms: ["porco", "carne de porco", "bacon", "pancetta", "guanciale", "linguiça"] },
+    { id: "protein:boi", label: "Carne Bovina", group: "Proteína", synonyms: ["carne bovina", "vaca", "boi", "vitela"] },
+    // bacon/pancetta/guanciale/linguiça migrados pra ingredient:bacon/ingredient:linguica
+    // (tags próprias, mais precisas) — investigação de taxonomia 2026-07-24.
+    { id: "protein:suino", label: "Suíno", group: "Proteína", synonyms: ["porco", "carne de porco"] },
     { id: "protein:cordeiro", label: "Cordeiro", group: "Proteína", synonyms: ["borrego", "carneiro"] },
     { id: "protein:peixe", label: "Peixe", group: "Proteína", synonyms: ["peixe"] },
     { id: "protein:frutos-do-mar", label: "Frutos do Mar", group: "Proteína", synonyms: ["camarão", "lula", "polvo", "mexilhão", "marisco"] },
@@ -90,7 +95,9 @@
     { id: "diet:vegana", label: "Vegana", group: "Dieta", synonyms: ["vegano", "plant-based"] },
 
     // ---------- contains (ingrediente/proteína presente, mas secundário à identidade do prato) ----------
-    { id: "contains:suino", label: "Leva Suíno (secundário)", group: "Contém", synonyms: ["bacon", "pancetta", "guanciale", "presunto", "linguiça", "toucinho"] },
+    // sinônimos migrados pra ingredient:bacon/linguica/presunto (mais precisas) — investigação
+    // de taxonomia 2026-07-24.
+    { id: "contains:suino", label: "Leva Suíno (secundário)", group: "Contém", synonyms: [] },
     { id: "contains:boi", label: "Leva Carne Bovina (secundário)", group: "Contém", synonyms: [] },
     { id: "contains:ave", label: "Leva Ave (secundário)", group: "Contém", synonyms: [] },
     { id: "contains:frango", label: "Leva Frango (secundário)", group: "Contém", synonyms: [] },
@@ -135,6 +142,11 @@
     { id: "ingredient:pepino", label: "Pepino", group: "Ingrediente", synonyms: [] },
     { id: "ingredient:repolho", label: "Repolho", group: "Ingrediente", synonyms: [] },
     { id: "ingredient:damasco", label: "Damasco", group: "Ingrediente", synonyms: ["damascos"] },
+    // ---- subtipos/produce adicionais (filter — investigação de taxonomia 2026-07-24) ----
+    { id: "ingredient:macarrao", label: "Macarrão", group: "Ingrediente", synonyms: ["espaguete", "noodles", "miojo"] },
+    { id: "ingredient:laranja", label: "Laranja", group: "Ingrediente", synonyms: [] },
+    { id: "ingredient:maca", label: "Maçã", group: "Ingrediente", synonyms: [] },
+    { id: "ingredient:rabanete", label: "Rabanete", group: "Ingrediente", synonyms: [] },
     // espécies de peixe/fruto do mar (cada uma também deriva water:* — ver data/derivation-dict.js)
     { id: "ingredient:camarao", label: "Camarão", group: "Ingrediente", synonyms: ["camarões"] },
     { id: "ingredient:salmao", label: "Salmão", group: "Ingrediente", synonyms: [] },
@@ -156,12 +168,28 @@
     // destaque no dropdown — mesma mecânica de lowPriority já usada pra alho/cebola.
     { id: "ingredient:leite", label: "Leite", group: "Ingrediente", synonyms: [], lowPriority: true },
     { id: "ingredient:vinagre", label: "Vinagre", group: "Ingrediente", synonyms: [], lowPriority: true },
+    // ---- subtipos coadjuvantes: buscáveis mas coadjuvantes na maioria das receitas, não
+    // "pratos DE X" — filtro prometeria mais do que entrega (investigação 2026-07-24) ----
+    { id: "ingredient:bacon", label: "Bacon", group: "Ingrediente", synonyms: ["toucinho", "pancetta", "guanciale"], lowPriority: true },
+    { id: "ingredient:linguica", label: "Linguiça", group: "Ingrediente", synonyms: ["calabresa", "chouriço", "chorizo"], lowPriority: true },
+    { id: "ingredient:presunto", label: "Presunto", group: "Ingrediente", synonyms: ["jamón", "prosciutto"], lowPriority: true },
+    { id: "ingredient:pato", label: "Pato", group: "Ingrediente", synonyms: ["canard", "magret"], lowPriority: true },
+    { id: "ingredient:massa-folhada", label: "Massa Folhada", group: "Ingrediente", synonyms: ["filo", "phyllo"], lowPriority: true },
+    // ---- produce adicional (<7 receitas cada — investigação 2026-07-24) ----
+    { id: "ingredient:beterraba", label: "Beterraba", group: "Ingrediente", synonyms: [], lowPriority: true },
+    { id: "ingredient:alface", label: "Alface", group: "Ingrediente", synonyms: [], lowPriority: true },
+    { id: "ingredient:vagem", label: "Vagem", group: "Ingrediente", synonyms: [], lowPriority: true },
+    { id: "ingredient:couve", label: "Couve", group: "Ingrediente", synonyms: [], lowPriority: true },
+    { id: "ingredient:morango", label: "Morango", group: "Ingrediente", synonyms: [], lowPriority: true },
+    { id: "ingredient:abacate", label: "Abacate", group: "Ingrediente", synonyms: [], lowPriority: true },
+    { id: "ingredient:alcaparra", label: "Alcaparra", group: "Ingrediente", synonyms: ["alcaparras"], lowPriority: true },
 
     // ---------- seasoning (temperos/aromáticos — sempre lowPriority, buscáveis mas invisíveis nos chips) ----------
     { id: "seasoning:alho", label: "Alho", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:cebola", label: "Cebola", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:cebolinha", label: "Cebolinha", group: "Tempero", synonyms: [], lowPriority: true },
-    { id: "seasoning:salsinha", label: "Salsinha", group: "Tempero", synonyms: ["salsa"], lowPriority: true },
+    { id: "seasoning:salsinha", label: "Salsinha", group: "Tempero", synonyms: ["salsa", "cheiro verde"], lowPriority: true },
+    { id: "seasoning:salsao", label: "Salsão", group: "Tempero", synonyms: ["aipo"], lowPriority: true },
     { id: "seasoning:louro", label: "Louro", group: "Tempero", synonyms: ["folha de louro"], lowPriority: true },
     { id: "seasoning:coentro", label: "Coentro", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:gengibre", label: "Gengibre", group: "Tempero", synonyms: [], lowPriority: true },
@@ -174,7 +202,7 @@
     { id: "seasoning:canela", label: "Canela", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:mostarda", label: "Mostarda", group: "Tempero", synonyms: ["dijon"], lowPriority: true },
     { id: "seasoning:endro", label: "Endro", group: "Tempero", synonyms: ["dill"], lowPriority: true },
-    { id: "seasoning:pimenta-chili", label: "Pimenta Chili", group: "Tempero", synonyms: ["malagueta", "jalapeño", "dedo-de-moça"], lowPriority: true },
+    { id: "seasoning:pimenta-chili", label: "Pimenta Chili", group: "Tempero", synonyms: ["malagueta", "jalapeño", "dedo-de-moça", "caiena", "gochugaru", "ají amarillo"], lowPriority: true },
     { id: "seasoning:cravo", label: "Cravo", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:oregano", label: "Orégano", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:curry", label: "Curry", group: "Tempero", synonyms: ["caril"], lowPriority: true },
@@ -182,6 +210,8 @@
     { id: "seasoning:manjericao", label: "Manjericão", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:hortela", label: "Hortelã", group: "Tempero", synonyms: [], lowPriority: true },
     { id: "seasoning:acafrao", label: "Açafrão", group: "Tempero", synonyms: [], lowPriority: true },
+    { id: "seasoning:curcuma", label: "Cúrcuma", group: "Tempero", synonyms: ["açafrão-da-terra"], lowPriority: true },
+    { id: "seasoning:alho-poro", label: "Alho-poró", group: "Tempero", synonyms: ["alho francês"], lowPriority: true },
     { id: "seasoning:cardamomo", label: "Cardamomo", group: "Tempero", synonyms: [], lowPriority: true },
 
     // ---------- water (habitat da espécie de peixe/fruto do mar — derivado junto com ingredient:*) ----------

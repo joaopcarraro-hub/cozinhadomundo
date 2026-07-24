@@ -38,12 +38,59 @@ Exemplos incorretos:
 - Bolo não deve ser foco de ovo.
 
 Para ingrediente presente, usar:
-- contains:suino
-- contains:ovo
-- ingredient:bacon
-- ingredient:presunto
-- ingredient:guanciale
-- ingredient:ovo
+- contains:suino / contains:ovo — manuais (`recipe.tags`), quando a proteína aparece mas não
+  é o foco (ver protein:* acima).
+- ingredient:bacon, ingredient:linguica, ingredient:presunto, ingredient:pato,
+  ingredient:massa-folhada, ingredient:ovo, etc. — NUNCA tagueados à mão. São DERIVADOS
+  automaticamente do texto de `ingredients` via data/derivation-dict.js (mesmo motor de
+  ingredient:tomate/queijo/etc. — ver investigação de taxonomia 2026-07-24). A maioria é
+  tier:search (`lowPriority:true` em tags.js — buscáveis, mas não viram chip/faceta; critério:
+  "ninguém navega por bacon, só digita bacon"). "guanciale"/"pancetta"/"toucinho" são
+  SINÔNIMOS dentro de ingredient:bacon — nunca crie ingredient:guanciale como tag própria.
+
+### Subtipo não é sinônimo
+
+Um subtipo (macarrão dentro de massa, alcatra dentro de boi) nunca deve virar sinônimo da tag
+mais ampla — sinônimo faz a tag ampla "engolir" o subtipo, perdendo a distinção real. Caso que
+disparou a regra (investigação de taxonomia 2026-07-24): "macarrão" era sinônimo de
+dish_type:massa, mas Lasanha/Ravioli/Tortellini/Agnolotti/Gnocchi SÃO massa e NÃO SÃO
+macarrão — buscar "macarrão" devolvia essas receitas erradas. Correção: criar
+ingredient:macarrao como tag própria (derivada de espaguete/penne/talharim/ramen/udon/etc,
+ver data/derivation-dict.js) e remover "macarrão" dos sinônimos de dish_type:massa. Regra
+geral: granularidade que o usuário espera vai no DADO (tag nova, derivada quando possível —
+ver "Nunca tagueie à mão" acima), nunca resolvida só no parser/motor de busca por cima de uma
+taxonomia grosseira.
+
+### Falso-amigos conhecidos (mascarar com `ff` no derivation-dict, nunca ignorar)
+
+Uma palavra pode ser gatilho de uma tag mas, em certos contextos, significar outra coisa (ou
+nada). Casos já encontrados e corrigidos — qualquer entrada nova do dicionário deve ser
+checada contra esta lista antes de assumir "bateu = correto":
+- mel / cogumelo — "mel de cogumelo" não é mel de verdade.
+- dourado / dourar — "deixe dourado", "até dourar" é instrução de cozimento, não o peixe
+  dourado.
+- pimenta genérica — "pimenta do reino"/"pimenta preta" não deve contar como pimenta-chili.
+- pimenta calabresa (tempero) / linguiça calabresa (embutido) — mesma palavra "calabresa",
+  ingredientes diferentes; ingredient:linguica precisa de `ff: ["pimenta calabresa"]`.
+- couve / couve-flor — são hortaliças diferentes; ingredient:couve precisa de
+  `ff: ["couve flor"]`.
+- açafrão-da-terra / açafrão — açafrão-da-terra É cúrcuma (ingrediente diferente, mais barato),
+  não uma variação de açafrão/saffron; achado 2026-07-24 (Galinhada usava exatamente essa
+  frase e estava classificada como seasoning:acafrao por engano). seasoning:acafrao tem
+  `ff: ["acafrao da terra"]`. Quando a receita lista as DUAS como alternativa genuína ("açafrão
+  ou cúrcuma", ex. Tajine de Cordeiro com Damasco), é correto manter as duas tags — só mascarar
+  quando for renomeação do mesmo item, não quando for um "ou" real de ingrediente.
+
+### Escopo da derivação automática — só `ingredients`, nunca `name`
+
+`deriveTagsFromIngredients` (js/tagmodel.js) só lê o array `recipe.ingredients` — o campo
+`name` da receita NUNCA entra na derivação de ingredient:/seasoning:. Consequência real: ao
+criar ingredient:macarrao (2026-07-24), Tagliatelle/Pappardelle/Spätzle ficaram DE FORA da
+tag mesmo sendo literalmente massas com nome de formato, porque a ficha de ingredientes deles
+diz só "massa fresca..." sem repetir o nome do prato — só o `name` menciona o formato. Isso é
+uma restrição conhecida, não um bug: ao propor uma tag nova baseada em nome de prato, sempre
+confirme se o gatilho também aparece na LISTA DE INGREDIENTES da receita, não só no nome —
+senão a tag nasce menor do que o esperado.
 
 ### Camadas de tags
 

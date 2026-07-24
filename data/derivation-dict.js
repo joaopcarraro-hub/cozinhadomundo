@@ -50,6 +50,14 @@
   {id:"pepino",ns:"ingredient",tier:"filter",syn:["pepino"]},
   {id:"repolho",ns:"ingredient",tier:"filter",syn:["repolho"]},
   {id:"damasco",ns:"ingredient",tier:"filter",syn:["damasco","damascos"]},
+  // ---- SUBTIPOS/PRODUCE ADICIONAIS (filter — investigação taxonomia 2026-07-24) ----
+  // macarrao: subtipo de dish_type:massa, não sinônimo — Lasanha/Ravioli/Tortellini/Agnolotti/
+  // Gnocchi são massa mas não são macarrão; ganha tag própria em vez de inflar o sinônimo de
+  // dish_type:massa (que foi removido em js/tags.js na mesma leva).
+  {id:"macarrao",ns:"ingredient",tier:"filter",syn:["macarrao","espaguete","spaghetti","penne","fusilli","talharim","tagliatelle","fettuccine","linguine","linguini","pappardelle","rigatoni","bucatini","orecchiette","farfalle","parafuso","noodle","noodles","lamen","ramen","udon","soba","yakisoba","bifum","dangmyeon","fideus","fideua","cabelo de anjo","capellini","spatzle","orzo","risone","conchiglie","tortiglioni","ziti","chow mein"]},
+  {id:"laranja",ns:"ingredient",tier:"filter",syn:["laranja","laranjas"]},
+  {id:"maca",ns:"ingredient",tier:"filter",syn:["maca","macas"]},
+  {id:"rabanete",ns:"ingredient",tier:"filter",syn:["rabanete","rabanetes"]},
   // ---- ESPÉCIES peixe/fruto (filter + water) ----
   {id:"camarao",ns:"ingredient",tier:"filter",syn:["camarao","camaroes"],water:"frutos-do-mar"},
   {id:"salmao",ns:"ingredient",tier:"filter",syn:["salmao"],water:"salgada"},
@@ -69,9 +77,13 @@
   {id:"caranguejo",ns:"ingredient",tier:"filter",syn:["caranguejo","siri"],water:"frutos-do-mar"},
   // ---- TEMPEROS / AROMÁTICOS (search, invisível) ----
   {id:"alho",ns:"seasoning",tier:"search",syn:["alho"],ff:["alho poro","alho frances"]},
+  {id:"alho-poro",ns:"seasoning",tier:"search",syn:["alho poro","alho frances"]},
   {id:"cebola",ns:"seasoning",tier:"search",syn:["cebola","cebolas"]},
   {id:"cebolinha",ns:"seasoning",tier:"search",syn:["cebolinha"]},
-  {id:"salsinha",ns:"seasoning",tier:"search",syn:["salsinha","salsa"]},
+  // "cheiro verde" (alho+cebolinha+salsinha picados, nome coletivo BR) fecha um gap real:
+  // 8 receitas (Frango com Quiabo, Picadinho, Entrevero, Rabada, Vaca Atolada, Escondidinho,
+  // Galinhada, Arroz Carreteiro) citam só "cheiro verde" e nunca ganhavam seasoning:salsinha.
+  {id:"salsinha",ns:"seasoning",tier:"search",syn:["salsinha","salsa","cheiro verde"]},
   {id:"louro",ns:"seasoning",tier:"search",syn:["louro","folha de louro"]},
   {id:"coentro",ns:"seasoning",tier:"search",syn:["coentro"]},
   {id:"gengibre",ns:"seasoning",tier:"search",syn:["gengibre"]},
@@ -84,18 +96,42 @@
   {id:"canela",ns:"seasoning",tier:"search",syn:["canela"]},
   {id:"mostarda",ns:"seasoning",tier:"search",syn:["mostarda","dijon"]},
   {id:"endro",ns:"seasoning",tier:"search",syn:["endro","dill"]},
-  {id:"pimenta-chili",ns:"seasoning",tier:"search",syn:["pimenta calabresa","pimenta dedo de moca","jalapeno","malagueta","guajillo","ancho","chipotle","pimenta vermelha","pimenta fresca","dedo de moca"]},
+  // caiena/gochugaru/aji amarillo fecham gap real: 17 receitas citavam essas pimentas e
+  // nunca ganhavam a tag (achado da investigação de taxonomia 2026-07-24).
+  {id:"pimenta-chili",ns:"seasoning",tier:"search",syn:["pimenta calabresa","pimenta dedo de moca","jalapeno","malagueta","guajillo","ancho","chipotle","pimenta vermelha","pimenta fresca","dedo de moca","caiena","gochugaru","pimenta coreana","aji amarillo","amarela peruana"]},
   {id:"cravo",ns:"seasoning",tier:"search",syn:["cravo"]},
   {id:"oregano",ns:"seasoning",tier:"search",syn:["oregano"]},
   {id:"curry",ns:"seasoning",tier:"search",syn:["curry","caril"]},
   {id:"alecrim",ns:"seasoning",tier:"search",syn:["alecrim"]},
   {id:"manjericao",ns:"seasoning",tier:"search",syn:["manjericao"]},
   {id:"hortela",ns:"seasoning",tier:"search",syn:["hortela"]},
-  {id:"acafrao",ns:"seasoning",tier:"search",syn:["acafrao"]},
+  {id:"acafrao",ns:"seasoning",tier:"search",syn:["acafrao"],ff:["acafrao da terra"]},
   {id:"cardamomo",ns:"seasoning",tier:"search",syn:["cardamomo"]},
+  {id:"salsao",ns:"seasoning",tier:"search",syn:["salsao","aipo"]},
+  // ff evita que "açafrão-da-terra" (nome comum de cúrcuma no Brasil, ingrediente diferente
+  // de açafrão/saffron de verdade) conte como seasoning:acafrao — falso-amigo real, achado
+  // ao criar esta entrada (Galinhada usava exatamente essa frase). "açafrão (ou cúrcuma)"
+  // como alternativa genuína (ex: Tajine de Cordeiro com Damasco) continua batendo em AMBAS
+  // as tags, corretamente — é um "ou" de ingrediente, não um erro de nome.
+  {id:"curcuma",ns:"seasoning",tier:"search",syn:["curcuma","acafrao da terra"]},
   // ---- BORDERLINE (search, discrimináveis mas ruído no filtro) ----
   {id:"leite",ns:"ingredient",tier:"search",syn:["leite"]},
   {id:"vinagre",ns:"ingredient",tier:"search",syn:["vinagre"]},
+  // ---- SUBTIPOS COADJUVANTES (search — investigação taxonomia 2026-07-24: sinônimo de
+  // protein:/contains:suino migrado pra estas tags dedicadas, ver js/tags.js) ----
+  {id:"bacon",ns:"ingredient",tier:"search",syn:["bacon","toucinho","pancetta","guanciale"]},
+  {id:"linguica",ns:"ingredient",tier:"search",syn:["linguica","calabresa","chourico","chorizo","salsicha"],ff:["pimenta calabresa"]},
+  {id:"presunto",ns:"ingredient",tier:"search",syn:["presunto","jamon","prosciutto"]},
+  {id:"pato",ns:"ingredient",tier:"search",syn:["pato","canard","marreco","magret"]},
+  {id:"massa-folhada",ns:"ingredient",tier:"search",syn:["massa folhada","massa filo","filo","phyllo"]},
+  // ---- PRODUCE ADICIONAL (search, <7 receitas cada — investigação taxonomia 2026-07-24) ----
+  {id:"beterraba",ns:"ingredient",tier:"search",syn:["beterraba","beterrabas"]},
+  {id:"alface",ns:"ingredient",tier:"search",syn:["alface","alfaces"]},
+  {id:"vagem",ns:"ingredient",tier:"search",syn:["vagem","vagens"]},
+  {id:"couve",ns:"ingredient",tier:"search",syn:["couve","couves"],ff:["couve flor"]},
+  {id:"morango",ns:"ingredient",tier:"search",syn:["morango","morangos"]},
+  {id:"abacate",ns:"ingredient",tier:"search",syn:["abacate","abacates"]},
+  {id:"alcaparra",ns:"ingredient",tier:"search",syn:["alcaparra","alcaparras"]},
   ];
   // BLOCKLIST (nem tag nem busca)
   const BLOCK = ["sal","agua","oleo","azeite","oliva","manteiga","farinha","trigo","acucar","fermento","caldo","creme","pimenta do reino","pimenta preta","pimenta branca"];
