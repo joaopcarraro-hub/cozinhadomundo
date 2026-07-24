@@ -179,10 +179,26 @@ function main() {
   console.log("==================================================");
   console.log("10. MÁSCARA DE MEDIDAS — 'colher (sopa)' não contamina 'sopa'");
   console.log("==================================================");
-  const rSopa = Search.searchByQuery("sopa", { excludeTagIds: [] });
-  const sopaTotal = rSopa.block2.length;
-  console.log("  'sopa' bate em " + sopaTotal + " receitas (esperado: dish_type:sopa + poucas, não ~200 por causa de 'colher de sopa')");
-  assert(sopaTotal < 60, "sopa: total bem abaixo de ~200 (contaminação por 'colher de sopa' mascarada) — obtido " + sopaTotal);
+  // Mede o campo `ingrediente` DIRETAMENTE (antes/depois da máscara) — testar via
+  // searchByQuery("sopa") seria enganoso: "sopa" é o próprio synonym de dish_type:sopa, então
+  // vira AUTO-tag e desvia quase tudo pro bloco1 sem sobrar resíduo textual pra mascarar,
+  // medindo outra coisa (achado ao reconciliar com o número da proposta original, 201->1).
+  const masks = (win.DerivationDict && win.DerivationDict.MEASUREMENT_MASKS) || [];
+  function maskMeasures(s) {
+    let t = s;
+    masks.forEach((m) => {
+      t = t.split(m).join(" ");
+    });
+    return t;
+  }
+  function norm(s) {
+    return win.DerivationDict.norm((s || "").toString());
+  }
+  const semMascara = flat.filter((it) => /\bsopa\b/.test(norm((it.recipe.ingredients || []).join(" ")))).length;
+  const comMascara = flat.filter((it) => /\bsopa\b/.test(maskMeasures(norm((it.recipe.ingredients || []).join(" "))))).length;
+  console.log("  campo ingrediente, 'sopa': sem máscara=" + semMascara + " | com máscara=" + comMascara);
+  assert(semMascara >= 180, "sem máscara: 'colher de sopa' contamina ~200 receitas (obtido " + semMascara + ")");
+  assert(comMascara <= 5, "com máscara: cai pra quase zero (obtido " + comMascara + ")");
 
   console.log("");
   console.log("==================================================");
