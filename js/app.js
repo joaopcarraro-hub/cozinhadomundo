@@ -101,6 +101,12 @@
   // ---------- Busca facetada: sugestões (tags + receitas por nome) ----------
   // O texto digitado só gera sugestões — nunca filtra a lista de receitas sozinho.
   // Selecionar uma tag sugerida é que muda o resultado (e a URL).
+  // Tag "viva" = tem pelo menos 1 receita já considerando as tags excluídas (evita sugerir/
+  // aceitar tag morta — ver namespaces adiados como technique: em js/tags.js).
+  function isLiveTag(tagId, excludeTagIds) {
+    return TagModel.getRecipesByTags(excludeTagIds.concat([tagId])).length > 0;
+  }
+
   let tagSearchDebounce = null;
   function wireTagSearchInput(inputEl, suggestionsEl, handlers) {
     inputEl.addEventListener("input", () => {
@@ -119,7 +125,7 @@
       const excludeTagIds = (handlers && handlers.excludeTagIds) || [];
 
       const tagCandidates = Search.searchTags(q).filter((t) => excludeTagIds.indexOf(t.id) === -1);
-      const liveTag = tagCandidates.find((t) => TagModel.getRecipesByTags(excludeTagIds.concat([t.id])).length > 0);
+      const liveTag = tagCandidates.find((t) => isLiveTag(t.id, excludeTagIds));
       if (liveTag) {
         inputEl.value = "";
         suggestionsEl.innerHTML = "";
@@ -150,7 +156,9 @@
       return;
     }
     const excludeTagIds = (handlers && handlers.excludeTagIds) || [];
-    const tagResults = Search.searchTags(q).filter((t) => excludeTagIds.indexOf(t.id) === -1).slice(0, 6);
+    const tagResults = Search.searchTags(q)
+      .filter((t) => excludeTagIds.indexOf(t.id) === -1 && isLiveTag(t.id, excludeTagIds))
+      .slice(0, 6);
     const recipeResults = Search.searchRecipes(q, { limit: 5 });
     // Filtro de texto combinável: só oferecido quando o termo não bateu em nenhuma tag formal
     // (senão a tag já resolve melhor) e o caller aceita esse tipo de sugestão (busca facetada).

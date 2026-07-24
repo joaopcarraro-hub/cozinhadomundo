@@ -74,6 +74,10 @@
     ["Marrocos", "country:marrocos"],
     ["Líbano", "country:libano"],
     ["Estados Unidos", "country:eua"],
+    // origin de data/eua.js usa a sigla, nunca o nome por extenso — sem isso, as receitas
+    // da própria categoria eua (e outras 7 com origin "EUA / ..." fora dela) não derivavam
+    // country:eua/cuisine:eua, deixando essas duas tags mortas.
+    ["EUA", "country:eua"],
     ["Dinamarca", "country:dinamarca"],
   ];
 
@@ -124,11 +128,15 @@
     return tags;
   }
 
+  // Ordem importa: "média" antes de "alta" — "Média-alta" (valor real usado em algumas
+  // receitas) precisa cair em difficulty:media, não em difficulty:dificil, mantendo o
+  // comportamento já em produção pra esse valor composto.
   function deriveDifficultyTag(recipe) {
     const d = (recipe.difficulty || "").toLowerCase();
     if (!d) return null;
     if (d.indexOf("difícil") !== -1) return "difficulty:dificil";
     if (d.indexOf("média") !== -1) return "difficulty:media";
+    if (d.indexOf("alta") !== -1) return "difficulty:dificil";
     if (d.indexOf("fácil") !== -1) return "difficulty:facil";
     return null;
   }

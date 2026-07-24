@@ -117,6 +117,7 @@ const ORIGIN_COUNTRY_MATCHERS = [
   ["Marrocos", "marrocos"],
   ["Líbano", "libano"],
   ["Estados Unidos", "eua"],
+  ["EUA", "eua"],
   ["Dinamarca", "dinamarca"],
 ];
 
